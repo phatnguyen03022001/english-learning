@@ -1,0 +1,417 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json",
+  "title": "Shared V1 vocabulary and identifier definitions",
+  "version": "2.0.0",
+  "$defs": {
+    "id_lex": {
+      "type": "string",
+      "pattern": "^lex_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "id_sns": {
+      "type": "string",
+      "pattern": "^sns_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "id_frm": {
+      "type": "string",
+      "pattern": "^frm_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "id_fam": {
+      "type": "string",
+      "pattern": "^fam_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "id_mrf": {
+      "type": "string",
+      "pattern": "^mrf_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "id_ety": {
+      "type": "string",
+      "pattern": "^ety_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "id_top": {
+      "type": "string",
+      "pattern": "^top_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "id_mwe": {
+      "type": "string",
+      "pattern": "^mwe_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "id_con": {
+      "type": "string",
+      "pattern": "^con_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "id_col": {
+      "type": "string",
+      "pattern": "^col_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "id_eqv": {
+      "type": "string",
+      "pattern": "^eqv_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "id_rel": {
+      "type": "string",
+      "pattern": "^rel_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "id_evd": {
+      "type": "string",
+      "pattern": "^evd_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "id_src": {
+      "type": "string",
+      "pattern": "^src_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "id_rev": {
+      "type": "string",
+      "pattern": "^rev_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "id_dec": {
+      "type": "string",
+      "pattern": "^dec_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "entryKind": {
+      "type": "string",
+      "enum": [
+        "word",
+        "multiword"
+      ]
+    },
+    "multiwordKind": {
+      "type": "string",
+      "enum": [
+        "phrasal_verb",
+        "prepositional_verb",
+        "phrasal_prepositional_verb",
+        "idiom",
+        "fixed_expression",
+        "other_lexicalized"
+      ]
+    },
+    "upos": {
+      "type": "string",
+      "enum": [
+        "ADJ",
+        "ADP",
+        "ADV",
+        "AUX",
+        "CCONJ",
+        "DET",
+        "INTJ",
+        "NOUN",
+        "NUM",
+        "PART",
+        "PRON",
+        "PROPN",
+        "PUNCT",
+        "SCONJ",
+        "SYM",
+        "VERB",
+        "X"
+      ]
+    },
+    "lexicalEntryPos": {
+      "type": "string",
+      "enum": [
+        "ADJ",
+        "ADP",
+        "ADV",
+        "AUX",
+        "CCONJ",
+        "DET",
+        "INTJ",
+        "NOUN",
+        "NUM",
+        "PART",
+        "PRON",
+        "PROPN",
+        "SCONJ",
+        "VERB"
+      ]
+    },
+    "editorialStatus": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "provisional",
+        "verified",
+        "disputed",
+        "rejected"
+      ]
+    },
+    "lifecycleStatus": {
+      "type": "string",
+      "enum": [
+        "active",
+        "retired"
+      ]
+    },
+    "retirementMode": {
+      "type": "string",
+      "enum": [
+        "semantic_split",
+        "semantic_merge",
+        "duplicate_reconciliation",
+        "invalidated"
+      ]
+    },
+    "alignmentMode": {
+      "type": "string",
+      "enum": [
+        "gloss_only",
+        "sense_aligned"
+      ]
+    },
+    "equivalenceType": {
+      "type": "string",
+      "enum": [
+        "exact_in_context",
+        "approximate",
+        "paraphrase"
+      ]
+    },
+    "translationDirection": {
+      "type": "string",
+      "enum": [
+        "en_to_vi"
+      ]
+    },
+    "register": {
+      "type": "string",
+      "enum": [
+        "neutral",
+        "formal",
+        "informal",
+        "colloquial",
+        "slang",
+        "literary",
+        "technical",
+        "vulgar"
+      ]
+    },
+    "morphologicalRole": {
+      "type": "string",
+      "enum": [
+        "root",
+        "base",
+        "prefix",
+        "suffix",
+        "combining_form"
+      ]
+    },
+    "familyBasis": {
+      "type": "string",
+      "enum": [
+        "synchronically_derivational",
+        "editorially_related"
+      ]
+    },
+    "constructionType": {
+      "type": "string",
+      "enum": [
+        "valency",
+        "prepositional",
+        "phrasal_particle",
+        "clausal_complement",
+        "infinitival_complement",
+        "gerund_complement",
+        "other"
+      ]
+    },
+    "senseDecisionAction": {
+      "type": "string",
+      "enum": [
+        "split",
+        "merge",
+        "retain",
+        "duplicate_reconciliation",
+        "invalidate"
+      ]
+    },
+    "issueType": {
+      "type": "string",
+      "enum": [
+        "identity",
+        "sense_boundary",
+        "grammar_valency",
+        "translation_alignment",
+        "morphology",
+        "etymology",
+        "topic_assignment",
+        "lexical_relation",
+        "licensing",
+        "data_integrity"
+      ]
+    },
+    "decisionOutcome": {
+      "type": "string",
+      "enum": [
+        "accepted",
+        "rejected",
+        "deferred_pending_evidence"
+      ]
+    },
+    "graphCyclePolicy": {
+      "type": "string",
+      "enum": [
+        "reject",
+        "allow",
+        "not_applicable"
+      ]
+    },
+    "registeredId": {
+      "type": "string",
+      "pattern": "^(lex|sns|frm|fam|mrf|ety|top|mwe|con|col|eqv|rel|evd|src|rev|dec)_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "activeV1Id": {
+      "type": "string",
+      "pattern": "^(lex|sns|frm|fam|mrf|ety|top|con|col|eqv|rel|evd|src|rev|dec)_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "reservedInactiveV1Id": {
+      "type": "string",
+      "pattern": "^(mwe)_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "languageTag": {
+      "type": "string",
+      "pattern": "^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$"
+    },
+    "countability": {
+      "type": "string",
+      "enum": [
+        "countable",
+        "uncountable",
+        "both",
+        "unknown"
+      ]
+    },
+    "transitivity": {
+      "type": "string",
+      "enum": [
+        "transitive",
+        "intransitive",
+        "ambitransitive",
+        "unknown"
+      ]
+    },
+    "complementType": {
+      "type": "string",
+      "enum": [
+        "noun_phrase",
+        "prepositional_phrase",
+        "clause",
+        "gerund",
+        "to_infinitive",
+        "bare_infinitive",
+        "adjective_phrase",
+        "other"
+      ]
+    },
+    "pronounPlacement": {
+      "type": "string",
+      "enum": [
+        "before_particle",
+        "after_particle",
+        "either",
+        "not_applicable",
+        "unknown"
+      ]
+    },
+    "separability": {
+      "type": "string",
+      "enum": [
+        "separable",
+        "inseparable",
+        "not_applicable",
+        "unknown"
+      ]
+    },
+    "exampleType": {
+      "type": "string",
+      "enum": [
+        "editorial_original",
+        "licensed_corpus_attestation",
+        "synthetic_test",
+        "unverified_candidate"
+      ]
+    },
+    "translationEvidenceStatus": {
+      "type": "string",
+      "enum": [
+        "unreviewed",
+        "evidence_pending",
+        "independently_reviewed"
+      ]
+    },
+    "evidenceReviewStatus": {
+      "type": "string",
+      "enum": [
+        "unreviewed",
+        "accepted",
+        "disputed",
+        "rejected"
+      ]
+    },
+    "sourceRightsStatus": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "reference_only",
+        "permission_required",
+        "redistributable"
+      ]
+    },
+    "sourceType": {
+      "type": "string",
+      "enum": [
+        "dictionary",
+        "corpus",
+        "academic",
+        "editorial_original",
+        "other"
+      ]
+    },
+    "claimSpecificity": {
+      "type": "string",
+      "enum": [
+        "exact_value",
+        "contextual_support",
+        "general_reference"
+      ]
+    },
+    "sourceIndependence": {
+      "type": "string",
+      "enum": [
+        "unestablished",
+        "independent_reviewed",
+        "dependent",
+        "ai_generated"
+      ]
+    },
+    "editorialRole": {
+      "type": "string",
+      "enum": [
+        "linguistic",
+        "grammar",
+        "bilingual",
+        "rights",
+        "lead_editorial",
+        "data_integrity"
+      ]
+    },
+    "edgeResolution": {
+      "type": "string",
+      "enum": [
+        "retained",
+        "reattached",
+        "retired",
+        "disputed"
+      ]
+    },
+    "decisionEffect": {
+      "type": "string",
+      "enum": [
+        "non_transition",
+        "lifecycle_transition",
+        "superseded"
+      ]
+    }
+  }
+}
