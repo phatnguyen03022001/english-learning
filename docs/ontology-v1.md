@@ -139,7 +139,7 @@ The registry's `relationTypes[]` is the **only authoritative set** of V1 `rel_` 
 where `minASCII` and `maxASCII` compare the full lowercase canonical ID strings by ASCII code point, not locale collation; `A === B` is invalid. The order is **storage-only**, not a claim that meaning or substitution works in every context.
 
 - Synonymy and near-synonymy are **not automatically transitive**. Neither implies universal lexical substitutability; persist context, register, domain and usage restrictions with evidence.
-- `NEAR_SYNONYM_OF` is symmetric **only when the specialist has reviewed mutual similarity within the same specified context**. Directional paraphrasing/translation must instead be captured as a different, directional claim (e.g. an evidenced `eqv_`), not forced into a reciprocal near-synonym edge.
+- `NEAR_SYNONYM_OF` is symmetric **only when the specialist has reviewed mutual similarity within the same specified context**. Directional bilingual translations belong in an evidenced `eqv_` record; directional **monolingual** paraphrases are not modeled as symmetric near-synonym edges in V1 and must remain sourced usage notes until a separately approved directed relation type exists.
 - Antonymy is likewise sense-scoped; do not assert whole-headword antonymy.
 - To detect duplicate unordered pairs, canonicalize endpoints **before** computing the uniqueness key.
 - Unique semantic edge key is (`relationType`, `sourceId`, `targetId`, `qualifierKey`). `qualifierKey` is based on a **fixed-order canonical representation** of meaningful context/variety/domain/register/period qualifiers. Missing qualifiers, blank strings and materially different contexts must not be conflated.
