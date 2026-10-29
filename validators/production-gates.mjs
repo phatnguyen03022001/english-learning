@@ -1,5 +1,6 @@
 import {createHash} from "node:crypto";
 import {validateGraph} from "./graph-v1.mjs";
+import {verifyReviewerAppointment} from "./authority-v2.mjs";
 
 const cmp=(a,b)=>a<b?-1:a>b?1:0;
 const sort=(a,b)=>cmp(a.entityId,b.entityId)||cmp(a.path,b.path)||cmp(a.code,b.code)||cmp(a.message,b.message);
@@ -84,9 +85,11 @@ export function evaluatePublication(records, options={}) {
    evidenceBySubject.get(r.claim.subjectId).push(r);
   }
  }
- const authorize=(reviewerId,role,reference,subjectId)=>{
-  if(typeof options.isAuthorized!=="function")return false;
-  try{return options.isAuthorized({reviewerId,role,appointmentReference:reference,subjectId})===true;}catch{return false;}
+ const authorize=(reviewerId,role,reference,subjectId,fieldPath)=>
+  verifyReviewerAppointment(options,{reviewerId,role,appointmentReference:reference,subjectId,fieldPath});
+ const attest=(e,subject)=>{
+  if(typeof options.verifyEvidence!=="function")return false;
+  try{return options.verifyEvidence({evidence:e,subject,source:byId.get(e.sourceId)})===true;}catch{return false;}
  };
  const rights=(source,scope)=>{
   const r=source?.rights;
@@ -107,7 +110,7 @@ export function evaluatePublication(records, options={}) {
    ev.claim&&valueAt(record,ev.claim.fieldPath)!==undefined&&
    digest(valueAt(record,ev.claim.fieldPath))===ev.claim.valueDigest&&
    ev.claim.specificity==="exact_value"&&ev.reviewStatus==="accepted"&&
-   ev.independence==="independent_reviewed"&&ev.lifecycleStatus==="active");
+   ev.independence==="independent_reviewed"&&ev.lifecycleStatus==="active"&&attest(ev,record));
   if(evidence.length===0)add("CLAIM_EVIDENCE_INSUFFICIENT",id,"evidenceIds","No independent exact claim-level attestation");
   if(!evidence.some(ev=>rights(byId.get(ev.sourceId),options.usageScope??"dictionary_publication")))
    add("SOURCE_RIGHTS_UNVERIFIED",id,"evidenceIds","No authenticated rights approval for intended reuse");
@@ -115,7 +118,7 @@ export function evaluatePublication(records, options={}) {
    // Subject-only reviews are not claim-specific. Exact field path matters.
    evidence.some(ev=>ev.claim.fieldPath===item.fieldPath)&&
    item.review.subjectIds?.includes(id)&&
-   authorize(item.review.reviewerId,item.review.role,item.review.appointmentReference,id));
+   authorize(item.review.reviewerId,item.review.role,item.review.appointmentReference,id,item.fieldPath));
   if(!reviews.length)add("REVIEW_SCOPE_MISSING",id,"editorialStatus","No authorized accepted claim-specific review");
   if(!reviews.some(x=>x.review.role==="lead_editorial"))
    add("LER_AUTHORITY_UNVERIFIED",id,"editorialStatus","No independently authenticated scoped LER appointment");

@@ -29,8 +29,14 @@ separate coverage and `CLAIM_PATH_UNVERIFIED` blocks uncovered claims.
 `evaluatePublication(records, options)` requires claim-specific exact attestation,
 accepted independent review, correct scoped LER/linguistic specialty, and rights
 cleared for `usageScope` (default `dictionary_publication`).
-It only trusts `options.isAuthorized` and `options.verifyRights` **when they are
-supplied by an independently authenticated owner-appointed authority/rights process**.
+It requires `options.appointments` entries conforming to
+`schemas/v2/reviewer-appointments.contract.json`, a trusted external `ownerId`,
+an explicit `effectiveAt`, and independently authenticated
+`options.verifyOwnerAttestation` for every scoped role/subject/field.
+It additionally requires `options.verifyEvidence` for each exact independent
+source claim and `options.verifyRights` for the intended reuse permission.
+All verifiers must come from an outside trusted owner/evidence/rights process;
+self-reported JSON alone is never authority.
 The production CLI supplies neither callback: its eligibility answer remains
 **fail-closed**. Arbitrary JSON properties such as `reviewerId`, `appointedBy`,
 `permissionReference` cannot create this authority. Test-only forged callbacks

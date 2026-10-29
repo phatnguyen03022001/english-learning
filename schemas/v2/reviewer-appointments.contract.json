@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/reviewer-appointments.contract.json",
+  "title": "Reviewer appointment registry — untrusted until independently verified",
+  "type": "object",
+  "properties": {
+    "contractVersion": {
+      "const": "2.0.0"
+    },
+    "appointments": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "appointmentKey": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reviewerId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "appointedByOwnerId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/editorialRole"
+          },
+          "scope": {
+            "type": "object",
+            "properties": {
+              "subjectIds": {
+                "type": "array",
+                "items": {
+                  "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/activeV1Id"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "fieldPaths": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^/"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "subjectIds"
+            ],
+            "additionalProperties": false
+          },
+          "effectiveFrom": {
+            "type": "string",
+            "minLength": 1
+          },
+          "effectiveUntil": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revokedAt": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ownerAttestationRef": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "appointmentKey",
+          "reviewerId",
+          "appointedByOwnerId",
+          "role",
+          "scope",
+          "effectiveFrom",
+          "ownerAttestationRef"
+        ]
+      }
+    }
+  },
+  "required": [
+    "contractVersion",
+    "appointments"
+  ],
+  "additionalProperties": false
+}
