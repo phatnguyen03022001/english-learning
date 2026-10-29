@@ -1,0 +1,132 @@
+{
+  "caseId": "run",
+  "focus": "High-polysemy single lexical entry with separately scoped senses; no arbitrary split by grammar alone",
+  "editorialStatus": "synthetic_unreviewed",
+  "records": [
+    {
+      "_id": "lex_01940000-0000-7000-8000-000000000201",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "run",
+      "pos": "VERB",
+      "entryKind": "word"
+    },
+    {
+      "_id": "sns_01940000-0000-7000-8000-000000000201",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000201",
+      "definition": "Move quickly on foot (illustrative meaning)."
+    },
+    {
+      "_id": "sns_01940000-0000-7000-8000-000000000202",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000201",
+      "definition": "Operate or function, as of a machine (illustrative meaning)."
+    },
+    {
+      "_id": "sns_01940000-0000-7000-8000-000000000203",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000201",
+      "definition": "Manage an organization or activity (illustrative meaning)."
+    },
+    {
+      "_id": "eqv_01940000-0000-7000-8000-000000000201",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000201",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "glossVi": "chạy bộ",
+      "equivalenceType": "approximate",
+      "evidenceIds": [],
+      "context": "physical motion"
+    },
+    {
+      "_id": "eqv_01940000-0000-7000-8000-000000000202",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000202",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "glossVi": "vận hành",
+      "equivalenceType": "approximate",
+      "evidenceIds": [],
+      "context": "machine operation"
+    },
+    {
+      "_id": "eqv_01940000-0000-7000-8000-000000000203",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000203",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "glossVi": "điều hành",
+      "equivalenceType": "approximate",
+      "evidenceIds": [],
+      "context": "organizational management"
+    },
+    {
+      "_id": "con_01940000-0000-7000-8000-000000000201",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "senseId": "sns_01940000-0000-7000-8000-000000000202",
+      "constructionType": "valency",
+      "pattern": "machine + runs",
+      "complements": [
+        "subject:machine"
+      ]
+    }
+  ],
+  "modelExpectations": {
+    "entryCount": 1,
+    "senseCount": 3,
+    "homographNumbers": [],
+    "equivalenceModes": [
+      "gloss_only",
+      "gloss_only",
+      "gloss_only"
+    ],
+    "forbiddenEntryLemmas": [
+      "run a company"
+    ]
+  },
+  "contrastiveExamples": [
+    {
+      "en": "She runs every morning.",
+      "vi": "Cô ấy chạy bộ mỗi sáng.",
+      "status": "editor-created illustration"
+    },
+    {
+      "en": "The engine runs quietly.",
+      "vi": "Động cơ hoạt động êm.",
+      "status": "editor-created illustration"
+    },
+    {
+      "en": "They run a small business.",
+      "vi": "Họ điều hành một doanh nghiệp nhỏ.",
+      "status": "editor-created illustration"
+    }
+  ],
+  "negativeCases": [
+    {
+      "name": "missing-machine-sense",
+      "expectedCode": "REFERENCE_NOT_FOUND",
+      "stage": "graph",
+      "removeIds": [
+        "sns_01940000-0000-7000-8000-000000000202"
+      ]
+    }
+  ]
+}
