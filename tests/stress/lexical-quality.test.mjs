@@ -136,3 +136,24 @@ test("schema/graph rejects misleading aligned-target language", () => {
   assert.equal(report.stage, "graph");
   assert.ok(report.issues.some(i => i.code === "BILINGUAL_LANGUAGE_MISMATCH"));
 });
+
+test("REGRESSION RED: monolingual semantic relation must not link English and Vietnamese senses", () => {
+  const data = clone(graphBase);
+  const relation = {
+    _id: "rel_01940000-0000-7000-8000-000000009901",
+    schemaVersion:"1.0.0", lifecycleStatus:"active",editorialStatus:"draft",
+    relationType:"SYNONYM_OF",
+    sourceId:"sns_01940000-0000-7000-8000-000000000001",
+    targetId:"sns_01940000-0000-7000-8000-000000000003",
+    qualifiers:{context:"synthetic invalid cross-language synonym"}
+  };
+  data.records.push(relation);
+  const report = validateDataset(data);
+  assert.equal(report.stage, "graph", JSON.stringify(report.issues));
+  // Independent English/Vietnamese senses may only be linked by reviewed
+  // bilingual equivalence, not an untyped monolingual SYNONYM_OF shortcut.
+  // Currently expected to FAIL until a separately approved validator patch.
+  assert.ok(report.issues.some(i => i.code === "RELATION_LANGUAGE_MISMATCH" &&
+    i.entityId === relation._id),
+    "P1: cross-language SYNONYM_OF is accepted as graph-valid; do not publish or waive this regression");
+});
