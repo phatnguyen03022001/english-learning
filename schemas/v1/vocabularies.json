@@ -1,0 +1,360 @@
+{
+  "registryVersion": "1.0.0",
+  "status": "phase1_normative_design",
+  "description": "Canonical controlled vocabulary registry for IELTS Tradition. This is design data, not JSON Schema or a MongoDB deployment.",
+  "sources": {
+    "uuid": "https://www.rfc-editor.org/rfc/rfc9562.html",
+    "upos": "https://universaldependencies.org/u/pos/all.html",
+    "jsonSchema": "https://json-schema.org/draft/2020-12/schema"
+  },
+  "identifiers": {
+    "format": "<prefix>_<lowercase-hyphenated-UUIDv7>",
+    "allRegisteredPrefixes": [
+      "lex",
+      "sns",
+      "frm",
+      "fam",
+      "mrf",
+      "ety",
+      "top",
+      "mwe",
+      "con",
+      "col",
+      "eqv",
+      "rel",
+      "evd",
+      "src",
+      "rev",
+      "dec"
+    ],
+    "activeV1Prefixes": [
+      "lex",
+      "sns",
+      "frm",
+      "fam",
+      "mrf",
+      "ety",
+      "top",
+      "con",
+      "col",
+      "eqv",
+      "rel",
+      "evd",
+      "src",
+      "rev",
+      "dec"
+    ],
+    "reservedInactiveV1Prefixes": [
+      "mwe"
+    ],
+    "globalPattern": "^(lex|sns|frm|fam|mrf|ety|top|mwe|con|col|eqv|rel|evd|src|rev|dec)_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+    "uuidV7Pattern": "[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}",
+    "fieldPrefixContracts": {
+      "entryId": "lex",
+      "sourceEntryId": "lex",
+      "targetEntryId": "lex",
+      "senseId": "sns",
+      "sourceSenseId": "sns",
+      "targetSenseId": "sns",
+      "familyId": "fam",
+      "morphemeId": "mrf",
+      "etymologyId": "ety",
+      "topicId": "top",
+      "constructionId": "con",
+      "collocationId": "col",
+      "equivalenceId": "eqv",
+      "relationId": "rel",
+      "evidenceId": "evd",
+      "sourceId": "src",
+      "reviewerDecisionId": "dec",
+      "reviewId": "rev"
+    }
+  },
+  "enums": {
+    "entryKind": [
+      "word",
+      "multiword"
+    ],
+    "multiwordKind": [
+      "phrasal_verb",
+      "prepositional_verb",
+      "phrasal_prepositional_verb",
+      "idiom",
+      "fixed_expression",
+      "other_lexicalized"
+    ],
+    "upos": [
+      "ADJ",
+      "ADP",
+      "ADV",
+      "AUX",
+      "CCONJ",
+      "DET",
+      "INTJ",
+      "NOUN",
+      "NUM",
+      "PART",
+      "PRON",
+      "PROPN",
+      "PUNCT",
+      "SCONJ",
+      "SYM",
+      "VERB",
+      "X"
+    ],
+    "lexicalEntryPos": [
+      "ADJ",
+      "ADP",
+      "ADV",
+      "AUX",
+      "CCONJ",
+      "DET",
+      "INTJ",
+      "NOUN",
+      "NUM",
+      "PART",
+      "PRON",
+      "PROPN",
+      "SCONJ",
+      "VERB"
+    ],
+    "editorialStatus": [
+      "draft",
+      "provisional",
+      "verified",
+      "disputed",
+      "rejected"
+    ],
+    "lifecycleStatus": [
+      "active",
+      "retired"
+    ],
+    "retirementMode": [
+      "semantic_split",
+      "semantic_merge",
+      "duplicate_reconciliation",
+      "invalidated"
+    ],
+    "alignmentMode": [
+      "gloss_only",
+      "sense_aligned"
+    ],
+    "equivalenceType": [
+      "exact_in_context",
+      "approximate",
+      "paraphrase"
+    ],
+    "translationDirection": [
+      "en_to_vi"
+    ],
+    "register": [
+      "neutral",
+      "formal",
+      "informal",
+      "colloquial",
+      "slang",
+      "literary",
+      "technical",
+      "vulgar"
+    ],
+    "morphologicalRole": [
+      "root",
+      "base",
+      "prefix",
+      "suffix",
+      "combining_form"
+    ],
+    "familyBasis": [
+      "synchronically_derivational",
+      "editorially_related"
+    ],
+    "constructionType": [
+      "valency",
+      "prepositional",
+      "phrasal_particle",
+      "clausal_complement",
+      "infinitival_complement",
+      "gerund_complement",
+      "other"
+    ],
+    "senseDecisionAction": [
+      "split",
+      "merge",
+      "retain",
+      "duplicate_reconciliation",
+      "invalidate"
+    ],
+    "issueType": [
+      "identity",
+      "sense_boundary",
+      "grammar_valency",
+      "translation_alignment",
+      "morphology",
+      "etymology",
+      "topic_assignment",
+      "lexical_relation",
+      "licensing",
+      "data_integrity"
+    ],
+    "decisionOutcome": [
+      "accepted",
+      "rejected",
+      "deferred_pending_evidence"
+    ],
+    "graphCyclePolicy": [
+      "reject",
+      "allow",
+      "not_applicable"
+    ]
+  },
+  "relationModel": {
+    "canonicalEndpointRule": "For symmetric relations only, persist sourceId and targetId in strictly ascending ASCII code-point order (sourceId < targetId). Directional relations use their declared semantic orientation.",
+    "symmetricDoesNotImplyTransitive": true,
+    "defaultSelfLoopPolicy": "reject",
+    "qualifierFieldsInOrder": [
+      "context",
+      "variety",
+      "domain",
+      "register",
+      "period"
+    ],
+    "qualifierNormalization": "Explicitly typed, Unicode NFC, normalized locale-safe strings where specified; omit absent fields; serialize with a fixed ordered-key canonical JSON representation. Never lowercase/strip meaningful lexical content. Phase 3 specifies exact canonicalization.",
+    "uniquenessKeyComponents": [
+      "relationType",
+      "sourceId",
+      "targetId",
+      "qualifierKey"
+    ],
+    "qualifierKey": "Deterministically canonicalized semantic qualifiers; an optional hash is only an accelerator and must be confirmed against the canonical qualifier payload to guard collisions.",
+    "evidenceAggregation": "Evidence IDs can be unioned only after provenance and editorial compatibility review; distinct contexts or evidence claims must not be silently overwritten.",
+    "queryComplexityNote": "Canonical ordering prevents reverse-pair duplicates. Expected indexed lookup efficiency requires a suitable unique/indexed key; string comparison alone does not guarantee O(1)."
+  },
+  "relationTypes": [
+    {
+      "type": "SYNONYM_OF",
+      "sourceType": "LexicalSense",
+      "targetType": "LexicalSense",
+      "symmetric": true,
+      "canonicalOrder": "ascii_id_ascending",
+      "cyclePolicy": "allow",
+      "scope": "context_scoped",
+      "transitive": false
+    },
+    {
+      "type": "NEAR_SYNONYM_OF",
+      "sourceType": "LexicalSense",
+      "targetType": "LexicalSense",
+      "symmetric": true,
+      "canonicalOrder": "ascii_id_ascending",
+      "cyclePolicy": "allow",
+      "scope": "context_scoped",
+      "transitive": false,
+      "restriction": "Only use when contextual similarity has been reviewed as mutual; directional paraphrases are not this relation."
+    },
+    {
+      "type": "ANTONYM_OF",
+      "sourceType": "LexicalSense",
+      "targetType": "LexicalSense",
+      "symmetric": true,
+      "canonicalOrder": "ascii_id_ascending",
+      "cyclePolicy": "allow",
+      "scope": "context_scoped",
+      "transitive": false
+    },
+    {
+      "type": "HYPERNYM_OF",
+      "sourceType": "LexicalSense",
+      "targetType": "LexicalSense",
+      "symmetric": false,
+      "canonicalOrder": "semantic_direction",
+      "direction": "general_to_specific",
+      "inverseVirtual": "HYPONYM_OF",
+      "cyclePolicy": "reject",
+      "scope": "context_scoped",
+      "transitive": true
+    },
+    {
+      "type": "PART_OF",
+      "sourceType": "LexicalSense",
+      "targetType": "LexicalSense",
+      "symmetric": false,
+      "canonicalOrder": "semantic_direction",
+      "direction": "part_to_whole",
+      "inverseVirtual": "HAS_PART",
+      "cyclePolicy": "reject",
+      "scope": "context_scoped",
+      "transitive": false
+    },
+    {
+      "type": "DERIVED_FROM",
+      "sourceType": "LexicalEntry",
+      "targetType": "LexicalEntry",
+      "symmetric": false,
+      "canonicalOrder": "semantic_direction",
+      "direction": "derived_to_base",
+      "inverseVirtual": "HAS_DERIVATIVE",
+      "cyclePolicy": "reject",
+      "scope": "entry_global",
+      "transitive": false,
+      "restriction": "Only add with morphological evidence, never infer merely from shared family membership."
+    }
+  ],
+  "graphRules": {
+    "lexicalEntryIsSingleLexicalIdentity": true,
+    "multiwordEntryUsesLexPrefix": true,
+    "mwePrefixActiveInV1": false,
+    "wordFamilyIsUndirectedCluster": true,
+    "familyMembershipSourceOfTruth": "LexicalEntry.familyIds[]",
+    "familyMemberList": "Derived query/view only; do not dual-write a second authoritative list.",
+    "topicHierarchySourceOfTruth": "Topic.parentTopicId",
+    "topicCyclePolicy": "reject",
+    "senseOwnershipSourceOfTruth": "LexicalSense.entryId",
+    "nonSyntheticTargetSenseRequiredFor": "sense_aligned",
+    "unresolvedDisputesPublishableAsVerified": false,
+    "allowedRetiredEdgeUsage": "Historical audit only; never an active published relation."
+  },
+  "retirementRequirements": {
+    "semantic_split": {
+      "retiredSourceMin": 1,
+      "retiredSourceMax": 1,
+      "successorMin": 2,
+      "successorsMustBeNew": true,
+      "eachIncomingEdge": "explicit_adjudication"
+    },
+    "semantic_merge": {
+      "retiredSourceMin": 2,
+      "successorMin": 1,
+      "successorMax": 1,
+      "successorMustBeNew": true,
+      "eachIncomingEdge": "explicit_adjudication_and_contextual_deduplication"
+    },
+    "duplicate_reconciliation": {
+      "retiredSourceMin": 1,
+      "retiredSourceMax": 1,
+      "successorMin": 1,
+      "successorMax": 1,
+      "successorMustAlreadyExist": true,
+      "eachIncomingEdge": "explicit_resolution",
+      "sameIdentityEvidenceRequired": true
+    },
+    "invalidated": {
+      "retiredSourceMin": 1,
+      "successorMin": 0,
+      "successorMax": 0,
+      "eachIncomingEdge": "explicit_resolution"
+    }
+  },
+  "governance": {
+    "normativeOwner": "docs/ontology-v1.md",
+    "references": [
+      "AGENTS.md",
+      "docs/identity-policy.md",
+      "docs/bilingual-alignment.md",
+      "docs/sense-division.md",
+      "docs/editorial-policy.md"
+    ],
+    "changesRequire": "versioned_registry_change_and_documented_editorial_or_schema_review",
+    "datasetImportsAuthorized": false,
+    "databaseMigrationAuthorized": false
+  }
+}
