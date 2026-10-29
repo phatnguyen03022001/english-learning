@@ -62,12 +62,19 @@ export function prepareBatch(batch,state={},options={}) {
  const digest=sha(batch);
  if(!batch||typeof batch.batchId!=="string"||!/^[a-zA-Z0-9._:-]{1,120}$/.test(batch.batchId)||!Array.isArray(batch.records)||batch.records.length===0||batch.records.length>10000)
   return invalidReport(state,digest,"BATCH_INVALID","Invalid batch ID or record count (1..10000)");
- const keys=new Set(),types=new Map();
+ const keys=new Set(),sourceKeys=new Set(),types=new Map();
  for(const item of batch.records){
   if(!item||typeof item.candidateId!=="string"||!/^[a-zA-Z0-9._:-]{1,120}$/.test(item.candidateId)||!item.entity||typeof item.entity!=="object"||Array.isArray(item.entity))
    return invalidReport(state,digest,"CANDIDATE_INVALID","Candidate ID or payload invalid");
   if(keys.has(item.candidateId))return invalidReport(state,digest,"DUPLICATE_CANDIDATE_ID",item.candidateId);
   keys.add(item.candidateId);
+  if(item.sourceItemKey!==undefined){
+   if(typeof item.sourceItemKey!=="string"||!/^[a-zA-Z0-9._:/-]{1,240}$/.test(item.sourceItemKey))
+    return invalidReport(state,digest,"SOURCE_KEY_INVALID",item.candidateId);
+   if(sourceKeys.has(item.sourceItemKey))
+    return invalidReport(state,digest,"DUPLICATE_SOURCE_ITEM_KEY",item.sourceItemKey);
+   sourceKeys.add(item.sourceItemKey);
+  }
   const prefix=prefixOf(item);
   if(!validPrefixes.has(prefix))return invalidReport(state,digest,"ENTITY_TYPE_UNKNOWN",item.candidateId);
   if(item.entity._id!==undefined||item.entity.schemaVersion!==undefined)
@@ -79,21 +86,31 @@ export function prepareBatch(batch,state={},options={}) {
  if(prior)return prior.digest===digest
   ?{state,report:{status:"replayed",digest,batchId:batch.batchId,issues:[],duplicates:[],missingEvidence:[],reviewQueue:[],publicationEligible:false}}
   :invalidReport(state,digest,"CHANGED_BATCH_CONFLICT","Batch ID already processed with another digest");
- const next=clone({formatVersion:1,batches:{},mappings:{},records:[],history:[],...state});
+ const next=clone({formatVersion:1,batches:{},mappings:{},sourceMappings:{},records:[],history:[],...state});
  if(next.formatVersion!==1)return invalidReport(state,digest,"STATE_VERSION_INVALID","Unrecognized persistent state format");
- const mapping=new Map();
+ const mapping=new Map(),reused=new Set(),knownIds=new Set(next.records.map(r=>r._id));
  for(const item of batch.records){
   const mappingKey=batch.batchId+"#"+item.candidateId;
   if(next.mappings[mappingKey])return invalidReport(state,digest,"MAPPING_COLLISION",mappingKey);
+  const known=item.sourceItemKey&&next.sourceMappings[item.sourceItemKey];
+  if(known){
+   if(known.contentDigest!==sha(item.entity)||!known.canonicalId.startsWith(types.get(item.candidateId)+"_"))
+    return invalidReport(state,digest,"SOURCE_ITEM_CHANGED","Existing source item changed; explicit revision required: "+item.sourceItemKey);
+   if(!knownIds.has(known.canonicalId))return invalidReport(state,digest,"SOURCE_MAPPING_DANGLING",item.sourceItemKey);
+   mapping.set(item.candidateId,known.canonicalId);
+   reused.add(item.candidateId);
+   continue;
+  }
   // Preview IDs are deterministic ephemeral placeholders, never persisted.
   const h=createHash("sha256").update(digest+"#"+item.candidateId).digest("hex");
   const preview=h.slice(0,8)+"-"+h.slice(8,12)+"-7"+h.slice(12,15)+"-8"+h.slice(15,18)+"-"+h.slice(18,30);
   const id=types.get(item.candidateId)+"_"+(options.dryRun?preview:uuidv7());
-  if(next.records.some(r=>r._id===id))return invalidReport(state,digest,"ID_COLLISION",id);
+  if(knownIds.has(id))return invalidReport(state,digest,"ID_COLLISION",id);
+  knownIds.add(id);
   mapping.set(item.candidateId,id);
  }
  let created;
- try {created=batch.records.map(item=>({
+ try {created=batch.records.filter(item=>!reused.has(item.candidateId)).map(item=>({
   ...resolveRefs(item.entity,mapping),_id:mapping.get(item.candidateId),schemaVersion:"2.0.0"
  }));}catch(e){return invalidReport(state,digest,"UNRESOLVED_REFERENCE",e.message);}
  const dataset=[...next.records,...created];
@@ -103,9 +120,13 @@ export function prepareBatch(batch,state={},options={}) {
  const missingEvidence=created.filter(r=>!["src","evd","rev","dec"].includes(r._id.split("_")[0])&&!(r.evidenceIds?.length)).map(r=>r._id).sort(sort);
  const reviewQueue=created.filter(r=>r.editorialStatus!=="rejected").map(r=>r._id).sort(sort);
  if(options.dryRun)return {state,report:{status:"dry-run",batchId:batch.batchId,digest,issues:[],duplicates:duplicates.map(d=>({...d,candidateId:"preview",existingId:"preview"})),missingEvidence:missingEvidence.map(()=>"pending_identity"),reviewQueue:batch.records.map(x=>x.candidateId),publicationEligible:false}};
- for(const item of batch.records)next.mappings[batch.batchId+"#"+item.candidateId]={canonicalId:mapping.get(item.candidateId),batchId:batch.batchId,contentDigest:sha(item.entity)};
- next.batches[batch.batchId]={digest,recordIds:created.map(r=>r._id),contractVersion:"2.0.0"};
+ for(const item of batch.records){
+  next.mappings[batch.batchId+"#"+item.candidateId]={canonicalId:mapping.get(item.candidateId),batchId:batch.batchId,contentDigest:sha(item.entity)};
+  if(item.sourceItemKey&&!next.sourceMappings[item.sourceItemKey])
+   next.sourceMappings[item.sourceItemKey]={canonicalId:mapping.get(item.candidateId),contentDigest:sha(item.entity),firstBatchId:batch.batchId};
+ }
+ next.batches[batch.batchId]={digest,recordIds:batch.records.map(item=>mapping.get(item.candidateId)),contractVersion:"2.0.0"};
  next.records.push(...created);
  next.history.push({action:"batch_prepared",batchId:batch.batchId,digest,recordIds:created.map(r=>r._id)});
- return {state:next,report:{status:"prepared",batchId:batch.batchId,digest,issues:[],duplicates,missingEvidence,reviewQueue,publicationEligible:false,recordIds:created.map(r=>r._id)}};
+ return {state:next,report:{status:"prepared",batchId:batch.batchId,digest,issues:[],duplicates,missingEvidence,reviewQueue,publicationEligible:false,recordIds:batch.records.map(item=>mapping.get(item.candidateId)),reusedCount:reused.size}};
 }
