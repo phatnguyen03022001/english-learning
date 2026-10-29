@@ -36,6 +36,15 @@ not a verified sense-to-sense relationship.
 - Typed entity references and audit references, UUIDv7 / inactive mwe_ via Ajv,
   duplicate IDs, live references to retired entities, EN/VI sense-to-entry ownership.
 - Relation endpoint signature and cycle policy come from registry relationTypes[].
+  Sense-to-sense lexical relations are monolingual: resolve the owning LexicalEntry
+  of both endpoints and compare BCP 47 primary language subtags (e.g. en/en-GB).
+  A mismatch emits `RELATION_LANGUAGE_MISMATCH` on the relation's `targetId`.
+  Missing or retired endpoints/parents preserve their own reference/lifecycle diagnostics;
+  no speculative language error is emitted without two active resolved entries.
+  This restriction does not apply to entry-to-entry `DERIVED_FROM` in V1;
+  its linguistic validity still requires independent evidence.
+  English–Vietnamese sense linkage remains directional `TranslationEquivalence`,
+  whose existing V1 source language rule is unchanged.
   Symmetric ASCII ID order, semantic duplicate detection and self-loop blocking;
   per-type DFS cycle detection for topology and cyclePolicy=reject, no generic DAG.
 - Qualifier keys use registry field order, Unicode NFC, preserving Vietnamese accents,
