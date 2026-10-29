@@ -63,7 +63,7 @@ for (const pilot of pilots) {
     const e=pilot.modelExpectations;
     assert.equal(recordsOf(pilot,"lex").length,e.entryCount);
     assert.equal(recordsOf(pilot,"sns").length,e.senseCount);
-    assert.deepEqual(recordsOf(pilot,"lex").map(x=>x.homographNumber).filter(Boolean).sort(),e.homographNumbers);
+    assert.deepEqual(recordsOf(pilot,"lex").map(x=>x.homographNumber).filter(Boolean).sort(),e.homographNumbers ?? []);
     assert.deepEqual(recordsOf(pilot,"eqv").map(x=>x.alignmentMode).sort(),[...e.equivalenceModes].sort());
     if(e.familyCount!==undefined) assert.equal(recordsOf(pilot,"fam").length,e.familyCount);
     if(e.constructionCount!==undefined) assert.equal(recordsOf(pilot,"con").length,e.constructionCount);
