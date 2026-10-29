@@ -87,11 +87,22 @@ test("reverse VI-to-EN symmetric antonym (canonical ASCII order) rejects languag
 });
 test("language variants sharing primary subtag do not trigger false positives", () => {
   const data=dataset();
+  // Isolate LexicalRelation from the base fixture's TranslationEquivalence,
+  // whose V1 contract separately requires source.language exactly "en".
+  data.records=data.records.filter(x=>!x._id.startsWith("eqv_"));
   data.records.find(x=>x._id===id("lex",1)).language="en-GB";
   data.records.find(x=>x._id===id("lex",2)).language="en-US";
   addRelation(data,"SYNONYM_OF",enA,enB);
   const result=validateDataset(data);
   assert.equal(result.valid,true,JSON.stringify(result.issues));
+});
+test("bilingual V1 en_to_vi contract still rejects a regional source language tag", () => {
+  const data=dataset();
+  data.records.find(x=>x._id===id("lex",1)).language="en-GB";
+  const result=validateDataset(data);
+  assert.ok(diagnostic(result,"BILINGUAL_LANGUAGE_MISMATCH",id("eqv",1),"sourceSenseId"),
+    JSON.stringify(result.issues));
+  assert.equal(result.publication.eligible,false);
 });
 test("English-to-Vietnamese sense_aligned TranslationEquivalence remains valid", () => {
   const data=dataset();
