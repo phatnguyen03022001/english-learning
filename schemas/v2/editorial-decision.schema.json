@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/editorial-decision.schema.json",
+  "title": "EditorialDecision",
+  "version": "2.0.0",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/id_dec"
+    },
+    "schemaVersion": {
+      "const": "2.0.0"
+    },
+    "lifecycleStatus": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/lifecycleStatus"
+    },
+    "editorialStatus": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/editorialStatus"
+    },
+    "evidenceIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/id_evd"
+      },
+      "uniqueItems": true
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "retirementMode": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/retirementMode"
+    },
+    "retiredByDecisionId": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/id_dec"
+    },
+    "supersededByIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/activeV1Id"
+      },
+      "uniqueItems": true
+    },
+    "subjectIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/activeV1Id"
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "issueType": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/issueType"
+    },
+    "outcome": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/decisionOutcome"
+    },
+    "reviewerId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewedAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "action": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/senseDecisionAction"
+    },
+    "entryId": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/id_lex"
+    },
+    "previousSenseIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/id_sns"
+      },
+      "uniqueItems": true
+    },
+    "proposedSenseIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/id_sns"
+      },
+      "uniqueItems": true
+    },
+    "supersedesDecisionId": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/id_dec"
+    },
+    "affectedEdges": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/id_rel"
+      },
+      "uniqueItems": true
+    },
+    "role": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/editorialRole"
+    },
+    "appointmentReference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decisionEffect": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/decisionEffect"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "subjectId": {
+            "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/activeV1Id"
+          },
+          "fieldPath": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "subjectId",
+          "fieldPath"
+        ],
+        "additionalProperties": false
+      },
+      "uniqueItems": true
+    },
+    "transitionAudit": {
+      "type": "object",
+      "properties": {
+        "beforeRevision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "afterRevision": {
+          "type": "integer",
+          "minimum": 2
+        },
+        "beforeDigest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "afterDigest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "successorCreationReferences": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "incomingEdges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "edgeId": {
+                "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/id_rel"
+              },
+              "resolution": {
+                "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/edgeResolution"
+              },
+              "targetId": {
+                "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/activeV1Id"
+              },
+              "decisionId": {
+                "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/id_dec"
+              }
+            },
+            "required": [
+              "edgeId",
+              "resolution",
+              "decisionId"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "beforeRevision",
+        "afterRevision",
+        "beforeDigest",
+        "afterDigest",
+        "incomingEdges"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "_id",
+    "schemaVersion",
+    "lifecycleStatus",
+    "editorialStatus",
+    "subjectIds",
+    "issueType",
+    "outcome",
+    "reviewerId",
+    "rationale"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycleStatus": {
+            "const": "active"
+          }
+        },
+        "required": [
+          "lifecycleStatus"
+        ]
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "retirementMode"
+              ]
+            },
+            {
+              "required": [
+                "retiredByDecisionId"
+              ]
+            },
+            {
+              "required": [
+                "supersededByIds"
+              ]
+            }
+          ]
+        }
+      },
+      "else": {
+        "required": [
+          "retirementMode",
+          "retiredByDecisionId",
+          "supersededByIds"
+        ]
+      }
+    }
+  ]
+}
