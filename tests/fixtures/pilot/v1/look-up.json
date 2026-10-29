@@ -1,0 +1,110 @@
+{
+  "caseId": "look-up",
+  "focus": "Lexicalized phrasal verb lex_ multiword; separable construction, never mwe_ or separate look-it-up entry",
+  "editorialStatus": "synthetic_unreviewed",
+  "records": [
+    {
+      "_id": "lex_01940000-0000-7000-8000-000000000601",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "look up",
+      "pos": "VERB",
+      "entryKind": "multiword",
+      "multiwordKind": "phrasal_verb"
+    },
+    {
+      "_id": "sns_01940000-0000-7000-8000-000000000601",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000601",
+      "definition": "Find information in a reference source (illustrative meaning)."
+    },
+    {
+      "_id": "con_01940000-0000-7000-8000-000000000601",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "senseId": "sns_01940000-0000-7000-8000-000000000601",
+      "constructionType": "phrasal_particle",
+      "pattern": "look + object + up / look up + NP",
+      "separable": true,
+      "complements": [
+        "object noun phrase or pronoun"
+      ],
+      "constraints": [
+        "with object pronoun, look it up is the modeled order",
+        "look up it is not a licensed pattern in this fixture"
+      ]
+    },
+    {
+      "_id": "eqv_01940000-0000-7000-8000-000000000601",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000601",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "glossVi": "tra cứu",
+      "equivalenceType": "approximate",
+      "evidenceIds": [],
+      "context": "reference-source lookup"
+    }
+  ],
+  "modelExpectations": {
+    "entryCount": 1,
+    "senseCount": 1,
+    "multiwordCount": 1,
+    "constructionCount": 1,
+    "equivalenceModes": [
+      "gloss_only"
+    ],
+    "forbiddenEntryLemmas": [
+      "look it up",
+      "look up it"
+    ]
+  },
+  "contrastiveExamples": [
+    {
+      "en": "Look up the word.",
+      "vi": "Hãy tra cứu từ đó.",
+      "status": "editor-created illustration"
+    },
+    {
+      "en": "Look it up.",
+      "vi": "Hãy tra cứu nó.",
+      "status": "editor-created illustration"
+    },
+    {
+      "en": "Look up it.",
+      "vi": "Candidate ungrammatical pronoun placement; editorial contrast only.",
+      "status": "editor-created negative candidate"
+    }
+  ],
+  "negativeCases": [
+    {
+      "name": "construction-missing-sense",
+      "expectedCode": "REFERENCE_NOT_FOUND",
+      "stage": "graph",
+      "removeIds": [
+        "sns_01940000-0000-7000-8000-000000000601"
+      ]
+    },
+    {
+      "name": "inactive-mwe-entity",
+      "expectedCode": "SCHEMA_INVALID",
+      "stage": "schema",
+      "add": [
+        {
+          "_id": "mwe_01940000-0000-7000-8000-000000000601",
+          "schemaVersion": "1.0.0",
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "lemma": "look it up"
+        }
+      ]
+    }
+  ]
+}
