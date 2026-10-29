@@ -1,0 +1,36 @@
+name: Phase 2 JSON Schema Conformance
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/schema-conformance.yml"
+      - "package.json"
+      - "scripts/generate-schemas.mjs"
+      - "schemas/v1/**"
+      - "tests/schema-conformance.test.mjs"
+      - "tests/fixtures/schema/v1/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: schema-v1-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  schema-conformance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out exact commit
+        uses: actions/checkout@v4
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install pinned Ajv
+        run: npm install --no-package-lock --ignore-scripts --no-audit --no-fund
+      - name: Run registry drift and Ajv fixture tests
+        run: npm test
