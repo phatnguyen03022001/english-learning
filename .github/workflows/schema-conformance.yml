@@ -1,4 +1,4 @@
-name: Phase 2–5 Dictionary Quality & Integrity
+name: Phase 2–6 Dictionary Quality & Integrity
 
 on:
   workflow_dispatch:
@@ -8,8 +8,14 @@ on:
       - ".github/workflows/schema-conformance.yml"
       - "package.json"
       - "scripts/generate-schemas.mjs"
+      - "scripts/generate-schemas-v2.mjs"
       - "schemas/v1/**"
       - "validators/**"
+      - "pipeline/**"
+      - "schemas/v2/**"
+      - "tests/production/**"
+      - "tests/fixtures/production/**"
+      - "docs/lexical-production-contract.md"
       - "tests/schema-conformance.test.mjs"
       - "tests/graph-integrity.test.mjs"
       - "tests/fixtures/schema/v1/**"
