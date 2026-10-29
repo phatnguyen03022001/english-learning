@@ -10,7 +10,7 @@ const id=(p,n)=>p+"_01940000-0000-7000-8000-"+n.toString(16).padStart(12,"0");
 const draft=(extra)=>({lifecycleStatus:"active",editorialStatus:"draft",...extra});
 const payload=(lemma,batchId="accent-batch")=>({batchId,records:[{candidateId:"e",entity:draft({language:"vi",lemma,pos:"NOUN",entryKind:"word"})}]});
 test("canonical NFC for Vietnamese lemma retains accents and idempotent composed/decomposed replay",()=>{
- const a=prepareBatch(payload("tie\u0301ng"),{});
+ const a=prepareBatch(payload("tie\u0302\u0301ng"),{});
  assert.equal(a.report.status,"prepared",JSON.stringify(a.report.issues));
  assert.equal(a.state.records[0].lemma,"tiếng");
  const b=prepareBatch(payload("tiếng"),a.state);
