@@ -23,7 +23,10 @@ export function validateLifecycleV2(records){
     if(!affected.has(edgeId))issues.push(diag("LIFECYCLE_INCOMING_EDGE_UNRESOLVED",decision._id,"transitionAudit/incomingEdges","Incoming edge "+edgeId+" has no explicit adjudication"));
    }
   }
+  const seenEdges=new Set();
   for(const item of decision.transitionAudit?.incomingEdges??[]){
+   if(seenEdges.has(item.edgeId))issues.push(diag("LIFECYCLE_EDGE_DUPLICATE",decision._id,"transitionAudit/incomingEdges","Same edge has multiple resolutions"));
+   seenEdges.add(item.edgeId);
    if(item.decisionId!==decision._id)issues.push(diag("LIFECYCLE_EDGE_DECISION_MISMATCH",decision._id,"transitionAudit/incomingEdges","Incoming edge references another decision"));
    if(item.resolution==="reattached"&&!item.targetId)issues.push(diag("LIFECYCLE_EDGE_TARGET_MISSING",decision._id,"transitionAudit/incomingEdges","Reattached edge requires explicit target"));
    if(!byId.has(item.edgeId))issues.push(diag("LIFECYCLE_EDGE_HISTORY_MISSING",decision._id,"transitionAudit/incomingEdges","Recorded edge is absent from current snapshot; historical proof is required"));
