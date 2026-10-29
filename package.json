@@ -8,7 +8,8 @@
   "scripts": {
     "schema:generate": "node scripts/generate-schemas.mjs",
     "schema:check": "node scripts/generate-schemas.mjs --check",
-    "test": "npm run schema:check && node --test tests/schema-conformance.test.mjs tests/graph-integrity.test.mjs tests/pilot-fixtures.test.mjs"
+    "test": "npm run schema:check && node --test tests/schema-conformance.test.mjs tests/graph-integrity.test.mjs tests/pilot-fixtures.test.mjs tests/stress/lexical-quality.test.mjs tests/stress/graph-scale.test.mjs",
+    "test:stress": "node --test tests/stress/lexical-quality.test.mjs tests/stress/graph-scale.test.mjs"
   },
   "devDependencies": {
     "ajv": "8.17.1"
