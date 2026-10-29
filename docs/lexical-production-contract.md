@@ -42,6 +42,7 @@ npm run candidates:prepare -- --input candidate-batch.json --state .draft/state.
 npm run candidates:prepare -- --input candidate-batch.json --state .draft/state.json
 npm run candidates:check -- --state .draft/state.json
 npm run candidates:revise -- --input draft-revision.json --state .draft/state.json
+npm run candidates:promote -- --input gated-promotion.json --state .draft/state.json --dry-run
 npm run test:production
 ```
 
@@ -85,3 +86,20 @@ CLI `prepare` reports `status`, batch digest, canonical record IDs, possible dup
 inventory, missing evidence IDs, review queue, and `publicationEligible:false`.
 `check` returns schema/graph storage diagnostics separately from publication issues.
 Drafts are intentionally not independently reviewed or publication-ready.
+
+## Explicit promotion boundary
+
+A promotion request contains a permanent `promotionId` and
+`subjects: [{"canonicalId":"lex_<existing-uuidv7>","expectedRevision":1}]`.
+`promoteCandidates` builds a **temporary** verified snapshot, checks storage/graph
+and then `evaluatePublication` over selected subjects and dependencies, using
+independently verified owner appointments, claim evidence and source rights.
+Only if every gate succeeds does it atomically persist the verified status,
+revision increments and complete before/after history. Failed promotion is
+recoverable with no ledger mutation; stale CAS and changed promotion IDs conflict.
+The production CLI intentionally **does not have** trusted appointment/evidence/
+rights verification providers; `candidates:promote` must return BLOCKED rather
+than issue self-approvals. The pure module supports a future owner-authorized,
+trust-backed integration. Mock trust providers in tests prove only behavior, not
+genuine editorial or legal approval. No published dictionary content results from
+these synthetic tests.
