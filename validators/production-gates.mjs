@@ -62,11 +62,16 @@ export function evaluatePublication(records, options={}) {
   if(!evidence.some(ev=>rights(byId.get(ev.sourceId),options.usageScope??"dictionary_publication")))
    add("SOURCE_RIGHTS_UNVERIFIED",id,"evidenceIds","No authenticated rights approval for intended reuse");
   const reviews=(reviewBySubject.get(id)??[]).filter(item=>
-   record.evidenceIds?.some(e=>evidence.some(ev=>ev._id===e))&&
+   // Subject-only reviews are not claim-specific. Exact field path matters.
+   evidence.some(ev=>ev.claim.fieldPath===item.fieldPath)&&
+   item.review.subjectIds?.includes(id)&&
    authorize(item.review.reviewerId,item.review.role,item.review.appointmentReference,id));
   if(!reviews.length)add("REVIEW_SCOPE_MISSING",id,"editorialStatus","No authorized accepted claim-specific review");
   if(!reviews.some(x=>x.review.role==="lead_editorial"))
    add("LER_AUTHORITY_UNVERIFIED",id,"editorialStatus","No independently authenticated scoped LER appointment");
+  const specialty=id.startsWith("eqv_")?"bilingual":id.startsWith("con_")||reviews.some(x=>x.fieldPath.startsWith("/grammar"))?"grammar":"linguistic";
+  if(!reviews.some(x=>x.review.role===specialty||x.review.role==="lead_editorial"))
+   add("SPECIALIST_REVIEW_MISSING",id,"editorialStatus","No authorized review with appropriate lexical scope");
   if(record._id.startsWith("eqv_")&&record.alignmentMode==="sense_aligned"){
    for(const senseId of [record.sourceSenseId,record.targetSenseId]){
     const sense=byId.get(senseId);

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import {readFileSync,writeFileSync,mkdirSync,renameSync,rmSync} from "node:fs";
+import {readFileSync,writeFileSync,mkdirSync,renameSync,rmSync,openSync,closeSync,unlinkSync} from "node:fs";
 import {dirname,resolve} from "node:path";
 import {randomBytes} from "node:crypto";
 import {prepareBatch} from "../pipeline/prepare-batch.mjs";
@@ -9,9 +9,16 @@ const opt=name=>{const n=args.indexOf(name);return n<0?null:args[n+1];};
 const dryRun=args.includes("--dry-run");
 const statePath=resolve(opt("--state")??".draft/candidates-state.json");
 const load=path=>JSON.parse(readFileSync(path,"utf8"));
-const state=(()=>{try{return load(statePath)}catch(e){if(e.code==="ENOENT")return {};throw e;}})();
+let lockFd;
 let output;
 try{
+ if(op==="prepare"&&!dryRun){
+  mkdirSync(dirname(statePath),{recursive:true});
+  // Exclusive lock acquired before reading state prevents lost updates.
+  // A stale lock must be reconciled manually rather than silently stolen.
+  lockFd=openSync(statePath+".lock","wx",0o600);
+ }
+ const state=(()=>{try{return load(statePath)}catch(e){if(e.code==="ENOENT")return {};throw e;}})();
  if(op==="check"){
   const result=validateDatasetV2(state.records??[]);
   output={status:result.valid?"valid":"invalid",storageValid:result.valid,issues:result.issues,publication:result.publication};
@@ -31,3 +38,4 @@ try{
  console.log(JSON.stringify(output,null,2));
  if(output.status==="conflict"||output.status==="invalid")process.exitCode=1;
 }catch(e){console.error(JSON.stringify({status:"error",message:e.message}));process.exitCode=1;}
+finally{if(lockFd!==undefined){closeSync(lockFd);unlinkSync(statePath+".lock");}}

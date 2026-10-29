@@ -41,6 +41,14 @@ export function validateDatasetV2(input,options={}) {
   for(const field of ["pronunciationEvidenceIds"])if(r[field])r[field].forEach((id,i)=>ref(r,field+"/"+i,id,"evd"));
   for(const [i,ex]of (r.examples??[]).entries())for(const [j,id]of (ex.evidenceIds??[]).entries())ref(r,"examples/"+i+"/evidenceIds/"+j,id,"evd");
  }
+ for(const r of records.filter(r=>r._id.startsWith("dec_")&&r.decisionEffect)){
+  const isTransition=["split","merge","duplicate_reconciliation","invalidate"].includes(r.action);
+  if((isTransition&&r.decisionEffect!=="lifecycle_transition")||
+     (r.action==="retain"&&r.decisionEffect!=="non_transition"))
+   extra.push(issue("DECISION_EFFECT_MISMATCH",r._id,"decisionEffect","Decision effect contradicts the stated action"));
+  if(r.decisionEffect==="lifecycle_transition"&&!r.transitionAudit)
+   extra.push(issue("LIFECYCLE_AUDIT_INCOMPLETE",r._id,"transitionAudit","Transition requires evidence and incoming-edge inventory"));
+ }
  const all=[...graph.issues,...extra].sort(sort);
  const publication=evaluatePublication(records,options);
  const selected=options.publication===true?[...all,...publication.issues].sort(sort):all;
