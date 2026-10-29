@@ -1,0 +1,101 @@
+{
+  "registryVersion": "2.0.0",
+  "baseVersion": "1.0.0",
+  "enums": {
+    "countability": [
+      "countable",
+      "uncountable",
+      "both",
+      "unknown"
+    ],
+    "transitivity": [
+      "transitive",
+      "intransitive",
+      "ambitransitive",
+      "unknown"
+    ],
+    "complementType": [
+      "noun_phrase",
+      "prepositional_phrase",
+      "clause",
+      "gerund",
+      "to_infinitive",
+      "bare_infinitive",
+      "adjective_phrase",
+      "other"
+    ],
+    "pronounPlacement": [
+      "before_particle",
+      "after_particle",
+      "either",
+      "not_applicable",
+      "unknown"
+    ],
+    "separability": [
+      "separable",
+      "inseparable",
+      "not_applicable",
+      "unknown"
+    ],
+    "exampleType": [
+      "editorial_original",
+      "licensed_corpus_attestation",
+      "synthetic_test",
+      "unverified_candidate"
+    ],
+    "translationEvidenceStatus": [
+      "unreviewed",
+      "evidence_pending",
+      "independently_reviewed"
+    ],
+    "evidenceReviewStatus": [
+      "unreviewed",
+      "accepted",
+      "disputed",
+      "rejected"
+    ],
+    "sourceRightsStatus": [
+      "unknown",
+      "reference_only",
+      "permission_required",
+      "redistributable"
+    ],
+    "sourceType": [
+      "dictionary",
+      "corpus",
+      "academic",
+      "editorial_original",
+      "other"
+    ],
+    "claimSpecificity": [
+      "exact_value",
+      "contextual_support",
+      "general_reference"
+    ],
+    "sourceIndependence": [
+      "unestablished",
+      "independent_reviewed",
+      "dependent",
+      "ai_generated"
+    ],
+    "editorialRole": [
+      "linguistic",
+      "grammar",
+      "bilingual",
+      "rights",
+      "lead_editorial",
+      "data_integrity"
+    ],
+    "edgeResolution": [
+      "retained",
+      "reattached",
+      "retired",
+      "disputed"
+    ],
+    "decisionEffect": [
+      "non_transition",
+      "lifecycle_transition",
+      "superseded"
+    ]
+  }
+}
