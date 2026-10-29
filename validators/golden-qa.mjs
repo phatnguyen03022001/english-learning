@@ -16,10 +16,10 @@ export function assessGoldenQA(benchmark,submissions=[],options={}){
   if(byCase.has(s.caseId))issues.push({code:"GOLDEN_QA_DUPLICATE_SUBMISSION",caseId:s.caseId});
   else byCase.set(s.caseId,s);
  }
- const expected=new Set(benchmark.families.map(f=>f.pilotFile.replace(/\\.json$/,"")));
+ const expected=new Set(benchmark.families.map(f=>f.pilotFile.replace(/\.json$/,"")));
  for(const id of byCase.keys())if(!expected.has(id))issues.push({code:"GOLDEN_QA_UNKNOWN_FAMILY",caseId:id});
  for(const family of benchmark.families){
-  const caseId=family.pilotFile.replace(/\\.json$/,""),submission=byCase.get(caseId);
+  const caseId=family.pilotFile.replace(/\.json$/,""),submission=byCase.get(caseId);
   let status="pending";
   if(submission){
    const answers=submission.dimensions??{};
