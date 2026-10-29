@@ -1036,5 +1036,45 @@
       }
     ],
     "targetId": "sns_01940000-0000-7000-8000-000000000010"
+  },
+  {
+    "name": "publication-review-missing",
+    "expectedCode": "PUBLICATION_REVIEW_MISSING",
+    "publication": true,
+    "targetId": "sns_01940000-0000-7000-8000-000000000001",
+    "patches": [
+      {
+        "id": "sns_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "editorialStatus": "verified",
+          "evidenceIds": [
+            "evd_01940000-0000-7000-8000-000000000001"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "accepted-review-is-not-ler-appointment",
+    "expectedCode": "INSUFFICIENT_EVIDENCE",
+    "publication": true,
+    "targetId": "sns_01940000-0000-7000-8000-000000000001",
+    "patches": [
+      {
+        "id": "sns_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "editorialStatus": "verified",
+          "evidenceIds": [
+            "evd_01940000-0000-7000-8000-000000000001"
+          ]
+        }
+      },
+      {
+        "id": "rev_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "outcome": "accepted"
+        }
+      }
+    ]
   }
 ]

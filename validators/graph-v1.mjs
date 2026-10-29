@@ -268,6 +268,12 @@ export function validateGraph(dataset, options = {}) {
             emit("INSUFFICIENT_EVIDENCE", record._id, "evidenceIds", "Source permission/licensing not verifiable", true);
         }
       }
+      const approvedReviews = [...byId.values()].filter(review =>
+        review._id.startsWith("rev_") && review.lifecycleStatus === "active" &&
+        review.outcome === "accepted" && review.subjectIds?.includes(record._id));
+      if (approvedReviews.length === 0)
+        emit("PUBLICATION_REVIEW_MISSING", record._id, "editorialStatus",
+          "No accepted editorial review addresses this claim", true);
       // V1 EditorialReview stores reviewerId, not an owner-appointed LER
       // appointment or an authenticated decision/rights-approval chain.
       emit("INSUFFICIENT_EVIDENCE", record._id, "editorialStatus",
