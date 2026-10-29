@@ -23,7 +23,17 @@
         "no independent source attestation",
         "no owner-appointed reviewer"
       ],
-      "acceptanceStatus": "candidate_only"
+      "acceptanceStatus": "candidate_only",
+      "requiredQaDimensions": [
+        "sense_boundary_accuracy",
+        "translation_fidelity",
+        "grammar_accuracy",
+        "idiomaticity",
+        "collocation_validity",
+        "learner_usefulness",
+        "evidence_sufficiency",
+        "license_compliance"
+      ]
     },
     {
       "pilotFile": "run.json",
@@ -43,7 +53,17 @@
         "no independent source attestation",
         "no owner-appointed reviewer"
       ],
-      "acceptanceStatus": "candidate_only"
+      "acceptanceStatus": "candidate_only",
+      "requiredQaDimensions": [
+        "sense_boundary_accuracy",
+        "translation_fidelity",
+        "grammar_accuracy",
+        "idiomaticity",
+        "collocation_validity",
+        "learner_usefulness",
+        "evidence_sufficiency",
+        "license_compliance"
+      ]
     },
     {
       "pilotFile": "analyse-family.json",
@@ -63,7 +83,17 @@
         "no independent source attestation",
         "no owner-appointed reviewer"
       ],
-      "acceptanceStatus": "candidate_only"
+      "acceptanceStatus": "candidate_only",
+      "requiredQaDimensions": [
+        "sense_boundary_accuracy",
+        "translation_fidelity",
+        "grammar_accuracy",
+        "idiomaticity",
+        "collocation_validity",
+        "learner_usefulness",
+        "evidence_sufficiency",
+        "license_compliance"
+      ]
     },
     {
       "pilotFile": "big-large.json",
@@ -83,7 +113,17 @@
         "no independent source attestation",
         "no owner-appointed reviewer"
       ],
-      "acceptanceStatus": "candidate_only"
+      "acceptanceStatus": "candidate_only",
+      "requiredQaDimensions": [
+        "sense_boundary_accuracy",
+        "translation_fidelity",
+        "grammar_accuracy",
+        "idiomaticity",
+        "collocation_validity",
+        "learner_usefulness",
+        "evidence_sufficiency",
+        "license_compliance"
+      ]
     },
     {
       "pilotFile": "depend-on.json",
@@ -103,7 +143,17 @@
         "no independent source attestation",
         "no owner-appointed reviewer"
       ],
-      "acceptanceStatus": "candidate_only"
+      "acceptanceStatus": "candidate_only",
+      "requiredQaDimensions": [
+        "sense_boundary_accuracy",
+        "translation_fidelity",
+        "grammar_accuracy",
+        "idiomaticity",
+        "collocation_validity",
+        "learner_usefulness",
+        "evidence_sufficiency",
+        "license_compliance"
+      ]
     },
     {
       "pilotFile": "look-up.json",
@@ -123,7 +173,17 @@
         "no independent source attestation",
         "no owner-appointed reviewer"
       ],
-      "acceptanceStatus": "candidate_only"
+      "acceptanceStatus": "candidate_only",
+      "requiredQaDimensions": [
+        "sense_boundary_accuracy",
+        "translation_fidelity",
+        "grammar_accuracy",
+        "idiomaticity",
+        "collocation_validity",
+        "learner_usefulness",
+        "evidence_sufficiency",
+        "license_compliance"
+      ]
     }
   ]
 }

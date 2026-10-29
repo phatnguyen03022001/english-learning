@@ -12,8 +12,8 @@ Status is intentionally separated:
 
 `tests/fixtures/production/golden-candidates.json` covers six synthetic pilot families:
 `bank`, `run`, `analyse-family`, `big-large`, `depend-on`, `look-up`.
-Each includes learner risks, required review types, explicit evidence limitations and
-`pending_independent_review`. They are **candidate benchmarks**, not human-approved
+Each includes learner risks, required review types, **eight independent QA dimensions**,
+explicit evidence limitations and `pending_independent_review`. They are **candidate benchmarks**, not human-approved
 gold definitions, translations, grammar restrictions, corpus claims or licensed release
 content. Independently reviewed count: **0**. Approved-for-publication count: **0**.
 Pending family review count: **6**. Sense-by-sense accuracy, translation fidelity,
@@ -37,3 +37,13 @@ Blocking outside requirements: independently verified linguistic/translation/gra
 evidence, real owner-signed reviewer appointment and revocation provenance, legal
 rights assessment for each intended use, and a genuinely reviewed golden sample.
 Atlas deployment has not been authorized or attempted in Phase 6.
+
+## Independent benchmark acceptance procedure
+
+`assessGoldenQA` requires human-submitted, per-family review decisions for each
+of the eight axes, cited independent evidence, reviewer identity, an external
+authenticated review verifier and separate rights verification. A failed axis
+cannot be averaged out by other passes. Missing approvals remain pending;
+verified *linguistic QA* is **not publication permission** and must still pass
+the independent publication gate. No test-only mocked authority counts as a
+real review. The committed six families still have no submitted approvals.
