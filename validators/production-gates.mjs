@@ -47,7 +47,29 @@ export function evaluatePublication(records, options={}) {
  const add=(code,id,path,message)=>issues.push({code,entityId:id,path,message});
  const graph=validateGraph(records);
  for(const i of graph.issues)add(i.code,i.entityId,i.path,i.message);
- const published=records.filter(r=>!["src","evd","rev","dec"].includes(r._id?.split("_")[0]));
+
+ const publishable=r=>!["src","evd","rev","dec"].includes(r._id?.split("_")[0]);
+ const selectedIds=new Set();
+ if(options.subjectIds!==undefined){
+  if(!Array.isArray(options.subjectIds))add("PUBLICATION_SCOPE_INVALID","","subjectIds","Subject scope must be an array");
+  const stack=Array.isArray(options.subjectIds)?[...options.subjectIds]:[];
+  while(stack.length){
+   const id=stack.pop(),r=byId.get(id);
+   if(!r){add("PUBLICATION_SUBJECT_NOT_FOUND",String(id),"subjectIds","Unknown publication subject");continue;}
+   if(selectedIds.has(id))continue;
+   selectedIds.add(id);
+   const kind=r._id?.split("_")[0],refs=[];
+   if(kind==="sns"||kind==="frm"||kind==="ety")refs.push(r.entryId);
+   if(kind==="con")refs.push(r.senseId);
+   if(kind==="col")refs.push(r.anchorSenseId);
+   if(kind==="eqv")refs.push(r.sourceSenseId,r.targetSenseId);
+   if(kind==="rel")refs.push(r.sourceId,r.targetId);
+   if(kind==="lex")refs.push(...(r.familyIds??[]));
+   if(kind==="sns")refs.push(...(r.topicIds??[]),...(r.constructionIds??[]));
+   for(const ref of refs)if(ref)stack.push(ref);
+  }
+ }else for(const r of records)if(publishable(r))selectedIds.add(r._id);
+ const published=records.filter(r=>publishable(r)&&selectedIds.has(r._id));
  if(!published.length)add("NO_PUBLISHABLE_CLAIMS","","records","Nothing is eligible for publication");
  const reviewBySubject=new Map(), evidenceBySubject=new Map();
  for(const r of records){
@@ -114,7 +136,7 @@ export function evaluatePublication(records, options={}) {
    if(record.translationEvidenceStatus!=="independently_reviewed")add("TRANSLATION_UNREVIEWED",id,"translationEvidenceStatus","Bilingual fidelity lacks reviewed evidence");
   }
  }
- for(const sense of records.filter(r=>r._id?.startsWith("sns_"))){
+ for(const sense of records.filter(r=>r._id?.startsWith("sns_")&&selectedIds.has(r._id))){
   for(const [i,ex] of (sense.examples??[]).entries()){
    if(ex.editorialStatus==="verified"&&(!ex.evidenceIds?.length||ex.exampleType==="synthetic_test"||ex.exampleType==="unverified_candidate"))
     add("EXAMPLE_EVIDENCE_MISSING",sense._id,"examples/"+i,"Example provenance not sufficient for independent verification");
@@ -122,7 +144,7 @@ export function evaluatePublication(records, options={}) {
     add("EXAMPLE_TRANSLATION_UNREVIEWED",sense._id,"examples/"+i+"/vi","Translation has no independent approval");
   }
  }
- for(const d of records.filter(r=>r._id?.startsWith("dec_")&&r.decisionEffect==="lifecycle_transition")){
+ for(const d of records.filter(r=>r._id?.startsWith("dec_")&&r.decisionEffect==="lifecycle_transition"&&r.subjectIds?.some(id=>selectedIds.has(id)))){
   if(!d.transitionAudit?.incomingEdges)add("LIFECYCLE_AUDIT_INCOMPLETE",d._id,"transitionAudit","Historical edge adjudication required");
   if(!authorize(d.reviewerId,"lead_editorial",d.appointmentReference,d.subjectIds?.[0]))
    add("LIFECYCLE_AUTHORITY_UNVERIFIED",d._id,"reviewerId","Decision appointment not authenticated");
