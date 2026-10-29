@@ -8,7 +8,10 @@ const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const from=(p)=>JSON.parse(readFileSync(join(root,p),"utf8"));
 const registry=from("schemas/v1/vocabularies.json");
 const files=readdirSync(join(root,"schemas/v1")).filter(x=>x.endsWith(".schema.json")).sort();
-const ajv=new Ajv2020({strict:true,strictTypes:false,allErrors:true,validateFormats:false});
+// JSON Schema permits `required` in conditional branches that reuse root `properties`.
+// Ajv's strictRequired lint cannot always resolve properties across allOf/if/then;
+// keep all other strict checks active and test required/forbidden behavior via fixtures.
+const ajv=new Ajv2020({strict:true,strictRequired:false,strictTypes:false,allErrors:true,validateFormats:false});
 ajv.addKeyword({keyword:"version",schemaType:"string"});
 for(const filename of files) ajv.addSchema(from("schemas/v1/"+filename));
 const uri=(filename)=>"https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/"+filename;
