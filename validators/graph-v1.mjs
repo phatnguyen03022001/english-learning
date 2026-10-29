@@ -165,6 +165,21 @@ export function validateGraph(dataset, options = {}) {
         if (rule.symmetric && record.sourceId > record.targetId)
           emit("RELATION_NOT_CANONICAL", record._id, "sourceId", "Symmetric storage order must be ascending ASCII");
         if (source && target) {
+          // Registry-defined sense-to-sense edges are monolingual. Bilingual
+          // claims belong in TranslationEquivalence, never a LexicalRelation.
+          // Compare primary language subtags (en vs en-GB is compatible).
+          // Missing/retired parents or endpoints have their own reference
+          // diagnostics; do not add speculative language errors for them.
+          if (rule.sourceType === "LexicalSense" && rule.targetType === "LexicalSense" &&
+              source.lifecycleStatus === "active" && target.lifecycleStatus === "active") {
+            const sourceEntry = byId.get(source.entryId);
+            const targetEntry = byId.get(target.entryId);
+            if (sourceEntry?.lifecycleStatus === "active" && targetEntry?.lifecycleStatus === "active" &&
+                sourceEntry.language.split("-")[0] !== targetEntry.language.split("-")[0]) {
+              emit("RELATION_LANGUAGE_MISMATCH", record._id, "targetId",
+                "Sense-to-sense lexical relation requires compatible source and target languages");
+            }
+          }
           const [a, b] = rule.symmetric && record.sourceId > record.targetId
             ? [record.targetId, record.sourceId] : [record.sourceId, record.targetId];
           const key = JSON.stringify([record.relationType, a, b, qualifierKey(record.qualifiers)]);
