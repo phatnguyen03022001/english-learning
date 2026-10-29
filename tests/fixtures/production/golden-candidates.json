@@ -1,0 +1,129 @@
+{
+  "contractVersion": "2.0.0",
+  "kind": "candidate_benchmark",
+  "independentlyReviewedCount": 0,
+  "approvedForPublicationCount": 0,
+  "families": [
+    {
+      "pilotFile": "bank.json",
+      "reviewStatus": "pending_independent_review",
+      "publicationEligible": false,
+      "learnerRisks": [
+        "homograph division",
+        "contextual Vietnamese translation"
+      ],
+      "requiredReview": [
+        "sense_boundaries",
+        "translation_fidelity",
+        "grammar",
+        "license_and_attribution"
+      ],
+      "evidenceLimitations": [
+        "synthetic fixture",
+        "no independent source attestation",
+        "no owner-appointed reviewer"
+      ],
+      "acceptanceStatus": "candidate_only"
+    },
+    {
+      "pilotFile": "run.json",
+      "reviewStatus": "pending_independent_review",
+      "publicationEligible": false,
+      "learnerRisks": [
+        "polysemy and valency"
+      ],
+      "requiredReview": [
+        "sense_boundaries",
+        "translation_fidelity",
+        "grammar",
+        "license_and_attribution"
+      ],
+      "evidenceLimitations": [
+        "synthetic fixture",
+        "no independent source attestation",
+        "no owner-appointed reviewer"
+      ],
+      "acceptanceStatus": "candidate_only"
+    },
+    {
+      "pilotFile": "analyse-family.json",
+      "reviewStatus": "pending_independent_review",
+      "publicationEligible": false,
+      "learnerRisks": [
+        "family versus derivation"
+      ],
+      "requiredReview": [
+        "sense_boundaries",
+        "translation_fidelity",
+        "grammar",
+        "license_and_attribution"
+      ],
+      "evidenceLimitations": [
+        "synthetic fixture",
+        "no independent source attestation",
+        "no owner-appointed reviewer"
+      ],
+      "acceptanceStatus": "candidate_only"
+    },
+    {
+      "pilotFile": "big-large.json",
+      "reviewStatus": "pending_independent_review",
+      "publicationEligible": false,
+      "learnerRisks": [
+        "context-restricted near synonym"
+      ],
+      "requiredReview": [
+        "sense_boundaries",
+        "translation_fidelity",
+        "grammar",
+        "license_and_attribution"
+      ],
+      "evidenceLimitations": [
+        "synthetic fixture",
+        "no independent source attestation",
+        "no owner-appointed reviewer"
+      ],
+      "acceptanceStatus": "candidate_only"
+    },
+    {
+      "pilotFile": "depend-on.json",
+      "reviewStatus": "pending_independent_review",
+      "publicationEligible": false,
+      "learnerRisks": [
+        "required preposition"
+      ],
+      "requiredReview": [
+        "sense_boundaries",
+        "translation_fidelity",
+        "grammar",
+        "license_and_attribution"
+      ],
+      "evidenceLimitations": [
+        "synthetic fixture",
+        "no independent source attestation",
+        "no owner-appointed reviewer"
+      ],
+      "acceptanceStatus": "candidate_only"
+    },
+    {
+      "pilotFile": "look-up.json",
+      "reviewStatus": "pending_independent_review",
+      "publicationEligible": false,
+      "learnerRisks": [
+        "separability and pronoun placement"
+      ],
+      "requiredReview": [
+        "sense_boundaries",
+        "translation_fidelity",
+        "grammar",
+        "license_and_attribution"
+      ],
+      "evidenceLimitations": [
+        "synthetic fixture",
+        "no independent source attestation",
+        "no owner-appointed reviewer"
+      ],
+      "acceptanceStatus": "candidate_only"
+    }
+  ]
+}

@@ -11,7 +11,10 @@
     "test": "npm run schema:check && node --test tests/schema-conformance.test.mjs tests/graph-integrity.test.mjs tests/pilot-fixtures.test.mjs tests/stress/lexical-quality.test.mjs tests/stress/graph-scale.test.mjs tests/stress/relation-language.test.mjs && npm run test:production",
     "test:stress": "node --test tests/stress/lexical-quality.test.mjs tests/stress/graph-scale.test.mjs tests/stress/relation-language.test.mjs",
     "test:production": "node --test tests/production/*.test.mjs",
-    "schema:v2:generate": "node scripts/generate-schemas-v2.mjs"
+    "schema:v2:generate": "node scripts/generate-schemas-v2.mjs",
+    "candidates:validate": "node scripts/candidates.mjs validate",
+    "candidates:prepare": "node scripts/candidates.mjs prepare",
+    "candidates:check": "node scripts/candidates.mjs check"
   },
   "devDependencies": {
     "ajv": "8.17.1"
