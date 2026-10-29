@@ -28,6 +28,17 @@ Prefer the smallest correct solution. Never introduce a UI, API, authentication,
 - No writes to Atlas without an explicitly authorized, reviewed mutation plan identifying target project, database, collections, expected effects, and rollback/restore strategy. Never operate on other Atlas projects.
 - Prefer local, deterministic TypeScript/Node.js scripts for data validation and controlled imports if tooling is needed. No background service is required.
 
+### Binding policies (read before changing schemas or lexical data)
+
+The following documents are part of this operating contract and must be followed together:
+
+- [Stable identifiers, identity and supersession](docs/identity-policy.md)
+- [English–Vietnamese alignment and Vietnamese lexical entities](docs/bilingual-alignment.md)
+- [Sense division, lumping/splitting and migration](docs/sense-division.md)
+- [Lead editorial arbitration and publication decisions](docs/editorial-policy.md)
+
+These are **policy specifications**, not evidence that code, JSON Schema, MongoDB collections, or migrations already implement them. A conflict between these policies, a task, and existing data must be surfaced before mutation. The human owner authorizes scope; workers must not silently override policy.
+
 ## 4. Lexicographic domain model
 
 **Identity and sense are first-class.** The canonical conceptual units are:
@@ -46,7 +57,7 @@ Prefer the smallest correct solution. Never introduce a UI, API, authentication,
 - `LexicalRelation`: typed, directed, sense-scoped semantic edges (e.g., synonym, near-synonym, antonym, hypernym/hyponym), and entry-scoped morphological/etymological edges where appropriate.
 - `Evidence` / `Source` / `EditorialReview`: provenance, attestation, permission/license, reviewer decision, and version.
 
-Treat English and Vietnamese as distinct languages with their own semantics and grammar. Do not force one-to-one mappings.
+Treat English and Vietnamese as distinct languages with their own semantics and grammar. Do not force one-to-one mappings. **English-first is an ingestion/editorial priority, not an English-only data model**: reusable Vietnamese translations require real Vietnamese LexicalEntry/LexicalSense identities. A `gloss_only` translation contains a Vietnamese gloss but **no synthetic target sense**; a `sense_aligned` equivalence requires an existing target Vietnamese sense. Keep alignment mode separate from editorial verification. See [bilingual alignment](docs/bilingual-alignment.md).
 
 ## 5. Explicit taxonomy dimensions
 
@@ -71,7 +82,8 @@ Every record should support, **where applicable and evidenced**:
 
 - Use **versioned JSON contracts** for interchange and automated validation. JSON is a representation, not a requirement to embed the entire graph in one document.
 - Design MongoDB documents around real access patterns. Embed small, bounded, co-accessed values (e.g., a few forms); reference independently edited or unbounded entities and many-to-many edges. Avoid copying a relational schema into one collection per field.
-- Preserve stable IDs across imports; upserts must be idempotent and explicitly keyed. Never reassign a sense ID when meaning changes or use a lemma alone as the deduplication key.
+- **Canonical identity contract:** generate immutable lowercase `<type>_<UUIDv7>` IDs once (RFC 9562; e.g. `lex_`, `sns_`, `frm_`, `fam_`, `mrf_`, `top_`, `eqv_`, `rel_`). The full prefix registry and UUIDv7 validation rule are in [identity policy](docs/identity-policy.md). Never derive an ID from lemma, POS, spelling hash or sense index. Track homograph distinctions and deduplication candidates as separate attributes.
+- Preserve stable IDs across imports; upserts must be idempotent and explicitly keyed. No ID reuse. Retain retired IDs and typed supersession history on split/merge; a one-to-many split must **not** fan-out inbound relations automatically. Never reassign a sense ID when meaning changes or use a lemma alone as the deduplication key.
 - Keep relationships typed and endpoint-compatible. Validate referential integrity and graph invariants in scripts/tests: MongoDB does **not** enforce foreign keys across collections.
 - Prevent cycles where forbidden (e.g., hierarchical topic parent relations), orphan references, duplicated canonical IDs, contradictory relation direction, and malformed constructions.
 - Propose indexes only for evidenced query shapes; inspect existing indexes before adding new ones. Respect M0 Free constraints and 16 MB BSON document limit.
@@ -84,8 +96,9 @@ Every record should support, **where applicable and evidenced**:
 - Distinguish **reference-only** sources from **redistributable** sources. Do not bulk copy proprietary Oxford/Cambridge definitions, examples, pronunciation audio, CEFR labels, or corpus records without permission.
 - LLM output is a proposal, **never independent linguistic evidence**. Do not fake corpus frequencies, collocation strengths, CEFR levels, IELTS band labels, citations, or historical roots.
 - Compare senses by actual usage. Synonymy is sense- and context-dependent; near synonyms must not imply unrestricted substitution.
+- **Sense boundaries:** split on an evidenced, conventionalized semantic contrast; lump predictable contextual variations when a stable core meaning remains. Grammar frame, preposition, topic or register alone never mechanically determines a split. Every substantive split/merge/retain decision requires evidence, contrastive examples, an impact inventory and an editorial decision; see [sense division](docs/sense-division.md).
 - Examples should be original editorial examples or suitably licensed/attributed corpus attestations. If made up for illustration, label them accordingly.
-- Editorial states: `draft`, `provisional`, `verified`, `disputed`, `rejected`. Only publish `verified` data meeting agreed gates. Keep disagreement and uncertainty visible.
+- Editorial states: `draft`, `provisional`, `verified`, `disputed`, `rejected`. Only publish `verified` data meeting agreed gates. Keep disagreement and uncertainty visible. A verified Vietnamese gloss is **not** a verified sense-to-sense equivalence unless its target Vietnamese sense is actually modeled and verified. Unresolved disputed claims remain excluded from verified publication; unaffected verified claims may proceed independently.
 - Avoid using "IELTS 9.0 vocabulary" as a purported official fixed word list. CEFR and IELTS are not a deterministic one-to-one word-level conversion.
 
 ## 8. Worker responsibilities and handoffs
@@ -97,13 +110,15 @@ Specialists may be assigned independently with bounded, read-only scope:
 - **Morphology / Etymology / Topics:** word families, derivational chains, defensible morpheme segmentation, historical roots, controlled sense-level topic graph.
 - **Evidence / Licensing / Editorial QA:** verify claims, source/usage rights, provenance, release quality gates and disputed cases.
 - **Data Model / MongoDB:** propose JSON contracts, stable IDs, embeds vs references, indexes, safe migration and rollback; **read-only by default**.
-- **Integration writer (single):** reconcile approved proposals; implement only in authorized scope; run validations; commit/publish to `main`; report hashes and results.
+- **Lead Editorial Reviewer (LER):** owner-appointed final arbiter of **linguistic** disagreements (sense, valency, translation, usage). The LER cannot waive licensing or data-integrity blockers. If none is appointed, disputes remain unresolved and must not be marked verified.
+- **Integration writer (single):** reconcile approved proposals; implement only in authorized scope; run validations; commit/publish to `main`; report hashes and results. Git/Atlas write permission is **not** editorial approval authority; use the recorded LER decision when a claim is disputed.
+- **Conflict resolution:** document competing hypotheses, exact affected IDs, sources, decision (`accepted` | `rejected` | `deferred_pending_evidence`), rationale and audit trail. No invented calendar-time SLA or timeout-based acceptance. Follow [editorial arbitration](docs/editorial-policy.md).
 
 Every specialist handoff must include: **scope; inspected evidence and source paths; factual findings; proposed minimal change; affected IDs/collections; risks/open questions; acceptance tests**. Separate observed facts from recommendations and unverifiable hypotheses. Workers must not independently publish conflicting edits.
 
 ## 9. Task execution protocol
 
-1. **Inspect** target repo, current task, schema and data state. Verify facts before making assumptions.
+1. **Inspect** target repo, current task, schema and data state; read [identity](docs/identity-policy.md), [alignment](docs/bilingual-alignment.md), [sense division](docs/sense-division.md), and [editorial rules](docs/editorial-policy.md) where relevant. Verify facts before making assumptions.
 2. **State scope** and non-goals. If no schema exists yet, propose one without claiming it is already deployed.
 3. **Design smallest correct change** consistent with existing conventions; identify identity/evidence/compatibility implications.
 4. **Verify before mutation**: data rights, target namespace, preconditions, rollback, and expected result. Require explicit owner authorization for DB mutations or destructive/high-impact operations.
@@ -113,16 +128,16 @@ Every specialist handoff must include: **scope; inspected evidence and source pa
 
 ## 10. Mandatory quality gates for proposed data and schema
 
-- **Identity:** uniqueness/deduplication, homographs, forms vs entries vs senses correct.
+- **Identity:** UUIDv7 prefix/format, immutability, deduplication, homographs, forms vs entries vs senses correct; imports idempotent and no implicit split/merge redirects.
 - **Sense coverage:** no incompatible meanings blended; definitions do not rely solely on Vietnamese glosses.
-- **Bilingual correctness:** equivalence tied to the correct sense, context and register.
+- **Bilingual correctness:** equivalence tied to the correct sense, context and register; `gloss_only` never misrepresented as `sense_aligned`; Vietnamese sense endpoints exist and match language when present.
 - **Grammar:** required objects/prepositions and separability represented; incorrect substitutions rejected in tests.
 - **Morphology:** inflection vs derivation vs etymology separated; root segmentation evidence recorded.
 - **Graph:** valid endpoints, directions and relation types; no dangling IDs/cycles where prohibited.
 - **Topics:** hierarchy valid, sense-level mappings justified.
 - **Sources/legal:** permitted reuse, traceable source and clear uncertainty.
 - **Operational:** schema/version compatibility, deterministic import, idempotent re-run, safe partial failure, rollback/restore approach.
-- **Publication:** review decision attached; `verified` means all relevant gates passed, not "every optional field populated".
+- **Publication:** review decision attached; `verified` means all relevant gates passed, not "every optional field populated". Disputed claims require an appointed LER's recorded linguistic adjudication plus legal/data-integrity clearance before promotion.
 
 Test with polysemy (`bank`), high-sense-count words (`run`), word families (`analyse/analysis/analytical`), ambiguous synonymy (`big/large`), prepositional frames (`depend on`), and separable phrasal verbs (`look it up`, not `look up it`). These are **test-case suggestions**, not preverified lexical records.
 
@@ -130,7 +145,7 @@ Test with polysemy (`bank`), high-sense-count words (`run`), word families (`ana
 
 The Atlas `lexemes` collection was empty when checked. **No approved ontology, dataset, collection layout, migration, index plan, or ingestion pipeline is implied by its existence.**
 
-First deliverables, in order: (1) canonical ontology and domain invariants; (2) versioned JSON Schema plus valid/invalid fixtures; (3) deterministic validators and graph integrity tests; (4) licensed, manually reviewed pilot entries; (5) import strategy and authorized Atlas migration. Later expansion follows demonstrated needs.
+The four linked governance policies are documented; **they are not implemented validators**. Next deliverables, in order: (1) canonical ontology and domain invariants consistent with those policies; (2) versioned JSON Schema with positive/negative fixtures for ID format, alignment modes, sense transitions and dispute gates; (3) deterministic validators and graph integrity tests; (4) licensed, manually reviewed pilot entries; (5) import strategy and separately authorized Atlas migration. Later expansion follows demonstrated needs.
 
 Do **not** scaffold a web application, add unrelated infrastructure, bulk generate/import unverified vocabulary, or mutate/decommission existing Atlas resources as a side effect of documentation work.
 
