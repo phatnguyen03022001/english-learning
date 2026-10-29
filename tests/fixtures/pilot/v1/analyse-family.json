@@ -1,0 +1,139 @@
+{
+  "caseId": "analyse-family",
+  "focus": "Undirected family cluster without unproven DERIVED_FROM edges",
+  "editorialStatus": "synthetic_unreviewed",
+  "records": [
+    {
+      "_id": "fam_01940000-0000-7000-8000-000000000301",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "familyBasis": "editorially_related",
+      "label": "analyse / analysis / analytical (illustrative membership)"
+    },
+    {
+      "_id": "lex_01940000-0000-7000-8000-000000000301",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "analyse",
+      "pos": "VERB",
+      "entryKind": "word",
+      "familyIds": [
+        "fam_01940000-0000-7000-8000-000000000301"
+      ]
+    },
+    {
+      "_id": "lex_01940000-0000-7000-8000-000000000302",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "analysis",
+      "pos": "NOUN",
+      "entryKind": "word",
+      "familyIds": [
+        "fam_01940000-0000-7000-8000-000000000301"
+      ]
+    },
+    {
+      "_id": "lex_01940000-0000-7000-8000-000000000303",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "analytical",
+      "pos": "ADJ",
+      "entryKind": "word",
+      "familyIds": [
+        "fam_01940000-0000-7000-8000-000000000301"
+      ]
+    },
+    {
+      "_id": "sns_01940000-0000-7000-8000-000000000301",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000301",
+      "definition": "Examine something in detail (illustrative meaning)."
+    },
+    {
+      "_id": "sns_01940000-0000-7000-8000-000000000302",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000302",
+      "definition": "Detailed examination (illustrative meaning)."
+    },
+    {
+      "_id": "sns_01940000-0000-7000-8000-000000000303",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000303",
+      "definition": "Relating to careful analysis (illustrative meaning)."
+    }
+  ],
+  "modelExpectations": {
+    "entryCount": 3,
+    "senseCount": 3,
+    "homographNumbers": [],
+    "familyCount": 1,
+    "relationTypes": [],
+    "equivalenceModes": [],
+    "forbiddenEntryLemmas": []
+  },
+  "contrastiveExamples": [
+    {
+      "en": "We analyse the results.",
+      "vi": "Chúng tôi phân tích kết quả.",
+      "status": "editor-created illustration"
+    },
+    {
+      "en": "The analysis was detailed.",
+      "vi": "Bản phân tích rất chi tiết.",
+      "status": "editor-created illustration"
+    },
+    {
+      "en": "She took an analytical approach.",
+      "vi": "Cô ấy tiếp cận theo hướng phân tích.",
+      "status": "editor-created illustration"
+    }
+  ],
+  "negativeCases": [
+    {
+      "name": "missing-family",
+      "expectedCode": "REFERENCE_NOT_FOUND",
+      "stage": "graph",
+      "removeIds": [
+        "fam_01940000-0000-7000-8000-000000000301"
+      ]
+    },
+    {
+      "name": "fabricated-derivation-cycle",
+      "expectedCode": "CYCLE_DETECTED",
+      "stage": "graph",
+      "add": [
+        {
+          "_id": "rel_01940000-0000-7000-8000-000000000301",
+          "schemaVersion": "1.0.0",
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "relationType": "DERIVED_FROM",
+          "sourceId": "lex_01940000-0000-7000-8000-000000000301",
+          "targetId": "lex_01940000-0000-7000-8000-000000000302"
+        },
+        {
+          "_id": "rel_01940000-0000-7000-8000-000000000302",
+          "schemaVersion": "1.0.0",
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "relationType": "DERIVED_FROM",
+          "sourceId": "lex_01940000-0000-7000-8000-000000000302",
+          "targetId": "lex_01940000-0000-7000-8000-000000000301"
+        }
+      ]
+    }
+  ]
+}
