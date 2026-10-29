@@ -1,0 +1,475 @@
+[
+  {
+    "name": "uuidv4-rejected",
+    "schema": "lexical-entry.schema.json",
+    "data": {
+      "_id": "lex_123e4567-e89b-42d3-a456-426614174000",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "sample",
+      "pos": "NOUN",
+      "entryKind": "word"
+    },
+    "rule": "UUIDv7 version nibble required",
+    "keyword": "pattern"
+  },
+  {
+    "name": "wrong-entity-prefix",
+    "schema": "lexical-entry.schema.json",
+    "data": {
+      "_id": "sns_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "sample",
+      "pos": "NOUN",
+      "entryKind": "word"
+    },
+    "rule": "LexicalEntry ID must start lex_",
+    "keyword": "pattern"
+  },
+  {
+    "name": "inactive-mwe-prefix",
+    "schema": "lexical-entry.schema.json",
+    "data": {
+      "_id": "mwe_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "sample",
+      "pos": "NOUN",
+      "entryKind": "word"
+    },
+    "rule": "mwe_ reserved but inactive in V1",
+    "keyword": "pattern"
+  },
+  {
+    "name": "unregistered-prefix",
+    "schema": "lexical-entry.schema.json",
+    "data": {
+      "_id": "xyz_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "sample",
+      "pos": "NOUN",
+      "entryKind": "word"
+    },
+    "rule": "unregistered prefixes forbidden",
+    "keyword": "pattern"
+  },
+  {
+    "name": "multiword-kind-on-word",
+    "schema": "lexical-entry.schema.json",
+    "data": {
+      "_id": "lex_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "sample",
+      "pos": "NOUN",
+      "entryKind": "word",
+      "multiwordKind": "idiom"
+    },
+    "rule": "word cannot use multiwordKind",
+    "keyword": "not"
+  },
+  {
+    "name": "missing-required-lemma",
+    "schema": "lexical-entry.schema.json",
+    "data": {
+      "_id": "lex_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "pos": "NOUN",
+      "entryKind": "word"
+    },
+    "rule": "lemma required",
+    "keyword": "required"
+  },
+  {
+    "name": "unexpected-field",
+    "schema": "lexical-entry.schema.json",
+    "data": {
+      "_id": "lex_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "sample",
+      "pos": "NOUN",
+      "entryKind": "word",
+      "unapprovedMetadata": true
+    },
+    "rule": "additional fields forbidden",
+    "keyword": "additionalProperties"
+  },
+  {
+    "name": "invalid-entry-kind",
+    "schema": "lexical-entry.schema.json",
+    "data": {
+      "_id": "lex_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "sample",
+      "pos": "NOUN",
+      "entryKind": "sentence"
+    },
+    "rule": "entryKind registry only",
+    "keyword": "enum"
+  },
+  {
+    "name": "invalid-pos",
+    "schema": "lexical-entry.schema.json",
+    "data": {
+      "_id": "lex_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "sample",
+      "pos": "UNLISTED",
+      "entryKind": "word"
+    },
+    "rule": "lexicalEntryPos registry only",
+    "keyword": "enum"
+  },
+  {
+    "name": "invalid-editorial-status",
+    "schema": "lexical-entry.schema.json",
+    "data": {
+      "_id": "lex_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "published",
+      "language": "en",
+      "lemma": "sample",
+      "pos": "NOUN",
+      "entryKind": "word"
+    },
+    "rule": "editorialStatus registry only",
+    "keyword": "enum"
+  },
+  {
+    "name": "active-with-retirement",
+    "schema": "lexical-sense.schema.json",
+    "data": {
+      "_id": "sns_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "definition": "Illustrative meaning; not an attested dictionary claim.",
+      "retirementMode": "invalidated"
+    },
+    "rule": "active records cannot carry retirement metadata",
+    "keyword": "not"
+  },
+  {
+    "name": "split-successor-too-few",
+    "schema": "lexical-sense.schema.json",
+    "data": {
+      "_id": "sns_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "retired",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "definition": "Illustrative meaning; not an attested dictionary claim.",
+      "retirementMode": "semantic_split",
+      "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+      "supersededByIds": [
+        "sns_01940000-0000-7000-8000-000000000002"
+      ]
+    },
+    "rule": "semantic_split requires at least two successor senses",
+    "keyword": "minItems"
+  },
+  {
+    "name": "merge-successor-too-many",
+    "schema": "lexical-sense.schema.json",
+    "data": {
+      "_id": "sns_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "retired",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "definition": "Illustrative meaning; not an attested dictionary claim.",
+      "retirementMode": "semantic_merge",
+      "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+      "supersededByIds": [
+        "sns_01940000-0000-7000-8000-000000000002",
+        "sns_01940000-0000-7000-8000-000000000003"
+      ]
+    },
+    "rule": "semantic_merge has exactly one successor per retired source",
+    "keyword": "maxItems"
+  },
+  {
+    "name": "duplicate-successor-zero",
+    "schema": "lexical-sense.schema.json",
+    "data": {
+      "_id": "sns_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "retired",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "definition": "Illustrative meaning; not an attested dictionary claim.",
+      "retirementMode": "duplicate_reconciliation",
+      "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+      "supersededByIds": []
+    },
+    "rule": "duplicate_reconciliation must identify one canonical survivor",
+    "keyword": "minItems"
+  },
+  {
+    "name": "invalidated-with-successor",
+    "schema": "lexical-sense.schema.json",
+    "data": {
+      "_id": "sns_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "retired",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "definition": "Illustrative meaning; not an attested dictionary claim.",
+      "retirementMode": "invalidated",
+      "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+      "supersededByIds": [
+        "sns_01940000-0000-7000-8000-000000000002"
+      ]
+    },
+    "rule": "invalidated has no successor",
+    "keyword": "maxItems"
+  },
+  {
+    "name": "retired-missing-decision",
+    "schema": "lexical-sense.schema.json",
+    "data": {
+      "_id": "sns_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "retired",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "definition": "Illustrative meaning; not an attested dictionary claim.",
+      "retirementMode": "semantic_merge",
+      "supersededByIds": [
+        "sns_01940000-0000-7000-8000-000000000002"
+      ]
+    },
+    "rule": "retiredByDecisionId is mandatory for retired record",
+    "keyword": "required"
+  },
+  {
+    "name": "split-successor-wrong-prefix",
+    "schema": "lexical-sense.schema.json",
+    "data": {
+      "_id": "sns_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "retired",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "definition": "Illustrative meaning; not an attested dictionary claim.",
+      "retirementMode": "semantic_split",
+      "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+      "supersededByIds": [
+        "lex_01940000-0000-7000-8000-000000000001",
+        "sns_01940000-0000-7000-8000-000000000002"
+      ]
+    },
+    "rule": "sense successors must be sns_",
+    "keyword": "pattern"
+  },
+  {
+    "name": "gloss-with-target",
+    "schema": "translation-equivalence.schema.json",
+    "data": {
+      "_id": "eqv_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000001",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "glossVi": "nghĩa minh họa",
+      "equivalenceType": "approximate",
+      "evidenceIds": [],
+      "targetSenseId": "sns_01940000-0000-7000-8000-000000000002"
+    },
+    "rule": "gloss_only forbids targetSenseId",
+    "keyword": "not"
+  },
+  {
+    "name": "gloss-without-text",
+    "schema": "translation-equivalence.schema.json",
+    "data": {
+      "_id": "eqv_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000001",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "equivalenceType": "approximate",
+      "evidenceIds": []
+    },
+    "rule": "gloss_only requires glossVi",
+    "keyword": "required"
+  },
+  {
+    "name": "aligned-without-target",
+    "schema": "translation-equivalence.schema.json",
+    "data": {
+      "_id": "eqv_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000001",
+      "direction": "en_to_vi",
+      "alignmentMode": "sense_aligned",
+      "glossVi": "nghĩa minh họa",
+      "equivalenceType": "approximate",
+      "evidenceIds": []
+    },
+    "rule": "sense_aligned requires targetSenseId",
+    "keyword": "required"
+  },
+  {
+    "name": "aligned-target-wrong-prefix",
+    "schema": "translation-equivalence.schema.json",
+    "data": {
+      "_id": "eqv_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000001",
+      "direction": "en_to_vi",
+      "alignmentMode": "sense_aligned",
+      "glossVi": "nghĩa minh họa",
+      "equivalenceType": "approximate",
+      "evidenceIds": [],
+      "targetSenseId": "lex_01940000-0000-7000-8000-000000000001"
+    },
+    "rule": "aligned target must be sns_",
+    "keyword": "pattern"
+  },
+  {
+    "name": "eqv-invalid-direction",
+    "schema": "translation-equivalence.schema.json",
+    "data": {
+      "_id": "eqv_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000001",
+      "direction": "vi_to_en",
+      "alignmentMode": "gloss_only",
+      "glossVi": "nghĩa minh họa",
+      "equivalenceType": "approximate",
+      "evidenceIds": []
+    },
+    "rule": "direction must be in registry translationDirection",
+    "keyword": "enum"
+  },
+  {
+    "name": "relation-derived-with-sense-ids",
+    "schema": "lexical-relation.schema.json",
+    "data": {
+      "_id": "rel_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "relationType": "DERIVED_FROM",
+      "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+      "targetId": "sns_01940000-0000-7000-8000-000000000002"
+    },
+    "rule": "DERIVED_FROM expects lex_ endpoints",
+    "keyword": "oneOf"
+  },
+  {
+    "name": "relation-synonym-with-entry-endpoint",
+    "schema": "lexical-relation.schema.json",
+    "data": {
+      "_id": "rel_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "relationType": "SYNONYM_OF",
+      "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+      "targetId": "lex_01940000-0000-7000-8000-000000000001"
+    },
+    "rule": "SYNONYM_OF expects sns_ endpoints",
+    "keyword": "oneOf"
+  },
+  {
+    "name": "relation-unknown-type",
+    "schema": "lexical-relation.schema.json",
+    "data": {
+      "_id": "rel_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "relationType": "SIMILAR",
+      "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+      "targetId": "sns_01940000-0000-7000-8000-000000000002"
+    },
+    "rule": "relationType must be registered",
+    "keyword": "oneOf"
+  },
+  {
+    "name": "topic-parent-wrong-prefix",
+    "schema": "topic.schema.json",
+    "data": {
+      "_id": "top_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "label": "Illustrative topic",
+      "parentTopicId": "lex_01940000-0000-7000-8000-000000000001"
+    },
+    "rule": "parentTopicId expects top_",
+    "keyword": "anyOf"
+  },
+  {
+    "name": "evidence-assertion-inactive-mwe",
+    "schema": "evidence.schema.json",
+    "data": {
+      "_id": "evd_01940000-0000-7000-8000-000000000002",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceId": "src_01940000-0000-7000-8000-000000000001",
+      "assertionIds": [
+        "mwe_01940000-0000-7000-8000-000000000001"
+      ]
+    },
+    "rule": "polymorphic reference excludes mwe_",
+    "keyword": "pattern"
+  },
+  {
+    "name": "relation-unknown-qualifier",
+    "schema": "lexical-relation.schema.json",
+    "data": {
+      "_id": "rel_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "relationType": "SYNONYM_OF",
+      "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+      "targetId": "sns_01940000-0000-7000-8000-000000000002",
+      "qualifiers": {
+        "weight": 100
+      }
+    },
+    "rule": "qualifiers are registry-defined keys",
+    "keyword": "additionalProperties"
+  }
+]

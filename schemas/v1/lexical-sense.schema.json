@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/lexical-sense.schema.json",
+  "title": "LexicalSense",
+  "version": "1.0.0",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_sns"
+    },
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "lifecycleStatus": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/lifecycleStatus"
+    },
+    "editorialStatus": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/editorialStatus"
+    },
+    "evidenceIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_evd"
+      },
+      "uniqueItems": true
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "retirementMode": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/retirementMode"
+    },
+    "retiredByDecisionId": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_dec"
+    },
+    "supersededByIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/activeV1Id"
+      },
+      "uniqueItems": true
+    },
+    "entryId": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_lex"
+    },
+    "definition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "topicIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_top"
+      },
+      "uniqueItems": true
+    },
+    "register": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/register"
+    },
+    "usageNote": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "_id",
+    "schemaVersion",
+    "lifecycleStatus",
+    "editorialStatus",
+    "entryId",
+    "definition"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycleStatus": {
+            "const": "active"
+          }
+        },
+        "required": [
+          "lifecycleStatus"
+        ]
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "retirementMode"
+              ]
+            },
+            {
+              "required": [
+                "retiredByDecisionId"
+              ]
+            },
+            {
+              "required": [
+                "supersededByIds"
+              ]
+            }
+          ]
+        }
+      },
+      "else": {
+        "required": [
+          "retirementMode",
+          "retiredByDecisionId",
+          "supersededByIds"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycleStatus": {
+            "const": "retired"
+          },
+          "retirementMode": {
+            "const": "semantic_split"
+          }
+        },
+        "required": [
+          "lifecycleStatus",
+          "retirementMode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "supersededByIds": {
+            "items": {
+              "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_sns"
+            },
+            "minItems": 2
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycleStatus": {
+            "const": "retired"
+          },
+          "retirementMode": {
+            "const": "semantic_merge"
+          }
+        },
+        "required": [
+          "lifecycleStatus",
+          "retirementMode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "supersededByIds": {
+            "items": {
+              "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_sns"
+            },
+            "minItems": 1,
+            "maxItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycleStatus": {
+            "const": "retired"
+          },
+          "retirementMode": {
+            "const": "duplicate_reconciliation"
+          }
+        },
+        "required": [
+          "lifecycleStatus",
+          "retirementMode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "supersededByIds": {
+            "items": {
+              "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_sns"
+            },
+            "minItems": 1,
+            "maxItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycleStatus": {
+            "const": "retired"
+          },
+          "retirementMode": {
+            "const": "invalidated"
+          }
+        },
+        "required": [
+          "lifecycleStatus",
+          "retirementMode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "supersededByIds": {
+            "items": {
+              "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_sns"
+            },
+            "minItems": 0,
+            "maxItems": 0
+          }
+        }
+      }
+    }
+  ]
+}

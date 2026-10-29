@@ -1,0 +1,378 @@
+[
+  {
+    "name": "entry-word",
+    "schema": "lexical-entry.schema.json",
+    "data": {
+      "_id": "lex_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "sample",
+      "pos": "NOUN",
+      "entryKind": "word"
+    }
+  },
+  {
+    "name": "entry-multiword",
+    "schema": "lexical-entry.schema.json",
+    "data": {
+      "_id": "lex_01940000-0000-7000-8000-000000000002",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "sample expression",
+      "pos": "NOUN",
+      "entryKind": "multiword",
+      "multiwordKind": "fixed_expression"
+    }
+  },
+  {
+    "name": "sense",
+    "schema": "lexical-sense.schema.json",
+    "data": {
+      "_id": "sns_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "definition": "Illustrative meaning; not an attested dictionary claim."
+    }
+  },
+  {
+    "name": "sense-retired-split",
+    "schema": "lexical-sense.schema.json",
+    "data": {
+      "_id": "sns_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "retired",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "definition": "Illustrative meaning; not an attested dictionary claim.",
+      "retirementMode": "semantic_split",
+      "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+      "supersededByIds": [
+        "sns_01940000-0000-7000-8000-000000000002",
+        "sns_01940000-0000-7000-8000-000000000003"
+      ]
+    }
+  },
+  {
+    "name": "sense-retired-merge",
+    "schema": "lexical-sense.schema.json",
+    "data": {
+      "_id": "sns_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "retired",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "definition": "Illustrative meaning; not an attested dictionary claim.",
+      "retirementMode": "semantic_merge",
+      "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+      "supersededByIds": [
+        "sns_01940000-0000-7000-8000-000000000002"
+      ]
+    }
+  },
+  {
+    "name": "sense-duplicate-reconciliation",
+    "schema": "lexical-sense.schema.json",
+    "data": {
+      "_id": "sns_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "retired",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "definition": "Illustrative meaning; not an attested dictionary claim.",
+      "retirementMode": "duplicate_reconciliation",
+      "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+      "supersededByIds": [
+        "sns_01940000-0000-7000-8000-000000000002"
+      ]
+    }
+  },
+  {
+    "name": "sense-invalidated",
+    "schema": "lexical-sense.schema.json",
+    "data": {
+      "_id": "sns_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "retired",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "definition": "Illustrative meaning; not an attested dictionary claim.",
+      "retirementMode": "invalidated",
+      "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+      "supersededByIds": []
+    }
+  },
+  {
+    "name": "equivalence-gloss",
+    "schema": "translation-equivalence.schema.json",
+    "data": {
+      "_id": "eqv_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000001",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "glossVi": "nghĩa minh họa",
+      "equivalenceType": "approximate",
+      "evidenceIds": []
+    }
+  },
+  {
+    "name": "equivalence-disputed-gloss-storable-not-approved",
+    "schema": "translation-equivalence.schema.json",
+    "data": {
+      "_id": "eqv_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "disputed",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000001",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "glossVi": "nghĩa minh họa",
+      "equivalenceType": "approximate",
+      "evidenceIds": []
+    }
+  },
+  {
+    "name": "equivalence-verified-gloss-is-still-gloss",
+    "schema": "translation-equivalence.schema.json",
+    "data": {
+      "_id": "eqv_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "verified",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000001",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "glossVi": "nghĩa minh họa",
+      "equivalenceType": "approximate",
+      "evidenceIds": []
+    }
+  },
+  {
+    "name": "equivalence-aligned",
+    "schema": "translation-equivalence.schema.json",
+    "data": {
+      "_id": "eqv_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000001",
+      "direction": "en_to_vi",
+      "alignmentMode": "sense_aligned",
+      "equivalenceType": "approximate",
+      "evidenceIds": [],
+      "targetSenseId": "sns_01940000-0000-7000-8000-000000000002"
+    }
+  },
+  {
+    "name": "relation-synonym",
+    "schema": "lexical-relation.schema.json",
+    "data": {
+      "_id": "rel_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "relationType": "SYNONYM_OF",
+      "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+      "targetId": "sns_01940000-0000-7000-8000-000000000002"
+    }
+  },
+  {
+    "name": "relation-derivation",
+    "schema": "lexical-relation.schema.json",
+    "data": {
+      "_id": "rel_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "relationType": "DERIVED_FROM",
+      "sourceId": "lex_01940000-0000-7000-8000-000000000001",
+      "targetId": "lex_01940000-0000-7000-8000-000000000002"
+    }
+  },
+  {
+    "name": "relation-hypernym",
+    "schema": "lexical-relation.schema.json",
+    "data": {
+      "_id": "rel_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "relationType": "HYPERNYM_OF",
+      "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+      "targetId": "sns_01940000-0000-7000-8000-000000000002"
+    }
+  },
+  {
+    "name": "relation-part",
+    "schema": "lexical-relation.schema.json",
+    "data": {
+      "_id": "rel_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "relationType": "PART_OF",
+      "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+      "targetId": "sns_01940000-0000-7000-8000-000000000002"
+    }
+  },
+  {
+    "name": "topic-root",
+    "schema": "topic.schema.json",
+    "data": {
+      "_id": "top_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "label": "Illustrative topic",
+      "parentTopicId": null
+    }
+  },
+  {
+    "name": "topic-child",
+    "schema": "topic.schema.json",
+    "data": {
+      "_id": "top_01940000-0000-7000-8000-000000000002",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "label": "Illustrative topic",
+      "parentTopicId": "top_01940000-0000-7000-8000-000000000001"
+    }
+  },
+  {
+    "name": "construction",
+    "schema": "construction.schema.json",
+    "data": {
+      "_id": "con_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "senseId": "sns_01940000-0000-7000-8000-000000000001",
+      "constructionType": "valency",
+      "pattern": "sample + NP"
+    }
+  },
+  {
+    "name": "collocation",
+    "schema": "collocation.schema.json",
+    "data": {
+      "_id": "col_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "anchorSenseId": "sns_01940000-0000-7000-8000-000000000001",
+      "pattern": "sample pattern"
+    }
+  },
+  {
+    "name": "word-family",
+    "schema": "word-family.schema.json",
+    "data": {
+      "_id": "fam_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "familyBasis": "editorially_related"
+    }
+  },
+  {
+    "name": "lexical-form",
+    "schema": "lexical-form.schema.json",
+    "data": {
+      "_id": "frm_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "form": "samples"
+    }
+  },
+  {
+    "name": "morpheme",
+    "schema": "morpheme.schema.json",
+    "data": {
+      "_id": "mrf_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "form": "pre",
+      "morphologicalRole": "prefix"
+    }
+  },
+  {
+    "name": "etymology",
+    "schema": "etymology.schema.json",
+    "data": {
+      "_id": "ety_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001"
+    }
+  },
+  {
+    "name": "evidence",
+    "schema": "evidence.schema.json",
+    "data": {
+      "_id": "evd_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceId": "src_01940000-0000-7000-8000-000000000001",
+      "assertionIds": [
+        "sns_01940000-0000-7000-8000-000000000001"
+      ]
+    }
+  },
+  {
+    "name": "source",
+    "schema": "source.schema.json",
+    "data": {
+      "_id": "src_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "title": "Illustrative source placeholder"
+    }
+  },
+  {
+    "name": "editorial-review",
+    "schema": "editorial-review.schema.json",
+    "data": {
+      "_id": "rev_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "reviewerId": "editor-1",
+      "subjectIds": [
+        "sns_01940000-0000-7000-8000-000000000001"
+      ],
+      "outcome": "deferred_pending_evidence"
+    }
+  },
+  {
+    "name": "editorial-decision",
+    "schema": "editorial-decision.schema.json",
+    "data": {
+      "_id": "dec_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "reviewerId": "editor-1",
+      "subjectIds": [
+        "sns_01940000-0000-7000-8000-000000000001"
+      ],
+      "issueType": "sense_boundary",
+      "outcome": "deferred_pending_evidence",
+      "rationale": "Additional evidence required."
+    }
+  }
+]

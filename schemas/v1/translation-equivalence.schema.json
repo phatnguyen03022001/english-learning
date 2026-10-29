@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/translation-equivalence.schema.json",
+  "title": "TranslationEquivalence",
+  "version": "1.0.0",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_eqv"
+    },
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "lifecycleStatus": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/lifecycleStatus"
+    },
+    "editorialStatus": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/editorialStatus"
+    },
+    "evidenceIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_evd"
+      },
+      "uniqueItems": true
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "retirementMode": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/retirementMode"
+    },
+    "retiredByDecisionId": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_dec"
+    },
+    "supersededByIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/activeV1Id"
+      },
+      "uniqueItems": true
+    },
+    "sourceSenseId": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_sns"
+    },
+    "targetSenseId": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_sns"
+    },
+    "glossVi": {
+      "type": "string",
+      "minLength": 1
+    },
+    "direction": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/translationDirection"
+    },
+    "alignmentMode": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/alignmentMode"
+    },
+    "equivalenceType": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/equivalenceType"
+    },
+    "context": {
+      "type": "string",
+      "minLength": 1
+    },
+    "register": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/register"
+    },
+    "restrictions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "_id",
+    "schemaVersion",
+    "lifecycleStatus",
+    "editorialStatus",
+    "sourceSenseId",
+    "direction",
+    "alignmentMode",
+    "equivalenceType",
+    "evidenceIds"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycleStatus": {
+            "const": "active"
+          }
+        },
+        "required": [
+          "lifecycleStatus"
+        ]
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "retirementMode"
+              ]
+            },
+            {
+              "required": [
+                "retiredByDecisionId"
+              ]
+            },
+            {
+              "required": [
+                "supersededByIds"
+              ]
+            }
+          ]
+        }
+      },
+      "else": {
+        "required": [
+          "retirementMode",
+          "retiredByDecisionId",
+          "supersededByIds"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "alignmentMode": {
+            "const": "gloss_only"
+          }
+        },
+        "required": [
+          "alignmentMode"
+        ]
+      },
+      "then": {
+        "required": [
+          "glossVi"
+        ],
+        "not": {
+          "required": [
+            "targetSenseId"
+          ]
+        }
+      },
+      "else": {
+        "required": [
+          "targetSenseId"
+        ]
+      }
+    }
+  ]
+}

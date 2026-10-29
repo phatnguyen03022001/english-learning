@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/lexical-entry.schema.json",
+  "title": "LexicalEntry",
+  "version": "1.0.0",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_lex"
+    },
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "lifecycleStatus": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/lifecycleStatus"
+    },
+    "editorialStatus": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/editorialStatus"
+    },
+    "evidenceIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_evd"
+      },
+      "uniqueItems": true
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "retirementMode": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/retirementMode"
+    },
+    "retiredByDecisionId": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_dec"
+    },
+    "supersededByIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/activeV1Id"
+      },
+      "uniqueItems": true
+    },
+    "language": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/languageTag"
+    },
+    "lemma": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pos": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/lexicalEntryPos"
+    },
+    "entryKind": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/entryKind"
+    },
+    "multiwordKind": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/multiwordKind"
+    },
+    "familyIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_fam"
+      },
+      "uniqueItems": true
+    },
+    "homographNumber": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "required": [
+    "_id",
+    "schemaVersion",
+    "lifecycleStatus",
+    "editorialStatus",
+    "language",
+    "lemma",
+    "pos",
+    "entryKind"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycleStatus": {
+            "const": "active"
+          }
+        },
+        "required": [
+          "lifecycleStatus"
+        ]
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "retirementMode"
+              ]
+            },
+            {
+              "required": [
+                "retiredByDecisionId"
+              ]
+            },
+            {
+              "required": [
+                "supersededByIds"
+              ]
+            }
+          ]
+        }
+      },
+      "else": {
+        "required": [
+          "retirementMode",
+          "retiredByDecisionId",
+          "supersededByIds"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entryKind": {
+            "const": "word"
+          }
+        },
+        "required": [
+          "entryKind"
+        ]
+      },
+      "then": {
+        "not": {
+          "required": [
+            "multiwordKind"
+          ]
+        }
+      }
+    }
+  ]
+}

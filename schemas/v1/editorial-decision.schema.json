@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/editorial-decision.schema.json",
+  "title": "EditorialDecision",
+  "version": "1.0.0",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_dec"
+    },
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "lifecycleStatus": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/lifecycleStatus"
+    },
+    "editorialStatus": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/editorialStatus"
+    },
+    "evidenceIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_evd"
+      },
+      "uniqueItems": true
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "retirementMode": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/retirementMode"
+    },
+    "retiredByDecisionId": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_dec"
+    },
+    "supersededByIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/activeV1Id"
+      },
+      "uniqueItems": true
+    },
+    "subjectIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/activeV1Id"
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "issueType": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/issueType"
+    },
+    "outcome": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/decisionOutcome"
+    },
+    "reviewerId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewedAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "action": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/senseDecisionAction"
+    },
+    "entryId": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_lex"
+    },
+    "previousSenseIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_sns"
+      },
+      "uniqueItems": true
+    },
+    "proposedSenseIds": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_sns"
+      },
+      "uniqueItems": true
+    },
+    "supersedesDecisionId": {
+      "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_dec"
+    },
+    "affectedEdges": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v1/common.schema.json#/$defs/id_rel"
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "_id",
+    "schemaVersion",
+    "lifecycleStatus",
+    "editorialStatus",
+    "subjectIds",
+    "issueType",
+    "outcome",
+    "reviewerId",
+    "rationale"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycleStatus": {
+            "const": "active"
+          }
+        },
+        "required": [
+          "lifecycleStatus"
+        ]
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "retirementMode"
+              ]
+            },
+            {
+              "required": [
+                "retiredByDecisionId"
+              ]
+            },
+            {
+              "required": [
+                "supersededByIds"
+              ]
+            }
+          ]
+        }
+      },
+      "else": {
+        "required": [
+          "retirementMode",
+          "retiredByDecisionId",
+          "supersededByIds"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "ielts-tradition-schema",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "schema:generate": "node scripts/generate-schemas.mjs",
+    "schema:check": "node scripts/generate-schemas.mjs --check",
+    "test": "npm run schema:check && node --test tests/schema-conformance.test.mjs"
+  },
+  "devDependencies": {
+    "ajv": "8.17.1"
+  }
+}
