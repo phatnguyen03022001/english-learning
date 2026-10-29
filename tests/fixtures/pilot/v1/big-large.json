@@ -1,0 +1,112 @@
+{
+  "caseId": "big-large",
+  "focus": "Context-scoped near-synonymy of senses, not entire headwords",
+  "editorialStatus": "synthetic_unreviewed",
+  "records": [
+    {
+      "_id": "lex_01940000-0000-7000-8000-000000000401",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "big",
+      "pos": "ADJ",
+      "entryKind": "word"
+    },
+    {
+      "_id": "lex_01940000-0000-7000-8000-000000000402",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "large",
+      "pos": "ADJ",
+      "entryKind": "word"
+    },
+    {
+      "_id": "sns_01940000-0000-7000-8000-000000000401",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000401",
+      "definition": "Of considerable physical size (illustrative sense)."
+    },
+    {
+      "_id": "sns_01940000-0000-7000-8000-000000000402",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000402",
+      "definition": "Of considerable physical size (illustrative sense)."
+    },
+    {
+      "_id": "rel_01940000-0000-7000-8000-000000000401",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "relationType": "NEAR_SYNONYM_OF",
+      "sourceId": "sns_01940000-0000-7000-8000-000000000401",
+      "targetId": "sns_01940000-0000-7000-8000-000000000402",
+      "qualifiers": {
+        "context": "physical dimensions"
+      }
+    }
+  ],
+  "modelExpectations": {
+    "entryCount": 2,
+    "senseCount": 2,
+    "homographNumbers": [],
+    "relationTypes": [
+      "NEAR_SYNONYM_OF"
+    ],
+    "equivalenceModes": [],
+    "forbiddenEntryLemmas": []
+  },
+  "contrastiveExamples": [
+    {
+      "en": "a big box / a large box",
+      "vi": "một cái hộp lớn",
+      "status": "editor-created contrast candidate"
+    },
+    {
+      "en": "big sister vs large sister",
+      "vi": "Không mặc định thay thế trong mọi ngữ cảnh.",
+      "status": "editor-created non-substitution candidate"
+    }
+  ],
+  "negativeCases": [
+    {
+      "name": "reversed-symmetric-edge",
+      "expectedCode": "RELATION_NOT_CANONICAL",
+      "stage": "graph",
+      "patches": [
+        {
+          "id": "rel_01940000-0000-7000-8000-000000000401",
+          "set": {
+            "sourceId": "sns_01940000-0000-7000-8000-000000000402",
+            "targetId": "sns_01940000-0000-7000-8000-000000000401"
+          }
+        }
+      ]
+    },
+    {
+      "name": "duplicate-context-edge",
+      "expectedCode": "DUPLICATE_SEMANTIC_EDGE",
+      "stage": "graph",
+      "add": [
+        {
+          "_id": "rel_01940000-0000-7000-8000-000000000402",
+          "schemaVersion": "1.0.0",
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "relationType": "NEAR_SYNONYM_OF",
+          "sourceId": "sns_01940000-0000-7000-8000-000000000401",
+          "targetId": "sns_01940000-0000-7000-8000-000000000402",
+          "qualifiers": {
+            "context": "physical dimensions"
+          }
+        }
+      ]
+    }
+  ]
+}
