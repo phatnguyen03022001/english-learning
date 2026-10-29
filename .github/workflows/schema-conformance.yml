@@ -1,4 +1,4 @@
-name: Phase 2–6 Dictionary Quality & Integrity
+name: Phase 2–6 Lexical Production Quality Gates
 
 on:
   workflow_dispatch:
@@ -7,8 +7,7 @@ on:
     paths:
       - ".github/workflows/schema-conformance.yml"
       - "package.json"
-      - "scripts/generate-schemas.mjs"
-      - "scripts/generate-schemas-v2.mjs"
+      - "scripts/**"
       - "schemas/v1/**"
       - "validators/**"
       - "pipeline/**"
@@ -16,6 +15,10 @@ on:
       - "tests/production/**"
       - "tests/fixtures/production/**"
       - "docs/lexical-production-contract.md"
+      - "docs/evidence-provenance-contract.md"
+      - "docs/editorial-workflow.md"
+      - "docs/schema-migration.md"
+      - "docs/production-readiness.md"
       - "tests/schema-conformance.test.mjs"
       - "tests/graph-integrity.test.mjs"
       - "tests/fixtures/schema/v1/**"
