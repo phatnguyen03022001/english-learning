@@ -12,8 +12,8 @@ const negatives = load("./fixtures/graph/v1/negative/cases.json");
 function apply(fixture) {
   const data = structuredClone(base);
   const gone = new Set(fixture.removeIds ?? []);
-  data.records = data.records.filter(x => !gone.has(x._id));
   data.records.push(...structuredClone(fixture.add ?? []));
+  data.records = data.records.filter(x => !gone.has(x._id));
   for (const item of fixture.patches ?? []) {
     const target = data.records.find(x => x._id === item.id);
     assert.ok(target, "Fixture patch target not found: " + item.id);
