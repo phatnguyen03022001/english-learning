@@ -258,3 +258,21 @@ No numerical CEFR/IELTS individual-word rating is inferred; higher-level learner
 - All runs were GitHub Actions Ubuntu + Node.js 22. Isolated mutants existed only in runner temporary folders and were removed.
 - No Mac, Agent Runtime, MongoDB Atlas, Google Drive, application, UI, API or new dependency was used.
 - Single integration writer; direct commits on `main` only; no PR/branch, force-push or approved lexical assertion invented.
+
+
+---
+
+## Phase 5 Remediation — follow-up status (2026-10-30)
+
+This section **supersedes the historical GRAPH-001 open status above**, but does not rewrite original RED audit evidence. The original audit remains a reproducible snapshot.
+
+- **GRAPH-001: FIXED**. `validators/graph-v1.mjs` now rejects cross-language sense-to-sense `rel_` when both endpoint senses and parent entries are active. It uses the registry's `sourceType=LexicalSense` / `targetType=LexicalSense` contract, not a new relation enum or hardcoded lexical rule. Diagnostic is `RELATION_LANGUAGE_MISMATCH` on the relation's `targetId`. It checks primary BCP 47 language subtags; sense-to-sense `en` and `en-GB` are compatible for this structural purpose, but cross-language `en` vs `vi` is rejected.
+- **RED evidence**: [Actions run 40964632148](https://github.com/phatnguyen03022001/ielts-tradition/actions/runs/40964632148), commit `30c6a5392e9fabf71a593e8728a850512dea782e`, 163 PASS / 1 FAIL.
+- **GREEN (original unchanged test)**: [Actions run 40965546415](https://github.com/phatnguyen03022001/ielts-tradition/actions/runs/40965546415), commit `95fc34cb65a85df81f851bd9da3e4f76275137be`, SUCCESS.
+- **Expanded regression**: [Actions run 40965796043](https://github.com/phatnguyen03022001/ielts-tradition/actions/runs/40965796043), commit `42cd9cf28461f11664361e58b5de7cf2969b3e94`, 191 PASS / 0 FAIL on Ubuntu / Node 22, all prior phases and 3/3 isolated mutation kills preserved. `tests/stress/relation-language.test.mjs` exercises five semantic relations in both same-language and cross-language forms, a reverse-direction attack, missing endpoints and parents, retirement, schema-first rejection, repeated/permuted input, unchanged `en_to_vi` alignment and publication failure.
+- **`DERIVED_FROM`: intentionally unchanged**. Entry-to-entry morphological connections are outside the sense-to-sense monolingual rule; V1 does not independently establish all cross-language borrowing or derivational legitimacy. Lack of a language diagnostic is not editorial approval.
+- **Regional language distinction**: V1 `TranslationEquivalence` still requires source `language=en` explicitly. A separate test verifies that `en-GB` does not silently relax this direction-specific contract. Any desired regional-tag extension requires a separately reviewed V1/V2 policy decision, not a hidden change in this fix.
+- **EDIT-007: OPEN / INSUFFICIENT_EVIDENCE**. An accepted `EditorialDecision` whose subjects resolve but which is not consumed by a retirement transition need not be invalid: V1 also permits `retain` and non-transition decisions. No contract presently establishes a universal “must be consumed” invariant; do not fabricate one.
+- **LEX-002: OPEN**. English/Vietnamese semantic fidelity and grammaticality still need human review; structurally accepted test candidates are not verified content. **GOV-003: OPEN** because LER appointment and legal rights cannot be independently attested in V1. **LEX-004, GRAM-005, MORPH-006: OPEN** pending lexicographic evidence and, where justified, future contract revisions.
+- **Publication readiness: NOT READY / lexicographic quality UNVERIFIED**. This repair establishes deterministic graph behavior only; no lexical records are promoted and no approval metadata are created.
+- No Atlas, Mac, Agent Runtime, application, new dependency, governance baseline, ontology, registry or JSON Schema changes. GitHub `main` one writer only.
