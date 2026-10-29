@@ -1,0 +1,160 @@
+{
+  "records": [
+    {
+      "_id": "lex_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "fictional-en-a",
+      "pos": "NOUN",
+      "entryKind": "word",
+      "familyIds": [
+        "fam_01940000-0000-7000-8000-000000000001"
+      ]
+    },
+    {
+      "_id": "lex_01940000-0000-7000-8000-000000000002",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "fictional-en-b",
+      "pos": "NOUN",
+      "entryKind": "word"
+    },
+    {
+      "_id": "lex_01940000-0000-7000-8000-000000000003",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "vi",
+      "lemma": "mẫu minh họa",
+      "pos": "NOUN",
+      "entryKind": "word"
+    },
+    {
+      "_id": "sns_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "definition": "Illustrative sense A",
+      "topicIds": [
+        "top_01940000-0000-7000-8000-000000000002"
+      ]
+    },
+    {
+      "_id": "sns_01940000-0000-7000-8000-000000000002",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000002",
+      "definition": "Illustrative sense B"
+    },
+    {
+      "_id": "sns_01940000-0000-7000-8000-000000000003",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000003",
+      "definition": "Nghĩa minh họa"
+    },
+    {
+      "_id": "fam_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "familyBasis": "editorially_related"
+    },
+    {
+      "_id": "top_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "label": "Synthetic root",
+      "parentTopicId": null
+    },
+    {
+      "_id": "top_01940000-0000-7000-8000-000000000002",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "label": "Synthetic child",
+      "parentTopicId": "top_01940000-0000-7000-8000-000000000001"
+    },
+    {
+      "_id": "frm_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "form": "fictional-en-a"
+    },
+    {
+      "_id": "ety_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000001",
+      "notes": "Illustrative placeholder, no etymological claim"
+    },
+    {
+      "_id": "con_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "senseId": "sns_01940000-0000-7000-8000-000000000001",
+      "constructionType": "valency",
+      "pattern": "synthetic + NP"
+    },
+    {
+      "_id": "col_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "anchorSenseId": "sns_01940000-0000-7000-8000-000000000001",
+      "pattern": "synthetic expression"
+    },
+    {
+      "_id": "src_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "title": "Synthetic fixture source (no attestation or usage rights asserted)"
+    },
+    {
+      "_id": "evd_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceId": "src_01940000-0000-7000-8000-000000000001",
+      "assertionIds": [
+        "sns_01940000-0000-7000-8000-000000000001"
+      ]
+    },
+    {
+      "_id": "rev_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "reviewerId": "unappointed-fixture-reviewer",
+      "subjectIds": [
+        "sns_01940000-0000-7000-8000-000000000001"
+      ],
+      "outcome": "deferred_pending_evidence"
+    },
+    {
+      "_id": "eqv_01940000-0000-7000-8000-000000000001",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000001",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "glossVi": "minh họa",
+      "equivalenceType": "approximate",
+      "evidenceIds": []
+    }
+  ]
+}

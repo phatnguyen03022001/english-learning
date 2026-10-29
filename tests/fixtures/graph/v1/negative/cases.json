@@ -1,0 +1,1040 @@
+[
+  {
+    "name": "missing-entry-reference",
+    "expectedCode": "REFERENCE_NOT_FOUND",
+    "patches": [
+      {
+        "id": "sns_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "entryId": "lex_01940000-0000-7000-8000-000000000090"
+        }
+      }
+    ]
+  },
+  {
+    "name": "wrong-typed-reference",
+    "expectedCode": "SCHEMA_INVALID",
+    "stage": "schema",
+    "patches": [
+      {
+        "id": "sns_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "entryId": "sns_01940000-0000-7000-8000-000000000003"
+        }
+      }
+    ]
+  },
+  {
+    "name": "duplicate-canonical-id",
+    "expectedCode": "DUPLICATE_ID",
+    "add": [
+      {
+        "_id": "lex_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "language": "en",
+        "lemma": "duplicate",
+        "pos": "NOUN",
+        "entryKind": "word"
+      }
+    ]
+  },
+  {
+    "name": "inactive-mwe-entity",
+    "expectedCode": "SCHEMA_INVALID",
+    "stage": "schema",
+    "add": [
+      {
+        "_id": "mwe_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "language": "en",
+        "lemma": "forbidden",
+        "pos": "NOUN",
+        "entryKind": "word"
+      }
+    ]
+  },
+  {
+    "name": "missing-family",
+    "expectedCode": "REFERENCE_NOT_FOUND",
+    "patches": [
+      {
+        "id": "lex_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "familyIds": [
+            "fam_01940000-0000-7000-8000-000000000090"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "missing-topic",
+    "expectedCode": "REFERENCE_NOT_FOUND",
+    "patches": [
+      {
+        "id": "sns_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "topicIds": [
+            "top_01940000-0000-7000-8000-000000000090"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "missing-construction-sense",
+    "expectedCode": "REFERENCE_NOT_FOUND",
+    "patches": [
+      {
+        "id": "con_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "senseId": "sns_01940000-0000-7000-8000-000000000090"
+        }
+      }
+    ]
+  },
+  {
+    "name": "missing-collocation-sense",
+    "expectedCode": "REFERENCE_NOT_FOUND",
+    "patches": [
+      {
+        "id": "col_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "anchorSenseId": "sns_01940000-0000-7000-8000-000000000090"
+        }
+      }
+    ]
+  },
+  {
+    "name": "missing-evidence-source",
+    "expectedCode": "REFERENCE_NOT_FOUND",
+    "patches": [
+      {
+        "id": "evd_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "sourceId": "src_01940000-0000-7000-8000-000000000090"
+        }
+      }
+    ]
+  },
+  {
+    "name": "missing-editorial-subject",
+    "expectedCode": "REFERENCE_NOT_FOUND",
+    "patches": [
+      {
+        "id": "rev_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "subjectIds": [
+            "sns_01940000-0000-7000-8000-000000000090"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "missing-decision-target",
+    "expectedCode": "REFERENCE_NOT_FOUND",
+    "add": [
+      {
+        "_id": "dec_01940000-0000-7000-8000-000000000002",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "subjectIds": [
+          "sns_01940000-0000-7000-8000-000000000090"
+        ],
+        "issueType": "sense_boundary",
+        "outcome": "accepted",
+        "reviewerId": "test",
+        "rationale": "fixture"
+      }
+    ]
+  },
+  {
+    "name": "retired-live-equivalence",
+    "expectedCode": "RETIRED_LIVE_REFERENCE",
+    "add": [
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000010",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 10",
+        "retirementMode": "invalidated",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": []
+      },
+      {
+        "_id": "dec_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "subjectIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "issueType": "sense_boundary",
+        "outcome": "accepted",
+        "reviewerId": "unappointed-fixture-reviewer",
+        "rationale": "Synthetic transition shape only",
+        "action": "invalidate",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "previousSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "proposedSenseIds": []
+      }
+    ],
+    "patches": [
+      {
+        "id": "eqv_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "sourceSenseId": "sns_01940000-0000-7000-8000-000000000010"
+        }
+      }
+    ]
+  },
+  {
+    "name": "retired-live-relation",
+    "expectedCode": "RETIRED_LIVE_REFERENCE",
+    "add": [
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000010",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 10",
+        "retirementMode": "invalidated",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": []
+      },
+      {
+        "_id": "dec_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "subjectIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "issueType": "sense_boundary",
+        "outcome": "accepted",
+        "reviewerId": "unappointed-fixture-reviewer",
+        "rationale": "Synthetic transition shape only",
+        "action": "invalidate",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "previousSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "proposedSenseIds": []
+      },
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "SYNONYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000010"
+      }
+    ]
+  },
+  {
+    "name": "english-source-mismatch",
+    "expectedCode": "BILINGUAL_LANGUAGE_MISMATCH",
+    "patches": [
+      {
+        "id": "eqv_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "sourceSenseId": "sns_01940000-0000-7000-8000-000000000003"
+        }
+      }
+    ]
+  },
+  {
+    "name": "vietnamese-target-mismatch",
+    "expectedCode": "BILINGUAL_LANGUAGE_MISMATCH",
+    "add": [
+      {
+        "_id": "eqv_01940000-0000-7000-8000-000000000002",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceSenseId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetSenseId": "sns_01940000-0000-7000-8000-000000000002",
+        "direction": "en_to_vi",
+        "alignmentMode": "sense_aligned",
+        "equivalenceType": "exact_in_context",
+        "evidenceIds": []
+      }
+    ]
+  },
+  {
+    "name": "topic-self-cycle",
+    "expectedCode": "CYCLE_DETECTED",
+    "patches": [
+      {
+        "id": "top_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "parentTopicId": "top_01940000-0000-7000-8000-000000000001"
+        }
+      }
+    ]
+  },
+  {
+    "name": "topic-two-node-cycle",
+    "expectedCode": "CYCLE_DETECTED",
+    "patches": [
+      {
+        "id": "top_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "parentTopicId": "top_01940000-0000-7000-8000-000000000002"
+        }
+      }
+    ]
+  },
+  {
+    "name": "derivation-two-node-cycle",
+    "expectedCode": "CYCLE_DETECTED",
+    "add": [
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "DERIVED_FROM",
+        "sourceId": "lex_01940000-0000-7000-8000-000000000001",
+        "targetId": "lex_01940000-0000-7000-8000-000000000002"
+      },
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000002",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "DERIVED_FROM",
+        "sourceId": "lex_01940000-0000-7000-8000-000000000002",
+        "targetId": "lex_01940000-0000-7000-8000-000000000001"
+      }
+    ]
+  },
+  {
+    "name": "hypernym-two-node-cycle",
+    "expectedCode": "CYCLE_DETECTED",
+    "add": [
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "HYPERNYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000002"
+      },
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000002",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "HYPERNYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000002",
+        "targetId": "sns_01940000-0000-7000-8000-000000000001"
+      }
+    ]
+  },
+  {
+    "name": "part-of-cycle-by-registry",
+    "expectedCode": "CYCLE_DETECTED",
+    "add": [
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "PART_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000002"
+      },
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000002",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "PART_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000002",
+        "targetId": "sns_01940000-0000-7000-8000-000000000001"
+      }
+    ]
+  },
+  {
+    "name": "reversed-symmetric-order",
+    "expectedCode": "RELATION_NOT_CANONICAL",
+    "add": [
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "SYNONYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000002",
+        "targetId": "sns_01940000-0000-7000-8000-000000000001"
+      }
+    ]
+  },
+  {
+    "name": "duplicate-symmetric-pair",
+    "expectedCode": "DUPLICATE_SEMANTIC_EDGE",
+    "add": [
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "SYNONYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000002"
+      },
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000002",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "SYNONYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000002"
+      }
+    ]
+  },
+  {
+    "name": "duplicate-symmetric-reversed-pair",
+    "expectedCode": "DUPLICATE_SEMANTIC_EDGE",
+    "add": [
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "SYNONYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000002"
+      },
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000002",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "SYNONYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000002",
+        "targetId": "sns_01940000-0000-7000-8000-000000000001"
+      }
+    ]
+  },
+  {
+    "name": "duplicate-unicode-normalized-context",
+    "expectedCode": "DUPLICATE_SEMANTIC_EDGE",
+    "add": [
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "SYNONYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000002",
+        "qualifiers": {
+          "context": "café"
+        }
+      },
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000002",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "SYNONYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000002",
+        "qualifiers": {
+          "context": "café"
+        }
+      }
+    ]
+  },
+  {
+    "name": "relation-self-loop",
+    "expectedCode": "RELATION_SELF_LOOP",
+    "add": [
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "SYNONYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000001"
+      }
+    ]
+  },
+  {
+    "name": "unknown-relation-type",
+    "expectedCode": "SCHEMA_INVALID",
+    "stage": "schema",
+    "add": [
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "HYPONYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000002"
+      }
+    ]
+  },
+  {
+    "name": "wrong-derivation-endpoint",
+    "expectedCode": "SCHEMA_INVALID",
+    "stage": "schema",
+    "add": [
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "DERIVED_FROM",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000002"
+      }
+    ]
+  },
+  {
+    "name": "split-inconsistent-decision",
+    "expectedCode": "DECISION_TRANSITION_MISMATCH",
+    "add": [
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000010",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 10",
+        "retirementMode": "semantic_split",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": [
+          "sns_01940000-0000-7000-8000-000000000012",
+          "sns_01940000-0000-7000-8000-000000000013"
+        ]
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000012",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 12"
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000013",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 13"
+      },
+      {
+        "_id": "dec_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "subjectIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "issueType": "sense_boundary",
+        "outcome": "accepted",
+        "reviewerId": "unappointed-fixture-reviewer",
+        "rationale": "Synthetic transition shape only",
+        "action": "split",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "previousSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "proposedSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000012",
+          "sns_01940000-0000-7000-8000-000000000013"
+        ]
+      }
+    ],
+    "patches": [
+      {
+        "id": "dec_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "action": "merge"
+        }
+      }
+    ]
+  },
+  {
+    "name": "split-unresolved-incoming",
+    "expectedCode": "RETIRED_LIVE_REFERENCE",
+    "add": [
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000010",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 10",
+        "retirementMode": "semantic_split",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": [
+          "sns_01940000-0000-7000-8000-000000000012",
+          "sns_01940000-0000-7000-8000-000000000013"
+        ]
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000012",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 12"
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000013",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 13"
+      },
+      {
+        "_id": "dec_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "subjectIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "issueType": "sense_boundary",
+        "outcome": "accepted",
+        "reviewerId": "unappointed-fixture-reviewer",
+        "rationale": "Synthetic transition shape only",
+        "action": "split",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "previousSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "proposedSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000012",
+          "sns_01940000-0000-7000-8000-000000000013"
+        ]
+      },
+      {
+        "_id": "con_01940000-0000-7000-8000-000000000009",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "senseId": "sns_01940000-0000-7000-8000-000000000010",
+        "constructionType": "valency",
+        "pattern": "incoming not resolved"
+      }
+    ]
+  },
+  {
+    "name": "merge-one-source",
+    "expectedCode": "MERGE_GROUP_INVALID",
+    "add": [
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000010",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 10",
+        "retirementMode": "semantic_merge",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": [
+          "sns_01940000-0000-7000-8000-000000000012"
+        ]
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000011",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 11",
+        "retirementMode": "semantic_merge",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": [
+          "sns_01940000-0000-7000-8000-000000000012"
+        ]
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000012",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 12"
+      },
+      {
+        "_id": "dec_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "subjectIds": [
+          "sns_01940000-0000-7000-8000-000000000010",
+          "sns_01940000-0000-7000-8000-000000000011"
+        ],
+        "issueType": "sense_boundary",
+        "outcome": "accepted",
+        "reviewerId": "unappointed-fixture-reviewer",
+        "rationale": "Synthetic transition shape only",
+        "action": "merge",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "previousSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000010",
+          "sns_01940000-0000-7000-8000-000000000011"
+        ],
+        "proposedSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000012"
+        ]
+      }
+    ],
+    "removeIds": [
+      "sns_01940000-0000-7000-8000-000000000011"
+    ],
+    "patches": [
+      {
+        "id": "dec_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "previousSenseIds": [
+            "sns_01940000-0000-7000-8000-000000000010"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "merge-conflicting-target",
+    "expectedCode": "MERGE_GROUP_INVALID",
+    "add": [
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000010",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 10",
+        "retirementMode": "semantic_merge",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": [
+          "sns_01940000-0000-7000-8000-000000000012"
+        ]
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000011",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 11",
+        "retirementMode": "semantic_merge",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": [
+          "sns_01940000-0000-7000-8000-000000000012"
+        ]
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000012",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 12"
+      },
+      {
+        "_id": "dec_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "subjectIds": [
+          "sns_01940000-0000-7000-8000-000000000010",
+          "sns_01940000-0000-7000-8000-000000000011"
+        ],
+        "issueType": "sense_boundary",
+        "outcome": "accepted",
+        "reviewerId": "unappointed-fixture-reviewer",
+        "rationale": "Synthetic transition shape only",
+        "action": "merge",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "previousSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000010",
+          "sns_01940000-0000-7000-8000-000000000011"
+        ],
+        "proposedSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000012"
+        ]
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000013",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 13"
+      }
+    ],
+    "patches": [
+      {
+        "id": "sns_01940000-0000-7000-8000-000000000011",
+        "set": {
+          "supersededByIds": [
+            "sns_01940000-0000-7000-8000-000000000013"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "duplicate-survivor-missing",
+    "expectedCode": "REFERENCE_NOT_FOUND",
+    "add": [
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000010",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 10",
+        "retirementMode": "duplicate_reconciliation",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": [
+          "sns_01940000-0000-7000-8000-000000000012"
+        ]
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000012",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 12"
+      },
+      {
+        "_id": "dec_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "subjectIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "issueType": "sense_boundary",
+        "outcome": "accepted",
+        "reviewerId": "unappointed-fixture-reviewer",
+        "rationale": "Synthetic transition shape only",
+        "action": "duplicate_reconciliation",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "previousSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "proposedSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000012"
+        ]
+      }
+    ],
+    "removeIds": [
+      "sns_01940000-0000-7000-8000-000000000012"
+    ]
+  },
+  {
+    "name": "invalidated-with-incoming",
+    "expectedCode": "RETIRED_LIVE_REFERENCE",
+    "add": [
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000010",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 10",
+        "retirementMode": "invalidated",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": []
+      },
+      {
+        "_id": "dec_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "subjectIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "issueType": "sense_boundary",
+        "outcome": "accepted",
+        "reviewerId": "unappointed-fixture-reviewer",
+        "rationale": "Synthetic transition shape only",
+        "action": "invalidate",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "previousSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "proposedSenseIds": []
+      },
+      {
+        "_id": "col_01940000-0000-7000-8000-000000000009",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "anchorSenseId": "sns_01940000-0000-7000-8000-000000000010",
+        "pattern": "unresolved historical"
+      }
+    ]
+  },
+  {
+    "name": "publication-disputed",
+    "expectedCode": "PUBLICATION_STATUS_BLOCKED",
+    "publication": true,
+    "patches": [
+      {
+        "id": "eqv_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "editorialStatus": "disputed"
+        }
+      }
+    ],
+    "targetId": "eqv_01940000-0000-7000-8000-000000000001"
+  },
+  {
+    "name": "publication-rejected",
+    "expectedCode": "PUBLICATION_STATUS_BLOCKED",
+    "publication": true,
+    "patches": [
+      {
+        "id": "eqv_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "editorialStatus": "rejected"
+        }
+      }
+    ],
+    "targetId": "eqv_01940000-0000-7000-8000-000000000001"
+  },
+  {
+    "name": "publication-verified-gloss-without-evidence",
+    "expectedCode": "PUBLICATION_EVIDENCE_MISSING",
+    "publication": true,
+    "patches": [
+      {
+        "id": "eqv_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "editorialStatus": "verified"
+        }
+      }
+    ],
+    "targetId": "eqv_01940000-0000-7000-8000-000000000001"
+  },
+  {
+    "name": "publication-source-license-missing",
+    "expectedCode": "INSUFFICIENT_EVIDENCE",
+    "publication": true,
+    "patches": [
+      {
+        "id": "sns_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "editorialStatus": "verified",
+          "evidenceIds": [
+            "evd_01940000-0000-7000-8000-000000000001"
+          ]
+        }
+      }
+    ],
+    "targetId": "sns_01940000-0000-7000-8000-000000000001"
+  },
+  {
+    "name": "publication-ler-unproven",
+    "expectedCode": "INSUFFICIENT_EVIDENCE",
+    "publication": true,
+    "patches": [
+      {
+        "id": "sns_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "editorialStatus": "verified",
+          "evidenceIds": [
+            "evd_01940000-0000-7000-8000-000000000001"
+          ]
+        }
+      },
+      {
+        "id": "src_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "license": "Synthetic declared terms",
+          "permittedUse": "placeholder, not externally verified"
+        }
+      }
+    ],
+    "targetId": "sns_01940000-0000-7000-8000-000000000001"
+  },
+  {
+    "name": "publication-transition-provenance-missing",
+    "expectedCode": "INSUFFICIENT_EVIDENCE",
+    "publication": true,
+    "add": [
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000010",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 10",
+        "retirementMode": "semantic_split",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": [
+          "sns_01940000-0000-7000-8000-000000000012",
+          "sns_01940000-0000-7000-8000-000000000013"
+        ]
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000012",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 12"
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000013",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 13"
+      },
+      {
+        "_id": "dec_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "subjectIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "issueType": "sense_boundary",
+        "outcome": "accepted",
+        "reviewerId": "unappointed-fixture-reviewer",
+        "rationale": "Synthetic transition shape only",
+        "action": "split",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "previousSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "proposedSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000012",
+          "sns_01940000-0000-7000-8000-000000000013"
+        ]
+      }
+    ],
+    "targetId": "sns_01940000-0000-7000-8000-000000000010"
+  }
+]

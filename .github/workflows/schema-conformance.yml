@@ -1,4 +1,4 @@
-name: Phase 2 JSON Schema Conformance
+name: Phase 2 + 3 Dictionary Integrity
 
 on:
   workflow_dispatch:
@@ -9,18 +9,21 @@ on:
       - "package.json"
       - "scripts/generate-schemas.mjs"
       - "schemas/v1/**"
+      - "validators/**"
       - "tests/schema-conformance.test.mjs"
+      - "tests/graph-integrity.test.mjs"
       - "tests/fixtures/schema/v1/**"
+      - "tests/fixtures/graph/v1/**"
 
 permissions:
   contents: read
 
 concurrency:
-  group: schema-v1-${{ github.ref }}
+  group: dictionary-v1-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  schema-conformance:
+  schema-and-graph:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -32,5 +35,5 @@ jobs:
           node-version: "22"
       - name: Install pinned Ajv
         run: npm install --no-package-lock --ignore-scripts --no-audit --no-fund
-      - name: Run registry drift and Ajv fixture tests
+      - name: Run schema drift, Ajv conformance, and graph fixtures
         run: npm test

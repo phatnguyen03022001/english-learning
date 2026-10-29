@@ -1,0 +1,375 @@
+[
+  {
+    "name": "base-en-vi-senses-references"
+  },
+  {
+    "name": "valid-aligned-equivalence",
+    "add": [
+      {
+        "_id": "eqv_01940000-0000-7000-8000-000000000002",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceSenseId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetSenseId": "sns_01940000-0000-7000-8000-000000000003",
+        "direction": "en_to_vi",
+        "alignmentMode": "sense_aligned",
+        "equivalenceType": "approximate",
+        "evidenceIds": []
+      }
+    ]
+  },
+  {
+    "name": "distinct-context-qualifiers",
+    "add": [
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "SYNONYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000002",
+        "qualifiers": {
+          "context": "specialized"
+        }
+      },
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000002",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "SYNONYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000002",
+        "qualifiers": {
+          "context": "everyday"
+        }
+      }
+    ]
+  },
+  {
+    "name": "distinct-relation-kinds",
+    "add": [
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "SYNONYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000002"
+      },
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000002",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "ANTONYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000002"
+      },
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000003",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "NEAR_SYNONYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000002"
+      }
+    ]
+  },
+  {
+    "name": "directed-relations",
+    "add": [
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "DERIVED_FROM",
+        "sourceId": "lex_01940000-0000-7000-8000-000000000002",
+        "targetId": "lex_01940000-0000-7000-8000-000000000001"
+      },
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000002",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "HYPERNYM_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000001",
+        "targetId": "sns_01940000-0000-7000-8000-000000000002"
+      },
+      {
+        "_id": "rel_01940000-0000-7000-8000-000000000003",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "relationType": "PART_OF",
+        "sourceId": "sns_01940000-0000-7000-8000-000000000002",
+        "targetId": "sns_01940000-0000-7000-8000-000000000001"
+      }
+    ]
+  },
+  {
+    "name": "semantic-split-shape",
+    "add": [
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000010",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 10",
+        "retirementMode": "semantic_split",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": [
+          "sns_01940000-0000-7000-8000-000000000012",
+          "sns_01940000-0000-7000-8000-000000000013"
+        ]
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000012",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 12"
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000013",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 13"
+      },
+      {
+        "_id": "dec_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "subjectIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "issueType": "sense_boundary",
+        "outcome": "accepted",
+        "reviewerId": "unappointed-fixture-reviewer",
+        "rationale": "Synthetic transition shape only",
+        "action": "split",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "previousSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "proposedSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000012",
+          "sns_01940000-0000-7000-8000-000000000013"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "semantic-merge-shape",
+    "add": [
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000010",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 10",
+        "retirementMode": "semantic_merge",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": [
+          "sns_01940000-0000-7000-8000-000000000012"
+        ]
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000011",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 11",
+        "retirementMode": "semantic_merge",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": [
+          "sns_01940000-0000-7000-8000-000000000012"
+        ]
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000012",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 12"
+      },
+      {
+        "_id": "dec_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "subjectIds": [
+          "sns_01940000-0000-7000-8000-000000000010",
+          "sns_01940000-0000-7000-8000-000000000011"
+        ],
+        "issueType": "sense_boundary",
+        "outcome": "accepted",
+        "reviewerId": "unappointed-fixture-reviewer",
+        "rationale": "Synthetic transition shape only",
+        "action": "merge",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "previousSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000010",
+          "sns_01940000-0000-7000-8000-000000000011"
+        ],
+        "proposedSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000012"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "duplicate-reconciliation-shape",
+    "add": [
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000010",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 10",
+        "retirementMode": "duplicate_reconciliation",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": [
+          "sns_01940000-0000-7000-8000-000000000012"
+        ]
+      },
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000012",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 12"
+      },
+      {
+        "_id": "dec_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "subjectIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "issueType": "sense_boundary",
+        "outcome": "accepted",
+        "reviewerId": "unappointed-fixture-reviewer",
+        "rationale": "Synthetic transition shape only",
+        "action": "duplicate_reconciliation",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "previousSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "proposedSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000012"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "invalidated-shape",
+    "add": [
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000010",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 10",
+        "retirementMode": "invalidated",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": []
+      },
+      {
+        "_id": "dec_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "subjectIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "issueType": "sense_boundary",
+        "outcome": "accepted",
+        "reviewerId": "unappointed-fixture-reviewer",
+        "rationale": "Synthetic transition shape only",
+        "action": "invalidate",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "previousSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "proposedSenseIds": []
+      }
+    ]
+  },
+  {
+    "name": "historical-evidence-to-retired-record",
+    "add": [
+      {
+        "_id": "sns_01940000-0000-7000-8000-000000000010",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "retired",
+        "editorialStatus": "draft",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "definition": "Synthetic successor 10",
+        "retirementMode": "invalidated",
+        "retiredByDecisionId": "dec_01940000-0000-7000-8000-000000000001",
+        "supersededByIds": []
+      },
+      {
+        "_id": "dec_01940000-0000-7000-8000-000000000001",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "subjectIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "issueType": "sense_boundary",
+        "outcome": "accepted",
+        "reviewerId": "unappointed-fixture-reviewer",
+        "rationale": "Synthetic transition shape only",
+        "action": "invalidate",
+        "entryId": "lex_01940000-0000-7000-8000-000000000001",
+        "previousSenseIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ],
+        "proposedSenseIds": []
+      },
+      {
+        "_id": "evd_01940000-0000-7000-8000-000000000002",
+        "schemaVersion": "1.0.0",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceId": "src_01940000-0000-7000-8000-000000000001",
+        "assertionIds": [
+          "sns_01940000-0000-7000-8000-000000000010"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "verified-gloss-remains-gloss",
+    "patches": [
+      {
+        "id": "eqv_01940000-0000-7000-8000-000000000001",
+        "set": {
+          "editorialStatus": "verified",
+          "evidenceIds": [
+            "evd_01940000-0000-7000-8000-000000000001"
+          ]
+        }
+      }
+    ]
+  }
+]
