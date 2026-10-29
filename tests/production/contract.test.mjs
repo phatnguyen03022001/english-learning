@@ -27,7 +27,7 @@ test("learner grammar, example and claim evidence contracts reject invalid typed
 test("schema-first V2 detects wrong sense-linked example evidence without auto-certifying",()=>{
  const records=migrateV1Records(bank.records).records;
  const sense=records.find(r=>r._id.startsWith("sns_"));
- sense.examples=[{english:"Unreviewed.",exampleType:"editorial_original",editorialStatus:"verified",translationEvidenceStatus:"verified",evidenceIds:[]}];
+ sense.examples=[{english:"Unreviewed.",exampleType:"editorial_original",editorialStatus:"verified",translationEvidenceStatus:"independently_reviewed",evidenceIds:[]}];
  const report=validateDatasetV2({records});
  assert.equal(report.publication.eligible,false);
  assert.ok(report.publication.issues.some(i=>i.code==="EXAMPLE_EVIDENCE_MISSING"||i.code==="PUBLICATION_NOT_VERIFIED"));

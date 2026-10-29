@@ -264,6 +264,17 @@ export function validateGraph(dataset, options = {}) {
     }
   }
 
+  // Pre-index reviews once: O(records + review subject links), not
+  // O(verified claims * all reviews). Maintain exact V1 diagnostics.
+  const reviewBySubject = new Map();
+  for (const review of byId.values()) {
+    if (!review._id.startsWith("rev_") || review.lifecycleStatus !== "active" ||
+        review.outcome !== "accepted") continue;
+    for (const subject of review.subjectIds ?? []) {
+      if (!reviewBySubject.has(subject)) reviewBySubject.set(subject, []);
+      reviewBySubject.get(subject).push(review);
+    }
+  }
   // Publication is separate from storable semantic validity. No GitHub
   // permission, status='verified', or reviewerId implies editorial authority.
   for (const record of byId.values()) {
@@ -283,9 +294,7 @@ export function validateGraph(dataset, options = {}) {
             emit("INSUFFICIENT_EVIDENCE", record._id, "evidenceIds", "Source permission/licensing not verifiable", true);
         }
       }
-      const approvedReviews = [...byId.values()].filter(review =>
-        review._id.startsWith("rev_") && review.lifecycleStatus === "active" &&
-        review.outcome === "accepted" && review.subjectIds?.includes(record._id));
+      const approvedReviews = reviewBySubject.get(record._id) ?? [];
       if (approvedReviews.length === 0)
         emit("PUBLICATION_REVIEW_MISSING", record._id, "editorialStatus",
           "No accepted editorial review addresses this claim", true);
