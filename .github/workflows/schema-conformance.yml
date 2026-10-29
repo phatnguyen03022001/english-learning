@@ -1,4 +1,4 @@
-name: Phase 2 + 3 Dictionary Integrity
+name: Phase 2 + 3 + 4 Dictionary Integrity
 
 on:
   workflow_dispatch:
@@ -14,6 +14,8 @@ on:
       - "tests/graph-integrity.test.mjs"
       - "tests/fixtures/schema/v1/**"
       - "tests/fixtures/graph/v1/**"
+      - "tests/pilot-fixtures.test.mjs"
+      - "tests/fixtures/pilot/v1/**"
 
 permissions:
   contents: read
@@ -35,5 +37,5 @@ jobs:
           node-version: "22"
       - name: Install pinned Ajv
         run: npm install --no-package-lock --ignore-scripts --no-audit --no-fund
-      - name: Run schema drift, Ajv conformance, and graph fixtures
+      - name: Run schema, graph, and lexicographic pilot fixtures
         run: npm test
