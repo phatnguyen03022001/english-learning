@@ -1,4 +1,4 @@
-name: Phase 2 + 3 + 4 Dictionary Integrity
+name: Phase 2–5 Dictionary Quality & Integrity
 
 on:
   workflow_dispatch:
@@ -16,6 +16,8 @@ on:
       - "tests/fixtures/graph/v1/**"
       - "tests/pilot-fixtures.test.mjs"
       - "tests/fixtures/pilot/v1/**"
+      - "tests/stress/**"
+      - "docs/quality-stress-audit.md"
 
 permissions:
   contents: read
@@ -37,5 +39,5 @@ jobs:
           node-version: "22"
       - name: Install pinned Ajv
         run: npm install --no-package-lock --ignore-scripts --no-audit --no-fund
-      - name: Run schema, graph, and lexicographic pilot fixtures
+      - name: Run schema, graph, pilot and adversarial stress tests
         run: npm test
