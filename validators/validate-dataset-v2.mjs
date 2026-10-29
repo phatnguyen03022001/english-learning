@@ -4,6 +4,7 @@ import {fileURLToPath} from "node:url";
 import Ajv2020 from "ajv/dist/2020.js";
 import {validateGraph} from "./graph-v1.mjs";
 import {evaluatePublication,digest,valueAt} from "./production-gates.mjs";
+import {validateLifecycleV2} from "./lifecycle-v2.mjs";
 const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const directory=join(root,"schemas/v2");
 const names={lex:"lexical-entry",sns:"lexical-sense",frm:"lexical-form",fam:"word-family",mrf:"morpheme",ety:"etymology",top:"topic",con:"construction",col:"collocation",eqv:"translation-equivalence",rel:"lexical-relation",evd:"evidence",src:"source",rev:"editorial-review",dec:"editorial-decision"};
@@ -49,7 +50,7 @@ export function validateDatasetV2(input,options={}) {
   if(r.decisionEffect==="lifecycle_transition"&&!r.transitionAudit)
    extra.push(issue("LIFECYCLE_AUDIT_INCOMPLETE",r._id,"transitionAudit","Transition requires evidence and incoming-edge inventory"));
  }
- const all=[...graph.issues,...extra].sort(sort);
+ const all=[...graph.issues,...extra,...validateLifecycleV2(records)].sort(sort);
  const publication=evaluatePublication(records,options);
  const selected=options.publication===true?[...all,...publication.issues].sort(sort):all;
  return {valid:selected.length===0,stage:"graph",issues:selected,publication:{eligible:all.length===0&&publication.eligible,issues:publication.issues}};

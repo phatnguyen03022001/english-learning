@@ -3,6 +3,32 @@ import {validateGraph} from "./graph-v1.mjs";
 
 const cmp=(a,b)=>a<b?-1:a>b?1:0;
 const sort=(a,b)=>cmp(a.entityId,b.entityId)||cmp(a.path,b.path)||cmp(a.code,b.code)||cmp(a.message,b.message);
+// A publication decision covers every asserted learner-facing claim, not
+// merely one convenient evidence reference on a record.
+export function publicationClaimPaths(record){
+ const type=record._id.split("_")[0],paths=[];
+ const add=(field)=>{if(Object.hasOwn(record,field))paths.push("/"+field);};
+ const nested=(field)=>{
+  if(record[field]&&typeof record[field]==="object")for(const key of Object.keys(record[field]).sort())paths.push("/"+field+"/"+key);
+ };
+ if(type==="lex"){add("lemma");add("pos");}
+ else if(type==="sns"){
+  add("definition");add("register");add("domain");nested("grammar");
+  for(const [i,x]of (record.usageRestrictions??[]).entries())if(x.description)paths.push("/usageRestrictions/"+i+"/description");
+  for(const [i,x]of (record.contrastiveNotes??[]).entries())if(x.text)paths.push("/contrastiveNotes/"+i+"/text");
+  for(const [i,x]of (record.examples??[]).entries()){if(x.english)paths.push("/examples/"+i+"/english");if(x.vi)paths.push("/examples/"+i+"/vi");}
+ }else if(type==="eqv"){
+  add("sourceSenseId");add(record.alignmentMode==="gloss_only"?"glossVi":"targetSenseId");add("equivalenceType");add("context");add("register");
+ }else if(type==="con"){add("pattern");add("prepositions");add("complements");nested("grammar");}
+ else if(type==="rel"){add("relationType");add("sourceId");add("targetId");nested("qualifiers");}
+ else if(type==="col"){add("anchorSenseId");add("pattern");add("components");add("context");}
+ else if(type==="frm"){add("form");add("ipa");add("stress");}
+ else if(type==="fam")add("familyBasis");
+ else if(type==="top")add("label");
+ else if(type==="mrf"){add("form");add("morphologicalRole");}
+ else if(type==="ety")add("historicalForm");
+ return [...new Set(paths)].sort(cmp);
+}
 export const digest = value=>createHash("sha256").update(JSON.stringify(value)).digest("hex");
 export function valueAt(record,path){
  if(typeof path!=="string"||!path.startsWith("/")||path==="/")return undefined;
@@ -43,7 +69,9 @@ export function evaluatePublication(records, options={}) {
  const rights=(source,scope)=>{
   const r=source?.rights;
   if(!r||r.status!=="redistributable"||!r.scopes?.includes(scope)||r.revokedAt||!r.reviewerId)return false;
-  if(r.expiresAt&&Date.parse(r.expiresAt)<=Date.now())return false;
+  // Eligibility is deterministic given explicit assessment time.
+  // Missing time context cannot establish that expiring permission remains valid.
+  if(r.expiresAt&&(!options.effectiveAt||Date.parse(r.expiresAt)<=Date.parse(options.effectiveAt)))return false;
   if(!authorize(r.reviewerId,"rights",r.permissionReference,source._id))return false;
   if(typeof options.verifyRights!=="function")return false;
   try{return options.verifyRights({source,scope})===true;}catch{return false;}
@@ -72,6 +100,12 @@ export function evaluatePublication(records, options={}) {
   const specialty=id.startsWith("eqv_")?"bilingual":id.startsWith("con_")||reviews.some(x=>x.fieldPath.startsWith("/grammar"))?"grammar":"linguistic";
   if(!reviews.some(x=>x.review.role===specialty||x.review.role==="lead_editorial"))
    add("SPECIALIST_REVIEW_MISSING",id,"editorialStatus","No authorized review with appropriate lexical scope");
+  for(const path of publicationClaimPaths(record)){
+   const matching=evidence.filter(ev=>ev.claim.fieldPath===path&&rights(byId.get(ev.sourceId),options.usageScope??"dictionary_publication"));
+   const reviewed=reviews.some(item=>item.fieldPath===path&&item.review.role==="lead_editorial");
+   if(!matching.length||!reviewed)
+    add("CLAIM_PATH_UNVERIFIED",id,path,"Exact learner assertion lacks authorized claim-specific evidence or review");
+  }
   if(record._id.startsWith("eqv_")&&record.alignmentMode==="sense_aligned"){
    for(const senseId of [record.sourceSenseId,record.targetSenseId]){
     const sense=byId.get(senseId);

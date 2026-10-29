@@ -169,7 +169,7 @@
             "type": "object",
             "properties": {
               "edgeId": {
-                "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/id_rel"
+                "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/activeV1Id"
               },
               "resolution": {
                 "$ref": "https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition/main/schemas/v2/common.schema.json#/$defs/edgeResolution"
