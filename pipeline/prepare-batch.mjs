@@ -6,7 +6,7 @@ const sort=(a,b)=>a<b?-1:a>b?1:0;
 const uuidv7=()=>{
  const t=Date.now().toString(16).padStart(12,"0");
  const r=randomBytes(10).toString("hex");
- return t+"-"+("7"+r.slice(0,3))+"-"+(((parseInt(r[3],16)&3)|8).toString(16)+r.slice(4,7))+"-"+r.slice(7,11)+"-"+r.slice(11,23).padEnd(12,"0");
+ return t.slice(0,8)+"-"+t.slice(8)+"-7"+r.slice(0,3)+"-"+(((parseInt(r[3],16)&3)|8).toString(16)+r.slice(4,7))+"-"+r.slice(7,19);
 };
 const prefixOf=(item)=>{
  const e=item.entity;
