@@ -1,0 +1,96 @@
+{
+  "caseId": "depend-on",
+  "focus": "Required preposition modeled as construction of depend, not new entry by default",
+  "editorialStatus": "synthetic_unreviewed",
+  "records": [
+    {
+      "_id": "lex_01940000-0000-7000-8000-000000000501",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "depend",
+      "pos": "VERB",
+      "entryKind": "word"
+    },
+    {
+      "_id": "sns_01940000-0000-7000-8000-000000000501",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000501",
+      "definition": "Be determined by or contingent on a condition (illustrative meaning)."
+    },
+    {
+      "_id": "con_01940000-0000-7000-8000-000000000501",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "senseId": "sns_01940000-0000-7000-8000-000000000501",
+      "constructionType": "prepositional",
+      "pattern": "depend on + NP",
+      "prepositions": [
+        "on"
+      ],
+      "complements": [
+        "noun phrase"
+      ],
+      "separable": false,
+      "constraints": [
+        "preposition follows depend in this modeled frame"
+      ]
+    },
+    {
+      "_id": "eqv_01940000-0000-7000-8000-000000000501",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000501",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "glossVi": "phụ thuộc vào",
+      "equivalenceType": "approximate",
+      "evidenceIds": [],
+      "context": "conditional dependency"
+    }
+  ],
+  "modelExpectations": {
+    "entryCount": 1,
+    "senseCount": 1,
+    "homographNumbers": [],
+    "constructionCount": 1,
+    "equivalenceModes": [
+      "gloss_only"
+    ],
+    "forbiddenEntryLemmas": [
+      "depend on"
+    ]
+  },
+  "contrastiveExamples": [
+    {
+      "en": "It depends on the weather.",
+      "vi": "Điều đó phụ thuộc vào thời tiết.",
+      "status": "editor-created illustration"
+    },
+    {
+      "en": "It depends the weather.",
+      "vi": "Candidate ungrammatical frame for editorial review; not machine-parsed.",
+      "status": "editor-created negative candidate"
+    }
+  ],
+  "negativeCases": [
+    {
+      "name": "construction-missing-sense",
+      "expectedCode": "REFERENCE_NOT_FOUND",
+      "stage": "graph",
+      "patches": [
+        {
+          "id": "con_01940000-0000-7000-8000-000000000501",
+          "set": {
+            "senseId": "sns_01940000-0000-7000-8000-000000000509"
+          }
+        }
+      ]
+    }
+  ]
+}
