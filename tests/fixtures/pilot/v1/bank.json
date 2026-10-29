@@ -1,0 +1,119 @@
+{
+  "caseId": "bank",
+  "focus": "Homograph identities, distinct senses and sense-scoped gloss-only translation",
+  "editorialStatus": "synthetic_unreviewed",
+  "records": [
+    {
+      "_id": "lex_01940000-0000-7000-8000-000000000101",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "bank",
+      "pos": "NOUN",
+      "entryKind": "word",
+      "homographNumber": 1
+    },
+    {
+      "_id": "lex_01940000-0000-7000-8000-000000000102",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "bank",
+      "pos": "NOUN",
+      "entryKind": "word",
+      "homographNumber": 2
+    },
+    {
+      "_id": "sns_01940000-0000-7000-8000-000000000101",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000101",
+      "definition": "An organization that provides financial services (illustrative sense label)."
+    },
+    {
+      "_id": "sns_01940000-0000-7000-8000-000000000102",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01940000-0000-7000-8000-000000000102",
+      "definition": "The sloping ground beside a river (illustrative sense label)."
+    },
+    {
+      "_id": "eqv_01940000-0000-7000-8000-000000000101",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000101",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "glossVi": "ngân hàng",
+      "equivalenceType": "approximate",
+      "evidenceIds": [],
+      "context": "financial-services context"
+    },
+    {
+      "_id": "eqv_01940000-0000-7000-8000-000000000102",
+      "schemaVersion": "1.0.0",
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01940000-0000-7000-8000-000000000102",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "glossVi": "bờ sông",
+      "equivalenceType": "approximate",
+      "evidenceIds": [],
+      "context": "river context"
+    }
+  ],
+  "modelExpectations": {
+    "entryCount": 2,
+    "senseCount": 2,
+    "homographNumbers": [
+      1,
+      2
+    ],
+    "equivalenceModes": [
+      "gloss_only",
+      "gloss_only"
+    ],
+    "forbiddenEntryLemmas": []
+  },
+  "contrastiveExamples": [
+    {
+      "en": "She opened an account at the bank.",
+      "vi": "Cô ấy mở tài khoản tại ngân hàng.",
+      "status": "editor-created illustration"
+    },
+    {
+      "en": "They rested on the river bank.",
+      "vi": "Họ nghỉ bên bờ sông.",
+      "status": "editor-created illustration"
+    }
+  ],
+  "negativeCases": [
+    {
+      "name": "missing-financial-entry",
+      "expectedCode": "REFERENCE_NOT_FOUND",
+      "stage": "graph",
+      "removeIds": [
+        "lex_01940000-0000-7000-8000-000000000101"
+      ]
+    },
+    {
+      "name": "gloss-cannot-invent-target-sense",
+      "expectedCode": "SCHEMA_INVALID",
+      "stage": "schema",
+      "patches": [
+        {
+          "id": "eqv_01940000-0000-7000-8000-000000000101",
+          "set": {
+            "targetSenseId": "sns_01940000-0000-7000-8000-000000000102"
+          }
+        }
+      ]
+    }
+  ]
+}
