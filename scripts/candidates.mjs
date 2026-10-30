@@ -20,10 +20,21 @@ try{
   // A stale lock must be reconciled manually rather than silently stolen.
   lockFd=openSync(statePath+".lock","wx",0o600);
  }
- const state=(()=>{try{return load(statePath)}catch(e){if(e.code==="ENOENT")return {};throw e;}})();
+ const state=(()=>{try{return load(statePath)}catch(e){if(e.code==="ENOENT")return op==="check"?undefined:{};throw e;}})();
  if(op==="check"){
-  const result=validateDatasetV2(state.records??[]);
-  output={status:result.valid?"valid":"invalid",storageValid:result.valid,issues:result.issues,publication:result.publication};
+  const object=x=>x!==null&&typeof x==="object"&&!Array.isArray(x);
+  const validState=object(state)&&state.formatVersion===1&&Array.isArray(state.records)&&
+   Array.isArray(state.history)&&["batches","mappings","sourceMappings"].every(k=>object(state[k]));
+  if(!validState){
+   const missing=state===undefined;
+   output={status:"invalid",storageValid:false,issues:[{
+    code:missing?"STATE_NOT_FOUND":"STATE_INVALID",
+    message:missing?"Persisted candidate ledger does not exist":"Malformed candidate ledger structure"
+   }],publication:{eligible:false,issues:[]}};
+  }else{
+   const result=validateDatasetV2(state.records);
+   output={status:result.valid?"valid":"invalid",storageValid:result.valid,issues:result.issues,publication:result.publication};
+  }
  }else if(op==="validate"||op==="prepare"||op==="revise"||op==="promote"){
   const input=opt("--input");
   if(!input)throw Error("--input path required");
@@ -41,5 +52,10 @@ try{
  }else throw Error("Choose validate | prepare | revise | promote | check");
  console.log(JSON.stringify(output,null,2));
  if(["conflict","invalid","blocked"].includes(output.status))process.exitCode=1;
-}catch(e){console.error(JSON.stringify({status:"error",message:e.message}));process.exitCode=1;}
+}catch(e){
+ console.error(JSON.stringify(op==="check"&&e instanceof SyntaxError
+  ?{status:"error",code:"STATE_PARSE_ERROR",message:e.message}
+  :{status:"error",message:e.message}));
+ process.exitCode=1;
+}
 finally{if(lockFd!==undefined){closeSync(lockFd);unlinkSync(statePath+".lock");}}
