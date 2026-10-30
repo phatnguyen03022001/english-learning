@@ -31,6 +31,7 @@ on:
       - "data/reviews/**"
       - "docs/lexical-fanout-pilot-report.md"
       - "docs/phase8-lexicographic-quality-review.md"
+      - "docs/phase9-lexical-remediation.md"
 
 permissions:
   contents: read
@@ -94,6 +95,44 @@ jobs:
             inputUnchanged: expected.inputUnchanged
           }));
           NODE
+
+      - name: Validate Phase 9 corrected candidate batch
+        run: |
+          set -euo pipefail
+          input_path="data/candidates/pilot-fanout-002.json"
+          state_path="${RUNNER_TEMP}/phase9-candidate-state.json"
+          output_path="${RUNNER_TEMP}/phase9-candidate-validation.json"
+          before_sha="$(sha256sum "$input_path" | awk '{print $1}')"
+          npm --silent run candidates:validate -- --input "$input_path" --state "$state_path" > "$output_path"
+          VALIDATION_OUTPUT="$output_path" VALIDATION_INPUT="$input_path" VALIDATION_STATE="$state_path" BEFORE_SHA="$before_sha" node --input-type=module <<'NODE'
+          import {existsSync, readFileSync} from "node:fs";
+          import {createHash} from "node:crypto";
+
+          const outputPath = process.env.VALIDATION_OUTPUT;
+          const inputPath = process.env.VALIDATION_INPUT;
+          const statePath = process.env.VALIDATION_STATE;
+          const result = JSON.parse(readFileSync(outputPath, "utf8"));
+          const afterSha = createHash("sha256").update(readFileSync(inputPath)).digest("hex");
+          const inputUnchanged = process.env.BEFORE_SHA === afterSha;
+          if (result.status !== "dry-run") throw new Error(`Unexpected status: ${result.status}`);
+          if (result.batchId !== "pilot-fanout-002") throw new Error(`Unexpected batch: ${result.batchId}`);
+          if (!Array.isArray(result.issues) || result.issues.length !== 0)
+            throw new Error(`Unexpected issues: ${JSON.stringify(result.issues)}`);
+          if (result.publicationEligible !== false) throw new Error("Publication eligibility was not false");
+          if (existsSync(statePath)) throw new Error(`Validation created state at ${statePath}`);
+          if (!inputUnchanged) throw new Error("Candidate input changed during validation");
+          console.log(JSON.stringify({
+            status: result.status,
+            batchId: result.batchId,
+            issues: result.issues.length,
+            publicationEligible: result.publicationEligible,
+            stateCreated: existsSync(statePath),
+            inputUnchanged
+          }));
+          NODE
+
+      - name: Validate Phase 9 correction regression suite
+        run: node --test tests/production/phase9-remediation.test.mjs
 
       - name: Validate Phase 8 evidence dossier
         run: node --test tests/production/phase8-evidence-dossier.test.mjs

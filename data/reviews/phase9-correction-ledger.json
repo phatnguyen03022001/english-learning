@@ -1,0 +1,683 @@
+{
+  "ledgerVersion": "phase9-correction-ledger.v1",
+  "artifactType": "correction_audit_not_canonical_v2",
+  "generatedOn": "2026-10-30",
+  "scope": "Exactly the ten Phase 8 correctionQueue items; no additional lexical targets.",
+  "sourceSnapshot": {
+    "batchId": "pilot-fanout-001",
+    "path": "data/candidates/pilot-fanout-001.json",
+    "referenceCommit": "fe231730e59c3202aa122ee5cd371e8de72fa47f",
+    "phase8SourceCommit": "733a4d137caf97581e83716e124804d685e315af",
+    "sha256": "788d39e878d72104560f62c3b5298bc74348a90af2f0acbbbf1bda632f8705a4",
+    "sourceBlobSha": "05817d4614357a818e213b6d6b57b5e67d9bad3c",
+    "historicalEvidencePreserved": true
+  },
+  "correctedSnapshot": {
+    "batchId": "pilot-fanout-002",
+    "path": "data/candidates/pilot-fanout-002.json",
+    "sha256": "d203048c769d6e033f219dc58531d3db9c87c59a00ec8482f9748a3005cab805",
+    "digestMethod": "SHA-256 of exact UTF-8 bytes of the serialized candidate JSON, including trailing newline.",
+    "recordCount": 54,
+    "inventory": {
+      "lex": 13,
+      "fam": 1,
+      "sns": 15,
+      "con": 9,
+      "eqv": 16
+    },
+    "snapshotRole": "Corrected replacement snapshot for new ingestion attempts that have not started; do not ingest alongside batch 001.",
+    "replacementPolicy": "For any new ingestion, use batch 002 in place of batch 001. If an external persistent ledger already contains batch 001, do not prepare batch 002 as a second ingestion; resolve via authorized canonical identity mapping and CAS revision.",
+    "candidateIdentityContinuity": "All 53 candidateId values and their candidate: references are retained. This preserves batch-local references only; canonical identity continuity is not proven because no persisted mapping was read or supplied.",
+    "repositoryStateInspection": {
+      "trackedPersistedCandidateLedgerFound": false,
+      "externalLedgerAccessed": false,
+      "atlasAccessed": false
+    }
+  },
+  "identityAndRevision": {
+    "candidateIdScope": "Batch-local only; candidateId is not a canonical ID.",
+    "sourceItemKeyAdded": false,
+    "canonicalIdsAdded": false,
+    "canonicalRevisionChanged": false,
+    "revisionHandling": "This is a new immutable batch payload under batchId 002, not a canonical record revision. No CAS revision was attempted because no persisted canonical mapping was available in the authorized repository state."
+  },
+  "claimAssessmentHandling": {
+    "dossierPath": "data/reviews/phase8-evidence-dossier.json",
+    "dossierBatchId": "pilot-fanout-001",
+    "dossierModified": false,
+    "oldFieldPathsAndValuesApplyTo": "pilot-fanout-001 only",
+    "reEvaluateAfterCorrection": [
+      "COR-001",
+      "COR-002",
+      "COR-003",
+      "COR-004",
+      "COR-005",
+      "COR-006",
+      "COR-008"
+    ],
+    "deferredPending": [
+      "COR-007",
+      "COR-009",
+      "COR-010"
+    ],
+    "note": "Phase 8 statuses are human-readable research assessments, not transferred approvals or evidence records."
+  },
+  "corrections": [
+    {
+      "correctionId": "COR-001",
+      "priority": "critical",
+      "candidateId": "sense-analysis",
+      "phase8FieldPath": "/records/20/entity/usageNote",
+      "problem": "claims countability is unresolved",
+      "action": "A countability enum represents both countable and uncountable uses; one broad noun sense is retained. The process/result Vietnamese distinction stays contextual.",
+      "evidenceLimitation": "SRC-OALD marks both countable and uncountable uses. Phase 8 does not validate a specific Vietnamese mapping; example translations remain unreviewed.",
+      "result": "CORRECTED",
+      "independentHumanReviewRequired": true,
+      "requiredReview": "LER plus grammar reviewer",
+      "supportingSourceIds": [
+        "SRC-OALD"
+      ],
+      "changes": [
+        {
+          "candidateId": "sense-analysis",
+          "fieldPath": "/records/20/entity/grammar/countability",
+          "previousValue": null,
+          "fieldExisted": false,
+          "proposedNewValue": "both",
+          "mutationApplied": true,
+          "reason": "Schema V2 countability enum represents the OALD-supported countable and uncountable uses without splitting the process/result context.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "sense-analysis",
+              "fieldPath": "/records/20/entity/usageNote",
+              "status": "CONTRADICTED",
+              "supportingSourceIds": [
+                "SRC-OALD"
+              ]
+            }
+          ],
+          "result": "CORRECTED"
+        },
+        {
+          "candidateId": "sense-analysis",
+          "fieldPath": "/records/20/entity/usageNote",
+          "previousValue": "Candidate noun sense; Vietnamese wording may be 'sự phân tích' for a process or 'bản phân tích' for a report/result. Countability remains unresolved.",
+          "fieldExisted": true,
+          "proposedNewValue": "Both countable and uncountable uses are attested. The process/result distinction and Vietnamese wording remain context-dependent and require bilingual review.",
+          "mutationApplied": true,
+          "reason": "Removes the contradicted unresolved-countability claim while keeping process/result Vietnamese mapping explicitly contextual and pending review.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "sense-analysis",
+              "fieldPath": "/records/20/entity/usageNote",
+              "status": "CONTRADICTED",
+              "supportingSourceIds": [
+                "SRC-OALD"
+              ]
+            },
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "sense-analysis",
+              "fieldPath": "/records/20/entity/usageNote",
+              "status": "INSUFFICIENT_EVIDENCE",
+              "supportingSourceIds": [
+                "SRC-VDICT",
+                "SRC-VNDIC"
+              ]
+            }
+          ],
+          "result": "CORRECTED"
+        }
+      ],
+      "decisionStatus": "pending_human_review"
+    },
+    {
+      "correctionId": "COR-002",
+      "priority": "critical",
+      "candidateId": "construction-borrow-from",
+      "phase8FieldPath": "/records/34/entity/grammar/requiredPrepositions/0",
+      "problem": "from is marked required while pattern explicitly makes source optional",
+      "action": "The direct object remains the borrowed item; the source phrase introduced by from is optional and is no longer in requiredPrepositions.",
+      "evidenceLimitation": "OALD and Collins support the frame and optional source complement; the candidate remains partial and other valency patterns are not claimed.",
+      "result": "CORRECTED",
+      "independentHumanReviewRequired": true,
+      "requiredReview": "grammar/phraseology review",
+      "supportingSourceIds": [
+        "SRC-OALD",
+        "SRC-COLLINS"
+      ],
+      "changes": [
+        {
+          "candidateId": "construction-borrow-from",
+          "fieldPath": "/records/34/entity/grammar/requiredPrepositions",
+          "previousValue": [
+            "from"
+          ],
+          "fieldExisted": true,
+          "proposedNewValue": [],
+          "mutationApplied": true,
+          "reason": "The source complement is optional in the pattern, so from cannot be a required preposition.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "construction-borrow-from",
+              "fieldPath": "/records/34/entity/grammar/requiredPrepositions/0",
+              "status": "CONTRADICTED",
+              "supportingSourceIds": [
+                "SRC-OALD",
+                "SRC-COLLINS"
+              ]
+            }
+          ],
+          "result": "CORRECTED"
+        },
+        {
+          "candidateId": "construction-borrow-from",
+          "fieldPath": "/records/34/entity/complements/0",
+          "previousValue": "thing or resource",
+          "fieldExisted": true,
+          "proposedNewValue": "direct object: thing or resource",
+          "mutationApplied": true,
+          "reason": "Labels the transitive NP as the direct object and keeps the source complement separate.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "construction-borrow-from",
+              "fieldPath": "/records/34/entity/complements/0",
+              "status": "SUPPORTED",
+              "supportingSourceIds": [
+                "SRC-OALD",
+                "SRC-COLLINS"
+              ]
+            }
+          ],
+          "result": "CORRECTED"
+        },
+        {
+          "candidateId": "construction-borrow-from",
+          "fieldPath": "/records/34/entity/complements/1",
+          "previousValue": "optional source introduced by from",
+          "fieldExisted": true,
+          "proposedNewValue": "optional source complement introduced by from",
+          "mutationApplied": true,
+          "reason": "Makes optionality explicit in the complement description.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "construction-borrow-from",
+              "fieldPath": "/records/34/entity/complements/1",
+              "status": "SUPPORTED",
+              "supportingSourceIds": [
+                "SRC-OALD",
+                "SRC-COLLINS"
+              ]
+            }
+          ],
+          "result": "CORRECTED"
+        }
+      ],
+      "decisionStatus": "pending_human_review"
+    },
+    {
+      "correctionId": "COR-003",
+      "priority": "high",
+      "candidateId": "sense-run-machine",
+      "phase8FieldPath": "/records/17/entity/grammar/transitivity",
+      "problem": "intransitive field can be read as sense-wide",
+      "action": "Sense-level transitivity is no longer restricted to intransitive; a separate transitive machine/program frame is represented while the intransitive frame remains intact.",
+      "evidenceLimitation": "Phase 8 cites OALD and Collins for both patterns. The evidence does not settle whether they share one canonical sense; LER review remains required.",
+      "result": "CORRECTED",
+      "independentHumanReviewRequired": true,
+      "requiredReview": "LER plus grammar review",
+      "supportingSourceIds": [
+        "SRC-OALD",
+        "SRC-COLLINS"
+      ],
+      "changes": [
+        {
+          "candidateId": "sense-run-machine",
+          "fieldPath": "/records/17/entity/grammar/transitivity",
+          "previousValue": "intransitive",
+          "fieldExisted": true,
+          "proposedNewValue": "ambitransitive",
+          "mutationApplied": true,
+          "reason": "Schema V2 permits ambitransitive; Phase 8 records both intransitive functioning and transitive run-a-machine/program uses. LER must still decide whether one broad sense is appropriate.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "sense-run-machine",
+              "fieldPath": "/records/17/entity/grammar/transitivity",
+              "status": "CONTESTED",
+              "supportingSourceIds": [
+                "SRC-OALD",
+                "SRC-COLLINS"
+              ]
+            }
+          ],
+          "result": "CORRECTED"
+        },
+        {
+          "candidateId": "sense-run-machine",
+          "fieldPath": "/records/17/entity/usageNote",
+          "previousValue": "Candidate intransitive machine/system sense; 'hoạt động' and 'vận hành' remain an unresolved bilingual alternative.",
+          "fieldExisted": true,
+          "proposedNewValue": "Candidate machine/system operation sense with separate intransitive functioning and transitive operation frames; the sense boundary and Vietnamese alternatives remain pending LER and bilingual review.",
+          "mutationApplied": true,
+          "reason": "Removes the sense-wide intransitive wording and leaves the boundary provisional without creating a new sense.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "sense-run-machine",
+              "fieldPath": "/records/17/entity/grammar/transitivity",
+              "status": "CONTESTED",
+              "supportingSourceIds": [
+                "SRC-OALD",
+                "SRC-COLLINS"
+              ]
+            }
+          ],
+          "result": "CORRECTED"
+        },
+        {
+          "candidateId": "construction-run-machine-transitive",
+          "fieldPath": "/records/53",
+          "previousValue": null,
+          "fieldExisted": false,
+          "proposedNewValue": {
+            "candidateId": "construction-run-machine-transitive",
+            "type": "con",
+            "entity": {
+              "senseId": "candidate:sense-run-machine",
+              "constructionType": "valency",
+              "pattern": "run + NP (machine or program)",
+              "complements": [
+                "noun phrase denoting the machine or program being run"
+              ],
+              "constraints": [
+                "The direct object is a machine or program in this candidate operation frame."
+              ],
+              "grammar": {
+                "transitivity": "transitive",
+                "complementTypes": [
+                  "noun_phrase"
+                ],
+                "separability": "not_applicable"
+              },
+              "lifecycleStatus": "active",
+              "editorialStatus": "draft"
+            }
+          },
+          "mutationApplied": true,
+          "reason": "A separate construction preserves the supported intransitive frame and represents the evidenced run-a-machine/program frame without adding a sense or canonical identity.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "sense-run-machine",
+              "fieldPath": "/records/17/entity/grammar/transitivity",
+              "status": "CONTESTED",
+              "supportingSourceIds": [
+                "SRC-OALD",
+                "SRC-COLLINS"
+              ]
+            }
+          ],
+          "result": "CORRECTED"
+        }
+      ],
+      "decisionStatus": "pending_ler_sense_boundary_review"
+    },
+    {
+      "correctionId": "COR-004",
+      "priority": "high",
+      "candidateId": "construction-run-machine",
+      "phase8FieldPath": "/records/29/entity/constraints/0",
+      "problem": "process subject not directly supported",
+      "action": "Subject restrictions now apply only to the intransitive frame and omit unsupported process subjects.",
+      "evidenceLimitation": "Phase 8 supports machine/system subjects; it does not establish process as a class. Scope is a candidate frame, not exhaustive grammar.",
+      "result": "CORRECTED",
+      "independentHumanReviewRequired": true,
+      "requiredReview": "semantic/grammar review",
+      "supportingSourceIds": [
+        "SRC-OALD"
+      ],
+      "changes": [
+        {
+          "candidateId": "sense-run-machine",
+          "fieldPath": "/records/17/entity/usageRestrictions/0/description",
+          "previousValue": "The subject is a machine, system, or process in this candidate sense.",
+          "fieldExisted": true,
+          "proposedNewValue": "In the intransitive functioning frame, the subject is a machine or system.",
+          "mutationApplied": true,
+          "reason": "Removes the unsupported process subject class and scopes the restriction to the intransitive frame.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "sense-run-machine",
+              "fieldPath": "/records/17/entity/usageRestrictions/0/description",
+              "status": "INSUFFICIENT_EVIDENCE",
+              "supportingSourceIds": [
+                "SRC-OALD"
+              ]
+            }
+          ],
+          "result": "CORRECTED"
+        },
+        {
+          "candidateId": "construction-run-machine",
+          "fieldPath": "/records/29/entity/constraints/0",
+          "previousValue": "subject is a machine, system, or process",
+          "fieldExisted": true,
+          "proposedNewValue": "subject is a machine or system in this intransitive functioning frame",
+          "mutationApplied": true,
+          "reason": "Narrows the frame constraint to the subject classes supported in Phase 8.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "construction-run-machine",
+              "fieldPath": "/records/29/entity/constraints/0",
+              "status": "INSUFFICIENT_EVIDENCE",
+              "supportingSourceIds": [
+                "SRC-OALD",
+                "SRC-COLLINS"
+              ]
+            }
+          ],
+          "result": "CORRECTED"
+        },
+        {
+          "candidateId": "construction-run-machine",
+          "fieldPath": "/records/29/entity/constraints/1",
+          "previousValue": "candidate sense is intransitive here",
+          "fieldExisted": true,
+          "proposedNewValue": "this construction represents the intransitive functioning frame",
+          "mutationApplied": true,
+          "reason": "Clarifies that intransitivity is construction-level and does not cap the whole candidate sense.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "construction-run-machine",
+              "fieldPath": "/records/29/entity/constraints/1",
+              "status": "CONTESTED",
+              "supportingSourceIds": [
+                "SRC-OALD",
+                "SRC-COLLINS"
+              ]
+            }
+          ],
+          "result": "CORRECTED"
+        }
+      ],
+      "decisionStatus": "pending_human_review"
+    },
+    {
+      "correctionId": "COR-005",
+      "priority": "high",
+      "candidateId": "sense-analyse",
+      "phase8FieldPath": "/records/19/entity/definition",
+      "problem": "definition narrower than general detailed-examination sense",
+      "action": "The definition now covers careful detailed examination that need not divide an object into parts.",
+      "evidenceLimitation": "OALD supports a broader detailed-examination sense; this paraphrase is not an exhaustive sense inventory and is not human approved.",
+      "result": "CORRECTED",
+      "independentHumanReviewRequired": true,
+      "requiredReview": "semantic review",
+      "supportingSourceIds": [
+        "SRC-OALD"
+      ],
+      "changes": [
+        {
+          "candidateId": "sense-analyse",
+          "fieldPath": "/records/19/entity/definition",
+          "previousValue": "Examine something carefully by separating it into parts or aspects.",
+          "fieldExisted": true,
+          "proposedNewValue": "Examine something carefully and in detail, sometimes by considering its parts or aspects.",
+          "mutationApplied": true,
+          "reason": "Broadens the definition beyond part-based examination while retaining parts/aspects as a possible method; keeps the transitive construction unchanged.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "sense-analyse",
+              "fieldPath": "/records/19/entity/definition",
+              "status": "CONTESTED",
+              "supportingSourceIds": [
+                "SRC-OALD"
+              ]
+            }
+          ],
+          "result": "CORRECTED"
+        }
+      ],
+      "decisionStatus": "pending_human_review"
+    },
+    {
+      "correctionId": "COR-006",
+      "priority": "high",
+      "candidateId": "sense-analytical",
+      "phase8FieldPath": "/records/21/entity/definition",
+      "problem": "definition compresses logical/scientific uses",
+      "action": "The adjective now covers systematic and logical analytical uses without creating additional senses.",
+      "evidenceLimitation": "OALD supports analytical thinking and method uses; scientific/domain-specific subuses still need human review and no separate sense is asserted.",
+      "result": "CORRECTED",
+      "independentHumanReviewRequired": true,
+      "requiredReview": "semantic review",
+      "supportingSourceIds": [
+        "SRC-OALD"
+      ],
+      "changes": [
+        {
+          "candidateId": "sense-analytical",
+          "fieldPath": "/records/21/entity/definition",
+          "previousValue": "Related to examining something carefully by separating it into parts or aspects.",
+          "fieldExisted": true,
+          "proposedNewValue": "Involving careful, systematic examination or logical reasoning, including methods used to study information or data.",
+          "mutationApplied": true,
+          "reason": "Broadens the adjective to systematic and logical uses without adding a sense; information/data study remains within the evidence-backed analytical scope.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "sense-analytical",
+              "fieldPath": "/records/21/entity/definition",
+              "status": "CONTESTED",
+              "supportingSourceIds": [
+                "SRC-OALD"
+              ]
+            }
+          ],
+          "result": "CORRECTED"
+        }
+      ],
+      "decisionStatus": "pending_human_review"
+    },
+    {
+      "correctionId": "COR-007",
+      "priority": "high",
+      "candidateId": "entry-bank-financial",
+      "phase8FieldPath": "/records/0/entity/homographNumber",
+      "problem": "numbering is an editorial proposal, not externally established canonical identity",
+      "action": "The number is preserved but explicitly treated as provisional.",
+      "evidenceLimitation": "Dictionary page grouping does not establish canonical entry splitting or numbering; LER decision is pending.",
+      "result": "DEFERRED",
+      "independentHumanReviewRequired": true,
+      "requiredReview": "LER/editorial decision",
+      "supportingSourceIds": [
+        "SRC-OALD",
+        "SRC-COLLINS"
+      ],
+      "changes": [
+        {
+          "candidateId": "entry-bank-financial",
+          "fieldPath": "/records/0/entity/homographNumber",
+          "previousValue": 1,
+          "fieldExisted": true,
+          "proposedNewValue": 1,
+          "mutationApplied": false,
+          "reason": "The number remains an editorial proposal; opened dictionaries do not establish the canonical entry-versus-sense boundary or numbering.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "entry-bank-financial",
+              "fieldPath": "/records/0/entity/homographNumber",
+              "status": "CONTESTED",
+              "supportingSourceIds": [
+                "SRC-OALD",
+                "SRC-COLLINS"
+              ]
+            }
+          ],
+          "result": "DEFERRED"
+        }
+      ],
+      "decisionStatus": "pending_ler_entry_boundary"
+    },
+    {
+      "correctionId": "COR-008",
+      "priority": "high",
+      "candidateId": "equiv-run-machine-operate",
+      "phase8FieldPath": "/records/40/entity/glossVi",
+      "problem": "neutral and operator-oriented Vietnamese alternatives are unresolved",
+      "action": "The two gloss candidates remain contextual alternatives; no relative/default preference or exact equivalence is asserted.",
+      "evidenceLimitation": "Phase 8 supports narrow context hypotheses but says target-language preference and valency need independent bilingual review; source pages are reference-only.",
+      "result": "CLARIFIED",
+      "independentHumanReviewRequired": true,
+      "requiredReview": "independent bilingual review",
+      "supportingSourceIds": [
+        "SRC-VDICT",
+        "SRC-VTUDIEN",
+        "SRC-OALD"
+      ],
+      "changes": [
+        {
+          "candidateId": "equiv-run-machine-operate",
+          "fieldPath": "/records/40/entity/restrictions/0",
+          "previousValue": "candidate default for the intransitive operation sense",
+          "fieldExisted": true,
+          "proposedNewValue": "candidate contextual gloss for intransitive machine/system functioning; preference relative to “vận hành” remains pending independent bilingual review",
+          "mutationApplied": true,
+          "reason": "Removes default selection while retaining the supported narrow context; equivalence remains approximate, gloss-only, and evidence-pending.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "equiv-run-machine-operate",
+              "fieldPath": "/records/40/entity/restrictions/0",
+              "status": "SUPPORTED",
+              "supportingSourceIds": [
+                "SRC-OALD",
+                "SRC-VDICT"
+              ]
+            }
+          ],
+          "result": "CLARIFIED"
+        },
+        {
+          "candidateId": "equiv-run-machine-operate-alternative",
+          "fieldPath": "/records/41/entity/restrictions/1",
+          "previousValue": "not selected as the default intransitive gloss",
+          "fieldExisted": true,
+          "proposedNewValue": "candidate operator-oriented alternative; preference relative to “hoạt động” remains pending independent bilingual review",
+          "mutationApplied": true,
+          "reason": "Keeps the competing Vietnamese gloss contextual and prevents an unsupported default preference.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "equiv-run-machine-operate-alternative",
+              "fieldPath": "/records/41/entity/restrictions/1",
+              "status": "CONTESTED",
+              "supportingSourceIds": [
+                "SRC-OALD",
+                "SRC-VDICT",
+                "SRC-VTUDIEN"
+              ]
+            }
+          ],
+          "result": "CLARIFIED"
+        }
+      ],
+      "decisionStatus": "pending_independent_bilingual_review"
+    },
+    {
+      "correctionId": "COR-009",
+      "priority": "high",
+      "candidateId": "equiv-large",
+      "phase8FieldPath": "/records/47/entity/restrictions/1",
+      "problem": "extent/quantity/register restrictions are not fully evidenced",
+      "action": "The gloss and restrictions are retained; context/collocation boundaries are deferred.",
+      "evidenceLimitation": "Shared gloss and selective reference evidence do not prove free substitution or exhaust extent/register restrictions.",
+      "result": "DEFERRED",
+      "independentHumanReviewRequired": true,
+      "requiredReview": "independent bilingual review",
+      "supportingSourceIds": [
+        "SRC-OALD",
+        "SRC-VDICT"
+      ],
+      "changes": [
+        {
+          "candidateId": "equiv-large",
+          "fieldPath": "/records/47/entity/restrictions/1",
+          "previousValue": "collocational differences remain pending review",
+          "fieldExisted": true,
+          "proposedNewValue": "collocational differences remain pending review",
+          "mutationApplied": false,
+          "reason": "Collocational and extent restrictions remain contested; retain the narrow gloss-only candidate without inventing collocation evidence.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "equiv-large",
+              "fieldPath": "/records/47/entity/restrictions/1",
+              "status": "CONTESTED",
+              "supportingSourceIds": [
+                "SRC-OALD",
+                "SRC-VDICT"
+              ]
+            }
+          ],
+          "result": "DEFERRED"
+        }
+      ],
+      "decisionStatus": "pending_independent_bilingual_review"
+    },
+    {
+      "correctionId": "COR-010",
+      "priority": "medium",
+      "candidateId": "family-analysis",
+      "phase8FieldPath": "/records/13/entity/familyBasis",
+      "problem": "editorial family relation lacks independent derivational evidence",
+      "action": "The editorial candidate family is retained without asserting derivation or graph edges.",
+      "evidenceLimitation": "The Phase 8 source is repository policy only; independent morphology/derivational evidence and LER decision are absent.",
+      "result": "DEFERRED",
+      "independentHumanReviewRequired": true,
+      "requiredReview": "morphology/lexicography review",
+      "supportingSourceIds": [
+        "SRC-REPO"
+      ],
+      "changes": [
+        {
+          "candidateId": "family-analysis",
+          "fieldPath": "/records/13/entity/familyBasis",
+          "previousValue": "editorially_related",
+          "fieldExisted": true,
+          "proposedNewValue": "editorially_related",
+          "mutationApplied": false,
+          "reason": "Keep editorial family membership provisional; no independent derivational or LER evidence supports a graph relation.",
+          "phase8Assessments": [
+            {
+              "batchId": "pilot-fanout-001",
+              "candidateId": "family-analysis",
+              "fieldPath": "/records/13/entity/familyBasis",
+              "status": "INSUFFICIENT_EVIDENCE",
+              "supportingSourceIds": []
+            }
+          ],
+          "result": "DEFERRED"
+        }
+      ],
+      "decisionStatus": "pending_morphology_and_ler_review"
+    }
+  ],
+  "publication": {
+    "eligible": false,
+    "status": "NOT_READY",
+    "verifiedRecords": 0,
+    "reason": "Draft candidates, gloss-only translations, pending human review, unresolved licensing and no authorized LER/publication decision."
+  }
+}
