@@ -16,8 +16,9 @@ export function publicationClaimPaths(record){
  };
  const items=(field,keys)=>{
   for(const [i,item] of (record[field]??[]).entries()){
-   if(keys)for(const key of keys)if(item&&Object.hasOwn(item,key))paths.push("/"+field+"/"+i+"/"+key);
-   else if(item!==undefined)paths.push("/"+field+"/"+i);
+   if(keys){
+    for(const key of keys)if(item&&Object.hasOwn(item,key))paths.push("/"+field+"/"+i+"/"+key);
+   }else if(item!==undefined)paths.push("/"+field+"/"+i);
   }
  };
  if(type==="lex")addAll(["language","lemma","pos","entryKind","multiwordKind","familyIds","homographNumber"]);
