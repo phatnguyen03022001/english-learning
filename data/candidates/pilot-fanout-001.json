@@ -1,0 +1,1051 @@
+{
+  "batchId": "pilot-fanout-001",
+  "records": [
+    {
+      "candidateId": "entry-bank-financial",
+      "type": "lex",
+      "entity": {
+        "language": "en",
+        "lemma": "bank",
+        "pos": "NOUN",
+        "entryKind": "word",
+        "homographNumber": 1,
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "entry-bank-river",
+      "type": "lex",
+      "entity": {
+        "language": "en",
+        "lemma": "bank",
+        "pos": "NOUN",
+        "entryKind": "word",
+        "homographNumber": 2,
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "entry-run",
+      "type": "lex",
+      "entity": {
+        "language": "en",
+        "lemma": "run",
+        "pos": "VERB",
+        "entryKind": "word",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "entry-analyse",
+      "type": "lex",
+      "entity": {
+        "language": "en",
+        "lemma": "analyse",
+        "pos": "VERB",
+        "entryKind": "word",
+        "familyIds": [
+          "candidate:family-analysis"
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "entry-analysis",
+      "type": "lex",
+      "entity": {
+        "language": "en",
+        "lemma": "analysis",
+        "pos": "NOUN",
+        "entryKind": "word",
+        "familyIds": [
+          "candidate:family-analysis"
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "entry-analytical",
+      "type": "lex",
+      "entity": {
+        "language": "en",
+        "lemma": "analytical",
+        "pos": "ADJ",
+        "entryKind": "word",
+        "familyIds": [
+          "candidate:family-analysis"
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "entry-big",
+      "type": "lex",
+      "entity": {
+        "language": "en",
+        "lemma": "big",
+        "pos": "ADJ",
+        "entryKind": "word",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "entry-large",
+      "type": "lex",
+      "entity": {
+        "language": "en",
+        "lemma": "large",
+        "pos": "ADJ",
+        "entryKind": "word",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "entry-depend",
+      "type": "lex",
+      "entity": {
+        "language": "en",
+        "lemma": "depend",
+        "pos": "VERB",
+        "entryKind": "word",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "entry-look-up",
+      "type": "lex",
+      "entity": {
+        "language": "en",
+        "lemma": "look up",
+        "pos": "VERB",
+        "entryKind": "multiword",
+        "multiwordKind": "phrasal_verb",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "entry-borrow",
+      "type": "lex",
+      "entity": {
+        "language": "en",
+        "lemma": "borrow",
+        "pos": "VERB",
+        "entryKind": "word",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "entry-lend",
+      "type": "lex",
+      "entity": {
+        "language": "en",
+        "lemma": "lend",
+        "pos": "VERB",
+        "entryKind": "word",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "entry-advice",
+      "type": "lex",
+      "entity": {
+        "language": "en",
+        "lemma": "advice",
+        "pos": "NOUN",
+        "entryKind": "word",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "family-analysis",
+      "type": "fam",
+      "entity": {
+        "familyBasis": "editorially_related",
+        "label": "analyse / analysis / analytical candidate family",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "sense-bank-financial",
+      "type": "sns",
+      "entity": {
+        "entryId": "candidate:entry-bank-financial",
+        "definition": "An institution that keeps money and provides financial services.",
+        "usageNote": "Candidate financial-services sense; this pilot is not an exhaustive inventory.",
+        "grammar": {
+          "countability": "countable"
+        },
+        "examples": [
+          {
+            "english": "She opened an account at the bank.",
+            "vi": "Cô ấy mở một tài khoản tại ngân hàng.",
+            "exampleType": "editorial_original",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "sense-bank-river",
+      "type": "sns",
+      "entity": {
+        "entryId": "candidate:entry-bank-river",
+        "definition": "The land along the side of a river.",
+        "usageNote": "Candidate river-edge sense; do not map it to the financial sense.",
+        "grammar": {
+          "countability": "countable"
+        },
+        "examples": [
+          {
+            "english": "They rested on the river bank.",
+            "vi": "Họ nghỉ bên bờ sông.",
+            "exampleType": "editorial_original",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "sense-run-movement",
+      "type": "sns",
+      "entity": {
+        "entryId": "candidate:entry-run",
+        "definition": "Move using the legs faster than walking.",
+        "usageNote": "Candidate physical-movement sense; the gloss 'chạy bộ' is a context-specific alternative, not a universal translation.",
+        "grammar": {
+          "transitivity": "intransitive"
+        },
+        "examples": [
+          {
+            "english": "He runs every morning.",
+            "vi": "Anh ấy chạy mỗi buổi sáng.",
+            "exampleType": "editorial_original",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "sense-run-machine",
+      "type": "sns",
+      "entity": {
+        "entryId": "candidate:entry-run",
+        "definition": "Function or operate, especially of a machine or system.",
+        "usageNote": "Candidate intransitive machine/system sense; 'hoạt động' and 'vận hành' remain an unresolved bilingual alternative.",
+        "usageRestrictions": [
+          {
+            "kind": "semantic_role",
+            "description": "The subject is a machine, system, or process in this candidate sense."
+          }
+        ],
+        "grammar": {
+          "transitivity": "intransitive"
+        },
+        "examples": [
+          {
+            "english": "The engine runs quietly.",
+            "vi": "Động cơ hoạt động êm.",
+            "exampleType": "editorial_original",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "sense-run-management",
+      "type": "sns",
+      "entity": {
+        "entryId": "candidate:entry-run",
+        "definition": "Manage or be responsible for an activity, organization, or business.",
+        "usageNote": "Candidate management sense; the object is an organization, activity, or business-type entity.",
+        "grammar": {
+          "transitivity": "transitive"
+        },
+        "examples": [
+          {
+            "english": "She runs a small design studio.",
+            "vi": "Cô ấy điều hành một studio thiết kế nhỏ.",
+            "exampleType": "editorial_original",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "sense-analyse",
+      "type": "sns",
+      "entity": {
+        "entryId": "candidate:entry-analyse",
+        "definition": "Examine something carefully by separating it into parts or aspects.",
+        "usageNote": "Candidate verb sense; the object and construction require independent grammar review.",
+        "grammar": {
+          "transitivity": "transitive"
+        },
+        "examples": [
+          {
+            "english": "The researchers analysed the survey results.",
+            "vi": "Các nhà nghiên cứu phân tích kết quả khảo sát.",
+            "exampleType": "editorial_original",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "sense-analysis",
+      "type": "sns",
+      "entity": {
+        "entryId": "candidate:entry-analysis",
+        "definition": "A detailed examination of something.",
+        "usageNote": "Candidate noun sense; Vietnamese wording may be 'sự phân tích' for a process or 'bản phân tích' for a report/result. Countability remains unresolved.",
+        "examples": [
+          {
+            "english": "The report contains an analysis of the results.",
+            "vi": "Báo cáo có một bản phân tích kết quả.",
+            "exampleType": "editorial_original",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "sense-analytical",
+      "type": "sns",
+      "entity": {
+        "entryId": "candidate:entry-analytical",
+        "definition": "Related to examining something carefully by separating it into parts or aspects.",
+        "usageNote": "Candidate adjective sense; Vietnamese wording is context-sensitive and does not inherit the noun or verb POS.",
+        "examples": [
+          {
+            "english": "The course develops analytical thinking.",
+            "vi": "Khóa học phát triển tư duy phân tích.",
+            "exampleType": "editorial_original",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "sense-big-size",
+      "type": "sns",
+      "entity": {
+        "entryId": "candidate:entry-big",
+        "definition": "Greater than usual in physical size.",
+        "usageNote": "Physical-size candidate only; identical Vietnamese glosses do not license unrestricted substitution with 'large'.",
+        "contrastiveNotes": [
+          {
+            "language": "vi",
+            "text": "The shared gloss 'lớn' does not settle English collocational restrictions."
+          }
+        ],
+        "examples": [
+          {
+            "english": "They live in a big house.",
+            "vi": "Họ sống trong một ngôi nhà lớn.",
+            "exampleType": "editorial_original",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "sense-large-size",
+      "type": "sns",
+      "entity": {
+        "entryId": "candidate:entry-large",
+        "definition": "Great in physical size or extent.",
+        "usageNote": "Physical-dimensions candidate only; possible near-synonymy with 'big' remains context-limited and unreviewed.",
+        "contrastiveNotes": [
+          {
+            "language": "vi",
+            "text": "The shared gloss 'lớn' does not prove that 'large' can replace 'big' in every context."
+          }
+        ],
+        "examples": [
+          {
+            "english": "The museum has a large entrance hall.",
+            "vi": "Bảo tàng có một sảnh vào lớn.",
+            "exampleType": "editorial_original",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "sense-depend-contingent",
+      "type": "sns",
+      "entity": {
+        "entryId": "candidate:entry-depend",
+        "definition": "Be determined or affected by something else.",
+        "usageNote": "Conditional/contingent candidate sense only; the reliance/support sense remains an unresolved review question.",
+        "examples": [
+          {
+            "english": "The final result depends on the weather.",
+            "vi": "Kết quả cuối cùng phụ thuộc vào thời tiết.",
+            "exampleType": "editorial_original",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "sense-look-up-reference",
+      "type": "sns",
+      "entity": {
+        "entryId": "candidate:entry-look-up",
+        "definition": "Search for information in a reference source.",
+        "usageNote": "Reference-lookup candidate sense; 'look it up' is a separable construction variant, not a separate entry.",
+        "examples": [
+          {
+            "english": "Please look up the word in a dictionary.",
+            "vi": "Hãy tra cứu từ đó trong từ điển.",
+            "exampleType": "editorial_original",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "sense-borrow-temporary-use",
+      "type": "sns",
+      "entity": {
+        "entryId": "candidate:entry-borrow",
+        "definition": "Temporarily take and use something from another person with an intention to return it.",
+        "usageNote": "The subject is the temporary recipient/user; 'mượn' is the non-money candidate gloss and money contexts may require separate review.",
+        "examples": [
+          {
+            "english": "I borrowed a book from Lan.",
+            "vi": "Tôi mượn một cuốn sách của Lan.",
+            "exampleType": "editorial_original",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "sense-lend-temporary-use",
+      "type": "sns",
+      "entity": {
+        "entryId": "candidate:entry-lend",
+        "definition": "Temporarily give something to another person with an intention that it will be returned.",
+        "usageNote": "The subject is the temporary provider; 'cho mượn' is the non-money candidate gloss and money contexts may require separate review.",
+        "examples": [
+          {
+            "english": "Lan lent me a book.",
+            "vi": "Lan cho tôi mượn một cuốn sách.",
+            "exampleType": "editorial_original",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "sense-advice-guidance",
+      "type": "sns",
+      "entity": {
+        "entryId": "candidate:entry-advice",
+        "definition": "Guidance or a recommendation about what someone should do.",
+        "usageNote": "Candidate ordinary guidance sense; keep uncountable usage pending independent review and do not treat 'advices' as an ordinary plural.",
+        "grammar": {
+          "countability": "uncountable"
+        },
+        "examples": [
+          {
+            "english": "She gave me some useful advice.",
+            "vi": "Cô ấy cho tôi một lời khuyên hữu ích.",
+            "exampleType": "editorial_original",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "construction-run-machine",
+      "type": "con",
+      "entity": {
+        "senseId": "candidate:sense-run-machine",
+        "constructionType": "valency",
+        "pattern": "run (of a machine or system)",
+        "complements": [],
+        "constraints": [
+          "subject is a machine, system, or process",
+          "candidate sense is intransitive here"
+        ],
+        "grammar": {
+          "transitivity": "intransitive",
+          "complementTypes": [],
+          "separability": "not_applicable"
+        },
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "construction-run-management",
+      "type": "con",
+      "entity": {
+        "senseId": "candidate:sense-run-management",
+        "constructionType": "valency",
+        "pattern": "run + NP",
+        "complements": [
+          "noun phrase denoting an activity, organization, or business"
+        ],
+        "constraints": [
+          "object is an activity, organization, or business-type entity"
+        ],
+        "grammar": {
+          "transitivity": "transitive",
+          "complementTypes": [
+            "noun_phrase"
+          ],
+          "separability": "not_applicable"
+        },
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "construction-analyse-object",
+      "type": "con",
+      "entity": {
+        "senseId": "candidate:sense-analyse",
+        "constructionType": "valency",
+        "pattern": "analyse + NP",
+        "complements": [
+          "noun phrase"
+        ],
+        "grammar": {
+          "transitivity": "transitive",
+          "complementTypes": [
+            "noun_phrase"
+          ],
+          "separability": "not_applicable"
+        },
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "construction-depend-on",
+      "type": "con",
+      "entity": {
+        "senseId": "candidate:sense-depend-contingent",
+        "constructionType": "prepositional",
+        "pattern": "depend on + NP",
+        "prepositions": [
+          "on"
+        ],
+        "complements": [
+          "prepositional phrase headed by on"
+        ],
+        "constraints": [
+          "do not model the complement as a direct object",
+          "required preposition applies to this candidate sense"
+        ],
+        "grammar": {
+          "transitivity": "intransitive",
+          "complementTypes": [
+            "prepositional_phrase"
+          ],
+          "requiredPrepositions": [
+            "on"
+          ],
+          "separability": "not_applicable"
+        },
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "construction-look-up-separable",
+      "type": "con",
+      "entity": {
+        "senseId": "candidate:sense-look-up-reference",
+        "constructionType": "phrasal_particle",
+        "pattern": "look up + NP / look + NP + up",
+        "complements": [
+          "noun phrase object"
+        ],
+        "separable": true,
+        "constraints": [
+          "pronoun object occurs before the particle: look it up",
+          "look up it is rejected as a pronoun pattern"
+        ],
+        "grammar": {
+          "transitivity": "transitive",
+          "complementTypes": [
+            "noun_phrase"
+          ],
+          "pronounPlacement": "before_particle",
+          "separability": "separable"
+        },
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "construction-borrow-from",
+      "type": "con",
+      "entity": {
+        "senseId": "candidate:sense-borrow-temporary-use",
+        "constructionType": "valency",
+        "pattern": "borrow + NP (+ from + NP)",
+        "prepositions": [
+          "from"
+        ],
+        "complements": [
+          "thing or resource",
+          "optional source introduced by from"
+        ],
+        "constraints": [
+          "subject is the temporary recipient/user",
+          "do not add a double-object frame"
+        ],
+        "grammar": {
+          "transitivity": "transitive",
+          "complementTypes": [
+            "noun_phrase",
+            "prepositional_phrase"
+          ],
+          "requiredPrepositions": [
+            "from"
+          ],
+          "separability": "not_applicable"
+        },
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "construction-lend-double-object",
+      "type": "con",
+      "entity": {
+        "senseId": "candidate:sense-lend-temporary-use",
+        "constructionType": "valency",
+        "pattern": "lend + recipient + thing",
+        "complements": [
+          "recipient noun phrase",
+          "thing or resource noun phrase"
+        ],
+        "constraints": [
+          "subject is the temporary provider",
+          "recipient and thing have distinct semantic roles"
+        ],
+        "grammar": {
+          "transitivity": "transitive",
+          "complementTypes": [
+            "noun_phrase"
+          ],
+          "separability": "not_applicable"
+        },
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "construction-lend-to",
+      "type": "con",
+      "entity": {
+        "senseId": "candidate:sense-lend-temporary-use",
+        "constructionType": "prepositional",
+        "pattern": "lend + thing + to + recipient",
+        "prepositions": [
+          "to"
+        ],
+        "complements": [
+          "thing or resource noun phrase",
+          "recipient introduced by to"
+        ],
+        "constraints": [
+          "subject is the temporary provider",
+          "recipient and thing have distinct semantic roles"
+        ],
+        "grammar": {
+          "transitivity": "transitive",
+          "complementTypes": [
+            "noun_phrase",
+            "prepositional_phrase"
+          ],
+          "requiredPrepositions": [
+            "to"
+          ],
+          "separability": "not_applicable"
+        },
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-bank-financial",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-bank-financial",
+        "glossVi": "ngân hàng",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "financial institution and financial-services context",
+        "restrictions": [
+          "not a Vietnamese target sense",
+          "not applicable to the river-edge homograph"
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-bank-river",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-bank-river",
+        "glossVi": "bờ sông",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "land along the side of a river",
+        "restrictions": [
+          "not a Vietnamese target sense",
+          "not applicable to the financial homograph"
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-run-movement",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-run-movement",
+        "glossVi": "chạy",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "physical movement on foot",
+        "restrictions": [
+          "chạy bộ is retained only as a possible exercise-specific variant",
+          "not applicable to machine operation or management"
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-run-machine-operate",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-run-machine",
+        "glossVi": "hoạt động",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "intransitive machine or system functioning",
+        "restrictions": [
+          "candidate default for the intransitive operation sense",
+          "not a universal technical equivalent"
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-run-machine-operate-alternative",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-run-machine",
+        "glossVi": "vận hành",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "technical or operator-oriented wording for machine/system operation",
+        "restrictions": [
+          "unresolved bilingual alternative",
+          "not selected as the default intransitive gloss"
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-run-management",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-run-management",
+        "glossVi": "điều hành",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "manage an activity, organization, or business",
+        "restrictions": [
+          "not applicable to physical movement or machine operation"
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-analyse",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-analyse",
+        "glossVi": "phân tích",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "examine data, results, or issues in detail",
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-analysis",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-analysis",
+        "glossVi": "phân tích",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "noun referring to a process or a report/result",
+        "restrictions": [
+          "sự phân tích may fit a process",
+          "bản phân tích may fit a report or result"
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-analytical",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-analytical",
+        "glossVi": "mang tính phân tích",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "modifying an approach, method, or way of thinking",
+        "restrictions": [
+          "does not create a Vietnamese target sense",
+          "does not make the adjective interchangeable with the noun or verb"
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-big",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-big-size",
+        "glossVi": "lớn",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "physical size",
+        "restrictions": [
+          "shared gloss with large does not establish unrestricted substitution",
+          "big sister and other collocations remain outside this candidate"
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-large",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-large-size",
+        "glossVi": "lớn",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "physical size or extent",
+        "restrictions": [
+          "shared gloss with big does not establish unrestricted substitution",
+          "collocational differences remain pending review"
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-depend",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-depend-contingent",
+        "glossVi": "phụ thuộc vào",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "conditional or contingent relation with depend on + NP",
+        "restrictions": [
+          "does not cover the unresolved reliance/support sense"
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-look-up",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-look-up-reference",
+        "glossVi": "tra cứu",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "search for information in a reference source",
+        "restrictions": [
+          "look it up is a construction variant, not a separate target sense"
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-borrow",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-borrow-temporary-use",
+        "glossVi": "mượn",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "temporarily receive and use a non-money item",
+        "restrictions": [
+          "money-related vay remains a separate review question",
+          "subject is the recipient/user, not the provider"
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-lend",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-lend-temporary-use",
+        "glossVi": "cho mượn",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "temporarily provide a non-money item",
+        "restrictions": [
+          "money-related cho vay remains a separate review question",
+          "subject is the provider, not the recipient"
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    },
+    {
+      "candidateId": "equiv-advice",
+      "type": "eqv",
+      "entity": {
+        "sourceSenseId": "candidate:sense-advice-guidance",
+        "glossVi": "lời khuyên",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "guidance or recommendation",
+        "restrictions": [
+          "lời tư vấn is retained only as a possible consultation/service variant",
+          "not a Vietnamese target sense"
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": [],
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft"
+      }
+    }
+  ]
+}
