@@ -8,26 +8,39 @@ const sort=(a,b)=>cmp(a.entityId,b.entityId)||cmp(a.path,b.path)||cmp(a.code,b.c
 // merely one convenient evidence reference on a record.
 export function publicationClaimPaths(record){
  const type=record._id.split("_")[0],paths=[];
- const add=(field)=>{if(Object.hasOwn(record,field))paths.push("/"+field);};
- const nested=(field)=>{
-  if(record[field]&&typeof record[field]==="object")for(const key of Object.keys(record[field]).sort())paths.push("/"+field+"/"+key);
+ const add=field=>{if(Object.hasOwn(record,field))paths.push("/"+field);};
+ const addAll=fields=>fields.forEach(add);
+ const nested=field=>{
+  if(record[field]&&typeof record[field]==="object")
+   for(const key of Object.keys(record[field]).sort())paths.push("/"+field+"/"+key);
  };
- if(type==="lex"){add("lemma");add("pos");}
+ const items=(field,keys)=>{
+  for(const [i,item] of (record[field]??[]).entries()){
+   if(keys)for(const key of keys)if(item&&Object.hasOwn(item,key))paths.push("/"+field+"/"+i+"/"+key);
+   else if(item!==undefined)paths.push("/"+field+"/"+i);
+  }
+ };
+ if(type==="lex")addAll(["language","lemma","pos","entryKind","multiwordKind","familyIds","homographNumber"]);
  else if(type==="sns"){
-  add("definition");add("register");add("domain");nested("grammar");
-  for(const [i,x]of (record.usageRestrictions??[]).entries())if(x.description)paths.push("/usageRestrictions/"+i+"/description");
-  for(const [i,x]of (record.contrastiveNotes??[]).entries())if(x.text)paths.push("/contrastiveNotes/"+i+"/text");
-  for(const [i,x]of (record.examples??[]).entries()){if(x.english)paths.push("/examples/"+i+"/english");if(x.vi)paths.push("/examples/"+i+"/vi");}
+  addAll(["entryId","definition","topicIds","register","usageNote","domain","constructionIds"]);
+  nested("grammar");
+  items("usageRestrictions",["kind","description"]);
+  items("contrastiveNotes",["language","text"]);
+  items("examples",["english","exampleType","vi","register","variety"]);
  }else if(type==="eqv"){
-  add("sourceSenseId");add(record.alignmentMode==="gloss_only"?"glossVi":"targetSenseId");add("equivalenceType");add("context");add("register");
- }else if(type==="con"){add("pattern");add("prepositions");add("complements");nested("grammar");}
- else if(type==="rel"){add("relationType");add("sourceId");add("targetId");nested("qualifiers");}
- else if(type==="col"){add("anchorSenseId");add("pattern");add("components");add("context");}
- else if(type==="frm"){add("form");add("ipa");add("stress");}
- else if(type==="fam")add("familyBasis");
- else if(type==="top")add("label");
- else if(type==="mrf"){add("form");add("morphologicalRole");}
- else if(type==="ety")add("historicalForm");
+  addAll(["sourceSenseId","targetSenseId","glossVi","direction","alignmentMode","equivalenceType","context","register"]);
+  items("restrictions");
+ }else if(type==="con"){
+  addAll(["senseId","constructionType","pattern","prepositions","complements","separable"]);
+  items("constraints");nested("grammar");
+ }else if(type==="rel"){
+  addAll(["relationType","sourceId","targetId"]);nested("qualifiers");
+ }else if(type==="col")addAll(["anchorSenseId","pattern","components","context"]);
+ else if(type==="frm")addAll(["entryId","form","locale","ipa","stress","pronunciationVariety"]);
+ else if(type==="fam")addAll(["familyBasis","label"]);
+ else if(type==="top")addAll(["label","parentTopicId"]);
+ else if(type==="mrf")addAll(["form","morphologicalRole","language"]);
+ else if(type==="ety")addAll(["entryId","historicalForm","sourceLanguage","notes"]);
  return [...new Set(paths)].sort(cmp);
 }
 export const digest = value=>createHash("sha256").update(JSON.stringify(value)).digest("hex");

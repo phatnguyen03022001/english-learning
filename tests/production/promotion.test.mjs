@@ -3,19 +3,19 @@ import assert from "node:assert/strict";
 import {promoteCandidates} from "../../pipeline/promote-candidates.mjs";
 import {digest} from "../../validators/production-gates.mjs";
 const id=(p,n)=>p+"_01940000-0000-7000-8000-"+n.toString(16).padStart(12,"0");
-const refs={lex:id("lex",2601),src:id("src",2601),ev1:id("evd",2601),ev2:id("evd",2602),rev:id("rev",2601)};
+const refs={lex:id("lex",2601),src:id("src",2601),ev1:id("evd",2601),ev2:id("evd",2602),ev3:id("evd",2603),ev4:id("evd",2604),rev:id("rev",2601)};
 const base=()=>{
- const lex={_id:refs.lex,schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"draft",language:"en",lemma:"synthetic only",pos:"NOUN",entryKind:"word",evidenceIds:[refs.ev1,refs.ev2]};
+ const lex={_id:refs.lex,schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"draft",language:"en",lemma:"synthetic only",pos:"NOUN",entryKind:"word",evidenceIds:[refs.ev1,refs.ev2,refs.ev3,refs.ev4]};
  const source={_id:refs.src,schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"draft",title:"synthetic owner/rights fixture only",rights:{status:"redistributable",scopes:["dictionary_publication"],reviewerId:"rights-reviewer",permissionReference:"test-only"}};
  const ev=(id,field,value)=>({_id:id,schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"draft",sourceId:refs.src,assertionIds:[refs.lex],claim:{subjectId:refs.lex,fieldPath:field,valueDigest:digest(value),specificity:"exact_value"},independence:"independent_reviewed",reviewStatus:"accepted"});
- const review={_id:refs.rev,schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"draft",subjectIds:[refs.lex],reviewerId:"linguistic-reviewer",outcome:"accepted",role:"lead_editorial",appointmentReference:"test-only",claims:[{subjectId:refs.lex,fieldPath:"/lemma"},{subjectId:refs.lex,fieldPath:"/pos"}]};
- return {formatVersion:1,batches:{},mappings:{},records:[lex,source,ev(refs.ev1,"/lemma","synthetic only"),ev(refs.ev2,"/pos","NOUN"),review],history:[]};
+ const review={_id:refs.rev,schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"draft",subjectIds:[refs.lex],reviewerId:"linguistic-reviewer",outcome:"accepted",role:"lead_editorial",appointmentReference:"test-only",claims:["/language","/lemma","/pos","/entryKind"].map(fieldPath=>({subjectId:refs.lex,fieldPath}))};
+ return {formatVersion:1,batches:{},mappings:{},records:[lex,source,ev(refs.ev1,"/lemma","synthetic only"),ev(refs.ev2,"/pos","NOUN"),ev(refs.ev3,"/language","en"),ev(refs.ev4,"/entryKind","word"),review],history:[]};
 };
 const promotion={promotionId:"test-promotion-1",subjects:[{canonicalId:refs.lex,expectedRevision:1}]};
 const trust={
  ownerId:"owner",effectiveAt:"2026-10-30T00:00:00Z",verifyOwnerAttestation:()=>true,
  verifyEvidence:()=>true,verifyRights:()=>true,appointments:[
-  {appointmentKey:"test-only",reviewerId:"linguistic-reviewer",appointedByOwnerId:"owner",role:"lead_editorial",scope:{subjectIds:[refs.lex],fieldPaths:["/lemma","/pos"]},effectiveFrom:"2026-01-01T00:00:00Z",ownerAttestationRef:"test-only"},
+  {appointmentKey:"test-only",reviewerId:"linguistic-reviewer",appointedByOwnerId:"owner",role:"lead_editorial",scope:{subjectIds:[refs.lex],fieldPaths:["/language","/lemma","/pos","/entryKind"]},effectiveFrom:"2026-01-01T00:00:00Z",ownerAttestationRef:"test-only"},
   {appointmentKey:"test-only",reviewerId:"rights-reviewer",appointedByOwnerId:"owner",role:"rights",scope:{subjectIds:[refs.src]},effectiveFrom:"2026-01-01T00:00:00Z",ownerAttestationRef:"test-only"}
  ]};
 test("production CLI without independent appointment/evidence/rights verification cannot promote",()=>{

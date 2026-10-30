@@ -127,3 +127,40 @@ test("each new claim requires its own exact evidence, scoped LER review and righ
   assert.ok(noRights.issues.some(i=>i.code==="CLAIM_PATH_UNVERIFIED"&&i.entityId===subject._id&&i.path===extra));
  }
 });
+
+
+test("every classified V2 learner assertion has a concrete per-field claim path",()=>{
+ const sample={
+  lex:{language:"en",lemma:"synthetic",pos:"NOUN",entryKind:"multiword",multiwordKind:"phrasal_verb",familyIds:["fam_test"],homographNumber:1},
+  sns:{entryId:"lex_test",definition:"meaning",topicIds:["top_test"],register:"formal",usageNote:"note",domain:"finance",
+   usageRestrictions:[{kind:"syntactic",description:"avoid use"}],
+   contrastiveNotes:[{language:"vi",text:"contrast"}],
+   grammar:{countability:"uncountable",transitivity:"transitive"},constructionIds:["con_test"],
+   examples:[{english:"Example",exampleType:"editorial_original",editorialStatus:"draft",translationEvidenceStatus:"unreviewed",vi:"Ví dụ",register:"formal",variety:"en-GB"}]},
+  frm:{entryId:"lex_test",form:"forms",locale:"en-GB",ipa:"ipa",stress:"stress",pronunciationVariety:"en-GB"},
+  fam:{familyBasis:"morphological",label:"family"},
+  mrf:{form:"un-",morphologicalRole:"prefix",language:"en"},
+  ety:{entryId:"lex_test",historicalForm:"older",sourceLanguage:"la",notes:"etymology note"},
+  top:{label:"topic",parentTopicId:"top_test"},
+  con:{senseId:"sns_test",constructionType:"verb_pattern",pattern:"pattern",prepositions:["on"],complements:["NP"],separable:true,constraints:["pronoun must precede particle"],
+   grammar:{countability:"uncountable",transitivity:"transitive",complementTypes:["noun_phrase"],requiredPrepositions:["on"],pronounPlacement:"before_particle",separability:"separable",register:"formal",variety:"en-GB"}},
+  col:{anchorSenseId:"sns_test",pattern:"collocation",components:["noun"],context:"context"},
+  eqv:{sourceSenseId:"sns_test",targetSenseId:"sns_vi",glossVi:"dịch",direction:"en_to_vi",alignmentMode:"sense_aligned",equivalenceType:"approximate",context:"context",register:"formal",restrictions:["restriction"]},
+  rel:{relationType:"SYNONYM_OF",sourceId:"sns_a",targetId:"sns_b",qualifiers:{register:"formal"}}
+ };
+ const expected={
+  lex:["/language","/lemma","/pos","/entryKind","/multiwordKind","/familyIds","/homographNumber"],
+  sns:["/entryId","/definition","/topicIds","/register","/usageNote","/domain","/usageRestrictions/0/kind","/usageRestrictions/0/description","/contrastiveNotes/0/language","/contrastiveNotes/0/text","/grammar/countability","/grammar/transitivity","/constructionIds","/examples/0/english","/examples/0/exampleType","/examples/0/vi","/examples/0/register","/examples/0/variety"],
+  frm:["/entryId","/form","/locale","/ipa","/stress","/pronunciationVariety"],
+  fam:["/familyBasis","/label"],mrf:["/form","/morphologicalRole","/language"],
+  ety:["/entryId","/historicalForm","/sourceLanguage","/notes"],
+  top:["/label","/parentTopicId"],
+  con:["/senseId","/constructionType","/pattern","/prepositions","/complements","/separable","/constraints/0","/grammar/countability","/grammar/transitivity","/grammar/complementTypes","/grammar/requiredPrepositions","/grammar/pronounPlacement","/grammar/separability","/grammar/register","/grammar/variety"],
+  col:["/anchorSenseId","/pattern","/components","/context"],
+  eqv:["/sourceSenseId","/targetSenseId","/glossVi","/direction","/alignmentMode","/equivalenceType","/context","/register","/restrictions/0"],
+  rel:["/relationType","/sourceId","/targetId","/qualifiers/register"]
+ };
+ for(const [type,fields] of Object.entries(sample)){
+  assert.deepEqual(publicationClaimPaths({_id:type+"_test",...fields}),[...expected[type]].sort(),type+" learner claim coverage");
+ }
+});
