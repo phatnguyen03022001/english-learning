@@ -19579,7 +19579,16 @@
       "appointmentReference": null,
       "reviewedAt": null,
       "authenticated": false,
-      "candidateId": "entry-bank-financial"
+      "candidateId": "entry-bank-financial",
+      "evidenceGap": "Phase 8 reports that the meanings are distinct while consulted dictionary pages group them under one noun headword; it does not establish the canonical entry split or numbering policy. Human lexicographic decision and pinpoint review are required.",
+      "supportingFindings": [
+        "Phase 8 correction COR-007 marks the numbering as an editorial proposal and calls for an entry-versus-sense decision.",
+        "Phase 8 references SRC-OALD and SRC-COLLINS for the disputed presentation."
+      ],
+      "contradictoryFindings": [
+        "The two meanings are semantically distinct, while consulted references group the senses under a shared noun entry; neither fact alone settles the data model."
+      ],
+      "recommendationForReview": "Keep both meaning candidates separate and numbering provisional pending the lexicographer's decision; do not merge or delete either candidate."
     },
     {
       "reviewItemKey": "P10-ISSUE-run-boundary",
@@ -19628,7 +19637,16 @@
       "appointmentReference": null,
       "reviewedAt": null,
       "authenticated": false,
-      "candidateId": "sense-run-machine"
+      "candidateId": "sense-run-machine",
+      "evidenceGap": "Phase 8 identifies sense-level transitivity scope and subject constraints; it does not settle whether functioning and operator-caused operation belong to one sense. Reassess the new construction with claim-specific examples and source locations.",
+      "supportingFindings": [
+        "Phase 8 corrections COR-003 and COR-004 require narrowing the intransitive frame and reviewing subject restrictions.",
+        "Phase 9 preserves an intransitive construction and adds a separately scoped transitive construction candidate."
+      ],
+      "contradictoryFindings": [
+        "The intransitive machine/system functioning frame and transitive run + NP frame differ in valency and participant roles; that contrast may reflect construction variation or a sense boundary."
+      ],
+      "recommendationForReview": "Review construction-level restrictions and decide the sense boundary independently; do not auto-split from valency alone."
     },
     {
       "reviewItemKey": "P10-ISSUE-analysis-family",
@@ -19676,7 +19694,15 @@
       "appointmentReference": null,
       "reviewedAt": null,
       "authenticated": false,
-      "candidateId": "family-analysis"
+      "candidateId": "family-analysis",
+      "evidenceGap": "Phase 8 flags that spelling similarity is insufficient to establish a directed derivational relation. Independent synchronic morphology/lexicography review is missing.",
+      "supportingFindings": [
+        "The candidates share a visible form family: analyse, analysis, analytical; the Phase 9 family candidate remains provisional."
+      ],
+      "contradictoryFindings": [
+        "Shared spelling does not prove family membership or a DERIVED_FROM edge; Phase 8 identifies no independent derivational evidence in SRC-REPO."
+      ],
+      "recommendationForReview": "Retain provisional membership only if useful for review; add no directed semantic/morphological edge without a separately justified decision."
     },
     {
       "reviewItemKey": "P10-ISSUE-rights-sources",
@@ -19777,7 +19803,15 @@
       "appointmentReference": null,
       "reviewedAt": null,
       "authenticated": false,
-      "candidateId": "entry-bank-financial"
+      "candidateId": "entry-bank-financial",
+      "evidenceGap": "No source-specific independent verification, source-independence review, copyright analysis, redistribution permission or intended reuse clearance is recorded. Public access does not satisfy these requirements.",
+      "supportingFindings": [
+        "Phase 8 source registry records selected sources, URLs, access date/edition descriptions, evidence types, limitations, independence notes and reuse-rights status."
+      ],
+      "contradictoryFindings": [
+        "The source registry itself records limits: some editions are unspecified, sources are selective or dependent, and reference-only access does not confirm redistribution permission."
+      ],
+      "recommendationForReview": "Evaluate every source and example separately against the four statuses: publicly accessible, suitable for reference, independently verified, and licensed for intended redistribution."
     }
   ],
   "publicationEligible": false,

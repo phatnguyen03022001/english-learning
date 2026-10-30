@@ -92,6 +92,13 @@ test("Phase 10 assigns all candidate types, senses, constructions, equivalences,
 test("Modified/new claims do not inherit approval; no appointments, rights clearance or publication approval are fabricated",()=>{
  const allowedSourceIds=new Set(Object.keys(dossier.sources));
  for(const item of queue.reviewItems){
+  assert.equal(typeof item.evidenceGap,"string");
+  assert.ok(item.evidenceGap.length>0);
+  if(item.reviewItemKey.startsWith("P10-ISSUE-")){
+   assert.ok(item.supportingFindings.length>0);
+   assert.ok(item.contradictoryFindings.length>0);
+   assert.ok(item.recommendationForReview.length>0);
+  }
   assert.equal(item.humanDecision,null);
   assert.equal(item.authenticated,false);
   assert.equal(item.authorityStatus,"NO_REVIEWER_APPOINTED");
