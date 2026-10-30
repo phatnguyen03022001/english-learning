@@ -457,7 +457,7 @@
       "phase8FieldPath": "/records/21/entity/definition",
       "problem": "definition compresses logical/scientific uses",
       "action": "The adjective now covers systematic and logical analytical uses without creating additional senses.",
-      "evidenceLimitation": "OALD supports analytical thinking and method uses; scientific/domain-specific subuses still need human review and no separate sense is asserted.",
+      "evidenceLimitation": "Phase 8 supports analytical thinking/method uses, including logical, systematic, and scientific contexts; exact domain boundaries remain partial and need human review.",
       "result": "CORRECTED",
       "independentHumanReviewRequired": true,
       "requiredReview": "semantic review",
@@ -470,7 +470,7 @@
           "fieldPath": "/records/21/entity/definition",
           "previousValue": "Related to examining something carefully by separating it into parts or aspects.",
           "fieldExisted": true,
-          "proposedNewValue": "Involving careful, systematic examination or logical reasoning, including methods used to study information or data.",
+          "proposedNewValue": "Involving careful, systematic examination or logical reasoning, including methods used to study information or data in scientific work.",
           "mutationApplied": true,
           "reason": "Broadens the adjective to systematic and logical uses without adding a sense; information/data study remains within the evidence-backed analytical scope.",
           "phase8Assessments": [
