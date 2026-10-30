@@ -28,7 +28,9 @@ on:
       - "tests/stress/**"
       - "docs/quality-stress-audit.md"
       - "data/candidates/**"
+      - "data/reviews/**"
       - "docs/lexical-fanout-pilot-report.md"
+      - "docs/phase8-lexicographic-quality-review.md"
 
 permissions:
   contents: read
@@ -92,3 +94,6 @@ jobs:
             inputUnchanged: expected.inputUnchanged
           }));
           NODE
+
+      - name: Validate Phase 8 evidence dossier
+        run: node --test tests/production/phase8-evidence-dossier.test.mjs
