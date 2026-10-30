@@ -1388,6 +1388,10 @@
       "learnerImpact": "Keep as draft metadata only; require family review.",
       "recommendedAction": [
         "SRC-REPO"
+      ],
+      "qaAxes": [
+        "sense_boundary_accuracy",
+        "evidence_sufficiency"
       ]
     },
     {
@@ -1402,6 +1406,10 @@
       "learnerImpact": "Keep as draft metadata only; require family review.",
       "recommendedAction": [
         "SRC-REPO"
+      ],
+      "qaAxes": [
+        "sense_boundary_accuracy",
+        "evidence_sufficiency"
       ]
     },
     {
