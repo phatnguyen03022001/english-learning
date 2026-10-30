@@ -1382,10 +1382,7 @@
       "fieldPath": "/records/13/entity/familyBasis",
       "proposedValue": "editorially_related; analyse / analysis / analytical candidate family",
       "status": "INSUFFICIENT_EVIDENCE",
-      "supportingSourceRefs": [
-        "sense_boundary_accuracy",
-        "evidence_sufficiency"
-      ],
+      "supportingSourceRefs": [],
       "reasoning": "The record explicitly proposes an editorial relation, not a verified derivation.",
       "uncertainty": "No independent family evidence or LER decision is attached.",
       "learnerImpact": "Keep as draft metadata only; require family review.",
@@ -1399,10 +1396,7 @@
       "fieldPath": "/records/13/entity/label",
       "proposedValue": "editorially_related; analyse / analysis / analytical candidate family",
       "status": "INSUFFICIENT_EVIDENCE",
-      "supportingSourceRefs": [
-        "sense_boundary_accuracy",
-        "evidence_sufficiency"
-      ],
+      "supportingSourceRefs": [],
       "reasoning": "The record explicitly proposes an editorial relation, not a verified derivation.",
       "uncertainty": "No independent family evidence or LER decision is attached.",
       "learnerImpact": "Keep as draft metadata only; require family review.",
