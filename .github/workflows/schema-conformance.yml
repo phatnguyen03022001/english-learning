@@ -1,4 +1,4 @@
-name: Phase 2–6 Lexical Production Quality Gates
+name: Phase 2–7 Lexical Production Quality Gates
 
 on:
   workflow_dispatch:
@@ -27,6 +27,8 @@ on:
       - "tests/fixtures/pilot/v1/**"
       - "tests/stress/**"
       - "docs/quality-stress-audit.md"
+      - "data/candidates/**"
+      - "docs/lexical-fanout-pilot-report.md"
 
 permissions:
   contents: read
@@ -50,3 +52,43 @@ jobs:
         run: npm install --no-package-lock --ignore-scripts --no-audit --no-fund
       - name: Run schema, graph, pilot and adversarial stress tests
         run: npm test
+      - name: Validate Phase 7 candidate batch
+        run: |
+          set -euo pipefail
+          input_path="data/candidates/pilot-fanout-001.json"
+          state_path="${RUNNER_TEMP}/phase7-candidate-state.json"
+          output_path="${RUNNER_TEMP}/phase7-candidate-validation.json"
+          before_sha="$(sha256sum "$input_path" | awk '{print $1}')"
+          npm --silent run candidates:validate -- --input "$input_path" --state "$state_path" > "$output_path"
+          VALIDATION_OUTPUT="$output_path" VALIDATION_INPUT="$input_path" VALIDATION_STATE="$state_path" BEFORE_SHA="$before_sha" node --input-type=module <<'NODE'
+          import {existsSync, readFileSync} from "node:fs";
+          import {createHash} from "node:crypto";
+
+          const outputPath = process.env.VALIDATION_OUTPUT;
+          const inputPath = process.env.VALIDATION_INPUT;
+          const statePath = process.env.VALIDATION_STATE;
+          const result = JSON.parse(readFileSync(outputPath, "utf8"));
+          const afterSha = createHash("sha256").update(readFileSync(inputPath)).digest("hex");
+          const expected = {
+            status: "dry-run",
+            issues: 0,
+            publicationEligible: false,
+            stateCreated: false,
+            inputUnchanged: process.env.BEFORE_SHA === afterSha
+          };
+          if (result.status !== expected.status) throw new Error(`Unexpected status: ${result.status}`);
+          if (!Array.isArray(result.issues) || result.issues.length !== expected.issues)
+            throw new Error(`Unexpected issues: ${JSON.stringify(result.issues)}`);
+          if (result.publicationEligible !== expected.publicationEligible)
+            throw new Error(`Publication eligibility was ${result.publicationEligible}`);
+          if (existsSync(statePath) !== expected.stateCreated)
+            throw new Error(`Validation created state at ${statePath}`);
+          if (!expected.inputUnchanged) throw new Error("Candidate input changed during validation");
+          console.log(JSON.stringify({
+            status: result.status,
+            issues: result.issues.length,
+            publicationEligible: result.publicationEligible,
+            stateCreated: existsSync(statePath),
+            inputUnchanged: expected.inputUnchanged
+          }));
+          NODE
