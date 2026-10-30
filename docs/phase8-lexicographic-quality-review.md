@@ -146,7 +146,15 @@ The dossier deliberately does not create `evd_`, `rev_` or `dec_` identifiers, d
 
 ## 11. GitHub verification
 
-At the time this report was authored, the Phase 8 artifact commit was being assembled and the final GitHub Actions run was not yet claimed. The final handoff must record the actual successful run URL, tested SHA, remote HEAD match, step logs, Node.js version and test count. No CI success is inferred from local execution or from the previous Phase 7 run.
+Evidence run 55 completed successfully on Ubuntu GitHub Actions:
+- URL: https://github.com/phatnguyen03022001/ielts-tradition/actions/runs/41002799100
+- Tested SHA: `cb1587060dc6899f64d51ea9add67a17c4f6d95c`
+- Node.js: `v22.23.4`
+- Regression: 191 base tests passed; 54 production tests passed.
+- Candidate validation: `status=dry-run`, `issues=0`, `publicationEligible=false`, `stateCreated=false`, `inputUnchanged=true`.
+- Phase 8 dossier test: 2/2 passed.
+
+A subsequent report-only commit is covered by the same workflow path rules and must be checked as the final remote SHA before release handoff. This historical evidence does not imply human linguistic verification, rights clearance or publication eligibility.
 
 ## 12. Next production decision
 
