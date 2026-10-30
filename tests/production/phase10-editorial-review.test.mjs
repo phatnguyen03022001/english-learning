@@ -117,7 +117,7 @@ test("Modified/new claims do not inherit approval; no appointments, rights clear
  assert.equal(queue.coverage.publicationApproved,false);
  assert.equal(dossier.batch.batchId,"pilot-fanout-001");
  assert.equal(dossier.claimAssessments.length,232);
- assert.equal(ledger.correctionQueue.length,10);
+ assert.equal(ledger.corrections.length,10);
  assert.equal(queue.historicalSources.phase8.batchId,"pilot-fanout-001");
  assert.equal(queue.historicalSources.phase9.corrections,10);
  assert.equal(original.batchId,"pilot-fanout-001");
