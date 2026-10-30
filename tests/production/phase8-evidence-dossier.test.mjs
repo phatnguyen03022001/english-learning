@@ -38,7 +38,7 @@ test("Phase 8 dossier traces every assessment to an existing draft candidate fie
   const byId=new Map(batch.records.map((record,index)=>[record.candidateId,{record,index}]));
   for(const ref of dossier.candidateReferences){
     const found=byId.get(ref.candidateId);
-    assert.ok(found,\`missing candidate reference: ${ref.candidateId}\`);
+    assert.ok(found,`missing candidate reference: ${ref.candidateId}`);
     assert.equal(ref.recordIndex,found.index);
     assert.deepEqual(pointer(batch,ref.recordPath),found.record);
     assert.deepEqual(pointer(batch,ref.entityPath),found.record.entity);
@@ -47,14 +47,14 @@ test("Phase 8 dossier traces every assessment to an existing draft candidate fie
   const sourceIds=new Set(Object.keys(dossier.sources));
   for(const assessment of dossier.claimAssessments){
     assert.equal(assessment.batchId,"pilot-fanout-001");
-    assert.ok(byId.has(assessment.candidateId),\`unknown claim candidate: ${assessment.candidateId}\`);
-    assert.ok(statuses.has(assessment.status),\`unknown status: ${assessment.status}\`);
-    assert.notEqual(pointer(batch,assessment.fieldPath),undefined,\`missing field: ${assessment.fieldPath}\`);
-    for(const sourceId of assessment.supportingSourceRefs) assert.ok(sourceIds.has(sourceId),\`unknown source: ${sourceId}\`);
+    assert.ok(byId.has(assessment.candidateId),`unknown claim candidate: ${assessment.candidateId}`);
+    assert.ok(statuses.has(assessment.status),`unknown status: ${assessment.status}`);
+    assert.notEqual(pointer(batch,assessment.fieldPath),undefined,`missing field: ${assessment.fieldPath}`);
+    for(const sourceId of assessment.supportingSourceRefs) assert.ok(sourceIds.has(sourceId),`unknown source: ${sourceId}`);
     assert.ok(Array.isArray(assessment.qaAxes) && assessment.qaAxes.length>0);
     assert.ok(assessment.proposedValue);
     if(assessment.status==="SUPPORTED" || assessment.status==="CONTRADICTED" || assessment.status==="CONTESTED")
-      assert.ok(assessment.supportingSourceRefs.length>0,\`evidence reference missing: ${assessment.fieldPath}\`);
+      assert.ok(assessment.supportingSourceRefs.length>0,`evidence reference missing: ${assessment.fieldPath}`);
   }
   assert.deepEqual(dossier.publication.eligible,false);
   assert.equal(dossier.publication.status,"NOT_READY");
