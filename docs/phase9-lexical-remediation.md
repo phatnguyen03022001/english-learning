@@ -2,8 +2,8 @@
 
 ## 1. Status
 
-- **REMEDIATION:** implementation complete; CI verification pending at artifact preparation.
-- **CANDIDATE ENGINEERING:** pending corrected-snapshot schema, graph, and dry-run checks.
+- **REMEDIATION:** PASS on the implementation snapshot and correction ledger.
+- **CANDIDATE ENGINEERING:** PASS; V2 schema/graph and dry-run gates passed in GitHub Actions.
 - **LEXICAL QUALITY:** PROVISIONAL / PARTIALLY SUPPORTED.
 - **HUMAN REVIEW:** PENDING.
 - **PUBLICATION:** NOT READY.
@@ -62,6 +62,6 @@ All source records remain reference-only unless separately cleared for reuse. Th
 
 The Phase 9 regression suite checks the immutable Phase 7 digest, candidate IDs and references, scoped inventory change, all ten ledger items and exact before/after values, the corrected snapshot digest, historical dossier linkage, draft-only/gloss-only status, and candidate dry-run purity. GitHub Actions runs on Ubuntu with Node.js 22 and validates both candidate snapshots; the candidate CLI must report `status=dry-run`, no schema/graph issues, `publicationEligible=false`, no state file, and unchanged input bytes.
 
-CI verification for the implementation commit will be recorded here after the hosted run completes. No local result is represented as GitHub CI evidence.
+GitHub-hosted Ubuntu validation passed on implementation commit `8df293d11902d220682a083eaf111e49003f8fec` using Node.js `v22.23.4` ([run 58](https://github.com/phatnguyen03022001/ielts-tradition/actions/runs/41004473857)). The run reported 191/191 core regressions, 63/63 production regressions (54 existing plus 9 Phase 9), 9/9 dedicated Phase 9 tests, and 2/2 Phase 8 dossier tests. Both Phase 7 and Phase 9 CLI checks returned `dry-run`, zero issues, `publicationEligible: false`, no state file, and unchanged input bytes. This evidence is for the stated implementation SHA; final report-commit CI and remote-HEAD equality are recorded in the Phase 9 task handoff.
 
 Publication remains blocked. No Phase 8 assessment has been converted to a verified state, and no evidence, LER decision, rights clearance, or approval record has been fabricated.
