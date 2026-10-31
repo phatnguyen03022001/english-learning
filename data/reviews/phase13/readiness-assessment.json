@@ -4519,7 +4519,7 @@
       {
         "sourceId": "SRC-OALD",
         "owner": "Oxford University Press",
-        "edition": "Online; page version not stated",
+        "edition": "Online entry version unstated; official terms page updated 2018-04-25.",
         "officialUrls": [
           "https://www.oxfordlearnersdictionaries.com/terms-and-conditions",
           "https://www.oxfordlearnersdictionaries.com/definition/english/bank_1"
@@ -4547,7 +4547,7 @@
       {
         "sourceId": "SRC-COLLINS",
         "owner": "HarperCollins Publishers",
-        "edition": "Online; version not stated",
+        "edition": "Online entry version unstated; official terms page last updated 2012-07-19.",
         "officialUrls": [
           "https://www.collinsdictionary.com/terms-and-conditions"
         ],
@@ -4560,7 +4560,7 @@
       {
         "sourceId": "SRC-BRITISH-COUNCIL",
         "owner": "British Council",
-        "edition": "LearnEnglish pages; terms page last updated 2020",
+        "edition": "LearnEnglish pages; official terms page last updated 2020-05-29.",
         "officialUrls": [
           "https://www.britishcouncil.org/terms"
         ],
@@ -4688,14 +4688,15 @@
       "canonicalSourceRecordsPersisted": 0,
       "claimLinks": 0,
       "reviewerApprovals": 0,
-      "rawFileSha256": "1ffb00efd37a7019bade84aa469248c659fa35573480fad0630e744dfbfcac82",
-      "candidateBatchDigest": "3cbb2f1d9e80f6f57b9309a526e1805ee86095cee548749033375d7f30f4cf0b",
+      "rawFileSha256": "a737f2f3bee58966ced56af0c410886e3e49b42c0eabf5e1e343a1112073cfe3",
+      "candidateBatchDigest": "db163c03f288a99798b0f42f427bc5f32a72d6ed54701f38ba2906d7c6b5cd43",
       "validationStatus": "PASS_draft_only",
       "publicationEligible": false
     },
     "sourceMetadataCandidates": 11,
     "canonicalV2SourceRecordsPersisted": 0,
-    "claimLinkedSourceRecordsPresent": 0
+    "claimLinkedSourceRecordsPresent": 0,
+    "termsFreshnessNote": "Official pages were retrieved during this audit; displayed terms revision dates are recorded. OALD (2018-04-25), Collins (2012-07-19) and British Council (2020-05-29) are older terms pages, so they do not establish a current reuse grant; retain reference_only and seek current written permission/legal review when redistribution is intended."
   },
   "governance": {
     "authenticatedOwnerAppointments": 0,
