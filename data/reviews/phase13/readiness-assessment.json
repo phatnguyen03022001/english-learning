@@ -4220,6 +4220,267 @@
         "status": "pending",
         "publicationEligible": false
       }
+    ],
+    "researchAssessmentModel": "AI-assisted, source-checked preliminary review against each required axis; these are not independent reviewer submissions or publication approvals.",
+    "researchAssessments": [
+      {
+        "caseId": "bank",
+        "reviewStatus": "pending_independent_review",
+        "publicationEligible": false,
+        "evidenceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/bank_1",
+          "https://www.oxfordlearnersdictionaries.com/faq/",
+          "https://www.merriam-webster.com/dictionary/bank"
+        ],
+        "dimensions": {
+          "sense_boundary_accuracy": {
+            "assessment": "Separate financial and river-edge meanings are synchronically defensible; retain two draft entries, but homograph display numbering remains disputed.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "translation_fidelity": {
+            "assessment": "Bank → ngân hàng / bờ sông is contextually plausible as gloss_only; no Vietnamese sense endpoints or bilingual review.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          },
+          "grammar_accuracy": {
+            "assessment": "No construction/valency defect observed in these noun candidates.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "idiomaticity": {
+            "assessment": "The two examples read naturally but provenance is unverified_candidate.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "collocation_validity": {
+            "assessment": "No collocation assertion is in this family benchmark.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "learner_usefulness": {
+            "assessment": "Contrast helps disambiguate; numbering convention needs LER ruling.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "evidence_sufficiency": {
+            "assessment": "No exact candidate-bound source evidence.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          },
+          "license_compliance": {
+            "assessment": "No claim-level rights clearance; example authorship unsupported.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          }
+        }
+      },
+      {
+        "caseId": "run",
+        "reviewStatus": "pending_independent_review",
+        "publicationEligible": false,
+        "evidenceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/run_1"
+        ],
+        "dimensions": {
+          "sense_boundary_accuracy": {
+            "assessment": "Movement, machine operation and management have distinct conventional senses; machine transitivity belongs to construction/frame coverage, not a mechanical new sense.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "translation_fidelity": {
+            "assessment": "Vietnamese gloss choices are context-sensitive (chạy, hoạt động/vận hành, điều hành); all equivalences remain gloss_only and unreviewed.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          },
+          "grammar_accuracy": {
+            "assessment": "Intransitive movement, ambitransitive operation and transitive management frames appear coherent.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "idiomaticity": {
+            "assessment": "Examples read naturally but are not provenance-verified.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "collocation_validity": {
+            "assessment": "Examples are plausible usage combinations; no measured collocation strength is asserted.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "learner_usefulness": {
+            "assessment": "Useful polysemy and valency contrast for learners.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "evidence_sufficiency": {
+            "assessment": "No exact candidate-bound source evidence.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          },
+          "license_compliance": {
+            "assessment": "No claim-level rights clearance or example authorship attestation.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          }
+        }
+      },
+      {
+        "caseId": "analyse-family",
+        "reviewStatus": "pending_independent_review",
+        "publicationEligible": false,
+        "evidenceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/analyse",
+          "https://www.oxfordlearnersdictionaries.com/definition/english/analysis",
+          "https://www.oxfordlearnersdictionaries.com/definition/english/analytical"
+        ],
+        "dimensions": {
+          "sense_boundary_accuracy": {
+            "assessment": "Verb, noun and adjective are separate entries; the family proposal does not itself assert a historical root or automatic derivation graph.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "translation_fidelity": {
+            "assessment": "Vietnamese phân tích / sự phân tích / bản phân tích varies by POS and process/result context; mappings are gloss_only and unreviewed.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          },
+          "grammar_accuracy": {
+            "assessment": "Analyse takes an object; analysis countability and analytical adjective are represented plausibly.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "idiomaticity": {
+            "assessment": "Examples are idiomatic proposals but lack authorship evidence.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "collocation_validity": {
+            "assessment": "No association strength/frequency claim is made; example combinations are plausible.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "learner_usefulness": {
+            "assessment": "POS and noun countability contrasts are pedagogically useful.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "evidence_sufficiency": {
+            "assessment": "No exact candidate-bound source evidence.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          },
+          "license_compliance": {
+            "assessment": "No claim-level rights clearance; family status is not an etymology proof.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          }
+        }
+      },
+      {
+        "caseId": "big-large",
+        "reviewStatus": "pending_independent_review",
+        "publicationEligible": false,
+        "evidenceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/big_1",
+          "https://www.oxfordlearnersdictionaries.com/definition/english/large_1",
+          "https://dictionaryblog.cambridge.org/2016/03/16/a-whole-bunch-of-stuff-talking-about-quantities-and-numbers-1/"
+        ],
+        "dimensions": {
+          "sense_boundary_accuracy": {
+            "assessment": "Near-synonymy is restricted to physical size/spatial dimensions; no unrestricted substitution defect observed.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "translation_fidelity": {
+            "assessment": "Both can map to lớn in context, but register and quantity contexts need human bilingual review; gloss_only remains explicit.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          },
+          "grammar_accuracy": {
+            "assessment": "Adjective POS and usage are plausible; no construction error observed.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "idiomaticity": {
+            "assessment": "Examples read naturally; they are unverified_candidate.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "collocation_validity": {
+            "assessment": "“big house” and “large entrance hall” are plausible; not frequency measurements.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "learner_usefulness": {
+            "assessment": "Context-limited contrast aids learner choice.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "evidence_sufficiency": {
+            "assessment": "No exact candidate-bound source evidence.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          },
+          "license_compliance": {
+            "assessment": "No claim-level rights clearance or example provenance.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          }
+        }
+      },
+      {
+        "caseId": "depend-on",
+        "reviewStatus": "pending_independent_review",
+        "publicationEligible": false,
+        "evidenceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/depend-on?q=depend+on"
+        ],
+        "dimensions": {
+          "sense_boundary_accuracy": {
+            "assessment": "Selected contingent/determined sense is distinct from rely/trust and expectation senses; no split defect observed.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "translation_fidelity": {
+            "assessment": "phụ thuộc is plausible in the weather example; translation equivalence remains gloss_only/unreviewed.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          },
+          "grammar_accuracy": {
+            "assessment": "Required on/upon frame is represented; candidate scope matches the contingent/determined use.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "idiomaticity": {
+            "assessment": "Example reads naturally but lacks provenance verification.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "collocation_validity": {
+            "assessment": "“depend on the weather” is plausible usage; no numeric association is claimed.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "learner_usefulness": {
+            "assessment": "Required preposition and contrasted sense help prevent learner errors.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "evidence_sufficiency": {
+            "assessment": "No exact candidate-bound source evidence.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          },
+          "license_compliance": {
+            "assessment": "No claim-level rights clearance or example ownership proof.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          }
+        }
+      },
+      {
+        "caseId": "look-up",
+        "reviewStatus": "pending_independent_review",
+        "publicationEligible": false,
+        "evidenceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/look-up"
+        ],
+        "dimensions": {
+          "sense_boundary_accuracy": {
+            "assessment": "Reference-search sense is conventional and remains one sense; no separate entry is needed just for object placement.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "translation_fidelity": {
+            "assessment": "tra cứu is plausible for the reference-search context; equivalence remains gloss_only/unreviewed.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          },
+          "grammar_accuracy": {
+            "assessment": "Separable frame is represented; pronoun placement must be “look it up”.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "idiomaticity": {
+            "assessment": "Example reads naturally but is unverified_candidate.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "collocation_validity": {
+            "assessment": "Dictionary lookup phrase is a conventional context; no strength/frequency statistic is claimed.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "learner_usefulness": {
+            "assessment": "Separability and pronoun placement target a concrete learner error.",
+            "publicationDisposition": "AI_RESEARCH_ONLY_HUMAN_APPROVAL_PENDING"
+          },
+          "evidence_sufficiency": {
+            "assessment": "No exact candidate-bound source evidence.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          },
+          "license_compliance": {
+            "assessment": "No claim-level rights clearance or example provenance.",
+            "publicationDisposition": "BLOCKED_OR_PENDING"
+          }
+        }
+      }
     ]
   },
   "bankHomographDispute": {
@@ -4549,13 +4810,13 @@
         "command": "npm test",
         "status": "PASS",
         "exitCode": 0,
-        "result": "Full schema, graph, pilot, stress and production suites passed; nested production suite 77/77."
+        "result": "Full schema, graph, pilot, stress and production suites passed; nested production suite 78/78."
       },
       {
         "command": "npm run test:production",
         "status": "PASS",
         "exitCode": 0,
-        "result": "77 passed, 0 failed."
+        "result": "78 passed, 0 failed."
       },
       {
         "command": "npm run candidates:validate -- --input data/candidates/pilot-fanout-003.json",
@@ -4584,6 +4845,12 @@
         "status": "PASS_WITHOUT_RIGHTS_APPROVAL",
         "exitCode": 0,
         "result": "dry-run; 11 source candidates; schema/graph issues 0; no reviewer/permission attestations and no claim links."
+      },
+      {
+        "command": "node --test tests/production/phase13-source-audit.test.mjs",
+        "status": "PASS",
+        "exitCode": 0,
+        "result": "2 passed, 0 failed; includes reproducible current V003 exact path/valueDigest inventory and source register dry-run."
       }
     ]
   },
