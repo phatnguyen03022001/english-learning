@@ -42,7 +42,7 @@
       "sourcePath": ".agents/skills/coding-standards/SKILL.md",
       "installedPath": ".agents/skills/coding-standards/SKILL.md",
       "sourceSha256": "7295014cdb95589b28e9ac687e0c40a7fd329288e18a0e6fb6c5b1ed58437a0d",
-      "installedSha256": "efa9200c95a597659d9a91c8849b941786bb0ff013186b9d11007aac1a45512a",
+      "installedSha256": "ac653b9c9adb03057b01c3a83d5b6994ed634315e811218e6a268e7759dfe9f5",
       "mode": "adapted",
       "purpose": "Repo-local Codex coding-standards workflow",
       "activation": "Skill activated for matching change scope",

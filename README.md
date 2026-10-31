@@ -55,7 +55,7 @@ authoritative snapshot.
 
 ## Technology choices for future extensions
 
-The current offline dictionary core uses Node.js 26 LTS, the built-in test runner, and Ajv 8.20.0 to validate existing JSON Schema 2020-12 contracts. Codex-native multi-agent fanout already works without an orchestration framework. Versions are locked in npm; CI verifies compatibility.
+The current offline dictionary core uses Node.js 26 LTS, the built-in test runner, and Ajv 8.20.0 to validate existing JSON Schema 2020-12 contracts. Codex CLI provides native multi-agent tools; each research invocation still requires a fresh sandbox, connector, and runtime smoke check. Versions are locked in npm; CI verifies compatibility.
 
 Evaluated but **not installed**: Zod/Valibot (duplicate Ajv canonical validation), Vitest/Jest (native node:test meets current coverage needs), Fastify/NestJS (no HTTP service), Next.js/React (no application UI), MongoDB driver/ORM (no authorized DB integration), and queue/TTS libraries (no current async or media workload). Re-evaluate latest stable supported releases when a concrete feature requires them; do not install alpha frameworks for speculative future use.
 
@@ -68,9 +68,9 @@ see [AGENTS.md](AGENTS.md) for the full boundary.
 
 ## Codex, optional Antigravity, and pinned ECC
 
-- [Codex role-reference templates](.codex/agents/) — four research scopes; current CLI delegation requires role instructions in the worker task. Only the primary integration writer edits.
+- [Codex role-reference templates](.codex/agents/) — four research scopes; current CLI delegation requires role instructions in the worker task. Project defaults select GPT-6 Luna at high effort for parent and spawned agents; an invocation or explicit spawn override takes precedence. Runtime identity must be verified per invocation. Only the primary integration writer edits.
 - Codex Native is the default Integration Writer provider. Google Antigravity is an optional provider using the same role; its local enforcement is not verified. See the [canonical execution and session handoff contract](docs/execution-boundaries.md).
 - [Operational skills](.agents/skills/) — repo-local, progressively discovered by Codex.
 - [ECC import manifest](third_party/ecc/manifest.json) — exact commit, license, hashes, selected and rejected resources.
 - [Production contract](docs/lexical-production-contract.md) — lexical fanout handoff, gates, scale and consumer boundaries.
-- Run the selected executor from the existing repo checkout and follow [research vs writer isolation](docs/execution-boundaries.md#local-execution-modes-codex-cli-01580-pilot). Research must use a **read-only sandbox** with apps/plugins disabled and MCP access inspected; worker prompts cannot enforce permissions.
+- Run the selected executor from the existing repo checkout and follow [research vs writer isolation](docs/execution-boundaries.md#codex-cli-runtime-and-isolation). Research must use a **read-only sandbox** with apps/plugins disabled and MCP access inspected; worker prompts cannot enforce permissions.

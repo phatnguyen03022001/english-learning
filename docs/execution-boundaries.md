@@ -32,7 +32,10 @@ Antigravity is `AVAILABLE_AS_OPTION`; application version 2.27.0 is installed lo
 
 Provider changes do not resolve state-path TOCTOU, inherited credentials, unauthorized write access, or missing editorial authority. Antigravity must not be used to bypass a Codex `NO-GO` gate.
 
-## Local execution modes (Codex CLI 0.158.0 pilot)
+## Prior local execution modes pilot (Codex CLI 0.158.0)
+
+This is a dated one-worker pilot record, not Task 005's current readiness result. See
+the Task 005 runtime findings and current Codex CLI invocation below.
 
 Run separate **fresh sessions**, not a research subagent of an integration writer. Run commands from repository root; `--ignore-user-config` avoids loading user-level Codex configuration while keeping authentication, and the repository config does not register MCP servers. Disable built-in apps/plugins during research. Inspect current CLI help and effective tools on upgrade; if writable MCP/app access remains, **do not call the session isolated**.
 
@@ -87,6 +90,140 @@ sandbox, configuration, or connector changes. The isolated invocation kept Codex
 authentication available while skipping user config; it did not inspect or pass
 Atlas credentials. It does not prove that arbitrary secret files elsewhere on the
 host are unreadable under a read-only filesystem policy.
+
+## Context routing
+
+`MUST_READ` means required for the role on every task; `READ_ON_DEMAND` applies only
+when scope touches that domain; `GENERALLY_SKIP` avoids bulk loading unless a concrete
+question depends on it. This routing does not hide or relax authority, security,
+licensing, editorial, or publication requirements.
+
+| Role | MUST_READ | READ_ON_DEMAND | GENERALLY_SKIP |
+| --- | --- | --- | --- |
+| ChatGPT Architect | Current task; repository, branch and exact HEAD/status; AGENTS operating contract; this document's applicable authority and handoff sections | Relevant domain policy, code/schema/tests, existing design or historical evidence, selected ECC guidance, official current runtime docs | Whole-repo scans, all ECC, candidate batches, unrelated phase history |
+| Integration Writer | Owner-authorized task and exact baseline; AGENTS rules relevant to the scope; effective permissions; target files and direct tests | Affected domain contracts, transitive consumers, compatibility/migration history, applicable ECC skills | Unaffected schemas, data, policies and history |
+| Research parent | Bounded mission and claim/file scope; research boundary and handoff requirements; effective sandbox and tool configuration | Applicable lexical policy excerpts and source materials for assigned claims | Other batches, unrelated schemas, full phase reports |
+| Research worker | Inline bounded role; exact claim IDs or paths; read-only and no-recursion rules; requested evidence format | Relevant policy excerpt and named source material | Full AGENTS file, unrelated policies, all candidate snapshots, broad repository history |
+
+Workers must receive necessary safety and authority rules directly in their task;
+progressive disclosure never delegates those rules to a file they were not told to
+read. The `.codex/agents/*.toml` files remain role-reference templates: current CLI
+delegation marker probes did not apply their instructions. Put active role instructions
+in each bounded worker task.
+
+## Task 005 runtime and model findings (2026-11-01)
+
+The installed Mac CLI is `codex-cli 0.158.0`; Node is `v26.13.0` on macOS ARM64.
+`codex debug models` listed `gpt-6-astra` (`low`, `medium`, `high`, `xhigh`, `max`,
+`ultra`), `gpt-6-sol` (same levels), and `gpt-6-luna` (`low`, `medium`, `high`, `xhigh`,
+`max`), all with `visibility=list`. `gpt-6.1-sol` was absent from this installed
+catalog. `GPT-6 Luna` is a product/display label; `gpt-6-luna` is the Codex CLI
+identifier. This is the installation catalog, not proof that the signed-in
+account/workspace can use the model. User config currently
+selects Luna/high; the project config now supplies the same parent defaults and
+`agents.default_subagent_model` / `agents.default_subagent_reasoning_effort` defaults.
+Official Codex configuration docs state that a project config loads only for a trusted
+project; precedence is CLI override, trusted project config, selected profile, user
+config, cloud defaults, system config, then built-in defaults. An explicit spawn
+model/effort overrides the subagent defaults. Effective model and effort therefore remain
+`MODEL_NOT_VERIFIED` until captured for the actual parent and every worker. On any
+request failure or apparent fallback, stop and record the observed error/model; do not
+report a configured default as a runtime result.
+
+Task 005 used `env -i` with only `PATH`, `HOME`, and `TMPDIR`, plus
+`--ignore-user-config`, `--sandbox read-only`, `approval_policy="never"`, disabled
+apps/plugins, empty MCP, and explicit Luna/high parent and worker defaults. The CLI
+failed before parent startup with `failed to initialize in-process app-server client:
+Operation not permitted`. No model request or worker began. A disposable fixture stayed
+unchanged because the parent never reached its requested write attempt. A separate
+`codex --version` invocation reports `Operation not permitted` while creating PATH
+aliases; no evidence links that warning to app-server startup. `/private/tmp` was
+writable by the caller. `codex login status` and `codex doctor` showed ChatGPT auth
+configured; user config listed two MCP servers, which the attempted invocation
+overrode with an empty set. The shell ran inside the managed workspace-write caller,
+not an ordinary unsandboxed Terminal. Available logs do not distinguish an enclosing
+caller sandbox, macOS Seatbelt denial, app-server process startup denial, or another OS
+permission; there is no evidence for a CLI defect, config/auth error, or temp-directory
+cause.
+
+That failure was confined to the managed workspace-write caller: a fresh native CLI
+invocation through the local Agent Runtime service, whose process ancestry ended at
+`launchd` rather than the failed caller, started successfully with a separate temporary
+`HOME`/`CODEX_HOME` and the same installed CLI. This rules out a general CLI startup,
+authentication, model-catalog, or project-config failure. The earlier trace still does
+not identify which nested caller restriction denied in-process app-server startup; it
+does not prove that macOS Seatbelt alone was responsible.
+
+Two real read-only smoke sessions then spawned exactly two direct workers each, with no
+recursive delegation. The first parent thread was
+`01a19392-ada6-7c21-b823-289b78c1f928`; its workers were
+`01a19392-c0dd-7d51-b577-5ed3f94c45b0` and
+`01a19392-c8f1-7850-81e3-1f962c9599b7`. Worker A's one append attempt against a
+disposable repository fixture returned `PermissionError: [Errno 1] Operation not
+permitted`; the fixture SHA-256 was identical before and after, and the host removed
+it. The repository diff remained limited to the authorized Task 005 files.
+
+The second isolated run's rollout `turn_context` records show the parent
+`01a19393-7445-70f2-a5d6-9276454d0690` and workers
+`01a19393-85e6-77a2-82e3-43118beaa002` and
+`01a19393-8de4-77e3-aee5-02588364b02c` each used model `gpt-6-luna`, effort `high`,
+`approval_policy=never`, and `sandbox_policy.type=read-only`. Both workers' recorded
+`parent_thread_id` points to that parent. Each invocation used a minimal temporary
+Codex home containing only the copied Codex login state and project trust; `mcp_servers`
+was explicitly empty and apps/plugins were disabled. Rollout homes and login copies
+were removed after collecting the metadata. Codex 0.158.0 does not expose a complete
+advertised built-in tool list in `turn_context`; the runs did show native delegation
+and shell use. The effective external connector set was empty by isolated config and
+startup overrides, rather than inferred from role prompts.
+
+This establishes the required smoke boundary for the bounded read-only research
+invocation below. It does not attribute the earlier nested-caller `EPERM` to one
+specific macOS permission mechanism, and it does not authorize a lexical fanout beyond
+the repository's existing candidate and editorial gates.
+
+## Codex CLI runtime and isolation
+
+Run separate fresh sessions; never run research workers under a writable integration
+writer. After CLI upgrades, check `codex --version`, `codex exec --help`, and the current
+[Codex configuration reference](https://developers.openai.com/codex/config-reference/).
+The bounded research invocation is:
+
+```sh
+isolated_root=$(mktemp -d /private/tmp/codex-research.XXXXXX)
+trap 'rm -rf "$isolated_root"' EXIT
+isolated_home="$isolated_root/home"
+codex_home="$isolated_root/codex"
+mkdir -m 700 "$isolated_home" "$codex_home" "$isolated_root/tmp"
+cp "$HOME/.codex/auth.json" "$codex_home/auth.json"
+chmod 600 "$codex_home/auth.json"
+printf '[projects."/Users/tienphat/Developer/english-learning"]\ntrust_level = "trusted"\n' > "$codex_home/config.toml"
+chmod 600 "$codex_home/config.toml"
+env -i PATH="$PATH" HOME="$isolated_home" CODEX_HOME="$codex_home" TMPDIR="$isolated_root/tmp" \
+  codex exec --strict-config --sandbox read-only \
+  -c 'model="gpt-6-luna"' -c 'model_reasoning_effort="high"' \
+  -c 'agents.default_subagent_model="gpt-6-luna"' \
+  -c 'agents.default_subagent_reasoning_effort="high"' \
+  -c 'approval_policy="never"' \
+  --disable apps --disable plugins -c 'mcp_servers={}' \
+  -C /Users/tienphat/Developer/english-learning \
+  'Review only assigned bounded claims; spawn at most four independent specialists; return findings only.'
+```
+
+The isolated homes preserve only the Codex login and the trusted-project marker; do not
+copy the owner's full user config, plugins, or MCP definitions. Keep temporary login
+copies until the process finishes, then remove the isolated root. The environment
+allowlist excludes inherited variables, but does not prove host secret files are
+unreadable. Inspect effective parent and worker metadata. Workers inherit the parent's
+sandbox and MCP set. If any write-capable connector remains or credential exposure
+cannot be bounded, do not claim isolation. Never use
+`--dangerously-bypass-approvals-and-sandbox`, broaden filesystem access, or disable OS
+sandboxing to make a smoke test pass. Do not use `--ephemeral` for a parent expected to
+spawn workers; the installed CLI's prior pilot could not resolve the parent's rollout.
+
+For a separately authorized integration writer, use the existing owner-specified
+workspace-write invocation with apps/plugins disabled and empty MCP. `workspace-write`
+can write beyond a task's file list; scope and self-approval remain policy-level. Never
+change `~/.codex/config.toml` or use an out-of-scope connector to widen authority.
 
 ## Handoff: no implicit promotion of authority
 

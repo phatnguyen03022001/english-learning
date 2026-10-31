@@ -1,4 +1,9 @@
-# Codex CLI 0.158.0 — project scoped, no model/MCP pin.
+# Codex CLI 0.158.0 — project defaults; invocation overrides still take precedence.
+model = "gpt-6-luna"
+model_reasoning_effort = "high"
+
 [agents]
 enabled = true
 max_concurrent_threads_per_session = 4
+default_subagent_model = "gpt-6-luna"
+default_subagent_reasoning_effort = "high"
