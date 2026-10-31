@@ -284,4 +284,26 @@ test("review approval is value-bound and fresh evidence cannot reactivate a stal
  assert.equal(validateDatasetV2(binding.state.records).valid,true,JSON.stringify(validateDatasetV2(binding.state.records).issues));
  const wrongPath=structuredClone(binding.state.records);
  const wrongReview=wrongPath.find(record=>record._id.startsWith("rev_"));wrongReview.claims[0].fieldPath="/unknown";
- assert.ok(validateDatasetV2(wrongPath).issues.some(issue=>issue.code==="EDI
+ assert.ok(validateDatasetV2(wrongPath).issues.some(issue=>issue.code==="EDITORIAL_CLAIM_MISMATCH"));
+ const wrongSubject=structuredClone(binding.state.records);
+ const wrongSubjectReview=wrongSubject.find(record=>record._id.startsWith("rev_"));wrongSubjectReview.claims[0].subjectId=wrongSubject.find(record=>record._id.startsWith("lex_"))._id;
+ assert.ok(validateDatasetV2(wrongSubject).issues.some(issue=>issue.code==="EDITORIAL_CLAIM_MISMATCH"));
+ const legacyReview=structuredClone(binding.state.records),legacy=legacyReview.find(record=>record._id.startsWith("rev_"));
+ delete legacy.claims[0].valueDigest;
+ assert.equal(validateDatasetV2(legacyReview).valid,true,"legacy V2 review storage remains backward compatible");
+ const legacyReport=evaluatePublication(legacyReview,{subjectIds:[senseId],ownerId:"test-owner",effectiveAt:"2026-10-31T00:00:00Z",verifyOwnerAttestation:()=>true,verifyEvidence:()=>true,verifyRights:()=>true,appointments:[
+  {appointmentKey:"test-ler",reviewerId:"test-reviewer",appointedByOwnerId:"test-owner",role:"lead_editorial",scope:{subjectIds:[senseId],fieldPaths:["/definition"]},effectiveFrom:"2026-01-01T00:00:00Z",ownerAttestationRef:"test-only"},
+  {appointmentKey:"test-rights",reviewerId:"rights-reviewer",appointedByOwnerId:"test-owner",role:"rights",scope:{subjectIds:[sourceId]},effectiveFrom:"2026-01-01T00:00:00Z",ownerAttestationRef:"test-only"}
+ ]});
+ assert.ok(legacyReport.issues.some(issue=>issue.code==="CLAIM_PATH_UNVERIFIED"&&issue.entityId===senseId&&issue.path==="/definition"));
+});
+
+test("reference-only source rights stay blocked even when test trust callbacks return true",()=>{
+ const lexId="lex_01940000-0000-7000-8000-000000000901",sourceId="src_01940000-0000-7000-8000-000000000901",evidenceId="evd_01940000-0000-7000-8000-000000000901";
+ const lex={_id:lexId,schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"verified",language:"en",lemma:"synthetic",pos:"NOUN",entryKind:"word",evidenceIds:[evidenceId]};
+ const source={_id:sourceId,schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"draft",title:"Synthetic reference-only source",rights:{status:"reference_only",scopes:["dictionary_publication"],reviewerId:"rights-reviewer",permissionReference:"test-only"}};
+ const evidence={_id:evidenceId,schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"draft",sourceId,assertionIds:[lexId],claim:{subjectId:lexId,fieldPath:"/lemma",valueDigest:digest("synthetic"),specificity:"exact_value"},reviewStatus:"accepted",independence:"independent_reviewed"};
+ const report=evaluatePublication([lex,source,evidence],{subjectIds:[lexId],ownerId:"test-owner",effectiveAt:"2026-10-31T00:00:00Z",verifyOwnerAttestation:()=>true,verifyEvidence:()=>true,verifyRights:()=>true,appointments:[{appointmentKey:"rights",reviewerId:"rights-reviewer",appointedByOwnerId:"test-owner",role:"rights",scope:{subjectIds:[sourceId]},effectiveFrom:"2026-01-01T00:00:00Z",ownerAttestationRef:"test-only"}]});
+ assert.ok(report.issues.some(issue=>issue.code==="SOURCE_RIGHTS_UNVERIFIED"&&issue.entityId===lexId),JSON.stringify(report.issues));
+});
+

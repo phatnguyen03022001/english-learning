@@ -3537,1532 +3537,6 @@
       "evidence_sufficiency",
       "license_compliance"
     ],
-    "candidates": [
-      {
-        "candidateId": "entry-bank-financial",
-        "type": "lex",
-        "sourceItemKey": "phase11:pilot-fanout-002:entry-bank-financial",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-BANK-HOMOGRAPH-001"
-        ]
-      },
-      {
-        "candidateId": "entry-bank-river",
-        "type": "lex",
-        "sourceItemKey": "phase11:pilot-fanout-002:entry-bank-river",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-BANK-HOMOGRAPH-001"
-        ]
-      },
-      {
-        "candidateId": "entry-run",
-        "type": "lex",
-        "sourceItemKey": "phase11:pilot-fanout-002:entry-run",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "entry-analyse",
-        "type": "lex",
-        "sourceItemKey": "phase11:pilot-fanout-002:entry-analyse",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "entry-analysis",
-        "type": "lex",
-        "sourceItemKey": "phase11:pilot-fanout-002:entry-analysis",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "entry-analytical",
-        "type": "lex",
-        "sourceItemKey": "phase11:pilot-fanout-002:entry-analytical",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "entry-big",
-        "type": "lex",
-        "sourceItemKey": "phase11:pilot-fanout-002:entry-big",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "entry-large",
-        "type": "lex",
-        "sourceItemKey": "phase11:pilot-fanout-002:entry-large",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "entry-depend",
-        "type": "lex",
-        "sourceItemKey": "phase11:pilot-fanout-002:entry-depend",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "entry-look-up",
-        "type": "lex",
-        "sourceItemKey": "phase11:pilot-fanout-002:entry-look-up",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "entry-borrow",
-        "type": "lex",
-        "sourceItemKey": "phase11:pilot-fanout-002:entry-borrow",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "entry-lend",
-        "type": "lex",
-        "sourceItemKey": "phase11:pilot-fanout-002:entry-lend",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "entry-advice",
-        "type": "lex",
-        "sourceItemKey": "phase11:pilot-fanout-002:entry-advice",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "family-analysis",
-        "type": "fam",
-        "sourceItemKey": "phase11:pilot-fanout-002:family-analysis",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "sense-bank-financial",
-        "type": "sns",
-        "sourceItemKey": "phase11:pilot-fanout-002:sense-bank-financial",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "sense-bank-river",
-        "type": "sns",
-        "sourceItemKey": "phase11:pilot-fanout-002:sense-bank-river",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "sense-run-movement",
-        "type": "sns",
-        "sourceItemKey": "phase11:pilot-fanout-002:sense-run-movement",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "sense-run-machine",
-        "type": "sns",
-        "sourceItemKey": "phase11:pilot-fanout-002:sense-run-machine",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "sense-run-management",
-        "type": "sns",
-        "sourceItemKey": "phase11:pilot-fanout-002:sense-run-management",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "sense-analyse",
-        "type": "sns",
-        "sourceItemKey": "phase11:pilot-fanout-002:sense-analyse",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "sense-analysis",
-        "type": "sns",
-        "sourceItemKey": "phase11:pilot-fanout-002:sense-analysis",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "sense-analytical",
-        "type": "sns",
-        "sourceItemKey": "phase11:pilot-fanout-002:sense-analytical",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "sense-big-size",
-        "type": "sns",
-        "sourceItemKey": "phase11:pilot-fanout-002:sense-big-size",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "sense-large-size",
-        "type": "sns",
-        "sourceItemKey": "phase11:pilot-fanout-002:sense-large-size",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "sense-depend-contingent",
-        "type": "sns",
-        "sourceItemKey": "phase11:pilot-fanout-002:sense-depend-contingent",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "sense-look-up-reference",
-        "type": "sns",
-        "sourceItemKey": "phase11:pilot-fanout-002:sense-look-up-reference",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "sense-borrow-temporary-use",
-        "type": "sns",
-        "sourceItemKey": "phase11:pilot-fanout-002:sense-borrow-temporary-use",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "sense-lend-temporary-use",
-        "type": "sns",
-        "sourceItemKey": "phase11:pilot-fanout-002:sense-lend-temporary-use",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "sense-advice-guidance",
-        "type": "sns",
-        "sourceItemKey": "phase11:pilot-fanout-002:sense-advice-guidance",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "construction-run-machine",
-        "type": "con",
-        "sourceItemKey": "phase11:pilot-fanout-002:construction-run-machine",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "construction-run-management",
-        "type": "con",
-        "sourceItemKey": "phase11:pilot-fanout-002:construction-run-management",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "construction-analyse-object",
-        "type": "con",
-        "sourceItemKey": "phase11:pilot-fanout-002:construction-analyse-object",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "construction-depend-on",
-        "type": "con",
-        "sourceItemKey": "phase11:pilot-fanout-002:construction-depend-on",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "construction-look-up-separable",
-        "type": "con",
-        "sourceItemKey": "phase11:pilot-fanout-002:construction-look-up-separable",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "construction-borrow-from",
-        "type": "con",
-        "sourceItemKey": "phase11:pilot-fanout-002:construction-borrow-from",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "construction-lend-double-object",
-        "type": "con",
-        "sourceItemKey": "phase11:pilot-fanout-002:construction-lend-double-object",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "construction-lend-to",
-        "type": "con",
-        "sourceItemKey": "phase11:pilot-fanout-002:construction-lend-to",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-bank-financial",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-bank-financial",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-bank-river",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-bank-river",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-run-movement",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-run-movement",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-run-machine-operate",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-run-machine-operate",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-run-machine-operate-alternative",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-run-machine-operate-alternative",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-run-management",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-run-management",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-analyse",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-analyse",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-analysis",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-analysis",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-analytical",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-analytical",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-big",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-big",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-large",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-large",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-depend",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-depend",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-look-up",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-look-up",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-borrow",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-borrow",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-lend",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-lend",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-advice",
-        "type": "eqv",
-        "sourceItemKey": "phase11:pilot-fanout-002:equiv-advice",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "construction-run-machine-transitive",
-        "type": "con",
-        "sourceItemKey": "phase11:pilot-fanout-002:construction-run-machine-transitive",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "entry-small",
-        "type": "lex",
-        "sourceItemKey": "phase11:staged-lexical-candidates:v1:entry-small",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "sense-small-size",
-        "type": "sns",
-        "sourceItemKey": "phase11:staged-lexical-candidates:v1:sense-small-size",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": [
-          "QF-EXAMPLE-AUTHORSHIP-001"
-        ]
-      },
-      {
-        "candidateId": "equiv-small",
-        "type": "eqv",
-        "sourceItemKey": "phase11:staged-lexical-candidates:v1:equiv-small",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "rel-big-large-near-synonym",
-        "type": "rel",
-        "sourceItemKey": "phase11:staged-lexical-candidates:v1:rel-big-large-near-synonym",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "rel-big-small-antonym",
-        "type": "rel",
-        "sourceItemKey": "phase11:staged-lexical-candidates:v1:rel-big-small-antonym",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "rel-large-small-antonym",
-        "type": "rel",
-        "sourceItemKey": "phase11:staged-lexical-candidates:v1:rel-large-small-antonym",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-borrow-money",
-        "type": "eqv",
-        "sourceItemKey": "phase11:staged-lexical-candidates:v1:equiv-borrow-money",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      },
-      {
-        "candidateId": "equiv-lend-money",
-        "type": "eqv",
-        "sourceItemKey": "phase11:staged-lexical-candidates:v1:equiv-lend-money",
-        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
-        "axesReviewed": [
-          "sense_boundary_accuracy",
-          "translation_fidelity",
-          "grammar_accuracy",
-          "idiomaticity",
-          "collocation_validity",
-          "learner_usefulness",
-          "evidence_sufficiency",
-          "license_compliance"
-        ],
-        "pendingGates": [
-          "exact_claim_evidence",
-          "source_traceability_and_rights",
-          "authenticated_specialist_review",
-          "authenticated_LER_review",
-          "authorized_publication_selection"
-        ],
-        "findingIds": []
-      }
-    ],
     "findings": [
       {
         "findingId": "QF-EXAMPLE-AUTHORSHIP-001",
@@ -5322,7 +3796,380 @@
         "minimalCorrection": "Owner appoints reviewers with explicit subject/path scope; authorized reviewers assess exact current claim values; LER records bank ruling; verifier authenticates appointments before promotion.",
         "status": "unresolved"
       }
-    ]
+    ],
+    "defaultDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite; this is not authenticated editorial approval.",
+    "defaultAxesReviewed": [
+      "sense_boundary_accuracy",
+      "translation_fidelity",
+      "grammar_accuracy",
+      "idiomaticity",
+      "collocation_validity",
+      "learner_usefulness",
+      "evidence_sufficiency",
+      "license_compliance"
+    ],
+    "defaultPendingGates": [
+      "exact_claim_evidence",
+      "source_traceability_and_rights",
+      "authenticated_specialist_review",
+      "authenticated_LER_review",
+      "authorized_publication_selection"
+    ],
+    "candidateRecordEncoding": {
+      "columns": [
+        "candidateId",
+        "recordType",
+        "findingIds"
+      ],
+      "rows": [
+        [
+          "entry-bank-financial",
+          "lex",
+          [
+            "QF-BANK-HOMOGRAPH-001"
+          ]
+        ],
+        [
+          "entry-bank-river",
+          "lex",
+          [
+            "QF-BANK-HOMOGRAPH-001"
+          ]
+        ],
+        [
+          "entry-run",
+          "lex",
+          []
+        ],
+        [
+          "entry-analyse",
+          "lex",
+          []
+        ],
+        [
+          "entry-analysis",
+          "lex",
+          []
+        ],
+        [
+          "entry-analytical",
+          "lex",
+          []
+        ],
+        [
+          "entry-big",
+          "lex",
+          []
+        ],
+        [
+          "entry-large",
+          "lex",
+          []
+        ],
+        [
+          "entry-depend",
+          "lex",
+          []
+        ],
+        [
+          "entry-look-up",
+          "lex",
+          []
+        ],
+        [
+          "entry-borrow",
+          "lex",
+          []
+        ],
+        [
+          "entry-lend",
+          "lex",
+          []
+        ],
+        [
+          "entry-advice",
+          "lex",
+          []
+        ],
+        [
+          "family-analysis",
+          "fam",
+          []
+        ],
+        [
+          "sense-bank-financial",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "sense-bank-river",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "sense-run-movement",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "sense-run-machine",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "sense-run-management",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "sense-analyse",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "sense-analysis",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "sense-analytical",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "sense-big-size",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "sense-large-size",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "sense-depend-contingent",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "sense-look-up-reference",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "sense-borrow-temporary-use",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "sense-lend-temporary-use",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "sense-advice-guidance",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "construction-run-machine",
+          "con",
+          []
+        ],
+        [
+          "construction-run-management",
+          "con",
+          []
+        ],
+        [
+          "construction-analyse-object",
+          "con",
+          []
+        ],
+        [
+          "construction-depend-on",
+          "con",
+          []
+        ],
+        [
+          "construction-look-up-separable",
+          "con",
+          []
+        ],
+        [
+          "construction-borrow-from",
+          "con",
+          []
+        ],
+        [
+          "construction-lend-double-object",
+          "con",
+          []
+        ],
+        [
+          "construction-lend-to",
+          "con",
+          []
+        ],
+        [
+          "equiv-bank-financial",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-bank-river",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-run-movement",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-run-machine-operate",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-run-machine-operate-alternative",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-run-management",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-analyse",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-analysis",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-analytical",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-big",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-large",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-depend",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-look-up",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-borrow",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-lend",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-advice",
+          "eqv",
+          []
+        ],
+        [
+          "construction-run-machine-transitive",
+          "con",
+          []
+        ],
+        [
+          "entry-small",
+          "lex",
+          []
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          [
+            "QF-EXAMPLE-AUTHORSHIP-001"
+          ]
+        ],
+        [
+          "equiv-small",
+          "eqv",
+          []
+        ],
+        [
+          "rel-big-large-near-synonym",
+          "rel",
+          []
+        ],
+        [
+          "rel-big-small-antonym",
+          "rel",
+          []
+        ],
+        [
+          "rel-large-small-antonym",
+          "rel",
+          []
+        ],
+        [
+          "equiv-borrow-money",
+          "eqv",
+          []
+        ],
+        [
+          "equiv-lend-money",
+          "eqv",
+          []
+        ]
+      ]
+    }
   },
   "goldenQa": {
     "benchmarkPath": "tests/fixtures/production/golden-candidates.json",
@@ -5720,4 +4567,24 @@
   },
   "atlasMutations": 0,
   "productionGateDryRun": {
-    "method": "prepareBatch of actual V003 in memory followed by evaluatePublication with no appointments, evidence/rights attestations, injected callb
+    "method": "prepareBatch of actual V003 in memory followed by evaluatePublication with no appointments, evidence/rights attestations, injected callbacks, or publication writes.",
+    "eligible": false,
+    "issueCount": 856,
+    "issueCounts": {
+      "CLAIM_PATH_UNVERIFIED": 430,
+      "LER_AUTHORITY_UNVERIFIED": 62,
+      "PUBLICATION_NOT_VERIFIED": 62,
+      "REVIEW_SCOPE_MISSING": 62,
+      "SPECIALIST_REVIEW_MISSING": 62,
+      "CLAIM_EVIDENCE_INSUFFICIENT": 62,
+      "SOURCE_RIGHTS_UNVERIFIED": 62,
+      "BILINGUAL_ENDPOINT_UNVERIFIED": 19,
+      "TRANSLATION_UNREVIEWED": 19,
+      "EXAMPLE_TRANSLATION_UNREVIEWED": 16
+    },
+    "recordsEvaluated": 62,
+    "persistedStateWritten": false,
+    "partialPublicationWrites": 0
+  },
+  "assessmentSnapshotNote": "Dataset and claim digests are assessed at this content snapshot. Commit SHA and the GitHub Actions result for final main are returned in the execution report; this assessment is not an Evidence, Source, EditorialReview, or authorization record."
+}

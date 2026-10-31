@@ -1166,4 +1166,148 @@
         "editorialStatus": "draft",
         "register": "neutral",
         "domain": "general",
-        "usageNote": "Used 
+        "usageNote": "Used for concrete physical size (contrasting with both 'big' and 'large') as well as quantities and proportions ('a small amount/number/proportion', contrasting with 'large').",
+        "usageRestrictions": [
+          {
+            "kind": "collocation",
+            "description": "Gradable adjective modifying countable physical nouns and quantity nouns ('a small house', 'a small number of students')."
+          }
+        ],
+        "contrastiveNotes": [
+          {
+            "language": "en",
+            "text": "Unlike 'little', which often expresses emotion, affection, or uncountable quantity ('little time'), 'small' is neutral and objective for physical size and countable quantities."
+          }
+        ],
+        "examples": [
+          {
+            "english": "They live in a small apartment near the city centre.",
+            "exampleType": "unverified_candidate",
+            "vi": "Họ sống trong một căn hộ nhỏ gần trung tâm thành phố.",
+            "register": "neutral",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed",
+            "evidenceIds": []
+          }
+        ],
+        "topicIds": [],
+        "constructionIds": [],
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "equiv-small",
+      "type": "eqv",
+      "sourceItemKey": "phase11:staged-lexical-candidates:v1:equiv-small",
+      "entity": {
+        "sourceSenseId": "candidate:sense-small-size",
+        "glossVi": "nhỏ",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "exact_in_context",
+        "context": "below average in physical size, area, or scale",
+        "register": "neutral",
+        "restrictions": [
+          "In everyday concrete or affectionate contexts, Vietnamese also uses 'bé' ('căn phòng bé', 'em bé'), whereas 'nhỏ' applies broadly to both physical objects ('ngôi nhà nhỏ') and quantities ('một số lượng nhỏ')."
+        ],
+        "translationEvidenceStatus": "unreviewed",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "rel-big-large-near-synonym",
+      "type": "rel",
+      "sourceItemKey": "phase11:staged-lexical-candidates:v1:rel-big-large-near-synonym",
+      "entity": {
+        "relationType": "NEAR_SYNONYM_OF",
+        "sourceId": "candidate:sense-big-size",
+        "targetId": "candidate:sense-large-size",
+        "qualifiers": {
+          "context": "concrete physical size or spatial dimensions of countable objects, buildings, or spaces; 'large' is more formal and objective than 'big'",
+          "register": "neutral"
+        },
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "rel-big-small-antonym",
+      "type": "rel",
+      "sourceItemKey": "phase11:staged-lexical-candidates:v1:rel-big-small-antonym",
+      "entity": {
+        "relationType": "ANTONYM_OF",
+        "sourceId": "candidate:sense-big-size",
+        "targetId": "candidate:sense-small-size",
+        "qualifiers": {
+          "context": "physical size, dimensions, or spatial extent of concrete objects, places, or living things",
+          "register": "neutral"
+        },
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "rel-large-small-antonym",
+      "type": "rel",
+      "sourceItemKey": "phase11:staged-lexical-candidates:v1:rel-large-small-antonym",
+      "entity": {
+        "relationType": "ANTONYM_OF",
+        "sourceId": "candidate:sense-large-size",
+        "targetId": "candidate:sense-small-size",
+        "qualifiers": {
+          "context": "physical size, area, scale, or countable quantity (such as a large or small number, amount, or proportion)",
+          "register": "neutral"
+        },
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "equiv-borrow-money",
+      "type": "eqv",
+      "sourceItemKey": "phase11:staged-lexical-candidates:v1:equiv-borrow-money",
+      "entity": {
+        "sourceSenseId": "candidate:sense-borrow-temporary-use",
+        "glossVi": "vay",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "exact_in_context",
+        "context": "receive money, credit, or fungible capital temporarily with the obligation to repay equivalent value, often with interest",
+        "register": "neutral",
+        "restrictions": [
+          "Used specifically when the borrowed resource is money, a loan, or financial capital ('vay tiền', 'vay vốn ngân hàng'); use 'mượn' for specific physical items returned in kind."
+        ],
+        "translationEvidenceStatus": "unreviewed",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "equiv-lend-money",
+      "type": "eqv",
+      "sourceItemKey": "phase11:staged-lexical-candidates:v1:equiv-lend-money",
+      "entity": {
+        "sourceSenseId": "candidate:sense-lend-temporary-use",
+        "glossVi": "cho vay",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "exact_in_context",
+        "context": "provide money, credit, or fungible capital temporarily on condition of repayment of equivalent value, often with interest",
+        "register": "neutral",
+        "restrictions": [
+          "Used specifically when the lent resource is money, a loan, or financial capital ('cho vay tiền', 'cho vay nặng lãi'); use 'cho mượn' for specific physical items returned in kind."
+        ],
+        "translationEvidenceStatus": "unreviewed",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    }
+  ]
+}
