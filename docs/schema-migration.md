@@ -7,6 +7,16 @@ and editorial fields. The deterministic generator `scripts/generate-schemas-v2.m
 starts from canonical V1, changes `$id`/`$ref` to the separate V2 namespace,
 updates `schemaVersion`, and adds optional typed fields; never mutates V1.
 
+## Repository rename compatibility
+
+The V1 and V2 `$id` and canonical `$ref` values keep the legacy
+`https://raw.githubusercontent.com/phatnguyen03022001/ielts-tradition` URI after the
+repository rename to `english-learning`. These URIs are schema contract identities,
+not decorative repository links. Do not rewrite them in place; any identity change
+requires a versioned schema transition and compatibility regressions. Historical
+research URLs and immutable source snapshots retain the repository path that was
+current when they were recorded.
+
 ```js
 import {migrateV1Records} from "./pipeline/migrate-v1.mjs";
 import {validateDatasetV2} from "./validators/validate-dataset-v2.mjs";

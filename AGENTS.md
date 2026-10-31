@@ -1,4 +1,4 @@
-# IELTS Tradition — Agent Operating Contract
+# English Learning — Agent Operating Contract
 
 ## 1. Mission and scope
 
@@ -10,7 +10,7 @@ Prefer the smallest correct solution. Never introduce a UI, API, authentication,
 
 ## 2. Repository and execution boundaries
 
-- GitHub: `phatnguyen03022001/ielts-tradition`.
+- GitHub: `phatnguyen03022001/english-learning`.
 - Branch policy: **MAIN_ONLY**. Work on `main` only; do not create feature/dev/control branches, worktrees, or pull requests unless explicitly authorized by the owner.
 - **One writer invariant:** only the explicitly designated integration writer may mutate repository files, commit, publish, migrate schemas, or change data. Specialist workers operate read-only and deliver findings, designs, examples, and test proposals.
 - Before doing work: inspect current repository contents, `git status`, current `main` HEAD, relevant schemas/tests, and the exact task authorization. Do not overwrite concurrent edits.

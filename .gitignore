@@ -1,3 +1,29 @@
+# Dependencies and local caches
 node_modules/
+.npm/
+.cache/
+
+# Local environment secrets
+.env
+.env.*
+!.env.example
+
+# Operating system files
+.DS_Store
+
+# Local drafts and temporary output
 .draft/
+/.tmp/
+/tmp/
+/temp/
 *.tmp
+*.temp
+*.log
+*.pid
+*.pid.lock
+npm-debug.log*
+
+# Unapproved build and test output
+/coverage/
+/dist/
+/build/

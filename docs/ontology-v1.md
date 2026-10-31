@@ -1,6 +1,8 @@
 # Canonical Lexicographic Ontology — v1
 
-**Status:** Phase 1 normative design, awaiting machine-enforced Phase 2/3 contracts.
+**Status:** Historical Phase 1 normative design. Its original Phase 2/3 implementation
+gap is now covered by versioned schemas and validators. Use those executable contracts
+for current behavior.
 **Scope:** English–Vietnamese dictionary knowledge base, not an application.
 **Registry (machine-readable):** [`schemas/v1/vocabularies.json`](../schemas/v1/vocabularies.json).
 **Governance baseline:** [`AGENTS.md`](../AGENTS.md), [identity](identity-policy.md), [bilingual alignment](bilingual-alignment.md), [sense division](sense-division.md), [editorial](editorial-policy.md).
