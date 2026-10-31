@@ -36,7 +36,7 @@ Each case includes deliberately invalid negative mutations (missing references, 
 ## Run on GitHub (no Mac)
 
 ```sh
-npm install --no-package-lock --ignore-scripts --no-audit --no-fund
+npm ci --ignore-scripts --no-audit --no-fund
 npm test
 ```
 

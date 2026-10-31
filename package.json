@@ -11,6 +11,7 @@
     "test": "npm run schema:check && npm run test:coverage",
     "test:coverage": "node --experimental-test-coverage --test-coverage-include='pipeline/**/*.mjs' --test-coverage-include='validators/**/*.mjs' --test-coverage-lines=90 --test-coverage-branches=80 --test-coverage-functions=90 --test tests/schema-conformance.test.mjs tests/graph-integrity.test.mjs tests/pilot-fixtures.test.mjs tests/stress/lexical-quality.test.mjs tests/stress/graph-scale.test.mjs tests/stress/relation-language.test.mjs tests/production/*.test.mjs",
     "test:stress": "node --test tests/stress/lexical-quality.test.mjs tests/stress/graph-scale.test.mjs tests/stress/relation-language.test.mjs",
+    "benchmark:scale": "node scripts/benchmark-scale.mjs",
     "test:production": "node --test tests/production/*.test.mjs",
     "schema:v2:generate": "node scripts/generate-schemas-v2.mjs",
     "candidates:validate": "node scripts/candidates.mjs validate",

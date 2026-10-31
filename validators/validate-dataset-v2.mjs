@@ -2,8 +2,7 @@ import {readFileSync,readdirSync} from "node:fs";
 import {join,resolve,dirname} from "node:path";
 import {fileURLToPath} from "node:url";
 import Ajv2020 from "ajv/dist/2020.js";
-import {validateGraph} from "./graph-v1.mjs";
-import {evaluatePublication,digest,valueAt} from "./production-gates.mjs";
+import {evaluatePublication,graphResultForPublication,digest,valueAt} from "./production-gates.mjs";
 import {validateLifecycleV2} from "./lifecycle-v2.mjs";
 const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const directory=join(root,"schemas/v2");
@@ -20,6 +19,9 @@ const issue=(code,id,path,message)=>({code,entityId:id,path,message});
 export function validateDatasetV2(input,options={}) {
  const records=Array.isArray(input)?input:input?.records;
  if(!Array.isArray(records))return {valid:false,stage:"schema",issues:[issue("SCHEMA_INVALID","","records","Missing records array")],publication:{eligible:false,issues:[]}};
+ const publicationIssueLimit=options.publicationIssueLimit;
+ if(publicationIssueLimit!==undefined&&(!Number.isSafeInteger(publicationIssueLimit)||publicationIssueLimit<0))
+  return {valid:false,stage:"options",issues:[issue("OPTION_INVALID","","publicationIssueLimit","Must be a non-negative safe integer")],publication:{eligible:false,issues:[]}};
  const errors=[];
  for(let i=0;i<records.length;i++){
   const r=records[i],id=typeof r?._id==="string"?r._id:"";
@@ -28,7 +30,7 @@ export function validateDatasetV2(input,options={}) {
   if(!validate(r))for(const e of validate.errors??[])errors.push(issue("SCHEMA_INVALID",id,"records/"+i+(e.instancePath||"/")+(e.params?.missingProperty??""),e.keyword+": "+e.message));
  }
  if(errors.length)return {valid:false,stage:"schema",issues:errors.sort(sort),publication:{eligible:false,issues:[]}};
- const graph=validateGraph(records),extra=[],byId=new Map(records.map(r=>[r._id,r]));
+ const extra=[],byId=new Map(records.map(r=>[r._id,r]));
  const ref=(record,path,id,prefix)=>{if(!byId.has(id))extra.push(issue("REFERENCE_NOT_FOUND",record._id,path,id));else if(!id.startsWith(prefix+"_"))extra.push(issue("REFERENCE_TYPE_MISMATCH",record._id,path,id));else if(record.lifecycleStatus==="active"&&byId.get(id).lifecycleStatus==="retired")extra.push(issue("RETIRED_LIVE_REFERENCE",record._id,path,id));};
  for(const r of records){
   if(r.constructionIds)r.constructionIds.forEach((id,i)=>{ref(r,"constructionIds/"+i,id,"con");const con=byId.get(id);if(con&&con.senseId!==r._id)extra.push(issue("CONSTRUCTION_SENSE_MISMATCH",r._id,"constructionIds/"+i,"Construction belongs to a different sense"));});
@@ -50,8 +52,15 @@ export function validateDatasetV2(input,options={}) {
   if(r.decisionEffect==="lifecycle_transition"&&!r.transitionAudit)
    extra.push(issue("LIFECYCLE_AUDIT_INCOMPLETE",r._id,"transitionAudit","Transition requires evidence and incoming-edge inventory"));
  }
+ const publication=evaluatePublication(records,options,publicationIssueLimit);
+ const graph=graphResultForPublication(publication);
  const all=[...graph.issues,...extra,...validateLifecycleV2(records)].sort(sort);
- const publication=evaluatePublication(records,options);
  const selected=options.publication===true?[...all,...publication.issues].sort(sort):all;
- return {valid:selected.length===0,stage:"graph",issues:selected,publication:{eligible:all.length===0&&publication.eligible,issues:publication.issues}};
+ if(options.publication===true&&(publication.omittedIssueCount??0)>0){
+  selected.push(issue("PUBLICATION_DIAGNOSTICS_TRUNCATED","","publication",`${publication.omittedIssueCount} publication diagnostics omitted`));
+  selected.sort(sort);
+ }
+ const publicationSummary={eligible:all.length===0&&publication.eligible,issues:publication.issues,
+  ...(publication.issueCount===undefined?{}:{issueCount:publication.issueCount,omittedIssueCount:publication.omittedIssueCount})};
+ return {valid:selected.length===0,stage:"graph",issues:selected,publication:publicationSummary};
 }

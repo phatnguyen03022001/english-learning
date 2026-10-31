@@ -1,6 +1,6 @@
 import {test} from "node:test";
 import assert from "node:assert/strict";
-import {mkdtempSync,writeFileSync,readFileSync,existsSync,rmSync} from "node:fs";
+import {mkdtempSync,writeFileSync,readFileSync,existsSync,rmSync,statSync} from "node:fs";
 import {tmpdir} from "node:os";
 import {join} from "node:path";
 import {execFileSync} from "node:child_process";
@@ -19,7 +19,9 @@ test("CLI prepare/replay/check uses persisted state; validate is read-only",()=>
 });
 
 import {spawnSync} from "node:child_process";
+import {spawn} from "node:child_process";
 import {readdirSync,mkdirSync} from "node:fs";
+import {setTimeout as delay} from "node:timers/promises";
 
 const cli=new URL("../../scripts/candidates.mjs",import.meta.url).pathname;
 const emptyLedger=()=>({formatVersion:1,batches:{},mappings:{},sourceMappings:{},records:[],history:[]});
@@ -32,6 +34,18 @@ const output=execution=>JSON.parse(execution.stdout);
 const withTmp=fn=>{
  const tmp=mkdtempSync(join(tmpdir(),"lex-r2-"));
  try{fn(tmp);}finally{rmSync(tmp,{recursive:true,force:true});}
+};
+const withTmpAsync=async fn=>{
+ const tmp=mkdtempSync(join(tmpdir(),"lex-r2-"));
+ try{await fn(tmp);}finally{rmSync(tmp,{recursive:true,force:true});}
+};
+const start= (args,options={})=>{
+ const child=spawn(process.execPath,args,{env:{...process.env,...options.env},stdio:["ignore","pipe","pipe"]});
+ let stdout="",stderr="";
+ child.stdout.setEncoding("utf8");child.stderr.setEncoding("utf8");
+ child.stdout.on("data",chunk=>stdout+=chunk);child.stderr.on("data",chunk=>stderr+=chunk);
+ const done=new Promise(resolve=>child.on("close",(code,signal)=>resolve({code,signal,stdout,stderr})));
+ return {child,done};
 };
 
 test("R2 missing ledger is STATE_NOT_FOUND, nonzero and does not create a directory or lock",()=>withTmp(tmp=>{
@@ -122,6 +136,31 @@ test("R2 populated persisted ledger passes check with original bytes and history
  assert.deepEqual(readdirSync(tmp),names);
 }));
 
+test("candidate check bounds publication output and supports a full diagnostic opt-in",()=>withTmp(tmp=>{
+ const state=join(tmp,"state.json"),input=join(tmp,"batch.json");
+ const records=Array.from({length:120},(_,index)=>({candidateId:`draft-${index}`,entity:{
+  language:"en",lemma:`synthetic-draft-${index}`,pos:"NOUN",entryKind:"word",lifecycleStatus:"active",editorialStatus:"draft"
+ }}));
+ writeFileSync(input,JSON.stringify({batchId:"bounded-publication-output",records}));
+ assert.equal(run("prepare",state,input).status,0);
+ const bytes=readFileSync(state,"utf8");
+ const bounded=run("check",state);
+ assert.equal(bounded.status,0,bounded.stderr);
+ const report=output(bounded);
+ assert.equal(report.storageValid,true);
+ assert.equal(report.publication.eligible,false);
+ assert.equal(report.publication.issues.length,1000);
+ assert.ok(report.publication.issueCount>report.publication.issues.length);
+ assert.equal(report.publication.omittedIssueCount,report.publication.issueCount-report.publication.issues.length);
+
+ const full=spawnSync(process.execPath,[cli,"check","--state",state,"--full-publication-diagnostics"],{encoding:"utf8"});
+ assert.equal(full.status,0,full.stderr);
+ const fullReport=JSON.parse(full.stdout);
+ assert.equal(fullReport.publication.eligible,false);
+ assert.equal(fullReport.publication.issues.length,fullReport.publication.issueCount??1200);
+ assert.equal(readFileSync(state,"utf8"),bytes,"Both check modes must be read-only");
+}));
+
 test("R2 persisted schema and graph violations fail with original diagnostics and no writes",()=>withTmp(tmp=>{
  const state=join(tmp,"state.json"),input=join(tmp,"batch.json");
  writeFileSync(input,JSON.stringify(sampleBatch()));
@@ -168,6 +207,91 @@ test("R2 first prepare, validate and dry-run still initialize safely without exi
  assert.equal(data.records.length,2);
  assert.equal(data.history.length,1);
  assert.equal(existsSync(state+".lock"),false);
+}));
+
+test("stale exclusive lock is preserved and blocks a writer without touching the ledger",()=>withTmp(tmp=>{
+ const state=join(tmp,"state.json"),input=join(tmp,"batch.json"),lock=state+".lock";
+ writeFileSync(input,JSON.stringify(sampleBatch()));
+ const ownerMarker="unknown lock owner; manual reconciliation required";
+ writeFileSync(lock,ownerMarker,{mode:0o600});
+ const result=run("prepare",state,input);
+ assert.equal(result.status,1);
+ assert.match(JSON.parse(result.stderr).message,/exist|EEXIST/i);
+ assert.equal(readFileSync(lock,"utf8"),ownerMarker);
+ assert.equal(existsSync(state),false);
+ assert.deepEqual(readdirSync(tmp).sort(),["batch.json","state.json.lock"]);
+}));
+
+test("competing writers serialize through the exclusive lock and cannot lose an update",async()=>withTmpAsync(async tmp=>{
+ const state=join(tmp,"state.json"),firstInput=join(tmp,"first.json"),secondInput=join(tmp,"second.json");
+ const preload=join(tmp,"hold-lock.mjs"),lock=state+".lock";
+ writeFileSync(firstInput,JSON.stringify(sampleBatch()));
+ writeFileSync(secondInput,JSON.stringify({batchId:"concurrent-writer",records:[{candidateId:"entry-2",entity:{
+  language:"en",lemma:"synthetic-second",pos:"NOUN",entryKind:"word",lifecycleStatus:"active",editorialStatus:"draft"
+ }}]}));
+ writeFileSync(preload,[
+  'import fs from "node:fs";',
+  'import {syncBuiltinESMExports} from "node:module";',
+  'const original=fs.openSync;',
+  'fs.openSync=function(path,flags,...args){const fd=original.call(this,path,flags,...args);if(String(path)===process.env.CANDIDATE_LOCK_TEST_PATH&&String(flags).includes("x")){const ms=Number(process.env.CANDIDATE_LOCK_TEST_HOLD_MS||0);if(ms>0)Atomics.wait(new Int32Array(new SharedArrayBuffer(4)),0,0,ms);}return fd;};',
+  'syncBuiltinESMExports();'
+ ].join("\n"));
+ const first=start(["--import",preload,cli,"prepare","--state",state,"--input",firstInput],{
+  env:{CANDIDATE_LOCK_TEST_PATH:lock,CANDIDATE_LOCK_TEST_HOLD_MS:"700"}
+ });
+ let found=false;
+ for(let attempt=0;attempt<100;attempt++){
+  if(existsSync(lock)){found=true;break;}
+  await delay(10);
+ }
+ assert.equal(found,true,"first writer should hold the lock before the competing attempt");
+ const second=run("prepare",state,secondInput);
+ assert.equal(second.status,1);
+ assert.match(JSON.parse(second.stderr).message,/exist|EEXIST/i);
+ const firstResult=await first.done;
+ assert.equal(firstResult.code,0,firstResult.stderr);
+ assert.equal(JSON.parse(firstResult.stdout).status,"prepared");
+ assert.equal(existsSync(lock),false);
+ const ledger=JSON.parse(readFileSync(state,"utf8"));
+ assert.equal(ledger.records.length,2);
+ assert.equal(ledger.history.length,1);
+ assert.equal(statSync(state).mode&0o777,0o600);
+ if(typeof process.getuid==="function")assert.equal(statSync(state).uid,process.getuid());
+}));
+
+test("failed atomic replacement preserves the prior snapshot and permits safe retry",()=>withTmp(tmp=>{
+ const state=join(tmp,"state.json"),initial=join(tmp,"initial.json"),next=join(tmp,"next.json");
+ const preload=join(tmp,"fail-rename.mjs");
+ writeFileSync(initial,JSON.stringify(sampleBatch()));
+ writeFileSync(next,JSON.stringify({batchId:"recover-after-rename-failure",records:[{candidateId:"recovery-entry",entity:{
+  language:"en",lemma:"synthetic-recovery",pos:"NOUN",entryKind:"word",lifecycleStatus:"active",editorialStatus:"draft"
+ }}]}));
+ assert.equal(run("prepare",state,initial).status,0);
+ const previous=readFileSync(state,"utf8");
+ writeFileSync(preload,[
+  'import fs from "node:fs";',
+  'import {syncBuiltinESMExports} from "node:module";',
+  'const original=fs.renameSync;',
+  'fs.renameSync=function(from,to,...args){if(String(to)===process.env.CANDIDATE_FAIL_RENAME_TARGET)throw new Error("injected atomic replacement failure");return original.call(this,from,to,...args);};',
+  'syncBuiltinESMExports();'
+ ].join("\n"));
+ const failed=spawnSync(process.execPath,["--import",preload,cli,"prepare","--state",state,"--input",next],{
+  encoding:"utf8",env:{...process.env,CANDIDATE_FAIL_RENAME_TARGET:state}
+ });
+ assert.equal(failed.status,1);
+ assert.match(JSON.parse(failed.stderr).message,/injected atomic replacement failure/);
+ assert.equal(readFileSync(state,"utf8"),previous);
+ assert.equal(existsSync(state+".lock"),false);
+ assert.deepEqual(readdirSync(tmp).sort(),["fail-rename.mjs","initial.json","next.json","state.json"]);
+
+ const recovered=run("prepare",state,next);
+ assert.equal(recovered.status,0,recovered.stderr);
+ assert.equal(output(recovered).status,"prepared");
+ const restored=JSON.parse(readFileSync(state,"utf8"));
+ assert.equal(restored.records.length,3);
+ assert.equal(restored.history.length,2);
+ assert.equal(statSync(state).mode&0o777,0o600);
+ if(typeof process.getuid==="function")assert.equal(statSync(state).uid,process.getuid());
 }));
 
 test("evidence binding CLI persists a draft-only CAS update and exact replay",()=>withTmp(tmp=>{

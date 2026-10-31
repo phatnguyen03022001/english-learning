@@ -10,6 +10,8 @@ import {validateDatasetV2} from "../validators/validate-dataset-v2.mjs";
 const args=process.argv.slice(2),op=args[0];
 const opt=name=>{const n=args.indexOf(name);return n<0?null:args[n+1];};
 const dryRun=args.includes("--dry-run");
+const fullPublicationDiagnostics=args.includes("--full-publication-diagnostics");
+const publicationDiagnosticLimit=1000;
 const statePath=resolve(opt("--state")??".draft/candidates-state.json");
 const load=path=>JSON.parse(readFileSync(path,"utf8"));
 let lockFd;
@@ -34,7 +36,7 @@ try{
     message:missing?"Persisted candidate ledger does not exist":"Malformed candidate ledger structure"
    }],publication:{eligible:false,issues:[]}};
   }else{
-   const result=validateDatasetV2(state.records);
+   const result=validateDatasetV2(state.records,fullPublicationDiagnostics?{}:{publicationIssueLimit:publicationDiagnosticLimit});
    output={status:result.valid?"valid":"invalid",storageValid:result.valid,issues:result.issues,publication:result.publication};
   }
  }else if(op==="validate"||op==="prepare"||op==="bind-evidence"||op==="revise"||op==="promote"){

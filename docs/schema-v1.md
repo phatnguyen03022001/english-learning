@@ -5,7 +5,7 @@ Contracts use **JSON Schema Draft 2020-12**, one independently validated entity 
 ## Commands
 
 ```sh
-npm install --no-package-lock
+npm ci --ignore-scripts --no-audit --no-fund
 npm run schema:check
 npm test
 ```

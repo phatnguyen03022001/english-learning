@@ -35,15 +35,17 @@ A candidate batch JSON is:
 ## Commands (Node.js 22, no database)
 
 ```sh
-npm install --no-package-lock --ignore-scripts --no-audit --no-fund
+npm ci --ignore-scripts --no-audit --no-fund
 npm test
 npm run candidates:validate -- --input candidate-batch.json --state .draft/state.json
 npm run candidates:prepare -- --input candidate-batch.json --state .draft/state.json --dry-run
 npm run candidates:prepare -- --input candidate-batch.json --state .draft/state.json
 npm run candidates:check -- --state .draft/state.json
+npm run candidates:check -- --state .draft/state.json --full-publication-diagnostics
 npm run candidates:revise -- --input draft-revision.json --state .draft/state.json
 npm run candidates:promote -- --input gated-promotion.json --state .draft/state.json --dry-run
 npm run test:production
+npm run benchmark:scale -- --sizes=1000,5000,10000 --cumulative-size=5000 --cumulative-batches=3 --negative-size=10000
 ```
 
 `validate`, `check`, and `--dry-run` do not write a draft ledger. A successful
@@ -52,6 +54,22 @@ the tool does not upload to Atlas, create Git commits, publish, or attest validi
 A batch can be re-run exactly without history mutation. Changed batches, source-item
 conflicts, stale CAS revisions, unknown references and duplicate IDs are reported,
 never silently corrected.
+
+`candidates:check` returns up to 1,000 publication diagnostics by default, plus
+the total and omitted counts. Pass `--full-publication-diagnostics` to retain every
+publication issue. The V2 validator's `publicationIssueLimit` option applies the
+same diagnostic cap while still evaluating every publication rule and preserving
+the exact `eligible` decision. Candidate preparation retains no unused publication
+issue objects; schema, graph and lifecycle checks remain complete.
+
+The full scale benchmark is opt-in and writes only inside isolated OS temporary
+directories. Each worker has a five-minute timeout and a 1 GiB V8 heap limit by
+default; override these with `--timeout-ms` and `--max-heap-mib`. It prints one
+JSON result per workload, including Node/V8/platform details, input size, full
+snapshot size, phase timings and history/mapping counts. RSS is the process high
+water mark. Heap high water is sampled after measured phases because synchronous
+validators do not yield for continuous heap polling. Default CI keeps the 1K
+cumulative correctness smoke test and does not run the 5K–10K benchmark.
 
 A draft revision file is `{"revisionId":"review-edit-1","changes":[{"canonicalId":"sns_<existing-uuidv7>","expectedRevision":1,"set":{"definition":"Replacement candidate definition"}}]}`.
 Only active draft records may be edited; immutable ID, lexical identity, lifecycle,
@@ -86,6 +104,25 @@ CLI `prepare` reports `status`, batch digest, canonical record IDs, possible dup
 inventory, missing evidence IDs, review queue, and `publicationEligible:false`.
 `check` returns schema/graph storage diagnostics separately from publication issues.
 Drafts are intentionally not independently reviewed or publication-ready.
+
+## Future audio and IELTS practice boundaries
+
+The V2 lexical contracts reject undeclared fields, so audio binaries, provider
+configuration, practice content, attempts, learner progress and scoring state
+do not belong in dictionary records. Future pronunciation assets can reference
+stable lexical IDs and keep voice, generation provenance, content hashes,
+storage references, version history and redistribution decisions in a separate
+versioned media contract. The dictionary already represents pronunciation
+variety and evidence metadata where applicable; it does not store audio bytes.
+
+IELTS practice can use a separate versioned practice contract for Academic and
+General Training content, skills, question formats, passages, recordings,
+answer keys, rubrics, test versions, difficulty and attempts. Exercise items may
+reference lexical IDs. The current V2 dictionary validator intentionally does
+not accept practice records, so that future domain needs its own contract and
+validation boundary when it is explicitly scoped. Neither boundary requires a
+dictionary schema change now, and structural support alone does not establish
+audio redistribution rights or official IELTS format/scoring validity.
 
 ## Explicit promotion boundary
 

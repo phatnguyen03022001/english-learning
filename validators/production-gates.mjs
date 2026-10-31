@@ -4,6 +4,8 @@ import {verifyReviewerAppointment} from "./authority-v2.mjs";
 
 const cmp=(a,b)=>a<b?-1:a>b?1:0;
 const sort=(a,b)=>cmp(a.entityId,b.entityId)||cmp(a.path,b.path)||cmp(a.code,b.code)||cmp(a.message,b.message);
+const graphByPublicationResult=new WeakMap();
+export const graphResultForPublication=result=>graphByPublicationResult.get(result);
 // A publication decision covers every asserted learner-facing claim, not
 // merely one convenient evidence reference on a record.
 export function publicationClaimPaths(record){
@@ -57,9 +59,15 @@ export function valueAt(record,path){
 }
 // The authenticated trust callbacks MUST be provided by an independently
 // verified owner-appointment/rights process. JSON metadata is not authority.
-export function evaluatePublication(records, options={}) {
+export function evaluatePublication(records, options={}, diagnosticLimit) {
+ if(diagnosticLimit!==undefined&&(!Number.isSafeInteger(diagnosticLimit)||diagnosticLimit<0))
+  throw new RangeError("Publication diagnostic limit must be a non-negative safe integer");
  const issues=[],byId=new Map(records.map(r=>[r._id,r]));
- const add=(code,id,path,message)=>issues.push({code,entityId:id,path,message});
+ let issueCount=0;
+ const add=(code,id,path,message)=>{
+  issueCount++;
+  if(diagnosticLimit===undefined||issues.length<diagnosticLimit)issues.push({code,entityId:id,path,message});
+ };
  const graph=validateGraph(records);
  for(const i of graph.issues)add(i.code,i.entityId,i.path,i.message);
 
@@ -181,5 +189,8 @@ export function evaluatePublication(records, options={}) {
    add("LIFECYCLE_AUTHORITY_UNVERIFIED",d._id,"reviewerId","Decision appointment not authenticated");
  }
  issues.sort(sort);
- return {eligible:issues.length===0,issues};
+ const result=diagnosticLimit===undefined?{eligible:issueCount===0,issues}:
+  {eligible:issueCount===0,issues,issueCount,omittedIssueCount:issueCount-issues.length};
+ graphByPublicationResult.set(result,graph);
+ return result;
 }

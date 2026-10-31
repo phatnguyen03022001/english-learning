@@ -6,7 +6,7 @@ Ajv 8.17.1 (already pinned) validates every record first; graph validation is pu
 ## Usage
 
 ```sh
-npm install --no-package-lock --ignore-scripts --no-audit --no-fund
+npm ci --ignore-scripts --no-audit --no-fund
 npm test
 ```
 

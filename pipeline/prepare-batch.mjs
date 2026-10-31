@@ -62,11 +62,13 @@ function validateCandidateEvidence(batch,state){
 function duplicateHints(existing,newRecords){
  const hints=[];
  const keys=new Map();
- for(const r of [...existing,...newRecords]){
-  if(r._id.startsWith("lex_")){
-   const key=JSON.stringify([r.language,r.lemma.normalize("NFC"),r.pos,r.entryKind]);
-   if(keys.has(key)&&keys.get(key)!==r._id)hints.push({kind:"possible_homograph_or_duplicate",existingId:keys.get(key),candidateId:r._id,lemma:r.lemma});
-   else keys.set(key,r._id);
+ for(const records of [existing,newRecords]){
+  for(const r of records){
+   if(r._id.startsWith("lex_")){
+    const key=JSON.stringify([r.language,r.lemma.normalize("NFC"),r.pos,r.entryKind]);
+    if(keys.has(key)&&keys.get(key)!==r._id)hints.push({kind:"possible_homograph_or_duplicate",existingId:keys.get(key),candidateId:r._id,lemma:r.lemma});
+    else keys.set(key,r._id);
+   }
   }
  }
  return hints.sort((a,b)=>sort(a.candidateId,b.candidateId));
@@ -181,7 +183,9 @@ export function prepareBatch(batch,state={},options={}) {
  const reusedIds=new Set([...reused].map(candidateId=>mapping.get(candidateId)));
  const created=materialized.filter(record=>!reusedIds.has(record._id));
  const dataset=[...next.records,...created];
- const validated=validateDatasetV2(dataset);
+ // Candidate preparation needs the full publication decision but never returns
+ // publication diagnostics; count every issue while avoiding an unused list.
+ const validated=validateDatasetV2(dataset,{publicationIssueLimit:0});
  if(!validated.valid)return invalidReport(state,digest,"VALIDATION_FAILED","Candidate graph/schema rejected",validated.issues);
  const duplicates=duplicateHints(next.records,created);
  const missingEvidence=materialized.filter(r=>!["src","evd","rev","dec"].includes(r._id.split("_")[0])&&!(r.evidenceIds?.length)).map(r=>r._id).sort(sort);
