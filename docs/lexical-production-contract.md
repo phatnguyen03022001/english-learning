@@ -71,20 +71,25 @@ working directory. A relative path must remain within that working directory aft
 normalization; relative paths that escape it are rejected. An absolute path is an
 explicitly selected storage location and remains supported for authorized temporary
 state in tests and CI. Existing path components must be directories and may not be
-symlinks, and an existing final state file must be a regular non-symlink file. On
-macOS only the native `/var`, `/tmp`, and `/etc` aliases are accepted when their
+symlinks, and an existing final state file must be a regular non-symlink file. State
+directories created by the CLI use mode `0700`; `.draft` must be owned by the current
+user and remain private. Existing ancestors must not be writable by group/other,
+except the root-owned sticky `/tmp` (or macOS `/private/tmp`) boundary. Thus an
+absolute state path directly below a shared, non-sticky writable directory is rejected.
+On macOS only the native `/var`, `/tmp`, and `/etc` aliases are accepted when their
 resolved targets are exactly `/private/var`, `/private/tmp`, and `/private/etc`.
 
 State reads use `O_NOFOLLOW`. The lock and unique same-directory temporary file use
 exclusive creation with mode `0600`; the temporary file is synced and atomically
 renamed over the state file. Parent components are inspected while creating missing
 directories and are rechecked around state operations. A stale lock is not stolen.
-Node's built-in filesystem API does not expose descriptor-relative `openat` and
-`renameat` operations here, so an attacker able to swap a checked parent directory
-between the final check and an operation can still race the path check. This guards
-against static symlink traversal and accidental relative escape; it is not an OS
-sandbox for a directory writable by a hostile concurrent process. Keep the chosen
-parent directory under trusted ownership.
+These pathname checks do not eliminate TOCTOU races. Their boundary relies on the
+operating system preventing other UIDs from replacing trusted ancestors; do not use a
+location whose ancestors are writable by an untrusted UID. The CLI checks POSIX
+ownership and mode bits plus the known sticky temporary-directory exception, but
+Node's built-in APIs do not expose a portable way to enumerate arbitrary ACL grants.
+On macOS, assess ACLs on the selected workspace and state ancestors separately. This
+is not an OS sandbox or a guarantee for arbitrary absolute paths.
 
 The full scale benchmark is opt-in and writes only inside isolated OS temporary
 directories. Each worker has a five-minute timeout and a 1 GiB V8 heap limit by

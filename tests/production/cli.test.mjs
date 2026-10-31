@@ -1,6 +1,6 @@
 import {test} from "node:test";
 import assert from "node:assert/strict";
-import {mkdtempSync,writeFileSync,readFileSync,existsSync,rmSync,statSync,symlinkSync,mkdirSync,readdirSync} from "node:fs";
+import {mkdtempSync,writeFileSync,readFileSync,existsSync,rmSync,statSync,symlinkSync,mkdirSync,readdirSync,chmodSync} from "node:fs";
 import {tmpdir} from "node:os";
 import {join} from "node:path";
 import {execFileSync} from "node:child_process";
@@ -56,6 +56,7 @@ test("state path contract accepts default and explicit temp paths and rejects re
  assert.equal(JSON.parse(defaultWrite.stdout).status,"prepared");
  const defaultState=join(workspace,".draft","candidates-state.json");
  assert.equal(existsSync(defaultState),true);
+ assert.equal(statSync(join(workspace,".draft")).mode&0o777,0o700);
  assert.equal(existsSync(defaultState+".lock"),false);
  const explicit=join(tmp,"authorized-temp-state.json");
  assert.equal(run("prepare",explicit,input,workspace).status,0);
@@ -64,6 +65,29 @@ test("state path contract accepts default and explicit temp paths and rejects re
  assert.equal(escaped.status,1);
  assert.match(JSON.parse(escaped.stderr).message,/relative.*within/i);
  assert.deepEqual(readdirSync(outside),[]);
+}));
+
+test("state creation rejects an untrusted writable ancestor before lock or temp creation",()=>withTmp(tmp=>{
+ const workspace=join(tmp,"workspace"),unsafe=join(tmp,"unsafe"),input=join(tmp,"batch.json");
+ mkdirSync(workspace);mkdirSync(unsafe,{mode:0o700});writeFileSync(input,JSON.stringify(sampleBatch()));
+ // Model a shared directory without sticky-bit protection. Other UIDs could replace
+ // entries beneath it, so pathname checks cannot make it a trusted state location.
+ chmodSync(unsafe,0o777);
+ const result=run("prepare",join(unsafe,"state.json"),input,workspace);
+ assert.equal(result.status,1);
+ assert.match(JSON.parse(result.stderr).message,/writable by an untrusted user/i);
+ assert.deepEqual(readdirSync(unsafe),[]);
+}));
+
+test("shared sticky temporary roots require a private state subdirectory on macOS",()=>withTmp(tmp=>{
+ if(process.platform!=="darwin")return;
+ const workspace=join(tmp,"workspace"),input=join(tmp,"batch.json");
+ mkdirSync(workspace);writeFileSync(input,JSON.stringify(sampleBatch()));
+ const result=run("prepare","/private/tmp/english-learning-boundary-probe.json",input,workspace);
+ assert.equal(result.status,1);
+ assert.match(JSON.parse(result.stderr).message,/private subdirectory/i);
+ assert.equal(existsSync("/private/tmp/english-learning-boundary-probe.json.lock"),false);
+ assert.equal(existsSync("/private/tmp/english-learning-boundary-probe.json"),false);
 }));
 
 test("final, ancestor and broken state symlinks are rejected without touching targets",()=>withTmp(tmp=>{
@@ -294,6 +318,7 @@ test("competing writers serialize through the exclusive lock and cannot lose an 
   await delay(10);
  }
  assert.equal(found,true,"first writer should hold the lock before the competing attempt");
+ assert.equal(statSync(lock).mode&0o777,0o600);
  const second=run("prepare",state,secondInput);
  assert.equal(second.status,1);
  assert.match(JSON.parse(second.stderr).message,/exist|EEXIST/i);
@@ -355,7 +380,7 @@ test("interrupted temp-file write leaves the old state intact and removes lock/t
   'import fs from "node:fs";',
   'import {syncBuiltinESMExports} from "node:module";',
   'const original=fs.writeFileSync;',
-  'fs.writeFileSync=function(target,data,...args){if(typeof target==="number"&&process.env.CANDIDATE_INTERRUPT_ATOMIC_WRITE==="1"){original.call(this,target,String(data).slice(0,32));throw new Error("injected interrupted atomic write");}return original.call(this,target,data,...args);};',
+  'fs.writeFileSync=function(target,data,...args){if(typeof target==="number"&&process.env.CANDIDATE_INTERRUPT_ATOMIC_WRITE==="1"){if((fs.fstatSync(target).mode&0o777)!==0o600)throw new Error("temporary file mode is not 0600");original.call(this,target,String(data).slice(0,32));throw new Error("injected interrupted atomic write");}return original.call(this,target,data,...args);};',
   'syncBuiltinESMExports();'
  ].join("\n"));
  const interrupted=spawnSync(process.execPath,["--import",preload,cli,"prepare","--state",state,"--input",next],{

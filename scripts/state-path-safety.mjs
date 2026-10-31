@@ -16,7 +16,7 @@ function inspectDirectoryPath(directory,{create=false}={}){
   const next=join(current,part);
   let info=lstatOrNull(next);
   if(!info&&create){
-   try{mkdirSync(next);}catch(error){if(error.code!=="EEXIST")throw error;}
+   try{mkdirSync(next,{mode:0o700});}catch(error){if(error.code!=="EEXIST")throw error;}
    info=lstatOrNull(next);
   }
   if(!info){current=next;continue;}
@@ -26,9 +26,20 @@ function inspectDirectoryPath(directory,{create=false}={}){
    throw new Error("Unsafe state path: symbolic link in directory path: "+next);
   }
   if(!info.isDirectory())throw new Error("Unsafe state path: parent component is not a directory: "+next);
+  assertTrustedDirectory(next,info);
   current=next;
  }
  return current||sep;
+}
+
+function assertTrustedDirectory(path,info,{stateRoot=false}={}){
+ const mode=info.mode&0o7777,uid=typeof process.getuid==="function"?process.getuid():null;
+ const ownerTrusted=uid===null||info.uid===uid||info.uid===0;
+ const rootStickyTemp=info.uid===0&&(mode&0o1000)!==0&&(path==="/tmp"||path==="/private/tmp");
+ if(!ownerTrusted||((mode&0o022)!==0&&!rootStickyTemp))
+  throw new Error("Unsafe state path: directory is writable by an untrusted user: "+path);
+ if(stateRoot&&(info.uid!==uid||(mode&0o077)!==0))
+  throw new Error("Unsafe state path: state root must be owned by the current user and private (0700): "+path);
 }
 
 function assertRegularFileOrMissing(path){
@@ -57,6 +68,10 @@ export function assertSafeStatePath(statePath){
 
 export function ensureSafeStateParent(statePath){
  inspectDirectoryPath(dirname(statePath),{create:true});
+ const parent=dirname(statePath),info=lstatOrNull(parent);
+ if(info?.uid===0&&(info.mode&0o1000)!==0&&(parent==="/tmp"||parent==="/private/tmp"))
+  throw new Error("Unsafe state path: use a private subdirectory below the shared temporary directory");
+ assertTrustedDirectory(parent,info,{stateRoot:basename(parent)===".draft"});
  assertSafeStatePath(statePath);
 }
 
