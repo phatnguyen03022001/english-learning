@@ -9,13 +9,28 @@ This is the canonical **execution/authority contract** for the dictionary workfl
 | Human owner | Human authorization channel | Set tasks, scope, explicit grant to writer; appoint qualified editorial reviewers | Owner decisions must be explicitly recorded; an agent's assertion is not owner authentication |
 | ChatGPT Chat / Architect | ChatGPT, read-only repository/connected-resource inspection | Inspect code, tests, history, ECC, research, define tasks, audit results and accept/reject evidence | **POLICY_ONLY** while ChatGPT connectors or sessions retain write-capable tokens. Architect **must not call write tools** even if available; no self-promotion to writer |
 | Codex Research parent + up to 4 specialists | **Separate** local Codex research invocation on Mac | Read source and relevant references; bounded independent findings/proposals only | Use a **read-only OS sandbox**, no approvals for elevation, disabled apps/plugins, and config isolation to avoid user MCP inheritance. Verify effective tool inventory; role prompts alone do not enforce this |
-| Codex Integration Writer (one) | **Separate** explicitly owner-authorized Codex invocation on Mac | Only task-scoped file edits and local tests; commit/push on `main` **only if specified** | Task grant + sandbox scoped to workspace + Git credentials. OS sandbox limits file paths, but does not encode task scope or authenticate an owner grant: **POLICY_ONLY** for per-task decisions; no research-worker delegation from this writable parent |
+| Integration Writer (one; Codex Native default, Google Antigravity optional) | Explicitly owner-authorized executor on Mac, in the existing checkout | Only task-scoped file edits and local tests; commit/push on `main` **only if specified** | Shared Integration Writer role and task grant. Provider does not expand authority. Codex sandbox or Antigravity permissions must be checked at runtime; task scope and owner authority remain **POLICY_ONLY** |
 | Mac local | Source checkout, Node.js 26, native Codex CLI and tests | Primary execution substrate, not an agent or permission grant | macOS process/Seatbelt permissions for sandboxed execution; native Codex preferred. Agent Runtime MCP is an optional client fallback, not a Codex dependency |
 | GitHub origin | Versioned repository | Source of truth for commits on `main`; only authorized writer may push | Git credentials/branch rules determine actual remote restrictions. Branch/actor policy is **POLICY_ONLY** unless separate credential/branch protection is verified |
 | GitHub Actions | Hosted runner, exact commit | Read checkout; use temporary runner files for tests; emit verification result | Workflow `permissions: contents: read`. No push, auto-commit, deployment, publication, or Atlas secret references. CI green proves checks passed, **not** owner/editorial approval |
 | MongoDB Atlas | Independently secured persistence boundary | **No writes by default**, including from integration writer | Requires separate explicit task authorization naming project, database, collections, expected impact and rollback/restore plan, plus appropriately scoped credentials. Current no-write is **POLICY_ONLY** unless read-only/no credentials are verified at runtime |
 
 **Critical distinctions:** an environment is not a role; a role prompt is not a sandbox; a credential's availability is not authorization; Git push is not Atlas permission; CI PASS is not a signed review; an AI-generated proposal is untrusted input. Never claim `ENFORCED` from a Markdown instruction or an uninspected inherited credential.
+
+## Executor providers
+
+The unchanged flow is **Human Owner → ChatGPT Architect → Authorized Executor → GitHub Actions**. Codex Native is the default executor provider; Google Antigravity is optional. Both use the same Integration Writer role. Only one provider may write the repository at a time. Do not let Codex and Antigravity implement one task concurrently in the same checkout. ChatGPT Architect stays **READ-ONLY** and cannot grant or assume owner/executor authority.
+
+Antigravity is `AVAILABLE_AS_OPTION`; application version 2.27.0 is installed locally. Its project permissions, sandbox, MCP inventory, and write boundary are `ENFORCEMENT_NOT_VERIFIED` because no Antigravity session was launched for this task. Before using it, the owner-authorized writer must:
+
+- Read root `AGENTS.md` and this execution contract.
+- Open the existing repository checkout in **Local Mode**; do not create a worktree.
+- Inspect effective project permissions, sandbox behavior, and MCP/tool inventory before writing. If any write-capable tool is outside task scope or the boundary cannot be observed, do not use that session for mutation; report `POLICY_ONLY` or `NOT_VERIFIED` as applicable.
+- Keep Turbo/unrestricted permissions off by default. Do not change global Antigravity settings or install/use plugins or MCP servers with out-of-scope write access.
+- Make no Atlas writes or lexical publication without separate owner authorization. Existing ECC skills may be used when compatible; do not copy `.agents/skills/` into a second skill system.
+- Report exact commit/HEAD, checks and evidence, CI SHA, mutation summary, and remaining blockers.
+
+Provider changes do not resolve state-path TOCTOU, inherited credentials, unauthorized write access, or missing editorial authority. Antigravity must not be used to bypass a Codex `NO-GO` gate.
 
 ## Local execution modes (Codex CLI 0.158.0 pilot)
 
@@ -24,18 +39,19 @@ Run separate **fresh sessions**, not a research subagent of an integration write
 Research parent, read-only for all descendants:
 
 ```sh
-codex --strict-config --ask-for-approval never exec --ignore-user-config --sandbox read-only \
+codex --strict-config exec --ignore-user-config --sandbox read-only \
   --disable apps --disable plugins -c 'mcp_servers={}' \
   -C /Users/tienphat/Developer/english-learning \
   'Review the assigned bounded candidate IDs read-only; at most four specialists; return findings only.'
 ```
 
-On CLI 0.158.0, do **not** use `--ephemeral` for a parent expected to spawn subagents: a tested attempt failed to find the parent rollout in the thread store. Research workers inherit the parent's sandbox **and MCP tool set**. The four `.codex/agents/*.toml` definitions also disable apps/plugins and permission requests as defense in depth; those flags **cannot** remove an inherited write-capable MCP. A pilot with one generic delegated subagent under the isolated research parent reported **no MCP/app connectors** and `read-only`/`never` permissions; however the CLI delegation interface could not select the named custom TOML role, so role-specific feature application is **not verified**. If effective inherited tools are not confirmed, restrict research to inspected read-only tools or report `POLICY_ONLY`; never spin up research workers from a writable writer parent. No recursive fanout or more than four concurrent workers. External reference searches must not authorize source or Atlas mutation.
+On CLI 0.158.0, do **not** use `--ephemeral` for a parent expected to spawn subagents: a tested attempt failed to find the parent rollout in the thread store. Research workers inherit the parent's sandbox **and MCP tool set**. The four `.codex/agents/*.toml` files are role-reference templates only: a real CLI delegation probe with unique markers in each file did not deliver any marker to its corresponding worker, including when `agents.<name>.config_file` was configured. The CLI delegation interface therefore does not activate these project TOML roles. It also accepts agent labels only with lowercase letters, digits, and underscores; the former `grammar-reviewer` label was rejected. Use a generic delegated worker with the relevant role instructions included directly in its task. A real worker applied a task-only marker under a read-only parent with `approval=never`, apps/plugins disabled, and `mcp_servers={}`. Workers inherit parent sandbox and MCP settings; TOML flags cannot revoke an inherited write-capable MCP. If effective inherited tools are not confirmed, restrict research to inspected read-only tools or report `POLICY_ONLY`; never spin up research workers from a writable writer parent. No recursive fanout or more than four concurrent workers. External reference searches must not authorize source or Atlas mutation.
 
 Integration writer, **only with a separately issued owner task naming operations and baseline**:
 
 ```sh
-codex --ask-for-approval on-request exec --sandbox workspace-write \
+codex --strict-config exec --sandbox workspace-write -c 'approval_policy="on-request"' \
+  --disable apps --disable plugins -c 'mcp_servers={}' \
   -C /Users/tienphat/Developer/english-learning \
   'Implement ONLY the owner-authorized task at its verified baseline; do not delegate to research workers.'
 ```
@@ -46,7 +62,7 @@ This is an example invocation, **not permission to execute it**. `workspace-writ
 
 On the installed Codex CLI `0.158.0`, a bounded synthetic test ran in a fresh
 `codex exec` process with `--ignore-user-config`, `--sandbox read-only`,
-`--ask-for-approval never`, `--disable apps`, `--disable plugins`,
+the observed `approval=never` exec default, `--disable apps`, `--disable plugins`,
 `-c 'mcp_servers={}'`, and one concurrent worker. Environment inheritance was
 replaced with an allowlist containing only `PATH`, `HOME`, `CODEX_HOME`, and
 `TMPDIR`; no Atlas/MongoDB environment variable names were present. The temporary
@@ -61,16 +77,16 @@ exposed no MCP, app, plugin, Atlas, or database connector. Built-in shell,
 collaboration, patch, web, and image tools remained visible; the write attempts
 confirmed that shell and patch writes were still sandboxed.
 
-**Role limitation:** the CLI delegation API did not activate the project
-`grammar-reviewer` TOML. Its hyphenated name was rejected by the agent-name
-validator; the accepted worker used a task description instead, so role-specific
-TOML restrictions are `NOT_VERIFIED` and must not be treated as enforcement.
-The inherited read-only sandbox and disabled connectors supplied the verified
-write boundary. This test verifies the current Mac CLI invocation only; repeat it
-after CLI, sandbox, configuration, or connector changes. The isolated invocation
-kept Codex authentication available while skipping user config; it did not inspect
-or pass Atlas credentials. It does not prove that arbitrary secret files elsewhere
-on the host are unreadable under a read-only filesystem policy.
+**Role limitation:** custom TOML instructions were `NOT_VERIFIED` as active roles
+and failed the marker probe for all four roles. The native fallback is inline,
+task-specific worker instructions. A real task-marker probe verified that a
+delegated worker applied those instructions. Its inherited read-only sandbox and
+disabled/empty connectors supplied the verified write boundary for that invocation.
+This test verifies the current Mac CLI invocation only; repeat it after CLI,
+sandbox, configuration, or connector changes. The isolated invocation kept Codex
+authentication available while skipping user config; it did not inspect or pass
+Atlas credentials. It does not prove that arbitrary secret files elsewhere on the
+host are unreadable under a read-only filesystem policy.
 
 ## Handoff: no implicit promotion of authority
 
@@ -82,9 +98,17 @@ on the host are unreadable under a read-only filesystem policy.
 
 **Writer → CI → Architect:** writer reports exact changed files and commit SHA, executed test commands/results, CI run and **exact tested SHA**, credential/data mutations (including **none**), security constraints, unresolved findings and `PASS/PARTIAL/FAIL`. Architect independently inspects commit, tests, CI and remote state **without editing anything**. CI verification does not waive editorial requirements.
 
+## Session continuity
+
+**Continue the existing session only when all are true:** same task ID/mission and executor role; task is still open; pending changes belong to that executor; context remains reliable; and repository plus baseline/current HEAD have been rechecked. Do not rerun a workflow already marked PASS unless its inputs changed.
+
+**Start a new session when any are true:** a task completed; mission or authority changed materially; provider changes between Codex and Antigravity; an independent audit must be separate from the writer; context is lost, noisy, or unreliable; or the old session cannot be resumed. A new session reads repository contracts and handoff first; chat history is not its source of truth.
+
+Every session or executor handoff includes: repository and branch; exact baseline/current HEAD; mission and scope; executor and effective permissions; worktree status and pending-diff ownership; changed files; completed checks and evidence; remaining blockers; and the exact next action. Put this in the task message or final report. Git and existing canonical documents remain the verification source; do not add a session database, memory service, dashboard, or Markdown progress log.
+
 ## Enforcement checks and failure modes
 
-- Use a throwaway fixture with `codex --ask-for-approval never exec --sandbox read-only` to attempt a file write. Require **OS-level denial**, not merely an agent's refusal. Never test negative mutations against the real repo, GitHub or Atlas.
+- Use a throwaway fixture with `codex exec --ignore-user-config --sandbox read-only` to attempt a file write. Require **OS-level denial**, not merely an agent's refusal. Never test negative mutations against the real repo, GitHub or Atlas.
 - Check **effective research parent and subagent tool inventories**, not just `.codex/agents` instructions; especially investigate user-level MCP and apps inherited into subagents. If not observable or isolation cannot be established, mark **POLICY_ONLY** and do not assume a strong guarantee.
 - Verify `.github/workflows/schema-conformance.yml`: `contents: read`, no credential references for Atlas, no write or publish step. Runner scratch writes are allowed; repo/remote/data writes are not.
 - Use `npm test` on Node 26, plus the existing negative authority/publication tests. Mock callbacks prove only local deterministic logic, **not real reviewer authentication**.

@@ -1,11 +1,11 @@
-name = "grammar-reviewer"
-description = "Grammar and phraseology: POS, valency, construction frames, collocations and restrictions."
+name = "bilingual_reviewer"
+description = "English–Vietnamese contextual sense alignment, gloss vs sense and Vietnamese lexical identity."
 # Defense in depth; inherited MCP/sandbox must be controlled by the parent.
 features.apps = false
 features.plugins = false
 features.request_permissions_tool = false
 developer_instructions = """
-You are a bounded RESEARCH specialist for English Learning. Review POS, inflections, valency, grammatical restrictions, collocations and phrasal verbs.
+You are a bounded RESEARCH specialist for English Learning. Review English–Vietnamese equivalence per sense; never invent Vietnamese target IDs.
 No edits to repository, Git, canonical data, state, Atlas, or publication.
 Read root AGENTS.md and only task-relevant docs and candidate IDs.
 Report exact candidate IDs and field paths; source title/URL/edition/retrieval date;

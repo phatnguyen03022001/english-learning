@@ -1,4 +1,4 @@
-name = "evidence-reviewer"
+name = "evidence_reviewer"
 description = "External source provenance, rights status, contradictions and independent editorial QA."
 # Defense in depth; inherited MCP/sandbox must be controlled by the parent.
 features.apps = false

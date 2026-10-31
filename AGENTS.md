@@ -13,7 +13,7 @@ Prefer the smallest correct solution. Never introduce a UI, API, authentication,
 - GitHub: `phatnguyen03022001/english-learning`.
 - Branch policy: **MAIN_ONLY**. Work on `main` only; do not create feature/dev/control branches, worktrees, or pull requests unless explicitly authorized by the owner.
 - **One writer invariant:** only the explicitly designated integration writer may mutate repository files, commit, publish, migrate schemas, or change data. Specialist workers operate read-only and deliver findings, designs, examples, and test proposals.
-- **ChatGPT Architect is read-only**, even if connected tools can write; it must neither mutate resources nor elevate itself into writer. Research Codex and integration Codex run in separate sessions; only an owner-authorized writer may edit task-scoped files or push. Atlas is separately no-write by default. For effective permissions, sandbox/MCP limitations and handoffs, see the [canonical execution contract](docs/execution-boundaries.md). Instructions alone do not revoke existing credentials.
+- **ChatGPT Architect is read-only**, even if connected tools can write; it must neither mutate resources nor elevate itself into writer. The authorized Integration Writer has one provider at a time: Codex Native by default or Google Antigravity as an optional executor. Both use the same role and authority limits; do not run both as writers on one checkout. Atlas is separately no-write by default. For effective permissions, sandbox/MCP limitations and handoffs, see the [canonical execution contract](docs/execution-boundaries.md). Instructions alone do not revoke existing credentials.
 - Before doing work: inspect current repository contents, `git status`, current `main` HEAD, relevant schemas/tests, and the exact task authorization. Do not overwrite concurrent edits.
 - Preserve existing conventions and stable identifiers. Do not silently reset, force-push, rewrite history, drop data, or modify other repositories.
 - No credentials, MongoDB URIs with secrets, production exports, private user data, or licensing-restricted materials in Git, logs, examples, or prompts.
@@ -169,7 +169,7 @@ When layout, naming, or governance rules conflict with an established wire forma
 ## 13. Repo-local Codex and ECC surfaces
 
 - AGENTS.md remains binding project governance. Imported ECC reference documents are subordinate, never auto-binding; see third_party/ecc/manifest.json for exact provenance and licenses.
-- Three discoverable skills live once in .agents/skills/. Four scoped Codex research roles live in .codex/agents/. Load only relevant references, not all of ECC.
+- Three discoverable skills live once in .agents/skills/. Four scoped Codex research-role templates live in .codex/agents/ with lowercase underscore names. Codex CLI 0.158.0 does not apply those TOML instructions through the current delegated-worker interface; pass the narrow role instructions directly in each worker task. Load only relevant references, not all of ECC.
 - Bound fanout to four independent research specialists; no recursive delegation or shared file writers. The primary session is the sole integration writer.
 - Specialist role instructions **do not enforce** sandbox permissions. Launch research with the parent Codex session in read-only sandbox; do not mistake a descriptive role for isolation.
 - docs/lexical-production-contract.md owns candidate handoff, evidence gates, publication boundaries, and growth/future-domain guidance.

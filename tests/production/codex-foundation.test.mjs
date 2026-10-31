@@ -35,7 +35,7 @@ test("skills have unique discoverable frontmatter and no absent scripts",()=>{
 test("Codex agent files and project config parse with Python's standard TOML parser",()=>{
  const dir=".codex/agents/";
  const files=readdirSync(path(dir)).sort();
- assert.deepEqual(files,["bilingual-reviewer.toml","evidence-reviewer.toml","grammar-reviewer.toml","lexicographer.toml"]);
+ assert.deepEqual(files,["bilingual_reviewer.toml","evidence_reviewer.toml","grammar_reviewer.toml","lexicographer.toml"]);
  const script="import sys,tomllib,json; print(json.dumps([tomllib.load(open(p,'rb')) for p in sys.argv[1:]]))";
  const targets=[".codex/config.toml",...files.map(x=>dir+x)].map(x=>path(x).pathname);
  const result=spawnSync("python3",["-c",script,...targets],{encoding:"utf8"});
@@ -52,6 +52,7 @@ test("Codex agent files and project config parse with Python's standard TOML par
   assert.equal(role.sandbox_mode,undefined,"Worker sandbox is inherited, not hard-enforced via TOML");
  }
  assert.equal(new Set(roles.map(x=>x.name)).size,4);
+ assert.deepEqual(roles.map(x=>x.name).sort(),["bilingual_reviewer","evidence_reviewer","grammar_reviewer","lexicographer"]);
  assert.equal(config.mcp_servers,undefined);
 });
 

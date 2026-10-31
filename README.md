@@ -66,10 +66,11 @@ experiences may be added when a concrete feature is approved. Keep lexical ident
 and dictionary data independent of user interfaces, TTS providers, and exam scoring;
 see [AGENTS.md](AGENTS.md) for the full boundary.
 
-## Codex and pinned ECC
+## Codex, optional Antigravity, and pinned ECC
 
-- [Codex research roles](.codex/agents/) — four narrowly scoped specialists; only the primary integration writer edits.
+- [Codex role-reference templates](.codex/agents/) — four research scopes; current CLI delegation requires role instructions in the worker task. Only the primary integration writer edits.
+- Codex Native is the default Integration Writer provider. Google Antigravity is an optional provider using the same role; its local enforcement is not verified. See the [canonical execution and session handoff contract](docs/execution-boundaries.md).
 - [Operational skills](.agents/skills/) — repo-local, progressively discovered by Codex.
 - [ECC import manifest](third_party/ecc/manifest.json) — exact commit, license, hashes, selected and rejected resources.
 - [Production contract](docs/lexical-production-contract.md) — lexical fanout handoff, gates, scale and consumer boundaries.
-- Run Codex from the repo root; follow [research vs writer isolation](docs/execution-boundaries.md#local-execution-modes-codex-cli-01580-pilot). A research parent must use a **read-only sandbox**, disabled app/plugin access, and isolated user config; worker prompts cannot enforce permissions.
+- Run the selected executor from the existing repo checkout and follow [research vs writer isolation](docs/execution-boundaries.md#local-execution-modes-codex-cli-01580-pilot). Research must use a **read-only sandbox** with apps/plugins disabled and MCP access inspected; worker prompts cannot enforce permissions.

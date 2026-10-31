@@ -173,8 +173,10 @@ Select 3–5 bounded lexical families, split independent questions into English 
 grammar/phraseology, bilingual alignment and evidence/adversarial QA lanes. For
 trivial edits, do not fan out. A maximum of four workers researches in parallel;
 workers cannot spawn more workers. The integration writer alone may change Git/files.
-Use .codex/agents/ roles and run research under a parent read-only sandbox.
-Custom agent text cannot enforce read-only permissions by itself.
+The `.codex/agents/` files are role-reference templates, not active worker roles in
+Codex CLI 0.158.0's current delegation interface. Pass the relevant role instructions
+directly in each delegated task and run every worker under a read-only parent sandbox.
+Task text cannot enforce read-only permissions by itself.
 
 Each specialist handoff must state:
 - Scope, family and candidate IDs, exact asserted claims and field paths.
