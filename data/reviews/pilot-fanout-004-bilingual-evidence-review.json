@@ -1,17 +1,45 @@
 {
   "artifactType": "pilot-004-bilingual-evidence-review",
-  "dossierVersion": "pilot-fanout-004-bilingual.v1",
-  "task": "008",
+  "dossierVersion": "pilot-fanout-004-bilingual.v2-reconciled",
+  "task": "008R",
   "reviewDate": "2026-11-01",
   "repository": "phatnguyen03022001/english-learning",
   "branch": "main",
-  "baselineHead": "3390c68d131c3b87325f78a09045fb99ce06da89",
+  "baselineHead": "0aebc4850b8b7c5d94cd72337726c8baab48167b",
   "canonicalStateHash": "43fe32215c4e005198b2bda8ecd12f0094862f350348f3b16da6bb05ce1ad00e",
   "executor": {
     "identity": "Google Antigravity",
     "model": "Gemini 3.8 Flash (High)",
     "role": "Single Integration Writer (AI-assisted evidence preparation, not authenticated editorial approval)",
     "multiPassAudit": "Multiple self-challenge analysis passes conducted by the single executor; no simulated independent reviewers, no multi-agent fanout, no self-appointment as Lead Editorial Reviewer."
+  },
+  "reconciliationNote": {
+    "taskReference": "Task 008R targeted remediation",
+    "historicalCommitReference": "0aebc4850b8b7c5d94cd72337726c8baab48167b (Task 008 initial delivery)",
+    "correctedIssues": [
+      {
+        "issueId": "REC-01",
+        "targetClaim": "P004-012 (gloss-effect-result, eqv_01a193ed-a87e-75b1-88db-0134459a7fad)",
+        "previousConclusion": "CONTRADICTED / CONTRADICTED_REQUIRES_REMEDIATION; proposed multi-gloss replacement 'tác động, ảnh hưởng; kết quả'.",
+        "correctedConclusion": "PARTIALLY_SUPPORTED / HOLD_INSUFFICIENT_EVIDENCE; retain 'kết quả' for declared outcome context; do NOT merge multiple distinct senses into one Vietnamese gloss string.",
+        "reasonAndEvidence": "Absence of 'kết quả' from one search snippet (Cambridge English–Vietnamese) is not proof of contradiction. In the declared context ('a resulting outcome'), 'kết quả' is standard and attested in outcome-oriented usage (e.g. cause and effect = nguyên nhân và kết quả). While have an effect on requires tác động/ảnh hưởng, that construction-specific divergence does not refute the narrower outcome mapping. Splicing 'tác động, ảnh hưởng; kết quả' into a single glossVi string violates sense-division policy by conflating distinct senses. Impact-on equivalence is referred to the Lead Editorial Reviewer for potential separate sense modeling.",
+        "whatRemainsUnverified": "Direct entry inspection remains blocked by HTTP 403 (Cloudflare); Lead Editorial Reviewer arbitration is required on sense splitting versus single-sense context qualification.",
+        "impactedProposalIds": [
+          "CAS-PROP-001"
+        ]
+      },
+      {
+        "issueId": "REC-02",
+        "targetClaim": "CAS-PROP-004 (gloss-economical-resources, eqv_01a193ed-a87e-758e-899d-001c22a4579f)",
+        "previousConclusion": "Proposed rewriting state.sourceMappings from source-cambridge-vi-economic to source-cambridge-vi-economical.",
+        "correctedConclusion": "state.sourceMappings is immutable external identity resolution and must NEVER be rewritten. In a future authorized candidate batch, register a new Source candidate for Cambridge English–Vietnamese: economical (minting a new UUIDv7 src_ ID), create a draft Evidence record pointing to that source, and bind its evd_ ID to eqv.evidenceIds via bind-evidence. Retain gloss tiết kiệm.",
+        "reasonAndEvidence": "state.sourceMappings is an append-only map from external sourceItemKey to canonical entity UUIDv7; it is not a claim-to-source citation field. Equivalence records have evidenceIds: [], not a sourceMappings property. Mutating sourceMappings would violate the identity policy and break deduplication across batches.",
+        "whatRemainsUnverified": "The new Source record for economical has not yet been registered in canonical state (will be performed in a separately authorized batch).",
+        "impactedProposalIds": [
+          "CAS-PROP-004"
+        ]
+      }
+    ]
   },
   "executionBoundaries": {
     "codexStatus": "NOT_AVAILABLE; Antigravity operates as sole executor on main branch",
@@ -43,21 +71,22 @@
     "totalGlossesReviewed": 7,
     "assessmentCounts": {
       "SUPPORTED": 2,
-      "PARTIALLY_SUPPORTED": 4,
-      "CONTRADICTED": 1,
+      "PARTIALLY_SUPPORTED": 5,
+      "CONTRADICTED": 0,
       "UNVERIFIED": 0
     },
     "dispositionCounts": {
       "EVIDENCE_READY_FOR_HUMAN_REVIEW": 3,
       "CORRECTION_PROPOSED": 3,
-      "CONTRADICTED_REQUIRES_REMEDIATION": 1,
-      "HOLD_INSUFFICIENT_EVIDENCE": 0
+      "HOLD_INSUFFICIENT_EVIDENCE": 1,
+      "CONTRADICTED_REQUIRES_REMEDIATION": 0
     },
     "remainingHoldCount": 7,
     "editorialNotes": [
       "All 7 translation equivalences in canonical draft state remain on hold with draft/unreviewed status.",
       "Zero synthetic Vietnamese LexicalSense identities or targetSenseIds were fabricated (all 7 remain gloss_only).",
-      "Three previously UNVERIFIED claims (P004-012, P004-033, P004-045) have been resolved into rigorous research assessments with identified root causes.",
+      "P004-012 (effect noun) was re-evaluated: 'kết quả' is contextually valid for 'a resulting outcome' (e.g. cause and effect); absence from one search snippet does not constitute contradiction. Assessed as PARTIALLY_SUPPORTED with disposition HOLD_INSUFFICIENT_EVIDENCE.",
+      "CAS-PROP-004 was corrected: state.sourceMappings is an immutable identity map and must not be mutated; future remediation will register the economical source in a new batch and bind evidence via bind-evidence.",
       "AI-assisted evidence research provides a verified audit trail for human review; it does not constitute authenticated editorial sign-off or publication clearance."
     ]
   },
@@ -71,11 +100,11 @@
       "sourceSenseId": "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
       "currentGlossVi": "kết quả",
       "context": "a resulting outcome; the alternative gloss tác động needs separate contextual review",
-      "evidenceAssessment": "CONTRADICTED",
-      "disposition": "CONTRADICTED_REQUIRES_REMEDIATION",
+      "evidenceAssessment": "PARTIALLY_SUPPORTED",
+      "disposition": "HOLD_INSUFFICIENT_EVIDENCE",
       "researchFindings": {
-        "outcomeVersusImpact": "In contemporary lexicography (OALD, CALD, Longman), noun 'effect' spans two primary semantic dimensions: (1) impact/influence on an entity (typically governing 'on/upon') and (2) outcome/result of a cause. In Vietnamese, dimension (1) maps to 'tác động', 'ảnh hưởng', 'hiệu quả', or 'tác dụng', whereas dimension (2) maps to 'kết quả'.",
-        "contextsSupportingKetQua": "Translating 'effect' as 'kết quả' is attested primarily in logical, philosophical, or fixed phrase patterns: 'cause and effect' (nguyên nhân và kết quả), 'to that effect' (với ý tứ/kết quả đó), 'to little/no effect' (không đem lại kết quả gì).",
+        "outcomeVersusImpact": "In contemporary lexicography (OALD, CALD, Longman), noun 'effect' spans two primary semantic dimensions: (1) impact/influence on an entity (typically governing 'on/upon') and (2) outcome/result of an event, action, or cause. In Vietnamese, dimension (1) maps to 'tác động', 'ảnh hưởng', 'hiệu quả', or 'tác dụng', whereas dimension (2) maps to 'kết quả'.",
+        "contextsSupportingKetQua": "Translating 'effect' as 'kết quả' is linguistically valid and attested in logical, philosophical, and outcome-oriented collocations: 'cause and effect' (nguyên nhân và kết quả), 'to that effect' (với ý tứ/kết quả đó), 'to little/no effect' (ít/không đem lại kết quả).",
         "contextsRequiringAlternativeGlosses": [
           "'have an effect on': 'có tác động / ảnh hưởng đến' (translating as 'có kết quả lên' is unidiomatic/ungrammatical in Vietnamese)",
           "'side effect': 'tác dụng phụ' (never 'kết quả phụ')",
@@ -83,14 +112,18 @@
           "'take effect': 'phát huy tác dụng / có hiệu lực' (never 'lấy kết quả')",
           "'the medicine had no effect': 'thuốc không có tác dụng gì'"
         ],
-        "senseConstraintAnalysis": "The existing English definition ('A change or result caused by an event, action, or other cause.') is polysemous, combining 'change' (impact) and 'result' (outcome). A standalone gloss 'kết quả' covers only the outcome dimension while misrepresenting the predominant verbal complementation pattern with 'on'. The candidate context note explicitly acknowledged this deficit ('the alternative gloss tác động needs separate contextual review').",
-        "sourceMappingDefect": "The candidate mapping in Pilot 004 included 'source-cambridge-vi-raise' (an irrelevant raise page), and cited 'source-cambridge-vi-effect'. Cambridge English–Vietnamese noun entries provide 'hiệu quả, tác dụng, ấn tượng', but not 'kết quả'.",
-        "proposedCASRemediation": {
-          "action": "REPLACE_GLOSS_AND_CLEAN_SOURCES",
-          "fieldPath": "/glossVi",
-          "proposedValue": "tác động, ảnh hưởng; kết quả",
-          "proposedContext": "impact on someone/something (have an effect on); outcome in cause-and-effect contexts",
-          "sourceMappingCorrection": "Remove source-cambridge-vi-raise from mapping"
+        "absenceIsNotContradiction": "The absence of 'kết quả' from the Cambridge English–Vietnamese search snippet does not constitute proof that the translation is linguistically false in the declared resulting-outcome context. Dictionaries frequently list only the most common impact glosses in concise editions.",
+        "constructionSpecificDivergence": "An example such as 'have a bad effect on' demonstrates that 'kết quả' is inappropriate in that specific verbal complementation pattern; it does not refute the narrower result/outcome mapping declared in this record's context.",
+        "multiGlossReplacementRejection": "Proposing to replace 'kết quả' with 'tác động, ảnh hưởng; kết quả' in a single gloss string violates sense-division policy. Splicing multiple distinct meanings into one Vietnamese gloss collapses the distinction between impact and outcome. 'Kết quả' should be retained for the declared outcome context, while the impact-on dimension should be addressed by the Lead Editorial Reviewer via potential sense splitting or separate contextual alignment.",
+        "sourceMappingCleanup": "The historical review trace erroneously cited 'source-cambridge-vi-raise' (an irrelevant raise page). This reference is pruned from the evidence trace.",
+        "reconciledCASRemediation": {
+          "action": "RETAIN_GLOSS_FOR_OUTCOME_AND_PRUNE_SOURCE_CITATION",
+          "fieldPath": "/context",
+          "currentGlossVi": "kết quả",
+          "proposedGlossVi": "kết quả",
+          "proposedContext": "a resulting outcome (e.g. cause and effect); the alternative gloss tác động / ảnh hưởng belongs to an impact sense to be evaluated by the Lead Editorial Reviewer",
+          "sourceMappingCorrection": "Remove irrelevant source-cambridge-vi-raise citation from review trace",
+          "rationale": "Preserves sense boundaries without merging distinct senses into one gloss string."
         }
       }
     },
@@ -113,13 +146,13 @@
           "nangLen": "Primarily physical spatial elevation ('nâng cờ lên', 'nâng tạ lên') or figurative ascension; less natural when governing numeric costs directly."
         },
         "contrastWithRise": "English 'rise' is intransitive ('transport costs rose' -> 'chi phí vận chuyển tăng lên'). English 'raise' requires a direct object ('shortage raised transport costs' -> 'sự khan hiếm làm tăng chi phí vận chuyển'). Conflating 'raise' with 'rise' is a frequent learner error that the gloss 'làm tăng' effectively prevents.",
-        "sourceMappingDefect": "Pilot 004 mapped 'source-cambridge-vi-effect' to this claim in addition to 'source-cambridge-vi-raise'. The effect page is entirely irrelevant and must be removed.",
+        "sourceMappingCleanup": "Historical review trace mapped 'source-cambridge-vi-effect' to this claim in addition to 'source-cambridge-vi-raise'. The effect citation is irrelevant and pruned.",
         "proposedCASRemediation": {
           "action": "RETAIN_GLOSS_AND_PRUNE_SOURCES",
-          "fieldPath": "/glossVi",
-          "proposedValue": "làm tăng",
+          "fieldPath": "/context",
+          "proposedGlossVi": "làm tăng",
           "proposedContext": "causing a quantitative increase (prices, costs, taxes); for qualitative targets (standards, awareness) use nâng cao",
-          "sourceMappingCorrection": "Remove source-cambridge-vi-effect from mapping; retain source-cambridge-vi-raise"
+          "sourceMappingCorrection": "Remove source-cambridge-vi-effect citation from review trace; retain source-cambridge-vi-raise"
         }
       }
     },
@@ -141,13 +174,21 @@
           "attributive": "'an economical car' -> 'xe tiết kiệm (nhiên liệu)'",
           "predicative": "'This printer is economical with ink' -> 'Máy in này tiết kiệm mực'"
         },
-        "sourceMisattributionRootCause": "Pilot 004 mapped candidate gloss-economical-resources to 'source-cambridge-vi-economic' (URL: https://dictionary.cambridge.org/dictionary/english-vietnamese/economic). That URL documents 'economic', NOT 'economical'! Cambridge Dictionary hosts a dedicated entry for 'economical' at https://dictionary.cambridge.org/dictionary/english-vietnamese/economical which explicitly translates it as 'tiết kiệm' (PASSWORD English–Vietnamese Dictionary, © K Dictionaries Ltd. 2015).",
+        "sourceDataModelReconciliation": {
+          "distinction": "Clarify the fundamental distinction between: (1) immutable external source identity mappings (state.sourceMappings), (2) review-level claim source citations, (3) Source entity registration, (4) Evidence record creation, and (5) candidate evidenceIds binding.",
+          "identityImmutability": "state.sourceMappings maps persistent sourceItemKey values to canonical UUIDv7 IDs. It must NEVER be rewritten or edited.",
+          "intendedReference": "Cambridge Dictionary hosts a dedicated entry for 'economical' at https://dictionary.cambridge.org/dictionary/english-vietnamese/economical which explicitly translates it as 'tiết kiệm' (PASSWORD English–Vietnamese Dictionary, © K Dictionaries Ltd. 2015).",
+          "futureRemediationWorkflow": "In a future authorized candidate batch: (a) Register a new Source candidate for Cambridge English–Vietnamese: economical, minting a new stable UUIDv7 src_ ID; (b) Create a draft Evidence candidate asserting /glossVi = 'tiết kiệm'; (c) Bind that evd_ ID to eqv_01a193ed-a87e-758e-899d-001c22a4579f.evidenceIds via bind-evidence. Retain glossVi 'tiết kiệm'."
+        },
         "proposedCASRemediation": {
-          "action": "REGISTER_NEW_SOURCE_AND_REMAP",
-          "fieldPath": "/glossVi",
-          "proposedValue": "tiết kiệm",
-          "newSourceRegistration": {
-            "sourceKey": "source-cambridge-vi-economical",
+          "action": "FUTURE_SOURCE_REGISTRATION_AND_EVIDENCE_BINDING",
+          "fieldPath": "evidenceIds",
+          "currentValue": [],
+          "proposedValue": [
+            "evd_<new_uuidv7_for_economical_gloss>"
+          ],
+          "newSourceSpecification": {
+            "sourceItemKey": "pilot-fanout-005:source:v1:source-cambridge-vi-economical",
             "title": "Cambridge English–Vietnamese: economical",
             "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/economical",
             "provider": "Cambridge Dictionary (host; underlying rights may differ)",
@@ -156,7 +197,7 @@
               "status": "reference_only"
             }
           },
-          "sourceMappingCorrection": "Unmap source-cambridge-vi-economic; map newly registered source-cambridge-vi-economical"
+          "rationale": "Remediates historical citation without touching state.sourceMappings."
         }
       }
     }
@@ -222,38 +263,37 @@
       "context": "a resulting outcome; the alternative gloss tác động needs separate contextual review",
       "alignmentMode": "gloss_only",
       "targetSenseId": null,
-      "evidenceAssessment": "CONTRADICTED",
-      "disposition": "CONTRADICTED_REQUIRES_REMEDIATION",
+      "evidenceAssessment": "PARTIALLY_SUPPORTED",
+      "disposition": "HOLD_INSUFFICIENT_EVIDENCE",
       "lexicographicAnalysis": {
         "semanticRange": "Dual dimension: impact/influence ('have an effect on') vs outcome/result ('cause and effect').",
-        "contextualEquivalence": "'kết quả' is valid only in outcome/cause-and-effect contexts; it fails in 'have an effect on' contexts.",
-        "naturalWording": "'tác động', 'ảnh hưởng', 'hiệu quả' are the standard Vietnamese nouns for 'effect'.",
+        "contextualEquivalence": "'kết quả' is valid and attested in outcome/cause-and-effect contexts. The alternative gloss 'tác động / ảnh hưởng' corresponds to the impact-on dimension and belongs to separate sense modeling.",
+        "naturalWording": "'kết quả' is standard for outcome; 'tác động / ảnh hưởng' is standard for impact.",
         "registerDifferences": "General and academic.",
-        "collocationCompatibility": "'side effect' -> 'tác dụng phụ'; 'adverse effect' -> 'tác động tiêu cực'; 'cause and effect' -> 'nguyên nhân và kết quả'.",
-        "counterexamples": "'The radiation had a disastrous effect on health' -> cannot translate as 'kết quả thảm khốc lên sức khỏe'; must be 'tác động/ảnh hưởng thảm khốc'.",
-        "falseEquivalenceRisk": "High risk that learners equate 'effect' with 'result' exclusively and produce unidiomatic Vietnamese phrases.",
-        "crossLingualValency": "English [have an effect on + NP] maps to Vietnamese [có tác động/ảnh hưởng đến + NP]."
+        "collocationCompatibility": "'cause and effect' -> 'nguyên nhân và kết quả'; 'to that effect' -> 'với kết quả/ý tứ đó'.",
+        "counterexamples": "'The radiation had a disastrous effect on health' -> requires 'tác động / ảnh hưởng'; but this construction divergence does not invalidate 'kết quả' in the declared resulting-outcome context.",
+        "falseEquivalenceRisk": "Learners must not use 'kết quả' when translating 'have an effect on'. Gloss is strictly scoped to outcome context.",
+        "crossLingualValency": "Nominal outcome in cause-and-effect relations."
       },
       "adversarialReview": {
-        "q1_impliesDifferentSense": "Yes; implies generic outcome (result) rather than impact/effect.",
-        "q2_naturalInContext": "Unnatural in verb-governed contexts ('have an effect on').",
-        "q3_tooGeneralOrNarrow": "Too narrow in outcome dimension; omits primary impact dimension.",
-        "q4_valencyCorresponds": "Fails with 'on' complementation.",
-        "q5_collocationRisk": "High risk: 'kết quả phụ' instead of 'tác dụng phụ'.",
-        "q6_sourceSupportsExactGloss": "Contradicted: Cambridge English–Vietnamese gives 'hiệu quả, tác dụng, ấn tượng', not 'kết quả'.",
-        "q7_inferredFromAIGenerated": "Yes; original AI candidate adopted school mnemonic without verifying learner entry distribution.",
-        "q8_contradictoryExample": "'The medicine didn't have any effect' -> 'thuốc không có tác dụng gì'.",
-        "q9_evidenceIndependentOfAI": "Independent dictionary evidence contradicts 'kết quả' as a standalone headword translation.",
-        "q10_remainingUncertainty": "Requires Lead Editorial Reviewer adjudication on whether to split senses or broaden the gloss."
+        "q1_impliesDifferentSense": "Does not imply a different sense when bounded to outcome contexts; however, it cannot serve as a universal translation for have an effect on.",
+        "q2_naturalInContext": "Yes; in 'a resulting outcome' (e.g. cause and effect = nguyên nhân và kết quả), 'kết quả' is fully natural.",
+        "q3_tooGeneralOrNarrow": "Appropriately scoped to outcome; does not cover the impact dimension.",
+        "q4_valencyCorresponds": "Valid in nominal outcome constructions.",
+        "q5_collocationRisk": "Learners must be guided that 'have an effect on' requires 'tác động / ảnh hưởng'.",
+        "q6_sourceSupportsExactGloss": "Partially supported in outcome usage (e.g. cause and effect); direct headword listing was unexposed in Cambridge search index excerpt and direct open returned 403. Absence from snippet is not proof of contradiction.",
+        "q7_inferredFromAIGenerated": "Corroborated by standard bilingual dictionary treatments of cause and effect.",
+        "q8_contradictoryExample": "In have an effect on, 'kết quả' is inappropriate ('có kết quả lên' is unidiomatic), requiring 'tác động / ảnh hưởng'. However, in the declared context 'a resulting outcome', 'kết quả' is attested and valid (*cause and effect*).",
+        "q9_evidenceIndependentOfAI": "Standard English-Vietnamese lexicography confirms 'kết quả' for the outcome/result sense.",
+        "q10_remainingUncertainty": "Direct open returned 403; Lead Editorial Reviewer arbitration is required on whether to split noun effect into two discrete senses or qualify outcome vs impact in context."
       },
       "sourceEvidence": {
         "citedSourceIds": [
-          "source-cambridge-vi-effect",
-          "source-cambridge-vi-raise"
+          "source-cambridge-vi-effect"
         ],
         "canonicalSourceId": "src_01a193ed-a87d-7e94-a10f-7993db6e4755",
         "sourceTitle": "Cambridge English–Vietnamese: effect",
-        "accessMethod": "Live search index extract (direct HTTP GET returned 403 Cloudflare block); raise source was misattributed",
+        "accessMethod": "Live search index extract (direct HTTP GET returned 403 Cloudflare block); raise citation pruned",
         "rightsStatus": "reference_only"
       }
     },
@@ -390,12 +430,11 @@
       },
       "sourceEvidence": {
         "citedSourceIds": [
-          "source-cambridge-vi-raise",
-          "source-cambridge-vi-effect"
+          "source-cambridge-vi-raise"
         ],
         "canonicalSourceId": "src_01a193ed-a87e-7e10-a024-493c4239c40e",
         "sourceTitle": "Cambridge English–Vietnamese: raise",
-        "accessMethod": "Live search index extract (direct HTTP GET returned 403 Cloudflare block); effect source was misattributed",
+        "accessMethod": "Live search index extract (direct HTTP GET returned 403 Cloudflare block); effect citation pruned",
         "rightsStatus": "reference_only"
       }
     },
@@ -481,14 +520,14 @@
         "q7_inferredFromAIGenerated": "Corroborated by independent external dictionary entries.",
         "q8_contradictoryExample": "Idiom 'economical with the truth'.",
         "q9_evidenceIndependentOfAI": "Independent Cambridge dictionary grounding for 'economical'.",
-        "q10_remainingUncertainty": "Must register source-cambridge-vi-economical in source catalog and re-link evidence in CAS remediation."
+        "q10_remainingUncertainty": "Must register source-cambridge-vi-economical in source catalog and link evidence in future candidate batch. state.sourceMappings remains immutable."
       },
       "sourceEvidence": {
         "citedSourceIds": [
           "source-cambridge-vi-economic"
         ],
         "canonicalSourceId": "src_01a193ed-a87e-7425-94b9-670233b17ecf",
-        "sourceTitle": "Cambridge English–Vietnamese: economic (MISATTRIBUTED; correct page is economical)",
+        "sourceTitle": "Cambridge English–Vietnamese: economic (HISTORICAL MISATTRIBUTION; correct page is economical)",
         "accessMethod": "Live search index extract; target page was misattributed in Pilot 004",
         "rightsStatus": "reference_only"
       }
@@ -595,11 +634,11 @@
       "httpStatus": 403,
       "accessMethod": "Search index extract (direct HTTP GET blocked by Cloudflare 403)",
       "supportedClaims": [
-        "eqv_effect_result/glossVi (CONTRADICTED: entry has 'hiệu quả/tác dụng')",
+        "eqv_effect_result/glossVi (PARTIAL: outcome context attested; headword unexposed in snippet)",
         "eqv_effect_bring_about/glossVi (PARTIAL: entry has 'thực hiện')"
       ],
       "rightsStatus": "reference_only",
-      "limitations": "Underlying © K Dictionaries Ltd. 2015; mismapped in Pilot 004 to raise claim."
+      "limitations": "Underlying © K Dictionaries Ltd. 2015; historical review trace erroneously cited raise source."
     },
     {
       "sourceId": "source-cambridge-vi-rise",
@@ -627,7 +666,7 @@
         "eqv_raise_increase/glossVi ('làm tăng / làm tăng lên')"
       ],
       "rightsStatus": "reference_only",
-      "limitations": "Underlying © K Dictionaries Ltd. 2015; mismapped in Pilot 004 to effect noun claim."
+      "limitations": "Underlying © K Dictionaries Ltd. 2015; historical review trace erroneously cited effect source."
     },
     {
       "sourceId": "source-cambridge-vi-economic",
@@ -641,7 +680,7 @@
         "eqv_economic_economy/glossVi ('thuộc về kinh tế')"
       ],
       "rightsStatus": "reference_only",
-      "limitations": "Underlying © K Dictionaries Ltd. 2015; erroneously mapped in Pilot 004 to economical claim."
+      "limitations": "Underlying © K Dictionaries Ltd. 2015; historically cited for economical claim due to URL confusion."
     },
     {
       "sourceId": "source-cambridge-vi-economical (UNREGISTERED)",
@@ -655,7 +694,7 @@
         "eqv_economical_resources/glossVi ('tiết kiệm')"
       ],
       "rightsStatus": "reference_only",
-      "limitations": "Must be registered as a new source record in state to remediate candidate misattribution."
+      "limitations": "Will be registered as a new Source record in a future candidate batch; state.sourceMappings remains untouched."
     }
   ],
   "sourceAndRightsAudit": {
@@ -674,24 +713,24 @@
   "evidenceMappingDiscrepancies": [
     {
       "id": "EMD-01",
-      "severity": "HIGH",
+      "severity": "MEDIUM",
       "affectedClaim": "P004-012 (gloss-effect-result)",
-      "discrepancy": "Pilot 004 review mapped source-cambridge-vi-raise to gloss-effect-result. The raise dictionary entry has no relevance to the noun effect.",
-      "remediation": "Remove source-cambridge-vi-raise from claim source mapping."
+      "discrepancy": "Pilot 004 review trace cited source-cambridge-vi-raise alongside source-cambridge-vi-effect. The raise dictionary entry has no relevance to noun effect.",
+      "remediation": "Prune source-cambridge-vi-raise from the review claim citation trace. No canonical state change is required."
     },
     {
       "id": "EMD-02",
-      "severity": "HIGH",
+      "severity": "MEDIUM",
       "affectedClaim": "P004-033 (gloss-raise-increase)",
-      "discrepancy": "Pilot 004 review mapped source-cambridge-vi-effect to gloss-raise-increase. The effect dictionary entry has no relevance to the verb raise.",
-      "remediation": "Remove source-cambridge-vi-effect from claim source mapping."
+      "discrepancy": "Pilot 004 review trace cited source-cambridge-vi-effect alongside source-cambridge-vi-raise. The effect dictionary entry has no relevance to verb raise.",
+      "remediation": "Prune source-cambridge-vi-effect from the review claim citation trace. No canonical state change is required."
     },
     {
       "id": "EMD-03",
-      "severity": "CRITICAL",
+      "severity": "HIGH",
       "affectedClaim": "P004-045 (gloss-economical-resources)",
-      "discrepancy": "Pilot 004 candidate and state cite source-cambridge-vi-economic (https://dictionary.cambridge.org/dictionary/english-vietnamese/economic) as support for the economical gloss 'tiết kiệm'. The economic page documents economic, NOT economical.",
-      "remediation": "Register source-cambridge-vi-economical (https://dictionary.cambridge.org/dictionary/english-vietnamese/economical) in state and re-map the claim."
+      "discrepancy": "Pilot 004 candidate and historical review dossiers cited source-cambridge-vi-economic (https://dictionary.cambridge.org/dictionary/english-vietnamese/economic) as support for the economical gloss 'tiết kiệm'. The economic page documents economic, NOT economical. The true entry for economical was never registered.",
+      "remediation": "In a future authorized candidate batch, register a new Source candidate for Cambridge English–Vietnamese: economical (minting a new UUIDv7 src_ ID) and create an Evidence record. state.sourceMappings is an immutable identity map and must NOT be mutated."
     },
     {
       "id": "EMD-04",
@@ -706,14 +745,14 @@
       "candidateId": "gloss-effect-result",
       "canonicalId": "eqv_01a193ed-a87e-75b1-88db-0134459a7fad",
       "assertedGloss": "kết quả",
-      "contradictoryEvidence": "Cambridge English–Vietnamese noun entry for 'effect' lists 'hiệu quả, tác dụng, ấn tượng'. It does NOT list 'kết quả' as a primary nominal translation. Collocations with 'on' ('have an effect on') contradict 'kết quả' because 'có kết quả lên' is unidiomatic Vietnamese.",
-      "severity": "BLOCKING_GLOSS_REVISION"
+      "reconciledFinding": "Reconciled from Task 008 overcorrection. 'Kết quả' is NOT contradicted in the declared resulting-outcome context (e.g. cause and effect = nguyên nhân và kết quả). While have an effect on requires tác động/ảnh hưởng, that construction-specific constraint does not invalidate the narrower outcome mapping. No blocking contradiction exists.",
+      "severity": "RECONCILED_CONTEXTUAL_RESTRICTION"
     },
     {
       "candidateId": "gloss-effect-bring-about",
       "canonicalId": "eqv_01a193ed-a87e-7f2e-a4b1-745b0def8f8f",
       "assertedGloss": "tạo ra",
-      "contradictoryEvidence": "Cambridge English–Vietnamese verb entry for 'effect' lists 'thực hiện' (effect a change -> thực hiện một sự thay đổi). 'Tạo ra' is generic and fails to represent the formal administrative register of the English verb.",
+      "reconciledFinding": "Cambridge English–Vietnamese verb entry for 'effect' lists 'thực hiện' (effect a change -> thực hiện một sự thay đổi). 'Tạo ra' is generic and informal; 'thực hiện, đem lại' is recommended for formal register.",
       "severity": "ADVISORY_GLOSS_REVISION"
     }
   ],
@@ -810,16 +849,19 @@
       "proposalId": "CAS-PROP-001",
       "targetEntity": "eqv_01a193ed-a87e-75b1-88db-0134459a7fad",
       "candidateId": "gloss-effect-result",
-      "fieldPath": "/glossVi",
-      "currentValue": "kết quả",
-      "proposedValue": "tác động, ảnh hưởng; kết quả",
-      "rationale": "Remediate contradicted gloss. Cambridge and Oxford dictionaries demonstrate that effect (noun) primarily denotes impact/influence ('have an effect on'), while 'kết quả' is restricted to outcome/cause-and-effect contexts.",
-      "prerequisite": "Authorized CAS remediation task; editorial sign-off by Lead Editorial Reviewer."
+      "action": "RETAIN_GLOSS_FOR_OUTCOME_AND_PRUNE_SOURCE_CITATION",
+      "fieldPath": "/context",
+      "currentValue": "a resulting outcome; the alternative gloss tác động needs separate contextual review",
+      "proposedValue": "a resulting outcome (e.g. cause and effect); the alternative gloss tác động / ảnh hưởng belongs to an impact sense to be evaluated by the Lead Editorial Reviewer",
+      "retainedGlossVi": "kết quả",
+      "rationale": "Reconcile Task 008 overcorrection. Do NOT merge 'tác động, ảnh hưởng; kết quả' into a single gloss string, as that conflates distinct English senses. Retain 'kết quả' for the declared outcome context; prune irrelevant raise source citation from review trace; submit sense-splitting to LER.",
+      "prerequisite": "Authorized CAS remediation task; Lead Editorial Reviewer sense-division decision."
     },
     {
       "proposalId": "CAS-PROP-002",
       "targetEntity": "eqv_01a193ed-a87e-7f2e-a4b1-745b0def8f8f",
       "candidateId": "gloss-effect-bring-about",
+      "action": "RECOMMEND_GLOSS_REVISION_FOR_FORMAL_REGISTER",
       "fieldPath": "/glossVi",
       "currentValue": "tạo ra",
       "proposedValue": "thực hiện, đem lại",
@@ -830,9 +872,11 @@
       "proposalId": "CAS-PROP-003",
       "targetEntity": "eqv_01a193ed-a87e-72bb-87d8-8364114e27a8",
       "candidateId": "gloss-raise-increase",
+      "action": "RETAIN_GLOSS_AND_PRUNE_SOURCES",
       "fieldPath": "/context",
       "currentValue": "causing a quantitative increase, such as transport costs; nâng lên is pending review for other contexts",
       "proposedValue": "causing a quantitative increase (prices, costs, taxes); for qualitative targets (standards, awareness) use nâng cao",
+      "retainedGlossVi": "làm tăng",
       "rationale": "Clarify object scope to guide learner usage, while retaining exact causative gloss 'làm tăng'. Also prune misattributed source-cambridge-vi-effect mapping.",
       "prerequisite": "Authorized CAS remediation task."
     },
@@ -840,11 +884,24 @@
       "proposalId": "CAS-PROP-004",
       "targetEntity": "eqv_01a193ed-a87e-758e-899d-001c22a4579f",
       "candidateId": "gloss-economical-resources",
-      "fieldPath": "sourceMappings",
-      "currentValue": "source-cambridge-vi-economic",
-      "proposedValue": "source-cambridge-vi-economical",
-      "rationale": "Remediate critical source misattribution. Register dedicated source record for Cambridge English–Vietnamese: economical and bind to this equivalence.",
-      "prerequisite": "Authorized CAS remediation task."
+      "action": "FUTURE_SOURCE_REGISTRATION_AND_EVIDENCE_BINDING",
+      "fieldPath": "evidenceIds",
+      "currentValue": [],
+      "proposedValue": [
+        "evd_<new_uuidv7_for_economical_gloss>"
+      ],
+      "newSourceSpecification": {
+        "sourceItemKey": "pilot-fanout-005:source:v1:source-cambridge-vi-economical",
+        "title": "Cambridge English–Vietnamese: economical",
+        "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/economical",
+        "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+        "edition": "PASSWORD English–Vietnamese Dictionary, 2015 (K Dictionaries Ltd.)",
+        "rights": {
+          "status": "reference_only"
+        }
+      },
+      "rationale": "Correct data modeling error from Task 008. state.sourceMappings is immutable external identity mapping and must NEVER be modified. In a future authorized candidate batch, register Cambridge English–Vietnamese: economical as a new Source record (minting a new UUIDv7 src_ ID), create a draft Evidence record asserting /glossVi = 'tiết kiệm', and bind it to eqv.evidenceIds via bind-evidence. Retain gloss 'tiết kiệm'.",
+      "prerequisite": "Authorized candidate batch ingestion and CAS evidence binding."
     }
   ],
   "unresolvedQuestionsAndGaps": [
@@ -879,8 +936,8 @@
       "NO_LER_APPOINTED: No Lead Editorial Reviewer has been appointed by the repository owner to arbitrate linguistic content.",
       "REFERENCE_ONLY_SOURCES: All 10 registered sources have rights.status = 'reference_only'. No redistribution instrument exists.",
       "UNVERIFIED_EVIDENCE: All 11 evidence records remain draft and unreviewed; 0 evidence records exist for bilingual equivalences.",
-      "CONTRADICTED_GLOSS: Claim P004-012 (effect noun) requires remediation before verification.",
-      "SOURCE_MISATTRIBUTION: Claim P004-045 requires source catalog registration and re-mapping."
+      "UNRESOLVED_SENSE_BOUNDARY: Claim P004-012 (effect noun) requires LER arbitration on whether to split impact and outcome into distinct senses or qualify outcome contextually.",
+      "SOURCE_MISATTRIBUTION: Claim P004-045 requires source catalog registration and re-mapping in a future candidate batch."
     ],
     "failClosedVerification": "candidates.mjs check reports publication.eligible = false."
   }

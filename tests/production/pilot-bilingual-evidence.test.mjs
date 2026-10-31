@@ -9,7 +9,7 @@ const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../.
 
 const sha256 = bytes => crypto.createHash("sha256").update(bytes).digest("hex");
 
-const EXPECTED_BASELINE_HEAD = "3390c68d131c3b87325f78a09045fb99ce06da89";
+const EXPECTED_BASELINE_HEAD = "0aebc4850b8b7c5d94cd72337726c8baab48167b";
 const EXPECTED_STATE_SHA256 = "43fe32215c4e005198b2bda8ecd12f0094862f350348f3b16da6bb05ce1ad00e";
 
 test("pilot-004 bilingual evidence review artifact satisfies schema and invariant gates", () => {
@@ -18,7 +18,7 @@ test("pilot-004 bilingual evidence review artifact satisfies schema and invarian
 
   const review = JSON.parse(fs.readFileSync(reviewPath, "utf8"));
   assert.equal(review.artifactType, "pilot-004-bilingual-evidence-review");
-  assert.equal(review.task, "008");
+  assert.equal(review.task, "008R");
   assert.equal(review.baselineHead, EXPECTED_BASELINE_HEAD);
   assert.equal(review.canonicalStateHash, EXPECTED_STATE_SHA256);
   assert.equal(review.executionBoundaries.publicationEligibility, "NOT_READY");
@@ -26,51 +26,107 @@ test("pilot-004 bilingual evidence review artifact satisfies schema and invarian
   assert.equal(review.executionBoundaries.stateMutationsExecuted, "NONE; data/state/candidates-state.json strictly unmutated");
   assert.equal(review.executionBoundaries.atlasMutationsExecuted, "NONE");
 
-  // Verify canonical candidate state is untouched
+  // 8. Canonical state SHA unchanged
   const statePath = path.join(rootDir, "data/state/candidates-state.json");
   const actualStateSha = sha256(fs.readFileSync(statePath));
-  assert.equal(actualStateSha, EXPECTED_STATE_SHA256, "Canonical state MUST NOT be mutated in Task 008");
+  assert.equal(actualStateSha, EXPECTED_STATE_SHA256, "Canonical state MUST NOT be mutated");
 
   const state = JSON.parse(fs.readFileSync(statePath, "utf8"));
   assert.equal(state.records.length, 45, "Must retain exactly 45 canonical records");
 
-  // Verify all 7 glosses are accounted for and match state
+  // 1 & 2. Seven unique canonical equivalences and valid candidate-to-canonical mappings
   assert.equal(review.sevenClaimAssessments.length, 7);
   const stateRecordsById = new Map(state.records.map(r => [r._id, r]));
 
   const candidateIdSet = new Set();
+  const canonicalIdSet = new Set();
   for (const item of review.sevenClaimAssessments) {
     assert.equal(candidateIdSet.has(item.candidateId), false, `Duplicate candidateId: ${item.candidateId}`);
     candidateIdSet.add(item.candidateId);
 
+    assert.equal(canonicalIdSet.has(item.canonicalId), false, `Duplicate canonicalId: ${item.canonicalId}`);
+    canonicalIdSet.add(item.canonicalId);
+
     const canonicalRecord = stateRecordsById.get(item.canonicalId);
     assert.ok(canonicalRecord, `Canonical record ${item.canonicalId} missing from state`);
     assert.equal(canonicalRecord.glossVi, item.glossVi);
+
+    // 9. Seven glosses still gloss_only
     assert.equal(canonicalRecord.alignmentMode, "gloss_only");
     assert.equal(canonicalRecord.targetSenseId, undefined);
+
+    // 10. All records remain draft
     assert.equal(canonicalRecord.editorialStatus, "draft");
 
-    // Source sense must also exist
+    // Source sense must also exist in state
     const sourceSense = stateRecordsById.get(item.sourceSenseId);
     assert.ok(sourceSense, `Source sense ${item.sourceSenseId} missing from state`);
+    assert.equal(sourceSense.editorialStatus, "draft");
   }
 
-  // Verify three priority claims are explicitly evaluated
-  const priorityIds = ["P004-012", "P004-033", "P004-045"];
-  for (const pid of priorityIds) {
-    const deepDive = review.threePriorityClaimsDeepDive[pid];
-    assert.ok(deepDive, `Deep dive for priority claim ${pid} must exist`);
-    assert.ok(deepDive.disposition, `Disposition missing for ${pid}`);
-    assert.ok(deepDive.researchFindings, `Research findings missing for ${pid}`);
+  // 3. Evidence and disposition consistency
+  const assessmentCounts = review.bilingualReviewSummary.assessmentCounts;
+  const dispositionCounts = review.bilingualReviewSummary.dispositionCounts;
+
+  const actualAssessments = { SUPPORTED: 0, PARTIALLY_SUPPORTED: 0, CONTRADICTED: 0, UNVERIFIED: 0 };
+  const actualDispositions = {
+    EVIDENCE_READY_FOR_HUMAN_REVIEW: 0,
+    CORRECTION_PROPOSED: 0,
+    HOLD_INSUFFICIENT_EVIDENCE: 0,
+    CONTRADICTED_REQUIRES_REMEDIATION: 0
+  };
+
+  for (const item of review.sevenClaimAssessments) {
+    assert.ok(item.evidenceAssessment in actualAssessments, `Unknown assessment: ${item.evidenceAssessment}`);
+    actualAssessments[item.evidenceAssessment]++;
+
+    assert.ok(item.disposition in actualDispositions, `Unknown disposition: ${item.disposition}`);
+    actualDispositions[item.disposition]++;
   }
 
-  assert.equal(review.threePriorityClaimsDeepDive["P004-012"].evidenceAssessment, "CONTRADICTED");
+  assert.deepEqual(actualAssessments, assessmentCounts, "Assessment counts mismatch summary");
+  assert.deepEqual(actualDispositions, dispositionCounts, "Disposition counts mismatch summary");
+  assert.equal(review.bilingualReviewSummary.remainingHoldCount, 7);
+
+  // 4. Corrected P004-012 classification and rationale
+  const p004_012 = review.threePriorityClaimsDeepDive["P004-012"];
+  assert.ok(p004_012, "Deep dive for P004-012 must exist");
+  assert.notEqual(p004_012.evidenceAssessment, "CONTRADICTED", "P004-012 must NOT be assessed as CONTRADICTED");
+  assert.equal(p004_012.evidenceAssessment, "PARTIALLY_SUPPORTED");
+  assert.equal(p004_012.disposition, "HOLD_INSUFFICIENT_EVIDENCE");
+  assert.ok(p004_012.researchFindings.outcomeVersusImpact, "Outcome vs impact rationale required");
+  assert.ok(p004_012.researchFindings.absenceIsNotContradiction, "Absence is not contradiction rationale required");
+  assert.ok(p004_012.researchFindings.multiGlossReplacementRejection, "Multi-gloss merging rejection rationale required");
+
+  // Also check P004-033 and P004-045 deep dives exist
   assert.equal(review.threePriorityClaimsDeepDive["P004-033"].evidenceAssessment, "PARTIALLY_SUPPORTED");
   assert.equal(review.threePriorityClaimsDeepDive["P004-045"].evidenceAssessment, "PARTIALLY_SUPPORTED");
 
-  // Verify source matrix and discrepancies
-  assert.ok(review.sourceToClaimEvidenceMatrix.length >= 10);
-  assert.ok(review.evidenceMappingDiscrepancies.length >= 3);
-  assert.ok(review.correctionProposals.length >= 4);
-  assert.equal(review.bilingualReviewSummary.remainingHoldCount, 7);
+  // 5. Valid source/evidence references
+  for (const s of review.sourceToClaimEvidenceMatrix) {
+    if (s.canonicalId !== "PENDING_REGISTRATION") {
+      assert.ok(stateRecordsById.has(s.canonicalId), `Source ${s.canonicalId} missing from canonical state`);
+      assert.equal(s.rightsStatus, "reference_only");
+    }
+  }
+
+  // 6. No sourceMappings identity-rewrite proposal in correctionProposals
+  for (const prop of review.correctionProposals) {
+    assert.notEqual(prop.fieldPath, "sourceMappings", `CAS proposal ${prop.proposalId} must NOT propose mutating sourceMappings`);
+  }
+
+  // 7. Source registration proposals preserve existing identities
+  const prop004 = review.correctionProposals.find(p => p.proposalId === "CAS-PROP-004");
+  assert.ok(prop004, "CAS-PROP-004 must exist");
+  assert.equal(prop004.action, "FUTURE_SOURCE_REGISTRATION_AND_EVIDENCE_BINDING");
+  assert.equal(prop004.fieldPath, "evidenceIds");
+  assert.ok(prop004.newSourceSpecification, "Must specify new source registration without mutating sourceMappings");
+
+  // Reconciliation note must be present
+  assert.ok(review.reconciliationNote, "Reconciliation note required");
+  assert.equal(review.reconciliationNote.correctedIssues.length, 2);
+
+  // 11. Publication remains NOT_READY
+  assert.equal(review.publicationRestrictions.publicationStatus, "NOT_READY");
+  assert.equal(review.executionBoundaries.publicationEligibility, "NOT_READY");
 });
