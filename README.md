@@ -57,3 +57,11 @@ The active scope is the dictionary core. Audio, IELTS practice, and web or mobil
 experiences may be added when a concrete feature is approved. Keep lexical identity
 and dictionary data independent of user interfaces, TTS providers, and exam scoring;
 see [AGENTS.md](AGENTS.md) for the full boundary.
+
+## Codex and pinned ECC
+
+- [Codex research roles](.codex/agents/) — four narrowly scoped specialists; only the primary integration writer edits.
+- [Operational skills](.agents/skills/) — repo-local, progressively discovered by Codex.
+- [ECC import manifest](third_party/ecc/manifest.json) — exact commit, license, hashes, selected and rejected resources.
+- [Production contract](docs/lexical-production-contract.md) — lexical fanout handoff, gates, scale and consumer boundaries.
+- Run Codex from the repo root. For a research/fanout rehearsal use a **parent** `codex exec --sandbox read-only`; role text alone cannot enforce read-only.

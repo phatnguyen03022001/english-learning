@@ -1,0 +1,113 @@
+{
+  "sourceRepository": "https://github.com/affaan-m/ECC",
+  "sourceCommit": "bf70150eb2df8070024e5bdf08e4aa08959e2735",
+  "license": "MIT",
+  "licenseNotice": "third_party/ecc/LICENSE",
+  "policy": "Reference-only except adapted skills; AGENTS.md prevails",
+  "resources": [
+    {
+      "sourcePath": "rules/common/coding-style.md",
+      "installedPath": "third_party/ecc/rules/common/coding-style.md",
+      "sourceSha256": "3c069a2460702e1715e6b21408287401f1faa8d343045c98534d59fbd22a0e56",
+      "installedSha256": "3c069a2460702e1715e6b21408287401f1faa8d343045c98534d59fbd22a0e56",
+      "mode": "unchanged",
+      "purpose": "Optional coding-style reference",
+      "activation": "Read on demand as reference only",
+      "dependencyRequirements": "none",
+      "license": "MIT"
+    },
+    {
+      "sourcePath": "rules/common/performance.md",
+      "installedPath": "third_party/ecc/rules/common/performance.md",
+      "sourceSha256": "851cde9e695213b22efb4a4f7952160550b6634a62e62c71deec80bf649da86e",
+      "installedSha256": "851cde9e695213b22efb4a4f7952160550b6634a62e62c71deec80bf649da86e",
+      "mode": "unchanged",
+      "purpose": "Optional measured-performance reference",
+      "activation": "Read on demand as reference only",
+      "dependencyRequirements": "none",
+      "license": "MIT"
+    },
+    {
+      "sourcePath": "docs/SKILL-PLACEMENT-POLICY.md",
+      "installedPath": "third_party/ecc/docs/skill-placement-policy.md",
+      "sourceSha256": "c7bf4005573be3e63e4db3e483f6243c2a60c295c5ae78af837b11c117564465",
+      "installedSha256": "df9ca8843148e6762b4d8909f4108de95c7278d57b60493ec69ee7722ef0d502",
+      "mode": "adapted",
+      "purpose": "Codex-specific skill-placement reference",
+      "activation": "When adding or updating project skills",
+      "dependencyRequirements": "none",
+      "license": "MIT"
+    },
+    {
+      "sourcePath": ".agents/skills/coding-standards/SKILL.md",
+      "installedPath": ".agents/skills/coding-standards/SKILL.md",
+      "sourceSha256": "7295014cdb95589b28e9ac687e0c40a7fd329288e18a0e6fb6c5b1ed58437a0d",
+      "installedSha256": "efa9200c95a597659d9a91c8849b941786bb0ff013186b9d11007aac1a45512a",
+      "mode": "adapted",
+      "purpose": "Repo-local Codex coding-standards workflow",
+      "activation": "Skill activated for matching change scope",
+      "dependencyRequirements": "none",
+      "license": "MIT"
+    },
+    {
+      "sourcePath": "skills/living-docs-governance/SKILL.md",
+      "installedPath": ".agents/skills/living-docs-governance/SKILL.md",
+      "sourceSha256": "e8c22a1f69743e256c6d6df138d99e49d22e29effbf008dfe2328b7fdc76247e",
+      "installedSha256": "b8250177f8863fea7fcb9fc79854f3f1a541176095b800aea0b1cc73e21045e1",
+      "mode": "adapted",
+      "purpose": "Repo-local Codex living-docs-governance workflow",
+      "activation": "Skill activated for matching change scope",
+      "dependencyRequirements": "none",
+      "license": "MIT"
+    },
+    {
+      "sourcePath": "skills/verification-loop/SKILL.md",
+      "installedPath": ".agents/skills/verification-loop/SKILL.md",
+      "sourceSha256": "f0d56107f79e607d4de6c5543b8edfb1b58ab9ae4019b39831689cd91116543e",
+      "installedSha256": "f3978938a245471e74061086d66aa257b41cfb2c4a5bb4bd00151f6b77fca3b2",
+      "mode": "adapted",
+      "purpose": "Repo-local Codex verification-loop workflow",
+      "activation": "Skill activated for matching change scope",
+      "dependencyRequirements": "none",
+      "license": "MIT"
+    }
+  ],
+  "rejected": [
+    {
+      "sourcePath": "skills/tdd-workflow/",
+      "reason": "Global TDD mandates, Claude-specific package-manager tooling and commit flow"
+    },
+    {
+      "sourcePath": "skills/security-review/",
+      "reason": "Web/API/SQL-centered tooling unrelated to offline lexical core"
+    },
+    {
+      "sourcePath": "docs/CODEX-NAVIGATION-GUIDE.md",
+      "reason": "ECC-only paths, PR flow and missing helpers"
+    },
+    {
+      "sourcePath": "docs/SKILL-DEVELOPMENT-GUIDE.md",
+      "reason": "Large generic manual, not required at runtime"
+    },
+    {
+      "sourcePath": "rules/common/testing.md",
+      "reason": "Assumes tdd-guide and mandatory UI E2E tests"
+    },
+    {
+      "sourcePath": ".codex/config.toml",
+      "reason": "Historical models, MCP and unrelated config"
+    },
+    {
+      "sourcePath": ".codex/AGENTS.md",
+      "reason": "Would duplicate authoritative AGENTS.md"
+    },
+    {
+      "sourcePath": "rules/typescript/",
+      "reason": "Active runtime is Node JavaScript ESM, not TS"
+    },
+    {
+      "sourcePath": ".agents/skills/coding-standards/agents/openai.yaml",
+      "reason": "Optional UI metadata not required by CLI"
+    }
+  ]
+}

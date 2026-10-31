@@ -250,6 +250,62 @@ function cumulativeScenario(batchSize,batchCount,tempRoot){
   historyCount:state.history.length,...memoryReport(start)};
 }
 
+
+function makeMixedBatch(size,batchId,startIndex=0){
+ assert.ok(size>0&&size%10===0,"Mixed size must be a positive multiple of 10");
+ const records=[],base={lifecycleStatus:"active",editorialStatus:"draft"};
+ for(let i=0;i<size/10;i++){
+  const k=startIndex+i,prefix="mixed-"+k;
+  const add=(suffix,type,entity)=>records.push({candidateId:prefix+"-"+suffix,type,entity});
+  const ref=suffix=>"candidate:"+prefix+"-"+suffix;
+  add("en","lex",{...base,language:"en",lemma:"synthetic-english-"+k,pos:"VERB",entryKind:"word"});
+  add("vi","lex",{...base,language:"vi",lemma:"từ-giả-"+k,pos:"VERB",entryKind:"word"});
+  add("s1","sns",{...base,entryId:ref("en"),definition:"Synthetic English first sense"});
+  add("s2","sns",{...base,entryId:ref("en"),definition:"Synthetic English second sense"});
+  add("sv","sns",{...base,entryId:ref("vi"),definition:"Synthetic Vietnamese target sense"});
+  add("c","con",{...base,senseId:ref("s1"),constructionType:"valency",pattern:"verb + object"});
+  add("eq","eqv",{...base,sourceSenseId:ref("s1"),targetSenseId:ref("sv"),direction:"en_to_vi",
+   alignmentMode:"sense_aligned",equivalenceType:"approximate",translationEvidenceStatus:"evidence_pending",evidenceIds:[]});
+  add("rel","rel",{...base,relationType:"NEAR_SYNONYM_OF",sourceId:ref("s1"),targetId:ref("s2")});
+  add("src","src",{...base,title:"Synthetic benchmark source; not independently authoritative"});
+  add("ev","evd",{...base,sourceId:ref("src"),assertionIds:[ref("s1")]});
+ }
+ return {batchId,records};
+}
+function mixedScenario(size,tempRoot){
+ const start=memory(),validators=makeSchemaValidators(),batch=makeMixedBatch(size,"benchmark-mixed-"+size);
+ const inputBytes=Buffer.byteLength(JSON.stringify(batch));
+ const statePath=join(tempRoot,"state.json");
+ const result=prepareAndPersist(batch,{},statePath);
+ assert.equal(result.state.records.length,size);
+ assert.equal(new Set(result.state.records.map(r=>r._id)).size,size);
+ assert.equal(result.state.history.length,1);
+ const stages=stageMetrics(result.state.records,result.state,validators);
+ const replayMs=assertReplay(batch,result.state);
+ const changed=structuredClone(batch);changed.records[0].entity.lemma+="-changed";
+ const conflict=prepareBatch(changed,result.state);
+ assert.equal(conflict.report.issues[0]?.code,"CHANGED_BATCH_CONFLICT");
+ assert.equal(conflict.state,result.state);
+ const invalid=prepareBatch({batchId:"mixed-invalid",records:[{
+  candidateId:"bad",type:"sns",entity:{entryId:idFor("lex",990001),definition:"Orphan sense",
+   lifecycleStatus:"active",editorialStatus:"draft"}
+ }]},result.state);
+ assert.equal(invalid.report.status,"conflict");
+ assert.ok(invalid.report.issues.some(issue=>issue.code==="REFERENCE_NOT_FOUND"));
+ assert.equal(invalid.state,result.state);
+ const shapeCounts=Object.fromEntries([...new Set(result.state.records.map(r=>r._id.split("_",1)[0]))]
+  .map(prefix=>[prefix,result.state.records.filter(r=>r._id.startsWith(prefix+"_")).length]));
+ checkpoint();
+ return {status:"pass",scenario:"mixed",generator:"synthetic-mixed-v1",
+  recordShape:"10/group: EN+VI entries, 3 senses, construction, sense-aligned equivalence, relation, source and evidence",
+  candidateCount:size,shapeCounts,graphEdges:size,inputBytes,environment:environment(),
+  preparationMs:result.preparationMs,...stages,serializationMs:result.serializationMs,
+  writeRenameMs:result.writeRenameMs,ledgerBytes:statSync(statePath).size,
+  replayMs,changedBatchConflict:"pass",invalidReferenceNoMutation:"pass",
+  batchCount:Object.keys(result.state.batches).length,historyCount:result.state.history.length,
+  ...memoryReport(start)};
+}
+
 function negativeGraphScenario(size,tempRoot){
  const start=memory();
  // Generate a valid scale base; extra records isolate graph integrity attacks.
@@ -308,6 +364,7 @@ function parseOption(name,fallback){
 
 async function runParent(){
  const sizes=parseOption("--sizes","1000,5000,10000").split(",").map(Number);
+ const mixedSizes=parseOption("--mixed-sizes","1000").split(",").map(Number);
  const cumulativeSize=Number(parseOption("--cumulative-size","5000"));
  const cumulativeBatches=Number(parseOption("--cumulative-batches","3"));
  const negativeSize=Number(parseOption("--negative-size","10000"));
@@ -316,8 +373,10 @@ async function runParent(){
  assert.ok(sizes.length>0&&sizes.every(size=>Number.isInteger(size)&&size>0&&size<=10000),"Sizes must be 1..10000");
  assert.ok(cumulativeSize>0&&cumulativeSize<=10000&&cumulativeBatches>=2,"Cumulative batches must each be 1..10000 and include at least two batches");
  assert.ok(timeoutMs>=10000&&maxHeapMiB>=256&&maxHeapMiB<=4096,"Timeout or heap limit is outside the supported range");
+ assert.ok(mixedSizes.length>0&&mixedSizes.every(size=>Number.isInteger(size)&&size>0&&size<=10000&&size%10===0),"Mixed sizes must be multiples of 10, 10..10000");
  const tempRoot=mkdtempSync(join(tmpdir(),"english-learning-scale-"));
- const scenarios=[...sizes.map(size=>({kind:"single",size,label:`single-${size}`})),
+ const scenarios=[...sizes.map(size=>({kind:"single",size,label:"single-"+size})),
+  ...mixedSizes.map(size=>({kind:"mixed",size,label:"mixed-"+size})),
   {kind:"cumulative",size:cumulativeSize,count:cumulativeBatches,label:`cumulative-${cumulativeSize}x${cumulativeBatches}`},
   {kind:"negative",size:negativeSize,label:`negative-graph-${negativeSize}`}];
  let failed=false;
@@ -370,6 +429,7 @@ function runWorker(){
  const tempRoot=resolve(parseOption("--temp-root",tmpdir()));
  let result;
  if(kind==="single")result=singleScenario(size,tempRoot);
+ else if(kind==="mixed")result=mixedScenario(size,tempRoot);
  else if(kind==="cumulative")result=cumulativeScenario(size,Number(parseOption("--count","3")),tempRoot);
  else if(kind==="negative")result=negativeGraphScenario(size,tempRoot);
  else throw new Error(`Unknown benchmark scenario: ${kind}`);

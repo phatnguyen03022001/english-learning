@@ -1,0 +1,4 @@
+# Codex CLI 0.158.0 — project scoped, no model/MCP pin.
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 4

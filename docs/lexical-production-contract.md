@@ -140,3 +140,68 @@ than issue self-approvals. The pure module supports a future owner-authorized,
 trust-backed integration. Mock trust providers in tests prove only behavior, not
 genuine editorial or legal approval. No published dictionary content results from
 these synthetic tests.
+
+## Codex lexical fanout for expert-oriented draft production
+
+Goal: repeatable expert-oriented *candidate* generation, **not** independently verified
+Fellow-level lexicography, CEFR labels, IELTS scores or corpus statistics.
+Select 3–5 bounded lexical families, split independent questions into English semantics,
+grammar/phraseology, bilingual alignment and evidence/adversarial QA lanes. For
+trivial edits, do not fan out. A maximum of four workers researches in parallel;
+workers cannot spawn more workers. The integration writer alone may change Git/files.
+Use .codex/agents/ roles and run research under a parent read-only sandbox.
+Custom agent text cannot enforce read-only permissions by itself.
+
+Each specialist handoff must state:
+- Scope, family and candidate IDs, exact asserted claims and field paths.
+- Source title, URL/edition, retrieval date, claimed evidence relevance and reliability.
+- Supporting evidence, conflicting attestations and explicit unknowns.
+- Redistribution/right-to-use classification; unknown rights never mean permission.
+- Proposed corrections and counterexamples, affected records/graph edges, open disputes.
+- Exact acceptance checks and whether evidence is independent of the AI proposal.
+
+No competing handoff schema: reconcile into the existing V2 batch shape
+(`batchId`, `records`, `candidateId`, `type`, `entity`, optional `sourceItemKey`)
+or its existing revision contract. Recommendations are not authenticated editorial
+approval. Source-item identity is not independent lexicographic evidence.
+
+Workflow: (1) select bounded lexical families; (2) compare authoritative English
+definitions, senses and usage; (3) separate homographs and polysemy by contrastive
+evidence; (4) review morphology, grammar, valency, region and register; (5) analyze
+natural examples, collocations, phrasal verbs and phraseology; (6) assess contextual
+English–Vietnamese equivalence, preserving gloss_only vs sense-aligned identities;
+(7) adversarially inspect false equivalence, ambiguity and counterexamples;
+(8) writer reconciles conflicts, preserving citations and unresolved disagreements;
+(9) verify JSON Schema, graph, canonical identity, cross-batch reuse/replay,
+revision CAS, source/rights and fail-closed publication; (10) persist **draft**
+candidates and queue independent authenticated editorial and rights review.
+
+Statuses remain `draft`, `provisional`, `verified`, `disputed` and `rejected`;
+worker agreement is not authority. Verify learner usability, editorial provenance,
+copyright and real redistribution rights before verified release.
+
+### Scale and future consumer boundaries
+
+The current JSON ledger caps individual ingestion at 10,000 candidates, keeps
+append-only history and revalidates cumulative graph/snapshot state. It is *not*
+unbounded: serialization/reload, history length, memory and graph validation cost
+can grow with cumulative records. Existing single-entry stress data is baseline;
+mixed entity workloads must be benchmarked separately with real RSS/heap and
+edge density. Consider persistence migration only when **measured** production
+batch size, latency/memory, snapshot size, or durability requirements exceed
+the current bounded implementation. Atlas writes require new authorization.
+
+Media (British/American/Australian/more, audio at word/phrase/sentence level,
+Edge TTS or other providers, voices/speed/pitch, content hashes, external storage,
+rights and provenance) should live in a separate future versioned media model
+that references stable lexical IDs. Do not embed audio binaries/vendor settings
+inside canonical records or Git.
+
+IELTS Academic/General Training practice (Listening/Reading/Writing/Speaking,
+passages/questions/answers/rubrics/test versions/media/attempts/progress) owns a
+different future versioned domain and can reference lexical IDs without changing
+dictionary revisions. It cannot be assumed official-equivalent without licensing
+or scoring evidence. Consumer references must detect invalid/retired identities
+and distinguish draft from verified/publishable data. Retirement/supersession
+requires explicit migration decisions, not automatic dangling-reference rewrites.
+No media/practice schema, app, API or pipeline is approved by this task.

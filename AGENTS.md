@@ -164,3 +164,11 @@ Follow the applicable ECC common/JavaScript principles **KISS, DRY, YAGNI, cohes
 - **No junk:** no `final-v2`/backup copies, parallel status dashboards, unreferenced documentation, placeholders, unused dependencies, empty scaffolds, or unbounded artifacts. Preserve historical research needed for traceability; prune only after proving it has no live audit/dependency role.
 
 When layout, naming, or governance rules conflict with an established wire format, persistent ID, historical proof or an explicit owner requirement, prefer compatibility and document the narrow exception instead of performing a cosmetic mass rename.
+
+## 13. Repo-local Codex and ECC surfaces
+
+- AGENTS.md remains binding project governance. Imported ECC reference documents are subordinate, never auto-binding; see third_party/ecc/manifest.json for exact provenance and licenses.
+- Three discoverable skills live once in .agents/skills/. Four scoped Codex research roles live in .codex/agents/. Load only relevant references, not all of ECC.
+- Bound fanout to four independent research specialists; no recursive delegation or shared file writers. The primary session is the sole integration writer.
+- Specialist role instructions **do not enforce** sandbox permissions. Launch research with the parent Codex session in read-only sandbox; do not mistake a descriptive role for isolation.
+- docs/lexical-production-contract.md owns candidate handoff, evidence gates, publication boundaries, and growth/future-domain guidance.
