@@ -15,6 +15,7 @@
     "candidates:validate": "node scripts/candidates.mjs validate",
     "candidates:prepare": "node scripts/candidates.mjs prepare",
     "candidates:check": "node scripts/candidates.mjs check",
+    "candidates:bind-evidence": "node scripts/candidates.mjs bind-evidence",
     "candidates:revise": "node scripts/candidates.mjs revise",
     "candidates:promote": "node scripts/candidates.mjs promote"
   },

@@ -4,6 +4,7 @@ import {mkdtempSync,writeFileSync,readFileSync,existsSync,rmSync} from "node:fs"
 import {tmpdir} from "node:os";
 import {join} from "node:path";
 import {execFileSync} from "node:child_process";
+import {createHash} from "node:crypto";
 test("CLI prepare/replay/check uses persisted state; validate is read-only",()=>{
  const tmp=mkdtempSync(join(tmpdir(),"lex-candidates-"));
  try{
@@ -69,7 +70,7 @@ test("R2 malformed ledger shapes fail STATE_INVALID instead of validating an emp
   {},null,[],{records:[]},{...good,formatVersion:2},
   {...good,records:null},{...good,records:{}},
   {...good,batches:null},{...good,mappings:[]},
-  {...good,sourceMappings:"bad"},{...good,history:null}
+  {...good,sourceMappings:"bad"},{...good,history:null},{...good,evidenceBindings:"bad"}
  ];
  for(const value of invalid){
   const bytes=JSON.stringify(value);
@@ -167,4 +168,32 @@ test("R2 first prepare, validate and dry-run still initialize safely without exi
  assert.equal(data.records.length,2);
  assert.equal(data.history.length,1);
  assert.equal(existsSync(state+".lock"),false);
+}));
+
+test("evidence binding CLI persists a draft-only CAS update and exact replay",()=>withTmp(tmp=>{
+ const state=join(tmp,"state.json"),initial=join(tmp,"initial.json"),evidenceBatchPath=join(tmp,"evidence.json"),bindingPath=join(tmp,"binding.json");
+ writeFileSync(initial,JSON.stringify({batchId:"bind-cli-initial",records:[
+  {candidateId:"entry",type:"lex",entity:{language:"en",lemma:"synthetic",pos:"NOUN",entryKind:"word",lifecycleStatus:"active",editorialStatus:"draft"}},
+  {candidateId:"sense",type:"sns",entity:{entryId:"candidate:entry",definition:"Synthetic definition",lifecycleStatus:"active",editorialStatus:"draft"}},
+  {candidateId:"source",type:"src",entity:{title:"Synthetic source",rights:{status:"reference_only"},lifecycleStatus:"active",editorialStatus:"draft"}}
+ ]}));
+ assert.equal(run("prepare",state,initial).status,0);
+ const prepared=JSON.parse(readFileSync(state,"utf8")),senseId=prepared.mappings["bind-cli-initial#sense"].canonicalId,sourceId=prepared.mappings["bind-cli-initial#source"].canonicalId;
+ const valueDigest=createHash("sha256").update(JSON.stringify("Synthetic definition")).digest("hex");
+ writeFileSync(evidenceBatchPath,JSON.stringify({batchId:"bind-cli-evidence",records:[{candidateId:"definition-proof",type:"evd",entity:{sourceId,assertionIds:[senseId],claim:{subjectId:senseId,fieldPath:"/definition",valueDigest,specificity:"exact_value"},lifecycleStatus:"active",editorialStatus:"draft"}}]}));
+ assert.equal(run("prepare",state,evidenceBatchPath).status,0);
+ const afterEvidence=JSON.parse(readFileSync(state,"utf8")),evidenceId=afterEvidence.mappings["bind-cli-evidence#definition-proof"].canonicalId;
+ writeFileSync(bindingPath,JSON.stringify({bindingId:"bind-cli-proof",subjectId:senseId,expectedRevision:1,evidenceIds:[evidenceId]}));
+ const beforeDry=readFileSync(state,"utf8");
+ const dry=spawnSync(process.execPath,[cli,"bind-evidence","--state",state,"--input",bindingPath,"--dry-run"],{encoding:"utf8"});
+ assert.equal(dry.status,0,dry.stderr);assert.equal(output(dry).status,"dry-run");
+ assert.equal(readFileSync(state,"utf8"),beforeDry);
+ const first=run("bind-evidence",state,bindingPath);
+ assert.equal(first.status,0,first.stderr);assert.equal(output(first).status,"bound");
+ const updated=JSON.parse(readFileSync(state,"utf8")),subject=updated.records.find(record=>record._id===senseId);
+ assert.deepEqual(subject.evidenceIds,[evidenceId]);assert.equal(subject.revision,2);
+ assert.equal(updated.history.at(-1).action,"evidence_binding");
+ const replay=run("bind-evidence",state,bindingPath);
+ assert.equal(replay.status,0,replay.stderr);assert.equal(output(replay).status,"replayed");
+ assert.equal(JSON.parse(readFileSync(state,"utf8")).records.find(record=>record._id===senseId).revision,2);
 }));

@@ -65,6 +65,11 @@ export function evaluatePublication(records, options={}) {
 
  const publishable=r=>!["src","evd","rev","dec"].includes(r._id?.split("_")[0]);
  const selectedIds=new Set();
+ const constructionsBySense=new Map();
+ for(const construction of records.filter(r=>r._id?.startsWith("con_")&&r.senseId)){
+  if(!constructionsBySense.has(construction.senseId))constructionsBySense.set(construction.senseId,[]);
+  constructionsBySense.get(construction.senseId).push(construction._id);
+ }
  if(options.subjectIds!==undefined){
   if(!Array.isArray(options.subjectIds))add("PUBLICATION_SCOPE_INVALID","","subjectIds","Subject scope must be an array");
   const stack=Array.isArray(options.subjectIds)?[...options.subjectIds]:[];
@@ -80,7 +85,7 @@ export function evaluatePublication(records, options={}) {
    if(kind==="eqv")refs.push(r.sourceSenseId,r.targetSenseId);
    if(kind==="rel")refs.push(r.sourceId,r.targetId);
    if(kind==="lex")refs.push(...(r.familyIds??[]));
-   if(kind==="sns")refs.push(...(r.topicIds??[]),...(r.constructionIds??[]));
+   if(kind==="sns")refs.push(...(r.topicIds??[]),...(r.constructionIds??[]),...(constructionsBySense.get(r._id)??[]));
    for(const ref of refs)if(ref)stack.push(ref);
   }
  }else for(const r of records)if(publishable(r))selectedIds.add(r._id);
@@ -128,11 +133,16 @@ export function evaluatePublication(records, options={}) {
   if(evidence.length===0)add("CLAIM_EVIDENCE_INSUFFICIENT",id,"evidenceIds","No independent exact claim-level attestation");
   if(!evidence.some(ev=>rights(byId.get(ev.sourceId),options.usageScope??"dictionary_publication")))
    add("SOURCE_RIGHTS_UNVERIFIED",id,"evidenceIds","No authenticated rights approval for intended reuse");
-  const reviews=(reviewBySubject.get(id)??[]).filter(item=>
-   // Subject-only reviews are not claim-specific. Exact field path matters.
-   evidence.some(ev=>ev.claim.fieldPath===item.fieldPath)&&
-   item.review.subjectIds?.includes(id)&&
-   authorize(item.review.reviewerId,item.review.role,item.review.appointmentReference,id,item.fieldPath));
+  const reviews=(reviewBySubject.get(id)??[]).filter(item=>{
+   // A historical decision remains auditable after a claim changes, but only
+   // its exact reviewed value can authorize the current assertion.
+   const currentValue=valueAt(byId.get(item.subjectId),item.fieldPath);
+   return currentValue!==undefined&&
+    evidence.some(ev=>ev.claim.fieldPath===item.fieldPath&&ev.claim.valueDigest===item.valueDigest)&&
+    item.valueDigest===digest(currentValue)&&
+    item.review.subjectIds?.includes(id)&&
+    authorize(item.review.reviewerId,item.review.role,item.review.appointmentReference,id,item.fieldPath);
+  });
   if(!reviews.length)add("REVIEW_SCOPE_MISSING",id,"editorialStatus","No authorized accepted claim-specific review");
   if(!reviews.some(x=>x.review.role==="lead_editorial"))
    add("LER_AUTHORITY_UNVERIFIED",id,"editorialStatus","No independently authenticated scoped LER appointment");

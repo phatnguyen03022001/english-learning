@@ -1,5 +1,6 @@
 import {createHash,randomBytes} from "node:crypto";
 import {validateDatasetV2} from "../validators/validate-dataset-v2.mjs";
+import {digest as claimDigest,valueAt} from "../validators/production-gates.mjs";
 const clone=x=>JSON.parse(JSON.stringify(x));
 const sha=x=>createHash("sha256").update(JSON.stringify(x)).digest("hex");
 const sort=(a,b)=>a<b?-1:a>b?1:0;
@@ -36,6 +37,28 @@ const resolveRefs=(x,ids)=>{
  if(x&&typeof x==="object")return Object.fromEntries(Object.entries(x).map(([k,v])=>[k,resolveRefs(v,ids)]));
  return x;
 };
+const entityProjection=x=>Object.fromEntries(Object.entries(x).filter(([key])=>
+ !["_id","schemaVersion","revision","createdAt","updatedAt"].includes(key)));
+function validateCandidateEvidence(batch,state){
+ const candidates=new Map(batch.records.map(item=>[item.candidateId,item.entity]));
+ const existing=new Map((state.records??[]).map(record=>[record._id,record]));
+ for(const item of batch.records){
+  if((item.type??prefixOf(item))!=="evd"||!item.entity.claim)continue;
+  const evidence=item.entity,claim=evidence.claim,subjectRef=claim.subjectId;
+  if(!Array.isArray(evidence.assertionIds)||!evidence.assertionIds.includes(subjectRef))
+   return {code:"EVIDENCE_SUBJECT_MISMATCH",message:"Evidence claim subject must appear in assertionIds: "+item.candidateId};
+  let subject;
+  if(typeof subjectRef==="string"&&subjectRef.startsWith("candidate:"))
+   subject=candidates.get(subjectRef.slice("candidate:".length));
+  else subject=existing.get(subjectRef);
+  if(!subject)return {code:"EVIDENCE_SUBJECT_NOT_FOUND",message:"Evidence claim subject is not available: "+subjectRef};
+  const value=valueAt(subject,claim.fieldPath);
+  if(value===undefined)return {code:"EVIDENCE_PATH_MISMATCH",message:"Evidence claim path is absent: "+claim.fieldPath};
+  if(claimDigest(value)!==claim.valueDigest)
+   return {code:"EVIDENCE_SOURCE_DIGEST_MISMATCH",message:"Evidence digest does not match the candidate's source value: "+item.candidateId};
+ }
+ return null;
+}
 function duplicateHints(existing,newRecords){
  const hints=[];
  const keys=new Map();
@@ -63,6 +86,9 @@ export function prepareBatch(batch,state={},options={}) {
  if(!batch||typeof batch.batchId!=="string"||!/^[a-zA-Z0-9._:-]{1,120}$/.test(batch.batchId)||!Array.isArray(batch.records)||batch.records.length===0||batch.records.length>10000)
   return invalidReport(state,digest,"BATCH_INVALID","Invalid batch ID or record count (1..10000)");
  const keys=new Set(),sourceKeys=new Set(),types=new Map();
+ if(batch.supersedesBatchId!==undefined&&
+   (typeof batch.supersedesBatchId!=="string"||!/^[a-zA-Z0-9._:-]{1,120}$/.test(batch.supersedesBatchId)))
+  return invalidReport(state,digest,"SUPERSEDES_BATCH_INVALID","Invalid superseded batch ID");
  for(const item of batch.records){
   if(!item||typeof item.candidateId!=="string"||!/^[a-zA-Z0-9._:-]{1,120}$/.test(item.candidateId)||!item.entity||typeof item.entity!=="object"||Array.isArray(item.entity))
    return invalidReport(state,digest,"CANDIDATE_INVALID","Candidate ID or payload invalid");
@@ -88,16 +114,28 @@ export function prepareBatch(batch,state={},options={}) {
   :invalidReport(state,digest,"CHANGED_BATCH_CONFLICT","Batch ID already processed with another digest");
  const next=clone({formatVersion:1,batches:{},mappings:{},sourceMappings:{},records:[],history:[],...state});
  if(next.formatVersion!==1)return invalidReport(state,digest,"STATE_VERSION_INVALID","Unrecognized persistent state format");
+ const evidenceError=validateCandidateEvidence(batch,next);
+ if(evidenceError)return invalidReport(state,digest,evidenceError.code,evidenceError.message);
  const mapping=new Map(),reused=new Set(),knownIds=new Set(next.records.map(r=>r._id));
  for(const item of batch.records){
   const mappingKey=batch.batchId+"#"+item.candidateId;
   if(next.mappings[mappingKey])return invalidReport(state,digest,"MAPPING_COLLISION",mappingKey);
   const known=item.sourceItemKey&&next.sourceMappings[item.sourceItemKey];
+  const priorMapping=batch.supersedesBatchId&&next.mappings[batch.supersedesBatchId+"#"+item.candidateId];
   if(known){
+   if(priorMapping&&priorMapping.canonicalId!==known.canonicalId)
+    return invalidReport(state,digest,"IDENTITY_MAPPING_CONFLICT","Source-item and superseded-batch mappings identify different canonical records: "+item.candidateId);
    if(known.contentDigest!==sha(item.entity)||!known.canonicalId.startsWith(types.get(item.candidateId)+"_"))
     return invalidReport(state,digest,"SOURCE_ITEM_CHANGED","Existing source item changed; explicit revision required: "+item.sourceItemKey);
    if(!knownIds.has(known.canonicalId))return invalidReport(state,digest,"SOURCE_MAPPING_DANGLING",item.sourceItemKey);
    mapping.set(item.candidateId,known.canonicalId);
+   reused.add(item.candidateId);
+   continue;
+  }
+  if(priorMapping){
+   if(!priorMapping.canonicalId?.startsWith(types.get(item.candidateId)+"_")||!knownIds.has(priorMapping.canonicalId))
+    return invalidReport(state,digest,"SUPERSEDED_MAPPING_INVALID","Superseded candidate mapping is missing or has the wrong entity type: "+item.candidateId);
+   mapping.set(item.candidateId,priorMapping.canonicalId);
    reused.add(item.candidateId);
    continue;
   }
@@ -109,27 +147,53 @@ export function prepareBatch(batch,state={},options={}) {
   knownIds.add(id);
   mapping.set(item.candidateId,id);
  }
- let created;
- try {created=batch.records.filter(item=>!reused.has(item.candidateId)).map(item=>{
+ const canonicalOwners=new Map();
+ for(const item of batch.records){
+  const id=mapping.get(item.candidateId),owner=canonicalOwners.get(id);
+  if(owner&&owner!==item.candidateId)
+   return invalidReport(state,digest,"CANONICAL_ID_REUSED_IN_BATCH","Multiple candidate IDs map to one canonical identity: "+owner+" / "+item.candidateId);
+  canonicalOwners.set(id,item.candidateId);
+ }
+ let materialized;
+ try {materialized=batch.records.map(item=>{
   const entity=resolveRefs(item.entity,mapping);
   if(entity.relationType&&["SYNONYM_OF","NEAR_SYNONYM_OF","ANTONYM_OF"].includes(entity.relationType)&&
     entity.sourceId>entity.targetId)[entity.sourceId,entity.targetId]=[entity.targetId,entity.sourceId];
   return {...entity,_id:mapping.get(item.candidateId),schemaVersion:"2.0.0"};
  });}catch(e){return invalidReport(state,digest,"UNRESOLVED_REFERENCE",e.message);}
+ const materializedById=new Map([...next.records,...materialized].map(record=>[record._id,record]));
+ for(const record of materialized.filter(record=>record._id.startsWith("evd_")&&record.claim)){
+  if(!record.assertionIds.includes(record.claim.subjectId))
+   return invalidReport(state,digest,"EVIDENCE_SUBJECT_MISMATCH","Resolved evidence claim subject is not asserted: "+record._id);
+  const subject=materializedById.get(record.claim.subjectId);
+  if(!subject)return invalidReport(state,digest,"EVIDENCE_SUBJECT_NOT_FOUND","Resolved evidence claim subject is unavailable: "+record.claim.subjectId);
+  const value=valueAt(subject,record.claim.fieldPath);
+  if(value===undefined)return invalidReport(state,digest,"EVIDENCE_PATH_MISMATCH","Resolved evidence claim path is absent: "+record.claim.fieldPath);
+  record.claim.valueDigest=claimDigest(value);
+ }
+ const byExistingId=new Map(next.records.map(record=>[record._id,record]));
+ for(const item of batch.records){
+  if(!reused.has(item.candidateId))continue;
+  const requested=materializedById.get(mapping.get(item.candidateId)),existing=byExistingId.get(mapping.get(item.candidateId));
+  if(!existing||sha(entityProjection(requested))!==sha(entityProjection(existing)))
+   return invalidReport(state,digest,"BATCH_REVISION_REQUIRED","Existing candidate changed; apply a CAS draft revision before preparing the replacement batch: "+item.candidateId);
+ }
+ const reusedIds=new Set([...reused].map(candidateId=>mapping.get(candidateId)));
+ const created=materialized.filter(record=>!reusedIds.has(record._id));
  const dataset=[...next.records,...created];
  const validated=validateDatasetV2(dataset);
  if(!validated.valid)return invalidReport(state,digest,"VALIDATION_FAILED","Candidate graph/schema rejected",validated.issues);
  const duplicates=duplicateHints(next.records,created);
- const missingEvidence=created.filter(r=>!["src","evd","rev","dec"].includes(r._id.split("_")[0])&&!(r.evidenceIds?.length)).map(r=>r._id).sort(sort);
- const reviewQueue=created.filter(r=>r.editorialStatus!=="rejected").map(r=>r._id).sort(sort);
+ const missingEvidence=materialized.filter(r=>!["src","evd","rev","dec"].includes(r._id.split("_")[0])&&!(r.evidenceIds?.length)).map(r=>r._id).sort(sort);
+ const reviewQueue=materialized.filter(r=>r.editorialStatus!=="rejected").map(r=>r._id).sort(sort);
  if(options.dryRun)return {state,report:{status:"dry-run",batchId:batch.batchId,digest,issues:[],duplicates:duplicates.map(d=>({...d,candidateId:"preview",existingId:"preview"})),missingEvidence:missingEvidence.map(()=>"pending_identity"),reviewQueue:batch.records.map(x=>x.candidateId),publicationEligible:false}};
  for(const item of batch.records){
   next.mappings[batch.batchId+"#"+item.candidateId]={canonicalId:mapping.get(item.candidateId),batchId:batch.batchId,contentDigest:sha(item.entity)};
   if(item.sourceItemKey&&!next.sourceMappings[item.sourceItemKey])
    next.sourceMappings[item.sourceItemKey]={canonicalId:mapping.get(item.candidateId),contentDigest:sha(item.entity),firstBatchId:batch.batchId};
  }
- next.batches[batch.batchId]={digest,recordIds:batch.records.map(item=>mapping.get(item.candidateId)),contractVersion:"2.0.0"};
+ next.batches[batch.batchId]={digest,recordIds:batch.records.map(item=>mapping.get(item.candidateId)),contractVersion:"2.0.0",...(batch.supersedesBatchId?{supersedesBatchId:batch.supersedesBatchId}:{})};
  next.records.push(...created);
- next.history.push({action:"batch_prepared",batchId:batch.batchId,digest,recordIds:created.map(r=>r._id)});
+ next.history.push({action:"batch_prepared",batchId:batch.batchId,digest,recordIds:batch.records.map(item=>mapping.get(item.candidateId)),createdRecordIds:created.map(r=>r._id)});
  return {state:next,report:{status:"prepared",batchId:batch.batchId,digest,issues:[],duplicates,missingEvidence,reviewQueue,publicationEligible:false,recordIds:batch.records.map(item=>mapping.get(item.candidateId)),reusedCount:reused.size}};
 }

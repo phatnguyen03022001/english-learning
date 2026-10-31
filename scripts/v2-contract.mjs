@@ -14,6 +14,9 @@ export function buildV2(v1, reg) {
  result.properties.schemaVersion={const:reg.registryVersion};
  const claim=obj({subjectId:d("activeV1Id"),fieldPath:{type:"string",pattern:"^/"},valueDigest:{type:"string",pattern:"^[a-f0-9]{64}$"},specificity:d("claimSpecificity"),description:s},["subjectId","fieldPath","valueDigest","specificity"]);
  const reference=obj({subjectId:d("activeV1Id"),fieldPath:s},["subjectId","fieldPath"]);
+ // Legacy V2 decisions without a value digest remain readable, but the
+ // publication gate never treats them as approval for a current claim.
+ const reviewedClaim=obj({subjectId:d("activeV1Id"),fieldPath:s,valueDigest:{type:"string",pattern:"^[a-f0-9]{64}$"}},["subjectId","fieldPath"]);
  const extra={
   "lexical-sense":{domain:s,usageRestrictions:a(obj({kind:s,description:s,evidenceIds:a(d("id_evd"))},["kind","description"])),contrastiveNotes:a(obj({language:d("languageTag"),text:s,evidenceIds:a(d("id_evd"))},["language","text"])),grammar:obj({countability:d("countability"),transitivity:d("transitivity")}),constructionIds:a(d("id_con")),examples:{type:"array",items:obj({english:s,exampleType:d("exampleType"),editorialStatus:d("editorialStatus"),translationEvidenceStatus:d("translationEvidenceStatus"),vi:s,evidenceIds:a(d("id_evd")),register:d("register"),variety:d("languageTag")},["english","exampleType","editorialStatus","translationEvidenceStatus"])}},
   "construction":{grammar:obj({countability:d("countability"),transitivity:d("transitivity"),complementTypes:a(d("complementType")),requiredPrepositions:a(s),pronounPlacement:d("pronounPlacement"),separability:d("separability"),register:d("register"),variety:d("languageTag")})},
@@ -21,7 +24,7 @@ export function buildV2(v1, reg) {
   "translation-equivalence":{translationEvidenceStatus:d("translationEvidenceStatus")},
   "evidence":{claim,location:s,attestationType:s,collectionMethod:s,reviewStatus:d("evidenceReviewStatus"),independence:d("sourceIndependence"),limitations:a(s)},
   "source":{provider:s,sourceType:d("sourceType"),sourceIdentifier:s,materialVersion:s,retrievedAt:s,attribution:s,rights:obj({status:d("sourceRightsStatus"),scopes:a(s),licenseIdentifier:s,permissionReference:s,reviewerId:s,decisionId:d("id_dec"),reviewedAt:s,expiresAt:s,revokedAt:s},["status"])},
-  "editorial-review":{role:d("editorialRole"),appointmentReference:s,claims:a(reference)},
+  "editorial-review":{role:d("editorialRole"),appointmentReference:s,claims:a(reviewedClaim)},
   "editorial-decision":{role:d("editorialRole"),appointmentReference:s,decisionEffect:d("decisionEffect"),claims:a(reference),transitionAudit:obj({beforeRevision:{type:"integer",minimum:1},afterRevision:{type:"integer",minimum:2},beforeDigest:{type:"string",pattern:"^[a-f0-9]{64}$"},afterDigest:{type:"string",pattern:"^[a-f0-9]{64}$"},successorCreationReferences:a(s),incomingEdges:{type:"array",items:obj({edgeId:d("activeV1Id"),resolution:d("edgeResolution"),targetId:d("activeV1Id"),decisionId:d("id_dec")},["edgeId","resolution","decisionId"])}},["beforeRevision","afterRevision","beforeDigest","afterDigest","incomingEdges"])}
  };
  const kind=result.$id.split("/").at(-1).replace(".schema.json","");

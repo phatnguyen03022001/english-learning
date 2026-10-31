@@ -21,8 +21,18 @@ The digest proves identity of stored bytes, **not linguistic truth**.
 V2 `EditorialReview.claims[]` identifies individual subject/path assertions; general
 `subjectIds` does not by itself authorize every assertion inside a sense. An accepted
 review of a definition does not certify a grammatical restriction, a contrasting example
-or the Vietnamese gloss. `publicationClaimPaths` enumerates learner-facing fields for
-separate coverage and `CLAIM_PATH_UNVERIFIED` blocks uncovered claims.
+or the Vietnamese gloss. New claim-specific review decisions include a `valueDigest`
+for the exact value reviewed. That field remains optional only so legacy V2 review records
+remain readable; a missing or stale digest never authorizes the current value, even if
+new evidence is later attached. `publicationClaimPaths` enumerates learner-facing fields
+for separate coverage and `CLAIM_PATH_UNVERIFIED` blocks uncovered claims.
+
+Late evidence association uses the candidate pipeline's `bind-evidence` operation. It
+requires an active draft subject, an expected revision, active draft evidence records for
+the exact subject/path/value, and updates the subject's `evidenceIds` and revision in one
+atomic state write. A failed check leaves the state untouched; successful bindings retain
+before/after history and an idempotent binding key. Evidence records and their stable IDs
+are not rewritten during association.
 
 ## Trust and publication
 

@@ -89,6 +89,10 @@
           "fieldPath": {
             "type": "string",
             "minLength": 1
+          },
+          "valueDigest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
           }
         },
         "required": [

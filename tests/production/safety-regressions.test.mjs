@@ -29,7 +29,7 @@ test("forged accepted review on wrong claim path is not applicable, even with in
  const lex=draft({_id:id("lex",1201),schemaVersion:"2.0.0",language:"en",lemma:"synthetic",pos:"NOUN",entryKind:"word",editorialStatus:"verified",evidenceIds:[id("evd",1201)]});
  const source=draft({_id:id("src",1201),schemaVersion:"2.0.0",title:"synthetic not a real source",rights:{status:"redistributable",scopes:["dictionary_publication"],reviewerId:"rights",permissionReference:"UNTRUSTED"}});
  const evidence=draft({_id:id("evd",1201),schemaVersion:"2.0.0",sourceId:source._id,assertionIds:[lex._id],claim:{subjectId:lex._id,fieldPath:"/lemma",valueDigest:digest("synthetic"),specificity:"exact_value"},reviewStatus:"accepted",independence:"independent_reviewed"});
- const review=draft({_id:id("rev",1201),schemaVersion:"2.0.0",reviewerId:"self",subjectIds:[lex._id],outcome:"accepted",role:"lead_editorial",appointmentReference:"UNTRUSTED",claims:[{subjectId:lex._id,fieldPath:"/pos"}]});
+ const review=draft({_id:id("rev",1201),schemaVersion:"2.0.0",reviewerId:"self",subjectIds:[lex._id],outcome:"accepted",role:"lead_editorial",appointmentReference:"UNTRUSTED",claims:[{subjectId:lex._id,fieldPath:"/pos",valueDigest:digest("NOUN")}]});
  const report=evaluatePublication([lex,source,evidence,review],{isAuthorized:()=>true,verifyRights:()=>true});
  assert.equal(report.eligible,false);
  assert.ok(report.issues.some(i=>i.code==="REVIEW_SCOPE_MISSING"),JSON.stringify(report.issues));

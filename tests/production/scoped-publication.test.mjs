@@ -16,6 +16,17 @@ test("unknown subject and empty publication scope never yield eligibility",()=>{
  assert.equal(result.eligible,false);
  assert.ok(result.issues.some(i=>i.code==="PUBLICATION_SUBJECT_NOT_FOUND"));
 });
+test("sense publication scope follows inbound constructions owned by Construction.senseId",()=>{
+ const entry={_id:"lex_01940000-0000-7000-8000-000000000201",schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"draft",language:"en",lemma:"synthetic",pos:"VERB",entryKind:"word"};
+ const sense={_id:"sns_01940000-0000-7000-8000-000000000202",schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"draft",entryId:entry._id,definition:"Synthetic meaning"};
+ const construction={_id:"con_01940000-0000-7000-8000-000000000203",schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"draft",senseId:sense._id,constructionType:"verb_pattern",pattern:"synthetic + NP"};
+ const unrelated=record(204,"disputed");
+ const result=evaluatePublication([entry,sense,construction,unrelated],{subjectIds:[sense._id]});
+ assert.equal(result.eligible,false);
+ assert.ok(result.issues.some(issue=>issue.entityId===construction._id&&issue.code==="PUBLICATION_NOT_VERIFIED"),JSON.stringify(result.issues));
+ assert.ok(result.issues.some(issue=>issue.entityId===construction._id&&issue.code==="CLAIM_EVIDENCE_INSUFFICIENT"),JSON.stringify(result.issues));
+ assert.ok(result.issues.every(issue=>issue.entityId!==unrelated._id),JSON.stringify(result.issues));
+});
 test("gloss-only and sense-aligned translations both require reviewed status and valid endpoints",()=>{
  const entry={_id:"lex_01940000-0000-7000-8000-000000000101",schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"verified",language:"en",lemma:"test",pos:"NOUN",entryKind:"word"};
  const sense={_id:"sns_01940000-0000-7000-8000-000000000102",schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"verified",entryId:entry._id,definition:"test meaning"};

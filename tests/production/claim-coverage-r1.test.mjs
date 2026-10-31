@@ -92,7 +92,7 @@ function trustedDataset(subject,dependencies=[]){
   records.push(verified("rev",++seq,{
    reviewerId:"test-ler",role:"lead_editorial",appointmentReference:"test-review",
    subjectIds:[record._id],outcome:"accepted",
-   claims:paths.map(fieldPath=>({subjectId:record._id,fieldPath}))
+   claims:paths.map(fieldPath=>({subjectId:record._id,fieldPath,valueDigest:digest(valueAt(record,fieldPath))}))
   }));
   appointments.push({appointmentKey:"test-review",reviewerId:"test-ler",appointedByOwnerId:"test-owner",
    role:"lead_editorial",scope:{subjectIds:[record._id],fieldPaths:paths},
