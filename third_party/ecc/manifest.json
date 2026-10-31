@@ -1,6 +1,6 @@
 {
   "sourceRepository": "https://github.com/affaan-m/ECC",
-  "sourceCommit": "bf70150eb2df8070024e5bdf08e4aa08959e2735",
+  "sourceCommit": "b38be6a7f6350964d59328b52f0624e1d1d552d1",
   "license": "MIT",
   "licenseNotice": "third_party/ecc/LICENSE",
   "policy": "Reference-only except adapted skills; AGENTS.md prevails",
@@ -19,8 +19,8 @@
     {
       "sourcePath": "rules/common/performance.md",
       "installedPath": "third_party/ecc/rules/common/performance.md",
-      "sourceSha256": "851cde9e695213b22efb4a4f7952160550b6634a62e62c71deec80bf649da86e",
-      "installedSha256": "851cde9e695213b22efb4a4f7952160550b6634a62e62c71deec80bf649da86e",
+      "sourceSha256": "39fd4c549823b4e10aefc4d427242ae8ac9e045ecf37affb087dc77f5faeba49",
+      "installedSha256": "39fd4c549823b4e10aefc4d427242ae8ac9e045ecf37affb087dc77f5faeba49",
       "mode": "unchanged",
       "purpose": "Optional measured-performance reference",
       "activation": "Read on demand as reference only",
@@ -52,7 +52,7 @@
     {
       "sourcePath": "skills/living-docs-governance/SKILL.md",
       "installedPath": ".agents/skills/living-docs-governance/SKILL.md",
-      "sourceSha256": "e8c22a1f69743e256c6d6df138d99e49d22e29effbf008dfe2328b7fdc76247e",
+      "sourceSha256": "fc5c19666eee0c4949e429fe012c81c47f932da4e736aa7d70463a3a3f7d632b",
       "installedSha256": "b8250177f8863fea7fcb9fc79854f3f1a541176095b800aea0b1cc73e21045e1",
       "mode": "adapted",
       "purpose": "Repo-local Codex living-docs-governance workflow",
@@ -63,8 +63,8 @@
     {
       "sourcePath": "skills/verification-loop/SKILL.md",
       "installedPath": ".agents/skills/verification-loop/SKILL.md",
-      "sourceSha256": "f0d56107f79e607d4de6c5543b8edfb1b58ab9ae4019b39831689cd91116543e",
-      "installedSha256": "f3978938a245471e74061086d66aa257b41cfb2c4a5bb4bd00151f6b77fca3b2",
+      "sourceSha256": "9ee288d426660b0c785f534a003a4960fb4d8083a21302d8a4fd9b035b2edbb1",
+      "installedSha256": "30f0b65f0195e900ad4ba703eeb531b61620f4da4c8b7dccf7ab8602ca8f2af3",
       "mode": "adapted",
       "purpose": "Repo-local Codex verification-loop workflow",
       "activation": "Skill activated for matching change scope",

@@ -33,7 +33,7 @@ owned by `schemas/`, `pipeline/`, and `validators/`.
 
 ## Validate
 
-With Node.js 22 or newer and the pinned development dependency installed:
+Use the latest Node.js 26 LTS patch (see`.node-version`) and locked dependencies:
 
 ```sh
 npm run schema:check
@@ -50,6 +50,12 @@ pushes and supports manual dispatch.
 The current readiness status and blockers are recorded in the
 [Phase 13 assessment](data/reviews/phase13/readiness-assessment.json), which is the
 authoritative snapshot.
+
+## Technology choices for future extensions
+
+The current offline dictionary core uses Node.js 26 LTS, the built-in test runner, and Ajv 8.20.0 to validate existing JSON Schema 2020-12 contracts. Codex-native multi-agent fanout already works without an orchestration framework. Versions are locked in npm; CI verifies compatibility.
+
+Evaluated but **not installed**: Zod/Valibot (duplicate Ajv canonical validation), Vitest/Jest (native node:test meets current coverage needs), Fastify/NestJS (no HTTP service), Next.js/React (no application UI), MongoDB driver/ORM (no authorized DB integration), and queue/TTS libraries (no current async or media workload). Re-evaluate latest stable supported releases when a concrete feature requires them; do not install alpha frameworks for speculative future use.
 
 ## Extension boundary
 

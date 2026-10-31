@@ -8,7 +8,7 @@ const path=relative=>new URL(relative,root);
 const read=relative=>readFileSync(path(relative));
 test("ECC import is pinned, licensed, checksummed and self-contained",()=>{
  const manifest=JSON.parse(read("third_party/ecc/manifest.json"));
- assert.equal(manifest.sourceCommit,"bf70150eb2df8070024e5bdf08e4aa08959e2735");
+ assert.equal(manifest.sourceCommit,"b38be6a7f6350964d59328b52f0624e1d1d552d1");
  assert.equal(manifest.license,"MIT");
  assert.match(read("third_party/ecc/LICENSE").toString(),/Copyright \(c\) 2026 Affaan Mustafa/);
  assert.equal(manifest.resources.length,6);

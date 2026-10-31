@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=22"
+    "node": ">=26 <27"
   },
   "scripts": {
     "schema:generate": "node scripts/generate-schemas.mjs",
@@ -22,6 +22,6 @@
     "candidates:promote": "node scripts/candidates.mjs promote"
   },
   "devDependencies": {
-    "ajv": "8.17.1"
+    "ajv": "8.20.0"
   }
 }

@@ -8,6 +8,12 @@ on:
       - ".github/workflows/schema-conformance.yml"
       - "package.json"
       - "package-lock.json"
+      - ".node-version"
+      - "AGENTS.md"
+      - "README.md"
+      - ".agents/**"
+      - ".codex/**"
+      - "third_party/ecc/**"
       - "scripts/**"
       - "schemas/v1/**"
       - "validators/**"
@@ -52,14 +58,17 @@ jobs:
         shell: bash
     steps:
       - name: Check out exact commit
-        uses: actions/checkout@v4
-      - name: Use Node.js 22
-        uses: actions/setup-node@v4
+        uses: actions/checkout@v7
+      - name: Use Node.js 26 LTS
+        uses: actions/setup-node@v7
         with:
-          node-version: "22"
+          node-version-file: .node-version
+          package-manager-cache: false
       - name: Install locked dependencies
         run: npm ci --ignore-scripts --no-audit --no-fund
-      - name: Run schema, graph, production, stress and Node.js 22 coverage gates
+      - name: Audit locked dependencies
+        run: npm audit --audit-level=moderate
+      - name: Run schema, graph, production, stress and Node.js 26 coverage gates
         run: npm test
       - name: Validate Phase 7 candidate batch
         run: |

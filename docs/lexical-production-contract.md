@@ -29,10 +29,10 @@ A candidate batch JSON is:
 - `language + lemma + POS` is only a homograph/duplicate **hint**. It is neither a stable ID nor a reason to merge senses.
 - New canonical IDs are immutable, lowercase prefixed UUIDv7 (RFC 9562); a record receives one ID only when the prepared state is persisted. State preserves `mappings`, `sourceMappings`, `batches`, `records` and append-only `history`.
 - Unicode NFC is applied to lexical `lemma` and `form` for normalized replay; original source attestations are never silently rewritten. Vietnamese diacritics remain meaningful.
-- A batch is bounded to 10,000 candidates; failure leaves the previous state untouched. Every accepted batch is schema-first validated by Ajv 8.17.1 and graph-validated, including all existing records.
+- A batch is bounded to 10,000 candidates; failure leaves the previous state untouched. Every accepted batch is schema-first validated by Ajv 8.20.0 and graph-validated, including all existing records.
 - Graph, evidence, rights, and review gates are separate. Candidates cannot be implicitly promoted by `prepare` or `revise`.
 
-## Commands (Node.js 22, no database)
+## Commands (Node.js 26 LTS, no database)
 
 ```sh
 npm ci --ignore-scripts --no-audit --no-fund
