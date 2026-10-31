@@ -1,0 +1,1487 @@
+{
+  "formatVersion": 1,
+  "batches": {
+    "pilot-fanout-004": {
+      "digest": "1a15b4aee8ead836be4aeaa98184e22fc902151ad819679443a2e547da892e5c",
+      "recordIds": [
+        "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+        "src_01a193ed-a87d-79b7-a144-5911989fc0b1",
+        "src_01a193ed-a87d-7baf-a9ce-819c2f2984fc",
+        "src_01a193ed-a87d-7390-b8a0-62b245fd220a",
+        "src_01a193ed-a87d-7e43-94c2-a322a440f3b5",
+        "src_01a193ed-a87d-76f2-8d29-2181f47a50f3",
+        "src_01a193ed-a87d-7e94-a10f-7993db6e4755",
+        "src_01a193ed-a87d-7628-9aa3-d52a3dcc1622",
+        "src_01a193ed-a87e-7e10-a024-493c4239c40e",
+        "src_01a193ed-a87e-7425-94b9-670233b17ecf",
+        "lex_01a193ed-a87e-795a-9d62-ffe3da1c2cc8",
+        "sns_01a193ed-a87e-78b7-8de9-580567250234",
+        "eqv_01a193ed-a87e-7cbb-a6c4-57b1227c6ad2",
+        "lex_01a193ed-a87e-7dc7-b765-181aace66374",
+        "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
+        "eqv_01a193ed-a87e-75b1-88db-0134459a7fad",
+        "lex_01a193ed-a87e-72e4-9dca-659acfba0eb8",
+        "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
+        "eqv_01a193ed-a87e-7f2e-a4b1-745b0def8f8f",
+        "lex_01a193ed-a87e-74fe-aba0-04429bb16e72",
+        "sns_01a193ed-a87e-7450-a6d1-3fd73884f322",
+        "eqv_01a193ed-a87e-74fa-982a-23355ef35146",
+        "lex_01a193ed-a87e-7167-aaa9-993dbdcb4d1f",
+        "sns_01a193ed-a87e-7992-9030-92faa55655b4",
+        "eqv_01a193ed-a87e-72bb-87d8-8364114e27a8",
+        "lex_01a193ed-a87e-7158-9e54-b74f5028ff28",
+        "sns_01a193ed-a87e-7d27-baa6-633285bbe58a",
+        "eqv_01a193ed-a87e-73a7-863e-782fb09e0648",
+        "lex_01a193ed-a87e-7a58-830b-935da707b70d",
+        "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760",
+        "eqv_01a193ed-a87e-758e-899d-001c22a4579f",
+        "frm_01a193ed-a87e-712b-b794-81ba494a6ec2",
+        "frm_01a193ed-a87e-780b-946f-d46ff74a453a",
+        "frm_01a193ed-a87e-7f91-aa87-7818cd7b5e8a",
+        "evd_01a193ed-a87e-70d4-b87f-fb8ae44b03ab",
+        "evd_01a193ed-a87e-7e52-8fa7-73c8a3c0f90a",
+        "evd_01a193ed-a87e-73e6-958b-24fd55fb2fb4",
+        "evd_01a193ed-a87e-703b-a1db-ceec041e4cef",
+        "evd_01a193ed-a87e-7d4a-9c15-325d1f9f336d",
+        "evd_01a193ed-a87e-775a-820f-4996f1b872d1",
+        "evd_01a193ed-a87e-713e-979e-90500ed4e434",
+        "evd_01a193ed-a87e-7cf3-8a8a-d19d1ae903c9",
+        "evd_01a193ed-a87e-7831-90d8-2cd64e4b2335",
+        "evd_01a193ed-a87e-7e7d-91a0-1882a13fd52b",
+        "evd_01a193ed-a87e-7c66-80ed-01f7f038db3c"
+      ],
+      "contractVersion": "2.0.0"
+    }
+  },
+  "mappings": {
+    "pilot-fanout-004#source-mla": {
+      "canonicalId": "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "13713a84fb1412ecd2988393529d07d25cf6e04bc6ffa219a73d715014ece33f"
+    },
+    "pilot-fanout-004#source-bbc": {
+      "canonicalId": "src_01a193ed-a87d-79b7-a144-5911989fc0b1",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "102c8ab41cd7409fb48273bce7aa76e9bcdcf5bca51000ade7c7137fd4188174"
+    },
+    "pilot-fanout-004#source-oxford": {
+      "canonicalId": "src_01a193ed-a87d-7baf-a9ce-819c2f2984fc",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "92fdf055d24a307ca3e0c9686e500654350f46aeec53830c95a7e1563f1b8211"
+    },
+    "pilot-fanout-004#source-cambridge-sample": {
+      "canonicalId": "src_01a193ed-a87d-7390-b8a0-62b245fd220a",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "23f4da779239d3deeb0cb234dcbc090ee04ec41fc108be24f3076244ea81ff0e"
+    },
+    "pilot-fanout-004#source-cambridge-economic-grammar": {
+      "canonicalId": "src_01a193ed-a87d-7e43-94c2-a322a440f3b5",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "8b059fd6889014b75de67fbf769b8492e88ae4013ee39160a76bc62b55634882"
+    },
+    "pilot-fanout-004#source-cambridge-vi-affect": {
+      "canonicalId": "src_01a193ed-a87d-76f2-8d29-2181f47a50f3",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "ea23a00bc9cc3ac7171ea8d12cdb4a71ec73d066c8d795c41440bbfcd5e2a9ed"
+    },
+    "pilot-fanout-004#source-cambridge-vi-effect": {
+      "canonicalId": "src_01a193ed-a87d-7e94-a10f-7993db6e4755",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "aeb1d7a66c21633e828e738680de72e7e95b5d281bb3dc9a17e1a5f5f8dc4f04"
+    },
+    "pilot-fanout-004#source-cambridge-vi-rise": {
+      "canonicalId": "src_01a193ed-a87d-7628-9aa3-d52a3dcc1622",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "56cd3194f12a7284340926e28023e09b7749fa6b612a82426527d07c288e5a37"
+    },
+    "pilot-fanout-004#source-cambridge-vi-raise": {
+      "canonicalId": "src_01a193ed-a87e-7e10-a024-493c4239c40e",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "b9cd447c8738b636c2aa936ef457ad6741aa5278fb33153cf77df4bedc219978"
+    },
+    "pilot-fanout-004#source-cambridge-vi-economic": {
+      "canonicalId": "src_01a193ed-a87e-7425-94b9-670233b17ecf",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "f9816599b6dd21d8eee81574d6fe60bd225d934ba884c0dd406476212ce2e578"
+    },
+    "pilot-fanout-004#entry-affect-verb": {
+      "canonicalId": "lex_01a193ed-a87e-795a-9d62-ffe3da1c2cc8",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "b98d7b17382217644b74f5446a595ce7111cad97bcb3324deee38ec07c4fb82c"
+    },
+    "pilot-fanout-004#sense-affect-influence": {
+      "canonicalId": "sns_01a193ed-a87e-78b7-8de9-580567250234",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "db8c10bb89cc29787b1d90ba816a7e72d5961b92e3ff288c0a6775f94cf0c98f"
+    },
+    "pilot-fanout-004#gloss-affect-influence": {
+      "canonicalId": "eqv_01a193ed-a87e-7cbb-a6c4-57b1227c6ad2",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "5d88e778f17fc2fc554e2660b98824faa5821677f665fdeeee4648b967ec12a5"
+    },
+    "pilot-fanout-004#entry-effect-noun": {
+      "canonicalId": "lex_01a193ed-a87e-7dc7-b765-181aace66374",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "ae4336dadf13201da80cbfb3ef533166e950699e129a9e0aa9d7b2c3eb0e2145"
+    },
+    "pilot-fanout-004#sense-effect-result": {
+      "canonicalId": "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "b62564b6be4e41907d941f5f1dcf71e9ee5fdd06bf0d8ee7ccbe7cef88638b70"
+    },
+    "pilot-fanout-004#gloss-effect-result": {
+      "canonicalId": "eqv_01a193ed-a87e-75b1-88db-0134459a7fad",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "b6f5a55ef33a4cfb8831cba1102f70b85f316277602fdbd09ea0f0afa345a83e"
+    },
+    "pilot-fanout-004#entry-effect-verb": {
+      "canonicalId": "lex_01a193ed-a87e-72e4-9dca-659acfba0eb8",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "e4d92d2e809fe172826a13e3991cd1402c39c9fc5a4a68f49d95000357df67c4"
+    },
+    "pilot-fanout-004#sense-effect-bring-about": {
+      "canonicalId": "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "aefb46b73937d0d07a9708fec62134497322db68e08fdfd381196aed520e2dd9"
+    },
+    "pilot-fanout-004#gloss-effect-bring-about": {
+      "canonicalId": "eqv_01a193ed-a87e-7f2e-a4b1-745b0def8f8f",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "b0811066237bab7cf131bb0726317ea45002e42f3f1ed8e6ae512c2d8995b37e"
+    },
+    "pilot-fanout-004#entry-rise-verb": {
+      "canonicalId": "lex_01a193ed-a87e-74fe-aba0-04429bb16e72",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "88882fa7ab7a216028e7c515a0f7f519608bafdfdd3d862378b5b69fe1364d99"
+    },
+    "pilot-fanout-004#sense-rise-increase": {
+      "canonicalId": "sns_01a193ed-a87e-7450-a6d1-3fd73884f322",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "067243d3d65db38eb919feecb599c52c458b4b56bd56178c8bd515bb2cc2f044"
+    },
+    "pilot-fanout-004#gloss-rise-increase": {
+      "canonicalId": "eqv_01a193ed-a87e-74fa-982a-23355ef35146",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "942572ff9e5e40c35c500748ee83e13edd70ec0f7b3036b8ccea4191e20a7cbe"
+    },
+    "pilot-fanout-004#entry-raise-verb": {
+      "canonicalId": "lex_01a193ed-a87e-7167-aaa9-993dbdcb4d1f",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "88d3233ddd8a20b7a8571b19b1083ea85cf9d00a60cb144016aab80092de7a16"
+    },
+    "pilot-fanout-004#sense-raise-increase": {
+      "canonicalId": "sns_01a193ed-a87e-7992-9030-92faa55655b4",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "9b39cc143c8d64fe7adb3e84e346c7d5f7a2807d7a82c8446122e042e1902967"
+    },
+    "pilot-fanout-004#gloss-raise-increase": {
+      "canonicalId": "eqv_01a193ed-a87e-72bb-87d8-8364114e27a8",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "73eef3ce5138b30c0c44913eaf889be91b543541a724824de98c2fd1ea6be367"
+    },
+    "pilot-fanout-004#entry-economic-adj": {
+      "canonicalId": "lex_01a193ed-a87e-7158-9e54-b74f5028ff28",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "37995cbc963c4a1fd17542da42bfed1efcdd401f4a94f4fe0a75c7001b65c609"
+    },
+    "pilot-fanout-004#sense-economic-economy": {
+      "canonicalId": "sns_01a193ed-a87e-7d27-baa6-633285bbe58a",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "6411da42a63caba446d3a130793a0a62c4e2a232c4025469a26bbd5322173849"
+    },
+    "pilot-fanout-004#gloss-economic-economy": {
+      "canonicalId": "eqv_01a193ed-a87e-73a7-863e-782fb09e0648",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "05196f0d52c186a20af0837615ac7b0a1b2f3f8877642dc77a28e002ba4c5072"
+    },
+    "pilot-fanout-004#entry-economical-adj": {
+      "canonicalId": "lex_01a193ed-a87e-7a58-830b-935da707b70d",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "4695d0ebd57364295ccdd9444fade1db598ddd95d9611a6acf229b5ab0ccd7f1"
+    },
+    "pilot-fanout-004#sense-economical-resources": {
+      "canonicalId": "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "0a3b1e1c3a3c28f3ee134c99e94904abe77114996d772c03a4460b28d901d24c"
+    },
+    "pilot-fanout-004#gloss-economical-resources": {
+      "canonicalId": "eqv_01a193ed-a87e-758e-899d-001c22a4579f",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "e8582f495927f70e904ded7b7f1c2f98c4e5f8fbd0e75df6981a2f5726b1c2ca"
+    },
+    "pilot-fanout-004#form-rose": {
+      "canonicalId": "frm_01a193ed-a87e-712b-b794-81ba494a6ec2",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "63e57fb000be52261eee8e00506bbbcd0ac0305fa0bd10549420dbc39848f6ac"
+    },
+    "pilot-fanout-004#form-risen": {
+      "canonicalId": "frm_01a193ed-a87e-780b-946f-d46ff74a453a",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "93e5d9302aa2fd42212b4d9a476efad2caff02ae0b9cfa59ef0fac9c5c5dfedf"
+    },
+    "pilot-fanout-004#form-raised": {
+      "canonicalId": "frm_01a193ed-a87e-7f91-aa87-7818cd7b5e8a",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "62f81e44fca7328ff4ae8c048cb57771739d855bffd99deb4688d8ff3dccfe55"
+    },
+    "pilot-fanout-004#evidence-affect-influence": {
+      "canonicalId": "evd_01a193ed-a87e-70d4-b87f-fb8ae44b03ab",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "046dbd1262e1ccbf69d16872c08148350d92e9913f4c1c063ed1083504e8e93f"
+    },
+    "pilot-fanout-004#evidence-effect-result": {
+      "canonicalId": "evd_01a193ed-a87e-7e52-8fa7-73c8a3c0f90a",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "70ea90110618c7924ad413454cb6c49808b185ebde7fe45c680dbcce2ee56593"
+    },
+    "pilot-fanout-004#evidence-effect-bring-about": {
+      "canonicalId": "evd_01a193ed-a87e-73e6-958b-24fd55fb2fb4",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "3949d0a668ae7171d15224514af08724b378a5d3387443698cf68a061c15134d"
+    },
+    "pilot-fanout-004#evidence-affect-transitivity": {
+      "canonicalId": "evd_01a193ed-a87e-703b-a1db-ceec041e4cef",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "b9c9042d38707213f7531b9dc6e25bbca6de16d9380a5c64140da3dac67440dd"
+    },
+    "pilot-fanout-004#evidence-rise-meaning": {
+      "canonicalId": "evd_01a193ed-a87e-7d4a-9c15-325d1f9f336d",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "b9ce56f1e98620bc9451c6bd1ef63b36e194032f0adc2630a20bb2a9054a7c9a"
+    },
+    "pilot-fanout-004#evidence-rise-transitivity": {
+      "canonicalId": "evd_01a193ed-a87e-775a-820f-4996f1b872d1",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "b378aaafb86a92c73cfd39fab202fca9346857c4ad353a130b5c5fd331ffd44d"
+    },
+    "pilot-fanout-004#evidence-raise-meaning": {
+      "canonicalId": "evd_01a193ed-a87e-713e-979e-90500ed4e434",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "832e78de7b0ce61415ce6e7798b20fe2bcf024d76e50e029fd68341684f2d2dc"
+    },
+    "pilot-fanout-004#evidence-raise-transitivity": {
+      "canonicalId": "evd_01a193ed-a87e-7cf3-8a8a-d19d1ae903c9",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "8575e4bee2d908c36111d416ed9db121d1cd35e3062c565f957a0321459354af"
+    },
+    "pilot-fanout-004#evidence-form-rose": {
+      "canonicalId": "evd_01a193ed-a87e-7831-90d8-2cd64e4b2335",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "9e6e99f425bc8f63a11d9f6787a050c8d2e143b13c7e4cb2dbead6cca5937e87"
+    },
+    "pilot-fanout-004#evidence-form-risen": {
+      "canonicalId": "evd_01a193ed-a87e-7e7d-91a0-1882a13fd52b",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "d31af04c82012e86668b7a446360d5615c159915e05cb44e7fb84cbb60971bc9"
+    },
+    "pilot-fanout-004#evidence-form-raised": {
+      "canonicalId": "evd_01a193ed-a87e-7c66-80ed-01f7f038db3c",
+      "batchId": "pilot-fanout-004",
+      "contentDigest": "d2c0512196575bf0c3df3d6c9b39f0e662c99319176be80a3aadaa53d5fc369e"
+    }
+  },
+  "sourceMappings": {
+    "pilot-fanout-004:editorial-proposal:v1:source-mla": {
+      "canonicalId": "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+      "contentDigest": "13713a84fb1412ecd2988393529d07d25cf6e04bc6ffa219a73d715014ece33f",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:source-bbc": {
+      "canonicalId": "src_01a193ed-a87d-79b7-a144-5911989fc0b1",
+      "contentDigest": "102c8ab41cd7409fb48273bce7aa76e9bcdcf5bca51000ade7c7137fd4188174",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:source-oxford": {
+      "canonicalId": "src_01a193ed-a87d-7baf-a9ce-819c2f2984fc",
+      "contentDigest": "92fdf055d24a307ca3e0c9686e500654350f46aeec53830c95a7e1563f1b8211",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:source-cambridge-sample": {
+      "canonicalId": "src_01a193ed-a87d-7390-b8a0-62b245fd220a",
+      "contentDigest": "23f4da779239d3deeb0cb234dcbc090ee04ec41fc108be24f3076244ea81ff0e",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:source-cambridge-economic-grammar": {
+      "canonicalId": "src_01a193ed-a87d-7e43-94c2-a322a440f3b5",
+      "contentDigest": "8b059fd6889014b75de67fbf769b8492e88ae4013ee39160a76bc62b55634882",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:source-cambridge-vi-affect": {
+      "canonicalId": "src_01a193ed-a87d-76f2-8d29-2181f47a50f3",
+      "contentDigest": "ea23a00bc9cc3ac7171ea8d12cdb4a71ec73d066c8d795c41440bbfcd5e2a9ed",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:source-cambridge-vi-effect": {
+      "canonicalId": "src_01a193ed-a87d-7e94-a10f-7993db6e4755",
+      "contentDigest": "aeb1d7a66c21633e828e738680de72e7e95b5d281bb3dc9a17e1a5f5f8dc4f04",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:source-cambridge-vi-rise": {
+      "canonicalId": "src_01a193ed-a87d-7628-9aa3-d52a3dcc1622",
+      "contentDigest": "56cd3194f12a7284340926e28023e09b7749fa6b612a82426527d07c288e5a37",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:source-cambridge-vi-raise": {
+      "canonicalId": "src_01a193ed-a87e-7e10-a024-493c4239c40e",
+      "contentDigest": "b9cd447c8738b636c2aa936ef457ad6741aa5278fb33153cf77df4bedc219978",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:source-cambridge-vi-economic": {
+      "canonicalId": "src_01a193ed-a87e-7425-94b9-670233b17ecf",
+      "contentDigest": "f9816599b6dd21d8eee81574d6fe60bd225d934ba884c0dd406476212ce2e578",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:entry-affect-verb": {
+      "canonicalId": "lex_01a193ed-a87e-795a-9d62-ffe3da1c2cc8",
+      "contentDigest": "b98d7b17382217644b74f5446a595ce7111cad97bcb3324deee38ec07c4fb82c",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:sense-affect-influence": {
+      "canonicalId": "sns_01a193ed-a87e-78b7-8de9-580567250234",
+      "contentDigest": "db8c10bb89cc29787b1d90ba816a7e72d5961b92e3ff288c0a6775f94cf0c98f",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:gloss-affect-influence": {
+      "canonicalId": "eqv_01a193ed-a87e-7cbb-a6c4-57b1227c6ad2",
+      "contentDigest": "5d88e778f17fc2fc554e2660b98824faa5821677f665fdeeee4648b967ec12a5",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:entry-effect-noun": {
+      "canonicalId": "lex_01a193ed-a87e-7dc7-b765-181aace66374",
+      "contentDigest": "ae4336dadf13201da80cbfb3ef533166e950699e129a9e0aa9d7b2c3eb0e2145",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:sense-effect-result": {
+      "canonicalId": "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
+      "contentDigest": "b62564b6be4e41907d941f5f1dcf71e9ee5fdd06bf0d8ee7ccbe7cef88638b70",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:gloss-effect-result": {
+      "canonicalId": "eqv_01a193ed-a87e-75b1-88db-0134459a7fad",
+      "contentDigest": "b6f5a55ef33a4cfb8831cba1102f70b85f316277602fdbd09ea0f0afa345a83e",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:entry-effect-verb": {
+      "canonicalId": "lex_01a193ed-a87e-72e4-9dca-659acfba0eb8",
+      "contentDigest": "e4d92d2e809fe172826a13e3991cd1402c39c9fc5a4a68f49d95000357df67c4",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:sense-effect-bring-about": {
+      "canonicalId": "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
+      "contentDigest": "aefb46b73937d0d07a9708fec62134497322db68e08fdfd381196aed520e2dd9",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:gloss-effect-bring-about": {
+      "canonicalId": "eqv_01a193ed-a87e-7f2e-a4b1-745b0def8f8f",
+      "contentDigest": "b0811066237bab7cf131bb0726317ea45002e42f3f1ed8e6ae512c2d8995b37e",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:entry-rise-verb": {
+      "canonicalId": "lex_01a193ed-a87e-74fe-aba0-04429bb16e72",
+      "contentDigest": "88882fa7ab7a216028e7c515a0f7f519608bafdfdd3d862378b5b69fe1364d99",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:sense-rise-increase": {
+      "canonicalId": "sns_01a193ed-a87e-7450-a6d1-3fd73884f322",
+      "contentDigest": "067243d3d65db38eb919feecb599c52c458b4b56bd56178c8bd515bb2cc2f044",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:gloss-rise-increase": {
+      "canonicalId": "eqv_01a193ed-a87e-74fa-982a-23355ef35146",
+      "contentDigest": "942572ff9e5e40c35c500748ee83e13edd70ec0f7b3036b8ccea4191e20a7cbe",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:entry-raise-verb": {
+      "canonicalId": "lex_01a193ed-a87e-7167-aaa9-993dbdcb4d1f",
+      "contentDigest": "88d3233ddd8a20b7a8571b19b1083ea85cf9d00a60cb144016aab80092de7a16",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:sense-raise-increase": {
+      "canonicalId": "sns_01a193ed-a87e-7992-9030-92faa55655b4",
+      "contentDigest": "9b39cc143c8d64fe7adb3e84e346c7d5f7a2807d7a82c8446122e042e1902967",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:gloss-raise-increase": {
+      "canonicalId": "eqv_01a193ed-a87e-72bb-87d8-8364114e27a8",
+      "contentDigest": "73eef3ce5138b30c0c44913eaf889be91b543541a724824de98c2fd1ea6be367",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:entry-economic-adj": {
+      "canonicalId": "lex_01a193ed-a87e-7158-9e54-b74f5028ff28",
+      "contentDigest": "37995cbc963c4a1fd17542da42bfed1efcdd401f4a94f4fe0a75c7001b65c609",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:sense-economic-economy": {
+      "canonicalId": "sns_01a193ed-a87e-7d27-baa6-633285bbe58a",
+      "contentDigest": "6411da42a63caba446d3a130793a0a62c4e2a232c4025469a26bbd5322173849",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:gloss-economic-economy": {
+      "canonicalId": "eqv_01a193ed-a87e-73a7-863e-782fb09e0648",
+      "contentDigest": "05196f0d52c186a20af0837615ac7b0a1b2f3f8877642dc77a28e002ba4c5072",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:entry-economical-adj": {
+      "canonicalId": "lex_01a193ed-a87e-7a58-830b-935da707b70d",
+      "contentDigest": "4695d0ebd57364295ccdd9444fade1db598ddd95d9611a6acf229b5ab0ccd7f1",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:sense-economical-resources": {
+      "canonicalId": "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760",
+      "contentDigest": "0a3b1e1c3a3c28f3ee134c99e94904abe77114996d772c03a4460b28d901d24c",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:gloss-economical-resources": {
+      "canonicalId": "eqv_01a193ed-a87e-758e-899d-001c22a4579f",
+      "contentDigest": "e8582f495927f70e904ded7b7f1c2f98c4e5f8fbd0e75df6981a2f5726b1c2ca",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:form-rose": {
+      "canonicalId": "frm_01a193ed-a87e-712b-b794-81ba494a6ec2",
+      "contentDigest": "63e57fb000be52261eee8e00506bbbcd0ac0305fa0bd10549420dbc39848f6ac",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:form-risen": {
+      "canonicalId": "frm_01a193ed-a87e-780b-946f-d46ff74a453a",
+      "contentDigest": "93e5d9302aa2fd42212b4d9a476efad2caff02ae0b9cfa59ef0fac9c5c5dfedf",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:form-raised": {
+      "canonicalId": "frm_01a193ed-a87e-7f91-aa87-7818cd7b5e8a",
+      "contentDigest": "62f81e44fca7328ff4ae8c048cb57771739d855bffd99deb4688d8ff3dccfe55",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:evidence-affect-influence": {
+      "canonicalId": "evd_01a193ed-a87e-70d4-b87f-fb8ae44b03ab",
+      "contentDigest": "046dbd1262e1ccbf69d16872c08148350d92e9913f4c1c063ed1083504e8e93f",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:evidence-effect-result": {
+      "canonicalId": "evd_01a193ed-a87e-7e52-8fa7-73c8a3c0f90a",
+      "contentDigest": "70ea90110618c7924ad413454cb6c49808b185ebde7fe45c680dbcce2ee56593",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:evidence-effect-bring-about": {
+      "canonicalId": "evd_01a193ed-a87e-73e6-958b-24fd55fb2fb4",
+      "contentDigest": "3949d0a668ae7171d15224514af08724b378a5d3387443698cf68a061c15134d",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:evidence-affect-transitivity": {
+      "canonicalId": "evd_01a193ed-a87e-703b-a1db-ceec041e4cef",
+      "contentDigest": "b9c9042d38707213f7531b9dc6e25bbca6de16d9380a5c64140da3dac67440dd",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:evidence-rise-meaning": {
+      "canonicalId": "evd_01a193ed-a87e-7d4a-9c15-325d1f9f336d",
+      "contentDigest": "b9ce56f1e98620bc9451c6bd1ef63b36e194032f0adc2630a20bb2a9054a7c9a",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:evidence-rise-transitivity": {
+      "canonicalId": "evd_01a193ed-a87e-775a-820f-4996f1b872d1",
+      "contentDigest": "b378aaafb86a92c73cfd39fab202fca9346857c4ad353a130b5c5fd331ffd44d",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:evidence-raise-meaning": {
+      "canonicalId": "evd_01a193ed-a87e-713e-979e-90500ed4e434",
+      "contentDigest": "832e78de7b0ce61415ce6e7798b20fe2bcf024d76e50e029fd68341684f2d2dc",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:evidence-raise-transitivity": {
+      "canonicalId": "evd_01a193ed-a87e-7cf3-8a8a-d19d1ae903c9",
+      "contentDigest": "8575e4bee2d908c36111d416ed9db121d1cd35e3062c565f957a0321459354af",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:evidence-form-rose": {
+      "canonicalId": "evd_01a193ed-a87e-7831-90d8-2cd64e4b2335",
+      "contentDigest": "9e6e99f425bc8f63a11d9f6787a050c8d2e143b13c7e4cb2dbead6cca5937e87",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:evidence-form-risen": {
+      "canonicalId": "evd_01a193ed-a87e-7e7d-91a0-1882a13fd52b",
+      "contentDigest": "d31af04c82012e86668b7a446360d5615c159915e05cb44e7fb84cbb60971bc9",
+      "firstBatchId": "pilot-fanout-004"
+    },
+    "pilot-fanout-004:editorial-proposal:v1:evidence-form-raised": {
+      "canonicalId": "evd_01a193ed-a87e-7c66-80ed-01f7f038db3c",
+      "contentDigest": "d2c0512196575bf0c3df3d6c9b39f0e662c99319176be80a3aadaa53d5fc369e",
+      "firstBatchId": "pilot-fanout-004"
+    }
+  },
+  "records": [
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "title": "To Affect or Effect—to What Effect?",
+      "url": "https://style.mla.org/affect-or-effect/",
+      "provider": "MLA Style Center",
+      "edition": "Online article; edition not stated",
+      "sourceIdentifier": "https://style.mla.org/affect-or-effect/",
+      "sourceType": "other",
+      "retrievedAt": "2026-11-01",
+      "license": "Reference-only; no redistribution permission established.",
+      "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+      "attribution": "Zahra Brown, MLA Style Center. Cited works were not independently consulted.",
+      "materialVersion": "Read-only parent consulted 2026-11-01; integration writer reopened extracted page text on 2026-11-01.",
+      "rights": {
+        "status": "reference_only"
+      },
+      "_id": "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "title": "English In A Minute: Raise vs rise",
+      "url": "https://downloads.bbc.co.uk/learningenglish/eiam/unit-1/180727_raise_vs_rise.pdf",
+      "provider": "BBC Learning English",
+      "edition": "2018",
+      "sourceIdentifier": "https://downloads.bbc.co.uk/learningenglish/eiam/unit-1/180727_raise_vs_rise.pdf",
+      "sourceType": "other",
+      "retrievedAt": "2026-11-01",
+      "license": "Reference-only; no redistribution permission established.",
+      "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+      "attribution": "© British Broadcasting Corporation 2018. PDF says it is not a word-for-word transcript.",
+      "materialVersion": "Read-only parent consulted 2026-11-01; writer reopened PDF text, page 1, on 2026-11-01.",
+      "rights": {
+        "status": "reference_only"
+      },
+      "_id": "src_01a193ed-a87d-79b7-a144-5911989fc0b1",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "title": "Profitable: synonym discussion including economic",
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/profitable",
+      "provider": "Oxford University Press",
+      "edition": "Online edition/version unstated",
+      "sourceIdentifier": "https://www.oxfordlearnersdictionaries.com/definition/english/profitable",
+      "sourceType": "dictionary",
+      "retrievedAt": "2026-11-01",
+      "license": "Reference-only; no redistribution permission established.",
+      "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+      "attribution": "Oxford Advanced Learner’s Dictionary; rights remain reference-only.",
+      "materialVersion": "Read-only parent consulted 2026-11-01; writer reopened extracted page text on 2026-11-01.",
+      "rights": {
+        "status": "reference_only"
+      },
+      "_id": "src_01a193ed-a87d-7baf-a9ce-819c2f2984fc",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "title": "Cambridge Advanced Learner’s Dictionary sample: affect",
+      "url": "https://assets.cambridge.org/97805215/31054/sample/9780521531054ws.pdf",
+      "provider": "Cambridge University Press",
+      "edition": "2003; paperback ISBN 0 521 53105 5",
+      "sourceIdentifier": "https://assets.cambridge.org/97805215/31054/sample/9780521531054ws.pdf",
+      "sourceType": "dictionary",
+      "retrievedAt": "2026-11-01",
+      "license": "Reference-only; no redistribution permission established.",
+      "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+      "attribution": "© Cambridge University Press 2003. Copyright page requires permission for reproduction subject to stated exceptions; no permission established here.",
+      "materialVersion": "Read-only parent consulted 2026-11-01; writer reopened PDF text on 2026-11-01, PDF page 24 / printed page 20.",
+      "rights": {
+        "status": "reference_only"
+      },
+      "_id": "src_01a193ed-a87d-7390-b8a0-62b245fd220a",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "title": "English Grammar Today: Economic or economical?",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/economic-or-economical",
+      "provider": "Cambridge Dictionary",
+      "edition": "Online edition/version unstated",
+      "sourceIdentifier": "https://dictionary.cambridge.org/grammar/british-grammar/economic-or-economical",
+      "sourceType": "dictionary",
+      "retrievedAt": "2026-11-01",
+      "license": "Reference-only; no redistribution permission established.",
+      "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+      "attribution": "Cambridge-hosted grammar reference; no reuse grant established.",
+      "materialVersion": "Parent handoff reports consultation on 2026-11-01, some Cambridge access limited to search-index extracts; exact access mode not supplied per claim. Writer direct fetch returned 403 on 2026-11-01; full text not independently inspected.",
+      "rights": {
+        "status": "reference_only"
+      },
+      "_id": "src_01a193ed-a87d-7e43-94c2-a322a440f3b5",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "title": "Cambridge English–Vietnamese: affect",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/affect",
+      "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+      "edition": "Underlying edition not exposed in parent handoff",
+      "sourceIdentifier": "https://dictionary.cambridge.org/dictionary/english-vietnamese/affect",
+      "sourceType": "dictionary",
+      "retrievedAt": "2026-11-01",
+      "license": "Reference-only; no redistribution permission established.",
+      "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+      "attribution": "Underlying affect/effect edition and rights attribution not established; Cambridge hosting is not a redistribution grant.",
+      "materialVersion": "Parent handoff reports consultation 2026-11-01 with some search-index-only extracts and direct 403 responses; exact per-entry retrieval mode unresolved. Writer did not obtain full bilingual entry text. No bilingual claim authenticated.",
+      "rights": {
+        "status": "reference_only"
+      },
+      "_id": "src_01a193ed-a87d-76f2-8d29-2181f47a50f3",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "title": "Cambridge English–Vietnamese: effect",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/effect",
+      "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+      "edition": "Underlying edition not exposed in parent handoff",
+      "sourceIdentifier": "https://dictionary.cambridge.org/dictionary/english-vietnamese/effect",
+      "sourceType": "dictionary",
+      "retrievedAt": "2026-11-01",
+      "license": "Reference-only; no redistribution permission established.",
+      "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+      "attribution": "Underlying affect/effect edition and rights attribution not established; Cambridge hosting is not a redistribution grant.",
+      "materialVersion": "Parent handoff reports consultation 2026-11-01 with some search-index-only extracts and direct 403 responses; exact per-entry retrieval mode unresolved. Writer did not obtain full bilingual entry text. No bilingual claim authenticated.",
+      "rights": {
+        "status": "reference_only"
+      },
+      "_id": "src_01a193ed-a87d-7e94-a10f-7993db6e4755",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "title": "Cambridge English–Vietnamese: rise",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/rise",
+      "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+      "edition": "PASSWORD English–Vietnamese Dictionary, 2015 (parent extract attribution)",
+      "sourceIdentifier": "https://dictionary.cambridge.org/dictionary/english-vietnamese/rise",
+      "sourceType": "dictionary",
+      "retrievedAt": "2026-11-01",
+      "license": "Reference-only; no redistribution permission established.",
+      "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+      "attribution": "Parent extracts attribute PASSWORD English–Vietnamese Dictionary ©2015 K Dictionaries Ltd. Cambridge hosting does not establish underlying reuse rights.",
+      "materialVersion": "Parent handoff reports consultation 2026-11-01 with some search-index-only extracts and direct 403 responses; exact per-entry retrieval mode unresolved. Writer did not obtain full bilingual entry text. No bilingual claim authenticated.",
+      "rights": {
+        "status": "reference_only"
+      },
+      "_id": "src_01a193ed-a87d-7628-9aa3-d52a3dcc1622",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "title": "Cambridge English–Vietnamese: raise",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/raise",
+      "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+      "edition": "PASSWORD English–Vietnamese Dictionary, 2015 (parent extract attribution)",
+      "sourceIdentifier": "https://dictionary.cambridge.org/dictionary/english-vietnamese/raise",
+      "sourceType": "dictionary",
+      "retrievedAt": "2026-11-01",
+      "license": "Reference-only; no redistribution permission established.",
+      "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+      "attribution": "Parent extracts attribute PASSWORD English–Vietnamese Dictionary ©2015 K Dictionaries Ltd. Cambridge hosting does not establish underlying reuse rights.",
+      "materialVersion": "Parent handoff reports consultation 2026-11-01 with some search-index-only extracts and direct 403 responses; exact per-entry retrieval mode unresolved. Writer did not obtain full bilingual entry text. No bilingual claim authenticated.",
+      "rights": {
+        "status": "reference_only"
+      },
+      "_id": "src_01a193ed-a87e-7e10-a024-493c4239c40e",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "title": "Cambridge English–Vietnamese: economic",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/economic",
+      "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+      "edition": "PASSWORD English–Vietnamese Dictionary, 2015 (parent extract attribution)",
+      "sourceIdentifier": "https://dictionary.cambridge.org/dictionary/english-vietnamese/economic",
+      "sourceType": "dictionary",
+      "retrievedAt": "2026-11-01",
+      "license": "Reference-only; no redistribution permission established.",
+      "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+      "attribution": "Parent extracts attribute PASSWORD English–Vietnamese Dictionary ©2015 K Dictionaries Ltd. Cambridge hosting does not establish underlying reuse rights.",
+      "materialVersion": "Parent handoff reports consultation 2026-11-01 with some search-index-only extracts and direct 403 responses; exact per-entry retrieval mode unresolved. Writer did not obtain full bilingual entry text. No bilingual claim authenticated.",
+      "rights": {
+        "status": "reference_only"
+      },
+      "_id": "src_01a193ed-a87e-7425-94b9-670233b17ecf",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "affect",
+      "pos": "VERB",
+      "entryKind": "word",
+      "_id": "lex_01a193ed-a87e-795a-9d62-ffe3da1c2cc8",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01a193ed-a87e-795a-9d62-ffe3da1c2cc8",
+      "definition": "Influence the condition or course of someone or something.",
+      "grammar": {
+        "transitivity": "transitive"
+      },
+      "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
+      "examples": [
+        {
+          "english": "The revised timetable affected attendance.",
+          "exampleType": "unverified_candidate",
+          "editorialStatus": "draft",
+          "translationEvidenceStatus": "unreviewed"
+        }
+      ],
+      "evidenceIds": [
+        "evd_01a193ed-a87e-70d4-b87f-fb8ae44b03ab",
+        "evd_01a193ed-a87e-703b-a1db-ceec041e4cef"
+      ],
+      "_id": "sns_01a193ed-a87e-78b7-8de9-580567250234",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01a193ed-a87e-78b7-8de9-580567250234",
+      "glossVi": "ảnh hưởng đến",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "equivalenceType": "approximate",
+      "context": "influence on attendance or a comparable outcome",
+      "restrictions": [
+        "Provisional editorial gloss proposal; no independently established Vietnamese lexical sense or sense alignment.",
+        "Bilingual source rights and exact contextual support remain pending; the handoff is not independent evidence."
+      ],
+      "translationEvidenceStatus": "evidence_pending",
+      "evidenceIds": [],
+      "_id": "eqv_01a193ed-a87e-7cbb-a6c4-57b1227c6ad2",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "effect",
+      "pos": "NOUN",
+      "entryKind": "word",
+      "_id": "lex_01a193ed-a87e-7dc7-b765-181aace66374",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01a193ed-a87e-7dc7-b765-181aace66374",
+      "definition": "An outcome attributable to an action or circumstance.",
+      "grammar": {},
+      "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
+      "evidenceIds": [
+        "evd_01a193ed-a87e-7e52-8fa7-73c8a3c0f90a"
+      ],
+      "_id": "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
+      "glossVi": "kết quả",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "equivalenceType": "approximate",
+      "context": "a resulting outcome; the alternative gloss tác động needs separate contextual review",
+      "restrictions": [
+        "Provisional editorial gloss proposal; no independently established Vietnamese lexical sense or sense alignment.",
+        "Bilingual source rights and exact contextual support remain pending; the handoff is not independent evidence."
+      ],
+      "translationEvidenceStatus": "evidence_pending",
+      "evidenceIds": [],
+      "_id": "eqv_01a193ed-a87e-75b1-88db-0134459a7fad",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "effect",
+      "pos": "VERB",
+      "entryKind": "word",
+      "_id": "lex_01a193ed-a87e-72e4-9dca-659acfba0eb8",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01a193ed-a87e-72e4-9dca-659acfba0eb8",
+      "definition": "Cause a planned change or outcome to become a reality.",
+      "grammar": {
+        "transitivity": "transitive"
+      },
+      "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
+      "examples": [
+        {
+          "english": "The revised timetable effected a lasting improvement.",
+          "exampleType": "unverified_candidate",
+          "editorialStatus": "draft",
+          "translationEvidenceStatus": "unreviewed"
+        }
+      ],
+      "evidenceIds": [
+        "evd_01a193ed-a87e-73e6-958b-24fd55fb2fb4"
+      ],
+      "_id": "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
+      "glossVi": "tạo ra",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "equivalenceType": "approximate",
+      "context": "bringing about a change or improvement",
+      "restrictions": [
+        "Provisional editorial gloss proposal; no independently established Vietnamese lexical sense or sense alignment.",
+        "Bilingual source rights and exact contextual support remain pending; the handoff is not independent evidence."
+      ],
+      "translationEvidenceStatus": "evidence_pending",
+      "evidenceIds": [],
+      "_id": "eqv_01a193ed-a87e-7f2e-a4b1-745b0def8f8f",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "rise",
+      "pos": "VERB",
+      "entryKind": "word",
+      "_id": "lex_01a193ed-a87e-74fe-aba0-04429bb16e72",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01a193ed-a87e-74fe-aba0-04429bb16e72",
+      "definition": "Become greater in amount or level.",
+      "grammar": {
+        "transitivity": "intransitive"
+      },
+      "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Past tense rose; past participle risen. In this quantitative sense rise has no direct object. This syntactic claim does not imply absence of an external cause. Other senses and noun uses are not covered.",
+      "examples": [
+        {
+          "english": "Transport costs rose.",
+          "exampleType": "unverified_candidate",
+          "editorialStatus": "draft",
+          "translationEvidenceStatus": "unreviewed"
+        }
+      ],
+      "evidenceIds": [
+        "evd_01a193ed-a87e-7d4a-9c15-325d1f9f336d",
+        "evd_01a193ed-a87e-775a-820f-4996f1b872d1"
+      ],
+      "_id": "sns_01a193ed-a87e-7450-a6d1-3fd73884f322",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01a193ed-a87e-7450-a6d1-3fd73884f322",
+      "glossVi": "tăng lên",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "equivalenceType": "approximate",
+      "context": "a quantitative increase, such as transport costs",
+      "restrictions": [
+        "Provisional editorial gloss proposal; no independently established Vietnamese lexical sense or sense alignment.",
+        "Bilingual source rights and exact contextual support remain pending; the handoff is not independent evidence."
+      ],
+      "translationEvidenceStatus": "evidence_pending",
+      "evidenceIds": [],
+      "_id": "eqv_01a193ed-a87e-74fa-982a-23355ef35146",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "raise",
+      "pos": "VERB",
+      "entryKind": "word",
+      "_id": "lex_01a193ed-a87e-7167-aaa9-993dbdcb4d1f",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01a193ed-a87e-7167-aaa9-993dbdcb4d1f",
+      "definition": "Cause an amount or level to become greater.",
+      "grammar": {
+        "transitivity": "transitive"
+      },
+      "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Past tense and past participle raised. A cause need not be human. Passive raised does not become an intransitive lexical use. Physical lifting and other senses are outside this quantitative draft.",
+      "examples": [
+        {
+          "english": "The fuel shortage raised transport costs.",
+          "exampleType": "unverified_candidate",
+          "editorialStatus": "draft",
+          "translationEvidenceStatus": "unreviewed"
+        }
+      ],
+      "evidenceIds": [
+        "evd_01a193ed-a87e-713e-979e-90500ed4e434",
+        "evd_01a193ed-a87e-7cf3-8a8a-d19d1ae903c9"
+      ],
+      "_id": "sns_01a193ed-a87e-7992-9030-92faa55655b4",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01a193ed-a87e-7992-9030-92faa55655b4",
+      "glossVi": "làm tăng",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "equivalenceType": "approximate",
+      "context": "causing a quantitative increase, such as transport costs; nâng lên is pending review for other contexts",
+      "restrictions": [
+        "Provisional editorial gloss proposal; no independently established Vietnamese lexical sense or sense alignment.",
+        "Bilingual source rights and exact contextual support remain pending; the handoff is not independent evidence."
+      ],
+      "translationEvidenceStatus": "evidence_pending",
+      "evidenceIds": [],
+      "_id": "eqv_01a193ed-a87e-72bb-87d8-8364114e27a8",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "economic",
+      "pos": "ADJ",
+      "entryKind": "word",
+      "_id": "lex_01a193ed-a87e-7158-9e54-b74f5028ff28",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01a193ed-a87e-7158-9e54-b74f5028ff28",
+      "definition": "Connected with how an economy operates.",
+      "grammar": {},
+      "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
+      "examples": [
+        {
+          "english": "Economic pressures.",
+          "exampleType": "unverified_candidate",
+          "editorialStatus": "draft",
+          "translationEvidenceStatus": "unreviewed"
+        }
+      ],
+      "evidenceIds": [],
+      "_id": "sns_01a193ed-a87e-7d27-baa6-633285bbe58a",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01a193ed-a87e-7d27-baa6-633285bbe58a",
+      "glossVi": "thuộc về kinh tế",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "equivalenceType": "approximate",
+      "context": "matters concerning an economy",
+      "restrictions": [
+        "Provisional editorial gloss proposal; no independently established Vietnamese lexical sense or sense alignment.",
+        "Bilingual source rights and exact contextual support remain pending; the handoff is not independent evidence."
+      ],
+      "translationEvidenceStatus": "evidence_pending",
+      "evidenceIds": [],
+      "_id": "eqv_01a193ed-a87e-73a7-863e-782fb09e0648",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "language": "en",
+      "lemma": "economical",
+      "pos": "ADJ",
+      "entryKind": "word",
+      "_id": "lex_01a193ed-a87e-7a58-830b-935da707b70d",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01a193ed-a87e-7a58-830b-935da707b70d",
+      "definition": "Using relatively little of a resource for a purpose.",
+      "grammar": {},
+      "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
+      "examples": [
+        {
+          "english": "A printer economical with ink.",
+          "exampleType": "unverified_candidate",
+          "editorialStatus": "draft",
+          "translationEvidenceStatus": "unreviewed"
+        }
+      ],
+      "evidenceIds": [],
+      "_id": "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceSenseId": "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760",
+      "glossVi": "tiết kiệm",
+      "direction": "en_to_vi",
+      "alignmentMode": "gloss_only",
+      "equivalenceType": "approximate",
+      "context": "resource use, such as ink consumption",
+      "restrictions": [
+        "Provisional editorial gloss proposal; no independently established Vietnamese lexical sense or sense alignment.",
+        "Bilingual source rights and exact contextual support remain pending; the handoff is not independent evidence."
+      ],
+      "translationEvidenceStatus": "evidence_pending",
+      "evidenceIds": [],
+      "_id": "eqv_01a193ed-a87e-758e-899d-001c22a4579f",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01a193ed-a87e-74fe-aba0-04429bb16e72",
+      "form": "rose",
+      "evidenceIds": [
+        "evd_01a193ed-a87e-7831-90d8-2cd64e4b2335"
+      ],
+      "_id": "frm_01a193ed-a87e-712b-b794-81ba494a6ec2",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01a193ed-a87e-74fe-aba0-04429bb16e72",
+      "form": "risen",
+      "evidenceIds": [
+        "evd_01a193ed-a87e-7e7d-91a0-1882a13fd52b"
+      ],
+      "_id": "frm_01a193ed-a87e-780b-946f-d46ff74a453a",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "entryId": "lex_01a193ed-a87e-7167-aaa9-993dbdcb4d1f",
+      "form": "raised",
+      "evidenceIds": [
+        "evd_01a193ed-a87e-7c66-80ed-01f7f038db3c"
+      ],
+      "_id": "frm_01a193ed-a87e-7f91-aa87-7818cd7b5e8a",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceId": "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+      "assertionIds": [
+        "sns_01a193ed-a87e-78b7-8de9-580567250234"
+      ],
+      "claim": {
+        "subjectId": "sns_01a193ed-a87e-78b7-8de9-580567250234",
+        "fieldPath": "/definition",
+        "valueDigest": "0fd800fec0b86f8720eb3fe898c376f6d0acd71682f14d67c468f6e532fe3214",
+        "specificity": "contextual_support",
+        "description": "Contextual support for the influence/result/bringing-about distinction; not approval of the drafted definition wording."
+      },
+      "location": "Article paragraphs discussing Garner and the effect verb.",
+      "attestationType": "reference_paraphrase",
+      "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+      "reviewStatus": "unreviewed",
+      "independence": "unestablished",
+      "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+      "limitations": [
+        "AI-mediated reference interpretation; requires independent review.",
+        "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+      ],
+      "_id": "evd_01a193ed-a87e-70d4-b87f-fb8ae44b03ab",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceId": "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+      "assertionIds": [
+        "sns_01a193ed-a87e-763c-a206-a71d777d60a5"
+      ],
+      "claim": {
+        "subjectId": "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
+        "fieldPath": "/definition",
+        "valueDigest": "71a210bca3a724a7aebbdfd9ce9c7fa77e395f7ac740c1cc48663dd570c4f742",
+        "specificity": "contextual_support",
+        "description": "Contextual support for the influence/result/bringing-about distinction; not approval of the drafted definition wording."
+      },
+      "location": "Article paragraphs discussing Garner and the effect verb.",
+      "attestationType": "reference_paraphrase",
+      "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+      "reviewStatus": "unreviewed",
+      "independence": "unestablished",
+      "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+      "limitations": [
+        "AI-mediated reference interpretation; requires independent review.",
+        "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+      ],
+      "_id": "evd_01a193ed-a87e-7e52-8fa7-73c8a3c0f90a",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceId": "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+      "assertionIds": [
+        "sns_01a193ed-a87e-7719-a47a-872b64f8c74d"
+      ],
+      "claim": {
+        "subjectId": "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
+        "fieldPath": "/definition",
+        "valueDigest": "71c399eb42cc99055d6f834b4b47a3d244b53a79a52f821241bad3ebd340e363",
+        "specificity": "contextual_support",
+        "description": "Contextual support for the influence/result/bringing-about distinction; not approval of the drafted definition wording."
+      },
+      "location": "Article paragraphs discussing Garner and the effect verb.",
+      "attestationType": "reference_paraphrase",
+      "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+      "reviewStatus": "unreviewed",
+      "independence": "unestablished",
+      "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+      "limitations": [
+        "AI-mediated reference interpretation; requires independent review.",
+        "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+      ],
+      "_id": "evd_01a193ed-a87e-73e6-958b-24fd55fb2fb4",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceId": "src_01a193ed-a87d-7390-b8a0-62b245fd220a",
+      "assertionIds": [
+        "sns_01a193ed-a87e-78b7-8de9-580567250234"
+      ],
+      "claim": {
+        "subjectId": "sns_01a193ed-a87e-78b7-8de9-580567250234",
+        "fieldPath": "/grammar/transitivity",
+        "valueDigest": "c922756c60a15540ff419cd4efc3453b09c0a53f860c012b7ba11f0d7d702fe1",
+        "specificity": "contextual_support",
+        "description": "The influence use is marked transitive."
+      },
+      "location": "PDF page 24 (printed page 20), affect INFLUENCE.",
+      "attestationType": "reference_paraphrase",
+      "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+      "reviewStatus": "unreviewed",
+      "independence": "unestablished",
+      "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+      "limitations": [
+        "AI-mediated reference interpretation; requires independent review.",
+        "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+      ],
+      "_id": "evd_01a193ed-a87e-703b-a1db-ceec041e4cef",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceId": "src_01a193ed-a87d-79b7-a144-5911989fc0b1",
+      "assertionIds": [
+        "sns_01a193ed-a87e-7450-a6d1-3fd73884f322"
+      ],
+      "claim": {
+        "subjectId": "sns_01a193ed-a87e-7450-a6d1-3fd73884f322",
+        "fieldPath": "/definition",
+        "valueDigest": "b8997648d15bdb0354d586b0d945fa8bf5b3e23a4308cfcb305e024a18ce6889",
+        "specificity": "contextual_support",
+        "description": "Quantitative increase contrasted with causing an increase."
+      },
+      "location": "PDF page 1, explanation and tax example.",
+      "attestationType": "reference_paraphrase",
+      "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+      "reviewStatus": "unreviewed",
+      "independence": "unestablished",
+      "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+      "limitations": [
+        "AI-mediated reference interpretation; requires independent review.",
+        "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage.",
+        "The informal source phrase about rising by itself is not used to claim absence of an external cause."
+      ],
+      "_id": "evd_01a193ed-a87e-7d4a-9c15-325d1f9f336d",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceId": "src_01a193ed-a87d-79b7-a144-5911989fc0b1",
+      "assertionIds": [
+        "sns_01a193ed-a87e-7450-a6d1-3fd73884f322"
+      ],
+      "claim": {
+        "subjectId": "sns_01a193ed-a87e-7450-a6d1-3fd73884f322",
+        "fieldPath": "/grammar/transitivity",
+        "valueDigest": "326a141f5c26042c2b69a0fd72dd564c571bd0ecab79016c90e6ea34c3bd76d3",
+        "specificity": "contextual_support",
+        "description": "Direct-object contrast for rise and raise in the selected sense."
+      },
+      "location": "PDF page 1, direct-object explanation.",
+      "attestationType": "reference_paraphrase",
+      "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+      "reviewStatus": "unreviewed",
+      "independence": "unestablished",
+      "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+      "limitations": [
+        "AI-mediated reference interpretation; requires independent review.",
+        "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+      ],
+      "_id": "evd_01a193ed-a87e-775a-820f-4996f1b872d1",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceId": "src_01a193ed-a87d-79b7-a144-5911989fc0b1",
+      "assertionIds": [
+        "sns_01a193ed-a87e-7992-9030-92faa55655b4"
+      ],
+      "claim": {
+        "subjectId": "sns_01a193ed-a87e-7992-9030-92faa55655b4",
+        "fieldPath": "/definition",
+        "valueDigest": "748d5a47d56338842027d33de6a9ab2a66ae662d1a2275f9075983f41d97b687",
+        "specificity": "contextual_support",
+        "description": "Quantitative increase contrasted with causing an increase."
+      },
+      "location": "PDF page 1, explanation and tax example.",
+      "attestationType": "reference_paraphrase",
+      "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+      "reviewStatus": "unreviewed",
+      "independence": "unestablished",
+      "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+      "limitations": [
+        "AI-mediated reference interpretation; requires independent review.",
+        "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage.",
+        "The informal source phrase about rising by itself is not used to claim absence of an external cause."
+      ],
+      "_id": "evd_01a193ed-a87e-713e-979e-90500ed4e434",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceId": "src_01a193ed-a87d-79b7-a144-5911989fc0b1",
+      "assertionIds": [
+        "sns_01a193ed-a87e-7992-9030-92faa55655b4"
+      ],
+      "claim": {
+        "subjectId": "sns_01a193ed-a87e-7992-9030-92faa55655b4",
+        "fieldPath": "/grammar/transitivity",
+        "valueDigest": "c922756c60a15540ff419cd4efc3453b09c0a53f860c012b7ba11f0d7d702fe1",
+        "specificity": "contextual_support",
+        "description": "Direct-object contrast for rise and raise in the selected sense."
+      },
+      "location": "PDF page 1, direct-object explanation.",
+      "attestationType": "reference_paraphrase",
+      "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+      "reviewStatus": "unreviewed",
+      "independence": "unestablished",
+      "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+      "limitations": [
+        "AI-mediated reference interpretation; requires independent review.",
+        "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+      ],
+      "_id": "evd_01a193ed-a87e-7cf3-8a8a-d19d1ae903c9",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceId": "src_01a193ed-a87d-79b7-a144-5911989fc0b1",
+      "assertionIds": [
+        "frm_01a193ed-a87e-712b-b794-81ba494a6ec2"
+      ],
+      "claim": {
+        "subjectId": "frm_01a193ed-a87e-712b-b794-81ba494a6ec2",
+        "fieldPath": "/form",
+        "valueDigest": "458abff40d23e3066a52b462178c0235474e2e1e8e7ab1fae69d74aa4328cfbe",
+        "specificity": "contextual_support",
+        "description": "Past tense of rise."
+      },
+      "location": "PDF page 1, regular and irregular verb forms.",
+      "attestationType": "reference_paraphrase",
+      "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+      "reviewStatus": "unreviewed",
+      "independence": "unestablished",
+      "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+      "limitations": [
+        "AI-mediated reference interpretation; requires independent review.",
+        "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+      ],
+      "_id": "evd_01a193ed-a87e-7831-90d8-2cd64e4b2335",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceId": "src_01a193ed-a87d-79b7-a144-5911989fc0b1",
+      "assertionIds": [
+        "frm_01a193ed-a87e-780b-946f-d46ff74a453a"
+      ],
+      "claim": {
+        "subjectId": "frm_01a193ed-a87e-780b-946f-d46ff74a453a",
+        "fieldPath": "/form",
+        "valueDigest": "093e6a513dc522d6cdeaa25b93d2b97874c7c87bd26dd88dd58544cbd206f685",
+        "specificity": "contextual_support",
+        "description": "Past participle of rise."
+      },
+      "location": "PDF page 1, regular and irregular verb forms.",
+      "attestationType": "reference_paraphrase",
+      "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+      "reviewStatus": "unreviewed",
+      "independence": "unestablished",
+      "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+      "limitations": [
+        "AI-mediated reference interpretation; requires independent review.",
+        "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+      ],
+      "_id": "evd_01a193ed-a87e-7e7d-91a0-1882a13fd52b",
+      "schemaVersion": "2.0.0"
+    },
+    {
+      "lifecycleStatus": "active",
+      "editorialStatus": "draft",
+      "sourceId": "src_01a193ed-a87d-79b7-a144-5911989fc0b1",
+      "assertionIds": [
+        "frm_01a193ed-a87e-7f91-aa87-7818cd7b5e8a"
+      ],
+      "claim": {
+        "subjectId": "frm_01a193ed-a87e-7f91-aa87-7818cd7b5e8a",
+        "fieldPath": "/form",
+        "valueDigest": "530c6a2d5b7246d348cd15b62f24975906fc9213e9523f0fa474928548f01ccb",
+        "specificity": "contextual_support",
+        "description": "Past tense and past participle of raise."
+      },
+      "location": "PDF page 1, regular and irregular verb forms.",
+      "attestationType": "reference_paraphrase",
+      "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+      "reviewStatus": "unreviewed",
+      "independence": "unestablished",
+      "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+      "limitations": [
+        "AI-mediated reference interpretation; requires independent review.",
+        "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+      ],
+      "_id": "evd_01a193ed-a87e-7c66-80ed-01f7f038db3c",
+      "schemaVersion": "2.0.0"
+    }
+  ],
+  "history": [
+    {
+      "action": "batch_prepared",
+      "batchId": "pilot-fanout-004",
+      "digest": "1a15b4aee8ead836be4aeaa98184e22fc902151ad819679443a2e547da892e5c",
+      "recordIds": [
+        "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+        "src_01a193ed-a87d-79b7-a144-5911989fc0b1",
+        "src_01a193ed-a87d-7baf-a9ce-819c2f2984fc",
+        "src_01a193ed-a87d-7390-b8a0-62b245fd220a",
+        "src_01a193ed-a87d-7e43-94c2-a322a440f3b5",
+        "src_01a193ed-a87d-76f2-8d29-2181f47a50f3",
+        "src_01a193ed-a87d-7e94-a10f-7993db6e4755",
+        "src_01a193ed-a87d-7628-9aa3-d52a3dcc1622",
+        "src_01a193ed-a87e-7e10-a024-493c4239c40e",
+        "src_01a193ed-a87e-7425-94b9-670233b17ecf",
+        "lex_01a193ed-a87e-795a-9d62-ffe3da1c2cc8",
+        "sns_01a193ed-a87e-78b7-8de9-580567250234",
+        "eqv_01a193ed-a87e-7cbb-a6c4-57b1227c6ad2",
+        "lex_01a193ed-a87e-7dc7-b765-181aace66374",
+        "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
+        "eqv_01a193ed-a87e-75b1-88db-0134459a7fad",
+        "lex_01a193ed-a87e-72e4-9dca-659acfba0eb8",
+        "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
+        "eqv_01a193ed-a87e-7f2e-a4b1-745b0def8f8f",
+        "lex_01a193ed-a87e-74fe-aba0-04429bb16e72",
+        "sns_01a193ed-a87e-7450-a6d1-3fd73884f322",
+        "eqv_01a193ed-a87e-74fa-982a-23355ef35146",
+        "lex_01a193ed-a87e-7167-aaa9-993dbdcb4d1f",
+        "sns_01a193ed-a87e-7992-9030-92faa55655b4",
+        "eqv_01a193ed-a87e-72bb-87d8-8364114e27a8",
+        "lex_01a193ed-a87e-7158-9e54-b74f5028ff28",
+        "sns_01a193ed-a87e-7d27-baa6-633285bbe58a",
+        "eqv_01a193ed-a87e-73a7-863e-782fb09e0648",
+        "lex_01a193ed-a87e-7a58-830b-935da707b70d",
+        "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760",
+        "eqv_01a193ed-a87e-758e-899d-001c22a4579f",
+        "frm_01a193ed-a87e-712b-b794-81ba494a6ec2",
+        "frm_01a193ed-a87e-780b-946f-d46ff74a453a",
+        "frm_01a193ed-a87e-7f91-aa87-7818cd7b5e8a",
+        "evd_01a193ed-a87e-70d4-b87f-fb8ae44b03ab",
+        "evd_01a193ed-a87e-7e52-8fa7-73c8a3c0f90a",
+        "evd_01a193ed-a87e-73e6-958b-24fd55fb2fb4",
+        "evd_01a193ed-a87e-703b-a1db-ceec041e4cef",
+        "evd_01a193ed-a87e-7d4a-9c15-325d1f9f336d",
+        "evd_01a193ed-a87e-775a-820f-4996f1b872d1",
+        "evd_01a193ed-a87e-713e-979e-90500ed4e434",
+        "evd_01a193ed-a87e-7cf3-8a8a-d19d1ae903c9",
+        "evd_01a193ed-a87e-7831-90d8-2cd64e4b2335",
+        "evd_01a193ed-a87e-7e7d-91a0-1882a13fd52b",
+        "evd_01a193ed-a87e-7c66-80ed-01f7f038db3c"
+      ],
+      "createdRecordIds": [
+        "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+        "src_01a193ed-a87d-79b7-a144-5911989fc0b1",
+        "src_01a193ed-a87d-7baf-a9ce-819c2f2984fc",
+        "src_01a193ed-a87d-7390-b8a0-62b245fd220a",
+        "src_01a193ed-a87d-7e43-94c2-a322a440f3b5",
+        "src_01a193ed-a87d-76f2-8d29-2181f47a50f3",
+        "src_01a193ed-a87d-7e94-a10f-7993db6e4755",
+        "src_01a193ed-a87d-7628-9aa3-d52a3dcc1622",
+        "src_01a193ed-a87e-7e10-a024-493c4239c40e",
+        "src_01a193ed-a87e-7425-94b9-670233b17ecf",
+        "lex_01a193ed-a87e-795a-9d62-ffe3da1c2cc8",
+        "sns_01a193ed-a87e-78b7-8de9-580567250234",
+        "eqv_01a193ed-a87e-7cbb-a6c4-57b1227c6ad2",
+        "lex_01a193ed-a87e-7dc7-b765-181aace66374",
+        "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
+        "eqv_01a193ed-a87e-75b1-88db-0134459a7fad",
+        "lex_01a193ed-a87e-72e4-9dca-659acfba0eb8",
+        "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
+        "eqv_01a193ed-a87e-7f2e-a4b1-745b0def8f8f",
+        "lex_01a193ed-a87e-74fe-aba0-04429bb16e72",
+        "sns_01a193ed-a87e-7450-a6d1-3fd73884f322",
+        "eqv_01a193ed-a87e-74fa-982a-23355ef35146",
+        "lex_01a193ed-a87e-7167-aaa9-993dbdcb4d1f",
+        "sns_01a193ed-a87e-7992-9030-92faa55655b4",
+        "eqv_01a193ed-a87e-72bb-87d8-8364114e27a8",
+        "lex_01a193ed-a87e-7158-9e54-b74f5028ff28",
+        "sns_01a193ed-a87e-7d27-baa6-633285bbe58a",
+        "eqv_01a193ed-a87e-73a7-863e-782fb09e0648",
+        "lex_01a193ed-a87e-7a58-830b-935da707b70d",
+        "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760",
+        "eqv_01a193ed-a87e-758e-899d-001c22a4579f",
+        "frm_01a193ed-a87e-712b-b794-81ba494a6ec2",
+        "frm_01a193ed-a87e-780b-946f-d46ff74a453a",
+        "frm_01a193ed-a87e-7f91-aa87-7818cd7b5e8a",
+        "evd_01a193ed-a87e-70d4-b87f-fb8ae44b03ab",
+        "evd_01a193ed-a87e-7e52-8fa7-73c8a3c0f90a",
+        "evd_01a193ed-a87e-73e6-958b-24fd55fb2fb4",
+        "evd_01a193ed-a87e-703b-a1db-ceec041e4cef",
+        "evd_01a193ed-a87e-7d4a-9c15-325d1f9f336d",
+        "evd_01a193ed-a87e-775a-820f-4996f1b872d1",
+        "evd_01a193ed-a87e-713e-979e-90500ed4e434",
+        "evd_01a193ed-a87e-7cf3-8a8a-d19d1ae903c9",
+        "evd_01a193ed-a87e-7831-90d8-2cd64e4b2335",
+        "evd_01a193ed-a87e-7e7d-91a0-1882a13fd52b",
+        "evd_01a193ed-a87e-7c66-80ed-01f7f038db3c"
+      ]
+    }
+  ]
+}
