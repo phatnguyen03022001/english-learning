@@ -1,0 +1,1014 @@
+{
+  "batchId": "pilot-fanout-004",
+  "records": [
+    {
+      "candidateId": "source-mla",
+      "type": "src",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:source-mla",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "title": "To Affect or Effect—to What Effect?",
+        "url": "https://style.mla.org/affect-or-effect/",
+        "provider": "MLA Style Center",
+        "edition": "Online article; edition not stated",
+        "sourceIdentifier": "https://style.mla.org/affect-or-effect/",
+        "sourceType": "other",
+        "retrievedAt": "2026-11-01",
+        "license": "Reference-only; no redistribution permission established.",
+        "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+        "attribution": "Zahra Brown, MLA Style Center. Cited works were not independently consulted.",
+        "materialVersion": "Read-only parent consulted 2026-11-01; integration writer reopened extracted page text on 2026-11-01.",
+        "rights": {
+          "status": "reference_only"
+        }
+      }
+    },
+    {
+      "candidateId": "source-bbc",
+      "type": "src",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:source-bbc",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "title": "English In A Minute: Raise vs rise",
+        "url": "https://downloads.bbc.co.uk/learningenglish/eiam/unit-1/180727_raise_vs_rise.pdf",
+        "provider": "BBC Learning English",
+        "edition": "2018",
+        "sourceIdentifier": "https://downloads.bbc.co.uk/learningenglish/eiam/unit-1/180727_raise_vs_rise.pdf",
+        "sourceType": "other",
+        "retrievedAt": "2026-11-01",
+        "license": "Reference-only; no redistribution permission established.",
+        "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+        "attribution": "© British Broadcasting Corporation 2018. PDF says it is not a word-for-word transcript.",
+        "materialVersion": "Read-only parent consulted 2026-11-01; writer reopened PDF text, page 1, on 2026-11-01.",
+        "rights": {
+          "status": "reference_only"
+        }
+      }
+    },
+    {
+      "candidateId": "source-oxford",
+      "type": "src",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:source-oxford",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "title": "Profitable: synonym discussion including economic",
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/profitable",
+        "provider": "Oxford University Press",
+        "edition": "Online edition/version unstated",
+        "sourceIdentifier": "https://www.oxfordlearnersdictionaries.com/definition/english/profitable",
+        "sourceType": "dictionary",
+        "retrievedAt": "2026-11-01",
+        "license": "Reference-only; no redistribution permission established.",
+        "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+        "attribution": "Oxford Advanced Learner’s Dictionary; rights remain reference-only.",
+        "materialVersion": "Read-only parent consulted 2026-11-01; writer reopened extracted page text on 2026-11-01.",
+        "rights": {
+          "status": "reference_only"
+        }
+      }
+    },
+    {
+      "candidateId": "source-cambridge-sample",
+      "type": "src",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:source-cambridge-sample",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "title": "Cambridge Advanced Learner’s Dictionary sample: affect",
+        "url": "https://assets.cambridge.org/97805215/31054/sample/9780521531054ws.pdf",
+        "provider": "Cambridge University Press",
+        "edition": "2003; paperback ISBN 0 521 53105 5",
+        "sourceIdentifier": "https://assets.cambridge.org/97805215/31054/sample/9780521531054ws.pdf",
+        "sourceType": "dictionary",
+        "retrievedAt": "2026-11-01",
+        "license": "Reference-only; no redistribution permission established.",
+        "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+        "attribution": "© Cambridge University Press 2003. Copyright page requires permission for reproduction subject to stated exceptions; no permission established here.",
+        "materialVersion": "Read-only parent consulted 2026-11-01; writer reopened PDF text on 2026-11-01, PDF page 24 / printed page 20.",
+        "rights": {
+          "status": "reference_only"
+        }
+      }
+    },
+    {
+      "candidateId": "source-cambridge-economic-grammar",
+      "type": "src",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:source-cambridge-economic-grammar",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "title": "English Grammar Today: Economic or economical?",
+        "url": "https://dictionary.cambridge.org/grammar/british-grammar/economic-or-economical",
+        "provider": "Cambridge Dictionary",
+        "edition": "Online edition/version unstated",
+        "sourceIdentifier": "https://dictionary.cambridge.org/grammar/british-grammar/economic-or-economical",
+        "sourceType": "dictionary",
+        "retrievedAt": "2026-11-01",
+        "license": "Reference-only; no redistribution permission established.",
+        "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+        "attribution": "Cambridge-hosted grammar reference; no reuse grant established.",
+        "materialVersion": "Parent handoff reports consultation on 2026-11-01, some Cambridge access limited to search-index extracts; exact access mode not supplied per claim. Writer direct fetch returned 403 on 2026-11-01; full text not independently inspected.",
+        "rights": {
+          "status": "reference_only"
+        }
+      }
+    },
+    {
+      "candidateId": "source-cambridge-vi-affect",
+      "type": "src",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:source-cambridge-vi-affect",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "title": "Cambridge English–Vietnamese: affect",
+        "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/affect",
+        "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+        "edition": "Underlying edition not exposed in parent handoff",
+        "sourceIdentifier": "https://dictionary.cambridge.org/dictionary/english-vietnamese/affect",
+        "sourceType": "dictionary",
+        "retrievedAt": "2026-11-01",
+        "license": "Reference-only; no redistribution permission established.",
+        "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+        "attribution": "Underlying affect/effect edition and rights attribution not established; Cambridge hosting is not a redistribution grant.",
+        "materialVersion": "Parent handoff reports consultation 2026-11-01 with some search-index-only extracts and direct 403 responses; exact per-entry retrieval mode unresolved. Writer did not obtain full bilingual entry text. No bilingual claim authenticated.",
+        "rights": {
+          "status": "reference_only"
+        }
+      }
+    },
+    {
+      "candidateId": "source-cambridge-vi-effect",
+      "type": "src",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:source-cambridge-vi-effect",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "title": "Cambridge English–Vietnamese: effect",
+        "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/effect",
+        "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+        "edition": "Underlying edition not exposed in parent handoff",
+        "sourceIdentifier": "https://dictionary.cambridge.org/dictionary/english-vietnamese/effect",
+        "sourceType": "dictionary",
+        "retrievedAt": "2026-11-01",
+        "license": "Reference-only; no redistribution permission established.",
+        "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+        "attribution": "Underlying affect/effect edition and rights attribution not established; Cambridge hosting is not a redistribution grant.",
+        "materialVersion": "Parent handoff reports consultation 2026-11-01 with some search-index-only extracts and direct 403 responses; exact per-entry retrieval mode unresolved. Writer did not obtain full bilingual entry text. No bilingual claim authenticated.",
+        "rights": {
+          "status": "reference_only"
+        }
+      }
+    },
+    {
+      "candidateId": "source-cambridge-vi-rise",
+      "type": "src",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:source-cambridge-vi-rise",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "title": "Cambridge English–Vietnamese: rise",
+        "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/rise",
+        "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+        "edition": "PASSWORD English–Vietnamese Dictionary, 2015 (parent extract attribution)",
+        "sourceIdentifier": "https://dictionary.cambridge.org/dictionary/english-vietnamese/rise",
+        "sourceType": "dictionary",
+        "retrievedAt": "2026-11-01",
+        "license": "Reference-only; no redistribution permission established.",
+        "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+        "attribution": "Parent extracts attribute PASSWORD English–Vietnamese Dictionary ©2015 K Dictionaries Ltd. Cambridge hosting does not establish underlying reuse rights.",
+        "materialVersion": "Parent handoff reports consultation 2026-11-01 with some search-index-only extracts and direct 403 responses; exact per-entry retrieval mode unresolved. Writer did not obtain full bilingual entry text. No bilingual claim authenticated.",
+        "rights": {
+          "status": "reference_only"
+        }
+      }
+    },
+    {
+      "candidateId": "source-cambridge-vi-raise",
+      "type": "src",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:source-cambridge-vi-raise",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "title": "Cambridge English–Vietnamese: raise",
+        "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/raise",
+        "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+        "edition": "PASSWORD English–Vietnamese Dictionary, 2015 (parent extract attribution)",
+        "sourceIdentifier": "https://dictionary.cambridge.org/dictionary/english-vietnamese/raise",
+        "sourceType": "dictionary",
+        "retrievedAt": "2026-11-01",
+        "license": "Reference-only; no redistribution permission established.",
+        "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+        "attribution": "Parent extracts attribute PASSWORD English–Vietnamese Dictionary ©2015 K Dictionaries Ltd. Cambridge hosting does not establish underlying reuse rights.",
+        "materialVersion": "Parent handoff reports consultation 2026-11-01 with some search-index-only extracts and direct 403 responses; exact per-entry retrieval mode unresolved. Writer did not obtain full bilingual entry text. No bilingual claim authenticated.",
+        "rights": {
+          "status": "reference_only"
+        }
+      }
+    },
+    {
+      "candidateId": "source-cambridge-vi-economic",
+      "type": "src",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:source-cambridge-vi-economic",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "title": "Cambridge English–Vietnamese: economic",
+        "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/economic",
+        "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+        "edition": "PASSWORD English–Vietnamese Dictionary, 2015 (parent extract attribution)",
+        "sourceIdentifier": "https://dictionary.cambridge.org/dictionary/english-vietnamese/economic",
+        "sourceType": "dictionary",
+        "retrievedAt": "2026-11-01",
+        "license": "Reference-only; no redistribution permission established.",
+        "permittedUse": "Reference lookup only. No source definitions or examples reproduced; proposed lexical text requires independent review.",
+        "attribution": "Parent extracts attribute PASSWORD English–Vietnamese Dictionary ©2015 K Dictionaries Ltd. Cambridge hosting does not establish underlying reuse rights.",
+        "materialVersion": "Parent handoff reports consultation 2026-11-01 with some search-index-only extracts and direct 403 responses; exact per-entry retrieval mode unresolved. Writer did not obtain full bilingual entry text. No bilingual claim authenticated.",
+        "rights": {
+          "status": "reference_only"
+        }
+      }
+    },
+    {
+      "candidateId": "entry-affect-verb",
+      "type": "lex",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:entry-affect-verb",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "language": "en",
+        "lemma": "affect",
+        "pos": "VERB",
+        "entryKind": "word"
+      }
+    },
+    {
+      "candidateId": "sense-affect-influence",
+      "type": "sns",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:sense-affect-influence",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "candidate:entry-affect-verb",
+        "definition": "Influence the condition or course of someone or something.",
+        "grammar": {
+          "transitivity": "transitive"
+        },
+        "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
+        "examples": [
+          {
+            "english": "The revised timetable affected attendance.",
+            "exampleType": "unverified_candidate",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "evidenceIds": [
+          "candidate:evidence-affect-influence",
+          "candidate:evidence-affect-transitivity"
+        ]
+      }
+    },
+    {
+      "candidateId": "gloss-affect-influence",
+      "type": "eqv",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:gloss-affect-influence",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceSenseId": "candidate:sense-affect-influence",
+        "glossVi": "ảnh hưởng đến",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "influence on attendance or a comparable outcome",
+        "restrictions": [
+          "Provisional editorial gloss proposal; no independently established Vietnamese lexical sense or sense alignment.",
+          "Bilingual source rights and exact contextual support remain pending; the handoff is not independent evidence."
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "entry-effect-noun",
+      "type": "lex",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:entry-effect-noun",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "language": "en",
+        "lemma": "effect",
+        "pos": "NOUN",
+        "entryKind": "word"
+      }
+    },
+    {
+      "candidateId": "sense-effect-result",
+      "type": "sns",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:sense-effect-result",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "candidate:entry-effect-noun",
+        "definition": "An outcome attributable to an action or circumstance.",
+        "grammar": {},
+        "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
+        "evidenceIds": [
+          "candidate:evidence-effect-result"
+        ]
+      }
+    },
+    {
+      "candidateId": "gloss-effect-result",
+      "type": "eqv",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:gloss-effect-result",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceSenseId": "candidate:sense-effect-result",
+        "glossVi": "kết quả",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "a resulting outcome; the alternative gloss tác động needs separate contextual review",
+        "restrictions": [
+          "Provisional editorial gloss proposal; no independently established Vietnamese lexical sense or sense alignment.",
+          "Bilingual source rights and exact contextual support remain pending; the handoff is not independent evidence."
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "entry-effect-verb",
+      "type": "lex",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:entry-effect-verb",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "language": "en",
+        "lemma": "effect",
+        "pos": "VERB",
+        "entryKind": "word"
+      }
+    },
+    {
+      "candidateId": "sense-effect-bring-about",
+      "type": "sns",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:sense-effect-bring-about",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "candidate:entry-effect-verb",
+        "definition": "Cause a planned change or outcome to become a reality.",
+        "grammar": {
+          "transitivity": "transitive"
+        },
+        "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
+        "examples": [
+          {
+            "english": "The revised timetable effected a lasting improvement.",
+            "exampleType": "unverified_candidate",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "evidenceIds": [
+          "candidate:evidence-effect-bring-about"
+        ]
+      }
+    },
+    {
+      "candidateId": "gloss-effect-bring-about",
+      "type": "eqv",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:gloss-effect-bring-about",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceSenseId": "candidate:sense-effect-bring-about",
+        "glossVi": "tạo ra",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "bringing about a change or improvement",
+        "restrictions": [
+          "Provisional editorial gloss proposal; no independently established Vietnamese lexical sense or sense alignment.",
+          "Bilingual source rights and exact contextual support remain pending; the handoff is not independent evidence."
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "entry-rise-verb",
+      "type": "lex",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:entry-rise-verb",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "language": "en",
+        "lemma": "rise",
+        "pos": "VERB",
+        "entryKind": "word"
+      }
+    },
+    {
+      "candidateId": "sense-rise-increase",
+      "type": "sns",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:sense-rise-increase",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "candidate:entry-rise-verb",
+        "definition": "Become greater in amount or level.",
+        "grammar": {
+          "transitivity": "intransitive"
+        },
+        "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Past tense rose; past participle risen. In this quantitative sense rise has no direct object. This syntactic claim does not imply absence of an external cause. Other senses and noun uses are not covered.",
+        "examples": [
+          {
+            "english": "Transport costs rose.",
+            "exampleType": "unverified_candidate",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "evidenceIds": [
+          "candidate:evidence-rise-meaning",
+          "candidate:evidence-rise-transitivity"
+        ]
+      }
+    },
+    {
+      "candidateId": "gloss-rise-increase",
+      "type": "eqv",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:gloss-rise-increase",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceSenseId": "candidate:sense-rise-increase",
+        "glossVi": "tăng lên",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "a quantitative increase, such as transport costs",
+        "restrictions": [
+          "Provisional editorial gloss proposal; no independently established Vietnamese lexical sense or sense alignment.",
+          "Bilingual source rights and exact contextual support remain pending; the handoff is not independent evidence."
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "entry-raise-verb",
+      "type": "lex",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:entry-raise-verb",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "language": "en",
+        "lemma": "raise",
+        "pos": "VERB",
+        "entryKind": "word"
+      }
+    },
+    {
+      "candidateId": "sense-raise-increase",
+      "type": "sns",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:sense-raise-increase",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "candidate:entry-raise-verb",
+        "definition": "Cause an amount or level to become greater.",
+        "grammar": {
+          "transitivity": "transitive"
+        },
+        "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Past tense and past participle raised. A cause need not be human. Passive raised does not become an intransitive lexical use. Physical lifting and other senses are outside this quantitative draft.",
+        "examples": [
+          {
+            "english": "The fuel shortage raised transport costs.",
+            "exampleType": "unverified_candidate",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "evidenceIds": [
+          "candidate:evidence-raise-meaning",
+          "candidate:evidence-raise-transitivity"
+        ]
+      }
+    },
+    {
+      "candidateId": "gloss-raise-increase",
+      "type": "eqv",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:gloss-raise-increase",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceSenseId": "candidate:sense-raise-increase",
+        "glossVi": "làm tăng",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "causing a quantitative increase, such as transport costs; nâng lên is pending review for other contexts",
+        "restrictions": [
+          "Provisional editorial gloss proposal; no independently established Vietnamese lexical sense or sense alignment.",
+          "Bilingual source rights and exact contextual support remain pending; the handoff is not independent evidence."
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "entry-economic-adj",
+      "type": "lex",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:entry-economic-adj",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "language": "en",
+        "lemma": "economic",
+        "pos": "ADJ",
+        "entryKind": "word"
+      }
+    },
+    {
+      "candidateId": "sense-economic-economy",
+      "type": "sns",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:sense-economic-economy",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "candidate:entry-economic-adj",
+        "definition": "Connected with how an economy operates.",
+        "grammar": {},
+        "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
+        "examples": [
+          {
+            "english": "Economic pressures.",
+            "exampleType": "unverified_candidate",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "gloss-economic-economy",
+      "type": "eqv",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:gloss-economic-economy",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceSenseId": "candidate:sense-economic-economy",
+        "glossVi": "thuộc về kinh tế",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "matters concerning an economy",
+        "restrictions": [
+          "Provisional editorial gloss proposal; no independently established Vietnamese lexical sense or sense alignment.",
+          "Bilingual source rights and exact contextual support remain pending; the handoff is not independent evidence."
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "entry-economical-adj",
+      "type": "lex",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:entry-economical-adj",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "language": "en",
+        "lemma": "economical",
+        "pos": "ADJ",
+        "entryKind": "word"
+      }
+    },
+    {
+      "candidateId": "sense-economical-resources",
+      "type": "sns",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:sense-economical-resources",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "candidate:entry-economical-adj",
+        "definition": "Using relatively little of a resource for a purpose.",
+        "grammar": {},
+        "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
+        "examples": [
+          {
+            "english": "A printer economical with ink.",
+            "exampleType": "unverified_candidate",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed"
+          }
+        ],
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "gloss-economical-resources",
+      "type": "eqv",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:gloss-economical-resources",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceSenseId": "candidate:sense-economical-resources",
+        "glossVi": "tiết kiệm",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "approximate",
+        "context": "resource use, such as ink consumption",
+        "restrictions": [
+          "Provisional editorial gloss proposal; no independently established Vietnamese lexical sense or sense alignment.",
+          "Bilingual source rights and exact contextual support remain pending; the handoff is not independent evidence."
+        ],
+        "translationEvidenceStatus": "evidence_pending",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "form-rose",
+      "type": "frm",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:form-rose",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "candidate:entry-rise-verb",
+        "form": "rose",
+        "evidenceIds": [
+          "candidate:evidence-form-rose"
+        ]
+      }
+    },
+    {
+      "candidateId": "form-risen",
+      "type": "frm",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:form-risen",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "candidate:entry-rise-verb",
+        "form": "risen",
+        "evidenceIds": [
+          "candidate:evidence-form-risen"
+        ]
+      }
+    },
+    {
+      "candidateId": "form-raised",
+      "type": "frm",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:form-raised",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "entryId": "candidate:entry-raise-verb",
+        "form": "raised",
+        "evidenceIds": [
+          "candidate:evidence-form-raised"
+        ]
+      }
+    },
+    {
+      "candidateId": "evidence-affect-influence",
+      "type": "evd",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:evidence-affect-influence",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceId": "candidate:source-mla",
+        "assertionIds": [
+          "candidate:sense-affect-influence"
+        ],
+        "claim": {
+          "subjectId": "candidate:sense-affect-influence",
+          "fieldPath": "/definition",
+          "valueDigest": "0fd800fec0b86f8720eb3fe898c376f6d0acd71682f14d67c468f6e532fe3214",
+          "specificity": "contextual_support",
+          "description": "Contextual support for the influence/result/bringing-about distinction; not approval of the drafted definition wording."
+        },
+        "location": "Article paragraphs discussing Garner and the effect verb.",
+        "attestationType": "reference_paraphrase",
+        "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+        "reviewStatus": "unreviewed",
+        "independence": "unestablished",
+        "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+        "limitations": [
+          "AI-mediated reference interpretation; requires independent review.",
+          "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+        ]
+      }
+    },
+    {
+      "candidateId": "evidence-effect-result",
+      "type": "evd",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:evidence-effect-result",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceId": "candidate:source-mla",
+        "assertionIds": [
+          "candidate:sense-effect-result"
+        ],
+        "claim": {
+          "subjectId": "candidate:sense-effect-result",
+          "fieldPath": "/definition",
+          "valueDigest": "71a210bca3a724a7aebbdfd9ce9c7fa77e395f7ac740c1cc48663dd570c4f742",
+          "specificity": "contextual_support",
+          "description": "Contextual support for the influence/result/bringing-about distinction; not approval of the drafted definition wording."
+        },
+        "location": "Article paragraphs discussing Garner and the effect verb.",
+        "attestationType": "reference_paraphrase",
+        "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+        "reviewStatus": "unreviewed",
+        "independence": "unestablished",
+        "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+        "limitations": [
+          "AI-mediated reference interpretation; requires independent review.",
+          "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+        ]
+      }
+    },
+    {
+      "candidateId": "evidence-effect-bring-about",
+      "type": "evd",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:evidence-effect-bring-about",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceId": "candidate:source-mla",
+        "assertionIds": [
+          "candidate:sense-effect-bring-about"
+        ],
+        "claim": {
+          "subjectId": "candidate:sense-effect-bring-about",
+          "fieldPath": "/definition",
+          "valueDigest": "71c399eb42cc99055d6f834b4b47a3d244b53a79a52f821241bad3ebd340e363",
+          "specificity": "contextual_support",
+          "description": "Contextual support for the influence/result/bringing-about distinction; not approval of the drafted definition wording."
+        },
+        "location": "Article paragraphs discussing Garner and the effect verb.",
+        "attestationType": "reference_paraphrase",
+        "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+        "reviewStatus": "unreviewed",
+        "independence": "unestablished",
+        "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+        "limitations": [
+          "AI-mediated reference interpretation; requires independent review.",
+          "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+        ]
+      }
+    },
+    {
+      "candidateId": "evidence-affect-transitivity",
+      "type": "evd",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:evidence-affect-transitivity",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceId": "candidate:source-cambridge-sample",
+        "assertionIds": [
+          "candidate:sense-affect-influence"
+        ],
+        "claim": {
+          "subjectId": "candidate:sense-affect-influence",
+          "fieldPath": "/grammar/transitivity",
+          "valueDigest": "c922756c60a15540ff419cd4efc3453b09c0a53f860c012b7ba11f0d7d702fe1",
+          "specificity": "contextual_support",
+          "description": "The influence use is marked transitive."
+        },
+        "location": "PDF page 24 (printed page 20), affect INFLUENCE.",
+        "attestationType": "reference_paraphrase",
+        "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+        "reviewStatus": "unreviewed",
+        "independence": "unestablished",
+        "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+        "limitations": [
+          "AI-mediated reference interpretation; requires independent review.",
+          "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+        ]
+      }
+    },
+    {
+      "candidateId": "evidence-rise-meaning",
+      "type": "evd",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:evidence-rise-meaning",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceId": "candidate:source-bbc",
+        "assertionIds": [
+          "candidate:sense-rise-increase"
+        ],
+        "claim": {
+          "subjectId": "candidate:sense-rise-increase",
+          "fieldPath": "/definition",
+          "valueDigest": "b8997648d15bdb0354d586b0d945fa8bf5b3e23a4308cfcb305e024a18ce6889",
+          "specificity": "contextual_support",
+          "description": "Quantitative increase contrasted with causing an increase."
+        },
+        "location": "PDF page 1, explanation and tax example.",
+        "attestationType": "reference_paraphrase",
+        "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+        "reviewStatus": "unreviewed",
+        "independence": "unestablished",
+        "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+        "limitations": [
+          "AI-mediated reference interpretation; requires independent review.",
+          "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage.",
+          "The informal source phrase about rising by itself is not used to claim absence of an external cause."
+        ]
+      }
+    },
+    {
+      "candidateId": "evidence-rise-transitivity",
+      "type": "evd",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:evidence-rise-transitivity",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceId": "candidate:source-bbc",
+        "assertionIds": [
+          "candidate:sense-rise-increase"
+        ],
+        "claim": {
+          "subjectId": "candidate:sense-rise-increase",
+          "fieldPath": "/grammar/transitivity",
+          "valueDigest": "326a141f5c26042c2b69a0fd72dd564c571bd0ecab79016c90e6ea34c3bd76d3",
+          "specificity": "contextual_support",
+          "description": "Direct-object contrast for rise and raise in the selected sense."
+        },
+        "location": "PDF page 1, direct-object explanation.",
+        "attestationType": "reference_paraphrase",
+        "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+        "reviewStatus": "unreviewed",
+        "independence": "unestablished",
+        "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+        "limitations": [
+          "AI-mediated reference interpretation; requires independent review.",
+          "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+        ]
+      }
+    },
+    {
+      "candidateId": "evidence-raise-meaning",
+      "type": "evd",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:evidence-raise-meaning",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceId": "candidate:source-bbc",
+        "assertionIds": [
+          "candidate:sense-raise-increase"
+        ],
+        "claim": {
+          "subjectId": "candidate:sense-raise-increase",
+          "fieldPath": "/definition",
+          "valueDigest": "748d5a47d56338842027d33de6a9ab2a66ae662d1a2275f9075983f41d97b687",
+          "specificity": "contextual_support",
+          "description": "Quantitative increase contrasted with causing an increase."
+        },
+        "location": "PDF page 1, explanation and tax example.",
+        "attestationType": "reference_paraphrase",
+        "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+        "reviewStatus": "unreviewed",
+        "independence": "unestablished",
+        "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+        "limitations": [
+          "AI-mediated reference interpretation; requires independent review.",
+          "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage.",
+          "The informal source phrase about rising by itself is not used to claim absence of an external cause."
+        ]
+      }
+    },
+    {
+      "candidateId": "evidence-raise-transitivity",
+      "type": "evd",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:evidence-raise-transitivity",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceId": "candidate:source-bbc",
+        "assertionIds": [
+          "candidate:sense-raise-increase"
+        ],
+        "claim": {
+          "subjectId": "candidate:sense-raise-increase",
+          "fieldPath": "/grammar/transitivity",
+          "valueDigest": "c922756c60a15540ff419cd4efc3453b09c0a53f860c012b7ba11f0d7d702fe1",
+          "specificity": "contextual_support",
+          "description": "Direct-object contrast for rise and raise in the selected sense."
+        },
+        "location": "PDF page 1, direct-object explanation.",
+        "attestationType": "reference_paraphrase",
+        "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+        "reviewStatus": "unreviewed",
+        "independence": "unestablished",
+        "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+        "limitations": [
+          "AI-mediated reference interpretation; requires independent review.",
+          "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+        ]
+      }
+    },
+    {
+      "candidateId": "evidence-form-rose",
+      "type": "evd",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:evidence-form-rose",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceId": "candidate:source-bbc",
+        "assertionIds": [
+          "candidate:form-rose"
+        ],
+        "claim": {
+          "subjectId": "candidate:form-rose",
+          "fieldPath": "/form",
+          "valueDigest": "458abff40d23e3066a52b462178c0235474e2e1e8e7ab1fae69d74aa4328cfbe",
+          "specificity": "contextual_support",
+          "description": "Past tense of rise."
+        },
+        "location": "PDF page 1, regular and irregular verb forms.",
+        "attestationType": "reference_paraphrase",
+        "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+        "reviewStatus": "unreviewed",
+        "independence": "unestablished",
+        "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+        "limitations": [
+          "AI-mediated reference interpretation; requires independent review.",
+          "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+        ]
+      }
+    },
+    {
+      "candidateId": "evidence-form-risen",
+      "type": "evd",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:evidence-form-risen",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceId": "candidate:source-bbc",
+        "assertionIds": [
+          "candidate:form-risen"
+        ],
+        "claim": {
+          "subjectId": "candidate:form-risen",
+          "fieldPath": "/form",
+          "valueDigest": "093e6a513dc522d6cdeaa25b93d2b97874c7c87bd26dd88dd58544cbd206f685",
+          "specificity": "contextual_support",
+          "description": "Past participle of rise."
+        },
+        "location": "PDF page 1, regular and irregular verb forms.",
+        "attestationType": "reference_paraphrase",
+        "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+        "reviewStatus": "unreviewed",
+        "independence": "unestablished",
+        "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+        "limitations": [
+          "AI-mediated reference interpretation; requires independent review.",
+          "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+        ]
+      }
+    },
+    {
+      "candidateId": "evidence-form-raised",
+      "type": "evd",
+      "sourceItemKey": "pilot-fanout-004:editorial-proposal:v1:evidence-form-raised",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "sourceId": "candidate:source-bbc",
+        "assertionIds": [
+          "candidate:form-raised"
+        ],
+        "claim": {
+          "subjectId": "candidate:form-raised",
+          "fieldPath": "/form",
+          "valueDigest": "530c6a2d5b7246d348cd15b62f24975906fc9213e9523f0fa474928548f01ccb",
+          "specificity": "contextual_support",
+          "description": "Past tense and past participle of raise."
+        },
+        "location": "PDF page 1, regular and irregular verb forms.",
+        "attestationType": "reference_paraphrase",
+        "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+        "reviewStatus": "unreviewed",
+        "independence": "unestablished",
+        "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+        "limitations": [
+          "AI-mediated reference interpretation; requires independent review.",
+          "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+        ]
+      }
+    }
+  ]
+}
