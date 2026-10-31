@@ -46,9 +46,20 @@ test("Codex agent files and project config parse with Python's standard TOML par
  for(const role of roles){
   assert.ok(role.name&&role.description&&role.developer_instructions);
   assert.match(role.developer_instructions,/read-only sandbox/);
+  assert.deepEqual(role.features,{apps:false,plugins:false,request_permissions_tool:false});
+  assert.equal(role.mcp_servers,undefined,"Role cannot sandbox inherited MCP tools");
   assert.equal(role.model,undefined);
   assert.equal(role.sandbox_mode,undefined,"Worker sandbox is inherited, not hard-enforced via TOML");
  }
  assert.equal(new Set(roles.map(x=>x.name)).size,4);
  assert.equal(config.mcp_servers,undefined);
+});
+
+test("workflow has read-only token and no explicit remote/Atlas mutation",()=>{
+ const workflow=read(".github/workflows/schema-conformance.yml").toString();
+ assert.match(workflow,/permissions:\n  contents: read(?:\n|$)/);
+ assert.match(workflow,/"docs\/execution-boundaries\.md"/);
+ assert.doesNotMatch(workflow,/\$\{\{\s*secrets\.|\batlas\b|mongodb(?:\+srv)?:|\b(?:git push|git commit|npm publish)\b/i);
+ assert.match(read("AGENTS.md").toString(),/canonical execution contract/);
+ assert.match(read("README.md").toString(),/execution boundaries and handoff contract/);
 });

@@ -13,6 +13,7 @@ Prefer the smallest correct solution. Never introduce a UI, API, authentication,
 - GitHub: `phatnguyen03022001/english-learning`.
 - Branch policy: **MAIN_ONLY**. Work on `main` only; do not create feature/dev/control branches, worktrees, or pull requests unless explicitly authorized by the owner.
 - **One writer invariant:** only the explicitly designated integration writer may mutate repository files, commit, publish, migrate schemas, or change data. Specialist workers operate read-only and deliver findings, designs, examples, and test proposals.
+- **ChatGPT Architect is read-only**, even if connected tools can write; it must neither mutate resources nor elevate itself into writer. Research Codex and integration Codex run in separate sessions; only an owner-authorized writer may edit task-scoped files or push. Atlas is separately no-write by default. For effective permissions, sandbox/MCP limitations and handoffs, see the [canonical execution contract](docs/execution-boundaries.md). Instructions alone do not revoke existing credentials.
 - Before doing work: inspect current repository contents, `git status`, current `main` HEAD, relevant schemas/tests, and the exact task authorization. Do not overwrite concurrent edits.
 - Preserve existing conventions and stable identifiers. Do not silently reset, force-push, rewrite history, drop data, or modify other repositories.
 - No credentials, MongoDB URIs with secrets, production exports, private user data, or licensing-restricted materials in Git, logs, examples, or prompts.

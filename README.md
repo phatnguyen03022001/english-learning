@@ -25,6 +25,8 @@ editorial evidence. It does not currently contain a learner application or servi
 | [`docs/`](docs/) | Current domain policies and retained phase history. |
 | [`tests/`](tests/) | Schema, graph, production, fixture, and stress coverage. |
 
+The [execution boundaries and handoff contract](docs/execution-boundaries.md) defines
+role, environment, authority, and enforcement (including policy-only gaps).
 The canonical domain policies are [identity](docs/identity-policy.md),
 [English–Vietnamese alignment](docs/bilingual-alignment.md),
 [sense division](docs/sense-division.md), and
@@ -70,4 +72,4 @@ see [AGENTS.md](AGENTS.md) for the full boundary.
 - [Operational skills](.agents/skills/) — repo-local, progressively discovered by Codex.
 - [ECC import manifest](third_party/ecc/manifest.json) — exact commit, license, hashes, selected and rejected resources.
 - [Production contract](docs/lexical-production-contract.md) — lexical fanout handoff, gates, scale and consumer boundaries.
-- Run Codex from the repo root. For a research/fanout rehearsal use a **parent** `codex exec --sandbox read-only`; role text alone cannot enforce read-only.
+- Run Codex from the repo root; follow [research vs writer isolation](docs/execution-boundaries.md#local-execution-modes-codex-cli-01580-pilot). A research parent must use a **read-only sandbox**, disabled app/plugin access, and isolated user config; worker prompts cannot enforce permissions.

@@ -22,6 +22,7 @@ on:
       - "tests/production/**"
       - "tests/fixtures/production/**"
       - "docs/lexical-production-contract.md"
+      - "docs/execution-boundaries.md"
       - "docs/evidence-provenance-contract.md"
       - "docs/editorial-workflow.md"
       - "docs/schema-migration.md"
