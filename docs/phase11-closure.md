@@ -34,9 +34,9 @@ Không có bất kỳ sự phê duyệt của con người (`human_verified`), c
 | Đầu vào bất biến | Đường dẫn | SHA-256 | Số lượng |
 | :--- | :--- | :--- | :--- |
 | **Candidate Snapshot** | `data/candidates/pilot-fanout-002.json` | `d203048c769d6e033f219dc58531d3db9c87c59a00ec8482f9748a3005cab805` | **54 records** (`13 lex`, `15 sns`, `9 con`, `16 eqv`, `1 fam`, `0 rel`) |
-| **Phase 8 Evidence Dossier** | `data/reviews/phase8-evidence-dossier.json` | `5d3b4eb860f47c4bb2b7ef8528ccaa9cc47d19f2a4a24cf9a087df5819a259cd` | 7 sources (`reference_only`) |
-| **Phase 9 Correction Ledger** | `data/reviews/phase9-correction-ledger.json` | `d2d94ff484a54695089df7cc81974f82bd8cb14d72206d448f7b2dbbe06c4128` | 10 remediations |
-| **Phase 10 Review Queue** | `data/reviews/phase10-editorial-review-queue.json` | `66a8f15eb73bfeb7bf883850949eb3b4dcbf6639efca10c659d8d13b4d0f3c7e` | **376 review items** (`372 claimPaths` + `4 scopedIssues`) |
+| **Phase 8 Evidence Dossier** | `data/reviews/phase8-evidence-dossier.json` | `39e387ac31b9f90a5ed65f2aeaa9069618639365bba960c6e375a81ecc0d182b` | 7 sources (`reference_only`) |
+| **Phase 9 Correction Ledger** | `data/reviews/phase9-correction-ledger.json` | `06bd59f031767c2b452ad7991e8b7f8baad64242aa66f0f043073e460fff695e` | 10 remediations |
+| **Phase 10 Review Queue** | `data/reviews/phase10-editorial-review-queue.json` | `89a25af14782c2221ef89f9d817bb25a49ee1b89a332c0048c3179578bfe4c67` | **376 review items** (`372 claimPaths` + `4 scopedIssues`) |
 
 ---
 
@@ -110,7 +110,7 @@ Trong `data/reviews/phase11/semantic-coverage.json` (`vietnamesePolysemyCoverage
 - **`to` (`VI-POLY-006`) & `lớn` (`VI-POLY-007`):** Phân tích 4 nghĩa của `lớn` (kích thước vật lý, đại lượng/số lượng, tầm quan trọng, độ tuổi) và giải thích vì sao sự hội tụ `big/large → lớn` gây lỗi giao thoa collocation trong IELTS Writing (`*a large mistake`, `*a big proportion`).
 - **`mượn` (`VI-POLY-008`) vs `vay` (`VI-POLY-009`) và `cho mượn` (`VI-POLY-010`) vs `cho vay` (`VI-POLY-011`):** Chứng minh sự phân tách từ vựng hóa bắt buộc trong tiếng Việt theo tính chất đối tượng: đồ vật cụ thể trả lại nguyên chiếc (`mượn / cho mượn`) vs tiền bạc/tài chính trả lại giá trị tương đương (`vay / cho vay`). Đã đóng gói 2 bản ghi ứng viên `equiv-borrow-money` (`vay`) và `equiv-lend-money` (`cho vay`) trong `staged-lexical-candidates.json`.
 - **`lời khuyên` (`VI-POLY-012`) vs `lời tư vấn` (`VI-POLY-013`):** Phân tích sự đối lập giữa danh từ đơn vị đếm được `lời` trong tiếng Việt và danh từ không đếm được `advice` trong tiếng Anh.
-- **`phụ thuộc vào` (`VI-POLY-014`), `ngân hàng` (`VI-POLY-015`), `bờ (sông, kênh, hồ)` (`VI-POLY-016`), `tra cứu` (`VI-POLY-018`):** Đã kiểm tra đầy đủ hành vi cú pháp và giới hạn ngữ cảnh.
+- **`phụ thuộc vào` (`VI-POLY-014`), `ngân hàng` (`VI-POLY-015`), `bờ sông` (`VI-POLY-016`), `tra cứu` (`VI-POLY-018`):** Đã kiểm tra đầy đủ hành vi cú pháp và giới hạn ngữ cảnh.
 
 ### 5.2. Quyết định cho 16/16 bản ghi `TranslationEquivalence`
 - Cả **16/16** bản ghi hiện tại đều đủ điều kiện giữ `alignmentMode: "gloss_only"` cho phạm vi xuất bản pilot sau khi thực thi **8 bản sửa `REQUIRED_CORRECTION`** (loại bỏ meta-language và làm rõ phân công ngữ pháp trên `equiv-run-machine-operate`, `equiv-run-machine-operate-alternative`, `equiv-big`, `equiv-large`, `equiv-depend`, `equiv-borrow`, `equiv-lend`).
@@ -126,7 +126,7 @@ Trong `data/reviews/phase11/semantic-coverage.json` (`vietnamesePolysemyCoverage
   - `SRC-OEWN` (Open English WordNet 2024): **CC BY 4.0** (`redistributable: true`, yêu cầu ghi công, không yêu cầu ShareAlike).
   - `SRC-PRINCETON-WORDNET-3.1`: **Princeton WordNet License** (`redistributable: true`, yêu cầu giữ thông báo bản quyền).
   - `SRC-WIKTIONARY-EN-VI`: **CC BY-SA 4.0** (`redistributable: true`, nhưng có điều khoản copyleft ShareAlike — cần quyết định của Owner ở Phase 12 trước khi trích dẫn trực tiếp).
-- **Trạng thái hiện tại:** `rightsCleared: false` trên toàn bộ batch cho tới khi Phase 12 đăng ký bản ghi `src_` được phép tái phân phối và chuyển `examples/0/exampleType` từ `"corpus_like"` sang `"editorial"`.
+- **Trạng thái hiện tại:** `rightsCleared: false` trên toàn bộ batch cho tới khi Phase 12 đăng ký bản ghi `src_` được phép tái phân phối và gắn chứng cứ biên soạn gốc (`evd_`) cho 15 câu ví dụ đang có `examples/0/exampleType: "editorial_original"` (nhưng `examples/0/evidenceIds` hiện đang rỗng `[]`).
 
 ### 6.2. Bảng tổng hợp 10 phát hiện kỹ thuật (Technical Findings `TF-01` → `TF-10`)
 
@@ -163,7 +163,7 @@ Toàn bộ kết quả nghiên cứu Phase 11 đã được hợp nhất vào 6 
 - **Những việc duy nhất còn thuộc Phase 12–13 (dành cho Codex & Lead Architect):**
   1. Vá 2 lỗi `CONFIRMED_BUG` (`TF-05` trong `pipeline/prepare-batch.mjs`, `TF-06` trong `validators/production-gates.mjs`) và các `CONTRACT_GAP` (`TF-01`, `TF-02`, `TF-03`, `TF-07`).
   2. Áp dụng 35 mục `REQUIRED_CORRECTION` (và các mục `RECOMMENDED_IMPROVEMENT` được chọn) từ `data/reviews/phase11/correction-ledger.json`, cùng các ứng viên thuộc phạm vi pilot trong `data/reviews/phase11/staged-lexical-candidates.json`.
-  3. Giải quyết `P10-ISSUE-rights-sources` bằng cách đăng ký nguồn mở được phép phân phối lại (`SRC-OEWN`, `SRC-PRINCETON-WORDNET-3.1`) và nguồn biên soạn gốc (`SRC-IELTS-TRADITION-EDITORIAL-V1`), chuyển `exampleType` của 15 câu ví dụ từ `"corpus_like"` sang `"editorial"`, và sinh đầy đủ bản ghi `evd_`.
+  3. Giải quyết `P10-ISSUE-rights-sources` bằng cách đăng ký nguồn mở được phép phân phối lại (`SRC-OEWN`, `SRC-PRINCETON-WORDNET-3.1`) và nguồn biên soạn gốc (`SRC-IELTS-TRADITION-EDITORIAL-V1`), giữ nguyên `exampleType: "editorial_original"` trên 15 câu ví dụ đồng thời gắn chứng cứ nguồn biên soạn gốc, và sinh đầy đủ bản ghi `evd_`.
   4. Ghi nhận quyết định của Owner/Architect đối với `P10-ISSUE-bank-boundary` (`homographNumber: 1` vs `2`) và chạy nghiệm thu xuất bản cuối cùng tại Phase 13.
 
 - **Verdict:**

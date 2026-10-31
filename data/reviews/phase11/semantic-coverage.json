@@ -54,7 +54,7 @@
       ],
       "additionalPilotGlossesCovered": [
         "ngân hàng",
-        "bờ (sông, kênh, hồ)",
+        "bờ sông",
         "mang tính phân tích",
         "tra cứu"
       ]
@@ -76,7 +76,7 @@
       "pos": "noun",
       "homographNumber": 1,
       "conventionalizedMeaning": "Financial institution licensed to accept deposits, make loans, and provide payment/account services.",
-      "definitionInSnapshot": "An organization where people and businesses can invest or borrow money, change it to foreign money, etc.",
+      "definitionInSnapshot": "An institution that keeps money and provides financial services.",
       "register": "neutral",
       "domain": "finance",
       "grammar": {
@@ -123,7 +123,7 @@
       "translationDistinctions": [
         "Maps unambiguously to Vietnamese 'ngân hàng' ('equiv-bank-financial'), completely distinct from river 'bank' ('bờ sông')."
       ],
-      "examplesAssessment": "Example 'He works at a local bank.' is natural and accurate; requires reclassifying exampleType from 'corpus_like' to 'editorial'.",
+      "examplesAssessment": "Example 'He works at a local bank.' is natural and accurate with exampleType 'editorial_original'; requires attaching first-party editorial Evidence ('evd_') provenance in Phase 12.",
       "usageRestrictionsAssessment": "Countable institutional noun; homograph distinction from river 'bank' is mandatory.",
       "coverageDecision": "COMPLETE_FOR_PILOT (requires usageNote meta-language cleanup CORR-P11-002)"
     },
@@ -134,7 +134,7 @@
       "pos": "noun",
       "homographNumber": 2,
       "conventionalizedMeaning": "Sloping raised land along the side of a river, canal, stream, or lake.",
-      "definitionInSnapshot": "Sloping raised land, especially along the sides of a river.",
+      "definitionInSnapshot": "The land along the side of a river.",
       "register": "neutral",
       "domain": "geography",
       "grammar": {
@@ -179,7 +179,7 @@
         "decision": "NO_CONVENTIONAL_ANTONYM"
       },
       "translationDistinctions": [
-        "Maps to Vietnamese 'bờ (sông, kênh, hồ)' ('equiv-bank-river'); parenthetical water-body qualifier prevents over-application to 'bờ biển' ('coast/shore')."
+        "Maps to Vietnamese 'bờ sông' ('equiv-bank-river', with 'restrictions[0]' scoping it to river/canal/lake margins rather than ocean 'coast/shore')."
       ],
       "examplesAssessment": "Example 'Wild flowers grew along the river bank.' is natural and accurate.",
       "usageRestrictionsAssessment": "Restricted to inland waterways (rivers, canals, streams, lakes).",
@@ -192,7 +192,7 @@
       "pos": "verb",
       "homographNumber": null,
       "conventionalizedMeaning": "Move rapidly on foot so that both feet are briefly off the ground during each stride.",
-      "definitionInSnapshot": "Move at a speed faster than a walk, never having both or all the feet on the ground at the same time.",
+      "definitionInSnapshot": "Move using the legs faster than walking.",
       "register": "neutral",
       "domain": "general",
       "grammar": {
@@ -316,7 +316,7 @@
       "pos": "verb",
       "homographNumber": null,
       "conventionalizedMeaning": "Be in charge of, direct, or manage a business, organization, department, project, or organized activity.",
-      "definitionInSnapshot": "Be in charge of; manage.",
+      "definitionInSnapshot": "Manage or be responsible for an activity, organization, or business.",
       "register": "neutral",
       "domain": "business",
       "grammar": {
@@ -375,7 +375,7 @@
       "pos": "verb",
       "homographNumber": null,
       "conventionalizedMeaning": "Examine the nature, structure, or constituent parts of something methodically and in detail in order to understand or explain it.",
-      "definitionInSnapshot": "Examine methodically and in detail the constitution or structure of something, typically for purposes of explanation and interpretation.",
+      "definitionInSnapshot": "Examine something carefully and in detail, sometimes by considering its parts or aspects.",
       "register": "neutral",
       "domain": "general",
       "grammar": {
@@ -436,7 +436,7 @@
       "pos": "noun",
       "homographNumber": null,
       "conventionalizedMeaning": "Detailed examination of the elements or structure of something (uncountable process), or a particular study/report presenting the results of such an examination (countable result).",
-      "definitionInSnapshot": "Detailed examination of the elements or structure of something, or the result of that examination.",
+      "definitionInSnapshot": "A detailed examination of something.",
       "register": "neutral",
       "domain": "general",
       "grammar": {
@@ -496,7 +496,7 @@
       "pos": "adjective",
       "homographNumber": null,
       "conventionalizedMeaning": "Relating to or using logical, systematic analysis.",
-      "definitionInSnapshot": "Relating to or using analysis or logical reasoning.",
+      "definitionInSnapshot": "Involving careful, systematic examination or logical reasoning, including methods used to study information or data in scientific work.",
       "register": "neutral",
       "domain": "general",
       "grammar": {
@@ -554,7 +554,7 @@
       "pos": "adjective",
       "homographNumber": null,
       "conventionalizedMeaning": "Of considerable or above-average physical size, extent, or capacity.",
-      "definitionInSnapshot": "Of considerable size, extent, or intensity.",
+      "definitionInSnapshot": "Greater than usual in physical size.",
       "register": "neutral",
       "domain": "general",
       "grammar": {
@@ -617,7 +617,7 @@
       "pos": "adjective",
       "homographNumber": null,
       "conventionalizedMeaning": "Of relatively great physical size, area, extent, capacity, or quantity.",
-      "definitionInSnapshot": "Of considerable or relatively great size, extent, or capacity.",
+      "definitionInSnapshot": "Great in physical size or extent.",
       "register": "neutral",
       "domain": "general",
       "grammar": {
@@ -679,7 +679,7 @@
       "pos": "verb",
       "homographNumber": null,
       "conventionalizedMeaning": "Be contingent on, determined by, or affected by a condition, factor, or variable.",
-      "definitionInSnapshot": "Be controlled or determined by.",
+      "definitionInSnapshot": "Be determined or affected by something else.",
       "register": "neutral",
       "domain": "general",
       "grammar": {
@@ -740,7 +740,7 @@
       "pos": "verb",
       "homographNumber": null,
       "conventionalizedMeaning": "Search for and find a piece of information in a reference book, dictionary, database, or list.",
-      "definitionInSnapshot": "Search for and find a piece of information in a book or database.",
+      "definitionInSnapshot": "Search for information in a reference source.",
       "register": "neutral",
       "domain": "general",
       "grammar": {
@@ -800,7 +800,7 @@
       "pos": "verb",
       "homographNumber": null,
       "conventionalizedMeaning": "Take and use something (an object or sum of money) belonging to someone else temporarily, with the intention or obligation of returning it.",
-      "definitionInSnapshot": "Take and use something that belongs to someone else with the intention of returning it.",
+      "definitionInSnapshot": "Temporarily take and use something from another person with an intention to return it.",
       "register": "neutral",
       "domain": "general",
       "grammar": {
@@ -865,7 +865,7 @@
       "pos": "verb",
       "homographNumber": null,
       "conventionalizedMeaning": "Grant someone the temporary possession or use of something (an object or sum of money) on the understanding that it or its equivalent will be returned.",
-      "definitionInSnapshot": "Grant to someone the use of something on the understanding that it will be returned.",
+      "definitionInSnapshot": "Temporarily give something to another person with an intention that it will be returned.",
       "register": "neutral",
       "domain": "general",
       "grammar": {
@@ -930,7 +930,7 @@
       "pos": "noun",
       "homographNumber": null,
       "conventionalizedMeaning": "Guidance or recommendations offered regarding prudent future action.",
-      "definitionInSnapshot": "Guidance or recommendations offered with regard to prudent future action.",
+      "definitionInSnapshot": "Guidance or a recommendation about what someone should do.",
       "register": "neutral",
       "domain": "general",
       "grammar": {
@@ -1681,15 +1681,15 @@
     },
     {
       "expressionId": "VI-POLY-016",
-      "vietnameseExpression": "bờ (sông, kênh, hồ)",
+      "vietnameseExpression": "bờ sông",
       "posInVietnamese": [
         "noun"
       ],
       "conventionalizedSensesInVietnamese": [
         {
           "viSenseIndex": 1,
-          "meaning": "Sloping margin or raised edge of land bordering a body of water such as a river, canal, or lake ('bờ sông', 'bờ kênh', 'bờ hồ').",
-          "syntaxAndValency": "Countable relational noun typically followed by a water-body modifier ('bờ + sông/kênh/hồ/biển').",
+          "meaning": "Sloping margin or raised edge of land bordering a river, canal, or lake ('bờ sông', 'bờ kênh', 'bờ hồ').",
+          "syntaxAndValency": "Countable relational compound noun ('bờ + sông/kênh/hồ').",
           "mappedEnglishSenseIds": [
             "sense-bank-river"
           ],
@@ -1705,11 +1705,11 @@
           "mappedEqvIds": []
         }
       ],
-      "independentSenseVsContextualVariant": "Vietnamese bare 'bờ' is semantically broader than English 'bank' (which applies to rivers/canals/lakes, whereas sea edges are 'coast/shore'). Including the parenthetical '(sông, kênh, hồ)' in 'glossVi' accurately disambiguates the target domain.",
+      "independentSenseVsContextualVariant": "Vietnamese bare 'bờ' is semantically broader than English 'bank' (which applies to rivers/canals/lakes, whereas sea edges are 'coast/shore'). Specifying 'bờ sông' in 'glossVi' together with 'restrictions[0]' ('Applies to river/canal/lake margins rather than financial institutions.') accurately disambiguates the target domain.",
       "falseEquivalenceRisks": [
-        "Without the hydrological restriction '(sông, kênh, hồ)', learners might over-apply English 'bank' to 'bờ biển' ('coast/shore') or 'bờ ruộng' ('field ridge')."
+        "Without the hydrological restriction to rivers/canals/lakes, learners might over-apply English 'bank' to 'bờ biển' ('coast/shore') or 'bờ ruộng' ('field ridge')."
       ],
-      "surfaceFormSufficiency": "Fully sufficient as 'gloss_only' because 'glossVi' already includes '(sông, kênh, hồ)' and 'restrictions[0]' reinforces it.",
+      "surfaceFormSufficiency": "Fully sufficient as 'gloss_only' because 'glossVi' ('bờ sông') and 'restrictions[0]' explicitly scope it to river/canal/lake margins.",
       "stagedVietnameseCandidateIds": [],
       "recommendedPhase12Action": "NO_CHANGE on 'equiv-bank-river'."
     },
@@ -1775,7 +1775,7 @@
       "glossVi": "ngân hàng",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "direct",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Commercial, retail, savings, or central banking institutions ('open an account at a bank', 'borrow money from a bank')."
       ],
@@ -1796,15 +1796,16 @@
       "senseAlignmentDecisionRationale": "gloss_only is completely clear and unambiguous for English-first pilot; sense_aligned is deferred until Vietnamese entry 'ngân hàng' (financial institution vs data/blood repository) is modeled at scale.",
       "phase11Assessment": "SUPPORTED",
       "phase12LedgerStatus": "NO_CHANGE",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, VDict, Wiktionary; rightsCleared: false pending Source rights remediation)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, VDict, Wiktionary; rightsCleared: false pending Source rights remediation)",
+      "researchEquivalenceClassification": "direct_in_core_context"
     },
     {
       "candidateId": "equiv-bank-river",
       "sourceSenseId": "sense-bank-river",
-      "glossVi": "bờ (sông, kênh, hồ)",
+      "glossVi": "bờ sông",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "direct",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Raised or sloping land bordering a river, stream, canal, or lake ('along the river bank', 'the north bank of the canal')."
       ],
@@ -1816,18 +1817,19 @@
       "grammarValencyDifferences": "In Vietnamese, 'bờ' is almost always compounded with the water body ('bờ sông', 'bờ kênh'); in English, 'bank' can stand alone once the river context is established ('on the far bank').",
       "registerDifferences": "Neutral descriptive register in both languages.",
       "evidencedAlternativeTranslations": [
-        "bờ sông",
-        "bờ kênh"
+        "bờ kênh",
+        "bờ hồ"
       ],
       "falseEquivalenceRisks": [
-        "Vietnamese bare 'bờ' also translates 'coast/shore' ('bờ biển') and 'edge/rim' ('bờ vực'); the parenthetical '(sông, kênh, hồ)' in glossVi prevents reverse over-generalization."
+        "Vietnamese bare 'bờ' also translates 'coast/shore' ('bờ biển') and 'edge/rim' ('bờ vực'); 'glossVi: \"bờ sông\"' together with 'restrictions[0]' ('Applies to river/canal/lake margins rather than financial institutions.') prevents reverse over-generalization."
       ],
       "isGlossOnlySufficientForPilot": true,
       "isSenseAlignedJustifiedAtScale": true,
-      "senseAlignmentDecisionRationale": "gloss_only with parenthetical domain restriction '(sông, kênh, hồ)' is sufficient for pilot; sense_aligned is deferred to scale.",
+      "senseAlignmentDecisionRationale": "gloss_only ('bờ sông') with 'restrictions[0]' scoping to river/canal/lake margins is sufficient for pilot; sense_aligned is deferred to scale.",
       "phase11Assessment": "SUPPORTED",
       "phase12LedgerStatus": "NO_CHANGE",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê, VDict; rightsCleared: false)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê, VDict; rightsCleared: false)",
+      "researchEquivalenceClassification": "direct_in_core_context"
     },
     {
       "candidateId": "equiv-run-movement",
@@ -1835,7 +1837,7 @@
       "glossVi": "chạy",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "direct",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Human or animal rapid locomotion on foot ('run every morning', 'run across the field')."
       ],
@@ -1857,7 +1859,8 @@
       "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot because 'context' and 'restrictions[0]' scope it to physical locomotion; staged Vietnamese sense 'sense-vi-chay-locomotion' is provided in staged-lexical-candidates.json for scale.",
       "phase11Assessment": "SUPPORTED",
       "phase12LedgerStatus": "NO_CHANGE",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)",
+      "researchEquivalenceClassification": "direct_in_core_context"
     },
     {
       "candidateId": "equiv-run-machine-operate",
@@ -1865,7 +1868,7 @@
       "glossVi": "hoạt động",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "direct",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Intransitive functioning of a machine, engine, device, or technical system ('The engine runs quietly' -> 'Động cơ hoạt động êm')."
       ],
@@ -1887,7 +1890,8 @@
       "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot once 'restrictions[0]' is cleaned to state the intransitive constraint; staged Vietnamese sense 'sense-vi-hoat-dong-mechanical' is provided for scale.",
       "phase11Assessment": "CORRECTION_NEEDED",
       "phase12LedgerStatus": "REQUIRED_CORRECTION",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Hoàng Phê; requires removing editorial meta-language in restrictions/0)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Hoàng Phê; requires removing editorial meta-language in restrictions/0)",
+      "researchEquivalenceClassification": "direct_in_core_context"
     },
     {
       "candidateId": "equiv-run-machine-operate-alternative",
@@ -1895,7 +1899,7 @@
       "glossVi": "vận hành",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "contextual",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Transitive operation of a machine, production line, or technical system ('Engineers run the plant' -> 'Các kỹ sư vận hành nhà máy').",
         "Formal technical intransitive operation of a system ('The system runs smoothly' -> 'Hệ thống vận hành trơn tru')."
@@ -1918,7 +1922,8 @@
       "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot once meta-editorial notes in 'restrictions[0..1]' are replaced with learner-facing transitive/technical usage guidance; staged Vietnamese sense 'sense-vi-van-hanh-operate' is provided for scale.",
       "phase11Assessment": "CORRECTION_NEEDED",
       "phase12LedgerStatus": "REQUIRED_CORRECTION",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Hoàng Phê; requires replacing draft meta-notes in restrictions/0 and restrictions/1)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Hoàng Phê; requires replacing draft meta-notes in restrictions/0 and restrictions/1)",
+      "researchEquivalenceClassification": "contextual_frame_restricted"
     },
     {
       "candidateId": "equiv-run-management",
@@ -1926,7 +1931,7 @@
       "glossVi": "điều hành",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "direct",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Directing, managing, or being in charge of a business, organization, department, or project ('run a company', 'run a research project')."
       ],
@@ -1948,7 +1953,8 @@
       "senseAlignmentDecisionRationale": "gloss_only is clear and sufficient for pilot.",
       "phase11Assessment": "SUPPORTED",
       "phase12LedgerStatus": "NO_CHANGE",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)",
+      "researchEquivalenceClassification": "direct_in_core_context"
     },
     {
       "candidateId": "equiv-analyse",
@@ -1956,7 +1962,7 @@
       "glossVi": "phân tích",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "direct",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Examining data, causes, arguments, or samples methodically and in detail ('analyse the data', 'analyse the causes of inflation')."
       ],
@@ -1977,7 +1983,8 @@
       "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot.",
       "phase11Assessment": "SUPPORTED",
       "phase12LedgerStatus": "NO_CHANGE",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)",
+      "researchEquivalenceClassification": "direct_in_core_context"
     },
     {
       "candidateId": "equiv-analysis",
@@ -1985,7 +1992,7 @@
       "glossVi": "phân tích",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "direct",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Compound nominal contexts ('kết quả phân tích', 'báo cáo phân tích') and nominalized contexts ('sự phân tích', 'quá trình phân tích', 'bản phân tích')."
       ],
@@ -2007,7 +2014,8 @@
       "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot because 'restrictions[0]' already notes 'sự phân tích'; expanding glossVi to 'phân tích; sự phân tích; bản phân tích' is recorded as an optional RECOMMENDED_IMPROVEMENT.",
       "phase11Assessment": "SUPPORTED",
       "phase12LedgerStatus": "RECOMMENDED_IMPROVEMENT",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)",
+      "researchEquivalenceClassification": "direct_in_core_context"
     },
     {
       "candidateId": "equiv-analytical",
@@ -2015,7 +2023,7 @@
       "glossVi": "mang tính phân tích",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "direct",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Describing methods, reports, skills, or thinking based on logical, systematic analysis ('an analytical approach', 'analytical skills')."
       ],
@@ -2037,7 +2045,8 @@
       "senseAlignmentDecisionRationale": "Because 'mang tính phân tích' is a compositional Vietnamese phrase rather than a single monomorphemic lexical entry, gloss_only is the optimal representation even at scale.",
       "phase11Assessment": "SUPPORTED",
       "phase12LedgerStatus": "NO_CHANGE",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, VDict; rightsCleared: false)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, VDict; rightsCleared: false)",
+      "researchEquivalenceClassification": "direct_in_core_context"
     },
     {
       "candidateId": "equiv-big",
@@ -2045,7 +2054,7 @@
       "glossVi": "lớn",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "direct",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Concrete objects, spaces, buildings, or cities of above-average physical size ('a big house' -> 'một ngôi nhà lớn / to', 'a big city' -> 'một thành phố lớn')."
       ],
@@ -2066,7 +2075,8 @@
       "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot once editorial meta-language in 'restrictions[1]' is replaced with concrete learner guidance contrasting 'big' vs 'large' and 'lớn' vs 'to'.",
       "phase11Assessment": "CORRECTION_NEEDED",
       "phase12LedgerStatus": "REQUIRED_CORRECTION",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; requires cleaning meta-language in restrictions/1)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; requires cleaning meta-language in restrictions/1)",
+      "researchEquivalenceClassification": "direct_in_core_context"
     },
     {
       "candidateId": "equiv-large",
@@ -2074,7 +2084,7 @@
       "glossVi": "lớn",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "direct",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Relatively great physical size, area, extent, capacity, or quantity/proportion ('a large city', 'a large amount/number/proportion')."
       ],
@@ -2096,7 +2106,8 @@
       "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot once editorial meta-language in 'restrictions[1]' is replaced with explicit collocation guidance.",
       "phase11Assessment": "CORRECTION_NEEDED",
       "phase12LedgerStatus": "REQUIRED_CORRECTION",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; requires cleaning meta-language in restrictions/1)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; requires cleaning meta-language in restrictions/1)",
+      "researchEquivalenceClassification": "direct_in_core_context"
     },
     {
       "candidateId": "equiv-depend",
@@ -2104,7 +2115,7 @@
       "glossVi": "phụ thuộc vào",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "direct",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Contingency or determination by a condition, factor, or variable ('The result depends on the weather' -> 'Kết quả phụ thuộc vào thời tiết')."
       ],
@@ -2125,7 +2136,8 @@
       "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot once internal schema self-reference in 'restrictions[0]' is cleaned.",
       "phase11Assessment": "CORRECTION_NEEDED",
       "phase12LedgerStatus": "REQUIRED_CORRECTION",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; requires cleaning meta-language in restrictions/0)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; requires cleaning meta-language in restrictions/0)",
+      "researchEquivalenceClassification": "direct_in_core_context"
     },
     {
       "candidateId": "equiv-look-up",
@@ -2133,7 +2145,7 @@
       "glossVi": "tra cứu",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "direct",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Searching for information (a word, fact, number, or record) in a reference source ('look up a word in a dictionary' -> 'tra cứu một từ trong từ điển')."
       ],
@@ -2156,7 +2168,8 @@
       "senseAlignmentDecisionRationale": "gloss_only is clear and sufficient for pilot.",
       "phase11Assessment": "SUPPORTED",
       "phase12LedgerStatus": "NO_CHANGE",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)",
+      "researchEquivalenceClassification": "direct_in_core_context"
     },
     {
       "candidateId": "equiv-borrow",
@@ -2164,7 +2177,7 @@
       "glossVi": "mượn",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "direct",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Taking and using a specific non-money physical object (a book, pen, car, room) temporarily with the intention of returning that exact item ('borrow a book from Lan' -> 'mượn một cuốn sách của Lan')."
       ],
@@ -2186,7 +2199,8 @@
       "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot once editorial meta-language in 'restrictions[0]' is cleaned to state the 'mượn' (object) vs 'vay' (money) split; staged candidate 'equiv-borrow-money' ('vay') and Vietnamese senses are also provided in staged-lexical-candidates.json.",
       "phase11Assessment": "CORRECTION_NEEDED",
       "phase12LedgerStatus": "REQUIRED_CORRECTION",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; requires cleaning meta-language in restrictions/0)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; requires cleaning meta-language in restrictions/0)",
+      "researchEquivalenceClassification": "direct_in_core_context"
     },
     {
       "candidateId": "equiv-lend",
@@ -2194,7 +2208,7 @@
       "glossVi": "cho mượn",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "direct",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Giving someone temporary possession/use of a specific non-money physical item on condition that the same item is returned ('lend a pen to a friend' -> 'cho bạn mượn một chiếc bút')."
       ],
@@ -2216,7 +2230,8 @@
       "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot once editorial meta-language in 'restrictions[0]' is cleaned to explain 'cho mượn' vs 'cho vay'; staged candidate 'equiv-lend-money' ('cho vay') is also provided in staged-lexical-candidates.json.",
       "phase11Assessment": "CORRECTION_NEEDED",
       "phase12LedgerStatus": "REQUIRED_CORRECTION",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; requires cleaning meta-language in restrictions/0)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; requires cleaning meta-language in restrictions/0)",
+      "researchEquivalenceClassification": "direct_in_core_context"
     },
     {
       "candidateId": "equiv-advice",
@@ -2224,7 +2239,7 @@
       "glossVi": "lời khuyên",
       "direction": "en_to_vi",
       "currentAlignmentMode": "gloss_only",
-      "equivalenceType": "direct",
+      "equivalenceType": "approximate",
       "appropriateContexts": [
         "Personal, educational, or practical recommendations regarding what someone should do ('give useful advice', 'follow someone's advice')."
       ],
@@ -2245,7 +2260,8 @@
       "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot; 'restrictions[0]' already mentions 'lời tư vấn'.",
       "phase11Assessment": "SUPPORTED",
       "phase12LedgerStatus": "NO_CHANGE",
-      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)"
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)",
+      "researchEquivalenceClassification": "direct_in_core_context"
     }
   ],
   "manyToManyMappings": {

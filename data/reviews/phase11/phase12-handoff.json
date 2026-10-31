@@ -2008,7 +2008,7 @@
     "blockerId": "RIGHTS-BLOCKER-P11-001",
     "relatedIssueKey": "P10-ISSUE-rights-sources",
     "rightsCleared": false,
-    "rootCause": "All 7 sources in data/reviews/phase8-evidence-dossier.json ('SRC-OALD', 'SRC-COLLINS', 'SRC-BRITISH-COUNCIL', 'SRC-VDICT', 'SRC-VNDIC', 'SRC-VTUDIEN', 'SRC-REPO') have 'redistributable: false' ('reference_only'). Furthermore, all 15 English examples in pilot-fanout-002.json have 'exampleType: \"corpus_like\"' without independent corpus provenance or open-license attribution.",
+    "rootCause": "All 7 sources in data/reviews/phase8-evidence-dossier.json ('SRC-OALD', 'SRC-COLLINS', 'SRC-BRITISH-COUNCIL', 'SRC-VDICT', 'SRC-VNDIC', 'SRC-VTUDIEN', 'SRC-REPO') have 'redistributable: false' ('reference_only'). Furthermore, although all 15 English examples in pilot-fanout-002.json already have 'exampleType: \"editorial_original\"', their 'examples[0].evidenceIds' arrays are empty ('[]') and lack a verified redistributable first-party editorial 'src_' record and claim-level 'evd_' provenance.",
     "sourceBySourceRightsAudit": [
       {
         "sourceId": "SRC-OALD",
@@ -2107,7 +2107,7 @@
     "requiredPhase12Resolution": [
       "Do NOT flip 'reference_only' commercial dictionaries (OALD, Cambridge, Collins, British Council) or unverified web aggregators (VDict, VNDic, VTudien) to 'redistributable'.",
       "Register open-licensed sources ('SRC-OEWN-2024' under CC BY 4.0, 'SRC-PRINCETON-WORDNET-3.1' under Princeton WordNet License) and a first-party original editorial source ('SRC-IELTS-TRADITION-EDITORIAL-V1') with explicit owner rights review.",
-      "Reclassify the 15 English examples from 'exampleType: \"corpus_like\"' to 'exampleType: \"editorial\"' (or provide verified open-licensed corpus citations) and attach claim-level 'evd_' records."
+      "Preserve 'exampleType: \"editorial_original\"' on all 15 English examples and attach claim-level 'evd_' records linked to the verified first-party editorial source ('SRC-IELTS-TRADITION-EDITORIAL-V1') or verified open-licensed corpus citations."
     ]
   },
   "technicalFindings": [
@@ -2235,7 +2235,7 @@
     "Step 1 (Code Fixes — TF-05, TF-06, TF-07, TF-01): Patch 'pipeline/prepare-batch.mjs' (symmetric LexicalRelation canonical ID ordering and optional reference evidence digest recomputation) and 'validators/production-gates.mjs' (enforce TRANSLATION_UNREVIEWED and sourceSenseId verification on gloss_only equivalences; include inbound con.senseId in scoped subjectIds closure).",
     "Step 2 (Candidate Text Remediation): Apply the 33 claim-path REQUIRED_CORRECTION edits (and approved RECOMMENDED_IMPROVEMENT edits) from 'data/reviews/phase11/correction-ledger.json' to produce the remediated candidate batch ('pilot-fanout-003.json'), resolving 'P10-ISSUE-run-boundary' and 'P10-ISSUE-analysis-family'.",
     "Step 3 (Staged Semantic Coverage Integration): Optionally merge the 8 pilot-compatible staged candidates from 'data/reviews/phase11/staged-lexical-candidates.json' ('entry-small', 'sense-small-size', 'equiv-small', 'rel-big-large-near-synonym', 'rel-big-small-antonym', 'rel-large-small-antonym', 'equiv-borrow-money', 'equiv-lend-money') into the candidate batch so pilot tests exercise real 'rel_' edges and 1-to-2 Vietnamese money/object equivalences.",
-    "Step 4 (Source Rights & Evidence Binding — TF-02): Register redistributable open-licensed/editorial 'src_' records, reclassify 'exampleType: \"corpus_like\"' to '\"editorial\"', and generate exact-value SHA-256 'evd_' records for every publicationClaimPath.",
+    "Step 4 (Source Rights & Evidence Binding — TF-02): Register redistributable open-licensed/editorial 'src_' records, preserve 'exampleType: \"editorial_original\"' on all 15 sense examples while binding their editorial provenance, and generate exact-value SHA-256 'evd_' records for every publicationClaimPath.",
     "Step 5 (Editorial Arbitration & Gate Verification — TF-03, TF-04): Record owner/architect decision on 'P10-ISSUE-bank-boundary' (homographNumber=1 vs 2) and run full schema, graph, lifecycle, and fail-closed production gate regression tests."
   ],
   "acceptanceTestsForPhase12": [

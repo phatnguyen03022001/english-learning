@@ -33,6 +33,7 @@ on:
       - "docs/phase8-lexicographic-quality-review.md"
       - "docs/phase9-lexical-remediation.md"
       - "docs/phase10-editorial-review-packet.md"
+      - "docs/phase11-closure.md"
 
 permissions:
   contents: read
@@ -140,3 +141,6 @@ jobs:
 
       - name: Validate Phase 10 editorial review preparation
         run: node --test tests/production/phase10-editorial-review.test.mjs
+
+      - name: Validate Phase 11 research closure and semantic coverage
+        run: node --test tests/production/phase11-closure.test.mjs
