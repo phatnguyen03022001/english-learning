@@ -379,7 +379,7 @@
         "q7_inferredFromAIGenerated": "Corroborated by BBC Learning English and Cambridge dictionary.",
         "q8_contradictoryExample": "None for quantitative increase.",
         "q9_evidenceIndependentOfAI": "Independent bilingual entry confirms 'tăng lên'.",
-        "q10_remainingUncertainty": "Direct open returned 403; search index excerpt inspected. Reference-only rights."
+        "q10_remainingUncertainty": "Direct page HTTP returned 403; search index excerpt inspected. Reference-only rights."
       },
       "sourceEvidence": {
         "citedSourceIds": [
@@ -426,7 +426,7 @@
         "q7_inferredFromAIGenerated": "Grounded in BBC Learning English and Cambridge dictionary.",
         "q8_contradictoryExample": "'raise awareness' -> 'nâng cao nhận thức'.",
         "q9_evidenceIndependentOfAI": "Independent BBC PDF and Cambridge entry confirm transitive distinction.",
-        "q10_remainingUncertainty": "Must remove irrelevant 'source-cambridge-vi-effect' mapping in CAS remediation."
+        "q10_remainingUncertainty": "The irrelevant source-cambridge-vi-effect citation has already been removed from the review claim trace; state.sourceMappings was not and must not be rewritten. Claim-specific bilingual Evidence binding remains pending where applicable."
       },
       "sourceEvidence": {
         "citedSourceIds": [
@@ -516,11 +516,11 @@
         "q3_tooGeneralOrNarrow": "Accurately scoped.",
         "q4_valencyCorresponds": "Yes; 'economical with ink' translates to 'tiết kiệm mực'.",
         "q5_collocationRisk": "Low.",
-        "q6_sourceSupportsExactGloss": "The cited source in state ('source-cambridge-vi-economic') is the WRONG page! The real Cambridge entry for 'economical' (unregistered) directly gives 'tiết kiệm'.",
+        "q6_sourceSupportsExactGloss": "The registered Source record is for 'economic', not 'economical', so it does not support this exact gloss. The correct 'economical' URL is identified in this review but its Source record is not registered. This equivalence currently has evidenceIds: [] and no source is bound as its canonical bilingual evidence; the review citation is not an Evidence binding.",
         "q7_inferredFromAIGenerated": "Corroborated by independent external dictionary entries.",
         "q8_contradictoryExample": "Idiom 'economical with the truth'.",
-        "q9_evidenceIndependentOfAI": "Independent Cambridge dictionary grounding for 'economical'.",
-        "q10_remainingUncertainty": "Must register source-cambridge-vi-economical in source catalog and link evidence in future candidate batch. state.sourceMappings remains immutable."
+        "q9_evidenceIndependentOfAI": "The proposed gloss is attributed in this review to an independently consulted Cambridge search-index excerpt; the full economical entry was not directly inspected and no claim-specific Evidence is bound in canonical state.",
+        "q10_remainingUncertainty": "The incorrect economic Source record exists, while the correct economical Source record is not registered. The equivalence has evidenceIds: []; neither the historical review citation nor the Source record itself is a canonical Evidence binding. Any future evidence registration and binding requires an authorized candidate batch and sufficient inspected material; state.sourceMappings must remain unchanged."
       },
       "sourceEvidence": {
         "citedSourceIds": [
@@ -937,7 +937,7 @@
       "REFERENCE_ONLY_SOURCES: All 10 registered sources have rights.status = 'reference_only'. No redistribution instrument exists.",
       "UNVERIFIED_EVIDENCE: All 11 evidence records remain draft and unreviewed; 0 evidence records exist for bilingual equivalences.",
       "UNRESOLVED_SENSE_BOUNDARY: Claim P004-012 (effect noun) requires LER arbitration on whether to split impact and outcome into distinct senses or qualify outcome contextually.",
-      "SOURCE_MISATTRIBUTION: Claim P004-045 requires source catalog registration and re-mapping in a future candidate batch."
+      "SOURCE_MISATTRIBUTION: Claim P004-045 requires authorized registration of the correct economical source and sufficient inspected material before any claim-specific Evidence can be created and bound; state.sourceMappings must not be rewritten."
     ],
     "failClosedVerification": "candidates.mjs check reports publication.eligible = false."
   }

@@ -265,11 +265,15 @@ test("persisted canonical draft state satisfies Pilot 004 invariants and seven d
 
   const state = JSON.parse(fs.readFileSync(statePath, "utf8"));
   assert.equal(state.formatVersion, 1);
-  assert.equal(state.records.length, 45, "Must contain exactly 45 records");
-  assert.equal(Object.keys(state.batches).length, 1);
-  assert.ok(state.batches["pilot-fanout-004"]);
-  assert.equal(Object.keys(state.mappings).length, 45);
-  assert.equal(Object.keys(state.sourceMappings).length, 45);
+  assert.ok(state.records.length >= 45, "Current state must retain the original Pilot 004 records");
+  const pilotBatch = state.batches["pilot-fanout-004"];
+  assert.ok(pilotBatch, "Original Pilot 004 batch must remain addressable");
+  assert.equal(pilotBatch.recordIds.length, 45, "Original Pilot 004 membership must remain immutable");
+  const pilotMappings = Object.entries(state.mappings).filter(([key]) => key.startsWith("pilot-fanout-004#"));
+  assert.equal(pilotMappings.length, 45, "Original Pilot 004 candidate mappings must remain intact");
+  assert.deepEqual(pilotMappings.map(([, mapping]) => mapping.canonicalId).sort(), [...pilotBatch.recordIds].sort());
+  const pilotSourceMappings = Object.values(state.sourceMappings).filter(mapping => mapping.firstBatchId === "pilot-fanout-004");
+  assert.equal(pilotSourceMappings.length, 45, "Original Pilot 004 source-item mappings must remain intact");
 
   const uuidv7Regex = /^[a-z]{3}_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
   const uniqueIds = new Set();

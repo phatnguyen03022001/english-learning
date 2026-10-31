@@ -37,13 +37,13 @@ A candidate batch JSON is:
 ```sh
 npm ci --ignore-scripts --no-audit --no-fund
 npm test
-npm run candidates:validate -- --input candidate-batch.json --state .draft/state.json
-npm run candidates:prepare -- --input candidate-batch.json --state .draft/state.json --dry-run
-npm run candidates:prepare -- --input candidate-batch.json --state .draft/state.json
-npm run candidates:check -- --state .draft/state.json
-npm run candidates:check -- --state .draft/state.json --full-publication-diagnostics
-npm run candidates:revise -- --input draft-revision.json --state .draft/state.json
-npm run candidates:promote -- --input gated-promotion.json --state .draft/state.json --dry-run
+npm run candidates:validate -- --input candidate-batch.json --state data/state/candidates-state.json
+npm run candidates:prepare -- --input candidate-batch.json --state data/state/candidates-state.json --dry-run
+npm run candidates:prepare -- --input candidate-batch.json --state data/state/candidates-state.json
+npm run candidates:check -- --state data/state/candidates-state.json
+npm run candidates:check -- --state data/state/candidates-state.json --full-publication-diagnostics
+npm run candidates:revise -- --input draft-revision.json --state data/state/candidates-state.json
+npm run candidates:promote -- --input gated-promotion.json --state data/state/candidates-state.json --dry-run
 npm run test:production
 npm run benchmark:scale -- --sizes=1000,5000,10000 --cumulative-size=5000 --cumulative-batches=3 --negative-size=10000
 ```
@@ -67,7 +67,11 @@ make an ineligible record eligible.
 ## Candidate state path contract
 
 `--state` defaults to `.draft/candidates-state.json`, resolved from the process
-working directory. A relative path must remain within that working directory after
+working directory. That default is a local scratch ledger and is not the canonical
+Pilot 004 state or a production integration target. Production operations must pass
+the explicit canonical path `--state data/state/candidates-state.json` (or another
+owner-approved, versioned state path); do not treat a second `.draft/` ledger as
+authoritative. A relative path must remain within that working directory after
 normalization; relative paths that escape it are rejected. An absolute path is an
 explicitly selected storage location and remains supported for authorized temporary
 state in tests and CI. Existing path components must be directories and may not be
