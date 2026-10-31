@@ -5,6 +5,7 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { tmpdir } from "node:os";
 import { prepareBatch } from "../../pipeline/prepare-batch.mjs";
 import { reviseCandidates } from "../../pipeline/revise-candidates.mjs";
 import { validateDatasetV2 } from "../../validators/validate-dataset-v2.mjs";
@@ -104,16 +105,22 @@ test("candidates CLI validate maintains dry-run pure execution on batch 004", ()
 });
 
 test("candidates CLI check reports STATE_NOT_FOUND when candidate state is unpersisted", () => {
-  const run = spawnSync(process.execPath, [cliPath, "check"], {
-    cwd: rootDir,
-    encoding: "utf8"
-  });
-  assert.equal(run.status, 1);
-  const result = JSON.parse(run.stdout);
-  assert.equal(result.status, "invalid");
-  assert.equal(result.storageValid, false);
-  assert.equal(result.issues[0].code, "STATE_NOT_FOUND");
-  assert.equal(result.publication.eligible, false);
+  const tmp = fs.mkdtempSync(path.join(tmpdir(), "pilot-remediation-missing-state-"));
+  try {
+    const nonexistentState = path.join(tmp, "nonexistent-candidates-state.json");
+    const run = spawnSync(process.execPath, [cliPath, "check", "--state", nonexistentState], {
+      cwd: rootDir,
+      encoding: "utf8"
+    });
+    assert.equal(run.status, 1);
+    const result = JSON.parse(run.stdout);
+    assert.equal(result.status, "invalid");
+    assert.equal(result.storageValid, false);
+    assert.equal(result.issues[0].code, "STATE_NOT_FOUND");
+    assert.equal(result.publication.eligible, false);
+  } finally {
+    fs.rmSync(tmp, { recursive: true, force: true });
+  }
 });
 
 test("in-memory candidate revision lifecycle, CAS control, replay, and fail-closed publication", () => {
