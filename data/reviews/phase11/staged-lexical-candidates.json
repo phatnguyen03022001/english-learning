@@ -1,0 +1,656 @@
+{
+  "stagedBundleVersion": "11.0.0-canonical",
+  "artifactType": "phase11_staged_lexical_candidates",
+  "status": "STAGED_DRAFT_RESEARCH_ONLY",
+  "publicationEligible": false,
+  "targetSnapshotDependency": {
+    "baseSnapshotPath": "data/candidates/pilot-fanout-002.json",
+    "baseSnapshotSha256": "d203048c769d6e033f219dc58531d3db9c87c59a00ec8482f9748a3005cab805",
+    "note": "All records in this file are draft candidate proposals using 'candidate:<id>' references. No canonical UUIDv7 IDs are fabricated. They must not be injected directly into published datasets without running prepareBatch, resolving technical findings TF-05/TF-06, and completing evidence/rights verification."
+  },
+  "summary": {
+    "totalStagedCandidates": 21,
+    "byCategory": {
+      "missingEnglishTargetEndpoints": 3,
+      "englishSemanticRelationProposals": 3,
+      "englishToVietnameseContextualEquivalences": 2,
+      "vietnamesePolysemyLexicalCandidates": 13
+    }
+  },
+  "pilotCompatibleStagedCandidates": [
+    {
+      "candidateId": "entry-small",
+      "type": "lex",
+      "stageCategory": "missing_english_antonym_endpoint",
+      "status": "draft",
+      "dependencies": [],
+      "rationale": "Required target lexical entry endpoint to close gradable antonymy coverage for 'sense-big-size' ('big' <-> 'small') and 'sense-large-size' ('large' <-> 'small') under Part B (B2/B3/B4).",
+      "evidence": [
+        {
+          "sourceId": "SRC-OALD",
+          "locator": "https://www.oxfordlearnersdictionaries.com/definition/english/small_1",
+          "note": "Confirms adjective POS, core physical-size sense, and gradable opposition to 'big' and 'large'."
+        },
+        {
+          "sourceId": "SRC-OEWN",
+          "locator": "Open English WordNet 2024 — small (adjective, size/amount synsets)",
+          "note": "Permissively licensed (CC BY 4.0) confirmation of lemma, POS, and antonym link with big/large."
+        }
+      ],
+      "entity": {
+        "language": "en",
+        "lemma": "small",
+        "pos": "ADJ",
+        "entryKind": "word",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "sense-small-size",
+      "type": "sns",
+      "stageCategory": "missing_english_antonym_endpoint",
+      "status": "draft",
+      "dependencies": [
+        "candidate:entry-small"
+      ],
+      "rationale": "Core physical-size/scale sense of 'small' serving as the verified gradable antonym target endpoint for 'sense-big-size' and 'sense-large-size'.",
+      "evidence": [
+        {
+          "sourceId": "SRC-OALD",
+          "locator": "https://www.oxfordlearnersdictionaries.com/definition/english/small_1 (sense 1: not large in size, number, degree, amount, etc.)",
+          "note": "Supports core physical-size and scale/quantity sense boundary."
+        },
+        {
+          "sourceId": "SRC-OEWN",
+          "locator": "Open English WordNet 2024 — small%3:00:00::",
+          "note": "CC BY 4.0 synset for limited size or physical extent."
+        },
+        {
+          "sourceId": "SRC-PRINCETON-WORDNET-3.1",
+          "locator": "small.a.01 (limited or below average in number or quantity or magnitude or extent)",
+          "note": "Corroborates antonymy with big.a.01 and large.a.01."
+        }
+      ],
+      "entity": {
+        "entryId": "candidate:entry-small",
+        "definition": "Below average in physical size, area, or dimensions; not big or large.",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "register": "neutral",
+        "domain": "general",
+        "usageNote": "Used for concrete physical size (contrasting with both 'big' and 'large') as well as quantities and proportions ('a small amount/number/proportion', contrasting with 'large').",
+        "usageRestrictions": [
+          {
+            "kind": "collocation",
+            "description": "Gradable adjective modifying countable physical nouns and quantity nouns ('a small house', 'a small number of students')."
+          }
+        ],
+        "contrastiveNotes": [
+          {
+            "language": "en",
+            "text": "Unlike 'little', which often expresses emotion, affection, or uncountable quantity ('little time'), 'small' is neutral and objective for physical size and countable quantities."
+          }
+        ],
+        "examples": [
+          {
+            "english": "They live in a small apartment near the city centre.",
+            "exampleType": "editorial_original",
+            "vi": "Họ sống trong một căn hộ nhỏ gần trung tâm thành phố.",
+            "register": "neutral",
+            "editorialStatus": "draft",
+            "translationEvidenceStatus": "unreviewed",
+            "evidenceIds": []
+          }
+        ],
+        "topicIds": [],
+        "constructionIds": [],
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "equiv-small",
+      "type": "eqv",
+      "stageCategory": "missing_english_antonym_endpoint",
+      "status": "draft",
+      "dependencies": [
+        "candidate:sense-small-size"
+      ],
+      "rationale": "Provides the English-to-Vietnamese gloss equivalence for the staged endpoint 'sense-small-size'.",
+      "evidence": [
+        {
+          "sourceId": "SRC-HOANG-PHE-TDTV",
+          "locator": "Từ điển tiếng Việt (Hoàng Phê): mục từ 'nhỏ' & 'bé'",
+          "note": "Confirms 'nhỏ' as the neutral adjective for below-average size/scale and 'bé' as a concrete/everyday alternative."
+        },
+        {
+          "sourceId": "SRC-WIKTIONARY-EN-VI",
+          "locator": "https://vi.wiktionary.org/wiki/small",
+          "note": "CC BY-SA 4.0 corroboration of small -> nhỏ, bé."
+        }
+      ],
+      "entity": {
+        "sourceSenseId": "candidate:sense-small-size",
+        "glossVi": "nhỏ",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "exact_in_context",
+        "context": "below average in physical size, area, or scale",
+        "register": "neutral",
+        "restrictions": [
+          "In everyday concrete or affectionate contexts, Vietnamese also uses 'bé' ('căn phòng bé', 'em bé'), whereas 'nhỏ' applies broadly to both physical objects ('ngôi nhà nhỏ') and quantities ('một số lượng nhỏ')."
+        ],
+        "translationEvidenceStatus": "unreviewed",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "rel-big-large-near-synonym",
+      "type": "rel",
+      "stageCategory": "verified_near_synonym_proposal",
+      "status": "draft",
+      "dependencies": [
+        "candidate:sense-big-size",
+        "candidate:sense-large-size"
+      ],
+      "technicalNote": "Both endpoints already exist in pilot-fanout-002.json. Requires TF-05 fix in pipeline/prepare-batch.mjs (canonical ASCII ordering of [sourceId, targetId] after resolving candidate references) before non-dry-run batch preparation.",
+      "rationale": "'sense-big-size' and 'sense-large-size' overlap in denoting above-average physical size of concrete countable nouns ('a big/large house'), but are not interchangeable in quantity collocations ('a large amount/proportion', not '*a big proportion') or figurative importance ('a big decision', not '*a large decision'). Modeled as NEAR_SYNONYM_OF, never SYNONYM_OF.",
+      "evidence": [
+        {
+          "sourceId": "SRC-CAMBRIDGE",
+          "locator": "https://dictionary.cambridge.org/grammar/british-grammar/big-large-or-great",
+          "note": "Documents register and collocation differences between 'big' and 'large'."
+        },
+        {
+          "sourceId": "SRC-OALD",
+          "locator": "https://www.oxfordlearnersdictionaries.com/definition/english/large_1 (synonyms note: big / large / great)",
+          "note": "Confirms near-synonymy in physical size and divergence in quantity/abstract contexts."
+        },
+        {
+          "sourceId": "SRC-OEWN",
+          "locator": "Open English WordNet 2024 — large / big physical-size synset",
+          "note": "CC BY 4.0 lexical semantic corroboration."
+        }
+      ],
+      "entity": {
+        "relationType": "NEAR_SYNONYM_OF",
+        "sourceId": "candidate:sense-big-size",
+        "targetId": "candidate:sense-large-size",
+        "qualifiers": {
+          "context": "concrete physical size or spatial dimensions of countable objects, buildings, or spaces; 'large' is more formal and objective than 'big'",
+          "register": "neutral"
+        },
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "rel-big-small-antonym",
+      "type": "rel",
+      "stageCategory": "verified_antonym_proposal",
+      "status": "draft",
+      "dependencies": [
+        "candidate:sense-big-size",
+        "candidate:sense-small-size"
+      ],
+      "technicalNote": "Connects existing 'sense-big-size' to staged endpoint 'sense-small-size'. Requires TF-05 fix in pipeline/prepare-batch.mjs so resolved [sourceId, targetId] are sorted in ascending ASCII order.",
+      "rationale": "Verified gradable antonym pair on the physical-size dimension ('a big house' <-> 'a small house'). Scoped strictly to 'sense-big-size' (whereas figurative 'big' in 'a big decision' contrasts with 'minor/trivial').",
+      "evidence": [
+        {
+          "sourceId": "SRC-OALD",
+          "locator": "https://www.oxfordlearnersdictionaries.com/definition/english/big_1 (OPPOSITE small, little)",
+          "note": "Explicitly lists 'small' as the opposite of 'big' in physical size."
+        },
+        {
+          "sourceId": "SRC-PRINCETON-WORDNET-3.1",
+          "locator": "big.a.01 <-> small.a.01 (direct antonym pointer)",
+          "note": "Permissively licensed lexical database confirmation of direct gradable antonymy."
+        }
+      ],
+      "entity": {
+        "relationType": "ANTONYM_OF",
+        "sourceId": "candidate:sense-big-size",
+        "targetId": "candidate:sense-small-size",
+        "qualifiers": {
+          "context": "physical size, dimensions, or spatial extent of concrete objects, places, or living things",
+          "register": "neutral"
+        },
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "rel-large-small-antonym",
+      "type": "rel",
+      "stageCategory": "verified_antonym_proposal",
+      "status": "draft",
+      "dependencies": [
+        "candidate:sense-large-size",
+        "candidate:sense-small-size"
+      ],
+      "technicalNote": "Connects existing 'sense-large-size' to staged endpoint 'sense-small-size'. Requires TF-05 fix in pipeline/prepare-batch.mjs so resolved [sourceId, targetId] are sorted in ascending ASCII order.",
+      "rationale": "Verified gradable antonym pair across both physical size/area ('a large room' <-> 'a small room') and quantity/proportion collocations ('a large number/amount/proportion' <-> 'a small number/amount/proportion').",
+      "evidence": [
+        {
+          "sourceId": "SRC-OALD",
+          "locator": "https://www.oxfordlearnersdictionaries.com/definition/english/large_1 (OPPOSITE small)",
+          "note": "Explicitly lists 'small' as the opposite of 'large'."
+        },
+        {
+          "sourceId": "SRC-PRINCETON-WORDNET-3.1",
+          "locator": "large.a.01 <-> small.a.01 (direct antonym pointer)",
+          "note": "Permissively licensed lexical database confirmation of direct gradable antonymy."
+        }
+      ],
+      "entity": {
+        "relationType": "ANTONYM_OF",
+        "sourceId": "candidate:sense-large-size",
+        "targetId": "candidate:sense-small-size",
+        "qualifiers": {
+          "context": "physical size, area, scale, or countable quantity (such as a large or small number, amount, or proportion)",
+          "register": "neutral"
+        },
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "equiv-borrow-money",
+      "type": "eqv",
+      "stageCategory": "bilingual_one_to_many_equivalence",
+      "status": "draft",
+      "dependencies": [
+        "candidate:sense-borrow-temporary-use"
+      ],
+      "rationale": "Models the second branch of the mandatory 1-to-2 English–Vietnamese lexical split for 'sense-borrow-temporary-use': whereas 'equiv-borrow' ('mượn') covers specific physical objects returned in kind, Vietnamese requires 'vay' when borrowing money, credit, or fungible financial capital returned in equivalent value.",
+      "evidence": [
+        {
+          "sourceId": "SRC-HOANG-PHE-TDTV",
+          "locator": "Từ điển tiếng Việt (Hoàng Phê): mục từ 'vay' vs 'mượn'",
+          "note": "Defines 'vay' as receiving money or fungible goods temporarily to repay equivalent value (often with interest), distinct from 'mượn'."
+        },
+        {
+          "sourceId": "SRC-WIKTIONARY-EN-VI",
+          "locator": "https://vi.wiktionary.org/wiki/borrow",
+          "note": "Lists both 'vay' and 'mượn' as core translations of 'borrow'."
+        }
+      ],
+      "entity": {
+        "sourceSenseId": "candidate:sense-borrow-temporary-use",
+        "glossVi": "vay",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "exact_in_context",
+        "context": "receive money, credit, or fungible capital temporarily with the obligation to repay equivalent value, often with interest",
+        "register": "neutral",
+        "restrictions": [
+          "Used specifically when the borrowed resource is money, a loan, or financial capital ('vay tiền', 'vay vốn ngân hàng'); use 'mượn' for specific physical items returned in kind."
+        ],
+        "translationEvidenceStatus": "unreviewed",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "equiv-lend-money",
+      "type": "eqv",
+      "stageCategory": "bilingual_one_to_many_equivalence",
+      "status": "draft",
+      "dependencies": [
+        "candidate:sense-lend-temporary-use"
+      ],
+      "rationale": "Models the second branch of the mandatory 1-to-2 English–Vietnamese lexical split for 'sense-lend-temporary-use': whereas 'equiv-lend' ('cho mượn') covers specific physical objects returned in kind, Vietnamese requires 'cho vay' when lending money, credit, or financial capital.",
+      "evidence": [
+        {
+          "sourceId": "SRC-HOANG-PHE-TDTV",
+          "locator": "Từ điển tiếng Việt (Hoàng Phê): mục từ 'vay' ('cho vay') vs 'mượn' ('cho mượn')",
+          "note": "Confirms 'cho vay' for money/capital loans vs 'cho mượn' for concrete physical objects."
+        }
+      ],
+      "entity": {
+        "sourceSenseId": "candidate:sense-lend-temporary-use",
+        "glossVi": "cho vay",
+        "direction": "en_to_vi",
+        "alignmentMode": "gloss_only",
+        "equivalenceType": "exact_in_context",
+        "context": "provide money, credit, or fungible capital temporarily on condition of repayment of equivalent value, often with interest",
+        "register": "neutral",
+        "restrictions": [
+          "Used specifically when the lent resource is money, a loan, or financial capital ('cho vay tiền', 'cho vay nặng lãi'); use 'cho mượn' for specific physical items returned in kind."
+        ],
+        "translationEvidenceStatus": "unreviewed",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    }
+  ],
+  "stagedVietnameseLexicalGraphCandidates": [
+    {
+      "candidateId": "entry-vi-chay",
+      "type": "lex",
+      "stageCategory": "vietnamese_polysemy_sense_separation",
+      "status": "draft",
+      "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+      "dependencies": [],
+      "rationale": "Models the polysemous Vietnamese verb 'chạy' so that future 'sense_aligned' equivalences can link 'sense-run-movement' to 'sense-vi-chay-locomotion' while explicitly isolating 'sense-vi-chay-maneuver' ('chạy việc / chạy dự án') as a non-aligned colloquial sense.",
+      "evidence": [
+        {
+          "sourceId": "SRC-HOANG-PHE-TDTV",
+          "locator": "Từ điển tiếng Việt (Hoàng Phê): mục từ 'chạy' (đg.)",
+          "note": "Attests separate senses for locomotion on foot, machine functioning, and colloquial striving/lobbying."
+        }
+      ],
+      "entity": {
+        "language": "vi",
+        "lemma": "chạy",
+        "pos": "VERB",
+        "entryKind": "word",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "sense-vi-chay-locomotion",
+      "type": "sns",
+      "stageCategory": "vietnamese_polysemy_sense_separation",
+      "status": "draft",
+      "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+      "dependencies": [
+        "candidate:entry-vi-chay"
+      ],
+      "alignedEnglishSenseCandidates": [
+        "candidate:sense-run-movement"
+      ],
+      "rationale": "Primary locomotion sense of Vietnamese 'chạy' aligned with 'sense-run-movement'.",
+      "entity": {
+        "entryId": "candidate:entry-vi-chay",
+        "definition": "Di chuyển nhanh bằng chân với những bước nhảy nối tiếp nhau.",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "register": "neutral",
+        "domain": "general",
+        "grammar": {
+          "transitivity": "intransitive"
+        },
+        "topicIds": [],
+        "constructionIds": [],
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "sense-vi-chay-machine",
+      "type": "sns",
+      "stageCategory": "vietnamese_polysemy_sense_separation",
+      "status": "draft",
+      "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+      "dependencies": [
+        "candidate:entry-vi-chay"
+      ],
+      "alignedEnglishSenseCandidates": [
+        "candidate:sense-run-machine"
+      ],
+      "rationale": "Everyday Vietnamese sense of 'chạy' for machines, vehicles, clocks, or software operating.",
+      "entity": {
+        "entryId": "candidate:entry-vi-chay",
+        "definition": "Hoạt động, chuyển động theo chức năng (nói về máy móc, động cơ, đồng hồ, phương tiện hoặc chương trình máy tính).",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "register": "informal",
+        "domain": "general",
+        "grammar": {
+          "transitivity": "ambitransitive"
+        },
+        "topicIds": [],
+        "constructionIds": [],
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "sense-vi-chay-maneuver",
+      "type": "sns",
+      "stageCategory": "vietnamese_polysemy_sense_separation",
+      "status": "draft",
+      "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+      "dependencies": [
+        "candidate:entry-vi-chay"
+      ],
+      "alignedEnglishSenseCandidates": [],
+      "rationale": "Colloquial Vietnamese sense ('chạy việc', 'chạy dự án', 'chạy điểm', 'chạy tội') modeled explicitly to prevent false equivalence with English 'sense-run-management' ('run a business/project' = 'điều hành').",
+      "entity": {
+        "entryId": "candidate:entry-vi-chay",
+        "definition": "Khẩn trương tìm mọi cách, thường thông qua quan hệ hoặc vận động không chính thức, để đạt được hoặc trốn tránh một việc gì ('chạy việc', 'chạy dự án').",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "register": "informal",
+        "domain": "general",
+        "grammar": {
+          "transitivity": "transitive"
+        },
+        "topicIds": [],
+        "constructionIds": [],
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "entry-vi-hoat-dong",
+      "type": "lex",
+      "stageCategory": "vietnamese_polysemy_sense_separation",
+      "status": "draft",
+      "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+      "dependencies": [],
+      "rationale": "Models Vietnamese verb 'hoạt động' to separate mechanical functioning from social/organizational activity.",
+      "entity": {
+        "language": "vi",
+        "lemma": "hoạt động",
+        "pos": "VERB",
+        "entryKind": "multiword",
+        "multiwordKind": "other_lexicalized",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "sense-vi-hoat-dong-mechanical",
+      "type": "sns",
+      "stageCategory": "vietnamese_polysemy_sense_separation",
+      "status": "draft",
+      "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+      "dependencies": [
+        "candidate:entry-vi-hoat-dong"
+      ],
+      "alignedEnglishSenseCandidates": [
+        "candidate:sense-run-machine"
+      ],
+      "rationale": "Intransitive mechanical-functioning sense of 'hoạt động' aligned with the intransitive frame of 'sense-run-machine'.",
+      "entity": {
+        "entryId": "candidate:entry-vi-hoat-dong",
+        "definition": "Làm việc, vận hành theo chức năng kỹ thuật hoặc sinh học (nói về máy móc, thiết bị, hệ thống hoặc cơ quan trong cơ thể).",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "register": "neutral",
+        "domain": "general",
+        "grammar": {
+          "transitivity": "intransitive"
+        },
+        "topicIds": [],
+        "constructionIds": [],
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "sense-vi-hoat-dong-social",
+      "type": "sns",
+      "stageCategory": "vietnamese_polysemy_sense_separation",
+      "status": "draft",
+      "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+      "dependencies": [
+        "candidate:entry-vi-hoat-dong"
+      ],
+      "alignedEnglishSenseCandidates": [],
+      "rationale": "Social/organizational activity sense of 'hoạt động' ('tổ chức hoạt động hợp pháp'), distinct from machine functioning.",
+      "entity": {
+        "entryId": "candidate:entry-vi-hoat-dong",
+        "definition": "Tiến hành những việc làm có mục đích nhất định trong đời sống xã hội, chính trị hoặc kinh tế (nói về người hoặc tổ chức).",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "register": "neutral",
+        "domain": "general",
+        "grammar": {
+          "transitivity": "intransitive"
+        },
+        "topicIds": [],
+        "constructionIds": [],
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "entry-vi-van-hanh",
+      "type": "lex",
+      "stageCategory": "vietnamese_polysemy_sense_separation",
+      "status": "draft",
+      "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+      "dependencies": [],
+      "rationale": "Models Vietnamese technical verb 'vận hành' to capture the transitive/formal operation of machinery and systems.",
+      "entity": {
+        "language": "vi",
+        "lemma": "vận hành",
+        "pos": "VERB",
+        "entryKind": "multiword",
+        "multiwordKind": "other_lexicalized",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "sense-vi-van-hanh-operate",
+      "type": "sns",
+      "stageCategory": "vietnamese_polysemy_sense_separation",
+      "status": "draft",
+      "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+      "dependencies": [
+        "candidate:entry-vi-van-hanh"
+      ],
+      "alignedEnglishSenseCandidates": [
+        "candidate:sense-run-machine"
+      ],
+      "rationale": "Ambitransitive technical sense of 'vận hành' covering 'construction-run-machine-transitive' and formal technical intransitive 'construction-run-machine'.",
+      "entity": {
+        "entryId": "candidate:entry-vi-van-hanh",
+        "definition": "Điều khiển cho máy móc, dây chuyền hoặc hệ thống kỹ thuật hoạt động; hoặc (nói về hệ thống, cơ chế) tự hoạt động theo quy trình.",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "register": "formal",
+        "domain": "technology",
+        "grammar": {
+          "transitivity": "ambitransitive"
+        },
+        "topicIds": [],
+        "constructionIds": [],
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "entry-vi-muon",
+      "type": "lex",
+      "stageCategory": "vietnamese_polysemy_sense_separation",
+      "status": "draft",
+      "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+      "dependencies": [],
+      "rationale": "Models Vietnamese 'mượn' (non-money object returned in kind) as distinct from 'vay' (money/fungible capital).",
+      "entity": {
+        "language": "vi",
+        "lemma": "mượn",
+        "pos": "VERB",
+        "entryKind": "word",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "sense-vi-muon-object",
+      "type": "sns",
+      "stageCategory": "vietnamese_polysemy_sense_separation",
+      "status": "draft",
+      "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+      "dependencies": [
+        "candidate:entry-vi-muon"
+      ],
+      "alignedEnglishSenseCandidates": [
+        "candidate:sense-borrow-temporary-use"
+      ],
+      "rationale": "Non-money physical-item borrowing sense of 'mượn'.",
+      "entity": {
+        "entryId": "candidate:entry-vi-muon",
+        "definition": "Nhận lấy đồ vật cụ thể của người khác để dùng tạm trong một thời gian rồi trả lại chính đồ vật đó.",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "register": "neutral",
+        "domain": "general",
+        "grammar": {
+          "transitivity": "transitive"
+        },
+        "topicIds": [],
+        "constructionIds": [],
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "entry-vi-vay",
+      "type": "lex",
+      "stageCategory": "vietnamese_polysemy_sense_separation",
+      "status": "draft",
+      "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+      "dependencies": [],
+      "rationale": "Models Vietnamese 'vay' (money/fungible capital returned in equivalent value, often with interest).",
+      "entity": {
+        "language": "vi",
+        "lemma": "vay",
+        "pos": "VERB",
+        "entryKind": "word",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": []
+      }
+    },
+    {
+      "candidateId": "sense-vi-vay-money",
+      "type": "sns",
+      "stageCategory": "vietnamese_polysemy_sense_separation",
+      "status": "draft",
+      "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+      "dependencies": [
+        "candidate:entry-vi-vay"
+      ],
+      "alignedEnglishSenseCandidates": [
+        "candidate:sense-borrow-temporary-use"
+      ],
+      "rationale": "Financial/money borrowing sense of 'vay'.",
+      "entity": {
+        "entryId": "candidate:entry-vi-vay",
+        "definition": "Nhận tiền hoặc tài sản đồng nhất của người khác hay tổ chức tín dụng để dùng tạm và hoàn trả giá trị tương đương, thường kèm theo lãi suất.",
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "register": "neutral",
+        "domain": "finance",
+        "grammar": {
+          "transitivity": "transitive"
+        },
+        "topicIds": [],
+        "constructionIds": [],
+        "evidenceIds": []
+      }
+    }
+  ]
+}

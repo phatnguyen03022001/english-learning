@@ -1,0 +1,2256 @@
+{
+  "handoffVersion": "11.0.0-canonical",
+  "artifactType": "phase11_to_phase12_canonical_handoff",
+  "status": "PHASE_11_AI_RESEARCH_COMPLETE_READY_FOR_PHASE_12_EXECUTION",
+  "publicationReady": false,
+  "baseline": {
+    "repository": "phatnguyen03022001/ielts-tradition",
+    "branch": "main",
+    "referenceHead": "5b679c60c4cce7d83e123fb00270cb87082e0dd4",
+    "sourceSnapshotPath": "data/candidates/pilot-fanout-002.json",
+    "sourceSnapshotSha256": "d203048c769d6e033f219dc58531d3db9c87c59a00ec8482f9748a3005cab805",
+    "canonicalDeliverables": [
+      "data/reviews/phase11/research-dossier.json",
+      "data/reviews/phase11/correction-ledger.json",
+      "data/reviews/phase11/semantic-coverage.json",
+      "data/reviews/phase11/staged-lexical-candidates.json",
+      "data/reviews/phase11/phase12-handoff.json",
+      "docs/phase11-closure.md"
+    ]
+  },
+  "requiredDataCorrections": [
+    {
+      "ledgerEntryId": "P11-LEDGER-060",
+      "reviewItemKey": "P10-family-analysis-entity-label",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "family-analysis",
+      "recordType": "fam",
+      "fieldPath": "/entity/label",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "analyse / analysis / analytical candidate family",
+      "afterValue": "analyse / analysis / analytical word family",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/label' is a published claim path in validators/production-gates.mjs, but currentValue ('analyse / analysis / analytical candidate family') contains the internal workflow word 'candidate'.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs::publicationClaimPaths",
+        "SRC-OALD: analyse, analysis, analytical"
+      ],
+      "counterEvidence": [
+        "Contains draft pipeline word 'candidate' in a published label."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-analysis-family"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-067",
+      "reviewItemKey": "P10-sense-bank-financial-entity-usageNote",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-bank-financial",
+      "recordType": "sns",
+      "fieldPath": "/entity/usageNote",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Candidate financial-services sense; this pilot is not an exhaustive inventory.",
+      "afterValue": "Countable noun referring either to a financial institution as an organization ('open an account at a bank') or to a local branch building ('go to the bank').",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/usageNote' is enumerated in validators/production-gates.mjs::publicationClaimPaths as a learner-facing claim path, but currentValue ('Candidate financial-services sense; this pilot is not an exhaustive inventory.') contains internal pipeline/review status notes ('Candidate ... sense', 'pending ... review', 'require ... review', 'not an exhaustive inventory').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs line 26",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE"
+      ],
+      "counterEvidence": [
+        "Contains internal draft/review workflow disclaimers unsuitable for published learner-facing dictionary entries."
+      ],
+      "impactedClaims": [
+        "P10-sense-bank-financial-entity-usageNote"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-074",
+      "reviewItemKey": "P10-sense-bank-river-entity-usageNote",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-bank-river",
+      "recordType": "sns",
+      "fieldPath": "/entity/usageNote",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Candidate river-edge sense; do not map it to the financial sense.",
+      "afterValue": "Countable noun often used in the plural ('the banks of the river') or modified by 'river' ('a river bank'); unrelated in meaning to a financial bank.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/usageNote' is enumerated in validators/production-gates.mjs::publicationClaimPaths as a learner-facing claim path, but currentValue ('Candidate river-edge sense; do not map it to the financial sense.') contains internal pipeline/review status notes ('Candidate ... sense', 'pending ... review', 'require ... review', 'not an exhaustive inventory').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs line 26",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE"
+      ],
+      "counterEvidence": [
+        "Contains internal draft/review workflow disclaimers unsuitable for published learner-facing dictionary entries."
+      ],
+      "impactedClaims": [
+        "P10-sense-bank-river-entity-usageNote"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-081",
+      "reviewItemKey": "P10-sense-run-movement-entity-usageNote",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-run-movement",
+      "recordType": "sns",
+      "fieldPath": "/entity/usageNote",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Candidate physical-movement sense; the gloss 'chạy bộ' is a context-specific alternative, not a universal translation.",
+      "afterValue": "Intransitive verb for moving rapidly on foot ('chạy'); when referring specifically to running for physical exercise or jogging, Vietnamese commonly uses 'chạy bộ'.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/usageNote' is enumerated in validators/production-gates.mjs::publicationClaimPaths as a learner-facing claim path, but currentValue ('Candidate physical-movement sense; the gloss 'chạy bộ' is a context-specific alternative, not a universal translation.') contains internal pipeline/review status notes ('Candidate ... sense', 'pending ... review', 'require ... review', 'not an exhaustive inventory').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs line 26",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE"
+      ],
+      "counterEvidence": [
+        "Contains internal draft/review workflow disclaimers unsuitable for published learner-facing dictionary entries."
+      ],
+      "impactedClaims": [
+        "P10-sense-run-movement-entity-usageNote"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-082",
+      "reviewItemKey": "P10-sense-run-machine-entity-definition",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-run-machine",
+      "recordType": "sns",
+      "fieldPath": "/entity/definition",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Function or operate, especially of a machine or system.",
+      "afterValue": "Function or operate, especially of a machine or system, or cause a machine, system, or program to function.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Phase 9 COR-003 set sense-run-machine /entity/grammar/transitivity to 'ambitransitive' and attached construction-run-machine-transitive ('run + NP (machine or program)'), but left /entity/definition purely intransitive ('Function or operate, especially of a machine or system.'). Under the single-sense retention model (docs/sense-division.md), the definition must cover both intransitive machine functioning and transitive machine/program operation.",
+      "evidence": [
+        "SRC-OALD: run_1 verb sense 7 ([I, T] to operate or function; to make a machine do this)",
+        "SRC-CAMBRIDGE: run verb (OPERATE [I or T])",
+        "SRC-REPO-GOVERNANCE: docs/sense-division.md"
+      ],
+      "counterEvidence": [
+        "Current definition omits the transitive causative meaning ('cause a machine, system, or program to function') required by ambitransitive grammar and construction-run-machine-transitive."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-run-boundary",
+        "P10-sense-run-machine-entity-grammar-transitivity",
+        "P10-construction-run-machine-transitive-entity-senseId"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-088",
+      "reviewItemKey": "P10-sense-run-machine-entity-usageNote",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-run-machine",
+      "recordType": "sns",
+      "fieldPath": "/entity/usageNote",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Candidate machine/system operation sense with separate intransitive functioning and transitive operation frames; the sense boundary and Vietnamese alternatives remain pending LER and bilingual review.",
+      "afterValue": "Used intransitively when a machine, engine, or system functions ('The engine runs quietly' — 'hoạt động' / 'chạy'), and transitively when an operator or system causes a machine or program to operate ('vận hành máy móc' / 'chạy chương trình').",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/usageNote' is enumerated in validators/production-gates.mjs::publicationClaimPaths as a learner-facing claim path, but currentValue ('Candidate machine/system operation sense with separate intransitive functioning and transitive operation frames; the sense boundary and Vietnamese alternatives remain pending LER and bilingual review.') contains internal pipeline/review status notes ('Candidate ... sense', 'pending ... review', 'require ... review', 'not an exhaustive inventory').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs line 26",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE"
+      ],
+      "counterEvidence": [
+        "Contains internal draft/review workflow disclaimers unsuitable for published learner-facing dictionary entries."
+      ],
+      "impactedClaims": [
+        "P10-sense-run-machine-entity-usageNote"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-097",
+      "reviewItemKey": "P10-sense-run-management-entity-usageNote",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-run-management",
+      "recordType": "sns",
+      "fieldPath": "/entity/usageNote",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Candidate management sense; the object is an organization, activity, or business-type entity.",
+      "afterValue": "Transitive verb taking a direct object that denotes a business, organization, department, or organized activity (for example, 'run a company', 'run a design studio').",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/usageNote' is enumerated in validators/production-gates.mjs::publicationClaimPaths as a learner-facing claim path, but currentValue ('Candidate management sense; the object is an organization, activity, or business-type entity.') contains internal pipeline/review status notes ('Candidate ... sense', 'pending ... review', 'require ... review', 'not an exhaustive inventory').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs line 26",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE"
+      ],
+      "counterEvidence": [
+        "Contains internal draft/review workflow disclaimers unsuitable for published learner-facing dictionary entries."
+      ],
+      "impactedClaims": [
+        "P10-sense-run-management-entity-usageNote"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-104",
+      "reviewItemKey": "P10-sense-analyse-entity-usageNote",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-analyse",
+      "recordType": "sns",
+      "fieldPath": "/entity/usageNote",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Candidate verb sense; the object and construction require independent grammar review.",
+      "afterValue": "Spelled 'analyse' in British English and 'analyze' in American English; used transitively with direct objects such as data, results, causes, or problems.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/usageNote' is enumerated in validators/production-gates.mjs::publicationClaimPaths as a learner-facing claim path, but currentValue ('Candidate verb sense; the object and construction require independent grammar review.') contains internal pipeline/review status notes ('Candidate ... sense', 'pending ... review', 'require ... review', 'not an exhaustive inventory').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs line 26",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE"
+      ],
+      "counterEvidence": [
+        "Contains internal draft/review workflow disclaimers unsuitable for published learner-facing dictionary entries."
+      ],
+      "impactedClaims": [
+        "P10-sense-analyse-entity-usageNote"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-111",
+      "reviewItemKey": "P10-sense-analysis-entity-usageNote",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-analysis",
+      "recordType": "sns",
+      "fieldPath": "/entity/usageNote",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Both countable and uncountable uses are attested. The process/result distinction and Vietnamese wording remain context-dependent and require bilingual review.",
+      "afterValue": "Used uncountably for the systematic process of examining something ('data analysis', 'sự phân tích') and countably for a specific study or report ('an analysis of the results', 'một bản phân tích'). Plural: 'analyses' (/əˈnæləsiːz/).",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/usageNote' is enumerated in validators/production-gates.mjs::publicationClaimPaths as a learner-facing claim path, but currentValue ('Both countable and uncountable uses are attested. The process/result distinction and Vietnamese wording remain context-dependent and require bilingual review.') contains internal pipeline/review status notes ('Candidate ... sense', 'pending ... review', 'require ... review', 'not an exhaustive inventory').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs line 26",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE"
+      ],
+      "counterEvidence": [
+        "Contains internal draft/review workflow disclaimers unsuitable for published learner-facing dictionary entries."
+      ],
+      "impactedClaims": [
+        "P10-sense-analysis-entity-usageNote"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-117",
+      "reviewItemKey": "P10-sense-analytical-entity-usageNote",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-analytical",
+      "recordType": "sns",
+      "fieldPath": "/entity/usageNote",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Candidate adjective sense; Vietnamese wording is context-sensitive and does not inherit the noun or verb POS.",
+      "afterValue": "Adjective commonly modifying nouns denoting reasoning, skills, or methods ('analytical thinking', 'analytical skills', 'an analytical approach').",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/usageNote' is enumerated in validators/production-gates.mjs::publicationClaimPaths as a learner-facing claim path, but currentValue ('Candidate adjective sense; Vietnamese wording is context-sensitive and does not inherit the noun or verb POS.') contains internal pipeline/review status notes ('Candidate ... sense', 'pending ... review', 'require ... review', 'not an exhaustive inventory').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs line 26",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE"
+      ],
+      "counterEvidence": [
+        "Contains internal draft/review workflow disclaimers unsuitable for published learner-facing dictionary entries."
+      ],
+      "impactedClaims": [
+        "P10-sense-analytical-entity-usageNote"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-118",
+      "reviewItemKey": "P10-sense-big-size-entity-contrastiveNotes-0-language",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-big-size",
+      "recordType": "sns",
+      "fieldPath": "/entity/contrastiveNotes/0/language",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "vi",
+      "afterValue": "en",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Language tag mismatch: 'sense-big-size' sets /entity/contrastiveNotes/0/language to 'vi', whereas /entity/contrastiveNotes/0/text is written in English. Change language tag to 'en' to match the English contrastive note text.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: data/candidates/pilot-fanout-002.json & schemas/v2/lexical-sense.schema.json"
+      ],
+      "counterEvidence": [
+        "Tag 'vi' contradicts the English language of /entity/contrastiveNotes/0/text."
+      ],
+      "impactedClaims": [
+        "P10-sense-big-size-entity-contrastiveNotes-0-text"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-119",
+      "reviewItemKey": "P10-sense-big-size-entity-contrastiveNotes-0-text",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-big-size",
+      "recordType": "sns",
+      "fieldPath": "/entity/contrastiveNotes/0/text",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "The shared gloss 'lớn' does not settle English collocational restrictions.",
+      "afterValue": "Although both 'big' and 'large' can translate as 'lớn' (or 'to'), 'big' is more common in informal everyday English and in fixed expressions such as 'a big decision' or 'big sister' where 'large' cannot be substituted.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Current text ('The shared gloss 'lớn' does not settle English collocational restrictions.') is phrased as a negative editorial disclaimer ('does not settle/prove...') and paired with a mismatched language='vi' tag. Replace with direct learner-facing contrastive guidance on 'big' vs 'large'.",
+      "evidence": [
+        "SRC-OALD: big_1 vs large_1",
+        "SRC-CAMBRIDGE: big vs large usage note"
+      ],
+      "counterEvidence": [
+        "Current text states what the gloss 'does not settle/prove' rather than giving actionable collocational/register contrast."
+      ],
+      "impactedClaims": [
+        "P10-sense-big-size-entity-contrastiveNotes-0-language"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-125",
+      "reviewItemKey": "P10-sense-big-size-entity-usageNote",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-big-size",
+      "recordType": "sns",
+      "fieldPath": "/entity/usageNote",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Physical-size candidate only; identical Vietnamese glosses do not license unrestricted substitution with 'large'.",
+      "afterValue": "Describes above-average physical size and is more informal and conversational than 'large'. Figurative uses of 'big' (such as 'a big decision' or 'big sister') do not allow substitution with 'large'.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/usageNote' is enumerated in validators/production-gates.mjs::publicationClaimPaths as a learner-facing claim path, but currentValue ('Physical-size candidate only; identical Vietnamese glosses do not license unrestricted substitution with 'large'.') contains internal pipeline/review status notes ('Candidate ... sense', 'pending ... review', 'require ... review', 'not an exhaustive inventory').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs line 26",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE"
+      ],
+      "counterEvidence": [
+        "Contains internal draft/review workflow disclaimers unsuitable for published learner-facing dictionary entries."
+      ],
+      "impactedClaims": [
+        "P10-sense-big-size-entity-usageNote"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-126",
+      "reviewItemKey": "P10-sense-large-size-entity-contrastiveNotes-0-language",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-large-size",
+      "recordType": "sns",
+      "fieldPath": "/entity/contrastiveNotes/0/language",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "vi",
+      "afterValue": "en",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Language tag mismatch: 'sense-large-size' sets /entity/contrastiveNotes/0/language to 'vi', whereas /entity/contrastiveNotes/0/text is written in English. Change language tag to 'en' to match the English contrastive note text.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: data/candidates/pilot-fanout-002.json & schemas/v2/lexical-sense.schema.json"
+      ],
+      "counterEvidence": [
+        "Tag 'vi' contradicts the English language of /entity/contrastiveNotes/0/text."
+      ],
+      "impactedClaims": [
+        "P10-sense-large-size-entity-contrastiveNotes-0-text"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-127",
+      "reviewItemKey": "P10-sense-large-size-entity-contrastiveNotes-0-text",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-large-size",
+      "recordType": "sns",
+      "fieldPath": "/entity/contrastiveNotes/0/text",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "The shared gloss 'lớn' does not prove that 'large' can replace 'big' in every context.",
+      "afterValue": "Although both 'large' and 'big' can translate as 'lớn', 'large' is more formal and objective, and is strongly preferred with quantity and proportion nouns ('a large amount', 'a large number', 'a large proportion').",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Current text ('The shared gloss 'lớn' does not prove that 'large' can replace 'big' in every context.') is phrased as a negative editorial disclaimer ('does not settle/prove...') and paired with a mismatched language='vi' tag. Replace with direct learner-facing contrastive guidance on 'big' vs 'large'.",
+      "evidence": [
+        "SRC-OALD: big_1 vs large_1",
+        "SRC-CAMBRIDGE: big vs large usage note"
+      ],
+      "counterEvidence": [
+        "Current text states what the gloss 'does not settle/prove' rather than giving actionable collocational/register contrast."
+      ],
+      "impactedClaims": [
+        "P10-sense-large-size-entity-contrastiveNotes-0-language"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-133",
+      "reviewItemKey": "P10-sense-large-size-entity-usageNote",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-large-size",
+      "recordType": "sns",
+      "fieldPath": "/entity/usageNote",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Physical-dimensions candidate only; possible near-synonymy with 'big' remains context-limited and unreviewed.",
+      "afterValue": "Describes physical size, area, or capacity in a slightly more formal and objective register than 'big', and is preferred with quantity nouns ('a large amount', 'a large number', 'a large proportion').",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/usageNote' is enumerated in validators/production-gates.mjs::publicationClaimPaths as a learner-facing claim path, but currentValue ('Physical-dimensions candidate only; possible near-synonymy with 'big' remains context-limited and unreviewed.') contains internal pipeline/review status notes ('Candidate ... sense', 'pending ... review', 'require ... review', 'not an exhaustive inventory').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs line 26",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE"
+      ],
+      "counterEvidence": [
+        "Contains internal draft/review workflow disclaimers unsuitable for published learner-facing dictionary entries."
+      ],
+      "impactedClaims": [
+        "P10-sense-large-size-entity-usageNote"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-139",
+      "reviewItemKey": "P10-sense-depend-contingent-entity-usageNote",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-depend-contingent",
+      "recordType": "sns",
+      "fieldPath": "/entity/usageNote",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Conditional/contingent candidate sense only; the reliance/support sense remains an unresolved review question.",
+      "afterValue": "Intransitive verb used with the preposition 'on' or 'upon' ('depend on something') to indicate that an outcome is determined by another factor; never takes a direct object without a preposition.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/usageNote' is enumerated in validators/production-gates.mjs::publicationClaimPaths as a learner-facing claim path, but currentValue ('Conditional/contingent candidate sense only; the reliance/support sense remains an unresolved review question.') contains internal pipeline/review status notes ('Candidate ... sense', 'pending ... review', 'require ... review', 'not an exhaustive inventory').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs line 26",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE"
+      ],
+      "counterEvidence": [
+        "Contains internal draft/review workflow disclaimers unsuitable for published learner-facing dictionary entries."
+      ],
+      "impactedClaims": [
+        "P10-sense-depend-contingent-entity-usageNote"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-145",
+      "reviewItemKey": "P10-sense-look-up-reference-entity-usageNote",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-look-up-reference",
+      "recordType": "sns",
+      "fieldPath": "/entity/usageNote",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Reference-lookup candidate sense; 'look it up' is a separable construction variant, not a separate entry.",
+      "afterValue": "Separable transitive phrasal verb: a noun phrase object may follow or split the verb ('look up the word' / 'look the word up'), whereas a personal pronoun object must precede the particle ('look it up', never *'look up it').",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/usageNote' is enumerated in validators/production-gates.mjs::publicationClaimPaths as a learner-facing claim path, but currentValue ('Reference-lookup candidate sense; 'look it up' is a separable construction variant, not a separate entry.') contains internal pipeline/review status notes ('Candidate ... sense', 'pending ... review', 'require ... review', 'not an exhaustive inventory').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs line 26",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE"
+      ],
+      "counterEvidence": [
+        "Contains internal draft/review workflow disclaimers unsuitable for published learner-facing dictionary entries."
+      ],
+      "impactedClaims": [
+        "P10-sense-look-up-reference-entity-usageNote"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-151",
+      "reviewItemKey": "P10-sense-borrow-temporary-use-entity-usageNote",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-borrow-temporary-use",
+      "recordType": "sns",
+      "fieldPath": "/entity/usageNote",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "The subject is the temporary recipient/user; 'mượn' is the non-money candidate gloss and money contexts may require separate review.",
+      "afterValue": "The subject is the temporary recipient ('borrow something from someone'); 'borrow' never takes an indirect object (*'borrow me a book'). For financial loans of money, Vietnamese uses 'vay' rather than 'mượn'.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/usageNote' is enumerated in validators/production-gates.mjs::publicationClaimPaths as a learner-facing claim path, but currentValue ('The subject is the temporary recipient/user; 'mượn' is the non-money candidate gloss and money contexts may require separate review.') contains internal pipeline/review status notes ('Candidate ... sense', 'pending ... review', 'require ... review', 'not an exhaustive inventory').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs line 26",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE"
+      ],
+      "counterEvidence": [
+        "Contains internal draft/review workflow disclaimers unsuitable for published learner-facing dictionary entries."
+      ],
+      "impactedClaims": [
+        "P10-sense-borrow-temporary-use-entity-usageNote"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-157",
+      "reviewItemKey": "P10-sense-lend-temporary-use-entity-usageNote",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-lend-temporary-use",
+      "recordType": "sns",
+      "fieldPath": "/entity/usageNote",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "The subject is the temporary provider; 'cho mượn' is the non-money candidate gloss and money contexts may require separate review.",
+      "afterValue": "The subject is the temporary giver ('lend someone something' or 'lend something to someone'); past tense and past participle: 'lent'. For financial loans of money, Vietnamese uses 'cho vay' rather than 'cho mượn'.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/usageNote' is enumerated in validators/production-gates.mjs::publicationClaimPaths as a learner-facing claim path, but currentValue ('The subject is the temporary provider; 'cho mượn' is the non-money candidate gloss and money contexts may require separate review.') contains internal pipeline/review status notes ('Candidate ... sense', 'pending ... review', 'require ... review', 'not an exhaustive inventory').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs line 26",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE"
+      ],
+      "counterEvidence": [
+        "Contains internal draft/review workflow disclaimers unsuitable for published learner-facing dictionary entries."
+      ],
+      "impactedClaims": [
+        "P10-sense-lend-temporary-use-entity-usageNote"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-164",
+      "reviewItemKey": "P10-sense-advice-guidance-entity-usageNote",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-advice-guidance",
+      "recordType": "sns",
+      "fieldPath": "/entity/usageNote",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Candidate ordinary guidance sense; keep uncountable usage pending independent review and do not treat 'advices' as an ordinary plural.",
+      "afterValue": "Strictly uncountable in standard English: use 'some advice' or 'a piece of advice', never *'an advice' or *'advices'. Contrast the noun 'advice' (/ədˈvaɪs/) with the verb 'advise' (/ədˈvaɪz/).",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: '/entity/usageNote' is enumerated in validators/production-gates.mjs::publicationClaimPaths as a learner-facing claim path, but currentValue ('Candidate ordinary guidance sense; keep uncountable usage pending independent review and do not treat 'advices' as an ordinary plural.') contains internal pipeline/review status notes ('Candidate ... sense', 'pending ... review', 'require ... review', 'not an exhaustive inventory').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs line 26",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE"
+      ],
+      "counterEvidence": [
+        "Contains internal draft/review workflow disclaimers unsuitable for published learner-facing dictionary entries."
+      ],
+      "impactedClaims": [
+        "P10-sense-advice-guidance-entity-usageNote"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-190",
+      "reviewItemKey": "P10-construction-depend-on-entity-constraints-0",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "construction-depend-on",
+      "recordType": "con",
+      "fieldPath": "/entity/constraints/0",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "do not model the complement as a direct object",
+      "afterValue": "takes a prepositional complement headed by on, never a bare direct object (*depend the weather)",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial/modeling meta-language contamination: 'do not model the complement as a direct object' is phrased as an internal instruction to data modelers ('do not model...', 'do not add...') or references internal draft status ('this candidate sense/frame') in a published claim path.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs::publicationClaimPaths",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE",
+        "SRC-BRITISH-COUNCIL"
+      ],
+      "counterEvidence": [
+        "Contains internal data-modeling command or 'candidate' meta-language."
+      ],
+      "impactedClaims": [
+        "P10-construction-depend-on-entity-constraints-0"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-191",
+      "reviewItemKey": "P10-construction-depend-on-entity-constraints-1",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "construction-depend-on",
+      "recordType": "con",
+      "fieldPath": "/entity/constraints/1",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "required preposition applies to this candidate sense",
+      "afterValue": "the preposition on is required in this contingent sense",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial/modeling meta-language contamination: 'required preposition applies to this candidate sense' is phrased as an internal instruction to data modelers ('do not model...', 'do not add...') or references internal draft status ('this candidate sense/frame') in a published claim path.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs::publicationClaimPaths",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE",
+        "SRC-BRITISH-COUNCIL"
+      ],
+      "counterEvidence": [
+        "Contains internal data-modeling command or 'candidate' meta-language."
+      ],
+      "impactedClaims": [
+        "P10-construction-depend-on-entity-constraints-1"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-213",
+      "reviewItemKey": "P10-construction-borrow-from-entity-constraints-1",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "construction-borrow-from",
+      "recordType": "con",
+      "fieldPath": "/entity/constraints/1",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "do not add a double-object frame",
+      "afterValue": "does not allow a double-object frame (*borrow someone something is ungrammatical)",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial/modeling meta-language contamination: 'do not add a double-object frame' is phrased as an internal instruction to data modelers ('do not model...', 'do not add...') or references internal draft status ('this candidate sense/frame') in a published claim path.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs::publicationClaimPaths",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE",
+        "SRC-BRITISH-COUNCIL"
+      ],
+      "counterEvidence": [
+        "Contains internal data-modeling command or 'candidate' meta-language."
+      ],
+      "impactedClaims": [
+        "P10-construction-borrow-from-entity-constraints-1"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-271",
+      "reviewItemKey": "P10-equiv-run-machine-operate-entity-restrictions-0",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "equiv-run-machine-operate",
+      "recordType": "eqv",
+      "fieldPath": "/entity/restrictions/0",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "candidate contextual gloss for intransitive machine/system functioning; preference relative to “vận hành” remains pending independent bilingual review",
+      "afterValue": "used for intransitive machine or system functioning; use 'vận hành' for transitive operator-controlled or formal technical operation",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: 'candidate contextual gloss for intransitive machine/system functioning; preference relative to “vận hành” remains pending independent bilingual review' contains internal review-queue status ('remains pending independent bilingual review', 'unresolved bilingual alternative', 'remain pending review', 'remains a separate review question', 'this candidate') in a published learner-facing field.",
+      "evidence": [
+        "SRC-CAMBRIDGE: English–Vietnamese Dictionary",
+        "SRC-HOANG-PHE: Từ điển tiếng Việt",
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs::publicationClaimPaths"
+      ],
+      "counterEvidence": [
+        "Exposes internal editorial workflow status in a learner-facing claim path."
+      ],
+      "impactedClaims": [
+        "P10-equiv-run-machine-operate-entity-restrictions-0"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-279",
+      "reviewItemKey": "P10-equiv-run-machine-operate-alternative-entity-restrictions-0",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "equiv-run-machine-operate-alternative",
+      "recordType": "eqv",
+      "fieldPath": "/entity/restrictions/0",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "unresolved bilingual alternative",
+      "afterValue": "preferred for transitive operation of a machine or system ('vận hành máy móc/hệ thống') and formal technical contexts",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: 'unresolved bilingual alternative' contains internal review-queue status ('remains pending independent bilingual review', 'unresolved bilingual alternative', 'remain pending review', 'remains a separate review question', 'this candidate') in a published learner-facing field.",
+      "evidence": [
+        "SRC-CAMBRIDGE: English–Vietnamese Dictionary",
+        "SRC-HOANG-PHE: Từ điển tiếng Việt",
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs::publicationClaimPaths"
+      ],
+      "counterEvidence": [
+        "Exposes internal editorial workflow status in a learner-facing claim path."
+      ],
+      "impactedClaims": [
+        "P10-equiv-run-machine-operate-alternative-entity-restrictions-0"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-280",
+      "reviewItemKey": "P10-equiv-run-machine-operate-alternative-entity-restrictions-1",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "equiv-run-machine-operate-alternative",
+      "recordType": "eqv",
+      "fieldPath": "/entity/restrictions/1",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "candidate operator-oriented alternative; preference relative to “hoạt động” remains pending independent bilingual review",
+      "afterValue": "more formal and technical than 'hoạt động' when used intransitively for complex systems",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: 'candidate operator-oriented alternative; preference relative to “hoạt động” remains pending independent bilingual review' contains internal review-queue status ('remains pending independent bilingual review', 'unresolved bilingual alternative', 'remain pending review', 'remains a separate review question', 'this candidate') in a published learner-facing field.",
+      "evidence": [
+        "SRC-CAMBRIDGE: English–Vietnamese Dictionary",
+        "SRC-HOANG-PHE: Từ điển tiếng Việt",
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs::publicationClaimPaths"
+      ],
+      "counterEvidence": [
+        "Exposes internal editorial workflow status in a learner-facing claim path."
+      ],
+      "impactedClaims": [
+        "P10-equiv-run-machine-operate-alternative-entity-restrictions-1"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-317",
+      "reviewItemKey": "P10-equiv-big-entity-restrictions-1",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "equiv-big",
+      "recordType": "eqv",
+      "fieldPath": "/entity/restrictions/1",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "big sister and other collocations remain outside this candidate",
+      "afterValue": "figurative senses such as 'big sister' or 'important' fall outside this physical-size sense",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: 'big sister and other collocations remain outside this candidate' contains internal review-queue status ('remains pending independent bilingual review', 'unresolved bilingual alternative', 'remain pending review', 'remains a separate review question', 'this candidate') in a published learner-facing field.",
+      "evidence": [
+        "SRC-CAMBRIDGE: English–Vietnamese Dictionary",
+        "SRC-HOANG-PHE: Từ điển tiếng Việt",
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs::publicationClaimPaths"
+      ],
+      "counterEvidence": [
+        "Exposes internal editorial workflow status in a learner-facing claim path."
+      ],
+      "impactedClaims": [
+        "P10-equiv-big-entity-restrictions-1"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-325",
+      "reviewItemKey": "P10-equiv-large-entity-restrictions-1",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "equiv-large",
+      "recordType": "eqv",
+      "fieldPath": "/entity/restrictions/1",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "collocational differences remain pending review",
+      "afterValue": "preferred over 'big' with quantity and proportion nouns such as 'a large amount', 'a large number', and 'a large proportion'",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: 'collocational differences remain pending review' contains internal review-queue status ('remains pending independent bilingual review', 'unresolved bilingual alternative', 'remain pending review', 'remains a separate review question', 'this candidate') in a published learner-facing field.",
+      "evidence": [
+        "SRC-CAMBRIDGE: English–Vietnamese Dictionary",
+        "SRC-HOANG-PHE: Từ điển tiếng Việt",
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs::publicationClaimPaths"
+      ],
+      "counterEvidence": [
+        "Exposes internal editorial workflow status in a learner-facing claim path."
+      ],
+      "impactedClaims": [
+        "P10-equiv-large-entity-restrictions-1"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-332",
+      "reviewItemKey": "P10-equiv-depend-entity-restrictions-0",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "equiv-depend",
+      "recordType": "eqv",
+      "fieldPath": "/entity/restrictions/0",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "does not cover the unresolved reliance/support sense",
+      "afterValue": "does not cover the interpersonal reliance or trust sense ('trông cậy vào / dựa vào')",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: 'does not cover the unresolved reliance/support sense' contains internal review-queue status ('remains pending independent bilingual review', 'unresolved bilingual alternative', 'remain pending review', 'remains a separate review question', 'this candidate') in a published learner-facing field.",
+      "evidence": [
+        "SRC-CAMBRIDGE: English–Vietnamese Dictionary",
+        "SRC-HOANG-PHE: Từ điển tiếng Việt",
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs::publicationClaimPaths"
+      ],
+      "counterEvidence": [
+        "Exposes internal editorial workflow status in a learner-facing claim path."
+      ],
+      "impactedClaims": [
+        "P10-equiv-depend-entity-restrictions-0"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-346",
+      "reviewItemKey": "P10-equiv-borrow-entity-restrictions-0",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "equiv-borrow",
+      "recordType": "eqv",
+      "fieldPath": "/entity/restrictions/0",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "money-related vay remains a separate review question",
+      "afterValue": "applies to non-money physical items returned in kind; financial borrowing of money in Vietnamese uses 'vay'",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: 'money-related vay remains a separate review question' contains internal review-queue status ('remains pending independent bilingual review', 'unresolved bilingual alternative', 'remain pending review', 'remains a separate review question', 'this candidate') in a published learner-facing field.",
+      "evidence": [
+        "SRC-CAMBRIDGE: English–Vietnamese Dictionary",
+        "SRC-HOANG-PHE: Từ điển tiếng Việt",
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs::publicationClaimPaths"
+      ],
+      "counterEvidence": [
+        "Exposes internal editorial workflow status in a learner-facing claim path."
+      ],
+      "impactedClaims": [
+        "P10-equiv-borrow-entity-restrictions-0"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-354",
+      "reviewItemKey": "P10-equiv-lend-entity-restrictions-0",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "equiv-lend",
+      "recordType": "eqv",
+      "fieldPath": "/entity/restrictions/0",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "money-related cho vay remains a separate review question",
+      "afterValue": "applies to non-money physical items returned in kind; financial lending of money in Vietnamese uses 'cho vay'",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial meta-language contamination: 'money-related cho vay remains a separate review question' contains internal review-queue status ('remains pending independent bilingual review', 'unresolved bilingual alternative', 'remain pending review', 'remains a separate review question', 'this candidate') in a published learner-facing field.",
+      "evidence": [
+        "SRC-CAMBRIDGE: English–Vietnamese Dictionary",
+        "SRC-HOANG-PHE: Từ điển tiếng Việt",
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs::publicationClaimPaths"
+      ],
+      "counterEvidence": [
+        "Exposes internal editorial workflow status in a learner-facing claim path."
+      ],
+      "impactedClaims": [
+        "P10-equiv-lend-entity-restrictions-0"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-366",
+      "reviewItemKey": "P10-construction-run-machine-transitive-entity-constraints-0",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "construction-run-machine-transitive",
+      "recordType": "con",
+      "fieldPath": "/entity/constraints/0",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "The direct object is a machine or program in this candidate operation frame.",
+      "afterValue": "the direct object is a machine, system, or program caused to operate in this transitive frame",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Editorial/modeling meta-language contamination: 'The direct object is a machine or program in this candidate operation frame.' is phrased as an internal instruction to data modelers ('do not model...', 'do not add...') or references internal draft status ('this candidate sense/frame') in a published claim path.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs::publicationClaimPaths",
+        "SRC-OALD",
+        "SRC-CAMBRIDGE",
+        "SRC-BRITISH-COUNCIL"
+      ],
+      "counterEvidence": [
+        "Contains internal data-modeling command or 'candidate' meta-language."
+      ],
+      "impactedClaims": [
+        "P10-construction-run-machine-transitive-entity-constraints-0"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-374",
+      "reviewItemKey": "P10-ISSUE-run-boundary",
+      "itemKind": "SCOPED_ISSUE",
+      "candidateId": "sense-run-machine,construction-run-machine,construction-run-machine-transitive",
+      "recordType": "issue",
+      "fieldPath": "/entity/definition",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Editorial/reuse decision pending.",
+      "afterValue": "Retain single ambitransitive sense-run-machine; update /entity/definition to 'Function or operate, especially of a machine or system, or cause a machine, system, or program to function.'; clean workflow meta-language in usageNote, construction-run-machine-transitive/constraints/0, equiv-run-machine-operate/restrictions/0, and equiv-run-machine-operate-alternative/restrictions/0..1.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Re-evaluated under docs/sense-division.md ('A grammatical-frame change or a new preposition alone is not sufficient to split') and docs/ontology-v1.md §1.2 ('Construction owns syntax and valency'). Intransitive machine functioning ('The engine runs quietly') and transitive machine/program operation ('run a machine/program') form a productive causative/inchoative (ergative) alternation sharing the same core operational state, truth conditions (X runs Y entails Y runs), and selectional domain (machine/system). Both OALD (run_1 sense 7 [I, T]) and Cambridge (run OPERATE [I or T]) keep both frames in a single sense. Therefore, Option 2 (Retain single ambitransitive sense 'sense-run-machine' with its two attached Construction records and two contextual TranslationEquivalence records) is superior to splitting. However, Phase 9 COR-003 updated grammar.transitivity to 'ambitransitive' without broadening sense-run-machine's definition ('Function or operate, especially of a machine or system.'), which currently covers only the intransitive frame. Broadening /entity/definition and purging workflow meta-language from usageNote, con.constraints, and eqv.restrictions resolves the issue without a sense split.",
+      "evidence": [
+        "SRC-OALD: run_1 verb sense 7 ([I, T] of a machine: to operate or function; to make a machine do this)",
+        "SRC-CAMBRIDGE: run verb (OPERATE [I or T])",
+        "SRC-HOANG-PHE: hoạt động (intransitive) vs vận hành (transitive/technical)",
+        "SRC-REPO-GOVERNANCE: docs/sense-division.md & docs/ontology-v1.md §1.2"
+      ],
+      "counterEvidence": [
+        "Current sense-run-machine /entity/definition states only 'Function or operate, especially of a machine or system.', omitting the causative transitive reading."
+      ],
+      "impactedClaims": [
+        "P10-sense-run-machine-entity-definition",
+        "P10-sense-run-machine-entity-usageNote",
+        "P10-construction-run-machine-transitive-entity-constraints-0",
+        "P10-equiv-run-machine-operate-entity-restrictions-0",
+        "P10-equiv-run-machine-operate-alternative-entity-restrictions-0",
+        "P10-equiv-run-machine-operate-alternative-entity-restrictions-1"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-375",
+      "reviewItemKey": "P10-ISSUE-analysis-family",
+      "itemKind": "SCOPED_ISSUE",
+      "candidateId": "family-analysis,entry-analyse,entry-analysis,entry-analytical",
+      "recordType": "issue",
+      "fieldPath": "/entity/label",
+      "status": "REQUIRED_CORRECTION",
+      "assessment": "CORRECTION_NEEDED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Editorial/reuse decision pending.",
+      "afterValue": "Keep family-analysis /entity/familyBasis='editorially_related' (and entry-analyse/analysis/analytical /entity/familyIds=['candidate:family-analysis']); change family-analysis /entity/label to 'analyse / analysis / analytical word family'; attach OALD/Cambridge/OEWN evidence references.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Re-evaluated strictly against schemas/v2/word-family.schema.json (which permits only _id, schemaVersion, lifecycleStatus, editorialStatus, evidenceIds, revision, createdAt, updatedAt, retirement fields, familyBasis, and label; additionalProperties=false) and docs/ontology-v1.md §1.8 & §5 (membership is owned solely by LexicalEntry.familyIds[]; WordFamily has no rootLemma or memberEntryIds). Retaining familyBasis='editorially_related' on family-analysis is valid, conservative, and schema-compliant because it groups the synchronic cluster (analyse, analysis, analytical) without asserting a directed DERIVED_FROM edge (diachronically, analytical [1520s] and analysis [1580s] preceded analyse [c.1600]). Two corrections are required: (1) replace the invalid internal-only SRC-REPO evidence citation from Phase 8/9 with external lexicographic attestations (OALD, Cambridge, OEWN), and (2) remove the internal workflow word 'candidate' from family-analysis /entity/label ('analyse / analysis / analytical candidate family' -> 'analyse / analysis / analytical word family').",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/word-family.schema.json & docs/ontology-v1.md §1.8, §5",
+        "SRC-OALD: analyse, analysis, analytical entries",
+        "SRC-CAMBRIDGE: analyse, analysis, analytical entries",
+        "SRC-OEWN: analyze.v.01, analysis.n.01, analytical.a.01"
+      ],
+      "counterEvidence": [
+        "family-analysis /entity/label currently contains internal workflow meta-language ('candidate family'), and Phase 8/9 cited only internal SRC-REPO."
+      ],
+      "impactedClaims": [
+        "P10-family-analysis-entity-label",
+        "P10-family-analysis-entity-familyBasis",
+        "P10-entry-analyse-entity-familyIds",
+        "P10-entry-analysis-entity-familyIds",
+        "P10-entry-analytical-entity-familyIds"
+      ]
+    }
+  ],
+  "optionalImprovements": [
+    {
+      "ledgerEntryId": "P11-LEDGER-059",
+      "reviewItemKey": "P10-family-analysis-entity-familyBasis",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "family-analysis",
+      "recordType": "fam",
+      "fieldPath": "/entity/familyBasis",
+      "status": "RECOMMENDED_IMPROVEMENT",
+      "assessment": "SUPPORTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "editorially_related",
+      "afterValue": "synchronically_derivational",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Under schemas/v2/word-family.schema.json and docs/ontology-v1.md §5, 'editorially_related' is a valid, conservative familyBasis value for an undirected lexical cluster where no directed DERIVED_FROM relation is asserted. External lexicographic sources (OALD, Cambridge, OEWN) corroborate grouping analyse (v.), analysis (n.), and analytical (adj.) as a synchronic word family, resolving the Phase 8/9 evidence gap (where only internal SRC-REPO was cited). Upgrading to 'synchronically_derivational' is an optional improvement, not a required fix.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/word-family.schema.json & docs/ontology-v1.md §5",
+        "SRC-OALD: analyse, analysis, analytical",
+        "SRC-CAMBRIDGE: analyse, analysis, analytical",
+        "SRC-OEWN: analyze.v.01, analysis.n.01, analytical.a.01"
+      ],
+      "counterEvidence": [],
+      "impactedClaims": [
+        "P10-ISSUE-analysis-family"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-061",
+      "reviewItemKey": "P10-sense-bank-financial-entity-definition",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-bank-financial",
+      "recordType": "sns",
+      "fieldPath": "/entity/definition",
+      "status": "RECOMMENDED_IMPROVEMENT",
+      "assessment": "SUPPORTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "An institution that keeps money and provides financial services.",
+      "afterValue": "A financial institution that accepts deposits, safeguards money, and provides loans or payment services.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Definition ('An institution that keeps money and provides financial services.') accurately captures the core meaning of 'sense-bank-financial' and is corroborated by OALD, Cambridge, Collins, and OEWN. Short factual phrasing (5–9 words) represents standard lexical description rather than copied creative expression. Current 9-word definition ('An institution that keeps money and provides financial services.') is factually accurate common phrasing. Optional refinement adds deposits/loans specificity.",
+      "evidence": [
+        "SRC-OALD",
+        "SRC-CAMBRIDGE",
+        "SRC-COLLINS",
+        "SRC-OEWN"
+      ],
+      "counterEvidence": [],
+      "impactedClaims": []
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-068",
+      "reviewItemKey": "P10-sense-bank-river-entity-definition",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-bank-river",
+      "recordType": "sns",
+      "fieldPath": "/entity/definition",
+      "status": "RECOMMENDED_IMPROVEMENT",
+      "assessment": "SUPPORTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "The land along the side of a river.",
+      "afterValue": "Raised or sloping ground bordering the edge of a river.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Definition ('The land along the side of a river.') accurately captures the core meaning of 'sense-bank-river' and is corroborated by OALD, Cambridge, Collins, and OEWN. Short factual phrasing (5–9 words) represents standard lexical description rather than copied creative expression. Current 8-word definition ('The land along the side of a river.') is valid factual English phrasing, though identical to the opening 8 words of LDOCE/Cambridge. Optional rephrasing reduces superficial overlap.",
+      "evidence": [
+        "SRC-OALD",
+        "SRC-CAMBRIDGE",
+        "SRC-COLLINS",
+        "SRC-OEWN"
+      ],
+      "counterEvidence": [],
+      "impactedClaims": []
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-075",
+      "reviewItemKey": "P10-sense-run-movement-entity-definition",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-run-movement",
+      "recordType": "sns",
+      "fieldPath": "/entity/definition",
+      "status": "RECOMMENDED_IMPROVEMENT",
+      "assessment": "SUPPORTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Move using the legs faster than walking.",
+      "afterValue": "Move rapidly on foot at a pace faster than walking, with both feet briefly off the ground.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Definition ('Move using the legs faster than walking.') accurately captures the core meaning of 'sense-run-movement' and is corroborated by OALD, Cambridge, Collins, and OEWN. Short factual phrasing (5–9 words) represents standard lexical description rather than copied creative expression. Current 7-word definition ('Move using the legs faster than walking.') is valid factual phrasing. Optional refinement adds stride specificity.",
+      "evidence": [
+        "SRC-OALD",
+        "SRC-CAMBRIDGE",
+        "SRC-COLLINS",
+        "SRC-OEWN"
+      ],
+      "counterEvidence": [],
+      "impactedClaims": []
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-079",
+      "reviewItemKey": "P10-sense-run-movement-entity-examples-0-vi",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-run-movement",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/vi",
+      "status": "RECOMMENDED_IMPROVEMENT",
+      "assessment": "SUPPORTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Anh ấy chạy mỗi buổi sáng.",
+      "afterValue": "Anh ấy chạy bộ mỗi buổi sáng.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Re-evaluated: 'Anh ấy chạy mỗi buổi sáng.' is grammatically valid in Vietnamese and directly illustrates the primary gloss 'chạy'; 'Anh ấy chạy bộ mỗi buổi sáng.' is an optional idiomatic improvement.",
+      "evidence": [
+        "SRC-CAMBRIDGE",
+        "SRC-HOANG-PHE"
+      ],
+      "counterEvidence": [],
+      "impactedClaims": []
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-105",
+      "reviewItemKey": "P10-sense-analysis-entity-definition",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-analysis",
+      "recordType": "sns",
+      "fieldPath": "/entity/definition",
+      "status": "RECOMMENDED_IMPROVEMENT",
+      "assessment": "SUPPORTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "A detailed examination of something.",
+      "afterValue": "A detailed examination of something, or a report presenting the findings of such an examination.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Definition ('A detailed examination of something.') accurately captures the core meaning of 'sense-analysis' and is corroborated by OALD, Cambridge, Collins, and OEWN. Short factual phrasing (5–9 words) represents standard lexical description rather than copied creative expression. Current definition ('A detailed examination of something.') is accurate for the core meaning; optional expansion explicitly mentions the countable report/study reading to match grammar.countability='both' (COR-001).",
+      "evidence": [
+        "SRC-OALD",
+        "SRC-CAMBRIDGE",
+        "SRC-COLLINS",
+        "SRC-OEWN"
+      ],
+      "counterEvidence": [],
+      "impactedClaims": []
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-162",
+      "reviewItemKey": "P10-sense-advice-guidance-entity-examples-0-vi",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-advice-guidance",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/vi",
+      "status": "RECOMMENDED_IMPROVEMENT",
+      "assessment": "SUPPORTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Cô ấy cho tôi một lời khuyên hữu ích.",
+      "afterValue": "Cô ấy cho tôi vài lời khuyên hữu ích.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Re-evaluated (False Positive removed): 'Cô ấy cho tôi một lời khuyên hữu ích.' is grammatically well-formed, faithful, and idiomatic in Vietnamese. English uncountable 'advice' does not require banning Vietnamese countable classifier phrases ('một lời khuyên'); the cross-linguistic countability contrast belongs in usageNote/restrictions.",
+      "evidence": [
+        "SRC-CAMBRIDGE",
+        "SRC-HOANG-PHE"
+      ],
+      "counterEvidence": [],
+      "impactedClaims": []
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-172",
+      "reviewItemKey": "P10-construction-run-machine-entity-pattern",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "construction-run-machine",
+      "recordType": "con",
+      "fieldPath": "/entity/pattern",
+      "status": "RECOMMENDED_IMPROVEMENT",
+      "assessment": "SUPPORTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "run (of a machine or system)",
+      "afterValue": "NP (machine or system) + run",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Construction property /entity/pattern=\"run (of a machine or system)\" on 'construction-run-machine' is grammatically accurate and supported by OALD, Cambridge, Collins, and British Council. Current pattern ('run (of a machine or system)') is clear and valid; optional refinement standardizes NP constituent notation across constructions.",
+      "evidence": [
+        "SRC-OALD",
+        "SRC-CAMBRIDGE",
+        "SRC-COLLINS",
+        "SRC-BRITISH-COUNCIL",
+        "SRC-REPO-GOVERNANCE: schemas/v2/construction.schema.json"
+      ],
+      "counterEvidence": [],
+      "impactedClaims": []
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-208",
+      "reviewItemKey": "P10-construction-look-up-separable-entity-pattern",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "construction-look-up-separable",
+      "recordType": "con",
+      "fieldPath": "/entity/pattern",
+      "status": "RECOMMENDED_IMPROVEMENT",
+      "assessment": "SUPPORTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "look up + NP / look + NP + up",
+      "afterValue": "look up + NP (+ in/on + NP) / look + NP + up (+ in/on + NP)",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Construction property /entity/pattern=\"look up + NP / look + NP + up\" on 'construction-look-up-separable' is grammatically accurate and supported by OALD, Cambridge, Collins, and British Council. Current pattern ('look up + NP / look + NP + up') is accurate for the core separable object frame; optional refinement notes the optional source PP.",
+      "evidence": [
+        "SRC-OALD",
+        "SRC-CAMBRIDGE",
+        "SRC-COLLINS",
+        "SRC-BRITISH-COUNCIL",
+        "SRC-REPO-GOVERNANCE: schemas/v2/construction.schema.json"
+      ],
+      "counterEvidence": [],
+      "impactedClaims": []
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-229",
+      "reviewItemKey": "P10-construction-lend-double-object-entity-pattern",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "construction-lend-double-object",
+      "recordType": "con",
+      "fieldPath": "/entity/pattern",
+      "status": "RECOMMENDED_IMPROVEMENT",
+      "assessment": "SUPPORTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "lend + recipient + thing",
+      "afterValue": "lend + NP (recipient) + NP (thing)",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Construction property /entity/pattern=\"lend + recipient + thing\" on 'construction-lend-double-object' is grammatically accurate and supported by OALD, Cambridge, Collins, and British Council. Current pattern ('lend + recipient + thing') is clear and matches learner dictionary conventions; optional refinement adds explicit NP labels.",
+      "evidence": [
+        "SRC-OALD",
+        "SRC-CAMBRIDGE",
+        "SRC-COLLINS",
+        "SRC-BRITISH-COUNCIL",
+        "SRC-REPO-GOVERNANCE: schemas/v2/construction.schema.json"
+      ],
+      "counterEvidence": [],
+      "impactedClaims": []
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-239",
+      "reviewItemKey": "P10-construction-lend-to-entity-pattern",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "construction-lend-to",
+      "recordType": "con",
+      "fieldPath": "/entity/pattern",
+      "status": "RECOMMENDED_IMPROVEMENT",
+      "assessment": "SUPPORTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "lend + thing + to + recipient",
+      "afterValue": "lend + NP (thing) + to + NP (recipient)",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Construction property /entity/pattern=\"lend + thing + to + recipient\" on 'construction-lend-to' is grammatically accurate and supported by OALD, Cambridge, Collins, and British Council. Current pattern ('lend + thing + to + recipient') is clear and valid; optional refinement adds explicit NP labels.",
+      "evidence": [
+        "SRC-OALD",
+        "SRC-CAMBRIDGE",
+        "SRC-COLLINS",
+        "SRC-BRITISH-COUNCIL",
+        "SRC-REPO-GOVERNANCE: schemas/v2/construction.schema.json"
+      ],
+      "counterEvidence": [],
+      "impactedClaims": []
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-275",
+      "reviewItemKey": "P10-equiv-run-machine-operate-alternative-entity-context",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "equiv-run-machine-operate-alternative",
+      "recordType": "eqv",
+      "fieldPath": "/entity/context",
+      "status": "RECOMMENDED_IMPROVEMENT",
+      "assessment": "SUPPORTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "technical or operator-oriented wording for machine/system operation",
+      "afterValue": "transitive operation of a machine or system by an operator, or formal/technical system functioning",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Bilingual claim /entity/context=\"technical or operator-oriented wording for machine/system operation\" on 'equiv-run-machine-operate-alternative' is accurate in context and supported by English–Vietnamese lexicographic comparison. Current context ('technical or operator-oriented wording for machine/system operation') is accurate; optional refinement makes transitive valency explicit.",
+      "evidence": [
+        "SRC-CAMBRIDGE",
+        "SRC-HOANG-PHE",
+        "SRC-OALD"
+      ],
+      "counterEvidence": [],
+      "impactedClaims": []
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-299",
+      "reviewItemKey": "P10-equiv-analysis-entity-glossVi",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "equiv-analysis",
+      "recordType": "eqv",
+      "fieldPath": "/entity/glossVi",
+      "status": "RECOMMENDED_IMPROVEMENT",
+      "assessment": "SUPPORTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "phân tích",
+      "afterValue": "sự phân tích; bản phân tích",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Re-evaluated (Overcorrection removed): 'phân tích' is valid as the core Vietnamese lexical gloss when paired with equivalenceType='approximate', context='noun referring to a process or a report/result', and restrictions specifying 'sự phân tích' (process) and 'bản phân tích' (report/result). Expanding glossVi to 'sự phân tích; bản phân tích' is an optional improvement, not a required error correction.",
+      "evidence": [
+        "SRC-CAMBRIDGE",
+        "SRC-HOANG-PHE",
+        "SRC-OALD"
+      ],
+      "counterEvidence": [],
+      "impactedClaims": []
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-315",
+      "reviewItemKey": "P10-equiv-big-entity-glossVi",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "equiv-big",
+      "recordType": "eqv",
+      "fieldPath": "/entity/glossVi",
+      "status": "RECOMMENDED_IMPROVEMENT",
+      "assessment": "SUPPORTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "lớn",
+      "afterValue": "to; lớn",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Re-evaluated (Overcorrection removed): 'lớn' is an accurate, standard Vietnamese equivalent for physical-size 'big' (as in 'ngôi nhà lớn'). Adding 'to' ('to; lớn') is an optional improvement, not a required error correction.",
+      "evidence": [
+        "SRC-CAMBRIDGE",
+        "SRC-HOANG-PHE",
+        "SRC-OALD"
+      ],
+      "counterEvidence": [],
+      "impactedClaims": []
+    }
+  ],
+  "stagedAdditions": {
+    "sourceFile": "data/reviews/phase11/staged-lexical-candidates.json",
+    "pilotCompatibleAdditions": [
+      {
+        "candidateId": "entry-small",
+        "type": "lex",
+        "stageCategory": "missing_english_antonym_endpoint",
+        "dependencies": [],
+        "rationale": "Required target lexical entry endpoint to close gradable antonymy coverage for 'sense-big-size' ('big' <-> 'small') and 'sense-large-size' ('large' <-> 'small') under Part B (B2/B3/B4)."
+      },
+      {
+        "candidateId": "sense-small-size",
+        "type": "sns",
+        "stageCategory": "missing_english_antonym_endpoint",
+        "dependencies": [
+          "candidate:entry-small"
+        ],
+        "rationale": "Core physical-size/scale sense of 'small' serving as the verified gradable antonym target endpoint for 'sense-big-size' and 'sense-large-size'."
+      },
+      {
+        "candidateId": "equiv-small",
+        "type": "eqv",
+        "stageCategory": "missing_english_antonym_endpoint",
+        "dependencies": [
+          "candidate:sense-small-size"
+        ],
+        "rationale": "Provides the English-to-Vietnamese gloss equivalence for the staged endpoint 'sense-small-size'."
+      },
+      {
+        "candidateId": "rel-big-large-near-synonym",
+        "type": "rel",
+        "stageCategory": "verified_near_synonym_proposal",
+        "dependencies": [
+          "candidate:sense-big-size",
+          "candidate:sense-large-size"
+        ],
+        "rationale": "'sense-big-size' and 'sense-large-size' overlap in denoting above-average physical size of concrete countable nouns ('a big/large house'), but are not interchangeable in quantity collocations ('a large amount/proportion', not '*a big proportion') or figurative importance ('a big decision', not '*a large decision'). Modeled as NEAR_SYNONYM_OF, never SYNONYM_OF."
+      },
+      {
+        "candidateId": "rel-big-small-antonym",
+        "type": "rel",
+        "stageCategory": "verified_antonym_proposal",
+        "dependencies": [
+          "candidate:sense-big-size",
+          "candidate:sense-small-size"
+        ],
+        "rationale": "Verified gradable antonym pair on the physical-size dimension ('a big house' <-> 'a small house'). Scoped strictly to 'sense-big-size' (whereas figurative 'big' in 'a big decision' contrasts with 'minor/trivial')."
+      },
+      {
+        "candidateId": "rel-large-small-antonym",
+        "type": "rel",
+        "stageCategory": "verified_antonym_proposal",
+        "dependencies": [
+          "candidate:sense-large-size",
+          "candidate:sense-small-size"
+        ],
+        "rationale": "Verified gradable antonym pair across both physical size/area ('a large room' <-> 'a small room') and quantity/proportion collocations ('a large number/amount/proportion' <-> 'a small number/amount/proportion')."
+      },
+      {
+        "candidateId": "equiv-borrow-money",
+        "type": "eqv",
+        "stageCategory": "bilingual_one_to_many_equivalence",
+        "dependencies": [
+          "candidate:sense-borrow-temporary-use"
+        ],
+        "rationale": "Models the second branch of the mandatory 1-to-2 English–Vietnamese lexical split for 'sense-borrow-temporary-use': whereas 'equiv-borrow' ('mượn') covers specific physical objects returned in kind, Vietnamese requires 'vay' when borrowing money, credit, or fungible financial capital returned in equivalent value."
+      },
+      {
+        "candidateId": "equiv-lend-money",
+        "type": "eqv",
+        "stageCategory": "bilingual_one_to_many_equivalence",
+        "dependencies": [
+          "candidate:sense-lend-temporary-use"
+        ],
+        "rationale": "Models the second branch of the mandatory 1-to-2 English–Vietnamese lexical split for 'sense-lend-temporary-use': whereas 'equiv-lend' ('cho mượn') covers specific physical objects returned in kind, Vietnamese requires 'cho vay' when lending money, credit, or financial capital."
+      }
+    ],
+    "deferredScaleVietnameseGraphAdditions": [
+      {
+        "candidateId": "entry-vi-chay",
+        "type": "lex",
+        "stageCategory": "vietnamese_polysemy_sense_separation",
+        "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+        "dependencies": []
+      },
+      {
+        "candidateId": "sense-vi-chay-locomotion",
+        "type": "sns",
+        "stageCategory": "vietnamese_polysemy_sense_separation",
+        "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+        "dependencies": [
+          "candidate:entry-vi-chay"
+        ]
+      },
+      {
+        "candidateId": "sense-vi-chay-machine",
+        "type": "sns",
+        "stageCategory": "vietnamese_polysemy_sense_separation",
+        "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+        "dependencies": [
+          "candidate:entry-vi-chay"
+        ]
+      },
+      {
+        "candidateId": "sense-vi-chay-maneuver",
+        "type": "sns",
+        "stageCategory": "vietnamese_polysemy_sense_separation",
+        "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+        "dependencies": [
+          "candidate:entry-vi-chay"
+        ]
+      },
+      {
+        "candidateId": "entry-vi-hoat-dong",
+        "type": "lex",
+        "stageCategory": "vietnamese_polysemy_sense_separation",
+        "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+        "dependencies": []
+      },
+      {
+        "candidateId": "sense-vi-hoat-dong-mechanical",
+        "type": "sns",
+        "stageCategory": "vietnamese_polysemy_sense_separation",
+        "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+        "dependencies": [
+          "candidate:entry-vi-hoat-dong"
+        ]
+      },
+      {
+        "candidateId": "sense-vi-hoat-dong-social",
+        "type": "sns",
+        "stageCategory": "vietnamese_polysemy_sense_separation",
+        "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+        "dependencies": [
+          "candidate:entry-vi-hoat-dong"
+        ]
+      },
+      {
+        "candidateId": "entry-vi-van-hanh",
+        "type": "lex",
+        "stageCategory": "vietnamese_polysemy_sense_separation",
+        "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+        "dependencies": []
+      },
+      {
+        "candidateId": "sense-vi-van-hanh-operate",
+        "type": "sns",
+        "stageCategory": "vietnamese_polysemy_sense_separation",
+        "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+        "dependencies": [
+          "candidate:entry-vi-van-hanh"
+        ]
+      },
+      {
+        "candidateId": "entry-vi-muon",
+        "type": "lex",
+        "stageCategory": "vietnamese_polysemy_sense_separation",
+        "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+        "dependencies": []
+      },
+      {
+        "candidateId": "sense-vi-muon-object",
+        "type": "sns",
+        "stageCategory": "vietnamese_polysemy_sense_separation",
+        "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+        "dependencies": [
+          "candidate:entry-vi-muon"
+        ]
+      },
+      {
+        "candidateId": "entry-vi-vay",
+        "type": "lex",
+        "stageCategory": "vietnamese_polysemy_sense_separation",
+        "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+        "dependencies": []
+      },
+      {
+        "candidateId": "sense-vi-vay-money",
+        "type": "sns",
+        "stageCategory": "vietnamese_polysemy_sense_separation",
+        "targetPhase": "LEXICAL_PRODUCTION_AT_SCALE",
+        "dependencies": [
+          "candidate:entry-vi-vay"
+        ]
+      }
+    ]
+  },
+  "unresolvedDisputes": [
+    {
+      "ledgerEntryId": "P11-LEDGER-002",
+      "reviewItemKey": "P10-entry-bank-financial-entity-homographNumber",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "entry-bank-financial",
+      "recordType": "lex",
+      "fieldPath": "/entity/homographNumber",
+      "status": "DISPUTED",
+      "assessment": "DISPUTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": 1,
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Separating financial 'bank' and river 'bank' into distinct homograph entries is supported by etymology and synchronic semantics, but homographNumber=1 is an editorial ordering convention (matching OALD/Cambridge modern frequency order, whereas Merriam-Webster numbers river/ridge bank as 1 and financial bank as 3).",
+      "evidence": [
+        "SRC-OALD: bank_1 noun (sense 1 financial, sense 4 river)",
+        "SRC-CAMBRIDGE: bank noun (MONEY before RIVER)",
+        "SRC-MW: bank homographs 1–3",
+        "SRC-REPO-GOVERNANCE: docs/identity-policy.md"
+      ],
+      "counterEvidence": [
+        "Merriam-Webster numbers ridge/river bank as homograph 1 and financial bank as homograph 3 based on historical attestation."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-bank-boundary"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-007",
+      "reviewItemKey": "P10-entry-bank-river-entity-homographNumber",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "entry-bank-river",
+      "recordType": "lex",
+      "fieldPath": "/entity/homographNumber",
+      "status": "DISPUTED",
+      "assessment": "DISPUTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": 2,
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Separating financial 'bank' and river 'bank' into distinct homograph entries is supported by etymology and synchronic semantics, but homographNumber=2 is an editorial ordering convention (matching OALD/Cambridge modern frequency order, whereas Merriam-Webster numbers river/ridge bank as 1 and financial bank as 3).",
+      "evidence": [
+        "SRC-OALD: bank_1 noun (sense 1 financial, sense 4 river)",
+        "SRC-CAMBRIDGE: bank noun (MONEY before RIVER)",
+        "SRC-MW: bank homographs 1–3",
+        "SRC-REPO-GOVERNANCE: docs/identity-policy.md"
+      ],
+      "counterEvidence": [
+        "Merriam-Webster numbers ridge/river bank as homograph 1 and financial bank as homograph 3 based on historical attestation."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-bank-boundary"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-373",
+      "reviewItemKey": "P10-ISSUE-bank-boundary",
+      "itemKind": "SCOPED_ISSUE",
+      "candidateId": "entry-bank-financial,entry-bank-river",
+      "recordType": "issue",
+      "fieldPath": "/entity/homographNumber",
+      "status": "DISPUTED",
+      "assessment": "DISPUTED",
+      "verificationState": "AI_CROSS_CHECKED",
+      "beforeValue": "Editorial/reuse decision pending.",
+      "afterValue": "Retain two separate LexicalEntry records (entry-bank-financial with homographNumber=1 and entry-bank-river with homographNumber=2) under an explicit frequency-ordered homograph display convention.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Separating 'bank' (financial institution, Romance loan < Italian banca / Middle French banque) and 'bank' (river edge, Germanic < Old Norse banki) into two distinct LexicalEntry homographs is strongly supported by etymology (M-W, Etymonline), disjoint synchronic semantic domains, and disjoint Vietnamese equivalences ('ngân hàng' vs 'bờ sông'). However, homographNumber=1 (financial) and 2 (river) reflects modern learner-dictionary frequency order (OALD, Cambridge), whereas historical dictionaries (Merriam-Webster) order ridge/river as homograph 1 and financial institution as homograph 3. Retaining two LexicalEntry records with frequency-ordered homographNumber=1 and 2 is recommended, but remains DISPUTED as an editorial convention choice.",
+      "evidence": [
+        "SRC-OALD: bank_1 noun (sense 1 financial precedes sense 4 river)",
+        "SRC-CAMBRIDGE: bank noun (MONEY precedes RIVER)",
+        "SRC-MW: bank homograph 1 (ridge/river) vs homograph 3 (financial institution)",
+        "SRC-REPO-GOVERNANCE: docs/sense-division.md & docs/identity-policy.md (homographNumber is a non-identifying display attribute)"
+      ],
+      "counterEvidence": [
+        "Merriam-Webster reverses homograph numbering chronologically (river/ridge = 1, financial = 3); OALD/Cambridge place both senses on a single headword page."
+      ],
+      "impactedClaims": [
+        "P10-entry-bank-financial-entity-homographNumber",
+        "P10-entry-bank-river-entity-homographNumber"
+      ]
+    }
+  ],
+  "evidenceAndProvenanceGaps": [
+    {
+      "ledgerEntryId": "P11-LEDGER-064",
+      "reviewItemKey": "P10-sense-bank-financial-entity-examples-0-exampleType",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-bank-financial",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/exampleType",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "editorial_original",
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "While 'editorial_original' is a valid V2 enum value in schemas/v2/lexical-sense.schema.json and the example sentence is linguistically natural, '/entity/examples/0/exampleType' asserts original editorial authorship and reuse provenance (per docs/phase10-editorial-review-packet.md §8 and validators/production-gates.mjs line 158). In phase10-editorial-review-queue.json, this claim has empty evidenceReferences ([]) and no V2 Source/Evidence record in the repository documents authorship or redistribution rights for the example.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-sense.schema.json & validators/production-gates.mjs line 158"
+      ],
+      "counterEvidence": [
+        "Zero provenance, authorship, or license attestation records exist in phase8-evidence-dossier.json or phase10-editorial-review-queue.json for this example."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-rights-sources"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-071",
+      "reviewItemKey": "P10-sense-bank-river-entity-examples-0-exampleType",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-bank-river",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/exampleType",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "editorial_original",
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "While 'editorial_original' is a valid V2 enum value in schemas/v2/lexical-sense.schema.json and the example sentence is linguistically natural, '/entity/examples/0/exampleType' asserts original editorial authorship and reuse provenance (per docs/phase10-editorial-review-packet.md §8 and validators/production-gates.mjs line 158). In phase10-editorial-review-queue.json, this claim has empty evidenceReferences ([]) and no V2 Source/Evidence record in the repository documents authorship or redistribution rights for the example.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-sense.schema.json & validators/production-gates.mjs line 158"
+      ],
+      "counterEvidence": [
+        "Zero provenance, authorship, or license attestation records exist in phase8-evidence-dossier.json or phase10-editorial-review-queue.json for this example."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-rights-sources"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-078",
+      "reviewItemKey": "P10-sense-run-movement-entity-examples-0-exampleType",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-run-movement",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/exampleType",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "editorial_original",
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "While 'editorial_original' is a valid V2 enum value in schemas/v2/lexical-sense.schema.json and the example sentence is linguistically natural, '/entity/examples/0/exampleType' asserts original editorial authorship and reuse provenance (per docs/phase10-editorial-review-packet.md §8 and validators/production-gates.mjs line 158). In phase10-editorial-review-queue.json, this claim has empty evidenceReferences ([]) and no V2 Source/Evidence record in the repository documents authorship or redistribution rights for the example.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-sense.schema.json & validators/production-gates.mjs line 158"
+      ],
+      "counterEvidence": [
+        "Zero provenance, authorship, or license attestation records exist in phase8-evidence-dossier.json or phase10-editorial-review-queue.json for this example."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-rights-sources"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-085",
+      "reviewItemKey": "P10-sense-run-machine-entity-examples-0-exampleType",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-run-machine",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/exampleType",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "editorial_original",
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "While 'editorial_original' is a valid V2 enum value in schemas/v2/lexical-sense.schema.json and the example sentence is linguistically natural, '/entity/examples/0/exampleType' asserts original editorial authorship and reuse provenance (per docs/phase10-editorial-review-packet.md §8 and validators/production-gates.mjs line 158). In phase10-editorial-review-queue.json, this claim has empty evidenceReferences ([]) and no V2 Source/Evidence record in the repository documents authorship or redistribution rights for the example.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-sense.schema.json & validators/production-gates.mjs line 158"
+      ],
+      "counterEvidence": [
+        "Zero provenance, authorship, or license attestation records exist in phase8-evidence-dossier.json or phase10-editorial-review-queue.json for this example."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-rights-sources"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-094",
+      "reviewItemKey": "P10-sense-run-management-entity-examples-0-exampleType",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-run-management",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/exampleType",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "editorial_original",
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "While 'editorial_original' is a valid V2 enum value in schemas/v2/lexical-sense.schema.json and the example sentence is linguistically natural, '/entity/examples/0/exampleType' asserts original editorial authorship and reuse provenance (per docs/phase10-editorial-review-packet.md §8 and validators/production-gates.mjs line 158). In phase10-editorial-review-queue.json, this claim has empty evidenceReferences ([]) and no V2 Source/Evidence record in the repository documents authorship or redistribution rights for the example.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-sense.schema.json & validators/production-gates.mjs line 158"
+      ],
+      "counterEvidence": [
+        "Zero provenance, authorship, or license attestation records exist in phase8-evidence-dossier.json or phase10-editorial-review-queue.json for this example."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-rights-sources"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-101",
+      "reviewItemKey": "P10-sense-analyse-entity-examples-0-exampleType",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-analyse",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/exampleType",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "editorial_original",
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "While 'editorial_original' is a valid V2 enum value in schemas/v2/lexical-sense.schema.json and the example sentence is linguistically natural, '/entity/examples/0/exampleType' asserts original editorial authorship and reuse provenance (per docs/phase10-editorial-review-packet.md §8 and validators/production-gates.mjs line 158). In phase10-editorial-review-queue.json, this claim has empty evidenceReferences ([]) and no V2 Source/Evidence record in the repository documents authorship or redistribution rights for the example.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-sense.schema.json & validators/production-gates.mjs line 158"
+      ],
+      "counterEvidence": [
+        "Zero provenance, authorship, or license attestation records exist in phase8-evidence-dossier.json or phase10-editorial-review-queue.json for this example."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-rights-sources"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-108",
+      "reviewItemKey": "P10-sense-analysis-entity-examples-0-exampleType",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-analysis",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/exampleType",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "editorial_original",
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "While 'editorial_original' is a valid V2 enum value in schemas/v2/lexical-sense.schema.json and the example sentence is linguistically natural, '/entity/examples/0/exampleType' asserts original editorial authorship and reuse provenance (per docs/phase10-editorial-review-packet.md §8 and validators/production-gates.mjs line 158). In phase10-editorial-review-queue.json, this claim has empty evidenceReferences ([]) and no V2 Source/Evidence record in the repository documents authorship or redistribution rights for the example.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-sense.schema.json & validators/production-gates.mjs line 158"
+      ],
+      "counterEvidence": [
+        "Zero provenance, authorship, or license attestation records exist in phase8-evidence-dossier.json or phase10-editorial-review-queue.json for this example."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-rights-sources"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-115",
+      "reviewItemKey": "P10-sense-analytical-entity-examples-0-exampleType",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-analytical",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/exampleType",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "editorial_original",
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "While 'editorial_original' is a valid V2 enum value in schemas/v2/lexical-sense.schema.json and the example sentence is linguistically natural, '/entity/examples/0/exampleType' asserts original editorial authorship and reuse provenance (per docs/phase10-editorial-review-packet.md §8 and validators/production-gates.mjs line 158). In phase10-editorial-review-queue.json, this claim has empty evidenceReferences ([]) and no V2 Source/Evidence record in the repository documents authorship or redistribution rights for the example.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-sense.schema.json & validators/production-gates.mjs line 158"
+      ],
+      "counterEvidence": [
+        "Zero provenance, authorship, or license attestation records exist in phase8-evidence-dossier.json or phase10-editorial-review-queue.json for this example."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-rights-sources"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-123",
+      "reviewItemKey": "P10-sense-big-size-entity-examples-0-exampleType",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-big-size",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/exampleType",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "editorial_original",
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "While 'editorial_original' is a valid V2 enum value in schemas/v2/lexical-sense.schema.json and the example sentence is linguistically natural, '/entity/examples/0/exampleType' asserts original editorial authorship and reuse provenance (per docs/phase10-editorial-review-packet.md §8 and validators/production-gates.mjs line 158). In phase10-editorial-review-queue.json, this claim has empty evidenceReferences ([]) and no V2 Source/Evidence record in the repository documents authorship or redistribution rights for the example.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-sense.schema.json & validators/production-gates.mjs line 158"
+      ],
+      "counterEvidence": [
+        "Zero provenance, authorship, or license attestation records exist in phase8-evidence-dossier.json or phase10-editorial-review-queue.json for this example."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-rights-sources"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-131",
+      "reviewItemKey": "P10-sense-large-size-entity-examples-0-exampleType",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-large-size",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/exampleType",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "editorial_original",
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "While 'editorial_original' is a valid V2 enum value in schemas/v2/lexical-sense.schema.json and the example sentence is linguistically natural, '/entity/examples/0/exampleType' asserts original editorial authorship and reuse provenance (per docs/phase10-editorial-review-packet.md §8 and validators/production-gates.mjs line 158). In phase10-editorial-review-queue.json, this claim has empty evidenceReferences ([]) and no V2 Source/Evidence record in the repository documents authorship or redistribution rights for the example.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-sense.schema.json & validators/production-gates.mjs line 158"
+      ],
+      "counterEvidence": [
+        "Zero provenance, authorship, or license attestation records exist in phase8-evidence-dossier.json or phase10-editorial-review-queue.json for this example."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-rights-sources"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-137",
+      "reviewItemKey": "P10-sense-depend-contingent-entity-examples-0-exampleType",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-depend-contingent",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/exampleType",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "editorial_original",
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "While 'editorial_original' is a valid V2 enum value in schemas/v2/lexical-sense.schema.json and the example sentence is linguistically natural, '/entity/examples/0/exampleType' asserts original editorial authorship and reuse provenance (per docs/phase10-editorial-review-packet.md §8 and validators/production-gates.mjs line 158). In phase10-editorial-review-queue.json, this claim has empty evidenceReferences ([]) and no V2 Source/Evidence record in the repository documents authorship or redistribution rights for the example.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-sense.schema.json & validators/production-gates.mjs line 158"
+      ],
+      "counterEvidence": [
+        "Zero provenance, authorship, or license attestation records exist in phase8-evidence-dossier.json or phase10-editorial-review-queue.json for this example."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-rights-sources"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-143",
+      "reviewItemKey": "P10-sense-look-up-reference-entity-examples-0-exampleType",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-look-up-reference",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/exampleType",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "editorial_original",
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "While 'editorial_original' is a valid V2 enum value in schemas/v2/lexical-sense.schema.json and the example sentence is linguistically natural, '/entity/examples/0/exampleType' asserts original editorial authorship and reuse provenance (per docs/phase10-editorial-review-packet.md §8 and validators/production-gates.mjs line 158). In phase10-editorial-review-queue.json, this claim has empty evidenceReferences ([]) and no V2 Source/Evidence record in the repository documents authorship or redistribution rights for the example.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-sense.schema.json & validators/production-gates.mjs line 158"
+      ],
+      "counterEvidence": [
+        "Zero provenance, authorship, or license attestation records exist in phase8-evidence-dossier.json or phase10-editorial-review-queue.json for this example."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-rights-sources"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-149",
+      "reviewItemKey": "P10-sense-borrow-temporary-use-entity-examples-0-exampleType",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-borrow-temporary-use",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/exampleType",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "editorial_original",
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "While 'editorial_original' is a valid V2 enum value in schemas/v2/lexical-sense.schema.json and the example sentence is linguistically natural, '/entity/examples/0/exampleType' asserts original editorial authorship and reuse provenance (per docs/phase10-editorial-review-packet.md §8 and validators/production-gates.mjs line 158). In phase10-editorial-review-queue.json, this claim has empty evidenceReferences ([]) and no V2 Source/Evidence record in the repository documents authorship or redistribution rights for the example.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-sense.schema.json & validators/production-gates.mjs line 158"
+      ],
+      "counterEvidence": [
+        "Zero provenance, authorship, or license attestation records exist in phase8-evidence-dossier.json or phase10-editorial-review-queue.json for this example."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-rights-sources"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-155",
+      "reviewItemKey": "P10-sense-lend-temporary-use-entity-examples-0-exampleType",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-lend-temporary-use",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/exampleType",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "editorial_original",
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "While 'editorial_original' is a valid V2 enum value in schemas/v2/lexical-sense.schema.json and the example sentence is linguistically natural, '/entity/examples/0/exampleType' asserts original editorial authorship and reuse provenance (per docs/phase10-editorial-review-packet.md §8 and validators/production-gates.mjs line 158). In phase10-editorial-review-queue.json, this claim has empty evidenceReferences ([]) and no V2 Source/Evidence record in the repository documents authorship or redistribution rights for the example.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-sense.schema.json & validators/production-gates.mjs line 158"
+      ],
+      "counterEvidence": [
+        "Zero provenance, authorship, or license attestation records exist in phase8-evidence-dossier.json or phase10-editorial-review-queue.json for this example."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-rights-sources"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-161",
+      "reviewItemKey": "P10-sense-advice-guidance-entity-examples-0-exampleType",
+      "itemKind": "PUBLICATION_CLAIM",
+      "candidateId": "sense-advice-guidance",
+      "recordType": "sns",
+      "fieldPath": "/entity/examples/0/exampleType",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "editorial_original",
+      "afterValue": null,
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "While 'editorial_original' is a valid V2 enum value in schemas/v2/lexical-sense.schema.json and the example sentence is linguistically natural, '/entity/examples/0/exampleType' asserts original editorial authorship and reuse provenance (per docs/phase10-editorial-review-packet.md §8 and validators/production-gates.mjs line 158). In phase10-editorial-review-queue.json, this claim has empty evidenceReferences ([]) and no V2 Source/Evidence record in the repository documents authorship or redistribution rights for the example.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-sense.schema.json & validators/production-gates.mjs line 158"
+      ],
+      "counterEvidence": [
+        "Zero provenance, authorship, or license attestation records exist in phase8-evidence-dossier.json or phase10-editorial-review-queue.json for this example."
+      ],
+      "impactedClaims": [
+        "P10-ISSUE-rights-sources"
+      ]
+    },
+    {
+      "ledgerEntryId": "P11-LEDGER-376",
+      "reviewItemKey": "P10-ISSUE-rights-sources",
+      "itemKind": "SCOPED_ISSUE",
+      "candidateId": "pilot-fanout-002",
+      "recordType": "issue",
+      "fieldPath": "/sources/rights",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "assessment": "INSUFFICIENT_EVIDENCE",
+      "verificationState": "UNVERIFIED",
+      "beforeValue": "Editorial/reuse decision pending.",
+      "afterValue": "Cannot be resolved by AI text rewriting alone. Phase 12–13 must register verifiable redistributable provenance records (e.g., an explicitly licensed first-party dataset source + open-licensed lexical sources such as OEWN 2024 under CC BY 4.0 where applicable) while keeping OALD/Collins/Cambridge/BC strictly 'reference_only'.",
+      "schemaV2Compliant": true,
+      "addsNewSchemaFields": false,
+      "rationale": "Strict Evidence & Rights Audit: (1) All 6 external sources recorded in phase8-evidence-dossier.json (SRC-OALD, SRC-COLLINS, SRC-BRITISH-COUNCIL, SRC-VDICT, SRC-VNDIC, SRC-VTUDIEN) explicitly state 'reuseRights: reference_only; permission not confirmed'. Zero license or permission documents exist in the repository granting 'rights.status: redistributable' for 'dictionary_publication'. (2) SRC-VDICT and SRC-VNDIC share operational/copyright identity ('© VNDIC.NET & VDICT.CO') and uncurated aggregator data, so they lack independent editorial provenance. (3) SRC-REPO is internal governance and cannot attest external linguistic facts. (4) All 15 sense examples carry exampleType='editorial_original' without any accompanying Source/Evidence authorship or license record. Consequently, redistribution rights and original-example provenance currently have INSUFFICIENT_EVIDENCE.",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: data/reviews/phase8-evidence-dossier.json lines 405-558 & validators/production-gates.mjs lines 108-146",
+        "SRC-OALD: OUP Terms of Use (reference-only)",
+        "SRC-COLLINS: HarperCollins Terms of Use (reference-only)"
+      ],
+      "counterEvidence": [
+        "No V2 Source (src_) or Evidence (evd_) record with verified rights.status='redistributable' and scope 'dictionary_publication' exists in the repository."
+      ],
+      "impactedClaims": [
+        "P10-sense-bank-financial-entity-examples-0-exampleType",
+        "P10-sense-bank-river-entity-examples-0-exampleType",
+        "P10-sense-run-movement-entity-examples-0-exampleType",
+        "P10-sense-run-machine-entity-examples-0-exampleType",
+        "P10-sense-run-management-entity-examples-0-exampleType",
+        "P10-sense-analyse-entity-examples-0-exampleType",
+        "P10-sense-analysis-entity-examples-0-exampleType",
+        "P10-sense-analytical-entity-examples-0-exampleType",
+        "P10-sense-big-size-entity-examples-0-exampleType",
+        "P10-sense-large-size-entity-examples-0-exampleType",
+        "P10-sense-depend-contingent-entity-examples-0-exampleType",
+        "P10-sense-look-up-reference-entity-examples-0-exampleType",
+        "P10-sense-borrow-temporary-use-entity-examples-0-exampleType",
+        "P10-sense-lend-temporary-use-entity-examples-0-exampleType",
+        "P10-sense-advice-guidance-entity-examples-0-exampleType"
+      ]
+    }
+  ],
+  "rightsBlockers": {
+    "blockerId": "RIGHTS-BLOCKER-P11-001",
+    "relatedIssueKey": "P10-ISSUE-rights-sources",
+    "rightsCleared": false,
+    "rootCause": "All 7 sources in data/reviews/phase8-evidence-dossier.json ('SRC-OALD', 'SRC-COLLINS', 'SRC-BRITISH-COUNCIL', 'SRC-VDICT', 'SRC-VNDIC', 'SRC-VTUDIEN', 'SRC-REPO') have 'redistributable: false' ('reference_only'). Furthermore, all 15 English examples in pilot-fanout-002.json have 'exampleType: \"corpus_like\"' without independent corpus provenance or open-license attribution.",
+    "sourceBySourceRightsAudit": [
+      {
+        "sourceId": "SRC-OALD",
+        "title": "Oxford Advanced Learner's Dictionary",
+        "license": "Proprietary (Oxford University Press Terms of Use)",
+        "permittedUse": "Reference lookup only; no redistribution or bulk extraction",
+        "redistributable": false,
+        "shareAlike": false,
+        "rightsClearedForPublication": false
+      },
+      {
+        "sourceId": "SRC-CAMBRIDGE",
+        "title": "Cambridge Dictionary & English Grammar Today",
+        "license": "Proprietary (Cambridge University Press Terms of Use)",
+        "permittedUse": "Reference lookup only; no redistribution",
+        "redistributable": false,
+        "shareAlike": false,
+        "rightsClearedForPublication": false
+      },
+      {
+        "sourceId": "SRC-COLLINS",
+        "title": "Collins English Dictionary",
+        "license": "Proprietary (HarperCollins Terms of Use)",
+        "permittedUse": "Reference lookup only; no redistribution",
+        "redistributable": false,
+        "shareAlike": false,
+        "rightsClearedForPublication": false
+      },
+      {
+        "sourceId": "SRC-BRITISH-COUNCIL",
+        "title": "British Council LearnEnglish Grammar Reference",
+        "license": "Proprietary (British Council Terms of Use)",
+        "permittedUse": "Reference lookup only; no redistribution",
+        "redistributable": false,
+        "shareAlike": false,
+        "rightsClearedForPublication": false
+      },
+      {
+        "sourceId": "SRC-VDICT",
+        "title": "VDict English–Vietnamese Dictionary",
+        "license": "Unverified third-party web aggregator",
+        "permittedUse": "Reference lookup only; no verified license for redistribution",
+        "redistributable": false,
+        "shareAlike": false,
+        "rightsClearedForPublication": false
+      },
+      {
+        "sourceId": "SRC-VNDIC",
+        "title": "VNDic English–Vietnamese Dictionary",
+        "license": "Unverified third-party web aggregator",
+        "permittedUse": "Reference lookup only; no verified license for redistribution",
+        "redistributable": false,
+        "shareAlike": false,
+        "rightsClearedForPublication": false
+      },
+      {
+        "sourceId": "SRC-VTUDIEN",
+        "title": "VTudien / Soha Tra Từ",
+        "license": "Unverified third-party web aggregator",
+        "permittedUse": "Reference lookup only; no verified license for redistribution",
+        "redistributable": false,
+        "shareAlike": false,
+        "rightsClearedForPublication": false
+      },
+      {
+        "sourceId": "SRC-OEWN",
+        "title": "Open English WordNet 2024",
+        "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+        "permittedUse": "Redistributable and adaptable with attribution to Open English WordNet",
+        "redistributable": true,
+        "shareAlike": false,
+        "rightsClearedForPublication": false,
+        "note": "Eligible for Phase 12 Source registration once owner rights attestation and attribution metadata are recorded."
+      },
+      {
+        "sourceId": "SRC-PRINCETON-WORDNET-3.1",
+        "title": "Princeton WordNet 3.1",
+        "license": "Princeton WordNet License (BSD-style permissive with attribution)",
+        "permittedUse": "Redistributable and adaptable with Princeton WordNet copyright/license notice",
+        "redistributable": true,
+        "shareAlike": false,
+        "rightsClearedForPublication": false,
+        "note": "Eligible for Phase 12 Source registration once owner rights attestation and attribution metadata are recorded."
+      },
+      {
+        "sourceId": "SRC-WIKTIONARY-EN-VI",
+        "title": "English & Vietnamese Wiktionary",
+        "license": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+        "permittedUse": "Redistributable with attribution and ShareAlike copyleft obligations if adapted",
+        "redistributable": true,
+        "shareAlike": true,
+        "rightsClearedForPublication": false,
+        "note": "Requires explicit owner policy decision in Phase 12 regarding whether CC BY-SA 4.0 ShareAlike is acceptable for published dictionary fields, or whether Wiktionary is kept as reference_only while definitions/examples rely on CC BY 4.0 / Princeton WordNet / first-party editorial authorship."
+      }
+    ],
+    "requiredPhase12Resolution": [
+      "Do NOT flip 'reference_only' commercial dictionaries (OALD, Cambridge, Collins, British Council) or unverified web aggregators (VDict, VNDic, VTudien) to 'redistributable'.",
+      "Register open-licensed sources ('SRC-OEWN-2024' under CC BY 4.0, 'SRC-PRINCETON-WORDNET-3.1' under Princeton WordNet License) and a first-party original editorial source ('SRC-IELTS-TRADITION-EDITORIAL-V1') with explicit owner rights review.",
+      "Reclassify the 15 English examples from 'exampleType: \"corpus_like\"' to 'exampleType: \"editorial\"' (or provide verified open-licensed corpus citations) and attach claim-level 'evd_' records."
+    ]
+  },
+  "technicalFindings": [
+    {
+      "findingId": "TF-01",
+      "topic": "UUIDv7 mapping and evidence value digests",
+      "classification": "CONTRACT_GAP",
+      "filesAndLines": [
+        "pipeline/prepare-batch.mjs#L105-L115",
+        "validators/validate-dataset-v2.mjs#L35-L40",
+        "validators/production-gates.mjs#L122-L127"
+      ],
+      "rootCause": "In pipeline/prepare-batch.mjs, resolveRefs() replaces 'candidate:<id>' strings with preview or minted '<prefix>_<uuidv7>' IDs, mutating the stored value of reference fields (/entryId, /senseId, /sourceSenseId, /targetSenseId, /sourceId, /targetId, /familyIds). However, prepareBatch() does not recompute Evidence.claim.valueDigest (a 64-char SHA-256 hex digest) if an 'evd_' candidate asserts a claim on one of those reference fields, causing validate-dataset-v2.mjs line 38 ('digest(valueAt(target, r.claim.fieldPath)) !== r.claim.valueDigest') to fail with EVIDENCE_CLAIM_MISMATCH.",
+      "phase12SpecificationAndAcceptanceTest": "When binding or preparing 'evd_' records for reference claim paths (/entryId, /senseId, /sourceSenseId, /targetSenseId, /sourceId, /targetId, /familyIds), compute 'claim.valueDigest' against the resolved canonical ID (or recompute 'ev.claim.valueDigest = digest(valueAt(target, ev.claim.fieldPath))' inside prepareBatch after resolveRefs). Add a unit test verifying that a candidate batch containing an 'evd_' record on '/entryId' passes prepareBatch() and validateDatasetV2()."
+    },
+    {
+      "findingId": "TF-02",
+      "topic": "Candidate evidence binding workflow across prepareBatch and reviseCandidates",
+      "classification": "CONTRACT_GAP",
+      "filesAndLines": [
+        "data/candidates/pilot-fanout-002.json",
+        "pipeline/revise-candidates.mjs#L5",
+        "pipeline/revise-candidates.mjs#L30-L38"
+      ],
+      "rootCause": "All 54 candidate records in pilot-fanout-002.json currently have 'evidenceIds: []' and 0 'src_' / 'evd_' records inside the batch. Meanwhile, pipeline/revise-candidates.mjs line 5 explicitly places 'evidenceIds' in the immutable 'forbidden' set ('REVISION_FIELD_FORBIDDEN') and runs validateDatasetV2() after every draft revision (which fails with EVIDENCE_CLAIM_MISMATCH if a revised field already had an 'evd_' digest bound to its old value).",
+      "phase12SpecificationAndAcceptanceTest": "In Phase 12, apply all text revisions to produce the updated candidate snapshot (or revise draft text first) BEFORE generating and binding the 372 exact-value 'evd_' records and their 'evidenceIds' arrays, or provide a dedicated evidence-binding step in the pipeline that atomically updates a draft record's field, 'evidenceIds', and matching 'evd_.claim.valueDigest'."
+    },
+    {
+      "findingId": "TF-03",
+      "topic": "Editorial review stale-value binding",
+      "classification": "CONTRACT_GAP",
+      "filesAndLines": [
+        "schemas/v2/editorial-review.schema.json#L81-L101",
+        "validators/validate-dataset-v2.mjs#L41",
+        "validators/production-gates.mjs#L131-L135",
+        "data/reviews/phase10-editorial-review-queue.json"
+      ],
+      "rootCause": "While Evidence.claim binds 'valueDigest' (SHA-256 of the exact field value) and phase10-editorial-review-queue.json records 'valueDigest' per review item, V2 EditorialReview.claims[] only stores '{ subjectId, fieldPath }' without 'valueDigest' or 'subjectRevision'. In production-gates.mjs lines 131-135, a review item is matched to a field solely by 'evidence.some(ev => ev.claim.fieldPath === item.fieldPath)'. If a record's field is modified AND a new 'evd_' record is attached for the new value, a pre-existing 'rev_' record for '{ subjectId, fieldPath }' would remain active unless retired or bound to 'valueDigest'.",
+      "phase12SpecificationAndAcceptanceTest": "Ensure Phase 12 review binding verifies that any accepted review decision matches the current 'valueDigest' of 'valueAt(subject, fieldPath)' (consistent with tests/production/phase10-editorial-review.test.mjs: 'Modified/new claims do not inherit approval'). Optionally allow optional 'valueDigest' on EditorialReview.claims[] in V2."
+    },
+    {
+      "findingId": "TF-04",
+      "topic": "Reviewer authority and AI-only publication boundary",
+      "classification": "EXPECTED_BEHAVIOR",
+      "filesAndLines": [
+        "validators/authority-v2.mjs#L3-L32",
+        "validators/production-gates.mjs#L102-L147",
+        "pipeline/promote-candidates.mjs#L7-L40",
+        "docs/evidence-provenance-contract.md#L28-L45"
+      ],
+      "rootCause": "By design, evaluatePublication() and promoteCandidates() require externally injected, authenticated callbacks ('verifyOwnerAttestation', 'verifyEvidence', 'verifyRights'), 'ownerId', 'effectiveAt', and scoped 'appointments'. Self-reported JSON strings can never convey publication authority, and AI research completion ('PHASE_11_AI_RESEARCH_COMPLETE') is strictly separated from publication eligibility ('PUBLICATION_READY').",
+      "phase12SpecificationAndAcceptanceTest": "Preserve fail-closed behavior in stock CLI. Any Phase 12–13 transition to an owner-authorized AI-only publication gate must be explicitly authorized by the Owner/Lead Architect via authenticated external callbacks rather than weakening authority-v2.mjs."
+    },
+    {
+      "findingId": "TF-05",
+      "topic": "Symmetric lexical relation canonicalization in prepareBatch",
+      "classification": "CONFIRMED_BUG",
+      "filesAndLines": [
+        "pipeline/prepare-batch.mjs#L105-L118",
+        "validators/graph-v1.mjs#L165-L172"
+      ],
+      "rootCause": "validators/graph-v1.mjs line 165 enforces that every symmetric LexicalRelation ('SYNONYM_OF', 'NEAR_SYNONYM_OF', 'ANTONYM_OF') must have 'compareStrings(record.sourceId, record.targetId) < 0' ('RELATION_NOT_CANONICAL'). However, pipeline/prepare-batch.mjs lines 113-115 resolves 'sourceId: \"candidate:...\"' and 'targetId: \"candidate:...\"' into SHA-256 preview IDs (dryRun) or UUIDv7 strings without sorting '[sourceId, targetId]' into ascending ASCII order afterward. Whenever 'resolvedSourceId > resolvedTargetId' (which occurs deterministically on 'rel-big-small-antonym' in dryRun and randomly whenever two UUIDv7s share the same millisecond timestamp), prepareBatch() fails with VALIDATION_FAILED (RELATION_NOT_CANONICAL).",
+      "phase12SpecificationAndAcceptanceTest": "In pipeline/prepare-batch.mjs, immediately after 'resolveRefs(item.entity, mapping)', if the record prefix is 'rel' and 'relationType' is symmetric ('SYNONYM_OF', 'NEAR_SYNONYM_OF', 'ANTONYM_OF') with 'sourceId > targetId', swap 'sourceId' and 'targetId'. Add a regression test preparing 'rel-big-large-near-synonym', 'rel-big-small-antonym', and 'rel-large-small-antonym' in both dryRun and live modes."
+    },
+    {
+      "findingId": "TF-06",
+      "topic": "Translation review gates for gloss_only vs sense_aligned",
+      "classification": "CONFIRMED_BUG",
+      "filesAndLines": [
+        "validators/production-gates.mjs#L148-L154"
+      ],
+      "rootCause": "In validators/production-gates.mjs lines 148-154, both the endpoint verification check ('BILINGUAL_ENDPOINT_UNVERIFIED') and the translation review check ('if (record.translationEvidenceStatus !== \"independently_reviewed\") add(\"TRANSLATION_UNREVIEWED\", ...)') are nested inside 'if (record._id.startsWith(\"eqv_\") && record.alignmentMode === \"sense_aligned\")'. As a result, all 16 'gloss_only' TranslationEquivalence records completely bypass 'TRANSLATION_UNREVIEWED' (and source-sense 'editorialStatus === \"verified\"' verification) during evaluatePublication()!",
+      "phase12SpecificationAndAcceptanceTest": "In validators/production-gates.mjs, check 'record.translationEvidenceStatus !== \"independently_reviewed\"' ('TRANSLATION_UNREVIEWED') and verify that 'byId.get(record.sourceSenseId)?.editorialStatus === \"verified\"' for ALL 'eqv_' records ('gloss_only' and 'sense_aligned' alike), while checking 'targetSenseId' verification when 'alignmentMode === \"sense_aligned\"'. Add a unit test verifying that a 'gloss_only' record with 'translationEvidenceStatus: \"unreviewed\"' is blocked by 'TRANSLATION_UNREVIEWED'."
+    },
+    {
+      "findingId": "TF-07",
+      "topic": "Scoped publication dependency closure (subjectIds)",
+      "classification": "CONTRACT_GAP",
+      "filesAndLines": [
+        "validators/production-gates.mjs#L68-L86",
+        "pipeline/promote-candidates.mjs#L38-L39"
+      ],
+      "rootCause": "When 'options.subjectIds' is passed to evaluatePublication(), lines 76-85 compute the dependency closure by traversing outbound references on the selected records: for 'sns_', it pushes 'r.entryId', '...(r.topicIds ?? [])', and '...(r.constructionIds ?? [])'. Because 'sense.constructionIds' is optional and empty ('[]') across all 15 senses in pilot-fanout-002.json (where constructions link via 'con.senseId'), scoping publication to a 'sns_' ID omits its attached 'con_' records from the closure unless the caller explicitly includes the 'con_' IDs in 'subjectIds'.",
+      "phase12SpecificationAndAcceptanceTest": "Either include inbound 'con_' records ('con.senseId === r._id') in the dependency closure when 'r._id' is a 'sns_' (or document and enforce that scoped promotion of a sense requires explicit inclusion or population of 'sense.constructionIds')."
+    },
+    {
+      "findingId": "TF-08",
+      "topic": "Single source of truth Construction.senseId vs LexicalSense.constructionIds",
+      "classification": "EXPECTED_BEHAVIOR",
+      "filesAndLines": [
+        "schemas/v2/construction.schema.json",
+        "schemas/v2/lexical-sense.schema.json",
+        "validators/graph-v1.mjs#L90-L95",
+        "validators/validate-dataset-v2.mjs#L34"
+      ],
+      "rootCause": "In V1/V2, 'Construction.senseId' is the required canonical foreign key linking a construction to its sense, while 'LexicalSense.constructionIds' is an optional denormalized array checked for consistency ('CONSTRUCTION_SENSE_MISMATCH') when present. In pilot-fanout-002.json, all 15 senses set 'constructionIds: []' and rely on 'con.senseId' as the single source of truth.",
+      "phase12SpecificationAndAcceptanceTest": "Keep 'Construction.senseId' as the single required source of truth; do not require redundant manual maintenance of 'sense.constructionIds', and align TF-07 closure traversal with 'con.senseId'."
+    },
+    {
+      "findingId": "TF-09",
+      "topic": "Graph integrity when splitting or merging senses",
+      "classification": "EXPECTED_BEHAVIOR",
+      "filesAndLines": [
+        "validators/graph-v1.mjs#L217-L320",
+        "validators/lifecycle-v2.mjs#L1-L145",
+        "validators/validate-dataset-v2.mjs#L45-L53"
+      ],
+      "rootCause": "graph-v1.mjs and lifecycle-v2.mjs deterministically enforce 'RETIRED_LIVE_REFERENCE', 'DECISION_TRANSITION_MISMATCH', 'MERGE_GROUP_INVALID', 'UNREVIEWED_SPLIT_FANOUT', and 'LIFECYCLE_AUDIT_INCOMPLETE', preventing automatic fan-out of inbound edges ('eqv_', 'rel_', 'con_', 'col_') across split senses without explicit reviewed reattachment.",
+      "phase12SpecificationAndAcceptanceTest": "Verified by existing tests in tests/graph-integrity.test.mjs, tests/production/lifecycle-v2.test.mjs, and tests/production/lifecycle-adjudication.test.mjs. No change needed."
+    },
+    {
+      "findingId": "TF-10",
+      "topic": "Publication fail-closed enforcement",
+      "classification": "EXPECTED_BEHAVIOR",
+      "filesAndLines": [
+        "validators/production-gates.mjs#L60-L170",
+        "validators/authority-v2.mjs#L1-L33",
+        "pipeline/promote-candidates.mjs#L10-L45"
+      ],
+      "rootCause": "evaluatePublication() and promoteCandidates() fail-closed whenever any claim lacks exact-value digest-matched independent evidence, cleared source redistribution rights, or authenticated reviewer/LER callbacks.",
+      "phase12SpecificationAndAcceptanceTest": "Verified by tests/production/publication.test.mjs, tests/production/promotion.test.mjs, and tests/production/authority.test.mjs. Must remain fail-closed in Phase 12–13."
+    }
+  ],
+  "dataDependencyExecutionOrder": [
+    "Step 1 (Code Fixes — TF-05, TF-06, TF-07, TF-01): Patch 'pipeline/prepare-batch.mjs' (symmetric LexicalRelation canonical ID ordering and optional reference evidence digest recomputation) and 'validators/production-gates.mjs' (enforce TRANSLATION_UNREVIEWED and sourceSenseId verification on gloss_only equivalences; include inbound con.senseId in scoped subjectIds closure).",
+    "Step 2 (Candidate Text Remediation): Apply the 33 claim-path REQUIRED_CORRECTION edits (and approved RECOMMENDED_IMPROVEMENT edits) from 'data/reviews/phase11/correction-ledger.json' to produce the remediated candidate batch ('pilot-fanout-003.json'), resolving 'P10-ISSUE-run-boundary' and 'P10-ISSUE-analysis-family'.",
+    "Step 3 (Staged Semantic Coverage Integration): Optionally merge the 8 pilot-compatible staged candidates from 'data/reviews/phase11/staged-lexical-candidates.json' ('entry-small', 'sense-small-size', 'equiv-small', 'rel-big-large-near-synonym', 'rel-big-small-antonym', 'rel-large-small-antonym', 'equiv-borrow-money', 'equiv-lend-money') into the candidate batch so pilot tests exercise real 'rel_' edges and 1-to-2 Vietnamese money/object equivalences.",
+    "Step 4 (Source Rights & Evidence Binding — TF-02): Register redistributable open-licensed/editorial 'src_' records, reclassify 'exampleType: \"corpus_like\"' to '\"editorial\"', and generate exact-value SHA-256 'evd_' records for every publicationClaimPath.",
+    "Step 5 (Editorial Arbitration & Gate Verification — TF-03, TF-04): Record owner/architect decision on 'P10-ISSUE-bank-boundary' (homographNumber=1 vs 2) and run full schema, graph, lifecycle, and fail-closed production gate regression tests."
+  ],
+  "acceptanceTestsForPhase12": [
+    "AT-P12-01: Zero learner-facing fields in publicationClaimPaths match the editorial meta-language regex /(?:\\bcandidate\\b|pending\\s+review|pending\\s+LER|pending\\s+independent|\\bLER\\b|draft\\s+record|exhaustive\\s+inventory|not\\s+modeled\\s+here)/i.",
+    "AT-P12-02: Both 'sense-big-size' and 'sense-large-size' have 'contrastiveNotes[0].language === \"en\"'.",
+    "AT-P12-03: 'sense-run-machine.definition' explicitly covers both intransitive functioning and transitive operation, and 'equiv-run-machine-operate' ('hoạt động') vs 'equiv-run-machine-operate-alternative' ('vận hành') have non-overlapping, meta-language-free grammatical scope restrictions.",
+    "AT-P12-04: 'prepareBatch()' succeeds on symmetric 'rel_' candidates ('NEAR_SYNONYM_OF', 'ANTONYM_OF') regardless of candidate order or UUIDv7 timestamp ties, producing canonical 'sourceId < targetId' order.",
+    "AT-P12-05: 'evaluatePublication()' rejects any 'gloss_only' TranslationEquivalence whose 'translationEvidenceStatus !== \"independently_reviewed\"' with 'TRANSLATION_UNREVIEWED'.",
+    "AT-P12-06: All existing 257/257 repository tests continue to pass."
+  ],
+  "explicitPhase12NonGoals": [
+    "Do NOT fabricate human reviewer identities, signatures, or fake owner appointment callbacks.",
+    "Do NOT convert all 16 'gloss_only' equivalences to 'sense_aligned' in Phase 12 (building the full Vietnamese LexicalEntry/LexicalSense graph is deferred to Lexical Production at Scale).",
+    "Do NOT mark commercial reference dictionaries (OALD, Cambridge, Collins, British Council) or unverified web aggregators (VDict, VNDic, VTudien) as 'redistributable'.",
+    "Do NOT add a new 'CONVERSE_OF' enum to V1/V2 schemas during Phase 12 pilot remediation; keep 'borrow <-> lend' converse role contrast in usageNote/constraints.",
+    "Do NOT write to or mutate MongoDB Atlas in Phase 12."
+  ]
+}

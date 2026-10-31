@@ -1,0 +1,2796 @@
+{
+  "coverageVersion": "11.0.0-canonical",
+  "artifactType": "phase11_canonical_semantic_coverage",
+  "status": "PHASE_11_AI_RESEARCH_COMPLETE",
+  "repositoryHead": "5b679c60c4cce7d83e123fb00270cb87082e0dd4",
+  "targetSnapshot": {
+    "path": "data/candidates/pilot-fanout-002.json",
+    "sha256": "d203048c769d6e033f219dc58531d3db9c87c59a00ec8482f9748a3005cab805"
+  },
+  "summary": {
+    "englishEntriesAudited": 13,
+    "englishSensesAudited": 15,
+    "synonymsAndNearSynonyms": {
+      "exactSynonymPairsInPilot": 0,
+      "nearSynonymPairsInPilot": 1,
+      "verifiedNearSynonymProposalId": "rel-big-large-near-synonym",
+      "sensesWithExternalNearSynonymsOutsidePilot": 13
+    },
+    "antonymsAndConverses": {
+      "gradableAntonymProposalsWithStagedEndpoint": 2,
+      "verifiedAntonymProposalIds": [
+        "rel-big-small-antonym",
+        "rel-large-small-antonym"
+      ],
+      "stagedMissingTargetEndpointIds": [
+        "entry-small",
+        "sense-small-size",
+        "equiv-small"
+      ],
+      "converseRelationalOppositionCasesEvaluated": 1,
+      "converseCasePair": [
+        "sense-borrow-temporary-use",
+        "sense-lend-temporary-use"
+      ],
+      "sensesWithNoConventionalBinaryAntonym": 10
+    },
+    "vietnamesePolysemy": {
+      "totalVietnameseExpressionsAudited": 18,
+      "priority14ExpressionsCovered": [
+        "chạy",
+        "hoạt động",
+        "vận hành",
+        "điều hành",
+        "phân tích",
+        "to",
+        "lớn",
+        "mượn",
+        "vay",
+        "cho mượn",
+        "cho vay",
+        "lời khuyên",
+        "lời tư vấn",
+        "phụ thuộc vào"
+      ],
+      "additionalPilotGlossesCovered": [
+        "ngân hàng",
+        "bờ (sông, kênh, hồ)",
+        "mang tính phân tích",
+        "tra cứu"
+      ]
+    },
+    "translationEquivalences": {
+      "totalAudited": 16,
+      "glossOnlySufficientForPilotCount": 16,
+      "requiredCorrectionsInPhase12Count": 8,
+      "recommendedImprovementsCount": 1,
+      "noChangeSupportedCount": 7,
+      "stagedAdditionalEquivalencesCount": 3
+    }
+  },
+  "englishSenseCoverage": [
+    {
+      "senseCandidateId": "sense-bank-financial",
+      "entryCandidateId": "entry-bank-financial",
+      "lemma": "bank",
+      "pos": "noun",
+      "homographNumber": 1,
+      "conventionalizedMeaning": "Financial institution licensed to accept deposits, make loans, and provide payment/account services.",
+      "definitionInSnapshot": "An organization where people and businesses can invest or borrow money, change it to foreign money, etc.",
+      "register": "neutral",
+      "domain": "finance",
+      "grammar": {
+        "countability": "countable",
+        "transitivity": "not_applicable"
+      },
+      "valencyAndConstructions": [],
+      "semanticRoles": [
+        "Institution / Organization",
+        "Service Provider"
+      ],
+      "synonymEvaluation": {
+        "hasSuitableSynonym": true,
+        "exactOrNear": "near_synonym",
+        "candidateExpression": "financial institution (hypernymic near-synonym); credit union / savings bank (co-hyponyms)",
+        "substitutableContexts": [
+          "Formal regulatory or economic prose ('banks and other financial institutions')."
+        ],
+        "nonSubstitutableContexts": [
+          "Everyday retail interactions ('go to the bank', 'open a bank account')."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: bank_1 noun",
+          "SRC-OEWN: depository financial institution synset"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_PILOT_SYNONYM_PROPOSAL (no co-hyponym or near-synonym endpoint in pilot)"
+      },
+      "antonymEvaluation": {
+        "oppositionKind": "no_conventional_antonym",
+        "candidateOpposites": [],
+        "falseAntonymWarnings": [
+          "Concrete institutional nouns do not have binary lexical antonyms."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: bank_1 noun",
+          "SRC-PRINCETON-WORDNET-3.1: bank.n.02"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_CONVENTIONAL_ANTONYM"
+      },
+      "translationDistinctions": [
+        "Maps unambiguously to Vietnamese 'ngân hàng' ('equiv-bank-financial'), completely distinct from river 'bank' ('bờ sông')."
+      ],
+      "examplesAssessment": "Example 'He works at a local bank.' is natural and accurate; requires reclassifying exampleType from 'corpus_like' to 'editorial'.",
+      "usageRestrictionsAssessment": "Countable institutional noun; homograph distinction from river 'bank' is mandatory.",
+      "coverageDecision": "COMPLETE_FOR_PILOT (requires usageNote meta-language cleanup CORR-P11-002)"
+    },
+    {
+      "senseCandidateId": "sense-bank-river",
+      "entryCandidateId": "entry-bank-river",
+      "lemma": "bank",
+      "pos": "noun",
+      "homographNumber": 2,
+      "conventionalizedMeaning": "Sloping raised land along the side of a river, canal, stream, or lake.",
+      "definitionInSnapshot": "Sloping raised land, especially along the sides of a river.",
+      "register": "neutral",
+      "domain": "geography",
+      "grammar": {
+        "countability": "countable",
+        "transitivity": "not_applicable"
+      },
+      "valencyAndConstructions": [],
+      "semanticRoles": [
+        "Location / Topographical Boundary"
+      ],
+      "synonymEvaluation": {
+        "hasSuitableSynonym": true,
+        "exactOrNear": "near_synonym",
+        "candidateExpression": "riverbank (compound hyponym/near-synonym); shore /waterside (broader regional/water-body near-synonyms)",
+        "substitutableContexts": [
+          "Riparian descriptions ('walk along the bank / riverbank')."
+        ],
+        "nonSubstitutableContexts": [
+          "Ocean/sea margins where 'shore' or 'coast' is required rather than 'bank'."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: bank_1 noun sense 4",
+          "SRC-CAMBRIDGE: bank (RIVER)"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_PILOT_SYNONYM_PROPOSAL (target endpoints 'riverbank'/'shore' outside pilot)"
+      },
+      "antonymEvaluation": {
+        "oppositionKind": "no_conventional_antonym",
+        "candidateOpposites": [
+          "channel / riverbed / midstream (topographical contrasts, not lexical antonyms)"
+        ],
+        "falseAntonymWarnings": [
+          "Topographical nouns lack binary antonyms."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: bank_1 noun sense 4"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_CONVENTIONAL_ANTONYM"
+      },
+      "translationDistinctions": [
+        "Maps to Vietnamese 'bờ (sông, kênh, hồ)' ('equiv-bank-river'); parenthetical water-body qualifier prevents over-application to 'bờ biển' ('coast/shore')."
+      ],
+      "examplesAssessment": "Example 'Wild flowers grew along the river bank.' is natural and accurate.",
+      "usageRestrictionsAssessment": "Restricted to inland waterways (rivers, canals, streams, lakes).",
+      "coverageDecision": "COMPLETE_FOR_PILOT (requires usageNote meta-language cleanup)"
+    },
+    {
+      "senseCandidateId": "sense-run-movement",
+      "entryCandidateId": "entry-run",
+      "lemma": "run",
+      "pos": "verb",
+      "homographNumber": null,
+      "conventionalizedMeaning": "Move rapidly on foot so that both feet are briefly off the ground during each stride.",
+      "definitionInSnapshot": "Move at a speed faster than a walk, never having both or all the feet on the ground at the same time.",
+      "register": "neutral",
+      "domain": "general",
+      "grammar": {
+        "countability": "not_applicable",
+        "transitivity": "intransitive"
+      },
+      "valencyAndConstructions": [],
+      "semanticRoles": [
+        "Agent (Animate Mover)",
+        "Path / Goal / Distance Adjunct"
+      ],
+      "synonymEvaluation": {
+        "hasSuitableSynonym": true,
+        "exactOrNear": "near_synonym",
+        "candidateExpression": "sprint / dash / race (high-speed troponyms); jog (low-speed exercise troponym)",
+        "substitutableContexts": [
+          "Moving quickly on foot ('sprint/dash across the road', 'jog/run in the park')."
+        ],
+        "nonSubstitutableContexts": [
+          "General neutral locomotion where 'sprint' is too fast and 'jog' is restricted to leisure exercise."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: run_1 verb sense 1",
+          "SRC-PRINCETON-WORDNET-3.1: run.v.01"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_PILOT_SYNONYM_PROPOSAL (troponyms 'sprint'/'jog' outside pilot)"
+      },
+      "antonymEvaluation": {
+        "oppositionKind": "false_antonym",
+        "candidateOpposites": [
+          "walk (co-hyponymous gait contrast)",
+          "stand still / stop (motion vs rest contrast)"
+        ],
+        "falseAntonymWarnings": [
+          "Polysemous 'run' has no headword-level antonym; even for 'sense-run-movement', 'walk' is a manner-of-motion contrast on a speed continuum rather than a true binary antonym."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: run_1 verb sense 1",
+          "SRC-PRINCETON-WORDNET-3.1: run.v.01"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_BINARY_ANTONYM (manner-of-motion continuum contrast only)"
+      },
+      "translationDistinctions": [
+        "Maps to Vietnamese 'chạy' (sense V1: locomotion on foot) in 'equiv-run-movement'."
+      ],
+      "examplesAssessment": "Example 'She runs every morning.' -> 'Cô ấy chạy bộ mỗi sáng.' is natural and accurate.",
+      "usageRestrictionsAssessment": "Requires animate subject.",
+      "coverageDecision": "COMPLETE_FOR_PILOT (requires usageNote meta-language cleanup)"
+    },
+    {
+      "senseCandidateId": "sense-run-machine",
+      "entryCandidateId": "entry-run",
+      "lemma": "run",
+      "pos": "verb",
+      "homographNumber": null,
+      "conventionalizedMeaning": "Function or operate (of a machine, vehicle, engine, or system); or cause a machine, system, or program to operate.",
+      "definitionInSnapshot": "Function or operate, especially of a machine or system.",
+      "register": "neutral",
+      "domain": "general",
+      "grammar": {
+        "countability": "not_applicable",
+        "transitivity": "ambitransitive"
+      },
+      "valencyAndConstructions": [
+        "construction-run-machine",
+        "construction-run-machine-transitive"
+      ],
+      "semanticRoles": [
+        "Theme (Machine/System functioning intransitively)",
+        "Agent (Operator in transitive frame)",
+        "Patient/Theme (Machine/Program in transitive frame)"
+      ],
+      "synonymEvaluation": {
+        "hasSuitableSynonym": true,
+        "exactOrNear": "near_synonym",
+        "candidateExpression": "operate / function / work (intransitive); operate (transitive)",
+        "substitutableContexts": [
+          "'The engine runs/operates/functions quietly'; 'Engineers run/operate the machinery'."
+        ],
+        "nonSubstitutableContexts": [
+          "Running software ('run a script/program' where '*function a program' is ungrammatical and 'operate a script' is unidiomatic)."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: run_1 verb senses 15 & 16",
+          "SRC-CAMBRIDGE: run verb (WORK/OPERATE)"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_PILOT_SYNONYM_PROPOSAL (target 'operate'/'function' outside pilot)"
+      },
+      "antonymEvaluation": {
+        "oppositionKind": "complementary_antonym",
+        "candidateOpposites": [
+          "stop / shut down / break down / stall (for intransitive machine operation)"
+        ],
+        "falseAntonymWarnings": [
+          "Applies only to the mechanical/system operation sense ('sense-run-machine'), never to 'sense-run-management'."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: run_1 verb sense 15 ('The engine is running' vs 'stopped')"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "DEFERRED_MISSING_TARGET_ENDPOINT ('stop' outside pilot)"
+      },
+      "translationDistinctions": [
+        "1-to-2 grammatical-frame split in Vietnamese: intransitive frame ('construction-run-machine') maps to 'hoạt động' ('equiv-run-machine-operate', or everyday 'chạy'), whereas transitive frame ('construction-run-machine-transitive') and formal technical system operation map to 'vận hành' ('equiv-run-machine-operate-alternative', or colloquial 'chạy' for software)."
+      ],
+      "examplesAssessment": "Current example only illustrates the intransitive frame ('The engine runs quietly.'); definition and usageNote require REQUIRED_CORRECTION in Phase 12 to cover both linked constructions.",
+      "usageRestrictionsAssessment": "Ambitransitive sense preserved as a single sense per docs/sense-division.md, with explicit frame-to-translation mapping.",
+      "coverageDecision": "REQUIRED_CORRECTION_IN_PHASE_12 (P10-sense-run-machine-entity-definition, P10-ISSUE-run-boundary, and both eqv records)"
+    },
+    {
+      "senseCandidateId": "sense-run-management",
+      "entryCandidateId": "entry-run",
+      "lemma": "run",
+      "pos": "verb",
+      "homographNumber": null,
+      "conventionalizedMeaning": "Be in charge of, direct, or manage a business, organization, department, project, or organized activity.",
+      "definitionInSnapshot": "Be in charge of; manage.",
+      "register": "neutral",
+      "domain": "business",
+      "grammar": {
+        "countability": "not_applicable",
+        "transitivity": "transitive"
+      },
+      "valencyAndConstructions": [
+        "construction-run-management"
+      ],
+      "semanticRoles": [
+        "Agent (Manager / Director / Organizer)",
+        "Patient/Theme (Organization / Business / Project / Course)"
+      ],
+      "synonymEvaluation": {
+        "hasSuitableSynonym": true,
+        "exactOrNear": "near_synonym",
+        "candidateExpression": "manage / direct / head / administer / operate (a business)",
+        "substitutableContexts": [
+          "'run / manage / direct a small company or project'."
+        ],
+        "nonSubstitutableContexts": [
+          "'manage to do something' (succeed in doing), where 'run' cannot substitute."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: run_1 verb sense 12",
+          "SRC-CAMBRIDGE: run verb (MANAGE)"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_PILOT_SYNONYM_PROPOSAL (target 'manage'/'direct' outside pilot)"
+      },
+      "antonymEvaluation": {
+        "oppositionKind": "no_conventional_antonym",
+        "candidateOpposites": [],
+        "falseAntonymWarnings": [
+          "Organizational management has no binary lexical antonym."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: run_1 verb sense 12"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_CONVENTIONAL_ANTONYM"
+      },
+      "translationDistinctions": [
+        "Maps to Vietnamese 'điều hành' ('equiv-run-management', and contextually 'quản lý'); must NEVER be confused with colloquial Vietnamese 'chạy dự án / chạy việc' (lobbying/bribery)."
+      ],
+      "examplesAssessment": "Example 'She runs a small design company.' -> 'Cô ấy điều hành một công ty thiết kế nhỏ.' is accurate.",
+      "usageRestrictionsAssessment": "Transitive verb requiring an institutional, commercial, or organized-activity object.",
+      "coverageDecision": "COMPLETE_FOR_PILOT (requires usageNote meta-language cleanup)"
+    },
+    {
+      "senseCandidateId": "sense-analyse",
+      "entryCandidateId": "entry-analyse",
+      "lemma": "analyse",
+      "pos": "verb",
+      "homographNumber": null,
+      "conventionalizedMeaning": "Examine the nature, structure, or constituent parts of something methodically and in detail in order to understand or explain it.",
+      "definitionInSnapshot": "Examine methodically and in detail the constitution or structure of something, typically for purposes of explanation and interpretation.",
+      "register": "neutral",
+      "domain": "general",
+      "grammar": {
+        "countability": "not_applicable",
+        "transitivity": "transitive"
+      },
+      "valencyAndConstructions": [
+        "construction-analyse-object"
+      ],
+      "semanticRoles": [
+        "Agent (Analyst / Researcher / System)",
+        "Theme/Patient (Data / Phenomenon / Text / Sample)"
+      ],
+      "synonymEvaluation": {
+        "hasSuitableSynonym": true,
+        "exactOrNear": "near_synonym",
+        "candidateExpression": "examine / evaluate / investigate / dissect (figurative)",
+        "substitutableContexts": [
+          "Academic research contexts ('analyse / examine the survey results')."
+        ],
+        "nonSubstitutableContexts": [
+          "Medical physical examination ('examine a patient', not '*analyse a patient') or chemical assay ('analyse a blood sample', where 'evaluate' does not fit)."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: analyse verb",
+          "SRC-OEWN: analyze/analyse verb synset"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_PILOT_SYNONYM_PROPOSAL (derivational relatives 'analysis'/'analytical' are linked via 'family-analysis', not SYNONYM_OF)"
+      },
+      "antonymEvaluation": {
+        "oppositionKind": "no_conventional_antonym",
+        "candidateOpposites": [
+          "synthesize / synthesise (methodological philosophical contrast, not an everyday lexical antonym)"
+        ],
+        "falseAntonymWarnings": [
+          "Do not treat 'synthesize' as a simple antonym in general learner contexts."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: analyse verb"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_CONVENTIONAL_ANTONYM"
+      },
+      "translationDistinctions": [
+        "Maps directly to the Vietnamese transitive verb 'phân tích' ('equiv-analyse')."
+      ],
+      "examplesAssessment": "Example 'Researchers analysed the survey data.' is natural and accurate.",
+      "usageRestrictionsAssessment": "BrE spelling 'analyse' (AmE 'analyze'); requires direct object NP or wh-clause.",
+      "coverageDecision": "COMPLETE_FOR_PILOT (requires usageNote meta-language cleanup)"
+    },
+    {
+      "senseCandidateId": "sense-analysis",
+      "entryCandidateId": "entry-analysis",
+      "lemma": "analysis",
+      "pos": "noun",
+      "homographNumber": null,
+      "conventionalizedMeaning": "Detailed examination of the elements or structure of something (uncountable process), or a particular study/report presenting the results of such an examination (countable result).",
+      "definitionInSnapshot": "Detailed examination of the elements or structure of something, or the result of that examination.",
+      "register": "neutral",
+      "domain": "general",
+      "grammar": {
+        "countability": "both",
+        "transitivity": "not_applicable"
+      },
+      "valencyAndConstructions": [],
+      "semanticRoles": [
+        "Eventuality / Process (uncountable)",
+        "Information Artifact / Report (countable)",
+        "Theme ('of + NP')"
+      ],
+      "synonymEvaluation": {
+        "hasSuitableSynonym": true,
+        "exactOrNear": "near_synonym",
+        "candidateExpression": "examination / evaluation / breakdown / assessment",
+        "substitutableContexts": [
+          "'a detailed analysis / examination / breakdown of the figures'."
+        ],
+        "nonSubstitutableContexts": [
+          "Formal academic tests ('sit an examination', not '*sit an analysis') or quantitative laboratory contexts ('chemical analysis')."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: analysis noun",
+          "SRC-CAMBRIDGE: analysis noun"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_PILOT_SYNONYM_PROPOSAL (target nouns outside pilot)"
+      },
+      "antonymEvaluation": {
+        "oppositionKind": "no_conventional_antonym",
+        "candidateOpposites": [
+          "synthesis (philosophical/methodological counterpart only)"
+        ],
+        "falseAntonymWarnings": [
+          "No general binary lexical antonym."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: analysis noun"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_CONVENTIONAL_ANTONYM"
+      },
+      "translationDistinctions": [
+        "Maps to 'phân tích' ('equiv-analysis'), with Vietnamese syntactic nominalization ('sự/quá trình phân tích' for [U] process; 'bản/bài phân tích' for [C] report) documented in 'restrictions[0]'."
+      ],
+      "examplesAssessment": "Example 'The report provides a detailed analysis of the data.' is natural and accurate.",
+      "usageRestrictionsAssessment": "Irregular plural 'analyses' (/əˈnæləsiːz/); countability 'both' ([C, U]).",
+      "coverageDecision": "COMPLETE_FOR_PILOT (requires usageNote meta-language cleanup; optional RECOMMENDED_IMPROVEMENT on glossVi)"
+    },
+    {
+      "senseCandidateId": "sense-analytical",
+      "entryCandidateId": "entry-analytical",
+      "lemma": "analytical",
+      "pos": "adjective",
+      "homographNumber": null,
+      "conventionalizedMeaning": "Relating to or using logical, systematic analysis.",
+      "definitionInSnapshot": "Relating to or using analysis or logical reasoning.",
+      "register": "neutral",
+      "domain": "general",
+      "grammar": {
+        "countability": "not_applicable",
+        "transitivity": "not_applicable"
+      },
+      "valencyAndConstructions": [],
+      "semanticRoles": [
+        "Property / Manner / Method"
+      ],
+      "synonymEvaluation": {
+        "hasSuitableSynonym": true,
+        "exactOrNear": "near_synonym",
+        "candidateExpression": "analytic (variant form); logical / systematic / investigative (near-synonyms)",
+        "substitutableContexts": [
+          "'analytical / systematic thinking'; 'analytic / analytical philosophy/geometry'."
+        ],
+        "nonSubstitutableContexts": [
+          "'logical conclusion' (where 'analytical conclusion' changes meaning)."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: analytical adjective",
+          "SRC-CAMBRIDGE: analytical adjective"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_PILOT_SYNONYM_PROPOSAL (targets outside pilot)"
+      },
+      "antonymEvaluation": {
+        "oppositionKind": "no_conventional_antonym",
+        "candidateOpposites": [
+          "unanalytical / intuitive / impressionistic (contextual contrasts)"
+        ],
+        "falseAntonymWarnings": [
+          "No high-frequency core learner antonym."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: analytical adjective"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_CONVENTIONAL_ANTONYM"
+      },
+      "translationDistinctions": [
+        "Maps to 'mang tính phân tích' ('equiv-analytical') or attributive 'phân tích' in fixed Vietnamese compounds ('tư duy phân tích')."
+      ],
+      "examplesAssessment": "Example 'The course develops analytical skills.' is natural and accurate.",
+      "usageRestrictionsAssessment": "Attributive and predicative adjective.",
+      "coverageDecision": "COMPLETE_FOR_PILOT (requires usageNote meta-language cleanup)"
+    },
+    {
+      "senseCandidateId": "sense-big-size",
+      "entryCandidateId": "entry-big",
+      "lemma": "big",
+      "pos": "adjective",
+      "homographNumber": null,
+      "conventionalizedMeaning": "Of considerable or above-average physical size, extent, or capacity.",
+      "definitionInSnapshot": "Of considerable size, extent, or intensity.",
+      "register": "neutral",
+      "domain": "general",
+      "grammar": {
+        "countability": "not_applicable",
+        "transitivity": "not_applicable"
+      },
+      "valencyAndConstructions": [],
+      "semanticRoles": [
+        "Attribute (Physical Size / Scale)"
+      ],
+      "synonymEvaluation": {
+        "hasSuitableSynonym": true,
+        "exactOrNear": "near_synonym",
+        "candidateExpression": "large ('sense-large-size')",
+        "substitutableContexts": [
+          "Concrete countable physical objects, buildings, cities, and spaces ('a big/large house', 'a big/large box', 'a big/large city')."
+        ],
+        "nonSubstitutableContexts": [
+          "Formal quantity/proportion nouns where 'large' is required ('a large amount/number/proportion', not '*a big proportion' in academic prose).",
+          "Figurative importance/severity where 'big' is required ('a big decision', 'a big mistake', 'big brother', not '*a large mistake')."
+        ],
+        "independentEvidence": [
+          "SRC-CAMBRIDGE: big, large or great? (English Grammar Today)",
+          "SRC-OALD: big_1 adjective & large_1 adjective synonyms note",
+          "SRC-OEWN: big / large physical-size synset"
+        ],
+        "endpointExistsInPilot": true,
+        "eligibleForPilotRelationProposal": true,
+        "decision": "STAGED_NEAR_SYNONYM_PROPOSAL ('rel-big-large-near-synonym': sense-big-size <-> sense-large-size)"
+      },
+      "antonymEvaluation": {
+        "oppositionKind": "gradable_antonym",
+        "candidateOpposites": [
+          "small ('sense-small-size' — staged candidate)",
+          "little (everyday/emotive physical size)"
+        ],
+        "falseAntonymWarnings": [
+          "Scoped strictly to physical size ('sense-big-size'); figurative 'big decision' contrasts with 'minor/trivial', not 'small'."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: big_1 adjective (OPPOSITE small, little)",
+          "SRC-PRINCETON-WORDNET-3.1: big.a.01 <-> small.a.01"
+        ],
+        "endpointExistsInPilot": false,
+        "stagedEndpointCandidateId": "sense-small-size",
+        "eligibleForPilotRelationProposal": true,
+        "decision": "STAGED_ANTONYM_PROPOSAL_WITH_ENDPOINT ('rel-big-small-antonym': sense-big-size <-> staged sense-small-size)"
+      },
+      "translationDistinctions": [
+        "Maps to Vietnamese 'lớn' ('equiv-big') and concrete everyday 'to' ('ngôi nhà lớn / to')."
+      ],
+      "examplesAssessment": "Example 'They bought a big house.' is natural and accurate.",
+      "usageRestrictionsAssessment": "contrastiveNotes[0].language must be fixed from 'vi' to 'en' and cleaned of meta-language (REQUIRED_CORRECTION).",
+      "coverageDecision": "COMPLETE_WITH_STAGED_RELATIONS ('rel-big-large-near-synonym' and 'rel-big-small-antonym')"
+    },
+    {
+      "senseCandidateId": "sense-large-size",
+      "entryCandidateId": "entry-large",
+      "lemma": "large",
+      "pos": "adjective",
+      "homographNumber": null,
+      "conventionalizedMeaning": "Of relatively great physical size, area, extent, capacity, or quantity.",
+      "definitionInSnapshot": "Of considerable or relatively great size, extent, or capacity.",
+      "register": "neutral",
+      "domain": "general",
+      "grammar": {
+        "countability": "not_applicable",
+        "transitivity": "not_applicable"
+      },
+      "valencyAndConstructions": [],
+      "semanticRoles": [
+        "Attribute (Physical Size / Extent / Quantity)"
+      ],
+      "synonymEvaluation": {
+        "hasSuitableSynonym": true,
+        "exactOrNear": "near_synonym",
+        "candidateExpression": "big ('sense-big-size')",
+        "substitutableContexts": [
+          "Concrete countable objects, buildings, and areas ('a large/big house', 'a large/big garden')."
+        ],
+        "nonSubstitutableContexts": [
+          "Quantity/proportion nouns where 'large' is strongly preferred ('a large number/amount/proportion/percentage/scale').",
+          "Figurative importance where 'big' or 'great' is required ('a big problem', not '*a large problem')."
+        ],
+        "independentEvidence": [
+          "SRC-CAMBRIDGE: big, large or great?",
+          "SRC-OALD: large_1 adjective",
+          "SRC-OEWN: large adjective"
+        ],
+        "endpointExistsInPilot": true,
+        "eligibleForPilotRelationProposal": true,
+        "decision": "STAGED_NEAR_SYNONYM_PROPOSAL ('rel-big-large-near-synonym': sense-big-size <-> sense-large-size)"
+      },
+      "antonymEvaluation": {
+        "oppositionKind": "gradable_antonym",
+        "candidateOpposites": [
+          "small ('sense-small-size' — staged candidate)"
+        ],
+        "falseAntonymWarnings": [
+          "Unlike 'little', 'small' opposes 'large' across both physical size ('a large/small room') and quantities ('a large/small amount/number')."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: large_1 adjective (OPPOSITE small)",
+          "SRC-PRINCETON-WORDNET-3.1: large.a.01 <-> small.a.01"
+        ],
+        "endpointExistsInPilot": false,
+        "stagedEndpointCandidateId": "sense-small-size",
+        "eligibleForPilotRelationProposal": true,
+        "decision": "STAGED_ANTONYM_PROPOSAL_WITH_ENDPOINT ('rel-large-small-antonym': sense-large-size <-> staged sense-small-size)"
+      },
+      "translationDistinctions": [
+        "Maps to Vietnamese 'lớn' ('equiv-large'); requires explicit collocation warning so Vietnamese learners do not map 'vấn đề lớn / sai lầm lớn' to '*a large problem / *a large mistake'."
+      ],
+      "examplesAssessment": "Example 'A large number of students attended.' is natural and illustrates the core academic collocation.",
+      "usageRestrictionsAssessment": "contrastiveNotes[0].language must be fixed from 'vi' to 'en' and cleaned of meta-language (REQUIRED_CORRECTION).",
+      "coverageDecision": "COMPLETE_WITH_STAGED_RELATIONS ('rel-big-large-near-synonym' and 'rel-large-small-antonym')"
+    },
+    {
+      "senseCandidateId": "sense-depend-contingent",
+      "entryCandidateId": "entry-depend",
+      "lemma": "depend",
+      "pos": "verb",
+      "homographNumber": null,
+      "conventionalizedMeaning": "Be contingent on, determined by, or affected by a condition, factor, or variable.",
+      "definitionInSnapshot": "Be controlled or determined by.",
+      "register": "neutral",
+      "domain": "general",
+      "grammar": {
+        "countability": "not_applicable",
+        "transitivity": "intransitive"
+      },
+      "valencyAndConstructions": [
+        "construction-depend-on"
+      ],
+      "semanticRoles": [
+        "Theme (Contingent Outcome / Variable)",
+        "Determinant / Condition ('on/upon + NP / wh-clause')"
+      ],
+      "synonymEvaluation": {
+        "hasSuitableSynonym": true,
+        "exactOrNear": "near_synonym",
+        "candidateExpression": "hinge on / rest on / turn on / be contingent on",
+        "substitutableContexts": [
+          "'The outcome depends on / hinges on / rests on several factors'."
+        ],
+        "nonSubstitutableContexts": [
+          "Standalone conversational 'It depends' (cannot say '*It hinges')."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: depend verb (depend on/upon)",
+          "SRC-CAMBRIDGE: depend on/upon phrasal verb"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_PILOT_SYNONYM_PROPOSAL (targets outside pilot)"
+      },
+      "antonymEvaluation": {
+        "oppositionKind": "no_conventional_antonym",
+        "candidateOpposites": [
+          "be independent of (analytical adjectival negation, not a lexical verb antonym)"
+        ],
+        "falseAntonymWarnings": [
+          "No single-verb antonym in English."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: depend verb"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_CONVENTIONAL_ANTONYM"
+      },
+      "translationDistinctions": [
+        "Maps to Vietnamese 'phụ thuộc vào' (and contextually 'tùy thuộc vào') in 'equiv-depend'."
+      ],
+      "examplesAssessment": "Example 'The result depends on the weather.' is natural and accurate.",
+      "usageRestrictionsAssessment": "Requires obligatory preposition 'on' or 'upon' when a complement is present; never takes a bare direct object ('*depend the weather') and is not used in progressive aspect in this sense ('*is depending on').",
+      "coverageDecision": "COMPLETE_FOR_PILOT (requires meta-language cleanup on usageNote, construction-depend-on, and equiv-depend)"
+    },
+    {
+      "senseCandidateId": "sense-look-up-reference",
+      "entryCandidateId": "entry-look-up",
+      "lemma": "look up",
+      "pos": "verb",
+      "homographNumber": null,
+      "conventionalizedMeaning": "Search for and find a piece of information in a reference book, dictionary, database, or list.",
+      "definitionInSnapshot": "Search for and find a piece of information in a book or database.",
+      "register": "neutral",
+      "domain": "general",
+      "grammar": {
+        "countability": "not_applicable",
+        "transitivity": "transitive"
+      },
+      "valencyAndConstructions": [
+        "construction-look-up-separable"
+      ],
+      "semanticRoles": [
+        "Agent (Searcher)",
+        "Theme (Sought Information: word, number, fact)",
+        "Location Adjunct ('in + Reference Source')"
+      ],
+      "synonymEvaluation": {
+        "hasSuitableSynonym": true,
+        "exactOrNear": "near_synonym",
+        "candidateExpression": "check / consult / search for",
+        "substitutableContexts": [
+          "'look up / check a word in the dictionary'."
+        ],
+        "nonSubstitutableContexts": [
+          "'consult a dictionary' takes the reference book as direct object, whereas 'look up' takes the sought information as direct object ('look up a word', NOT '*look up a dictionary')."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: look up phrasal verb",
+          "SRC-CAMBRIDGE: look something up"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_PILOT_SYNONYM_PROPOSAL (targets outside pilot)"
+      },
+      "antonymEvaluation": {
+        "oppositionKind": "no_conventional_antonym",
+        "candidateOpposites": [],
+        "falseAntonymWarnings": [
+          "Literal spatial 'look down' is NOT an antonym of reference-search 'look up'."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: look up phrasal verb"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_CONVENTIONAL_ANTONYM"
+      },
+      "translationDistinctions": [
+        "Maps to Vietnamese 'tra cứu' (or everyday 'tra') in 'equiv-look-up'."
+      ],
+      "examplesAssessment": "Example 'If you do not know the word, look it up.' accurately demonstrates mandatory pronoun separation ('look it up', not '*look up it').",
+      "usageRestrictionsAssessment": "Separable transitive phrasal verb; object pronouns ('it', 'them') must precede the particle 'up'.",
+      "coverageDecision": "COMPLETE_FOR_PILOT (requires usageNote meta-language cleanup)"
+    },
+    {
+      "senseCandidateId": "sense-borrow-temporary-use",
+      "entryCandidateId": "entry-borrow",
+      "lemma": "borrow",
+      "pos": "verb",
+      "homographNumber": null,
+      "conventionalizedMeaning": "Take and use something (an object or sum of money) belonging to someone else temporarily, with the intention or obligation of returning it.",
+      "definitionInSnapshot": "Take and use something that belongs to someone else with the intention of returning it.",
+      "register": "neutral",
+      "domain": "general",
+      "grammar": {
+        "countability": "not_applicable",
+        "transitivity": "transitive"
+      },
+      "valencyAndConstructions": [
+        "construction-borrow-from"
+      ],
+      "semanticRoles": [
+        "Agent/Recipient (Borrower — Subject)",
+        "Theme (Borrowed Object or Money — Direct Object)",
+        "Source ('from + Lender NP')"
+      ],
+      "synonymEvaluation": {
+        "hasSuitableSynonym": false,
+        "exactOrNear": "none",
+        "candidateExpression": "take out a loan (money-specific paraphrase); use temporarily",
+        "substitutableContexts": [
+          "Financial contexts ('borrow money / take out a loan from a bank')."
+        ],
+        "nonSubstitutableContexts": [
+          "Everyday physical items ('borrow a pen from a classmate')."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: borrow verb",
+          "SRC-CAMBRIDGE: borrow verb"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_PILOT_SYNONYM_PROPOSAL"
+      },
+      "antonymEvaluation": {
+        "oppositionKind": "converse_relational_opposite",
+        "candidateOpposites": [
+          "lend ('sense-lend-temporary-use' — converse perspective on transfer)",
+          "return / give back / pay back (sequential phase opposite)"
+        ],
+        "falseAntonymWarnings": [
+          "CRITICAL: 'borrow' and 'lend' are converse relational opposites ('X borrows Y from Z <=> Z lends Y to X'), NOT same-subject gradable or complementary antonyms. Modeling them as an unqualified 'ANTONYM_OF' edge induces the learner error '*borrow someone something'."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: borrow verb & lend verb",
+          "SRC-CAMBRIDGE: borrow or lend? (English Grammar Today)",
+          "SRC-PRINCETON-WORDNET-3.1: borrow.v.01 / lend.v.02"
+        ],
+        "endpointExistsInPilot": true,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "EVALUATED_AS_CONVERSE_OPPOSITION ('CONVERSE-EVAL-BORROW-LEND-001'; unqualified ANTONYM_OF rejected)"
+      },
+      "translationDistinctions": [
+        "1-to-2 lexicalized split in Vietnamese based on object fungibility: 'mượn' ('equiv-borrow') for a specific non-money physical item returned in kind vs 'vay' (staged 'equiv-borrow-money') for money or financial capital returned in equivalent value."
+      ],
+      "examplesAssessment": "Example 'I borrowed a book from Lan.' is natural and accurate.",
+      "usageRestrictionsAssessment": "Never takes a double-object frame ('*borrow me a book' is ungrammatical; use 'borrow a book from me' or 'lend me a book').",
+      "coverageDecision": "COMPLETE_FOR_PILOT (converse evaluation documented; staged 'equiv-borrow-money' provided)"
+    },
+    {
+      "senseCandidateId": "sense-lend-temporary-use",
+      "entryCandidateId": "entry-lend",
+      "lemma": "lend",
+      "pos": "verb",
+      "homographNumber": null,
+      "conventionalizedMeaning": "Grant someone the temporary possession or use of something (an object or sum of money) on the understanding that it or its equivalent will be returned.",
+      "definitionInSnapshot": "Grant to someone the use of something on the understanding that it will be returned.",
+      "register": "neutral",
+      "domain": "general",
+      "grammar": {
+        "countability": "not_applicable",
+        "transitivity": "transitive"
+      },
+      "valencyAndConstructions": [
+        "construction-lend-double-object",
+        "construction-lend-to"
+      ],
+      "semanticRoles": [
+        "Agent/Provider (Lender — Subject)",
+        "Recipient (Borrower — Indirect Object or 'to + NP')",
+        "Theme (Lent Object or Money — Direct Object)"
+      ],
+      "synonymEvaluation": {
+        "hasSuitableSynonym": true,
+        "exactOrNear": "near_synonym",
+        "candidateExpression": "loan (primarily AmE or formal financial/museum loans)",
+        "substitutableContexts": [
+          "Financial lending or AmE everyday speech ('loan/lend money to a friend')."
+        ],
+        "nonSubstitutableContexts": [
+          "BrE formal writing where 'lend' is preferred over verb 'loan' for everyday objects, and fixed expressions ('lend a hand')."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: lend verb",
+          "SRC-CAMBRIDGE: lend verb"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_PILOT_SYNONYM_PROPOSAL (target 'loan' outside pilot)"
+      },
+      "antonymEvaluation": {
+        "oppositionKind": "converse_relational_opposite",
+        "candidateOpposites": [
+          "borrow ('sense-borrow-temporary-use' — converse perspective on transfer)"
+        ],
+        "falseAntonymWarnings": [
+          "Converse relational opposite of 'borrow' ('Z lends Y to X <=> X borrows Y from Z'); must not be represented as an unqualified same-subject 'ANTONYM_OF' edge."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: lend verb",
+          "SRC-CAMBRIDGE: borrow or lend?",
+          "SRC-PRINCETON-WORDNET-3.1: lend.v.02"
+        ],
+        "endpointExistsInPilot": true,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "EVALUATED_AS_CONVERSE_OPPOSITION ('CONVERSE-EVAL-BORROW-LEND-001'; unqualified ANTONYM_OF rejected)"
+      },
+      "translationDistinctions": [
+        "1-to-2 lexicalized split in Vietnamese: 'cho mượn' ('equiv-lend') for specific physical objects returned in kind vs 'cho vay' (staged 'equiv-lend-money') for money, credit, or financial capital."
+      ],
+      "examplesAssessment": "Example 'She lent her pen to a classmate.' is natural and accurate.",
+      "usageRestrictionsAssessment": "Supports both double-object ('lend someone something') and prepositional dative ('lend something to someone'); irregular past/participle 'lent'.",
+      "coverageDecision": "COMPLETE_FOR_PILOT (converse evaluation documented; staged 'equiv-lend-money' provided)"
+    },
+    {
+      "senseCandidateId": "sense-advice-guidance",
+      "entryCandidateId": "entry-advice",
+      "lemma": "advice",
+      "pos": "noun",
+      "homographNumber": null,
+      "conventionalizedMeaning": "Guidance or recommendations offered regarding prudent future action.",
+      "definitionInSnapshot": "Guidance or recommendations offered with regard to prudent future action.",
+      "register": "neutral",
+      "domain": "general",
+      "grammar": {
+        "countability": "uncountable",
+        "transitivity": "not_applicable"
+      },
+      "valencyAndConstructions": [],
+      "semanticRoles": [
+        "Message / Recommendation",
+        "Agent/Giver ('from + NP')",
+        "Recipient ('to + NP')",
+        "Topic ('on/about + NP')"
+      ],
+      "synonymEvaluation": {
+        "hasSuitableSynonym": true,
+        "exactOrNear": "near_synonym",
+        "candidateExpression": "guidance / counsel / recommendation / tip / suggestion",
+        "substitutableContexts": [
+          "'seek expert advice / guidance / counsel'."
+        ],
+        "nonSubstitutableContexts": [
+          "'recommendation' and 'suggestion' are countable ('a suggestion / three recommendations'), whereas 'advice' and 'guidance' are uncountable."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: advice noun",
+          "SRC-CAMBRIDGE: advice noun"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_PILOT_SYNONYM_PROPOSAL (targets outside pilot)"
+      },
+      "antonymEvaluation": {
+        "oppositionKind": "no_conventional_antonym",
+        "candidateOpposites": [],
+        "falseAntonymWarnings": [
+          "Speech-act/guidance nouns have no binary lexical antonym."
+        ],
+        "independentEvidence": [
+          "SRC-OALD: advice noun"
+        ],
+        "endpointExistsInPilot": false,
+        "eligibleForPilotRelationProposal": false,
+        "decision": "NO_CONVENTIONAL_ANTONYM"
+      },
+      "translationDistinctions": [
+        "Maps to Vietnamese 'lời khuyên' ('equiv-advice', general personal guidance) and 'lời tư vấn / sự tư vấn' (professional/specialist advice). Cross-linguistic countability contrast: English 'advice' is uncountable ('some advice', 'a piece of advice'), while Vietnamese 'lời khuyên' uses the countable classifier-like head 'lời'."
+      ],
+      "examplesAssessment": "Example 'She gave me some useful advice.' -> 'Cô ấy cho tôi một lời khuyên hữu ích.' is SUPPORTED (idiomatic Vietnamese; optional RECOMMENDED_IMPROVEMENT to 'những lời khuyên hữu ích' for plural/mass pedagogical alignment).",
+      "usageRestrictionsAssessment": "Strictly uncountable in modern English; never used with 'a/an' or plural '-s' ('*an advice', '*advices').",
+      "coverageDecision": "COMPLETE_FOR_PILOT (requires usageNote meta-language cleanup)"
+    }
+  ],
+  "synonymAndAntonymProposalsSummary": [
+    {
+      "proposalId": "REL-PROP-001",
+      "status": "PROPOSED_RESEARCH_ONLY_NOT_VERIFIED",
+      "relationType": "NEAR_SYNONYM_OF",
+      "sourceSense": {
+        "candidateId": "sense-big-size",
+        "reference": "candidate:sense-big-size",
+        "endpointExistsInPilot": true,
+        "lemma": "big",
+        "pos": "ADJ",
+        "language": "en"
+      },
+      "targetSense": {
+        "candidateId": "sense-large-size",
+        "reference": "candidate:sense-large-size",
+        "endpointExistsInPilot": true,
+        "lemma": "large",
+        "pos": "ADJ",
+        "language": "en"
+      },
+      "canonicalStorageNote": "Both endpoints exist in pilot-fanout-002.json. Because NEAR_SYNONYM_OF is symmetric with canonicalOrder='ascii_id_ascending', sourceId and targetId must be ordered by their minted canonical sns_<uuidv7> strings at preparation/promotion time.",
+      "qualifiers": {
+        "context": "concrete physical size or spatial dimensions of countable objects, buildings, or spaces; 'large' is more formal and objective than 'big'"
+      },
+      "semanticJustification": "In physical-size contexts ('a big/large house', 'a big/large box', 'a big/large city'), 'big' and 'large' share core denotational truth conditions (above-average physical size) and mutually substitute. However, they are NEAR_SYNONYM_OF rather than SYNONYM_OF because: (1) 'large' is required with quantity/proportion nouns ('a large amount/number/proportion', not *'a big proportion'); (2) 'large' is more formal/academic whereas 'big' is informal/everyday; (3) clothing/commercial sizes use 'large', never 'big'; and (4) figurative senses of 'big' ('a big decision', 'big sister') are separate senses where 'large' is ungrammatical.",
+      "positiveEvidence": [
+        "SRC-OALD: big_1 adj. sense 1 ('large in size, degree, amount, etc.') & large_1 adj. sense 1 ('great in size, amount, or extent')",
+        "SRC-CAMBRIDGE: 'Big or large?' grammar & usage note (confirms mutual overlap for physical objects and contrasts register and quantity collocations)",
+        "SRC-OEWN: big.a.01 / large.a.01 synset overlap in physical size"
+      ],
+      "counterexamples": [
+        "Quantity nouns: 'a large number of students' / 'a large amount of data' (not *'a big amount of data' in academic writing).",
+        "Fixed evaluative/kinship expressions (belonging to other senses of 'big'): 'a big mistake' (not *'a large mistake'), 'my big sister' (not *'my large sister').",
+        "Size labels: 'Do you have this shirt in large?' (not *'in big')."
+      ],
+      "evidenceConfidence": "HIGH",
+      "publicationReadiness": "STAGEABLE_AFTER_CANONICAL_ID_MINTING_AND_RIGHTS_CLEARANCE",
+      "requiredFollowUp": [
+        "1. Patch pipeline/prepare-batch.mjs to auto-sort [sourceId, targetId] in ascending ASCII order for symmetric 'rel' candidates after resolving 'candidate:' references.",
+        "2. Attach claim-specific V2 Evidence (evd_) records for /relationType, /sourceId, /targetId, and /qualifiers/context before promotion."
+      ]
+    },
+    {
+      "proposalId": "REL-PROP-002",
+      "status": "DEFERRED_MISSING_TARGET_ENDPOINT",
+      "relationType": "ANTONYM_OF",
+      "sourceSense": {
+        "candidateId": "sense-big-size",
+        "reference": "candidate:sense-big-size",
+        "endpointExistsInPilot": true,
+        "lemma": "big",
+        "pos": "ADJ",
+        "language": "en"
+      },
+      "targetSense": {
+        "candidateId": null,
+        "reference": "MISSING_ENDPOINT: english LexicalSense for 'small' (or 'little') in the physical-size sense",
+        "endpointExistsInPilot": false,
+        "lemma": "small",
+        "pos": "ADJ",
+        "language": "en"
+      },
+      "qualifiers": {
+        "context": "gradable antonymy on the physical-size scale for concrete objects and spaces"
+      },
+      "semanticJustification": "Gradable contrary opposition on the dimension of physical size ('a big house' <-> 'a small house'). Negation is non-complementary ('not big' does not entail 'small').",
+      "positiveEvidence": [
+        "SRC-OALD: big_1 sense 1 (opposite: small, little)",
+        "SRC-CAMBRIDGE: big adj. (opposite: small)",
+        "SRC-OEWN: big.a.01 <-> small.a.01 (antonym)"
+      ],
+      "counterexamples": [
+        "In the elder-sibling sense ('big sister'), the opposite is 'little sister' or 'younger sister', not 'small sister'.",
+        "In the importance sense ('a big decision'), the opposite is 'a minor decision', not 'a small decision'."
+      ],
+      "evidenceConfidence": "HIGH",
+      "publicationReadiness": "BLOCKED_MISSING_TARGET_SENSE_IN_PILOT",
+      "requiredFollowUp": [
+        "Defer to Lexical Production at Scale until LexicalEntry 'small' (ADJ) and its physical-size LexicalSense are ingested and verified."
+      ]
+    },
+    {
+      "proposalId": "REL-PROP-003",
+      "status": "DEFERRED_MISSING_TARGET_ENDPOINT",
+      "relationType": "ANTONYM_OF",
+      "sourceSense": {
+        "candidateId": "sense-large-size",
+        "reference": "candidate:sense-large-size",
+        "endpointExistsInPilot": true,
+        "lemma": "large",
+        "pos": "ADJ",
+        "language": "en"
+      },
+      "targetSense": {
+        "candidateId": null,
+        "reference": "MISSING_ENDPOINT: english LexicalSense for 'small' in the physical-size/extent sense",
+        "endpointExistsInPilot": false,
+        "lemma": "small",
+        "pos": "ADJ",
+        "language": "en"
+      },
+      "qualifiers": {
+        "context": "gradable antonymy on the physical size, area, or capacity scale"
+      },
+      "semanticJustification": "Gradable contrary opposition on physical size, extent, or capacity ('a large entrance hall' <-> 'a small entrance hall'). Unlike 'big', 'large' never contrasts with 'little' (e.g., 'small, medium, or large').",
+      "positiveEvidence": [
+        "SRC-OALD: large_1 sense 1 (opposite: small)",
+        "SRC-CAMBRIDGE: large adj. (opposite: small)",
+        "SRC-OEWN: large.a.01 <-> small.a.01 (antonym)"
+      ],
+      "counterexamples": [
+        "'little' is not a standard antonym of 'large' in neutral/formal register."
+      ],
+      "evidenceConfidence": "HIGH",
+      "publicationReadiness": "BLOCKED_MISSING_TARGET_SENSE_IN_PILOT",
+      "requiredFollowUp": [
+        "Defer to Lexical Production at Scale until LexicalEntry 'small' (ADJ) and its physical-size LexicalSense are ingested and verified."
+      ]
+    },
+    {
+      "proposalId": "REL-PROP-004",
+      "status": "REJECTED_AS_SIMPLE_ANTONYM_DOCUMENT_AS_CONVERSE_IN_USAGE",
+      "relationType": "ANTONYM_OF",
+      "sourceSense": {
+        "candidateId": "sense-borrow-temporary-use",
+        "reference": "candidate:sense-borrow-temporary-use",
+        "endpointExistsInPilot": true,
+        "lemma": "borrow",
+        "pos": "VERB",
+        "language": "en"
+      },
+      "targetSense": {
+        "candidateId": "sense-lend-temporary-use",
+        "reference": "candidate:sense-lend-temporary-use",
+        "endpointExistsInPilot": true,
+        "lemma": "lend",
+        "pos": "VERB",
+        "language": "en"
+      },
+      "qualifiers": {
+        "context": "converse relational opposition (participant role reversal over the same temporary transfer event: X borrows Y from Z <=> Z lends Y to X)"
+      },
+      "semanticJustification": "Linguistic audit finding: 'borrow' and 'lend' describe the exact same temporary-transfer event from opposite participant perspectives (Recipient-subject vs Provider-subject). In lexical semantics, this is a CONVERSE relation, not true gradable or complementary antonymy. Because schemas/v1/vocabularies.json does not include a CONVERSE_OF relationType, encoding 'borrow <-> lend' as an unqualified ANTONYM_OF edge risks misleading learners into substituting one for the other with the same subject (*'lend from someone' / *'borrow someone something').",
+      "positiveEvidence": [
+        "SRC-OALD: borrow verb vs lend verb",
+        "SRC-COLLINS: borrow vs lend",
+        "SRC-OEWN: borrow.v.01 vs lend.v.02"
+      ],
+      "counterexamples": [
+        "Not truth-conditionally contradictory: 'I borrowed a book from Lan' and 'Lan lent me a book' are mutually entailing descriptions of the same event, whereas true antonyms ('X succeeded' vs 'X failed') cannot hold of the same event with the same participants."
+      ],
+      "evidenceConfidence": "HIGH",
+      "publicationReadiness": "DO_NOT_INSTANTIATE_AS_UNQUALIFIED_ANTONYM_OF",
+      "requiredFollowUp": [
+        "Represent the converse contrast in sense-borrow-temporary-use.usageNote, sense-lend-temporary-use.usageNote, and construction constraints in Phase 12. Only instantiate a graph edge in a future schema version if a dedicated CONVERSE_OF relationType (or explicit converse qualifier convention) is added to vocabularies.json."
+      ]
+    }
+  ],
+  "converseOppositionEvaluation": {
+    "evaluationId": "CONVERSE-EVAL-BORROW-LEND-001",
+    "senseA": "sense-borrow-temporary-use",
+    "senseB": "sense-lend-temporary-use",
+    "oppositionKind": "converse_relational_opposite",
+    "logicalEntailmentFormula": "X borrows Y from Z <=> Z lends Y to X (for temporary transfer of possession with obligation to return)",
+    "participantRoleMapping": {
+      "borrowSubject": "Recipient / Borrower (maps to indirect object 'recipient' or 'to + NP' of 'lend')",
+      "lendSubject": "Provider / Lender (maps to 'from + NP' source oblique of 'borrow')",
+      "directObjectTheme": "Transferred item or sum of money (identical role in both verbs)"
+    },
+    "whyNotModeledAsAntonymOfEdge": "In schemas/v1/vocabularies.json and schemas/v2/lexical-relation.schema.json, the only opposition relationType is 'ANTONYM_OF'. Unlike gradable antonyms ('big' vs 'small') where the two words occupy the same syntactic slot with opposite truth values ('The house is big' vs 'The house is small'), 'borrow' and 'lend' describe the same transaction with inverted subject/oblique roles. Presenting 'borrow <-> lend' as an unqualified 'ANTONYM_OF' edge induces a classic learner error ('*Can you borrow me your pen?'). Therefore, unqualified 'ANTONYM_OF' is rejected, the converse contrast is explicitly documented in 'usageNote' and 'con.constraints', and 'CONVERSE_OF' is recommended for future schema expansion.",
+    "evidence": [
+      "SRC-OALD: borrow verb & lend verb (usage notes on borrow vs lend)",
+      "SRC-CAMBRIDGE: borrow or lend? (English Grammar Today)",
+      "SRC-PRINCETON-WORDNET-3.1: borrow.v.01 / lend.v.02"
+    ]
+  },
+  "vietnamesePolysemyCoverage": [
+    {
+      "expressionId": "VI-POLY-001",
+      "vietnameseExpression": "chạy",
+      "posInVietnamese": [
+        "verb"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "Move rapidly on foot ('chạy bộ', 'chạy qua đường').",
+          "syntaxAndValency": "Intransitive motion verb (optionally taking path/distance adjunct).",
+          "mappedEnglishSenseIds": [
+            "sense-run-movement"
+          ],
+          "mappedEqvIds": [
+            "equiv-run-movement"
+          ]
+        },
+        {
+          "viSenseIndex": 2,
+          "meaning": "Function, operate, or move along a route (of machines, engines, clocks, vehicles, or computer programs: 'máy chạy êm', 'chạy phần mềm').",
+          "syntaxAndValency": "Ambitransitive in everyday/colloquial register ('máy chạy' [intransitive]; 'chạy máy phát điện / chạy chương trình' [transitive]).",
+          "mappedEnglishSenseIds": [
+            "sense-run-machine"
+          ],
+          "mappedEqvIds": []
+        },
+        {
+          "viSenseIndex": 3,
+          "meaning": "Colloquial maneuvering, lobbying, or scrambling to obtain something or evade punishment ('chạy việc', 'chạy dự án', 'chạy điểm', 'chạy tội').",
+          "syntaxAndValency": "Transitive verb taking a goal/issue noun phrase.",
+          "mappedEnglishSenseIds": [],
+          "mappedEqvIds": []
+        }
+      ],
+      "independentSenseVsContextualVariant": "Three distinct conventionalized senses in Vietnamese (Hoàng Phê). Sense 1 and Sense 2 parallel English 'run' (movement and machine operation), whereas Sense 3 ('chạy dự án / chạy việc') is a Vietnamese-specific socio-cultural sense completely unrelated to English 'run a project/business' ('sense-run-management' = 'điều hành').",
+      "falseEquivalenceRisks": [
+        "CRITICAL FALSE EQUIVALENCE: Vietnamese 'chạy dự án' (lobbying/bribing to win a project) must NEVER be equated with English 'run a project' ('điều hành dự án')."
+      ],
+      "surfaceFormSufficiency": "Sufficient as 'gloss_only' for 'equiv-run-movement' because 'context' and 'restrictions[0]' restrict it to physical locomotion; staged Vietnamese entry 'entry-vi-chay' and 3 senses ('sense-vi-chay-locomotion', 'sense-vi-chay-machine', 'sense-vi-chay-maneuver') are provided in staged-lexical-candidates.json.",
+      "stagedVietnameseCandidateIds": [
+        "entry-vi-chay",
+        "sense-vi-chay-locomotion",
+        "sense-vi-chay-machine",
+        "sense-vi-chay-maneuver"
+      ],
+      "recommendedPhase12Action": "NO_CHANGE on 'equiv-run-movement'; retain staged Vietnamese candidates for scale."
+    },
+    {
+      "expressionId": "VI-POLY-002",
+      "vietnameseExpression": "hoạt động",
+      "posInVietnamese": [
+        "verb",
+        "noun"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "(Verb) Function or work mechanically, biologically, or systematically ('Động cơ hoạt động êm', 'Hệ thống hoạt động bình thường').",
+          "syntaxAndValency": "Strictly INTRANSITIVE verb when describing machines, devices, organs, or systems.",
+          "mappedEnglishSenseIds": [
+            "sense-run-machine"
+          ],
+          "mappedEqvIds": [
+            "equiv-run-machine-operate"
+          ]
+        },
+        {
+          "viSenseIndex": 2,
+          "meaning": "(Verb) Carry out purposeful social, political, commercial, or organizational actions ('Tổ chức hoạt động hợp pháp', 'hoạt động nghệ thuật').",
+          "syntaxAndValency": "Intransitive verb with human/institutional subject.",
+          "mappedEnglishSenseIds": [],
+          "mappedEqvIds": []
+        },
+        {
+          "viSenseIndex": 3,
+          "meaning": "(Noun) Organized actions or events ('các hoạt động ngoại khóa' = extracurricular activities).",
+          "syntaxAndValency": "Countable/collective noun.",
+          "mappedEnglishSenseIds": [],
+          "mappedEqvIds": []
+        }
+      ],
+      "independentSenseVsContextualVariant": "Independent verb senses (mechanical functioning vs human/organizational action) plus a nominal sense ('activity'). Crucially, verb Sense 1 is strictly intransitive.",
+      "falseEquivalenceRisks": [
+        "Vietnamese 'hoạt động' CANNOT take a direct object ('*hoạt động một cái máy' is ungrammatical), so it only translates the intransitive frame of 'sense-run-machine' ('construction-run-machine'), never the transitive frame ('construction-run-machine-transitive')."
+      ],
+      "surfaceFormSufficiency": "Sufficient as 'gloss_only' on 'equiv-run-machine-operate' once 'restrictions[0]' is updated to state its intransitive scope.",
+      "stagedVietnameseCandidateIds": [
+        "entry-vi-hoat-dong",
+        "sense-vi-hoat-dong-mechanical",
+        "sense-vi-hoat-dong-social"
+      ],
+      "recommendedPhase12Action": "Apply REQUIRED_CORRECTION on 'equiv-run-machine-operate.restrictions[0]'."
+    },
+    {
+      "expressionId": "VI-POLY-003",
+      "vietnameseExpression": "vận hành",
+      "posInVietnamese": [
+        "verb"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "(Transitive) Operate, control, and put into working order a machine, plant, production line, or technical system ('vận hành máy móc', 'vận hành hệ thống điện').",
+          "syntaxAndValency": "Transitive verb taking a machine, plant, or system NP as direct object.",
+          "mappedEnglishSenseIds": [
+            "sense-run-machine"
+          ],
+          "mappedEqvIds": [
+            "equiv-run-machine-operate-alternative"
+          ]
+        },
+        {
+          "viSenseIndex": 2,
+          "meaning": "(Intransitive, formal/technical) Function or run according to a mechanism or process ('Hệ thống vận hành ổn định', 'nền kinh tế vận hành theo cơ chế thị trường').",
+          "syntaxAndValency": "Intransitive verb with a complex system/mechanism subject.",
+          "mappedEnglishSenseIds": [
+            "sense-run-machine"
+          ],
+          "mappedEqvIds": [
+            "equiv-run-machine-operate-alternative"
+          ]
+        }
+      ],
+      "independentSenseVsContextualVariant": "Single ambitransitive technical verb in Vietnamese (mirroring the ambitransitive structure of English 'sense-run-machine' in formal technical register).",
+      "falseEquivalenceRisks": [
+        "Inappropriate for small household items ('*đồng hồ vận hành' -> use 'đồng hồ chạy') and distinct from organizational leadership ('điều hành công ty')."
+      ],
+      "surfaceFormSufficiency": "Sufficient as 'gloss_only' on 'equiv-run-machine-operate-alternative' once 'restrictions[0..1]' are cleaned of draft meta-language.",
+      "stagedVietnameseCandidateIds": [
+        "entry-vi-van-hanh",
+        "sense-vi-van-hanh-operate"
+      ],
+      "recommendedPhase12Action": "Apply REQUIRED_CORRECTION on 'equiv-run-machine-operate-alternative.restrictions[0..1]'."
+    },
+    {
+      "expressionId": "VI-POLY-004",
+      "vietnameseExpression": "điều hành",
+      "posInVietnamese": [
+        "verb"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "Direct, manage, and coordinate the operations of an organization, enterprise, government body, or project ('điều hành doanh nghiệp', 'điều hành dự án', 'ban điều hành').",
+          "syntaxAndValency": "Transitive verb taking an organization, agency, business, or meeting/project NP as direct object.",
+          "mappedEnglishSenseIds": [
+            "sense-run-management"
+          ],
+          "mappedEqvIds": [
+            "equiv-run-management"
+          ]
+        }
+      ],
+      "independentSenseVsContextualVariant": "Independent lexicalized verb in Vietnamese distinct from 'vận hành' (which applies to machinery/technical systems) and 'hoạt động' (which is intransitive).",
+      "falseEquivalenceRisks": [
+        "Must not be used to translate mechanical/software 'run' ('sense-run-machine'), where Vietnamese uses 'vận hành' or 'hoạt động' / 'chạy'.",
+        "Learner confusion between formal 'điều hành dự án' ('run/manage a project') and colloquial 'chạy dự án' ('lobby or maneuver to obtain project approval')."
+      ],
+      "surfaceFormSufficiency": "Sufficient as 'gloss_only' for 'sense-run-management'; 'quản lý' is a broader contextual alternative.",
+      "stagedVietnameseCandidateIds": [],
+      "recommendedPhase12Action": "NO_CHANGE on 'equiv-run-management' (already SUPPORTED)."
+    },
+    {
+      "expressionId": "VI-POLY-005",
+      "vietnameseExpression": "phân tích",
+      "posInVietnamese": [
+        "verb",
+        "noun"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "(Verb) Examine something methodically by separating it into constituent parts or factors ('phân tích số liệu', 'phân tích nguyên nhân').",
+          "syntaxAndValency": "Transitive verb.",
+          "mappedEnglishSenseIds": [
+            "sense-analyse"
+          ],
+          "mappedEqvIds": [
+            "equiv-analyse"
+          ]
+        },
+        {
+          "viSenseIndex": 2,
+          "meaning": "(Nominalized / Compound Noun) The process or result of analysing ('sự phân tích', 'quá trình phân tích', 'bản/bài phân tích', 'kết quả phân tích').",
+          "syntaxAndValency": "Requires overt nominalizer ('sự', 'việc', 'quá trình') for uncountable process or unit classifier ('bản', 'bài') for countable report when used as a standalone noun phrase head.",
+          "mappedEnglishSenseIds": [
+            "sense-analysis"
+          ],
+          "mappedEqvIds": [
+            "equiv-analysis"
+          ]
+        }
+      ],
+      "independentSenseVsContextualVariant": "Zero-derived / syntactic POS conversion in Vietnamese between the primary transitive verb 'phân tích' and nominal uses supported by classifiers/nominalizers.",
+      "falseEquivalenceRisks": [
+        "Learners seeing identical 'glossVi: \"phân tích\"' on both 'analyse' (verb) and 'analysis' (noun) may confuse English POS or omit required Vietnamese classifiers ('bản/sự phân tích')."
+      ],
+      "surfaceFormSufficiency": "Sufficient as 'gloss_only' because 'equiv-analysis.restrictions[0]' explicitly documents 'sự phân tích'; optional RECOMMENDED_IMPROVEMENT to expand glossVi.",
+      "stagedVietnameseCandidateIds": [],
+      "recommendedPhase12Action": "Keep SUPPORTED (optional RECOMMENDED_IMPROVEMENT on 'equiv-analysis.glossVi')."
+    },
+    {
+      "expressionId": "VI-POLY-006",
+      "vietnameseExpression": "to",
+      "posInVietnamese": [
+        "adjective"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "Large in physical size, bulk, or cross-section, or loud in volume ('nhà to', 'cây to', 'mắt to', 'nói to').",
+          "syntaxAndValency": "Predicative or attributive adjective modifying concrete physical nouns or sound/voice nouns.",
+          "mappedEnglishSenseIds": [
+            "sense-big-size"
+          ],
+          "mappedEqvIds": [
+            "equiv-big"
+          ]
+        }
+      ],
+      "independentSenseVsContextualVariant": "Independent Vietnamese adjective that overlaps with 'lớn' for concrete physical objects ('nhà to / nhà lớn') but diverges in abstract importance ('quyết định lớn', not '*quyết định to') and academic quantity ('số lượng lớn', not '*số lượng to').",
+      "falseEquivalenceRisks": [
+        "Using 'to' to translate 'large amount/proportion' or figurative 'big decision' produces unidiomatic or ungrammatical Vietnamese.",
+        "Conversely, Vietnamese 'nói to' means 'speak loudly', not '*speak big'."
+      ],
+      "surfaceFormSufficiency": "Documented as a contextual concrete alternative inside 'equiv-big.restrictions[0]'; keeping 'glossVi: \"lớn\"' on 'equiv-big' is sufficient.",
+      "stagedVietnameseCandidateIds": [],
+      "recommendedPhase12Action": "Keep 'glossVi: \"lớn\"' on 'equiv-big' and preserve the restriction note on 'to'."
+    },
+    {
+      "expressionId": "VI-POLY-007",
+      "vietnameseExpression": "lớn",
+      "posInVietnamese": [
+        "adjective",
+        "verb"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "Above average in physical size, area, or spatial dimensions ('ngôi nhà lớn', 'thành phố lớn').",
+          "syntaxAndValency": "Post-nominal attributive or predicative adjective.",
+          "mappedEnglishSenseIds": [
+            "sense-big-size",
+            "sense-large-size"
+          ],
+          "mappedEqvIds": [
+            "equiv-big",
+            "equiv-large"
+          ]
+        },
+        {
+          "viSenseIndex": 2,
+          "meaning": "Great in quantity, number, proportion, scale, or intensity ('một số lượng lớn', 'tỷ lệ lớn', 'mưa lớn').",
+          "syntaxAndValency": "Adjective modifying quantity/intensity nouns.",
+          "mappedEnglishSenseIds": [
+            "sense-large-size"
+          ],
+          "mappedEqvIds": [
+            "equiv-large"
+          ]
+        },
+        {
+          "viSenseIndex": 3,
+          "meaning": "Major, important, serious, or significant ('quyết định lớn', 'sai lầm lớn', 'vấn đề lớn').",
+          "syntaxAndValency": "Adjective modifying abstract event/issue nouns.",
+          "mappedEnglishSenseIds": [],
+          "mappedEqvIds": []
+        },
+        {
+          "viSenseIndex": 4,
+          "meaning": "Grown up, older in age or birth order ('con đã lớn', 'anh lớn').",
+          "syntaxAndValency": "Predicative stative verb/adjective or kinship modifier.",
+          "mappedEnglishSenseIds": [],
+          "mappedEqvIds": []
+        }
+      ],
+      "independentSenseVsContextualVariant": "Four conventionalized senses in Vietnamese (Hoàng Phê). Because Vietnamese uses 'lớn' across physical size (Sense 1), quantity (Sense 2), and abstract importance (Sense 3), it neutralizes the English contrast between 'large' (Sense 1 + Sense 2) and 'big' (Sense 1 + Sense 3).",
+      "falseEquivalenceRisks": [
+        "HIGH LEARNER ERROR RISK: Vietnamese learners map 'lớn' (Sense 3: 'sai lầm lớn / vấn đề lớn') to '*a large mistake / *a large problem' (where English requires 'big/major'), or map 'lớn' (Sense 2: 'tỷ lệ lớn') to '*a big proportion' in formal IELTS essays (where English requires 'large/high')."
+      ],
+      "surfaceFormSufficiency": "Sufficient as 'gloss_only' on 'equiv-big' and 'equiv-large' once 'restrictions[1]' and 'contrastiveNotes[0]' are updated to explain the many-to-1 convergence.",
+      "stagedVietnameseCandidateIds": [],
+      "recommendedPhase12Action": "Apply REQUIRED_CORRECTION on 'equiv-big.restrictions[1]', 'equiv-large.restrictions[1]', and both senses' 'contrastiveNotes'."
+    },
+    {
+      "expressionId": "VI-POLY-008",
+      "vietnameseExpression": "mượn",
+      "posInVietnamese": [
+        "verb"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "Receive and temporarily use a specific non-money physical item belonging to someone else, with the obligation to return that exact item ('mượn sách thư viện', 'mượn xe').",
+          "syntaxAndValency": "Transitive verb ('mượn + Theme + (của + Source)' or 'mượn + Source + Theme').",
+          "mappedEnglishSenseIds": [
+            "sense-borrow-temporary-use"
+          ],
+          "mappedEqvIds": [
+            "equiv-borrow"
+          ]
+        }
+      ],
+      "independentSenseVsContextualVariant": "Lexicalized in Vietnamese in strict contrast to 'vay' (which is used for money and fungible financial principal).",
+      "falseEquivalenceRisks": [
+        "Using 'mượn' alone for 'sense-borrow-temporary-use' omits financial borrowing ('borrow money from a bank' = 'vay tiền ngân hàng')."
+      ],
+      "surfaceFormSufficiency": "Requires pairing with 'vay' (in 'equiv-borrow.restrictions[0]' and staged 'equiv-borrow-money') to cover the full scope of English 'borrow'.",
+      "stagedVietnameseCandidateIds": [
+        "entry-vi-muon",
+        "sense-vi-muon-object"
+      ],
+      "recommendedPhase12Action": "Apply REQUIRED_CORRECTION on 'equiv-borrow.restrictions[0]' and optionally add staged 'equiv-borrow-money'."
+    },
+    {
+      "expressionId": "VI-POLY-009",
+      "vietnameseExpression": "vay",
+      "posInVietnamese": [
+        "verb"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "Receive money or fungible financial capital temporarily with the obligation to repay equivalent value, often with interest ('vay tiền', 'vay vốn ngân hàng', 'vay tín dụng').",
+          "syntaxAndValency": "Transitive verb taking money/loan/capital NP as direct object.",
+          "mappedEnglishSenseIds": [
+            "sense-borrow-temporary-use"
+          ],
+          "mappedEqvIds": []
+        }
+      ],
+      "independentSenseVsContextualVariant": "Independent lexicalized verb in Vietnamese separated from 'mượn' by object fungibility (repaying equivalent monetary value vs returning the identical physical item).",
+      "falseEquivalenceRisks": [
+        "Cannot say '*vay một cuốn sách' (must use 'mượn'); conversely, formal economics/IELTS contexts require 'vay vốn / vay tiền' for 'borrow capital / borrow money'."
+      ],
+      "surfaceFormSufficiency": "Staged as 'equiv-borrow-money' ('glossVi: \"vay\"') and documented in 'equiv-borrow.restrictions[0]'.",
+      "stagedVietnameseCandidateIds": [
+        "entry-vi-vay",
+        "sense-vi-vay-money"
+      ],
+      "recommendedPhase12Action": "Include 'vay' explanation in 'equiv-borrow.restrictions[0]' (REQUIRED_CORRECTION) and stage 'equiv-borrow-money'."
+    },
+    {
+      "expressionId": "VI-POLY-010",
+      "vietnameseExpression": "cho mượn",
+      "posInVietnamese": [
+        "verb_phrase"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "Grant someone temporary use of a specific non-money physical item on condition that the same item is returned ('cho bạn mượn bút', 'cho mượn phòng').",
+          "syntaxAndValency": "Causative serial verb construction ('cho + Recipient + mượn + Theme' or 'cho mượn + Theme').",
+          "mappedEnglishSenseIds": [
+            "sense-lend-temporary-use"
+          ],
+          "mappedEqvIds": [
+            "equiv-lend"
+          ]
+        }
+      ],
+      "independentSenseVsContextualVariant": "Causative counterpart of 'mượn', lexicalized for non-money physical objects in contrast to 'cho vay' (money/credit).",
+      "falseEquivalenceRisks": [
+        "Inappropriate for bank/financial lending ('Banks lend money' = 'Ngân hàng cho vay tiền', not 'cho mượn')."
+      ],
+      "surfaceFormSufficiency": "Sufficient when paired with 'cho vay' in 'equiv-lend.restrictions[0]' and staged 'equiv-lend-money'.",
+      "stagedVietnameseCandidateIds": [],
+      "recommendedPhase12Action": "Apply REQUIRED_CORRECTION on 'equiv-lend.restrictions[0]' and optionally add staged 'equiv-lend-money'."
+    },
+    {
+      "expressionId": "VI-POLY-011",
+      "vietnameseExpression": "cho vay",
+      "posInVietnamese": [
+        "verb_phrase"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "Provide money, credit, or capital temporarily on condition of repayment of equivalent value, usually with interest ('cho vay vốn', 'cho vay mua nhà', 'lãi suất cho vay').",
+          "syntaxAndValency": "Causative serial verb construction ('cho + Recipient + vay + Money' or 'cho vay + Money').",
+          "mappedEnglishSenseIds": [
+            "sense-lend-temporary-use"
+          ],
+          "mappedEqvIds": []
+        }
+      ],
+      "independentSenseVsContextualVariant": "Causative counterpart of 'vay', mandatory in financial/banking contexts for English 'lend'.",
+      "falseEquivalenceRisks": [
+        "Cannot be used for non-fungible personal belongings ('*cho bạn vay cái áo')."
+      ],
+      "surfaceFormSufficiency": "Staged as 'equiv-lend-money' ('glossVi: \"cho vay\"') and documented in 'equiv-lend.restrictions[0]'.",
+      "stagedVietnameseCandidateIds": [],
+      "recommendedPhase12Action": "Include 'cho vay' explanation in 'equiv-lend.restrictions[0]' (REQUIRED_CORRECTION) and stage 'equiv-lend-money'."
+    },
+    {
+      "expressionId": "VI-POLY-012",
+      "vietnameseExpression": "lời khuyên",
+      "posInVietnamese": [
+        "noun"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "A piece or body of personal, moral, or practical guidance offered to someone ('cho một lời khuyên', 'nghe theo lời khuyên của bố mẹ').",
+          "syntaxAndValency": "Countable compound noun headed by unit noun 'lời' (quantified directly as 'một lời khuyên', 'những lời khuyên', 'vài lời khuyên').",
+          "mappedEnglishSenseIds": [
+            "sense-advice-guidance"
+          ],
+          "mappedEqvIds": [
+            "equiv-advice"
+          ]
+        }
+      ],
+      "independentSenseVsContextualVariant": "Standard Vietnamese equivalent for everyday 'advice', formed with the countable speech-unit noun 'lời'.",
+      "falseEquivalenceRisks": [
+        "Cross-linguistic countability mismatch: because 'một lời khuyên' is grammatical in Vietnamese, learners over-generalize '*an advice' in English instead of 'some advice / a piece of advice'."
+      ],
+      "surfaceFormSufficiency": "Sufficient as 'gloss_only' on 'equiv-advice' (accompanied by countability note on 'sense-advice-guidance').",
+      "stagedVietnameseCandidateIds": [],
+      "recommendedPhase12Action": "NO_CHANGE on 'equiv-advice'; clean meta-language on 'sense-advice-guidance.usageNote'."
+    },
+    {
+      "expressionId": "VI-POLY-013",
+      "vietnameseExpression": "lời tư vấn",
+      "posInVietnamese": [
+        "noun"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "Professional, specialist, or institutional consultation/advice (medical, legal, financial, psychological, or academic: 'lời tư vấn của bác sĩ', 'sự tư vấn pháp lý').",
+          "syntaxAndValency": "Nominal phrase formed with 'lời' (countable unit) or 'sự' (abstract/uncountable consultation) + verb 'tư vấn'.",
+          "mappedEnglishSenseIds": [
+            "sense-advice-guidance"
+          ],
+          "mappedEqvIds": [
+            "equiv-advice"
+          ]
+        }
+      ],
+      "independentSenseVsContextualVariant": "Register/domain-specialized Vietnamese equivalent for professional/expert 'advice', already noted in 'equiv-advice.restrictions[0]'.",
+      "falseEquivalenceRisks": [
+        "Too formal/clinical for casual everyday tips between friends (where 'lời khuyên' is preferred)."
+      ],
+      "surfaceFormSufficiency": "Already documented in 'equiv-advice.restrictions[0]'.",
+      "stagedVietnameseCandidateIds": [],
+      "recommendedPhase12Action": "NO_CHANGE on 'equiv-advice'."
+    },
+    {
+      "expressionId": "VI-POLY-014",
+      "vietnameseExpression": "phụ thuộc vào",
+      "posInVietnamese": [
+        "verb_phrase",
+        "adjective_phrase"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "Be contingent on or determined by a condition, factor, or variable ('Kết quả phụ thuộc vào thời tiết').",
+          "syntaxAndValency": "Intransitive predicate taking a prepositional/relational complement introduced by 'vào' ('phụ thuộc (vào) + NP/clause').",
+          "mappedEnglishSenseIds": [
+            "sense-depend-contingent"
+          ],
+          "mappedEqvIds": [
+            "equiv-depend"
+          ]
+        },
+        {
+          "viSenseIndex": 2,
+          "meaning": "Be financially, materially, or emotionally dependent/subordinate to someone ('sống phụ thuộc vào gia đình').",
+          "syntaxAndValency": "Intransitive predicate + 'vào' + person/institution NP.",
+          "mappedEnglishSenseIds": [],
+          "mappedEqvIds": []
+        }
+      ],
+      "independentSenseVsContextualVariant": "Sense 1 (contingency/determination) and Sense 2 (material/personal subordination) are closely related; however, English 'depend on' also has a positive trust sense ('You can depend on him' = 'tin cậy / trông cậy vào') which 'phụ thuộc vào' NEVER covers.",
+      "falseEquivalenceRisks": [
+        "Translating English 'depend on someone' (meaning 'trust/rely on someone') as 'phụ thuộc vào ai đó' distorts the meaning into negative dependency instead of reliability ('trông cậy / tin tưởng vào')."
+      ],
+      "surfaceFormSufficiency": "Sufficient as 'gloss_only' for 'sense-depend-contingent' once meta-language in 'equiv-depend.restrictions[0]' is cleaned.",
+      "stagedVietnameseCandidateIds": [],
+      "recommendedPhase12Action": "Clean meta-language in 'equiv-depend.restrictions[0]' (REQUIRED_CORRECTION)."
+    },
+    {
+      "expressionId": "VI-POLY-015",
+      "vietnameseExpression": "ngân hàng",
+      "posInVietnamese": [
+        "noun"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "Financial institution that accepts deposits, makes loans, and provides payment services ('ngân hàng thương mại', 'ngân hàng trung ương').",
+          "syntaxAndValency": "Countable noun (often used with classifier or institutional modifier).",
+          "mappedEnglishSenseIds": [
+            "sense-bank-financial"
+          ],
+          "mappedEqvIds": [
+            "equiv-bank-financial"
+          ]
+        },
+        {
+          "viSenseIndex": 2,
+          "meaning": "Repository or storage reserve of specialized items or data ('ngân hàng máu' = blood bank, 'ngân hàng đề thi' = question bank, 'ngân hàng dữ liệu' = data bank).",
+          "syntaxAndValency": "Head noun in N + N compounds.",
+          "mappedEnglishSenseIds": [],
+          "mappedEqvIds": []
+        }
+      ],
+      "independentSenseVsContextualVariant": "Sense 1 is the primary financial sense modeled in 'sense-bank-financial'; Sense 2 is a conventionalized extended sense shared by English 'bank' and Vietnamese 'ngân hàng', whereas river 'bank' ('bờ sông') is completely unrelated.",
+      "falseEquivalenceRisks": [
+        "None between financial 'ngân hàng' and river 'bờ sông'."
+      ],
+      "surfaceFormSufficiency": "Fully sufficient as 'gloss_only' for 'equiv-bank-financial'.",
+      "stagedVietnameseCandidateIds": [],
+      "recommendedPhase12Action": "NO_CHANGE on 'equiv-bank-financial'."
+    },
+    {
+      "expressionId": "VI-POLY-016",
+      "vietnameseExpression": "bờ (sông, kênh, hồ)",
+      "posInVietnamese": [
+        "noun"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "Sloping margin or raised edge of land bordering a body of water such as a river, canal, or lake ('bờ sông', 'bờ kênh', 'bờ hồ').",
+          "syntaxAndValency": "Countable relational noun typically followed by a water-body modifier ('bờ + sông/kênh/hồ/biển').",
+          "mappedEnglishSenseIds": [
+            "sense-bank-river"
+          ],
+          "mappedEqvIds": [
+            "equiv-bank-river"
+          ]
+        },
+        {
+          "viSenseIndex": 2,
+          "meaning": "Broader Vietnamese uses of bare 'bờ': seashore/coast ('bờ biển' = coast/shore), raised boundary ridge between rice paddies ('bờ ruộng'), or edge/rim of an object ('bờ tường', 'bờ vực').",
+          "syntaxAndValency": "Relational noun + modifier.",
+          "mappedEnglishSenseIds": [],
+          "mappedEqvIds": []
+        }
+      ],
+      "independentSenseVsContextualVariant": "Vietnamese bare 'bờ' is semantically broader than English 'bank' (which applies to rivers/canals/lakes, whereas sea edges are 'coast/shore'). Including the parenthetical '(sông, kênh, hồ)' in 'glossVi' accurately disambiguates the target domain.",
+      "falseEquivalenceRisks": [
+        "Without the hydrological restriction '(sông, kênh, hồ)', learners might over-apply English 'bank' to 'bờ biển' ('coast/shore') or 'bờ ruộng' ('field ridge')."
+      ],
+      "surfaceFormSufficiency": "Fully sufficient as 'gloss_only' because 'glossVi' already includes '(sông, kênh, hồ)' and 'restrictions[0]' reinforces it.",
+      "stagedVietnameseCandidateIds": [],
+      "recommendedPhase12Action": "NO_CHANGE on 'equiv-bank-river'."
+    },
+    {
+      "expressionId": "VI-POLY-017",
+      "vietnameseExpression": "mang tính phân tích",
+      "posInVietnamese": [
+        "adjective_phrase"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "Characterized by or using systematic, logical analysis ('tư duy mang tính phân tích', 'báo cáo mang tính phân tích', 'phương pháp phân tích').",
+          "syntaxAndValency": "Attributive or predicative adjectival phrase formed with 'mang tính + N/V'.",
+          "mappedEnglishSenseIds": [
+            "sense-analytical"
+          ],
+          "mappedEqvIds": [
+            "equiv-analytical"
+          ]
+        }
+      ],
+      "independentSenseVsContextualVariant": "Compositional Vietnamese adjectival paraphrase used to distinguish the adjective 'analytical' from the verb/noun 'phân tích'.",
+      "falseEquivalenceRisks": [
+        "In fixed Vietnamese compounds ('tư duy phân tích', 'hóa học phân tích'), bare 'phân tích' is often used attributively without 'mang tính'."
+      ],
+      "surfaceFormSufficiency": "Sufficient as 'gloss_only' for 'equiv-analytical'.",
+      "stagedVietnameseCandidateIds": [],
+      "recommendedPhase12Action": "NO_CHANGE on 'equiv-analytical'."
+    },
+    {
+      "expressionId": "VI-POLY-018",
+      "vietnameseExpression": "tra cứu",
+      "posInVietnamese": [
+        "verb"
+      ],
+      "conventionalizedSensesInVietnamese": [
+        {
+          "viSenseIndex": 1,
+          "meaning": "Search for and consult a piece of information in a reference source such as a dictionary, database, archive, or index ('tra cứu từ điển', 'tra cứu thông tin', 'tra cứu dữ liệu').",
+          "syntaxAndValency": "Transitive verb taking either the sought information ('tra cứu thông tin/từ mới') or the reference work ('tra cứu từ điển/tài liệu') as direct object; colloquial shortened form 'tra' ('tra từ điển').",
+          "mappedEnglishSenseIds": [
+            "sense-look-up-reference"
+          ],
+          "mappedEqvIds": [
+            "equiv-look-up"
+          ]
+        }
+      ],
+      "independentSenseVsContextualVariant": "Unambiguous Sino-Vietnamese compound verb specifically restricted to reference lookup; does not share the literal upward-gaze sense ('ngước nhìn lên') or social-visit sense ('tìm thăm') of English 'look up'.",
+      "falseEquivalenceRisks": [
+        "In English, 'look up' takes the sought information as direct object ('look up a word in a dictionary', NOT '*look up a dictionary'), whereas Vietnamese 'tra cứu / tra' allows either the word ('tra từ') or the dictionary ('tra từ điển') as direct object."
+      ],
+      "surfaceFormSufficiency": "Fully sufficient as 'gloss_only' for 'equiv-look-up'.",
+      "stagedVietnameseCandidateIds": [],
+      "recommendedPhase12Action": "NO_CHANGE on 'equiv-look-up'."
+    }
+  ],
+  "translationEquivalenceCoverage": [
+    {
+      "candidateId": "equiv-bank-financial",
+      "sourceSenseId": "sense-bank-financial",
+      "glossVi": "ngân hàng",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "direct",
+      "appropriateContexts": [
+        "Commercial, retail, savings, or central banking institutions ('open an account at a bank', 'borrow money from a bank')."
+      ],
+      "inappropriateContexts": [
+        "Sloping land along a river or canal ('sense-bank-river' -> 'bờ sông/kênh')."
+      ],
+      "semanticRoleConsistency": "Exact alignment of institutional entity role in both English and Vietnamese.",
+      "grammarValencyDifferences": "English 'bank' is a countable noun ('a bank / banks'); Vietnamese 'ngân hàng' is a countable noun used bare or with classifiers/quantifiers ('một ngân hàng', 'các ngân hàng').",
+      "registerDifferences": "Neutral across everyday, commercial, and academic IELTS registers in both languages.",
+      "evidencedAlternativeTranslations": [
+        "nhà băng (older/colloquial spoken borrowing, less appropriate in academic writing)"
+      ],
+      "falseEquivalenceRisks": [
+        "Homograph confusion in English with river 'bank', which Vietnamese completely separates as 'bờ'."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": true,
+      "senseAlignmentDecisionRationale": "gloss_only is completely clear and unambiguous for English-first pilot; sense_aligned is deferred until Vietnamese entry 'ngân hàng' (financial institution vs data/blood repository) is modeled at scale.",
+      "phase11Assessment": "SUPPORTED",
+      "phase12LedgerStatus": "NO_CHANGE",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, VDict, Wiktionary; rightsCleared: false pending Source rights remediation)"
+    },
+    {
+      "candidateId": "equiv-bank-river",
+      "sourceSenseId": "sense-bank-river",
+      "glossVi": "bờ (sông, kênh, hồ)",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "direct",
+      "appropriateContexts": [
+        "Raised or sloping land bordering a river, stream, canal, or lake ('along the river bank', 'the north bank of the canal')."
+      ],
+      "inappropriateContexts": [
+        "Financial institutions ('ngân hàng').",
+        "Seashore or ocean coast ('bờ biển' -> English 'coast', 'shore', or 'beach', not 'bank')."
+      ],
+      "semanticRoleConsistency": "Spatial/topographical boundary role matches across both languages when restricted to inland waterways.",
+      "grammarValencyDifferences": "In Vietnamese, 'bờ' is almost always compounded with the water body ('bờ sông', 'bờ kênh'); in English, 'bank' can stand alone once the river context is established ('on the far bank').",
+      "registerDifferences": "Neutral descriptive register in both languages.",
+      "evidencedAlternativeTranslations": [
+        "bờ sông",
+        "bờ kênh"
+      ],
+      "falseEquivalenceRisks": [
+        "Vietnamese bare 'bờ' also translates 'coast/shore' ('bờ biển') and 'edge/rim' ('bờ vực'); the parenthetical '(sông, kênh, hồ)' in glossVi prevents reverse over-generalization."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": true,
+      "senseAlignmentDecisionRationale": "gloss_only with parenthetical domain restriction '(sông, kênh, hồ)' is sufficient for pilot; sense_aligned is deferred to scale.",
+      "phase11Assessment": "SUPPORTED",
+      "phase12LedgerStatus": "NO_CHANGE",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê, VDict; rightsCleared: false)"
+    },
+    {
+      "candidateId": "equiv-run-movement",
+      "sourceSenseId": "sense-run-movement",
+      "glossVi": "chạy",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "direct",
+      "appropriateContexts": [
+        "Human or animal rapid locomotion on foot ('run every morning', 'run across the field')."
+      ],
+      "inappropriateContexts": [
+        "Managing a company or project ('sense-run-management' -> 'điều hành / quản lý').",
+        "Colloquial Vietnamese 'chạy việc / chạy dự án / chạy điểm' (illicit maneuvering/lobbying, which is NOT English 'run')."
+      ],
+      "semanticRoleConsistency": "Agentive Mover role is identical in both languages.",
+      "grammarValencyDifferences": "Both function primarily as intransitive motion verbs or with path/distance adjuncts ('run five kilometres' / 'chạy năm cây số').",
+      "registerDifferences": "Neutral core vocabulary in both languages.",
+      "evidencedAlternativeTranslations": [
+        "chạy bộ (specifically for jogging/running as exercise)"
+      ],
+      "falseEquivalenceRisks": [
+        "Polysemy of Vietnamese 'chạy' (machine running, colloquial lobbying 'chạy dự án') must not bleed into 'sense-run-management'."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": true,
+      "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot because 'context' and 'restrictions[0]' scope it to physical locomotion; staged Vietnamese sense 'sense-vi-chay-locomotion' is provided in staged-lexical-candidates.json for scale.",
+      "phase11Assessment": "SUPPORTED",
+      "phase12LedgerStatus": "NO_CHANGE",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)"
+    },
+    {
+      "candidateId": "equiv-run-machine-operate",
+      "sourceSenseId": "sense-run-machine",
+      "glossVi": "hoạt động",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "direct",
+      "appropriateContexts": [
+        "Intransitive functioning of a machine, engine, device, or technical system ('The engine runs quietly' -> 'Động cơ hoạt động êm')."
+      ],
+      "inappropriateContexts": [
+        "Transitive agentive operation with a direct object ('run a machine / run a program' -> cannot use '*hoạt động một cỗ máy'; must use 'vận hành' or 'chạy')."
+      ],
+      "semanticRoleConsistency": "Aligns ONLY with the Theme/Patient subject of the intransitive frame ('construction-run-machine'), not the Agent subject of the transitive frame ('construction-run-machine-transitive').",
+      "grammarValencyDifferences": "Critical valency divergence: English 'sense-run-machine' is ambitransitive, whereas Vietnamese 'hoạt động' is strictly intransitive (and also a noun meaning 'activity').",
+      "registerDifferences": "Neutral to formal in Vietnamese (more formal than colloquial 'máy chạy').",
+      "evidencedAlternativeTranslations": [
+        "chạy (everyday/colloquial intransitive: 'Máy chạy êm')",
+        "vận hành (transitive or formal technical intransitive)"
+      ],
+      "falseEquivalenceRisks": [
+        "Learners attempting to use 'hoạt động' transitively or failing to see why 'sense-run-machine' has both 'hoạt động' and 'vận hành'."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": true,
+      "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot once 'restrictions[0]' is cleaned to state the intransitive constraint; staged Vietnamese sense 'sense-vi-hoat-dong-mechanical' is provided for scale.",
+      "phase11Assessment": "CORRECTION_NEEDED",
+      "phase12LedgerStatus": "REQUIRED_CORRECTION",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Hoàng Phê; requires removing editorial meta-language in restrictions/0)"
+    },
+    {
+      "candidateId": "equiv-run-machine-operate-alternative",
+      "sourceSenseId": "sense-run-machine",
+      "glossVi": "vận hành",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "contextual",
+      "appropriateContexts": [
+        "Transitive operation of a machine, production line, or technical system ('Engineers run the plant' -> 'Các kỹ sư vận hành nhà máy').",
+        "Formal technical intransitive operation of a system ('The system runs smoothly' -> 'Hệ thống vận hành trơn tru')."
+      ],
+      "inappropriateContexts": [
+        "Small everyday household items where 'chạy' or 'hoạt động' is preferred ('Đồng hồ chạy đúng giờ', not '*Đồng hồ vận hành').",
+        "Organizational/business leadership ('sense-run-management' -> 'điều hành')."
+      ],
+      "semanticRoleConsistency": "Covers both the Agent-Patient transitive frame ('construction-run-machine-transitive') and formal Theme intransitive frame ('construction-run-machine').",
+      "grammarValencyDifferences": "Unlike 'hoạt động' (intransitive only), Vietnamese 'vận hành' is ambitransitive in technical register, matching the transitive frame of 'sense-run-machine'.",
+      "registerDifferences": "Formal/technical register in Vietnamese.",
+      "evidencedAlternativeTranslations": [
+        "chạy (colloquial for software/programs: 'chạy một chương trình')"
+      ],
+      "falseEquivalenceRisks": [
+        "Confusing technical 'vận hành' (machines/systems) with organizational 'điều hành' (businesses/people)."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": true,
+      "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot once meta-editorial notes in 'restrictions[0..1]' are replaced with learner-facing transitive/technical usage guidance; staged Vietnamese sense 'sense-vi-van-hanh-operate' is provided for scale.",
+      "phase11Assessment": "CORRECTION_NEEDED",
+      "phase12LedgerStatus": "REQUIRED_CORRECTION",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Hoàng Phê; requires replacing draft meta-notes in restrictions/0 and restrictions/1)"
+    },
+    {
+      "candidateId": "equiv-run-management",
+      "sourceSenseId": "sense-run-management",
+      "glossVi": "điều hành",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "direct",
+      "appropriateContexts": [
+        "Directing, managing, or being in charge of a business, organization, department, or project ('run a company', 'run a research project')."
+      ],
+      "inappropriateContexts": [
+        "Physical running ('chạy') or mechanical functioning ('hoạt động / vận hành')."
+      ],
+      "semanticRoleConsistency": "Agent (Manager/Director) and Patient/Theme (Organization/Activity) align directly.",
+      "grammarValencyDifferences": "Both English 'run' (in this sense) and Vietnamese 'điều hành' are transitive verbs taking an organization/activity NP object.",
+      "registerDifferences": "Neutral to formal in both languages.",
+      "evidencedAlternativeTranslations": [
+        "quản lý (manage/administer)",
+        "quản trị (govern/administer at executive level)"
+      ],
+      "falseEquivalenceRisks": [
+        "Colloquial Vietnamese 'chạy dự án' means lobbying for a project, NEVER 'running/managing a project' ('điều hành dự án')."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": true,
+      "senseAlignmentDecisionRationale": "gloss_only is clear and sufficient for pilot.",
+      "phase11Assessment": "SUPPORTED",
+      "phase12LedgerStatus": "NO_CHANGE",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)"
+    },
+    {
+      "candidateId": "equiv-analyse",
+      "sourceSenseId": "sense-analyse",
+      "glossVi": "phân tích",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "direct",
+      "appropriateContexts": [
+        "Examining data, causes, arguments, or samples methodically and in detail ('analyse the data', 'analyse the causes of inflation')."
+      ],
+      "inappropriateContexts": [
+        "Nominal contexts without appropriate Vietnamese nominal syntax (see 'equiv-analysis')."
+      ],
+      "semanticRoleConsistency": "Agent (Analyst) and Theme/Patient (Phenomenon/Data) align directly.",
+      "grammarValencyDifferences": "Both are transitive verbs taking a direct object NP (or wh-clause).",
+      "registerDifferences": "Neutral to academic/formal in both languages.",
+      "evidencedAlternativeTranslations": [
+        "mổ xẻ (figurative/informal 'dissect/analyse closely')"
+      ],
+      "falseEquivalenceRisks": [
+        "Minimal for the verb sense; main risk is POS overlap with the noun 'analysis'."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": true,
+      "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot.",
+      "phase11Assessment": "SUPPORTED",
+      "phase12LedgerStatus": "NO_CHANGE",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)"
+    },
+    {
+      "candidateId": "equiv-analysis",
+      "sourceSenseId": "sense-analysis",
+      "glossVi": "phân tích",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "direct",
+      "appropriateContexts": [
+        "Compound nominal contexts ('kết quả phân tích', 'báo cáo phân tích') and nominalized contexts ('sự phân tích', 'quá trình phân tích', 'bản phân tích')."
+      ],
+      "inappropriateContexts": [
+        "Using bare 'phân tích' after a numeral or quantifier without a classifier/nominalizer (cannot say '*một phân tích sâu sắc'; must say 'một bản/bài phân tích sâu sắc')."
+      ],
+      "semanticRoleConsistency": "Represents both the process of analysing and the resulting study/report.",
+      "grammarValencyDifferences": "In Vietnamese, 'phân tích' is primarily a verb; independent noun phrases use 'sự/việc/quá trình phân tích' (uncountable process) or 'bản/bài phân tích' (countable report), as noted in 'restrictions[0]'.",
+      "registerDifferences": "Academic and formal register in both languages.",
+      "evidencedAlternativeTranslations": [
+        "sự phân tích (process [U])",
+        "bản phân tích / bài phân tích (result/report [C])"
+      ],
+      "falseEquivalenceRisks": [
+        "Identity of surface string 'phân tích' across verb ('equiv-analyse') and noun ('equiv-analysis') can obscure Vietnamese classifier/nominalizer requirements."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": true,
+      "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot because 'restrictions[0]' already notes 'sự phân tích'; expanding glossVi to 'phân tích; sự phân tích; bản phân tích' is recorded as an optional RECOMMENDED_IMPROVEMENT.",
+      "phase11Assessment": "SUPPORTED",
+      "phase12LedgerStatus": "RECOMMENDED_IMPROVEMENT",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)"
+    },
+    {
+      "candidateId": "equiv-analytical",
+      "sourceSenseId": "sense-analytical",
+      "glossVi": "mang tính phân tích",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "direct",
+      "appropriateContexts": [
+        "Describing methods, reports, skills, or thinking based on logical, systematic analysis ('an analytical approach', 'analytical skills')."
+      ],
+      "inappropriateContexts": [
+        "Fixed technical compounds where bare 'phân tích' is standard ('hóa học phân tích' = analytical chemistry)."
+      ],
+      "semanticRoleConsistency": "Attributive/predicative property aligns across both languages.",
+      "grammarValencyDifferences": "English uses a lexicalized denominal/deverbal suffix '-ical'; Vietnamese uses the analytic adjectival marker 'mang tính + V/N' (or bare 'phân tích' in compounds).",
+      "registerDifferences": "Academic/formal in both languages.",
+      "evidencedAlternativeTranslations": [
+        "có tính phân tích",
+        "phân tích (in fixed compounds like 'tư duy phân tích')"
+      ],
+      "falseEquivalenceRisks": [
+        "Low risk; learners should note that 'tư duy phân tích' and 'tư duy mang tính phân tích' are both natural in Vietnamese."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": false,
+      "senseAlignmentDecisionRationale": "Because 'mang tính phân tích' is a compositional Vietnamese phrase rather than a single monomorphemic lexical entry, gloss_only is the optimal representation even at scale.",
+      "phase11Assessment": "SUPPORTED",
+      "phase12LedgerStatus": "NO_CHANGE",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, VDict; rightsCleared: false)"
+    },
+    {
+      "candidateId": "equiv-big",
+      "sourceSenseId": "sense-big-size",
+      "glossVi": "lớn",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "direct",
+      "appropriateContexts": [
+        "Concrete objects, spaces, buildings, or cities of above-average physical size ('a big house' -> 'một ngôi nhà lớn / to', 'a big city' -> 'một thành phố lớn')."
+      ],
+      "inappropriateContexts": [
+        "Formal academic quantity expressions where English requires 'large' ('a large proportion/amount', not '*a big proportion') even though Vietnamese still uses 'lớn' ('một tỷ lệ/số lượng lớn')."
+      ],
+      "semanticRoleConsistency": "Attribute of physical size/scale aligns in concrete contexts.",
+      "grammarValencyDifferences": "English 'big' is pre-nominal or predicative; Vietnamese 'lớn' (and 'to') is post-nominal or predicative.",
+      "registerDifferences": "English 'big' is more informal/conversational than 'large'; Vietnamese 'lớn' is register-neutral while 'to' is slightly more concrete/everyday.",
+      "evidencedAlternativeTranslations": [
+        "to (concrete physical objects: 'ngôi nhà to', 'cái hộp to')"
+      ],
+      "falseEquivalenceRisks": [
+        "Many-to-1 convergence in Vietnamese: because both 'big' and 'large' map to 'lớn' (and Vietnamese 'quyết định lớn' = 'big decision' while 'số lượng lớn' = 'large number'), Vietnamese learners frequently produce '*a large mistake' or '*a big amount' in IELTS Writing."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": true,
+      "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot once editorial meta-language in 'restrictions[1]' is replaced with concrete learner guidance contrasting 'big' vs 'large' and 'lớn' vs 'to'.",
+      "phase11Assessment": "CORRECTION_NEEDED",
+      "phase12LedgerStatus": "REQUIRED_CORRECTION",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; requires cleaning meta-language in restrictions/1)"
+    },
+    {
+      "candidateId": "equiv-large",
+      "sourceSenseId": "sense-large-size",
+      "glossVi": "lớn",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "direct",
+      "appropriateContexts": [
+        "Relatively great physical size, area, extent, capacity, or quantity/proportion ('a large city', 'a large amount/number/proportion')."
+      ],
+      "inappropriateContexts": [
+        "Figurative importance or severity where English requires 'big' ('a big decision/mistake', NOT '*a large decision/mistake') even though Vietnamese uses 'lớn' ('quyết định lớn', 'sai lầm lớn')."
+      ],
+      "semanticRoleConsistency": "Attribute of physical extent, area, or quantity aligns with Vietnamese 'lớn' (sense A1/A2).",
+      "grammarValencyDifferences": "English 'large' collocates strongly with quantity nouns ('number, amount, proportion, scale'); Vietnamese 'lớn' modifies both quantity nouns and abstract importance nouns.",
+      "registerDifferences": "English 'large' is more formal and objective than 'big', making it the preferred choice in IELTS Academic Writing for quantities and proportions.",
+      "evidencedAlternativeTranslations": [
+        "rộng lớn (for expansive spatial area)",
+        "to lớn (for impressive physical bulk)"
+      ],
+      "falseEquivalenceRisks": [
+        "Reverse translation trap from Vietnamese 'lớn' (sense A3: 'vấn đề lớn / sai lầm lớn') into unidiomatic English '*a large problem / *a large mistake'."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": true,
+      "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot once editorial meta-language in 'restrictions[1]' is replaced with explicit collocation guidance.",
+      "phase11Assessment": "CORRECTION_NEEDED",
+      "phase12LedgerStatus": "REQUIRED_CORRECTION",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; requires cleaning meta-language in restrictions/1)"
+    },
+    {
+      "candidateId": "equiv-depend",
+      "sourceSenseId": "sense-depend-contingent",
+      "glossVi": "phụ thuộc vào",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "direct",
+      "appropriateContexts": [
+        "Contingency or determination by a condition, factor, or variable ('The result depends on the weather' -> 'Kết quả phụ thuộc vào thời tiết')."
+      ],
+      "inappropriateContexts": [
+        "Trusting or counting on a person ('You can depend on her' -> 'trông cậy / tin cậy vào', NOT 'phụ thuộc vào')."
+      ],
+      "semanticRoleConsistency": "Theme (Contingent outcome) and Determinant/Condition ('on + NP' / 'vào + NP') align directly.",
+      "grammarValencyDifferences": "English requires the preposition 'on/upon' ('depend on X'); Vietnamese uses 'phụ thuộc vào X' (or occasionally 'phụ thuộc X').",
+      "registerDifferences": "Neutral to academic in both languages.",
+      "evidencedAlternativeTranslations": [
+        "tùy thuộc vào (especially when outcome varies according to choices or circumstances)"
+      ],
+      "falseEquivalenceRisks": [
+        "Using 'phụ thuộc vào' for the interpersonal trust sense of 'depend on', or omitting 'on' in English ('*depend the weather') under influence of optional 'vào' in Vietnamese."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": true,
+      "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot once internal schema self-reference in 'restrictions[0]' is cleaned.",
+      "phase11Assessment": "CORRECTION_NEEDED",
+      "phase12LedgerStatus": "REQUIRED_CORRECTION",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; requires cleaning meta-language in restrictions/0)"
+    },
+    {
+      "candidateId": "equiv-look-up",
+      "sourceSenseId": "sense-look-up-reference",
+      "glossVi": "tra cứu",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "direct",
+      "appropriateContexts": [
+        "Searching for information (a word, fact, number, or record) in a reference source ('look up a word in a dictionary' -> 'tra cứu một từ trong từ điển')."
+      ],
+      "inappropriateContexts": [
+        "Literal upward gaze ('look up at the sky' -> 'ngước nhìn lên').",
+        "Improving situation ('Things are looking up' -> 'Tình hình đang khởi sắc').",
+        "Visiting a person ('look someone up' -> 'tìm thăm ai')."
+      ],
+      "semanticRoleConsistency": "Agent (Searcher) and Sought Information align, with an important object-selection constraint difference regarding the reference container.",
+      "grammarValencyDifferences": "English 'look up' is a separable transitive phrasal verb whose direct object MUST be the sought information ('look the word up / look it up', NOT '*look up it' and NOT '*look up the dictionary'); Vietnamese 'tra cứu / tra' is an inseparable compound verb that allows either 'tra cứu từ mới' or 'tra từ điển'.",
+      "registerDifferences": "'tra cứu' is neutral-to-formal; shortened 'tra' ('tra từ điển') is everyday conversational.",
+      "evidencedAlternativeTranslations": [
+        "tra (everyday conversational: 'tra từ điển')"
+      ],
+      "falseEquivalenceRisks": [
+        "Direct transfer of Vietnamese 'tra từ điển' into ungrammatical English '*look up the dictionary' instead of 'look up a word in the dictionary'."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": true,
+      "senseAlignmentDecisionRationale": "gloss_only is clear and sufficient for pilot.",
+      "phase11Assessment": "SUPPORTED",
+      "phase12LedgerStatus": "NO_CHANGE",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)"
+    },
+    {
+      "candidateId": "equiv-borrow",
+      "sourceSenseId": "sense-borrow-temporary-use",
+      "glossVi": "mượn",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "direct",
+      "appropriateContexts": [
+        "Taking and using a specific non-money physical object (a book, pen, car, room) temporarily with the intention of returning that exact item ('borrow a book from Lan' -> 'mượn một cuốn sách của Lan')."
+      ],
+      "inappropriateContexts": [
+        "Borrowing money, a bank loan, or fungible financial capital at interest ('borrow money from a bank' -> Vietnamese requires 'vay tiền ngân hàng', not formal 'mượn').",
+        "Providing an item to someone else ('sense-lend-temporary-use' -> 'cho mượn / cho vay')."
+      ],
+      "semanticRoleConsistency": "Recipient subject, Theme direct object, and optional Source ('from + NP' / 'của + NP') align for non-money items.",
+      "grammarValencyDifferences": "English 'borrow' covers both non-money objects and money/loans; Vietnamese lexicalizes this distinction into 'mượn' (non-money object returned in kind) vs 'vay' (money/fungible capital returned in equivalent value).",
+      "registerDifferences": "Neutral in both languages.",
+      "evidencedAlternativeTranslations": [
+        "vay (mandatory in standard/formal Vietnamese when the object is money, a loan, or financial capital)"
+      ],
+      "falseEquivalenceRisks": [
+        "1-to-2 lexical split between English 'borrow' and Vietnamese 'mượn' vs 'vay'; also learner confusion between converse verbs 'borrow' ('mượn/vay') and 'lend' ('cho mượn/cho vay')."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": true,
+      "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot once editorial meta-language in 'restrictions[0]' is cleaned to state the 'mượn' (object) vs 'vay' (money) split; staged candidate 'equiv-borrow-money' ('vay') and Vietnamese senses are also provided in staged-lexical-candidates.json.",
+      "phase11Assessment": "CORRECTION_NEEDED",
+      "phase12LedgerStatus": "REQUIRED_CORRECTION",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; requires cleaning meta-language in restrictions/0)"
+    },
+    {
+      "candidateId": "equiv-lend",
+      "sourceSenseId": "sense-lend-temporary-use",
+      "glossVi": "cho mượn",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "direct",
+      "appropriateContexts": [
+        "Giving someone temporary possession/use of a specific non-money physical item on condition that the same item is returned ('lend a pen to a friend' -> 'cho bạn mượn một chiếc bút')."
+      ],
+      "inappropriateContexts": [
+        "Lending money, credit, or capital ('Banks lend money to businesses' -> Vietnamese requires 'cho vay tiền / cho vay vốn', not 'cho mượn').",
+        "Receiving an item temporarily ('borrow' -> 'mượn / vay')."
+      ],
+      "semanticRoleConsistency": "Provider subject, Recipient object, and Theme object align across both languages for non-money items.",
+      "grammarValencyDifferences": "English 'lend' allows both double-object ('lend her a book') and prepositional ('lend a book to her'); Vietnamese uses the causative serial-verb construction 'cho + Recipient + mượn + Theme' ('cho cô ấy mượn một cuốn sách') or 'cho mượn + Theme'.",
+      "registerDifferences": "Neutral in both languages.",
+      "evidencedAlternativeTranslations": [
+        "cho vay (mandatory in standard/formal Vietnamese when the lent resource is money, credit, or capital)"
+      ],
+      "falseEquivalenceRisks": [
+        "1-to-2 split between 'cho mượn' (physical item) and 'cho vay' (money/loan); converse confusion with 'mượn/vay' ('borrow')."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": true,
+      "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot once editorial meta-language in 'restrictions[0]' is cleaned to explain 'cho mượn' vs 'cho vay'; staged candidate 'equiv-lend-money' ('cho vay') is also provided in staged-lexical-candidates.json.",
+      "phase11Assessment": "CORRECTION_NEEDED",
+      "phase12LedgerStatus": "REQUIRED_CORRECTION",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; requires cleaning meta-language in restrictions/0)"
+    },
+    {
+      "candidateId": "equiv-advice",
+      "sourceSenseId": "sense-advice-guidance",
+      "glossVi": "lời khuyên",
+      "direction": "en_to_vi",
+      "currentAlignmentMode": "gloss_only",
+      "equivalenceType": "direct",
+      "appropriateContexts": [
+        "Personal, educational, or practical recommendations regarding what someone should do ('give useful advice', 'follow someone's advice')."
+      ],
+      "inappropriateContexts": [
+        "Formal institutional/specialist consultancy where Vietnamese prefers 'sự tư vấn / lời tư vấn' ('seek legal/medical/financial advice' -> 'tìm kiếm sự tư vấn pháp lý/y tế/tài chính')."
+      ],
+      "semanticRoleConsistency": "Transferred guidance/recommendation message aligns across both languages.",
+      "grammarValencyDifferences": "Crucial countability contrast: English 'advice' is strictly uncountable ('some advice', 'a piece of advice', NEVER '*an advice' or '*advices'), whereas Vietnamese 'lời khuyên' incorporates the countable unit noun 'lời' ('một lời khuyên', 'những lời khuyên').",
+      "registerDifferences": "'lời khuyên' is neutral/general; 'lời tư vấn / sự tư vấn' is formal/professional.",
+      "evidencedAlternativeTranslations": [
+        "lời tư vấn / sự tư vấn (professional, medical, legal, or financial advice)"
+      ],
+      "falseEquivalenceRisks": [
+        "Because 'lời khuyên' is countable in Vietnamese ('một lời khuyên'), Vietnamese learners frequently transfer singular countability into English ('*She gave me an useful advice')."
+      ],
+      "isGlossOnlySufficientForPilot": true,
+      "isSenseAlignedJustifiedAtScale": true,
+      "senseAlignmentDecisionRationale": "gloss_only is sufficient for pilot; 'restrictions[0]' already mentions 'lời tư vấn'.",
+      "phase11Assessment": "SUPPORTED",
+      "phase12LedgerStatus": "NO_CHANGE",
+      "evidenceStatus": "AI_CROSS_CHECKED (OALD, Cambridge, Hoàng Phê; rightsCleared: false)"
+    }
+  ],
+  "manyToManyMappings": {
+    "oneEnglishSenseToMultipleVietnameseEquivalents": [
+      {
+        "sourceSenseId": "sense-run-machine",
+        "vietnameseEquivalents": [
+          {
+            "candidateId": "equiv-run-machine-operate",
+            "glossVi": "hoạt động",
+            "semanticAndSyntacticContext": "Intransitive mechanical or system functioning ('construction-run-machine': 'The engine runs quietly')."
+          },
+          {
+            "candidateId": "equiv-run-machine-operate-alternative",
+            "glossVi": "vận hành",
+            "semanticAndSyntacticContext": "Transitive operation of machinery/systems ('construction-run-machine-transitive': 'run a machine') or formal technical intransitive system operation."
+          }
+        ]
+      },
+      {
+        "sourceSenseId": "sense-borrow-temporary-use",
+        "vietnameseEquivalents": [
+          {
+            "candidateId": "equiv-borrow",
+            "glossVi": "mượn",
+            "semanticAndSyntacticContext": "Specific non-money physical item returned in kind ('borrow a book')."
+          },
+          {
+            "candidateId": "equiv-borrow-money",
+            "glossVi": "vay",
+            "status": "staged_candidate",
+            "semanticAndSyntacticContext": "Money, credit, or fungible capital returned in equivalent value ('borrow money from a bank')."
+          }
+        ]
+      },
+      {
+        "sourceSenseId": "sense-lend-temporary-use",
+        "vietnameseEquivalents": [
+          {
+            "candidateId": "equiv-lend",
+            "glossVi": "cho mượn",
+            "semanticAndSyntacticContext": "Specific non-money physical item returned in kind ('lend a pen to a classmate')."
+          },
+          {
+            "candidateId": "equiv-lend-money",
+            "glossVi": "cho vay",
+            "status": "staged_candidate",
+            "semanticAndSyntacticContext": "Money, credit, or fungible capital returned in equivalent value ('lend money at interest')."
+          }
+        ]
+      },
+      {
+        "sourceSenseId": "sense-advice-guidance",
+        "vietnameseEquivalents": [
+          {
+            "candidateId": "equiv-advice",
+            "glossVi": "lời khuyên",
+            "semanticAndSyntacticContext": "General personal, educational, or everyday recommendations."
+          },
+          {
+            "candidateId": "equiv-advice-professional-note",
+            "glossVi": "lời tư vấn / sự tư vấn",
+            "status": "documented_in_restrictions",
+            "semanticAndSyntacticContext": "Formal professional, medical, legal, or financial consultation."
+          }
+        ]
+      }
+    ],
+    "multipleEnglishSensesToOneVietnameseExpression": [
+      {
+        "vietnameseExpression": "lớn",
+        "englishSources": [
+          {
+            "sourceSenseId": "sense-big-size",
+            "eqvId": "equiv-big",
+            "distinguishingContext": "Everyday concrete physical size (also overlaps with Vietnamese 'to') and figurative importance ('a big decision')."
+          },
+          {
+            "sourceSenseId": "sense-large-size",
+            "eqvId": "equiv-large",
+            "distinguishingContext": "Formal/objective physical extent and academic quantity/proportion collocations ('a large number/amount/proportion')."
+          }
+        ]
+      },
+      {
+        "vietnameseExpression": "phân tích",
+        "englishSources": [
+          {
+            "sourceSenseId": "sense-analyse",
+            "eqvId": "equiv-analyse",
+            "distinguishingContext": "Transitive verb ('analyse data' -> 'phân tích dữ liệu')."
+          },
+          {
+            "sourceSenseId": "sense-analysis",
+            "eqvId": "equiv-analysis",
+            "distinguishingContext": "Noun requiring Vietnamese nominalizers ('sự/quá trình phân tích' for [U] process; 'bản/bài phân tích' for [C] report) outside compound nouns."
+          }
+        ]
+      }
+    ],
+    "multipleVietnameseSensesSharingOneSpelling": [
+      {
+        "vietnameseSpelling": "chạy",
+        "senses": [
+          "V1: locomotion on foot (maps to 'sense-run-movement')",
+          "V2: machine/vehicle/clock functioning (overlaps with 'sense-run-machine')",
+          "V3: colloquial maneuvering/lobbying ('chạy việc / chạy dự án' — false equivalence trap, NEVER maps to 'sense-run-management')"
+        ]
+      },
+      {
+        "vietnameseSpelling": "hoạt động",
+        "senses": [
+          "V1: intransitive mechanical/system functioning (maps to intransitive 'sense-run-machine')",
+          "V2: intransitive organizational/social activity ('tổ chức hoạt động hợp pháp')",
+          "N1: organized activities ('các hoạt động ngoại khóa')"
+        ]
+      },
+      {
+        "vietnameseSpelling": "lớn",
+        "senses": [
+          "A1: physical size/scale (maps to 'sense-big-size' and 'sense-large-size')",
+          "A2: quantity/proportion/intensity (maps to 'sense-large-size')",
+          "A3: importance/significance (maps to figurative 'big', never 'large')",
+          "A4: grown-up/older in age ('con đã lớn')"
+        ]
+      }
+    ],
+    "englishExpressionsWithDistinctGrammaticalFramesAndVietnameseMappings": [
+      {
+        "englishSenseId": "sense-run-machine",
+        "frames": [
+          {
+            "constructionId": "construction-run-machine",
+            "valency": "intransitive ('NP runs')",
+            "vietnameseMapping": "'hoạt động' ('equiv-run-machine-operate') or everyday 'chạy'; formal technical 'vận hành'"
+          },
+          {
+            "constructionId": "construction-run-machine-transitive",
+            "valency": "transitive ('NP runs NP')",
+            "vietnameseMapping": "'vận hành' ('equiv-run-machine-operate-alternative') or colloquial 'chạy' (for software); NEVER '*hoạt động'"
+          }
+        ]
+      }
+    ]
+  },
+  "gapMatrixEntries": [
+    {
+      "matrixId": "COV-001",
+      "candidateId": "sense-big-size",
+      "sourceSenseId": "candidate:sense-big-size",
+      "phenomenon": "english_near_synonymy_big_large",
+      "currentRepresentation": "Prose-only notes in sense-big-size.contrastiveNotes/0 and equiv-big.restrictions/0; zero LexicalRelation (rel_) records.",
+      "expectedRepresentation": "Symmetric NEAR_SYNONYM_OF LexicalRelation between sense-big-size and sense-large-size with qualifiers={context: 'concrete physical dimensions of countable objects and spaces; big is more informal than large'}, plus clean contrastiveNotes.",
+      "gapType": "DATA_GAP",
+      "evidence": [
+        "SRC-OALD: big_1 sense 1 vs large_1 sense 1",
+        "SRC-CAMBRIDGE: big vs large usage note (shared physical-size overlap; 'large' preferred with quantity nouns 'a large amount/number'; 'big' preferred in informal contexts and fixed expressions)",
+        "SRC-REPO-GOVERNANCE: schemas/v2/lexical-relation.schema.json & validators/graph-v1.mjs"
+      ],
+      "recommendation": "Fix contrastiveNotes language tag ('en') and text in Phase 12 (MUST FIX); stage NEAR_SYNONYM_OF relation proposal for instantiation once canonical sns_ UUIDs are minted or after prepare-batch.mjs symmetric ordering is patched (SHOULD IMPROVE).",
+      "priority": "P1",
+      "phaseTarget": "Phase 12 (contrastiveNotes fix) / Post-Phase 13 Scale (rel_ instantiation)",
+      "affectedCandidateIds": [
+        "entry-big",
+        "entry-large",
+        "sense-big-size",
+        "sense-large-size",
+        "equiv-big",
+        "equiv-large"
+      ]
+    },
+    {
+      "matrixId": "COV-002",
+      "candidateId": "sense-big-size",
+      "sourceSenseId": "candidate:sense-big-size",
+      "phenomenon": "gradable_antonymy_big_large_vs_small_little",
+      "currentRepresentation": "No antonym endpoint ('small' or 'little') exists in pilot-fanout-002.json; zero ANTONYM_OF records.",
+      "expectedRepresentation": "Sense-scoped gradable ANTONYM_OF edges: sense-big-size <-> sense-small-size (context: 'physical size; everyday register') and sense-large-size <-> sense-small-size (context: 'physical size or extent; neutral/formal register').",
+      "gapType": "OUT_OF_SCOPE",
+      "evidence": [
+        "SRC-OALD: big_1 (opposite: small, little); large_1 (opposite: small)",
+        "SRC-OEWN: big.a.01 <-> small.a.01; large.a.01 <-> small.a.01"
+      ],
+      "recommendation": "Do not mint synthetic 'small'/'little' entries in Phase 12. Defer ANTONYM_OF edge creation until 'small' is ingested in Lexical Production at Scale.",
+      "priority": "P3",
+      "phaseTarget": "DEFER_TO_LEXICAL_PRODUCTION_AT_SCALE",
+      "affectedCandidateIds": [
+        "sense-big-size",
+        "sense-large-size"
+      ]
+    },
+    {
+      "matrixId": "COV-003",
+      "candidateId": "entry-big",
+      "sourceSenseId": "candidate:sense-big-size",
+      "phenomenon": "english_polysemy_big_evaluative_and_kinship",
+      "currentRepresentation": "Only physical-size sense (sense-big-size) is modeled; figurative importance sense ('a big decision/mistake') and elder-sibling sense ('big sister') are noted only as exclusions in equiv-big.restrictions/1.",
+      "expectedRepresentation": "Separate English LexicalSense records for figurative importance/significance ('quan trọng / trọng đại') and elder sibling ('chị gái / anh trai') when expanding entry-big.",
+      "gapType": "OUT_OF_SCOPE",
+      "evidence": [
+        "SRC-OALD: big_1 sense 2 (important/serious: 'a big decision') & sense 5 (older: 'big brother/sister')",
+        "SRC-CAMBRIDGE: big (IMPORTANT)"
+      ],
+      "recommendation": "In Phase 12, clean the workflow word 'this candidate' from equiv-big.restrictions/1 (MUST FIX). Defer adding the figurative 'important' sense of 'big' to Lexical Production at Scale.",
+      "priority": "P2",
+      "phaseTarget": "DEFER_TO_LEXICAL_PRODUCTION_AT_SCALE",
+      "affectedCandidateIds": [
+        "entry-big",
+        "sense-big-size",
+        "equiv-big"
+      ]
+    },
+    {
+      "matrixId": "COV-004",
+      "candidateId": "equiv-big",
+      "sourceSenseId": "candidate:sense-big-size",
+      "phenomenon": "vietnamese_polysemy_and_bilingual_alignment_lon_vs_to",
+      "currentRepresentation": "Both equiv-big and equiv-large use alignmentMode='gloss_only' with glossVi='lớn'.",
+      "expectedRepresentation": "In gloss_only mode, retain glossVi='lớn' (or optional improvement 'to; lớn' on equiv-big) with explicit collocational restrictions. At scale, model Vietnamese LexicalEntry 'lớn' (with distinct senses: A1 physical size, A2 quantity/intensity, A3 importance/significance, A4 age/maturity) and 'to' (physical bulk/size) to support N-to-M sense_aligned edges.",
+      "gapType": "DATA_GAP",
+      "evidence": [
+        "SRC-HOANG-PHE: lớn (t. — senses 1..4: diện tích/thể tích; số lượng/mức độ; tầm quan trọng; tuổi tác) & to (t. — kích thước/thể tích lớn)",
+        "SRC-CAMBRIDGE: English–Vietnamese Dictionary (big -> to lớn, to, lớn; large -> lớn, rộng)"
+      ],
+      "recommendation": "Retain gloss_only for Phase 12 (gloss_only is valid and CONTRACT_SUPPORTED); optionally enrich equiv-big.glossVi to 'to; lớn' (SHOULD IMPROVE); defer Vietnamese LexicalEntry/LexicalSense creation for 'lớn' and 'to' to Lexical Production at Scale.",
+      "priority": "P2",
+      "phaseTarget": "SHOULD_IMPROVE (gloss refinement) / DEFER_TO_SCALE (Vietnamese sense_aligned)",
+      "affectedCandidateIds": [
+        "sense-big-size",
+        "sense-large-size",
+        "equiv-big",
+        "equiv-large"
+      ]
+    },
+    {
+      "matrixId": "COV-005",
+      "candidateId": "sense-borrow-temporary-use",
+      "sourceSenseId": "candidate:sense-borrow-temporary-use",
+      "phenomenon": "converse_relational_opposition_borrow_vs_lend",
+      "currentRepresentation": "Modeled via contrasting valency Constructions (construction-borrow-from vs construction-lend-double-object / construction-lend-to) and role constraints; zero LexicalRelation records.",
+      "expectedRepresentation": "Linguistically, 'borrow' and 'lend' are relational converses (X borrows Y from Z <=> Z lends Y to X), NOT gradable/complementary antonyms. Because V1/V2 vocabularies.json does not define a CONVERSE_OF relationType, role inversion is properly represented in Construction constraints and usageNotes rather than a misleading uninhibited ANTONYM_OF edge.",
+      "gapType": "CONTRACT_SUPPORTED",
+      "evidence": [
+        "SRC-OALD: borrow verb vs lend verb",
+        "SRC-COLLINS: borrow vs lend",
+        "SRC-REPO-GOVERNANCE: schemas/v1/vocabularies.json (relationTypes enum)"
+      ],
+      "recommendation": "Do NOT create an unqualified ANTONYM_OF edge between borrow and lend. Clean the internal meta-language on sense-borrow-temporary-use.usageNote, sense-lend-temporary-use.usageNote, and construction-borrow-from.constraints/1 in Phase 12 (MUST FIX).",
+      "priority": "P0",
+      "phaseTarget": "MUST_FIX_IN_PHASE_12 (meta-language cleanup; no false ANTONYM_OF)",
+      "affectedCandidateIds": [
+        "entry-borrow",
+        "entry-lend",
+        "sense-borrow-temporary-use",
+        "sense-lend-temporary-use",
+        "construction-borrow-from",
+        "construction-lend-double-object",
+        "construction-lend-to"
+      ]
+    },
+    {
+      "matrixId": "COV-006",
+      "candidateId": "equiv-borrow",
+      "sourceSenseId": "candidate:sense-borrow-temporary-use",
+      "phenomenon": "bilingual_one_to_many_equivalence_borrow_lend_money_vs_object",
+      "currentRepresentation": "Single gloss_only equivalence per verb: equiv-borrow (glossVi='mượn', context='temporarily receive and use a non-money item') and equiv-lend (glossVi='cho mượn', context='temporarily provide a non-money item'), while restrictions state 'money-related vay/cho vay remains a separate review question'.",
+      "expectedRepresentation": "English 'borrow' and 'lend' cover both non-fungible physical items (returned in kind -> Vietnamese 'mượn' / 'cho mượn') and fungible money/loans (returned in equivalent value -> Vietnamese 'vay' / 'cho vay'). In Phase 12, replace the 'separate review question' meta-language in restrictions/0 (MUST FIX); optionally add second gloss_only equivalences equiv-borrow-money ('vay') and equiv-lend-money ('cho vay') (SHOULD IMPROVE).",
+      "gapType": "DATA_GAP",
+      "evidence": [
+        "SRC-HOANG-PHE: mượn (nhận đồ vật dùng tạm rồi trả lại chính vật đó) vs vay (nhận tiền/tài sản dùng tạm rồi hoàn trả tương đương, thường có lãi)",
+        "SRC-OALD: borrow ('borrow money from a bank' / 'borrow a book')",
+        "SRC-CAMBRIDGE: English–Vietnamese Dictionary (borrow -> mượn, vay; lend -> cho mượn, cho vay)"
+      ],
+      "recommendation": "MUST FIX in Phase 12: purge 'remains a separate review question' from equiv-borrow.restrictions/0 and equiv-lend.restrictions/0 and state the 'mượn/vay' and 'cho mượn/cho vay' domain rule clearly. SHOULD IMPROVE: optionally add dedicated gloss_only eqv_ records for 'vay' and 'cho vay'.",
+      "priority": "P0",
+      "phaseTarget": "MUST_FIX_IN_PHASE_12 (restrictions fix) / SHOULD_IMPROVE (second eqv_ records)",
+      "affectedCandidateIds": [
+        "sense-borrow-temporary-use",
+        "sense-lend-temporary-use",
+        "equiv-borrow",
+        "equiv-lend"
+      ]
+    },
+    {
+      "matrixId": "COV-007",
+      "candidateId": "sense-run-machine",
+      "sourceSenseId": "candidate:sense-run-machine",
+      "phenomenon": "english_ergative_sense_boundary_and_vietnamese_valency_split",
+      "currentRepresentation": "Single ambitransitive sense (sense-run-machine) with two constructions (construction-run-machine [intransitive] and construction-run-machine-transitive [transitive]) and two gloss_only equivalences (equiv-run-machine-operate='hoạt động' and equiv-run-machine-operate-alternative='vận hành'), but sense-run-machine.definition only states the intransitive meaning ('Function or operate, especially of a machine or system.').",
+      "expectedRepresentation": "Retain single ambitransitive sense-run-machine (per docs/sense-division.md and OALD/Cambridge [I, T] treatment), broaden /entity/definition to include causative operation ('or cause a machine, system, or program to function'), and align equiv-run-machine-operate ('hoạt động') to intransitive functioning and equiv-run-machine-operate-alternative ('vận hành') to transitive/technical operation.",
+      "gapType": "DATA_GAP",
+      "evidence": [
+        "SRC-OALD: run_1 verb sense 7 ([I, T] of a machine: operate/function; make a machine do this)",
+        "SRC-CAMBRIDGE: run verb (OPERATE [I or T])",
+        "SRC-HOANG-PHE: hoạt động (nội động) vs vận hành (ngoại động/nội động kỹ thuật)",
+        "SRC-REPO-GOVERNANCE: docs/sense-division.md"
+      ],
+      "recommendation": "MUST FIX in Phase 12: update sense-run-machine.definition and clean workflow meta-language in sense-run-machine.usageNote, construction-run-machine-transitive.constraints/0, equiv-run-machine-operate.restrictions/0, and equiv-run-machine-operate-alternative.restrictions/0..1.",
+      "priority": "P0",
+      "phaseTarget": "MUST_FIX_IN_PHASE_12",
+      "affectedCandidateIds": [
+        "entry-run",
+        "sense-run-machine",
+        "construction-run-machine",
+        "construction-run-machine-transitive",
+        "equiv-run-machine-operate",
+        "equiv-run-machine-operate-alternative"
+      ]
+    },
+    {
+      "matrixId": "COV-008",
+      "candidateId": "entry-run",
+      "sourceSenseId": "candidate:sense-run-movement",
+      "phenomenon": "vietnamese_polysemy_chay_and_false_equivalence_prevention",
+      "currentRepresentation": "Three English senses of 'run' map to four gloss_only records: 'chạy' (movement), 'hoạt động' & 'vận hành' (machine), and 'điều hành' (management). Restrictions prevent cross-sense confusion.",
+      "expectedRepresentation": "Vietnamese 'chạy' is itself highly polysemous (V1 physical locomotion on foot, V2 machine/vehicle running, V3 colloquial maneuvering/striving e.g. 'chạy việc / chạy dự án'). In gloss_only mode, existing restrictions on equiv-run-movement and equiv-run-management accurately prevent mapping 'chạy' to management. Full Vietnamese sense modeling for 'chạy', 'hoạt động', 'vận hành', 'điều hành' belongs to scale production.",
+      "gapType": "OUT_OF_SCOPE",
+      "evidence": [
+        "SRC-HOANG-PHE: chạy (đg. — nghĩa 1: di chuyển nhanh bằng chân; nghĩa 3: máy móc/xe cộ hoạt động; nghĩa 6: tìm cách xoay xở khẩn trương)",
+        "SRC-REPO-GOVERNANCE: docs/bilingual-alignment.md"
+      ],
+      "recommendation": "Clean sense-run-movement.usageNote and sense-run-management.usageNote in Phase 12 (MUST FIX). Defer Vietnamese LexicalSense graph for 'chạy / hoạt động / vận hành / điều hành' to Lexical Production at Scale.",
+      "priority": "P2",
+      "phaseTarget": "DEFER_TO_LEXICAL_PRODUCTION_AT_SCALE",
+      "affectedCandidateIds": [
+        "entry-run",
+        "sense-run-movement",
+        "sense-run-machine",
+        "sense-run-management",
+        "equiv-run-movement",
+        "equiv-run-machine-operate",
+        "equiv-run-machine-operate-alternative",
+        "equiv-run-management"
+      ]
+    },
+    {
+      "matrixId": "COV-009",
+      "candidateId": "sense-analysis",
+      "sourceSenseId": "candidate:sense-analysis",
+      "phenomenon": "english_process_result_polysemy_and_vietnamese_nominalization",
+      "currentRepresentation": "Single sense (sense-analysis) with grammar.countability='both', definition='A detailed examination of something.', and equiv-analysis with glossVi='phân tích', context='noun referring to a process or a report/result', restrictions=['sự phân tích may fit a process', 'bản phân tích may fit a report or result'].",
+      "expectedRepresentation": "Retaining one sense with countability='both' for regular process/result alternation is supported by docs/sense-division.md. In Phase 12, clean sense-analysis.usageNote and family-analysis.label (MUST FIX), and optionally broaden sense-analysis.definition to mention the countable report/result reading (SHOULD IMPROVE). Defer Vietnamese POS separation (verb 'phân tích' vs nominalized 'sự phân tích' / 'bản phân tích') to sense_aligned scale phase.",
+      "gapType": "DATA_GAP",
+      "evidence": [
+        "SRC-OALD: analysis noun ([U, C] detailed study/examination; countable report/result)",
+        "SRC-CAMBRIDGE: analysis noun ([C or U]); English–Vietnamese Dictionary (sự phân tích, bài phân tích)",
+        "SRC-HOANG-PHE: phân tích (đg.)"
+      ],
+      "recommendation": "MUST FIX in Phase 12: remove workflow meta-language from family-analysis.label, sense-analyse.usageNote, sense-analysis.usageNote, and sense-analytical.usageNote. SHOULD IMPROVE: broaden sense-analysis.definition to include the countable report reading.",
+      "priority": "P1",
+      "phaseTarget": "MUST_FIX_IN_PHASE_12 (usageNote/label) / SHOULD_IMPROVE (definition)",
+      "affectedCandidateIds": [
+        "family-analysis",
+        "entry-analyse",
+        "entry-analysis",
+        "entry-analytical",
+        "sense-analyse",
+        "sense-analysis",
+        "sense-analytical",
+        "equiv-analyse",
+        "equiv-analysis",
+        "equiv-analytical"
+      ]
+    },
+    {
+      "matrixId": "COV-010",
+      "candidateId": "entry-bank-financial",
+      "sourceSenseId": "candidate:sense-bank-financial",
+      "phenomenon": "english_homograph_split_vs_polysemy_and_vietnamese_alignment",
+      "currentRepresentation": "Two distinct LexicalEntry records (entry-bank-financial with homographNumber=1, entry-bank-river with homographNumber=2), two senses (sense-bank-financial, sense-bank-river), and two disjoint gloss_only equivalences ('ngân hàng' vs 'bờ sông').",
+      "expectedRepresentation": "Two separate LexicalEntry records are etymologically and synchronically justified. Display attribute homographNumber=1/2 follows modern learner-dictionary frequency order (OALD/Cambridge).",
+      "gapType": "CONTRACT_SUPPORTED",
+      "evidence": [
+        "SRC-OALD: bank_1 noun (sense 1 financial, sense 4 river)",
+        "SRC-MW: bank homograph 1 (ridge/river < Old Norse) vs homograph 3 (financial < Italian/French)",
+        "SRC-REPO-GOVERNANCE: docs/identity-policy.md & docs/sense-division.md"
+      ],
+      "recommendation": "Ratify frequency-ordered homographNumber=1/2 convention and clean sense-bank-financial.usageNote and sense-bank-river.usageNote in Phase 12 (MUST FIX).",
+      "priority": "P1",
+      "phaseTarget": "MUST_FIX_IN_PHASE_12",
+      "affectedCandidateIds": [
+        "entry-bank-financial",
+        "entry-bank-river",
+        "sense-bank-financial",
+        "sense-bank-river",
+        "equiv-bank-financial",
+        "equiv-bank-river"
+      ]
+    },
+    {
+      "matrixId": "COV-011",
+      "candidateId": "sense-depend-contingent",
+      "sourceSenseId": "candidate:sense-depend-contingent",
+      "phenomenon": "english_polysemy_depend_contingent_vs_interpersonal_reliance",
+      "currentRepresentation": "Models contingent sense ('Be determined or affected by something else.' -> 'phụ thuộc vào'); interpersonal reliance/trust sense ('rely on someone' -> 'trông cậy vào / dựa vào') is excluded via usageNote and equiv-depend.restrictions/0.",
+      "expectedRepresentation": "Clean workflow meta-language ('unresolved', 'candidate sense') from sense-depend-contingent.usageNote, construction-depend-on.constraints/0..1, and equiv-depend.restrictions/0 in Phase 12. Defer adding second English sense 'sense-depend-rely' to scale production.",
+      "gapType": "OUT_OF_SCOPE",
+      "evidence": [
+        "SRC-OALD: depend on phrasal verb (sense 1: be affected/determined by; sense 2: rely on/trust somebody)",
+        "SRC-HOANG-PHE: phụ thuộc vs trông cậy / dựa vào"
+      ],
+      "recommendation": "MUST FIX in Phase 12: clean meta-language on sense-depend-contingent, construction-depend-on, and equiv-depend. DEFER second sense ('rely on') to scale production.",
+      "priority": "P1",
+      "phaseTarget": "MUST_FIX_IN_PHASE_12 (meta-language) / DEFER_TO_SCALE (second sense)",
+      "affectedCandidateIds": [
+        "entry-depend",
+        "sense-depend-contingent",
+        "construction-depend-on",
+        "equiv-depend"
+      ]
+    },
+    {
+      "matrixId": "COV-012",
+      "candidateId": "sense-advice-guidance",
+      "sourceSenseId": "candidate:sense-advice-guidance",
+      "phenomenon": "vietnamese_register_differentiation_loi_khuyen_vs_tu_van",
+      "currentRepresentation": "Single English uncountable sense (sense-advice-guidance) mapped to equiv-advice (glossVi='lời khuyên') with restrictions/0 noting 'lời tư vấn is retained only as a possible consultation/service variant'.",
+      "expectedRepresentation": "Clean sense-advice-guidance.usageNote in Phase 12 (MUST FIX). Retain equiv-advice ('lời khuyên') as primary general gloss and keep 'lời tư vấn / sự tư vấn' as a professional/institutional consultation note.",
+      "gapType": "CONTRACT_SUPPORTED",
+      "evidence": [
+        "SRC-OALD: advice noun [U]",
+        "SRC-HOANG-PHE: lời khuyên (general personal guidance) vs tư vấn (expert/professional consultation)"
+      ],
+      "recommendation": "MUST FIX in Phase 12: replace workflow meta-language in sense-advice-guidance.usageNote with learner guidance on uncountable 'advice'.",
+      "priority": "P1",
+      "phaseTarget": "MUST_FIX_IN_PHASE_12",
+      "affectedCandidateIds": [
+        "entry-advice",
+        "sense-advice-guidance",
+        "equiv-advice"
+      ]
+    },
+    {
+      "matrixId": "COV-013",
+      "candidateId": "pilot-fanout-002",
+      "sourceSenseId": null,
+      "phenomenon": "symmetric_lexical_relation_candidate_id_ordering_in_prepare_batch",
+      "currentRepresentation": "pipeline/prepare-batch.mjs resolves 'candidate:' references into preview/UUIDv7 strings without canonicalizing [sourceId, targetId] order on symmetric LexicalRelation ('rel') records before calling validateDatasetV2(), while validators/graph-v1.mjs line 165 rejects any symmetric relation where sourceId > targetId with RELATION_NOT_CANONICAL.",
+      "expectedRepresentation": "When a candidate batch includes symmetric LexicalRelation records (SYNONYM_OF, NEAR_SYNONYM_OF, ANTONYM_OF) referencing batch-local 'candidate:' IDs, prepareBatch() should sort [sourceId, targetId] in ascending ASCII order after resolving candidate IDs into canonical/preview UUIDs.",
+      "gapType": "CONTRACT_GAP",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: pipeline/prepare-batch.mjs lines 105-118 & validators/graph-v1.mjs lines 165-166"
+      ],
+      "recommendation": "SHOULD IMPROVE in Phase 12/13 tooling: normalize [sourceId, targetId] ascending ASCII order for symmetric 'rel' records during candidate ref resolution in pipeline/prepare-batch.mjs before adding symmetric relation candidates.",
+      "priority": "P2",
+      "phaseTarget": "SHOULD_IMPROVE",
+      "affectedCandidateIds": [
+        "sense-big-size",
+        "sense-large-size"
+      ]
+    },
+    {
+      "matrixId": "COV-014",
+      "candidateId": "pilot-fanout-002",
+      "sourceSenseId": null,
+      "phenomenon": "gloss_only_translation_evidence_status_and_construction_closure_in_production_gates",
+      "currentRepresentation": "1) In validators/production-gates.mjs lines 148-154, BILINGUAL_ENDPOINT_UNVERIFIED and TRANSLATION_UNREVIEWED (checking translationEvidenceStatus==='independently_reviewed') are only checked when alignmentMode==='sense_aligned', skipping gloss_only records. 2) In production-gates.mjs line 83, scoped subjectIds traversal from a sense ('sns_') follows sense.constructionIds (which is unpopulated in pilot-fanout-002.json) rather than incoming con.senseId edges.",
+      "expectedRepresentation": "1) Ensure gloss_only equivalences also require verified sourceSenseId and reviewed translationEvidenceStatus before promotion. 2) Either populate sense.constructionIds on the 7 senses with constructions or include incoming con.senseId edges in scoped publication closure.",
+      "gapType": "CONTRACT_GAP",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: validators/production-gates.mjs lines 77-86 & lines 148-154"
+      ],
+      "recommendation": "SHOULD IMPROVE in Phase 12/13: populate sense.constructionIds on the 7 senses (or update scoped dependency traversal) and enforce translationEvidenceStatus check on gloss_only equivalences at promotion time.",
+      "priority": "P2",
+      "phaseTarget": "SHOULD_IMPROVE",
+      "affectedCandidateIds": [
+        "sense-run-machine",
+        "sense-run-management",
+        "sense-analyse",
+        "sense-depend-contingent",
+        "sense-look-up-reference",
+        "sense-borrow-temporary-use",
+        "sense-lend-temporary-use"
+      ]
+    },
+    {
+      "matrixId": "COV-015",
+      "candidateId": "pilot-fanout-002",
+      "sourceSenseId": null,
+      "phenomenon": "redistributable_rights_and_example_provenance_evidence",
+      "currentRepresentation": "All 6 external sources in phase8-evidence-dossier.json are 'reference_only', SRC-VDICT and SRC-VNDIC are non-independent aggregators, and all 15 examples have exampleType='editorial_original' with empty evidenceReferences ([]).",
+      "expectedRepresentation": "Verifiable Source (src_) and Evidence (evd_) records establishing redistributable rights for dictionary_publication on first-party authored content and open-licensed references (OEWN 2024 under CC BY 4.0), while keeping OALD/Cambridge/Collins/BC strictly reference_only.",
+      "gapType": "EVIDENCE_GAP",
+      "evidence": [
+        "SRC-REPO-GOVERNANCE: data/reviews/phase8-evidence-dossier.json & validators/production-gates.mjs lines 108-162"
+      ],
+      "recommendation": "MUST FIX in Phase 12–13 before any record can transition to rightsCleared=true or publicationEligible=true.",
+      "priority": "P0",
+      "phaseTarget": "MUST_FIX_IN_PHASE_12",
+      "affectedCandidateIds": [
+        "entry-bank-financial",
+        "entry-bank-river",
+        "entry-run",
+        "entry-analyse",
+        "entry-analysis",
+        "entry-analytical",
+        "entry-big",
+        "entry-large",
+        "entry-depend",
+        "entry-look-up",
+        "entry-borrow",
+        "entry-lend",
+        "entry-advice",
+        "family-analysis",
+        "sense-bank-financial",
+        "sense-bank-river",
+        "sense-run-movement",
+        "sense-run-machine",
+        "sense-run-management",
+        "sense-analyse",
+        "sense-analysis",
+        "sense-analytical",
+        "sense-big-size",
+        "sense-large-size",
+        "sense-depend-contingent",
+        "sense-look-up-reference",
+        "sense-borrow-temporary-use",
+        "sense-lend-temporary-use",
+        "sense-advice-guidance",
+        "construction-run-machine",
+        "construction-run-management",
+        "construction-analyse-object",
+        "construction-depend-on",
+        "construction-look-up-separable",
+        "construction-borrow-from",
+        "construction-lend-double-object",
+        "construction-lend-to",
+        "equiv-bank-financial",
+        "equiv-bank-river",
+        "equiv-run-movement",
+        "equiv-run-machine-operate",
+        "equiv-run-machine-operate-alternative",
+        "equiv-run-management",
+        "equiv-analyse",
+        "equiv-analysis",
+        "equiv-analytical",
+        "equiv-big",
+        "equiv-large",
+        "equiv-depend",
+        "equiv-look-up",
+        "equiv-borrow",
+        "equiv-lend",
+        "equiv-advice",
+        "construction-run-machine-transitive"
+      ]
+    }
+  ]
+}
