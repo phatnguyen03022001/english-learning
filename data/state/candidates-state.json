@@ -722,7 +722,7 @@
       "lifecycleStatus": "active",
       "editorialStatus": "draft",
       "entryId": "lex_01a193ed-a87e-795a-9d62-ffe3da1c2cc8",
-      "definition": "Influence the condition or course of someone or something.",
+      "definition": "Have an influence on or cause a change in someone or something.",
       "grammar": {
         "transitivity": "transitive"
       },
@@ -740,7 +740,8 @@
         "evd_01a193ed-a87e-703b-a1db-ceec041e4cef"
       ],
       "_id": "sns_01a193ed-a87e-78b7-8de9-580567250234",
-      "schemaVersion": "2.0.0"
+      "schemaVersion": "2.0.0",
+      "revision": 2
     },
     {
       "lifecycleStatus": "active",
@@ -774,14 +775,15 @@
       "lifecycleStatus": "active",
       "editorialStatus": "draft",
       "entryId": "lex_01a193ed-a87e-7dc7-b765-181aace66374",
-      "definition": "An outcome attributable to an action or circumstance.",
+      "definition": "A change or result caused by an event, action, or other cause.",
       "grammar": {},
       "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
       "evidenceIds": [
         "evd_01a193ed-a87e-7e52-8fa7-73c8a3c0f90a"
       ],
       "_id": "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
-      "schemaVersion": "2.0.0"
+      "schemaVersion": "2.0.0",
+      "revision": 2
     },
     {
       "lifecycleStatus": "active",
@@ -815,7 +817,7 @@
       "lifecycleStatus": "active",
       "editorialStatus": "draft",
       "entryId": "lex_01a193ed-a87e-72e4-9dca-659acfba0eb8",
-      "definition": "Cause a planned change or outcome to become a reality.",
+      "definition": "Cause a change or outcome to happen.",
       "grammar": {
         "transitivity": "transitive"
       },
@@ -832,7 +834,8 @@
         "evd_01a193ed-a87e-73e6-958b-24fd55fb2fb4"
       ],
       "_id": "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
-      "schemaVersion": "2.0.0"
+      "schemaVersion": "2.0.0",
+      "revision": 2
     },
     {
       "lifecycleStatus": "active",
@@ -970,12 +973,12 @@
       "lifecycleStatus": "active",
       "editorialStatus": "draft",
       "entryId": "lex_01a193ed-a87e-7158-9e54-b74f5028ff28",
-      "definition": "Connected with how an economy operates.",
+      "definition": "Connected with an economy, trade, industry, or money.",
       "grammar": {},
       "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
       "examples": [
         {
-          "english": "Economic pressures.",
+          "english": "The country faces mounting economic pressures.",
           "exampleType": "unverified_candidate",
           "editorialStatus": "draft",
           "translationEvidenceStatus": "unreviewed"
@@ -983,7 +986,8 @@
       ],
       "evidenceIds": [],
       "_id": "sns_01a193ed-a87e-7d27-baa6-633285bbe58a",
-      "schemaVersion": "2.0.0"
+      "schemaVersion": "2.0.0",
+      "revision": 3
     },
     {
       "lifecycleStatus": "active",
@@ -1017,12 +1021,12 @@
       "lifecycleStatus": "active",
       "editorialStatus": "draft",
       "entryId": "lex_01a193ed-a87e-7a58-830b-935da707b70d",
-      "definition": "Using relatively little of a resource for a purpose.",
+      "definition": "Using money, time, fuel, or other resources carefully and without waste.",
       "grammar": {},
       "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
       "examples": [
         {
-          "english": "A printer economical with ink.",
+          "english": "This printer is economical with ink.",
           "exampleType": "unverified_candidate",
           "editorialStatus": "draft",
           "translationEvidenceStatus": "unreviewed"
@@ -1030,7 +1034,8 @@
       ],
       "evidenceIds": [],
       "_id": "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760",
-      "schemaVersion": "2.0.0"
+      "schemaVersion": "2.0.0",
+      "revision": 3
     },
     {
       "lifecycleStatus": "active",
@@ -1093,9 +1098,9 @@
       "claim": {
         "subjectId": "sns_01a193ed-a87e-78b7-8de9-580567250234",
         "fieldPath": "/definition",
-        "valueDigest": "0fd800fec0b86f8720eb3fe898c376f6d0acd71682f14d67c468f6e532fe3214",
+        "valueDigest": "fb0d4e6a386ce763cc279c43ff4f5cee0eab5b723c8e44ac5e8738379a3acb65",
         "specificity": "contextual_support",
-        "description": "Contextual support for the influence/result/bringing-about distinction; not approval of the drafted definition wording."
+        "description": "Contextual support for the influence distinction without restrictive course limitation."
       },
       "location": "Article paragraphs discussing Garner and the effect verb.",
       "attestationType": "reference_paraphrase",
@@ -1108,7 +1113,8 @@
         "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
       ],
       "_id": "evd_01a193ed-a87e-70d4-b87f-fb8ae44b03ab",
-      "schemaVersion": "2.0.0"
+      "schemaVersion": "2.0.0",
+      "revision": 2
     },
     {
       "lifecycleStatus": "active",
@@ -1120,9 +1126,9 @@
       "claim": {
         "subjectId": "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
         "fieldPath": "/definition",
-        "valueDigest": "71a210bca3a724a7aebbdfd9ce9c7fa77e395f7ac740c1cc48663dd570c4f742",
+        "valueDigest": "1fb07ae93068b84ae668f46e217613e299bb728df092564fe14131165af8a134",
         "specificity": "contextual_support",
-        "description": "Contextual support for the influence/result/bringing-about distinction; not approval of the drafted definition wording."
+        "description": "Contextual support for the result distinction without strict attribution restriction."
       },
       "location": "Article paragraphs discussing Garner and the effect verb.",
       "attestationType": "reference_paraphrase",
@@ -1135,7 +1141,8 @@
         "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
       ],
       "_id": "evd_01a193ed-a87e-7e52-8fa7-73c8a3c0f90a",
-      "schemaVersion": "2.0.0"
+      "schemaVersion": "2.0.0",
+      "revision": 2
     },
     {
       "lifecycleStatus": "active",
@@ -1147,9 +1154,9 @@
       "claim": {
         "subjectId": "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
         "fieldPath": "/definition",
-        "valueDigest": "71c399eb42cc99055d6f834b4b47a3d244b53a79a52f821241bad3ebd340e363",
+        "valueDigest": "993a8013a557c3e0968be469d643df6e81d2c3cbe6953a55a5db600a9693f1f9",
         "specificity": "contextual_support",
-        "description": "Contextual support for the influence/result/bringing-about distinction; not approval of the drafted definition wording."
+        "description": "Contextual support for the bringing-about distinction without planned restriction."
       },
       "location": "Article paragraphs discussing Garner and the effect verb.",
       "attestationType": "reference_paraphrase",
@@ -1162,7 +1169,8 @@
         "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
       ],
       "_id": "evd_01a193ed-a87e-73e6-958b-24fd55fb2fb4",
-      "schemaVersion": "2.0.0"
+      "schemaVersion": "2.0.0",
+      "revision": 2
     },
     {
       "lifecycleStatus": "active",
@@ -1482,6 +1490,562 @@
         "evd_01a193ed-a87e-7e7d-91a0-1882a13fd52b",
         "evd_01a193ed-a87e-7c66-80ed-01f7f038db3c"
       ]
+    },
+    {
+      "action": "draft_revision",
+      "revisionId": "rev-p004-effect-bring-about-def",
+      "digest": "61f4ecad1a381f2fcfd9507dd843cb9948e5434099b0909cc06df0697da655be",
+      "before": [
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "entryId": "lex_01a193ed-a87e-72e4-9dca-659acfba0eb8",
+          "definition": "Cause a planned change or outcome to become a reality.",
+          "grammar": {
+            "transitivity": "transitive"
+          },
+          "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
+          "examples": [
+            {
+              "english": "The revised timetable effected a lasting improvement.",
+              "exampleType": "unverified_candidate",
+              "editorialStatus": "draft",
+              "translationEvidenceStatus": "unreviewed"
+            }
+          ],
+          "evidenceIds": [
+            "evd_01a193ed-a87e-73e6-958b-24fd55fb2fb4"
+          ],
+          "_id": "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
+          "schemaVersion": "2.0.0"
+        },
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "sourceId": "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+          "assertionIds": [
+            "sns_01a193ed-a87e-7719-a47a-872b64f8c74d"
+          ],
+          "claim": {
+            "subjectId": "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
+            "fieldPath": "/definition",
+            "valueDigest": "71c399eb42cc99055d6f834b4b47a3d244b53a79a52f821241bad3ebd340e363",
+            "specificity": "contextual_support",
+            "description": "Contextual support for the influence/result/bringing-about distinction; not approval of the drafted definition wording."
+          },
+          "location": "Article paragraphs discussing Garner and the effect verb.",
+          "attestationType": "reference_paraphrase",
+          "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+          "reviewStatus": "unreviewed",
+          "independence": "unestablished",
+          "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+          "limitations": [
+            "AI-mediated reference interpretation; requires independent review.",
+            "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+          ],
+          "_id": "evd_01a193ed-a87e-73e6-958b-24fd55fb2fb4",
+          "schemaVersion": "2.0.0"
+        }
+      ],
+      "after": [
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "entryId": "lex_01a193ed-a87e-72e4-9dca-659acfba0eb8",
+          "definition": "Cause a change or outcome to happen.",
+          "grammar": {
+            "transitivity": "transitive"
+          },
+          "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
+          "examples": [
+            {
+              "english": "The revised timetable effected a lasting improvement.",
+              "exampleType": "unverified_candidate",
+              "editorialStatus": "draft",
+              "translationEvidenceStatus": "unreviewed"
+            }
+          ],
+          "evidenceIds": [
+            "evd_01a193ed-a87e-73e6-958b-24fd55fb2fb4"
+          ],
+          "_id": "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
+          "schemaVersion": "2.0.0",
+          "revision": 2
+        },
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "sourceId": "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+          "assertionIds": [
+            "sns_01a193ed-a87e-7719-a47a-872b64f8c74d"
+          ],
+          "claim": {
+            "subjectId": "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
+            "fieldPath": "/definition",
+            "valueDigest": "993a8013a557c3e0968be469d643df6e81d2c3cbe6953a55a5db600a9693f1f9",
+            "specificity": "contextual_support",
+            "description": "Contextual support for the bringing-about distinction without planned restriction."
+          },
+          "location": "Article paragraphs discussing Garner and the effect verb.",
+          "attestationType": "reference_paraphrase",
+          "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+          "reviewStatus": "unreviewed",
+          "independence": "unestablished",
+          "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+          "limitations": [
+            "AI-mediated reference interpretation; requires independent review.",
+            "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+          ],
+          "_id": "evd_01a193ed-a87e-73e6-958b-24fd55fb2fb4",
+          "schemaVersion": "2.0.0",
+          "revision": 2
+        }
+      ]
+    },
+    {
+      "action": "draft_revision",
+      "revisionId": "rev-p004-affect-influence-def",
+      "digest": "7666d5a0efafc0da27b941af8c66c28ebc9cbbb02a254fd60e2bea6788e1bcaa",
+      "before": [
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "entryId": "lex_01a193ed-a87e-795a-9d62-ffe3da1c2cc8",
+          "definition": "Influence the condition or course of someone or something.",
+          "grammar": {
+            "transitivity": "transitive"
+          },
+          "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
+          "examples": [
+            {
+              "english": "The revised timetable affected attendance.",
+              "exampleType": "unverified_candidate",
+              "editorialStatus": "draft",
+              "translationEvidenceStatus": "unreviewed"
+            }
+          ],
+          "evidenceIds": [
+            "evd_01a193ed-a87e-70d4-b87f-fb8ae44b03ab",
+            "evd_01a193ed-a87e-703b-a1db-ceec041e4cef"
+          ],
+          "_id": "sns_01a193ed-a87e-78b7-8de9-580567250234",
+          "schemaVersion": "2.0.0"
+        },
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "sourceId": "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+          "assertionIds": [
+            "sns_01a193ed-a87e-78b7-8de9-580567250234"
+          ],
+          "claim": {
+            "subjectId": "sns_01a193ed-a87e-78b7-8de9-580567250234",
+            "fieldPath": "/definition",
+            "valueDigest": "0fd800fec0b86f8720eb3fe898c376f6d0acd71682f14d67c468f6e532fe3214",
+            "specificity": "contextual_support",
+            "description": "Contextual support for the influence/result/bringing-about distinction; not approval of the drafted definition wording."
+          },
+          "location": "Article paragraphs discussing Garner and the effect verb.",
+          "attestationType": "reference_paraphrase",
+          "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+          "reviewStatus": "unreviewed",
+          "independence": "unestablished",
+          "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+          "limitations": [
+            "AI-mediated reference interpretation; requires independent review.",
+            "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+          ],
+          "_id": "evd_01a193ed-a87e-70d4-b87f-fb8ae44b03ab",
+          "schemaVersion": "2.0.0"
+        }
+      ],
+      "after": [
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "entryId": "lex_01a193ed-a87e-795a-9d62-ffe3da1c2cc8",
+          "definition": "Have an influence on or cause a change in someone or something.",
+          "grammar": {
+            "transitivity": "transitive"
+          },
+          "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
+          "examples": [
+            {
+              "english": "The revised timetable affected attendance.",
+              "exampleType": "unverified_candidate",
+              "editorialStatus": "draft",
+              "translationEvidenceStatus": "unreviewed"
+            }
+          ],
+          "evidenceIds": [
+            "evd_01a193ed-a87e-70d4-b87f-fb8ae44b03ab",
+            "evd_01a193ed-a87e-703b-a1db-ceec041e4cef"
+          ],
+          "_id": "sns_01a193ed-a87e-78b7-8de9-580567250234",
+          "schemaVersion": "2.0.0",
+          "revision": 2
+        },
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "sourceId": "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+          "assertionIds": [
+            "sns_01a193ed-a87e-78b7-8de9-580567250234"
+          ],
+          "claim": {
+            "subjectId": "sns_01a193ed-a87e-78b7-8de9-580567250234",
+            "fieldPath": "/definition",
+            "valueDigest": "fb0d4e6a386ce763cc279c43ff4f5cee0eab5b723c8e44ac5e8738379a3acb65",
+            "specificity": "contextual_support",
+            "description": "Contextual support for the influence distinction without restrictive course limitation."
+          },
+          "location": "Article paragraphs discussing Garner and the effect verb.",
+          "attestationType": "reference_paraphrase",
+          "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+          "reviewStatus": "unreviewed",
+          "independence": "unestablished",
+          "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+          "limitations": [
+            "AI-mediated reference interpretation; requires independent review.",
+            "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+          ],
+          "_id": "evd_01a193ed-a87e-70d4-b87f-fb8ae44b03ab",
+          "schemaVersion": "2.0.0",
+          "revision": 2
+        }
+      ]
+    },
+    {
+      "action": "draft_revision",
+      "revisionId": "rev-p004-effect-result-def",
+      "digest": "b52f7a5d3450b02583a42cda777d3e155e79d5cf87019c778d787a133c9ef170",
+      "before": [
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "entryId": "lex_01a193ed-a87e-7dc7-b765-181aace66374",
+          "definition": "An outcome attributable to an action or circumstance.",
+          "grammar": {},
+          "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
+          "evidenceIds": [
+            "evd_01a193ed-a87e-7e52-8fa7-73c8a3c0f90a"
+          ],
+          "_id": "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
+          "schemaVersion": "2.0.0"
+        },
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "sourceId": "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+          "assertionIds": [
+            "sns_01a193ed-a87e-763c-a206-a71d777d60a5"
+          ],
+          "claim": {
+            "subjectId": "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
+            "fieldPath": "/definition",
+            "valueDigest": "71a210bca3a724a7aebbdfd9ce9c7fa77e395f7ac740c1cc48663dd570c4f742",
+            "specificity": "contextual_support",
+            "description": "Contextual support for the influence/result/bringing-about distinction; not approval of the drafted definition wording."
+          },
+          "location": "Article paragraphs discussing Garner and the effect verb.",
+          "attestationType": "reference_paraphrase",
+          "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+          "reviewStatus": "unreviewed",
+          "independence": "unestablished",
+          "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+          "limitations": [
+            "AI-mediated reference interpretation; requires independent review.",
+            "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+          ],
+          "_id": "evd_01a193ed-a87e-7e52-8fa7-73c8a3c0f90a",
+          "schemaVersion": "2.0.0"
+        }
+      ],
+      "after": [
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "entryId": "lex_01a193ed-a87e-7dc7-b765-181aace66374",
+          "definition": "A change or result caused by an event, action, or other cause.",
+          "grammar": {},
+          "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
+          "evidenceIds": [
+            "evd_01a193ed-a87e-7e52-8fa7-73c8a3c0f90a"
+          ],
+          "_id": "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
+          "schemaVersion": "2.0.0",
+          "revision": 2
+        },
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "sourceId": "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+          "assertionIds": [
+            "sns_01a193ed-a87e-763c-a206-a71d777d60a5"
+          ],
+          "claim": {
+            "subjectId": "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
+            "fieldPath": "/definition",
+            "valueDigest": "1fb07ae93068b84ae668f46e217613e299bb728df092564fe14131165af8a134",
+            "specificity": "contextual_support",
+            "description": "Contextual support for the result distinction without strict attribution restriction."
+          },
+          "location": "Article paragraphs discussing Garner and the effect verb.",
+          "attestationType": "reference_paraphrase",
+          "collectionMethod": "Writer inspected extracted source text on 2026-11-01; no source wording copied.",
+          "reviewStatus": "unreviewed",
+          "independence": "unestablished",
+          "rightsNote": "Reference-only. No redistribution grant; this record neither authenticates evidence nor licenses publication.",
+          "limitations": [
+            "AI-mediated reference interpretation; requires independent review.",
+            "Support is restricted to the described claim; it does not validate examples, Vietnamese glosses, or complete sense coverage."
+          ],
+          "_id": "evd_01a193ed-a87e-7e52-8fa7-73c8a3c0f90a",
+          "schemaVersion": "2.0.0",
+          "revision": 2
+        }
+      ]
+    },
+    {
+      "action": "draft_revision",
+      "revisionId": "rev-p004-economic-economy-def",
+      "digest": "92cb33acf763314da766618fb37c1b75479a5fc6080be63c071790dcc3377a21",
+      "before": [
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "entryId": "lex_01a193ed-a87e-7158-9e54-b74f5028ff28",
+          "definition": "Connected with how an economy operates.",
+          "grammar": {},
+          "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
+          "examples": [
+            {
+              "english": "Economic pressures.",
+              "exampleType": "unverified_candidate",
+              "editorialStatus": "draft",
+              "translationEvidenceStatus": "unreviewed"
+            }
+          ],
+          "evidenceIds": [],
+          "_id": "sns_01a193ed-a87e-7d27-baa6-633285bbe58a",
+          "schemaVersion": "2.0.0"
+        }
+      ],
+      "after": [
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "entryId": "lex_01a193ed-a87e-7158-9e54-b74f5028ff28",
+          "definition": "Connected with an economy, trade, industry, or money.",
+          "grammar": {},
+          "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
+          "examples": [
+            {
+              "english": "Economic pressures.",
+              "exampleType": "unverified_candidate",
+              "editorialStatus": "draft",
+              "translationEvidenceStatus": "unreviewed"
+            }
+          ],
+          "evidenceIds": [],
+          "_id": "sns_01a193ed-a87e-7d27-baa6-633285bbe58a",
+          "schemaVersion": "2.0.0",
+          "revision": 2
+        }
+      ]
+    },
+    {
+      "action": "draft_revision",
+      "revisionId": "rev-p004-economical-resources-def",
+      "digest": "58c04b8122e81bad2f1a5197d441357cdb1adeac2a5cce31fbd2a130668fdd65",
+      "before": [
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "entryId": "lex_01a193ed-a87e-7a58-830b-935da707b70d",
+          "definition": "Using relatively little of a resource for a purpose.",
+          "grammar": {},
+          "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
+          "examples": [
+            {
+              "english": "A printer economical with ink.",
+              "exampleType": "unverified_candidate",
+              "editorialStatus": "draft",
+              "translationEvidenceStatus": "unreviewed"
+            }
+          ],
+          "evidenceIds": [],
+          "_id": "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760",
+          "schemaVersion": "2.0.0"
+        }
+      ],
+      "after": [
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "entryId": "lex_01a193ed-a87e-7a58-830b-935da707b70d",
+          "definition": "Using money, time, fuel, or other resources carefully and without waste.",
+          "grammar": {},
+          "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
+          "examples": [
+            {
+              "english": "A printer economical with ink.",
+              "exampleType": "unverified_candidate",
+              "editorialStatus": "draft",
+              "translationEvidenceStatus": "unreviewed"
+            }
+          ],
+          "evidenceIds": [],
+          "_id": "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760",
+          "schemaVersion": "2.0.0",
+          "revision": 2
+        }
+      ]
+    },
+    {
+      "action": "draft_revision",
+      "revisionId": "rev-p004-economic-economy-example",
+      "digest": "761ce81b519a149f1a467e7938594e376aba74d9056ddbb3197037c0033c5661",
+      "before": [
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "entryId": "lex_01a193ed-a87e-7158-9e54-b74f5028ff28",
+          "definition": "Connected with an economy, trade, industry, or money.",
+          "grammar": {},
+          "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
+          "examples": [
+            {
+              "english": "Economic pressures.",
+              "exampleType": "unverified_candidate",
+              "editorialStatus": "draft",
+              "translationEvidenceStatus": "unreviewed"
+            }
+          ],
+          "evidenceIds": [],
+          "_id": "sns_01a193ed-a87e-7d27-baa6-633285bbe58a",
+          "schemaVersion": "2.0.0",
+          "revision": 2
+        }
+      ],
+      "after": [
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "entryId": "lex_01a193ed-a87e-7158-9e54-b74f5028ff28",
+          "definition": "Connected with an economy, trade, industry, or money.",
+          "grammar": {},
+          "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
+          "examples": [
+            {
+              "english": "The country faces mounting economic pressures.",
+              "exampleType": "unverified_candidate",
+              "editorialStatus": "draft",
+              "translationEvidenceStatus": "unreviewed"
+            }
+          ],
+          "evidenceIds": [],
+          "_id": "sns_01a193ed-a87e-7d27-baa6-633285bbe58a",
+          "schemaVersion": "2.0.0",
+          "revision": 3
+        }
+      ]
+    },
+    {
+      "action": "draft_revision",
+      "revisionId": "rev-p004-economical-resources-example",
+      "digest": "1163de8b2bfcf728bd61148426c2accd4ac2b98ef51f3848d18bde2d156d570d",
+      "before": [
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "entryId": "lex_01a193ed-a87e-7a58-830b-935da707b70d",
+          "definition": "Using money, time, fuel, or other resources carefully and without waste.",
+          "grammar": {},
+          "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
+          "examples": [
+            {
+              "english": "A printer economical with ink.",
+              "exampleType": "unverified_candidate",
+              "editorialStatus": "draft",
+              "translationEvidenceStatus": "unreviewed"
+            }
+          ],
+          "evidenceIds": [],
+          "_id": "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760",
+          "schemaVersion": "2.0.0",
+          "revision": 2
+        }
+      ],
+      "after": [
+        {
+          "lifecycleStatus": "active",
+          "editorialStatus": "draft",
+          "entryId": "lex_01a193ed-a87e-7a58-830b-935da707b70d",
+          "definition": "Using money, time, fuel, or other resources carefully and without waste.",
+          "grammar": {},
+          "usageNote": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
+          "examples": [
+            {
+              "english": "This printer is economical with ink.",
+              "exampleType": "unverified_candidate",
+              "editorialStatus": "draft",
+              "translationEvidenceStatus": "unreviewed"
+            }
+          ],
+          "evidenceIds": [],
+          "_id": "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760",
+          "schemaVersion": "2.0.0",
+          "revision": 3
+        }
+      ]
     }
-  ]
+  ],
+  "revisions": {
+    "rev-p004-effect-bring-about-def": {
+      "digest": "61f4ecad1a381f2fcfd9507dd843cb9948e5434099b0909cc06df0697da655be",
+      "recordIds": [
+        "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
+        "evd_01a193ed-a87e-73e6-958b-24fd55fb2fb4"
+      ]
+    },
+    "rev-p004-affect-influence-def": {
+      "digest": "7666d5a0efafc0da27b941af8c66c28ebc9cbbb02a254fd60e2bea6788e1bcaa",
+      "recordIds": [
+        "sns_01a193ed-a87e-78b7-8de9-580567250234",
+        "evd_01a193ed-a87e-70d4-b87f-fb8ae44b03ab"
+      ]
+    },
+    "rev-p004-effect-result-def": {
+      "digest": "b52f7a5d3450b02583a42cda777d3e155e79d5cf87019c778d787a133c9ef170",
+      "recordIds": [
+        "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
+        "evd_01a193ed-a87e-7e52-8fa7-73c8a3c0f90a"
+      ]
+    },
+    "rev-p004-economic-economy-def": {
+      "digest": "92cb33acf763314da766618fb37c1b75479a5fc6080be63c071790dcc3377a21",
+      "recordIds": [
+        "sns_01a193ed-a87e-7d27-baa6-633285bbe58a"
+      ]
+    },
+    "rev-p004-economical-resources-def": {
+      "digest": "58c04b8122e81bad2f1a5197d441357cdb1adeac2a5cce31fbd2a130668fdd65",
+      "recordIds": [
+        "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760"
+      ]
+    },
+    "rev-p004-economic-economy-example": {
+      "digest": "761ce81b519a149f1a467e7938594e376aba74d9056ddbb3197037c0033c5661",
+      "recordIds": [
+        "sns_01a193ed-a87e-7d27-baa6-633285bbe58a"
+      ]
+    },
+    "rev-p004-economical-resources-example": {
+      "digest": "1163de8b2bfcf728bd61148426c2accd4ac2b98ef51f3848d18bde2d156d570d",
+      "recordIds": [
+        "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760"
+      ]
+    }
+  }
 }

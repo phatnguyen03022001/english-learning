@@ -258,3 +258,92 @@ test("in-memory candidate revision lifecycle, CAS control, replay, and fail-clos
     assert.equal(eqv.editorialStatus, "draft");
   }
 });
+
+test("persisted canonical draft state satisfies Pilot 004 invariants and seven draft corrections", () => {
+  const statePath = path.join(rootDir, "data/state/candidates-state.json");
+  assert.equal(fs.existsSync(statePath), true, "Canonical state file must exist");
+
+  const state = JSON.parse(fs.readFileSync(statePath, "utf8"));
+  assert.equal(state.formatVersion, 1);
+  assert.equal(state.records.length, 45, "Must contain exactly 45 records");
+  assert.equal(Object.keys(state.batches).length, 1);
+  assert.ok(state.batches["pilot-fanout-004"]);
+  assert.equal(Object.keys(state.mappings).length, 45);
+  assert.equal(Object.keys(state.sourceMappings).length, 45);
+
+  const uuidv7Regex = /^[a-z]{3}_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
+  const uniqueIds = new Set();
+  for (const record of state.records) {
+    assert.match(record._id, uuidv7Regex, `Invalid UUIDv7 ID: ${record._id}`);
+    assert.equal(uniqueIds.has(record._id), false, `Duplicate ID: ${record._id}`);
+    uniqueIds.add(record._id);
+    assert.equal(record.editorialStatus, "draft");
+    assert.equal(record.lifecycleStatus, "active");
+  }
+
+  // Helper to get record by candidateId
+  const getRecordByCandidate = cid => {
+    const mapping = state.mappings[`pilot-fanout-004#${cid}`];
+    assert.ok(mapping, `Mapping for ${cid} must exist`);
+    const rec = state.records.find(r => r._id === mapping.canonicalId);
+    assert.ok(rec, `Record for ${cid} (${mapping.canonicalId}) must exist`);
+    return rec;
+  };
+
+  // 1. sense-effect-bring-about
+  const effectBringAbout = getRecordByCandidate("sense-effect-bring-about");
+  assert.equal(effectBringAbout.definition, "Cause a change or outcome to happen.");
+  assert.equal(effectBringAbout.revision, 2);
+  const evdBringAbout = getRecordByCandidate("evidence-effect-bring-about");
+  assert.equal(evdBringAbout.claim.valueDigest, jsonDigest(effectBringAbout.definition));
+  assert.equal(evdBringAbout.revision, 2);
+
+  // 2. sense-affect-influence
+  const affectInfluence = getRecordByCandidate("sense-affect-influence");
+  assert.equal(affectInfluence.definition, "Have an influence on or cause a change in someone or something.");
+  assert.equal(affectInfluence.revision, 2);
+  const evdAffect = getRecordByCandidate("evidence-affect-influence");
+  assert.equal(evdAffect.claim.valueDigest, jsonDigest(affectInfluence.definition));
+  assert.equal(evdAffect.revision, 2);
+
+  // 3. sense-effect-result
+  const effectResult = getRecordByCandidate("sense-effect-result");
+  assert.equal(effectResult.definition, "A change or result caused by an event, action, or other cause.");
+  assert.equal(effectResult.revision, 2);
+  const evdResult = getRecordByCandidate("evidence-effect-result");
+  assert.equal(evdResult.claim.valueDigest, jsonDigest(effectResult.definition));
+  assert.equal(evdResult.revision, 2);
+
+  // 4 & 13. sense-economic-economy
+  const economic = getRecordByCandidate("sense-economic-economy");
+  assert.equal(economic.definition, "Connected with an economy, trade, industry, or money.");
+  assert.equal(economic.examples[0].english, "The country faces mounting economic pressures.");
+  assert.equal(economic.revision, 3);
+
+  // 5 & 14. sense-economical-resources
+  const economical = getRecordByCandidate("sense-economical-resources");
+  assert.equal(economical.definition, "Using money, time, fuel, or other resources carefully and without waste.");
+  assert.equal(economical.examples[0].english, "This printer is economical with ink.");
+  assert.equal(economical.revision, 3);
+
+  // Unverified translation equivalences remain HOLD
+  const holdGlossCandidates = ["gloss-effect-result", "gloss-raise-increase", "gloss-economical-resources"];
+  for (const cid of holdGlossCandidates) {
+    const eqv = getRecordByCandidate(cid);
+    assert.equal(eqv.alignmentMode, "gloss_only");
+    assert.equal(eqv.targetSenseId, undefined);
+    assert.equal(eqv.editorialStatus, "draft");
+  }
+
+  // CLI check confirms storage validity and fail-closed publication
+  const run = spawnSync(process.execPath, [cliPath, "check", "--state", statePath], {
+    cwd: rootDir,
+    encoding: "utf8"
+  });
+  assert.equal(run.status, 0);
+  const checkReport = JSON.parse(run.stdout);
+  assert.equal(checkReport.status, "valid");
+  assert.equal(checkReport.storageValid, true);
+  assert.equal(checkReport.issues.length, 0);
+  assert.equal(checkReport.publication.eligible, false);
+});
