@@ -1,0 +1,887 @@
+{
+  "artifactType": "pilot-004-bilingual-evidence-review",
+  "dossierVersion": "pilot-fanout-004-bilingual.v1",
+  "task": "008",
+  "reviewDate": "2026-11-01",
+  "repository": "phatnguyen03022001/english-learning",
+  "branch": "main",
+  "baselineHead": "3390c68d131c3b87325f78a09045fb99ce06da89",
+  "canonicalStateHash": "43fe32215c4e005198b2bda8ecd12f0094862f350348f3b16da6bb05ce1ad00e",
+  "executor": {
+    "identity": "Google Antigravity",
+    "model": "Gemini 3.8 Flash (High)",
+    "role": "Single Integration Writer (AI-assisted evidence preparation, not authenticated editorial approval)",
+    "multiPassAudit": "Multiple self-challenge analysis passes conducted by the single executor; no simulated independent reviewers, no multi-agent fanout, no self-appointment as Lead Editorial Reviewer."
+  },
+  "executionBoundaries": {
+    "codexStatus": "NOT_AVAILABLE; Antigravity operates as sole executor on main branch",
+    "branchPolicy": "MAIN_ONLY",
+    "atlasTargetProject": "ielts-tradition",
+    "atlasTargetCluster": "IeltsTradition",
+    "atlasTargetDatabase": "ielts-tradition",
+    "atlasWritesAuthorized": false,
+    "atlasMutationsExecuted": "NONE",
+    "stateMutationsExecuted": "NONE; data/state/candidates-state.json strictly unmutated",
+    "publicationEligibility": "NOT_READY",
+    "failClosedGatesActive": true
+  },
+  "inputReferences": {
+    "candidateBatch": "data/candidates/pilot-fanout-004.json",
+    "qualityReview": "data/reviews/pilot-fanout-004-quality-review.json",
+    "adversarialReview": "data/reviews/pilot-fanout-004-adversarial-review.json",
+    "remediationClosure": "data/reviews/pilot-fanout-004-remediation-closure.json",
+    "persistedState": "data/state/candidates-state.json"
+  },
+  "inputHashes": {
+    "candidateBatchSha256": "1ab6c23dc3f0263996424edc004f85e62a2e7a23ff6aeda861f370224f4c6928",
+    "qualityReviewSha256": "37b3552b9ccb4882ac840852ddab96c1aaaaf109d0f1f496f34092fbd61fddd0",
+    "adversarialReviewSha256": "7a36ed55b310a69183af7bd5bc62e032379699436761ad1b568524e8211230c4",
+    "remediationClosureSha256": "5a9925337a9c1fd01c8b56d3577e205ad850b57e9e3a345b15a68f2020c89960",
+    "persistedStateSha256": "43fe32215c4e005198b2bda8ecd12f0094862f350348f3b16da6bb05ce1ad00e"
+  },
+  "bilingualReviewSummary": {
+    "totalGlossesReviewed": 7,
+    "assessmentCounts": {
+      "SUPPORTED": 2,
+      "PARTIALLY_SUPPORTED": 4,
+      "CONTRADICTED": 1,
+      "UNVERIFIED": 0
+    },
+    "dispositionCounts": {
+      "EVIDENCE_READY_FOR_HUMAN_REVIEW": 3,
+      "CORRECTION_PROPOSED": 3,
+      "CONTRADICTED_REQUIRES_REMEDIATION": 1,
+      "HOLD_INSUFFICIENT_EVIDENCE": 0
+    },
+    "remainingHoldCount": 7,
+    "editorialNotes": [
+      "All 7 translation equivalences in canonical draft state remain on hold with draft/unreviewed status.",
+      "Zero synthetic Vietnamese LexicalSense identities or targetSenseIds were fabricated (all 7 remain gloss_only).",
+      "Three previously UNVERIFIED claims (P004-012, P004-033, P004-045) have been resolved into rigorous research assessments with identified root causes.",
+      "AI-assisted evidence research provides a verified audit trail for human review; it does not constitute authenticated editorial sign-off or publication clearance."
+    ]
+  },
+  "threePriorityClaimsDeepDive": {
+    "P004-012": {
+      "claimId": "P004-012",
+      "candidateId": "gloss-effect-result",
+      "canonicalId": "eqv_01a193ed-a87e-75b1-88db-0134459a7fad",
+      "lemma": "effect",
+      "pos": "NOUN",
+      "sourceSenseId": "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
+      "currentGlossVi": "kết quả",
+      "context": "a resulting outcome; the alternative gloss tác động needs separate contextual review",
+      "evidenceAssessment": "CONTRADICTED",
+      "disposition": "CONTRADICTED_REQUIRES_REMEDIATION",
+      "researchFindings": {
+        "outcomeVersusImpact": "In contemporary lexicography (OALD, CALD, Longman), noun 'effect' spans two primary semantic dimensions: (1) impact/influence on an entity (typically governing 'on/upon') and (2) outcome/result of a cause. In Vietnamese, dimension (1) maps to 'tác động', 'ảnh hưởng', 'hiệu quả', or 'tác dụng', whereas dimension (2) maps to 'kết quả'.",
+        "contextsSupportingKetQua": "Translating 'effect' as 'kết quả' is attested primarily in logical, philosophical, or fixed phrase patterns: 'cause and effect' (nguyên nhân và kết quả), 'to that effect' (với ý tứ/kết quả đó), 'to little/no effect' (không đem lại kết quả gì).",
+        "contextsRequiringAlternativeGlosses": [
+          "'have an effect on': 'có tác động / ảnh hưởng đến' (translating as 'có kết quả lên' is unidiomatic/ungrammatical in Vietnamese)",
+          "'side effect': 'tác dụng phụ' (never 'kết quả phụ')",
+          "'the effect of heat on metals': 'tác động của nhiệt lên kim loại'",
+          "'take effect': 'phát huy tác dụng / có hiệu lực' (never 'lấy kết quả')",
+          "'the medicine had no effect': 'thuốc không có tác dụng gì'"
+        ],
+        "senseConstraintAnalysis": "The existing English definition ('A change or result caused by an event, action, or other cause.') is polysemous, combining 'change' (impact) and 'result' (outcome). A standalone gloss 'kết quả' covers only the outcome dimension while misrepresenting the predominant verbal complementation pattern with 'on'. The candidate context note explicitly acknowledged this deficit ('the alternative gloss tác động needs separate contextual review').",
+        "sourceMappingDefect": "The candidate mapping in Pilot 004 included 'source-cambridge-vi-raise' (an irrelevant raise page), and cited 'source-cambridge-vi-effect'. Cambridge English–Vietnamese noun entries provide 'hiệu quả, tác dụng, ấn tượng', but not 'kết quả'.",
+        "proposedCASRemediation": {
+          "action": "REPLACE_GLOSS_AND_CLEAN_SOURCES",
+          "fieldPath": "/glossVi",
+          "proposedValue": "tác động, ảnh hưởng; kết quả",
+          "proposedContext": "impact on someone/something (have an effect on); outcome in cause-and-effect contexts",
+          "sourceMappingCorrection": "Remove source-cambridge-vi-raise from mapping"
+        }
+      }
+    },
+    "P004-033": {
+      "claimId": "P004-033",
+      "candidateId": "gloss-raise-increase",
+      "canonicalId": "eqv_01a193ed-a87e-72bb-87d8-8364114e27a8",
+      "lemma": "raise",
+      "pos": "VERB",
+      "sourceSenseId": "sns_01a193ed-a87e-7992-9030-92faa55655b4",
+      "currentGlossVi": "làm tăng",
+      "context": "causing a quantitative increase, such as transport costs; nâng lên is pending review for other contexts",
+      "evidenceAssessment": "PARTIALLY_SUPPORTED",
+      "disposition": "CORRECTION_PROPOSED",
+      "researchFindings": {
+        "transitiveQuantitativeIncrease": "English 'raise' in this sense is strictly transitive with causative valency [raise + NP] (e.g., raise prices, raise taxes, raise salaries, raise transport costs). The Vietnamese gloss 'làm tăng' precisely encapsulates this causative transitivity ('cause to become greater'), distinguishing it from intransitive 'tăng' (rise).",
+        "lexicalComparison": {
+          "lamTang": "Idiomatic and exact for quantitative/financial nouns: 'làm tăng chi phí vận chuyển', 'làm tăng giá cả', 'làm tăng thuế'.",
+          "nang": "Used for abstract qualitative elevation: 'nâng cao tiêu chuẩn' (raise standards), 'nâng cao nhận thức' (raise awareness). Rarely used as standalone 'nâng chi phí'.",
+          "nangLen": "Primarily physical spatial elevation ('nâng cờ lên', 'nâng tạ lên') or figurative ascension; less natural when governing numeric costs directly."
+        },
+        "contrastWithRise": "English 'rise' is intransitive ('transport costs rose' -> 'chi phí vận chuyển tăng lên'). English 'raise' requires a direct object ('shortage raised transport costs' -> 'sự khan hiếm làm tăng chi phí vận chuyển'). Conflating 'raise' with 'rise' is a frequent learner error that the gloss 'làm tăng' effectively prevents.",
+        "sourceMappingDefect": "Pilot 004 mapped 'source-cambridge-vi-effect' to this claim in addition to 'source-cambridge-vi-raise'. The effect page is entirely irrelevant and must be removed.",
+        "proposedCASRemediation": {
+          "action": "RETAIN_GLOSS_AND_PRUNE_SOURCES",
+          "fieldPath": "/glossVi",
+          "proposedValue": "làm tăng",
+          "proposedContext": "causing a quantitative increase (prices, costs, taxes); for qualitative targets (standards, awareness) use nâng cao",
+          "sourceMappingCorrection": "Remove source-cambridge-vi-effect from mapping; retain source-cambridge-vi-raise"
+        }
+      }
+    },
+    "P004-045": {
+      "claimId": "P004-045",
+      "candidateId": "gloss-economical-resources",
+      "canonicalId": "eqv_01a193ed-a87e-758e-899d-001c22a4579f",
+      "lemma": "economical",
+      "pos": "ADJ",
+      "sourceSenseId": "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760",
+      "currentGlossVi": "tiết kiệm",
+      "context": "resource use, such as ink consumption",
+      "evidenceAssessment": "PARTIALLY_SUPPORTED",
+      "disposition": "CORRECTION_PROPOSED",
+      "researchFindings": {
+        "resourceCarefulUse": "English 'economical' specifically denotes avoiding waste in money, fuel, time, or supplies ('an economical car', 'economical with ink'). Vietnamese 'tiết kiệm' is the exact lexicographic equivalent across all major authorities (Cambridge, Oxford, Longman).",
+        "economicVersusEconomical": "Learners frequently confuse relational adjective 'economic' (thuộc về kinh tế) with evaluative adjective 'economical' (tiết kiệm). Maintaining 'tiết kiệm' as the gloss is pedagogically crucial to prevent false synonymy.",
+        "syntacticBehavior": {
+          "attributive": "'an economical car' -> 'xe tiết kiệm (nhiên liệu)'",
+          "predicative": "'This printer is economical with ink' -> 'Máy in này tiết kiệm mực'"
+        },
+        "sourceMisattributionRootCause": "Pilot 004 mapped candidate gloss-economical-resources to 'source-cambridge-vi-economic' (URL: https://dictionary.cambridge.org/dictionary/english-vietnamese/economic). That URL documents 'economic', NOT 'economical'! Cambridge Dictionary hosts a dedicated entry for 'economical' at https://dictionary.cambridge.org/dictionary/english-vietnamese/economical which explicitly translates it as 'tiết kiệm' (PASSWORD English–Vietnamese Dictionary, © K Dictionaries Ltd. 2015).",
+        "proposedCASRemediation": {
+          "action": "REGISTER_NEW_SOURCE_AND_REMAP",
+          "fieldPath": "/glossVi",
+          "proposedValue": "tiết kiệm",
+          "newSourceRegistration": {
+            "sourceKey": "source-cambridge-vi-economical",
+            "title": "Cambridge English–Vietnamese: economical",
+            "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/economical",
+            "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+            "edition": "PASSWORD English–Vietnamese Dictionary, 2015 (K Dictionaries Ltd.)",
+            "rights": {
+              "status": "reference_only"
+            }
+          },
+          "sourceMappingCorrection": "Unmap source-cambridge-vi-economic; map newly registered source-cambridge-vi-economical"
+        }
+      }
+    }
+  },
+  "sevenClaimAssessments": [
+    {
+      "claimId": "P004-007",
+      "candidateId": "gloss-affect-influence",
+      "canonicalId": "eqv_01a193ed-a87e-7cbb-a6c4-57b1227c6ad2",
+      "lemma": "affect",
+      "pos": "VERB",
+      "sourceSenseId": "sns_01a193ed-a87e-78b7-8de9-580567250234",
+      "canonicalDefinitionEn": "Have an influence on or cause a change in someone or something.",
+      "canonicalExampleEn": "The revised timetable affected attendance.",
+      "glossVi": "ảnh hưởng đến",
+      "context": "influence on attendance or a comparable outcome",
+      "alignmentMode": "gloss_only",
+      "targetSenseId": null,
+      "evidenceAssessment": "PARTIALLY_SUPPORTED",
+      "disposition": "EVIDENCE_READY_FOR_HUMAN_REVIEW",
+      "lexicographicAnalysis": {
+        "semanticRange": "Denotes causing an effect or alteration in an entity, condition, or state.",
+        "contextualEquivalence": "Natural Vietnamese rendering in transitive influence contexts: 'ảnh hưởng đến lượng người tham gia'.",
+        "naturalWording": "Vietnamese uses 'ảnh hưởng đến' or 'ảnh hưởng tới' as a verbal phrase taking a prepositional object.",
+        "registerDifferences": "Neutral to formal; suitable across academic and general registers.",
+        "collocationCompatibility": "Compatible with 'lượng người tham gia', 'sức khỏe', 'thời tiết', 'tâm lý'.",
+        "counterexamples": "In emotional shock senses ('deeply affected'), Vietnamese requires 'làm xúc động' or 'làm chạnh lòng'; in pretense senses ('affected indifference'), Vietnamese requires 'giả vờ/ra vẻ'. These are separate omitted senses.",
+        "falseEquivalenceRisk": "Learner confusion with noun 'effect'; gloss correctly anchors verbal influence.",
+        "crossLingualValency": "English transitive verb [affect + NP] corresponds to Vietnamese verb phrase [ảnh hưởng đến + NP]."
+      },
+      "adversarialReview": {
+        "q1_impliesDifferentSense": "No; 'ảnh hưởng đến' unambiguously targets the influence sense.",
+        "q2_naturalInContext": "Yes; 'ảnh hưởng đến lượng người tham gia' is fully natural.",
+        "q3_tooGeneralOrNarrow": "Well-calibrated; 'tác động đến' is a near-synonym variant.",
+        "q4_valencyCorresponds": "Yes; English direct object corresponds to Vietnamese prepositional complement with 'đến'.",
+        "q5_collocationRisk": "Low; distinct from noun collocations.",
+        "q6_sourceSupportsExactGloss": "Cambridge English–Vietnamese indexed entry gives 'ảnh hưởng, tác động' and attestations with 'đến' (e.g., affects many older people -> ảnh hưởng đến nhiều người cao tuổi).",
+        "q7_inferredFromAIGenerated": "No; corroborated by external bilingual dictionary entries.",
+        "q8_contradictoryExample": "Only in omitted emotion or pretense senses.",
+        "q9_evidenceIndependentOfAI": "Yes; external learner dictionary provides independent grounding.",
+        "q10_remainingUncertainty": "Direct page HTTP returned 403; access via search index excerpt. Underlying rights belong to K Dictionaries (reference_only)."
+      },
+      "sourceEvidence": {
+        "citedSourceIds": [
+          "source-cambridge-vi-affect"
+        ],
+        "canonicalSourceId": "src_01a193ed-a87d-76f2-8d29-2181f47a50f3",
+        "sourceTitle": "Cambridge English–Vietnamese: affect",
+        "accessMethod": "Live search index extract (direct HTTP GET returned 403 Cloudflare block)",
+        "rightsStatus": "reference_only"
+      }
+    },
+    {
+      "claimId": "P004-012",
+      "candidateId": "gloss-effect-result",
+      "canonicalId": "eqv_01a193ed-a87e-75b1-88db-0134459a7fad",
+      "lemma": "effect",
+      "pos": "NOUN",
+      "sourceSenseId": "sns_01a193ed-a87e-763c-a206-a71d777d60a5",
+      "canonicalDefinitionEn": "A change or result caused by an event, action, or other cause.",
+      "canonicalExampleEn": null,
+      "glossVi": "kết quả",
+      "context": "a resulting outcome; the alternative gloss tác động needs separate contextual review",
+      "alignmentMode": "gloss_only",
+      "targetSenseId": null,
+      "evidenceAssessment": "CONTRADICTED",
+      "disposition": "CONTRADICTED_REQUIRES_REMEDIATION",
+      "lexicographicAnalysis": {
+        "semanticRange": "Dual dimension: impact/influence ('have an effect on') vs outcome/result ('cause and effect').",
+        "contextualEquivalence": "'kết quả' is valid only in outcome/cause-and-effect contexts; it fails in 'have an effect on' contexts.",
+        "naturalWording": "'tác động', 'ảnh hưởng', 'hiệu quả' are the standard Vietnamese nouns for 'effect'.",
+        "registerDifferences": "General and academic.",
+        "collocationCompatibility": "'side effect' -> 'tác dụng phụ'; 'adverse effect' -> 'tác động tiêu cực'; 'cause and effect' -> 'nguyên nhân và kết quả'.",
+        "counterexamples": "'The radiation had a disastrous effect on health' -> cannot translate as 'kết quả thảm khốc lên sức khỏe'; must be 'tác động/ảnh hưởng thảm khốc'.",
+        "falseEquivalenceRisk": "High risk that learners equate 'effect' with 'result' exclusively and produce unidiomatic Vietnamese phrases.",
+        "crossLingualValency": "English [have an effect on + NP] maps to Vietnamese [có tác động/ảnh hưởng đến + NP]."
+      },
+      "adversarialReview": {
+        "q1_impliesDifferentSense": "Yes; implies generic outcome (result) rather than impact/effect.",
+        "q2_naturalInContext": "Unnatural in verb-governed contexts ('have an effect on').",
+        "q3_tooGeneralOrNarrow": "Too narrow in outcome dimension; omits primary impact dimension.",
+        "q4_valencyCorresponds": "Fails with 'on' complementation.",
+        "q5_collocationRisk": "High risk: 'kết quả phụ' instead of 'tác dụng phụ'.",
+        "q6_sourceSupportsExactGloss": "Contradicted: Cambridge English–Vietnamese gives 'hiệu quả, tác dụng, ấn tượng', not 'kết quả'.",
+        "q7_inferredFromAIGenerated": "Yes; original AI candidate adopted school mnemonic without verifying learner entry distribution.",
+        "q8_contradictoryExample": "'The medicine didn't have any effect' -> 'thuốc không có tác dụng gì'.",
+        "q9_evidenceIndependentOfAI": "Independent dictionary evidence contradicts 'kết quả' as a standalone headword translation.",
+        "q10_remainingUncertainty": "Requires Lead Editorial Reviewer adjudication on whether to split senses or broaden the gloss."
+      },
+      "sourceEvidence": {
+        "citedSourceIds": [
+          "source-cambridge-vi-effect",
+          "source-cambridge-vi-raise"
+        ],
+        "canonicalSourceId": "src_01a193ed-a87d-7e94-a10f-7993db6e4755",
+        "sourceTitle": "Cambridge English–Vietnamese: effect",
+        "accessMethod": "Live search index extract (direct HTTP GET returned 403 Cloudflare block); raise source was misattributed",
+        "rightsStatus": "reference_only"
+      }
+    },
+    {
+      "claimId": "P004-019",
+      "candidateId": "gloss-effect-bring-about",
+      "canonicalId": "eqv_01a193ed-a87e-7f2e-a4b1-745b0def8f8f",
+      "lemma": "effect",
+      "pos": "VERB",
+      "sourceSenseId": "sns_01a193ed-a87e-7719-a47a-872b64f8c74d",
+      "canonicalDefinitionEn": "Cause a change or outcome to happen.",
+      "canonicalExampleEn": "The revised timetable effected a lasting improvement.",
+      "glossVi": "tạo ra",
+      "context": "bringing about a change or improvement",
+      "alignmentMode": "gloss_only",
+      "targetSenseId": null,
+      "evidenceAssessment": "PARTIALLY_SUPPORTED",
+      "disposition": "CORRECTION_PROPOSED",
+      "lexicographicAnalysis": {
+        "semanticRange": "Formal causative transitive verb: bring about, achieve, or implement a change/outcome.",
+        "contextualEquivalence": "'tạo ra' is a loose paraphrase; 'thực hiện' or 'đem lại / mang lại' is the precise formal equivalent.",
+        "naturalWording": "'thực hiện sự thay đổi' (effect a change), 'đem lại sự cải thiện' (effect an improvement).",
+        "registerDifferences": "English 'effect' (verb) is formal/official/literary; 'tạo ra' is generic/informal.",
+        "collocationCompatibility": "Takes abstract outcome nouns: change, cure, recovery, reform, reconciliation, improvement.",
+        "counterexamples": "'effect a reconciliation' -> 'đạt được/thực hiện sự hòa giải', not 'tạo ra sự hòa giải'.",
+        "falseEquivalenceRisk": "Learners may assume 'effect' can translate any 'tạo ra' (e.g., *effect a table, *effect a machine - invalid).",
+        "crossLingualValency": "Transitive verb taking an abstract nominal complement."
+      },
+      "adversarialReview": {
+        "q1_impliesDifferentSense": "'Tạo ra' may imply physical creation (create/make).",
+        "q2_naturalInContext": "Understandable in 'tạo ra sự cải thiện', but less formal than 'đem lại' or 'thực hiện'.",
+        "q3_tooGeneralOrNarrow": "Too general; loses the formal register of 'bring about'.",
+        "q4_valencyCorresponds": "Both are transitive.",
+        "q5_collocationRisk": "Learner may overgeneralize to physical objects.",
+        "q6_sourceSupportsExactGloss": "Cambridge English–Vietnamese lists 'thực hiện', NOT 'tạo ra'.",
+        "q7_inferredFromAIGenerated": "Yes; authored example and loose AI gloss.",
+        "q8_contradictoryExample": "'effect a cure' -> 'chữa khỏi / đem lại sự phục hồi'.",
+        "q9_evidenceIndependentOfAI": "Cambridge dictionary provides 'thực hiện'.",
+        "q10_remainingUncertainty": "Recommend human editor approve 'thực hiện, đem lại' with formal register tag."
+      },
+      "sourceEvidence": {
+        "citedSourceIds": [
+          "source-cambridge-vi-effect"
+        ],
+        "canonicalSourceId": "src_01a193ed-a87d-7e94-a10f-7993db6e4755",
+        "sourceTitle": "Cambridge English–Vietnamese: effect",
+        "accessMethod": "Live search index extract (direct HTTP GET returned 403 Cloudflare block)",
+        "rightsStatus": "reference_only"
+      }
+    },
+    {
+      "claimId": "P004-026",
+      "candidateId": "gloss-rise-increase",
+      "canonicalId": "eqv_01a193ed-a87e-74fa-982a-23355ef35146",
+      "lemma": "rise",
+      "pos": "VERB",
+      "sourceSenseId": "sns_01a193ed-a87e-7450-a6d1-3fd73884f322",
+      "canonicalDefinitionEn": "Become greater in amount or level.",
+      "canonicalExampleEn": "Transport costs rose.",
+      "glossVi": "tăng lên",
+      "context": "a quantitative increase, such as transport costs",
+      "alignmentMode": "gloss_only",
+      "targetSenseId": null,
+      "evidenceAssessment": "SUPPORTED",
+      "disposition": "EVIDENCE_READY_FOR_HUMAN_REVIEW",
+      "lexicographicAnalysis": {
+        "semanticRange": "Intransitive quantitative increase in amount, number, level, or value.",
+        "contextualEquivalence": "Exact match: 'chi phí vận chuyển tăng lên'.",
+        "naturalWording": "'tăng' or 'tăng lên' is the standard, natural Vietnamese equivalent.",
+        "registerDifferences": "Neutral; universally applicable.",
+        "collocationCompatibility": "Prices, costs, unemployment, temperature, inflation, rates.",
+        "counterexamples": "Omitted senses: 'mọc' (sun/moon), 'đứng dậy/thức dậy' (person). Properly bounded by definition and context.",
+        "falseEquivalenceRisk": "Low; distinct from transitive 'raise'.",
+        "crossLingualValency": "Both English 'rise' and Vietnamese 'tăng lên' are intransitive in this sense."
+      },
+      "adversarialReview": {
+        "q1_impliesDifferentSense": "No; 'tăng lên' clearly denotes quantitative increase.",
+        "q2_naturalInContext": "Yes; 'chi phí vận chuyển tăng lên' is perfectly idiomatic.",
+        "q3_tooGeneralOrNarrow": "Accurately scoped.",
+        "q4_valencyCorresponds": "Yes; both are intransitive without direct object.",
+        "q5_collocationRisk": "Minimal.",
+        "q6_sourceSupportsExactGloss": "Direct match: Cambridge English–Vietnamese explicitly translates this sense as 'tăng lên'.",
+        "q7_inferredFromAIGenerated": "Corroborated by BBC Learning English and Cambridge dictionary.",
+        "q8_contradictoryExample": "None for quantitative increase.",
+        "q9_evidenceIndependentOfAI": "Independent bilingual entry confirms 'tăng lên'.",
+        "q10_remainingUncertainty": "Direct open returned 403; search index excerpt inspected. Reference-only rights."
+      },
+      "sourceEvidence": {
+        "citedSourceIds": [
+          "source-cambridge-vi-rise"
+        ],
+        "canonicalSourceId": "src_01a193ed-a87d-7628-9aa3-d52a3dcc1622",
+        "sourceTitle": "Cambridge English–Vietnamese: rise",
+        "accessMethod": "Live search index extract (direct HTTP GET returned 403 Cloudflare block)",
+        "rightsStatus": "reference_only"
+      }
+    },
+    {
+      "claimId": "P004-033",
+      "candidateId": "gloss-raise-increase",
+      "canonicalId": "eqv_01a193ed-a87e-72bb-87d8-8364114e27a8",
+      "lemma": "raise",
+      "pos": "VERB",
+      "sourceSenseId": "sns_01a193ed-a87e-7992-9030-92faa55655b4",
+      "canonicalDefinitionEn": "Cause an amount or level to become greater.",
+      "canonicalExampleEn": "The fuel shortage raised transport costs.",
+      "glossVi": "làm tăng",
+      "context": "causing a quantitative increase, such as transport costs; nâng lên is pending review for other contexts",
+      "alignmentMode": "gloss_only",
+      "targetSenseId": null,
+      "evidenceAssessment": "PARTIALLY_SUPPORTED",
+      "disposition": "CORRECTION_PROPOSED",
+      "lexicographicAnalysis": {
+        "semanticRange": "Transitive causative increase of amounts, prices, levels, or rates.",
+        "contextualEquivalence": "'làm tăng' is exact and natural: 'làm tăng chi phí vận chuyển'.",
+        "naturalWording": "'làm tăng' / 'làm tăng lên' captures causative transitivity; 'nâng cao' for standards/awareness.",
+        "registerDifferences": "Neutral to academic.",
+        "collocationCompatibility": "Prices, costs, taxes, tariffs, fees, rates.",
+        "counterexamples": "'raise standards' -> 'nâng cao tiêu chuẩn', not 'làm tăng tiêu chuẩn'; 'raise children' -> 'nuôi nấng'. Correctly bounded by context note.",
+        "falseEquivalenceRisk": "Conflation with intransitive 'rise'; gloss 'làm tăng' explicitly reinforces transitive causative valency.",
+        "crossLingualValency": "English transitive verb [raise + NP] maps to Vietnamese transitive causative verb phrase [làm tăng + NP]."
+      },
+      "adversarialReview": {
+        "q1_impliesDifferentSense": "No; 'làm tăng' prevents confusion with child-rearing or physical lifting.",
+        "q2_naturalInContext": "Yes; 'sự thiếu hụt nhiên liệu làm tăng chi phí vận chuyển'.",
+        "q3_tooGeneralOrNarrow": "Appropriate for financial/numeric quantities; usage note needed for qualitative targets.",
+        "q4_valencyCorresponds": "Yes; both govern direct objects.",
+        "q5_collocationRisk": "Learners must be instructed not to use 'làm tăng' with standards/awareness.",
+        "q6_sourceSupportsExactGloss": "Cambridge English–Vietnamese provides 'nâng lên / làm tăng lên' for quantity/price increase.",
+        "q7_inferredFromAIGenerated": "Grounded in BBC Learning English and Cambridge dictionary.",
+        "q8_contradictoryExample": "'raise awareness' -> 'nâng cao nhận thức'.",
+        "q9_evidenceIndependentOfAI": "Independent BBC PDF and Cambridge entry confirm transitive distinction.",
+        "q10_remainingUncertainty": "Must remove irrelevant 'source-cambridge-vi-effect' mapping in CAS remediation."
+      },
+      "sourceEvidence": {
+        "citedSourceIds": [
+          "source-cambridge-vi-raise",
+          "source-cambridge-vi-effect"
+        ],
+        "canonicalSourceId": "src_01a193ed-a87e-7e10-a024-493c4239c40e",
+        "sourceTitle": "Cambridge English–Vietnamese: raise",
+        "accessMethod": "Live search index extract (direct HTTP GET returned 403 Cloudflare block); effect source was misattributed",
+        "rightsStatus": "reference_only"
+      }
+    },
+    {
+      "claimId": "P004-039",
+      "candidateId": "gloss-economic-economy",
+      "canonicalId": "eqv_01a193ed-a87e-73a7-863e-782fb09e0648",
+      "lemma": "economic",
+      "pos": "ADJ",
+      "sourceSenseId": "sns_01a193ed-a87e-7d27-baa6-633285bbe58a",
+      "canonicalDefinitionEn": "Connected with an economy, trade, industry, or money.",
+      "canonicalExampleEn": "The country faces mounting economic pressures.",
+      "glossVi": "thuộc về kinh tế",
+      "context": "matters concerning an economy",
+      "alignmentMode": "gloss_only",
+      "targetSenseId": null,
+      "evidenceAssessment": "SUPPORTED",
+      "disposition": "EVIDENCE_READY_FOR_HUMAN_REVIEW",
+      "lexicographicAnalysis": {
+        "semanticRange": "Relational adjective pertaining to the economy, trade, or money.",
+        "contextualEquivalence": "Exact dictionary gloss: 'thuộc về kinh tế'. In running Vietnamese noun phrases, post-modifies as 'kinh tế' (áp lực kinh tế).",
+        "naturalWording": "'thuộc về kinh tế' (gloss) / 'kinh tế' (attributive noun modifier).",
+        "registerDifferences": "Formal, academic, and journalistic.",
+        "collocationCompatibility": "Economic policy, economic growth, economic reform, economic pressures.",
+        "counterexamples": "In 'it is not economic to produce goods in small quantities', 'economic' means profitable (có lãi / có hiệu quả kinh tế). Omitted sense noted in usage note.",
+        "falseEquivalenceRisk": "Confusion with 'economical' (tiết kiệm); gloss clearly separates them.",
+        "crossLingualValency": "Adjective modifying noun; in Vietnamese post-positive position."
+      },
+      "adversarialReview": {
+        "q1_impliesDifferentSense": "No; separates relational sense from profitability sense.",
+        "q2_naturalInContext": "Yes; standard bilingual dictionary gloss.",
+        "q3_tooGeneralOrNarrow": "Accurate.",
+        "q4_valencyCorresponds": "Yes; noun-modifying adjective.",
+        "q5_collocationRisk": "Minimal.",
+        "q6_sourceSupportsExactGloss": "Direct match: Cambridge English–Vietnamese explicitly translates this sense as 'thuộc về kinh tế'.",
+        "q7_inferredFromAIGenerated": "Corroborated by Cambridge Grammar and Cambridge dictionary.",
+        "q8_contradictoryExample": "Profitability sense ('an economic price').",
+        "q9_evidenceIndependentOfAI": "Independent Cambridge dictionary grounding.",
+        "q10_remainingUncertainty": "Direct open returned 403; search index excerpt inspected. Reference-only rights."
+      },
+      "sourceEvidence": {
+        "citedSourceIds": [
+          "source-cambridge-vi-economic"
+        ],
+        "canonicalSourceId": "src_01a193ed-a87e-7425-94b9-670233b17ecf",
+        "sourceTitle": "Cambridge English–Vietnamese: economic",
+        "accessMethod": "Live search index extract (direct HTTP GET returned 403 Cloudflare block)",
+        "rightsStatus": "reference_only"
+      }
+    },
+    {
+      "claimId": "P004-045",
+      "candidateId": "gloss-economical-resources",
+      "canonicalId": "eqv_01a193ed-a87e-758e-899d-001c22a4579f",
+      "lemma": "economical",
+      "pos": "ADJ",
+      "sourceSenseId": "sns_01a193ed-a87e-7a31-a9c3-2ac3dc312760",
+      "canonicalDefinitionEn": "Using money, time, fuel, or other resources carefully and without waste.",
+      "canonicalExampleEn": "This printer is economical with ink.",
+      "glossVi": "tiết kiệm",
+      "context": "resource use, such as ink consumption",
+      "alignmentMode": "gloss_only",
+      "targetSenseId": null,
+      "evidenceAssessment": "PARTIALLY_SUPPORTED",
+      "disposition": "CORRECTION_PROPOSED",
+      "lexicographicAnalysis": {
+        "semanticRange": "Thrifty, non-wasteful resource utilization (money, time, fuel, materials).",
+        "contextualEquivalence": "'tiết kiệm' is the universal Vietnamese equivalent.",
+        "naturalWording": "'tiết kiệm' (máy in tiết kiệm mực, xe tiết kiệm xăng).",
+        "registerDifferences": "Neutral to formal.",
+        "collocationCompatibility": "Economical car, economical method, economical with fuel/words/ink.",
+        "counterexamples": "Figurative idiom 'economical with the truth' (nói tránh sự thật / gian dối).",
+        "falseEquivalenceRisk": "Vietnamese colloquial 'kinh tế' (rẻ/tiết kiệm) causes false alignment with 'economic'. Gloss 'tiết kiệm' correctly enforces boundary.",
+        "crossLingualValency": "Adjective taking prepositional phrase [economical with + NP] -> [tiết kiệm + NP]."
+      },
+      "adversarialReview": {
+        "q1_impliesDifferentSense": "No; unambiguously denotes thrift/careful use.",
+        "q2_naturalInContext": "Yes; 'máy in này tiết kiệm mực' is completely natural.",
+        "q3_tooGeneralOrNarrow": "Accurately scoped.",
+        "q4_valencyCorresponds": "Yes; 'economical with ink' translates to 'tiết kiệm mực'.",
+        "q5_collocationRisk": "Low.",
+        "q6_sourceSupportsExactGloss": "The cited source in state ('source-cambridge-vi-economic') is the WRONG page! The real Cambridge entry for 'economical' (unregistered) directly gives 'tiết kiệm'.",
+        "q7_inferredFromAIGenerated": "Corroborated by independent external dictionary entries.",
+        "q8_contradictoryExample": "Idiom 'economical with the truth'.",
+        "q9_evidenceIndependentOfAI": "Independent Cambridge dictionary grounding for 'economical'.",
+        "q10_remainingUncertainty": "Must register source-cambridge-vi-economical in source catalog and re-link evidence in CAS remediation."
+      },
+      "sourceEvidence": {
+        "citedSourceIds": [
+          "source-cambridge-vi-economic"
+        ],
+        "canonicalSourceId": "src_01a193ed-a87e-7425-94b9-670233b17ecf",
+        "sourceTitle": "Cambridge English–Vietnamese: economic (MISATTRIBUTED; correct page is economical)",
+        "accessMethod": "Live search index extract; target page was misattributed in Pilot 004",
+        "rightsStatus": "reference_only"
+      }
+    }
+  ],
+  "sourceToClaimEvidenceMatrix": [
+    {
+      "sourceId": "source-mla",
+      "canonicalId": "src_01a193ed-a87d-76c6-b939-ce8f2ea17aef",
+      "title": "To Affect or Effect—to What Effect?",
+      "provider": "MLA Style Center",
+      "url": "https://style.mla.org/affect-or-effect/",
+      "httpStatus": 200,
+      "accessMethod": "Direct HTTP GET (HTML article inspected)",
+      "supportedClaims": [
+        "sns_affect_influence/definition",
+        "sns_effect_result/definition",
+        "sns_effect_bring_about/definition"
+      ],
+      "rightsStatus": "reference_only",
+      "limitations": "Reference lookup only; no reproduction rights; does not support Vietnamese translations."
+    },
+    {
+      "sourceId": "source-bbc",
+      "canonicalId": "src_01a193ed-a87d-79b7-a144-5911989fc0b1",
+      "title": "English In A Minute: Raise vs rise",
+      "provider": "BBC Learning English",
+      "url": "https://downloads.bbc.co.uk/learningenglish/eiam/unit-1/180727_raise_vs_rise.pdf",
+      "httpStatus": 200,
+      "accessMethod": "Direct HTTP GET (PDF document inspected)",
+      "supportedClaims": [
+        "sns_rise_increase/definition",
+        "sns_rise_increase/transitivity",
+        "sns_raise_increase/definition",
+        "sns_raise_increase/transitivity",
+        "forms_rose_risen_raised"
+      ],
+      "rightsStatus": "reference_only",
+      "limitations": "Grammar lesson PDF; does not support Vietnamese translation equivalences."
+    },
+    {
+      "sourceId": "source-oxford",
+      "canonicalId": "src_01a193ed-a87d-7baf-a9ce-819c2f2984fc",
+      "title": "Profitable: synonym discussion including economic",
+      "provider": "Oxford University Press",
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/profitable",
+      "httpStatus": 403,
+      "accessMethod": "Search index extract (direct HTTP GET blocked by Cloudflare 403)",
+      "supportedClaims": [
+        "sns_economic_economy/usageNote (profitability caveat)"
+      ],
+      "rightsStatus": "reference_only",
+      "limitations": "Reference-only; proprietary dictionary content; does not support Vietnamese glosses."
+    },
+    {
+      "sourceId": "source-cambridge-sample",
+      "canonicalId": "src_01a193ed-a87d-7390-b8a0-62b245fd220a",
+      "title": "Cambridge Advanced Learner’s Dictionary sample: affect",
+      "provider": "Cambridge University Press",
+      "url": "https://assets.cambridge.org/97805215/31054/sample/9780521531054ws.pdf",
+      "httpStatus": 200,
+      "accessMethod": "Direct HTTP GET (PDF sample inspected)",
+      "supportedClaims": [
+        "sns_affect_influence/transitivity"
+      ],
+      "rightsStatus": "reference_only",
+      "limitations": "Paper sample excerpt (2003); English grammar frames only."
+    },
+    {
+      "sourceId": "source-cambridge-economic-grammar",
+      "canonicalId": "src_01a193ed-a87d-7e43-94c2-a322a440f3b5",
+      "title": "English Grammar Today: Economic or economical?",
+      "provider": "Cambridge Dictionary",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/economic-or-economical",
+      "httpStatus": 403,
+      "accessMethod": "Search index extract (direct HTTP GET blocked by Cloudflare 403)",
+      "supportedClaims": [
+        "sns_economic_economy/definition",
+        "sns_economical_resources/definition"
+      ],
+      "rightsStatus": "reference_only",
+      "limitations": "Grammar guide; does not provide bilingual Vietnamese equivalents."
+    },
+    {
+      "sourceId": "source-cambridge-vi-affect",
+      "canonicalId": "src_01a193ed-a87d-76f2-8d29-2181f47a50f3",
+      "title": "Cambridge English–Vietnamese: affect",
+      "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/affect",
+      "httpStatus": 403,
+      "accessMethod": "Search index extract (direct HTTP GET blocked by Cloudflare 403)",
+      "supportedClaims": [
+        "eqv_affect_influence/glossVi ('ảnh hưởng đến')"
+      ],
+      "rightsStatus": "reference_only",
+      "limitations": "Underlying © K Dictionaries Ltd. 2015; reference lookup only; redistribution blocked."
+    },
+    {
+      "sourceId": "source-cambridge-vi-effect",
+      "canonicalId": "src_01a193ed-a87d-7e94-a10f-7993db6e4755",
+      "title": "Cambridge English–Vietnamese: effect",
+      "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/effect",
+      "httpStatus": 403,
+      "accessMethod": "Search index extract (direct HTTP GET blocked by Cloudflare 403)",
+      "supportedClaims": [
+        "eqv_effect_result/glossVi (CONTRADICTED: entry has 'hiệu quả/tác dụng')",
+        "eqv_effect_bring_about/glossVi (PARTIAL: entry has 'thực hiện')"
+      ],
+      "rightsStatus": "reference_only",
+      "limitations": "Underlying © K Dictionaries Ltd. 2015; mismapped in Pilot 004 to raise claim."
+    },
+    {
+      "sourceId": "source-cambridge-vi-rise",
+      "canonicalId": "src_01a193ed-a87d-7628-9aa3-d52a3dcc1622",
+      "title": "Cambridge English–Vietnamese: rise",
+      "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/rise",
+      "httpStatus": 403,
+      "accessMethod": "Search index extract (direct HTTP GET blocked by Cloudflare 403)",
+      "supportedClaims": [
+        "eqv_rise_increase/glossVi ('tăng lên')"
+      ],
+      "rightsStatus": "reference_only",
+      "limitations": "Underlying © K Dictionaries Ltd. 2015; reference lookup only; redistribution blocked."
+    },
+    {
+      "sourceId": "source-cambridge-vi-raise",
+      "canonicalId": "src_01a193ed-a87e-7e10-a024-493c4239c40e",
+      "title": "Cambridge English–Vietnamese: raise",
+      "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/raise",
+      "httpStatus": 403,
+      "accessMethod": "Search index extract (direct HTTP GET blocked by Cloudflare 403)",
+      "supportedClaims": [
+        "eqv_raise_increase/glossVi ('làm tăng / làm tăng lên')"
+      ],
+      "rightsStatus": "reference_only",
+      "limitations": "Underlying © K Dictionaries Ltd. 2015; mismapped in Pilot 004 to effect noun claim."
+    },
+    {
+      "sourceId": "source-cambridge-vi-economic",
+      "canonicalId": "src_01a193ed-a87e-7425-94b9-670233b17ecf",
+      "title": "Cambridge English–Vietnamese: economic",
+      "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/economic",
+      "httpStatus": 403,
+      "accessMethod": "Search index extract (direct HTTP GET blocked by Cloudflare 403)",
+      "supportedClaims": [
+        "eqv_economic_economy/glossVi ('thuộc về kinh tế')"
+      ],
+      "rightsStatus": "reference_only",
+      "limitations": "Underlying © K Dictionaries Ltd. 2015; erroneously mapped in Pilot 004 to economical claim."
+    },
+    {
+      "sourceId": "source-cambridge-vi-economical (UNREGISTERED)",
+      "canonicalId": "PENDING_REGISTRATION",
+      "title": "Cambridge English–Vietnamese: economical",
+      "provider": "Cambridge Dictionary (host; underlying rights may differ)",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/economical",
+      "httpStatus": 403,
+      "accessMethod": "Search index extract (direct HTTP GET blocked by Cloudflare 403)",
+      "supportedClaims": [
+        "eqv_economical_resources/glossVi ('tiết kiệm')"
+      ],
+      "rightsStatus": "reference_only",
+      "limitations": "Must be registered as a new source record in state to remediate candidate misattribution."
+    }
+  ],
+  "sourceAndRightsAudit": {
+    "totalRegisteredSources": 10,
+    "rightsClassification": "10/10 reference_only",
+    "redistributionInstrument": "NONE; no commercial license or public domain instrument exists for Cambridge/K Dictionaries/Oxford/BBC content",
+    "totalEvidenceRecords": 11,
+    "evidenceRecordsStatus": "11/11 draft, unreviewed, independence unestablished",
+    "bilingualEvidenceCoverage": "0/7 translation equivalences have bound evidence records in canonical state (evidenceIds: [])",
+    "digestVerificationAudit": {
+      "totalValueDigestsChecked": 11,
+      "matchingDigestsCount": 11,
+      "digestIntegrityConclusion": "All 11 stored valueDigests match current canonical values in candidates-state.json (definitions, transitivity, forms). However, per docs/evidence-provenance-contract.md, valueDigest cryptographic matching proves only byte identity of stored records, NOT linguistic truth or independent attestation."
+    }
+  },
+  "evidenceMappingDiscrepancies": [
+    {
+      "id": "EMD-01",
+      "severity": "HIGH",
+      "affectedClaim": "P004-012 (gloss-effect-result)",
+      "discrepancy": "Pilot 004 review mapped source-cambridge-vi-raise to gloss-effect-result. The raise dictionary entry has no relevance to the noun effect.",
+      "remediation": "Remove source-cambridge-vi-raise from claim source mapping."
+    },
+    {
+      "id": "EMD-02",
+      "severity": "HIGH",
+      "affectedClaim": "P004-033 (gloss-raise-increase)",
+      "discrepancy": "Pilot 004 review mapped source-cambridge-vi-effect to gloss-raise-increase. The effect dictionary entry has no relevance to the verb raise.",
+      "remediation": "Remove source-cambridge-vi-effect from claim source mapping."
+    },
+    {
+      "id": "EMD-03",
+      "severity": "CRITICAL",
+      "affectedClaim": "P004-045 (gloss-economical-resources)",
+      "discrepancy": "Pilot 004 candidate and state cite source-cambridge-vi-economic (https://dictionary.cambridge.org/dictionary/english-vietnamese/economic) as support for the economical gloss 'tiết kiệm'. The economic page documents economic, NOT economical.",
+      "remediation": "Register source-cambridge-vi-economical (https://dictionary.cambridge.org/dictionary/english-vietnamese/economical) in state and re-map the claim."
+    },
+    {
+      "id": "EMD-04",
+      "severity": "MEDIUM",
+      "affectedClaim": "All 7 TranslationEquivalences",
+      "discrepancy": "None of the 7 eqv records in candidates-state.json have evidenceIds attached (all evidenceIds: []). Zero evidence records exist in state for glossVi.",
+      "remediation": "Create draft evidence records for each bilingual gloss in a future CAS remediation pass once sources and LER review are established."
+    }
+  ],
+  "contradictoryEvidenceLedger": [
+    {
+      "candidateId": "gloss-effect-result",
+      "canonicalId": "eqv_01a193ed-a87e-75b1-88db-0134459a7fad",
+      "assertedGloss": "kết quả",
+      "contradictoryEvidence": "Cambridge English–Vietnamese noun entry for 'effect' lists 'hiệu quả, tác dụng, ấn tượng'. It does NOT list 'kết quả' as a primary nominal translation. Collocations with 'on' ('have an effect on') contradict 'kết quả' because 'có kết quả lên' is unidiomatic Vietnamese.",
+      "severity": "BLOCKING_GLOSS_REVISION"
+    },
+    {
+      "candidateId": "gloss-effect-bring-about",
+      "canonicalId": "eqv_01a193ed-a87e-7f2e-a4b1-745b0def8f8f",
+      "assertedGloss": "tạo ra",
+      "contradictoryEvidence": "Cambridge English–Vietnamese verb entry for 'effect' lists 'thực hiện' (effect a change -> thực hiện một sự thay đổi). 'Tạo ra' is generic and fails to represent the formal administrative register of the English verb.",
+      "severity": "ADVISORY_GLOSS_REVISION"
+    }
+  ],
+  "contextualTranslationAnalysis": {
+    "valencyContrastSummary": [
+      {
+        "pair": "affect (V) vs ảnh hưởng đến (VP)",
+        "englishValency": "Monotransitive [affect + NP]",
+        "vietnameseValency": "Prepositional transitive [ảnh hưởng đến/tới + NP]",
+        "pedagogicalImplication": "Learners frequently omit 'đến' in Vietnamese or incorrectly insert 'to/on' after English 'affect' (*affect to health). Annotating this valency divergence prevents cross-linguistic negative transfer."
+      },
+      {
+        "pair": "raise (V) vs làm tăng (VP)",
+        "englishValency": "Causative monotransitive [raise + NP]",
+        "vietnameseValency": "Causative verb phrase [làm tăng + NP]",
+        "pedagogicalImplication": "Vietnamese 'tăng' can be both transitive and intransitive. Using 'làm tăng' clearly mirrors English 'raise' and prevents confusion with intransitive 'rise'."
+      },
+      {
+        "pair": "economical with (Adj + PP) vs tiết kiệm (V/Adj + NP)",
+        "englishValency": "Adjective taking prepositional complement [economical with + NP]",
+        "vietnameseValency": "Transitive evaluative adjective/verb [tiết kiệm + NP]",
+        "pedagogicalImplication": "Translates cleanly as 'tiết kiệm [tài nguyên]' without requiring a prepositional calque."
+      }
+    ],
+    "registerAndDomainAlignment": [
+      {
+        "lemma": "effect (verb)",
+        "registerEn": "Formal / Administrative / Literary",
+        "recommendedGlossVi": "thực hiện, đem lại",
+        "domain": "Policy, organizational change, legal, academic",
+        "restriction": "Restricted to abstract outcome complements (change, reform, cure, settlement)."
+      },
+      {
+        "lemma": "economic (adj)",
+        "registerEn": "Academic / Professional / Journalistic",
+        "recommendedGlossVi": "thuộc về kinh tế",
+        "domain": "Macroeconomics, policy, trade, business",
+        "restriction": "Distinct from profitability sense (an economic price)."
+      }
+    ]
+  },
+  "actualAccessibilityAndProvenance": {
+    "directAccessHttp200": [
+      {
+        "url": "https://style.mla.org/affect-or-effect/",
+        "format": "HTML article",
+        "method": "Direct HTTP GET inspected; 200 OK",
+        "notes": "Full article readable; discusses Garner on effect/affect."
+      },
+      {
+        "url": "https://downloads.bbc.co.uk/learningenglish/eiam/unit-1/180727_raise_vs_rise.pdf",
+        "format": "PDF document",
+        "method": "Direct HTTP GET inspected; 200 OK",
+        "notes": "Page 1 grammar summary inspected; direct object vs no object distinction confirmed."
+      },
+      {
+        "url": "https://assets.cambridge.org/97805215/31054/sample/9780521531054ws.pdf",
+        "format": "PDF sample",
+        "method": "Direct HTTP GET inspected; 200 OK",
+        "notes": "Page 24 inspected; transitivity of affect confirmed."
+      }
+    ],
+    "blockedDirectAccessHttp403": [
+      {
+        "domain": "dictionary.cambridge.org",
+        "urls": [
+          "https://dictionary.cambridge.org/grammar/british-grammar/economic-or-economical",
+          "https://dictionary.cambridge.org/dictionary/english-vietnamese/affect",
+          "https://dictionary.cambridge.org/dictionary/english-vietnamese/effect",
+          "https://dictionary.cambridge.org/dictionary/english-vietnamese/rise",
+          "https://dictionary.cambridge.org/dictionary/english-vietnamese/raise",
+          "https://dictionary.cambridge.org/dictionary/english-vietnamese/economic",
+          "https://dictionary.cambridge.org/dictionary/english-vietnamese/economical"
+        ],
+        "httpStatus": 403,
+        "blocker": "Cloudflare Automated Bot Management / WAF",
+        "actualAccessMethod": "Live search engine index extracts and cached search snippets",
+        "evidenceLimitation": "Search excerpts confirm primary headwords, definitions, and translations, but complete entry layout, run-on idioms, and full example inventories could not be directly inspected via programmatic curl/GET."
+      },
+      {
+        "domain": "www.oxfordlearnersdictionaries.com",
+        "urls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/profitable"
+        ],
+        "httpStatus": 403,
+        "blocker": "Cloudflare Automated Bot Management / WAF",
+        "actualAccessMethod": "Search index extract",
+        "evidenceLimitation": "Full synonym note could not be retrieved via direct programmatic HTTP GET."
+      }
+    ]
+  },
+  "correctionProposals": [
+    {
+      "proposalId": "CAS-PROP-001",
+      "targetEntity": "eqv_01a193ed-a87e-75b1-88db-0134459a7fad",
+      "candidateId": "gloss-effect-result",
+      "fieldPath": "/glossVi",
+      "currentValue": "kết quả",
+      "proposedValue": "tác động, ảnh hưởng; kết quả",
+      "rationale": "Remediate contradicted gloss. Cambridge and Oxford dictionaries demonstrate that effect (noun) primarily denotes impact/influence ('have an effect on'), while 'kết quả' is restricted to outcome/cause-and-effect contexts.",
+      "prerequisite": "Authorized CAS remediation task; editorial sign-off by Lead Editorial Reviewer."
+    },
+    {
+      "proposalId": "CAS-PROP-002",
+      "targetEntity": "eqv_01a193ed-a87e-7f2e-a4b1-745b0def8f8f",
+      "candidateId": "gloss-effect-bring-about",
+      "fieldPath": "/glossVi",
+      "currentValue": "tạo ra",
+      "proposedValue": "thực hiện, đem lại",
+      "rationale": "Align with Cambridge English–Vietnamese verb entry ('thực hiện') and capture formal register appropriate for abstract change/improvement complements.",
+      "prerequisite": "Authorized CAS remediation task; editorial sign-off by Lead Editorial Reviewer."
+    },
+    {
+      "proposalId": "CAS-PROP-003",
+      "targetEntity": "eqv_01a193ed-a87e-72bb-87d8-8364114e27a8",
+      "candidateId": "gloss-raise-increase",
+      "fieldPath": "/context",
+      "currentValue": "causing a quantitative increase, such as transport costs; nâng lên is pending review for other contexts",
+      "proposedValue": "causing a quantitative increase (prices, costs, taxes); for qualitative targets (standards, awareness) use nâng cao",
+      "rationale": "Clarify object scope to guide learner usage, while retaining exact causative gloss 'làm tăng'. Also prune misattributed source-cambridge-vi-effect mapping.",
+      "prerequisite": "Authorized CAS remediation task."
+    },
+    {
+      "proposalId": "CAS-PROP-004",
+      "targetEntity": "eqv_01a193ed-a87e-758e-899d-001c22a4579f",
+      "candidateId": "gloss-economical-resources",
+      "fieldPath": "sourceMappings",
+      "currentValue": "source-cambridge-vi-economic",
+      "proposedValue": "source-cambridge-vi-economical",
+      "rationale": "Remediate critical source misattribution. Register dedicated source record for Cambridge English–Vietnamese: economical and bind to this equivalence.",
+      "prerequisite": "Authorized CAS remediation task."
+    }
+  ],
+  "unresolvedQuestionsAndGaps": [
+    {
+      "id": "UQ-01",
+      "topic": "Sense boundary split for noun effect",
+      "question": "Should the noun effect sense be split into two discrete senses: (a) impact/influence on an entity and (b) outcome/result of an action? Or should it remain lumped under a broadened definition with contextually qualified bilingual glosses?",
+      "arbiter": "Lead Editorial Reviewer (LER)"
+    },
+    {
+      "id": "UQ-02",
+      "topic": "Source registration for Cambridge English–Vietnamese: economical",
+      "question": "Will the repository owner authorize adding source-cambridge-vi-economical to the registered source catalog in a future state mutation task?",
+      "arbiter": "Repository Owner / Integration Writer"
+    },
+    {
+      "id": "UQ-03",
+      "topic": "Evidence binding for translation equivalences",
+      "question": "When should evidence records be minted and bound to the 7 translation equivalences in candidates-state.json? (Currently evidenceIds: []).",
+      "arbiter": "Repository Owner / Lead Editorial Reviewer"
+    }
+  ],
+  "humanEditorialReviewHandoff": {
+    "status": "READY_FOR_HUMAN_LER_REVIEW",
+    "reviewPacketLocation": "data/reviews/pilot-fanout-004-bilingual-evidence-review.json",
+    "readinessStatement": "The seven bilingual claims of Pilot 004 have been researched against external lexicographic standards, challenge-audited across multiple analysis passes, and classified with concrete evidence assessments and disposition recommendations. All necessary contextual distinctions, valency divergences, counterexamples, and source discrepancies are systematically documented.",
+    "explicitBoundaryNotice": "This review is an AI-assisted research artifact prepared by Antigravity as Integration Writer. It does NOT constitute human editorial review, authenticated LER approval, or publication clearance. Promotion of draft records to verified status remains strictly blocked until an owner-appointed human Lead Editorial Reviewer evaluates the findings."
+  },
+  "publicationRestrictions": {
+    "publicationStatus": "NOT_READY",
+    "blockers": [
+      "NO_LER_APPOINTED: No Lead Editorial Reviewer has been appointed by the repository owner to arbitrate linguistic content.",
+      "REFERENCE_ONLY_SOURCES: All 10 registered sources have rights.status = 'reference_only'. No redistribution instrument exists.",
+      "UNVERIFIED_EVIDENCE: All 11 evidence records remain draft and unreviewed; 0 evidence records exist for bilingual equivalences.",
+      "CONTRADICTED_GLOSS: Claim P004-012 (effect noun) requires remediation before verification.",
+      "SOURCE_MISATTRIBUTION: Claim P004-045 requires source catalog registration and re-mapping."
+    ],
+    "failClosedVerification": "candidates.mjs check reports publication.eligible = false."
+  }
+}
