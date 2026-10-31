@@ -1,0 +1,5723 @@
+{
+  "assessmentVersion": "1.0.0",
+  "artifactType": "phase13_readiness_assessment",
+  "assessmentDate": "2026-10-31",
+  "repository": "phatnguyen03022001/ielts-tradition",
+  "branch": "main",
+  "baselineHead": "ed804f8507e102f2336d2c4de287f7e71352b832",
+  "status": {
+    "dictionaryPublication": "NOT_READY"
+  },
+  "dataset": {
+    "path": "data/candidates/pilot-fanout-003.json",
+    "batchId": "pilot-fanout-003",
+    "supersedesBatchId": "pilot-fanout-002",
+    "rawFileSha256": "5da1bbe98fb581ade15a9518ea7eb4ff6a80e2428d4ea1eb0683fa1b41b6e256",
+    "candidateBatchDigest": "bd235de702fac837458cad35a2461e2e44a6ec0849319b196059ab6102e7f28d",
+    "candidateCount": 62,
+    "recordCounts": {
+      "lex": 14,
+      "fam": 1,
+      "sns": 16,
+      "con": 9,
+      "eqv": 19,
+      "rel": 3
+    },
+    "canonicalIdsPersisted": false,
+    "schemaGraphValidation": {
+      "status": "PASS",
+      "method": "prepareBatch dry-run / V2 schema, graph and lifecycle validators",
+      "issues": 0
+    },
+    "stableCandidateIds": "unchanged; exact assertions in tests/production/phase12-completion.test.mjs",
+    "danglingReferenceCount": 0,
+    "relationDirectionOrLanguageMismatchCount": 0,
+    "unreviewedSplitMergeFanOutCount": 0,
+    "publicationEligible": false,
+    "duplicateCandidateIds": 0,
+    "nonblockingDuplicateHint": {
+      "kind": "possible_homograph_or_duplicate",
+      "lemma": "bank",
+      "candidateIds": [
+        "entry-bank-financial",
+        "entry-bank-river"
+      ],
+      "interpretation": "The validator hint is not a canonical identity collision; the two draft records are intentionally distinct pending numbering adjudication."
+    }
+  },
+  "claimCoverage": {
+    "method": "Recomputed using validators/production-gates.mjs::publicationClaimPaths against deterministic dry-run materialized preview records after candidate reference resolution.",
+    "totalClaimPaths": 430,
+    "withExactEvidence": 0,
+    "referenceOnlyEvidence": 0,
+    "insufficientOrUnmappedEvidence": 430,
+    "withAuthenticatedClaimReview": 0,
+    "withTrustedRightsApproval": 0,
+    "glossOnlyEquivalences": 19,
+    "disputedBankHomographNumberClaims": 2,
+    "claimInventoryEncoding": {
+      "columns": [
+        "candidateId",
+        "recordType",
+        "subjectPreviewId",
+        "fieldPath",
+        "valueDigest",
+        "flags"
+      ],
+      "flags": {
+        "disputed_bank_homograph_number": 1,
+        "gloss_only_alignment_mode": 2,
+        "example_claim_path": 4
+      },
+      "defaultStatus": {
+        "qualityDisposition": "no_reproducible_error_observed_human_review_pending",
+        "evidenceStatus": "missing_exact_claim_level_evidence",
+        "sourceTraceability": "no_candidate_claim_to_source_record_mapping",
+        "rightsStatus": "not_cleared_for_intended_redistribution",
+        "authenticatedReviewStatus": "missing",
+        "translationReviewStatus": "missing_for_all_eqv_claims",
+        "exampleProvenanceStatus": "unverified_candidate_for_sns_example_paths",
+        "publicationStatus": "excluded_pending_required_gates"
+      },
+      "rows": [
+        [
+          "construction-analyse-object",
+          "con",
+          "con_95eb0a0f-c646-7644-87a4-3d5bff45b2d2",
+          "/complements",
+          "ec1efd8491bc858e9cdecb47c50000ab952090544a512a1bc67d9901eeaab060",
+          0
+        ],
+        [
+          "construction-analyse-object",
+          "con",
+          "con_95eb0a0f-c646-7644-87a4-3d5bff45b2d2",
+          "/constructionType",
+          "073d4d26cb6dcff200ebb249b6f2b1ce55e1dd76a746fe8f344ac52e60e75b9e",
+          0
+        ],
+        [
+          "construction-analyse-object",
+          "con",
+          "con_95eb0a0f-c646-7644-87a4-3d5bff45b2d2",
+          "/grammar/complementTypes",
+          "9ed076b691a5bc654c9738151c8494dfe3e98f9ca4efc71ae2af6783fcfff27f",
+          0
+        ],
+        [
+          "construction-analyse-object",
+          "con",
+          "con_95eb0a0f-c646-7644-87a4-3d5bff45b2d2",
+          "/grammar/separability",
+          "0296f22b01d3da51783b5e145c24403c9066251dff0d2f86a33204d0d2b0cd38",
+          0
+        ],
+        [
+          "construction-analyse-object",
+          "con",
+          "con_95eb0a0f-c646-7644-87a4-3d5bff45b2d2",
+          "/grammar/transitivity",
+          "c922756c60a15540ff419cd4efc3453b09c0a53f860c012b7ba11f0d7d702fe1",
+          0
+        ],
+        [
+          "construction-analyse-object",
+          "con",
+          "con_95eb0a0f-c646-7644-87a4-3d5bff45b2d2",
+          "/pattern",
+          "8024aba8da533f19cb0efb5b659d9c788632780f749de3819ca710df9265e0f3",
+          0
+        ],
+        [
+          "construction-analyse-object",
+          "con",
+          "con_95eb0a0f-c646-7644-87a4-3d5bff45b2d2",
+          "/senseId",
+          "0364c471ba2466a4b1600cd34bbf92ffdd3ffea45c48b0e3c2e35f7d8e00d063",
+          0
+        ],
+        [
+          "construction-borrow-from",
+          "con",
+          "con_96254e48-51a9-71ca-8576-feff8b4d35ea",
+          "/complements",
+          "b92b041b7a15a28941809367433c393b3b952f78db6933cbbb73b386bd0714c7",
+          0
+        ],
+        [
+          "construction-borrow-from",
+          "con",
+          "con_96254e48-51a9-71ca-8576-feff8b4d35ea",
+          "/constraints/0",
+          "df803766c110c67b36c5fbbee67ca9a00e6b23600f518cc7e607fd895c170715",
+          0
+        ],
+        [
+          "construction-borrow-from",
+          "con",
+          "con_96254e48-51a9-71ca-8576-feff8b4d35ea",
+          "/constraints/1",
+          "9723da86b7ee7ea2cd128c987b4fe7e2e6ed3144726a0ad7e7d85ca205f57154",
+          0
+        ],
+        [
+          "construction-borrow-from",
+          "con",
+          "con_96254e48-51a9-71ca-8576-feff8b4d35ea",
+          "/constructionType",
+          "073d4d26cb6dcff200ebb249b6f2b1ce55e1dd76a746fe8f344ac52e60e75b9e",
+          0
+        ],
+        [
+          "construction-borrow-from",
+          "con",
+          "con_96254e48-51a9-71ca-8576-feff8b4d35ea",
+          "/grammar/complementTypes",
+          "7830b5173ac9fa47efe2f0e034406f4f50550a87c7c5434f7ee7fe37ed852707",
+          0
+        ],
+        [
+          "construction-borrow-from",
+          "con",
+          "con_96254e48-51a9-71ca-8576-feff8b4d35ea",
+          "/grammar/requiredPrepositions",
+          "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          0
+        ],
+        [
+          "construction-borrow-from",
+          "con",
+          "con_96254e48-51a9-71ca-8576-feff8b4d35ea",
+          "/grammar/separability",
+          "0296f22b01d3da51783b5e145c24403c9066251dff0d2f86a33204d0d2b0cd38",
+          0
+        ],
+        [
+          "construction-borrow-from",
+          "con",
+          "con_96254e48-51a9-71ca-8576-feff8b4d35ea",
+          "/grammar/transitivity",
+          "c922756c60a15540ff419cd4efc3453b09c0a53f860c012b7ba11f0d7d702fe1",
+          0
+        ],
+        [
+          "construction-borrow-from",
+          "con",
+          "con_96254e48-51a9-71ca-8576-feff8b4d35ea",
+          "/pattern",
+          "3b1c20891f0e4b11ea254fbeef649bc5da8db1139f6d8bdcffee97ec9d603cbd",
+          0
+        ],
+        [
+          "construction-borrow-from",
+          "con",
+          "con_96254e48-51a9-71ca-8576-feff8b4d35ea",
+          "/prepositions",
+          "8f8bb21ea62909070d1093adf6b1a1d88e31379538193140767a633228078822",
+          0
+        ],
+        [
+          "construction-borrow-from",
+          "con",
+          "con_96254e48-51a9-71ca-8576-feff8b4d35ea",
+          "/senseId",
+          "baf47d0188e227ab4982d9ae6cc72479dd6d923a68c98b44bc806245d655604a",
+          0
+        ],
+        [
+          "construction-depend-on",
+          "con",
+          "con_99b91aa3-59e4-7921-8365-a155b6c71827",
+          "/complements",
+          "cb0295a95a20bc917005ac2ac139b881e20f03db38aacfea33c4b5f36f363809",
+          0
+        ],
+        [
+          "construction-depend-on",
+          "con",
+          "con_99b91aa3-59e4-7921-8365-a155b6c71827",
+          "/constraints/0",
+          "cb8210b194cbab91b4cde57259fa8b5b29761b4bf8aa513786bbde99fcaaed66",
+          0
+        ],
+        [
+          "construction-depend-on",
+          "con",
+          "con_99b91aa3-59e4-7921-8365-a155b6c71827",
+          "/constraints/1",
+          "270a13455a22633f25c511aab0b4df5b52d8f75cf41d27b06399d1428eaa7552",
+          0
+        ],
+        [
+          "construction-depend-on",
+          "con",
+          "con_99b91aa3-59e4-7921-8365-a155b6c71827",
+          "/constructionType",
+          "6e92c92f10484f5541b389a141d86a04d1184ad998919aba5ac7cd09ac6d7fbf",
+          0
+        ],
+        [
+          "construction-depend-on",
+          "con",
+          "con_99b91aa3-59e4-7921-8365-a155b6c71827",
+          "/grammar/complementTypes",
+          "14cc192cca9c36ea3d5e8489cadfa42f5cf21c141c4f966c84fb6d10779ca50f",
+          0
+        ],
+        [
+          "construction-depend-on",
+          "con",
+          "con_99b91aa3-59e4-7921-8365-a155b6c71827",
+          "/grammar/requiredPrepositions",
+          "fab5905ebd450e49e841345bdc18d43c94f3f20fac7ac5242c7389f9c23f2d99",
+          0
+        ],
+        [
+          "construction-depend-on",
+          "con",
+          "con_99b91aa3-59e4-7921-8365-a155b6c71827",
+          "/grammar/separability",
+          "0296f22b01d3da51783b5e145c24403c9066251dff0d2f86a33204d0d2b0cd38",
+          0
+        ],
+        [
+          "construction-depend-on",
+          "con",
+          "con_99b91aa3-59e4-7921-8365-a155b6c71827",
+          "/grammar/transitivity",
+          "326a141f5c26042c2b69a0fd72dd564c571bd0ecab79016c90e6ea34c3bd76d3",
+          0
+        ],
+        [
+          "construction-depend-on",
+          "con",
+          "con_99b91aa3-59e4-7921-8365-a155b6c71827",
+          "/pattern",
+          "48e06cf003d7a44900f6e4a7b8faed0e93cc56a5b70b10842d6d3c0b9149cb88",
+          0
+        ],
+        [
+          "construction-depend-on",
+          "con",
+          "con_99b91aa3-59e4-7921-8365-a155b6c71827",
+          "/prepositions",
+          "fab5905ebd450e49e841345bdc18d43c94f3f20fac7ac5242c7389f9c23f2d99",
+          0
+        ],
+        [
+          "construction-depend-on",
+          "con",
+          "con_99b91aa3-59e4-7921-8365-a155b6c71827",
+          "/senseId",
+          "54baff103f6743932f28d62a9d4c59356bd349f13cecf743a6330ade6cafccff",
+          0
+        ],
+        [
+          "construction-lend-double-object",
+          "con",
+          "con_b22ef156-debc-7274-8c04-f3a3dec26283",
+          "/complements",
+          "47b914d0affb8c413749550b85c49085c78b483d893eca7e24e7ef81f68163bd",
+          0
+        ],
+        [
+          "construction-lend-double-object",
+          "con",
+          "con_b22ef156-debc-7274-8c04-f3a3dec26283",
+          "/constraints/0",
+          "57336e7c127aa030ff97c1aa338f71116c401d3d4d890d41e6d04b2ac71122bf",
+          0
+        ],
+        [
+          "construction-lend-double-object",
+          "con",
+          "con_b22ef156-debc-7274-8c04-f3a3dec26283",
+          "/constraints/1",
+          "9935f42c9ca12a7eebac87a0e2c4e1585479f350643649aa64123aa7c6945dee",
+          0
+        ],
+        [
+          "construction-lend-double-object",
+          "con",
+          "con_b22ef156-debc-7274-8c04-f3a3dec26283",
+          "/constructionType",
+          "073d4d26cb6dcff200ebb249b6f2b1ce55e1dd76a746fe8f344ac52e60e75b9e",
+          0
+        ],
+        [
+          "construction-lend-double-object",
+          "con",
+          "con_b22ef156-debc-7274-8c04-f3a3dec26283",
+          "/grammar/complementTypes",
+          "9ed076b691a5bc654c9738151c8494dfe3e98f9ca4efc71ae2af6783fcfff27f",
+          0
+        ],
+        [
+          "construction-lend-double-object",
+          "con",
+          "con_b22ef156-debc-7274-8c04-f3a3dec26283",
+          "/grammar/separability",
+          "0296f22b01d3da51783b5e145c24403c9066251dff0d2f86a33204d0d2b0cd38",
+          0
+        ],
+        [
+          "construction-lend-double-object",
+          "con",
+          "con_b22ef156-debc-7274-8c04-f3a3dec26283",
+          "/grammar/transitivity",
+          "c922756c60a15540ff419cd4efc3453b09c0a53f860c012b7ba11f0d7d702fe1",
+          0
+        ],
+        [
+          "construction-lend-double-object",
+          "con",
+          "con_b22ef156-debc-7274-8c04-f3a3dec26283",
+          "/pattern",
+          "e646eae2e555bfcbc860b73230b6aab9e3bca96424fdc31f587ef41d09b63ea8",
+          0
+        ],
+        [
+          "construction-lend-double-object",
+          "con",
+          "con_b22ef156-debc-7274-8c04-f3a3dec26283",
+          "/senseId",
+          "53f2a47bd9cd989420dba48525e0c9643a9b572c18d7b143d390fe4c850ab6da",
+          0
+        ],
+        [
+          "construction-lend-to",
+          "con",
+          "con_f902cdee-cfc7-7fac-8c30-1f2e8fc30a4a",
+          "/complements",
+          "5d6e10a450fde5add647e9a9fdd4a48b7418d7bdfdd1529f551a4c7a3e087c20",
+          0
+        ],
+        [
+          "construction-lend-to",
+          "con",
+          "con_f902cdee-cfc7-7fac-8c30-1f2e8fc30a4a",
+          "/constraints/0",
+          "57336e7c127aa030ff97c1aa338f71116c401d3d4d890d41e6d04b2ac71122bf",
+          0
+        ],
+        [
+          "construction-lend-to",
+          "con",
+          "con_f902cdee-cfc7-7fac-8c30-1f2e8fc30a4a",
+          "/constraints/1",
+          "9935f42c9ca12a7eebac87a0e2c4e1585479f350643649aa64123aa7c6945dee",
+          0
+        ],
+        [
+          "construction-lend-to",
+          "con",
+          "con_f902cdee-cfc7-7fac-8c30-1f2e8fc30a4a",
+          "/constructionType",
+          "6e92c92f10484f5541b389a141d86a04d1184ad998919aba5ac7cd09ac6d7fbf",
+          0
+        ],
+        [
+          "construction-lend-to",
+          "con",
+          "con_f902cdee-cfc7-7fac-8c30-1f2e8fc30a4a",
+          "/grammar/complementTypes",
+          "7830b5173ac9fa47efe2f0e034406f4f50550a87c7c5434f7ee7fe37ed852707",
+          0
+        ],
+        [
+          "construction-lend-to",
+          "con",
+          "con_f902cdee-cfc7-7fac-8c30-1f2e8fc30a4a",
+          "/grammar/requiredPrepositions",
+          "7d5dd52793ab351376cdcc437b9f0aab9f5b6b6ade70f770d4deaf8b750d738d",
+          0
+        ],
+        [
+          "construction-lend-to",
+          "con",
+          "con_f902cdee-cfc7-7fac-8c30-1f2e8fc30a4a",
+          "/grammar/separability",
+          "0296f22b01d3da51783b5e145c24403c9066251dff0d2f86a33204d0d2b0cd38",
+          0
+        ],
+        [
+          "construction-lend-to",
+          "con",
+          "con_f902cdee-cfc7-7fac-8c30-1f2e8fc30a4a",
+          "/grammar/transitivity",
+          "c922756c60a15540ff419cd4efc3453b09c0a53f860c012b7ba11f0d7d702fe1",
+          0
+        ],
+        [
+          "construction-lend-to",
+          "con",
+          "con_f902cdee-cfc7-7fac-8c30-1f2e8fc30a4a",
+          "/pattern",
+          "c118ee86fc3e54761287e3c7de7553bde7bb50b365c50466fbe33f222dcb3a53",
+          0
+        ],
+        [
+          "construction-lend-to",
+          "con",
+          "con_f902cdee-cfc7-7fac-8c30-1f2e8fc30a4a",
+          "/prepositions",
+          "7d5dd52793ab351376cdcc437b9f0aab9f5b6b6ade70f770d4deaf8b750d738d",
+          0
+        ],
+        [
+          "construction-lend-to",
+          "con",
+          "con_f902cdee-cfc7-7fac-8c30-1f2e8fc30a4a",
+          "/senseId",
+          "53f2a47bd9cd989420dba48525e0c9643a9b572c18d7b143d390fe4c850ab6da",
+          0
+        ],
+        [
+          "construction-look-up-separable",
+          "con",
+          "con_64c0aff1-8877-7acb-8962-d128687f4878",
+          "/complements",
+          "1fed118679f3a6f0741e3aae1dc37cf80ef4dbc8640dbe54dd43bf2d9ca37a19",
+          0
+        ],
+        [
+          "construction-look-up-separable",
+          "con",
+          "con_64c0aff1-8877-7acb-8962-d128687f4878",
+          "/constraints/0",
+          "746779a45146ebb843d3d96cbd1a2be26274c19658a4a71bd6ca43939b62728a",
+          0
+        ],
+        [
+          "construction-look-up-separable",
+          "con",
+          "con_64c0aff1-8877-7acb-8962-d128687f4878",
+          "/constraints/1",
+          "75301e58ed112bc3d80815c33d8c2ded49acde9d628a0bb55b52b94ac4b67cde",
+          0
+        ],
+        [
+          "construction-look-up-separable",
+          "con",
+          "con_64c0aff1-8877-7acb-8962-d128687f4878",
+          "/constructionType",
+          "72a9321f2ded034df21c3af603dd8b3e621855408383c48f5f16d86a86ba799b",
+          0
+        ],
+        [
+          "construction-look-up-separable",
+          "con",
+          "con_64c0aff1-8877-7acb-8962-d128687f4878",
+          "/grammar/complementTypes",
+          "9ed076b691a5bc654c9738151c8494dfe3e98f9ca4efc71ae2af6783fcfff27f",
+          0
+        ],
+        [
+          "construction-look-up-separable",
+          "con",
+          "con_64c0aff1-8877-7acb-8962-d128687f4878",
+          "/grammar/pronounPlacement",
+          "3feeae96085943995716f24a241aa6b422c63d3a58a9a50238610b8697133c7a",
+          0
+        ],
+        [
+          "construction-look-up-separable",
+          "con",
+          "con_64c0aff1-8877-7acb-8962-d128687f4878",
+          "/grammar/separability",
+          "b47faa42d9f337a6c5d4f46b78a8f7b4be70ecf2af07415e3b7e9f858b620c4a",
+          0
+        ],
+        [
+          "construction-look-up-separable",
+          "con",
+          "con_64c0aff1-8877-7acb-8962-d128687f4878",
+          "/grammar/transitivity",
+          "c922756c60a15540ff419cd4efc3453b09c0a53f860c012b7ba11f0d7d702fe1",
+          0
+        ],
+        [
+          "construction-look-up-separable",
+          "con",
+          "con_64c0aff1-8877-7acb-8962-d128687f4878",
+          "/pattern",
+          "a8b0b8c42ab843606e7a08cedf1682ac58a8085aeb95a61c353fee574349b08d",
+          0
+        ],
+        [
+          "construction-look-up-separable",
+          "con",
+          "con_64c0aff1-8877-7acb-8962-d128687f4878",
+          "/senseId",
+          "94e67c1ddf703f4f1827d23d2cb00075ebbe7f6b2dde108e8ebf9766b1d35251",
+          0
+        ],
+        [
+          "construction-look-up-separable",
+          "con",
+          "con_64c0aff1-8877-7acb-8962-d128687f4878",
+          "/separable",
+          "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          0
+        ],
+        [
+          "construction-run-machine",
+          "con",
+          "con_8719055f-3f27-74ff-86c8-7abefd5816fa",
+          "/complements",
+          "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          0
+        ],
+        [
+          "construction-run-machine",
+          "con",
+          "con_8719055f-3f27-74ff-86c8-7abefd5816fa",
+          "/constraints/0",
+          "76180ae7613339c1782e1c26f5b205d0f7590465c85e863c7cb47d570c568fdc",
+          0
+        ],
+        [
+          "construction-run-machine",
+          "con",
+          "con_8719055f-3f27-74ff-86c8-7abefd5816fa",
+          "/constraints/1",
+          "9abca02ec658f41dd4c760a391f12e1ee99702d09ccdb11cf2164004b939b065",
+          0
+        ],
+        [
+          "construction-run-machine",
+          "con",
+          "con_8719055f-3f27-74ff-86c8-7abefd5816fa",
+          "/constructionType",
+          "073d4d26cb6dcff200ebb249b6f2b1ce55e1dd76a746fe8f344ac52e60e75b9e",
+          0
+        ],
+        [
+          "construction-run-machine",
+          "con",
+          "con_8719055f-3f27-74ff-86c8-7abefd5816fa",
+          "/grammar/complementTypes",
+          "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          0
+        ],
+        [
+          "construction-run-machine",
+          "con",
+          "con_8719055f-3f27-74ff-86c8-7abefd5816fa",
+          "/grammar/separability",
+          "0296f22b01d3da51783b5e145c24403c9066251dff0d2f86a33204d0d2b0cd38",
+          0
+        ],
+        [
+          "construction-run-machine",
+          "con",
+          "con_8719055f-3f27-74ff-86c8-7abefd5816fa",
+          "/grammar/transitivity",
+          "326a141f5c26042c2b69a0fd72dd564c571bd0ecab79016c90e6ea34c3bd76d3",
+          0
+        ],
+        [
+          "construction-run-machine",
+          "con",
+          "con_8719055f-3f27-74ff-86c8-7abefd5816fa",
+          "/pattern",
+          "503573fd796048babfe604a2dc823383a3d6921de195e5229ab2f2a9c2da3532",
+          0
+        ],
+        [
+          "construction-run-machine",
+          "con",
+          "con_8719055f-3f27-74ff-86c8-7abefd5816fa",
+          "/senseId",
+          "973bd2ec8b02d1137b1b8c28cbcc1b3503c55fb92cd129372bdbc8ccfdbe4416",
+          0
+        ],
+        [
+          "construction-run-machine-transitive",
+          "con",
+          "con_fb6ee843-8230-7130-8dc3-4b21bc4cc476",
+          "/complements",
+          "9ff24d9dc6efc9d589743d8c4130ee15004c8cc9414a4b018b89383f31516d24",
+          0
+        ],
+        [
+          "construction-run-machine-transitive",
+          "con",
+          "con_fb6ee843-8230-7130-8dc3-4b21bc4cc476",
+          "/constraints/0",
+          "12fa09c69adc686d0e1c7bbdacf776b150aa4fecf9faacf8ecde3fef72750e0e",
+          0
+        ],
+        [
+          "construction-run-machine-transitive",
+          "con",
+          "con_fb6ee843-8230-7130-8dc3-4b21bc4cc476",
+          "/constructionType",
+          "073d4d26cb6dcff200ebb249b6f2b1ce55e1dd76a746fe8f344ac52e60e75b9e",
+          0
+        ],
+        [
+          "construction-run-machine-transitive",
+          "con",
+          "con_fb6ee843-8230-7130-8dc3-4b21bc4cc476",
+          "/grammar/complementTypes",
+          "9ed076b691a5bc654c9738151c8494dfe3e98f9ca4efc71ae2af6783fcfff27f",
+          0
+        ],
+        [
+          "construction-run-machine-transitive",
+          "con",
+          "con_fb6ee843-8230-7130-8dc3-4b21bc4cc476",
+          "/grammar/separability",
+          "0296f22b01d3da51783b5e145c24403c9066251dff0d2f86a33204d0d2b0cd38",
+          0
+        ],
+        [
+          "construction-run-machine-transitive",
+          "con",
+          "con_fb6ee843-8230-7130-8dc3-4b21bc4cc476",
+          "/grammar/transitivity",
+          "c922756c60a15540ff419cd4efc3453b09c0a53f860c012b7ba11f0d7d702fe1",
+          0
+        ],
+        [
+          "construction-run-machine-transitive",
+          "con",
+          "con_fb6ee843-8230-7130-8dc3-4b21bc4cc476",
+          "/pattern",
+          "45e630fc3a1b1f942007ae9b19160a8fcafa2367649213b6aaf81e2c1b1ed9ef",
+          0
+        ],
+        [
+          "construction-run-machine-transitive",
+          "con",
+          "con_fb6ee843-8230-7130-8dc3-4b21bc4cc476",
+          "/senseId",
+          "973bd2ec8b02d1137b1b8c28cbcc1b3503c55fb92cd129372bdbc8ccfdbe4416",
+          0
+        ],
+        [
+          "construction-run-management",
+          "con",
+          "con_169e6f93-8164-771f-869e-c09196f10f14",
+          "/complements",
+          "d2faa1b19157a7683174927c71a6580f567880a661d270790f7326e58ddd4652",
+          0
+        ],
+        [
+          "construction-run-management",
+          "con",
+          "con_169e6f93-8164-771f-869e-c09196f10f14",
+          "/constraints/0",
+          "f5447fb1633ee6d2ec6b63aff100db63ffae74947cfd03647cc8065c251a1732",
+          0
+        ],
+        [
+          "construction-run-management",
+          "con",
+          "con_169e6f93-8164-771f-869e-c09196f10f14",
+          "/constructionType",
+          "073d4d26cb6dcff200ebb249b6f2b1ce55e1dd76a746fe8f344ac52e60e75b9e",
+          0
+        ],
+        [
+          "construction-run-management",
+          "con",
+          "con_169e6f93-8164-771f-869e-c09196f10f14",
+          "/grammar/complementTypes",
+          "9ed076b691a5bc654c9738151c8494dfe3e98f9ca4efc71ae2af6783fcfff27f",
+          0
+        ],
+        [
+          "construction-run-management",
+          "con",
+          "con_169e6f93-8164-771f-869e-c09196f10f14",
+          "/grammar/separability",
+          "0296f22b01d3da51783b5e145c24403c9066251dff0d2f86a33204d0d2b0cd38",
+          0
+        ],
+        [
+          "construction-run-management",
+          "con",
+          "con_169e6f93-8164-771f-869e-c09196f10f14",
+          "/grammar/transitivity",
+          "c922756c60a15540ff419cd4efc3453b09c0a53f860c012b7ba11f0d7d702fe1",
+          0
+        ],
+        [
+          "construction-run-management",
+          "con",
+          "con_169e6f93-8164-771f-869e-c09196f10f14",
+          "/pattern",
+          "24d75f8eaf95fe37c6c18bdc20cc01002b30693dc4a2159c730eed93604821ce",
+          0
+        ],
+        [
+          "construction-run-management",
+          "con",
+          "con_169e6f93-8164-771f-869e-c09196f10f14",
+          "/senseId",
+          "49f9847ab7fe6b7e54ceff5fadf1fb5d33ad7de3753b14e72754c51f824bcae3",
+          0
+        ],
+        [
+          "entry-advice",
+          "lex",
+          "lex_457099f9-2fea-7211-8284-c885acbb8e8a",
+          "/entryKind",
+          "3e290f7576843024f87bd235782977b452c799b8b9fa1b113502a6321eca0179",
+          0
+        ],
+        [
+          "entry-advice",
+          "lex",
+          "lex_457099f9-2fea-7211-8284-c885acbb8e8a",
+          "/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "entry-advice",
+          "lex",
+          "lex_457099f9-2fea-7211-8284-c885acbb8e8a",
+          "/lemma",
+          "c540d292082877f97dc1949f14e52df4222195c907b306c7c843ced5a47cec85",
+          0
+        ],
+        [
+          "entry-advice",
+          "lex",
+          "lex_457099f9-2fea-7211-8284-c885acbb8e8a",
+          "/pos",
+          "ba4484d5772c1e78d154a7132327bc04578864643ef5f718012117fd26101149",
+          0
+        ],
+        [
+          "entry-analyse",
+          "lex",
+          "lex_bc07d652-23dd-72ac-840b-0431fc4eb806",
+          "/entryKind",
+          "3e290f7576843024f87bd235782977b452c799b8b9fa1b113502a6321eca0179",
+          0
+        ],
+        [
+          "entry-analyse",
+          "lex",
+          "lex_bc07d652-23dd-72ac-840b-0431fc4eb806",
+          "/familyIds",
+          "96348bf297206f8ccfd2123144aef890cc73159e16d9647aafe1cfc830b4255e",
+          0
+        ],
+        [
+          "entry-analyse",
+          "lex",
+          "lex_bc07d652-23dd-72ac-840b-0431fc4eb806",
+          "/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "entry-analyse",
+          "lex",
+          "lex_bc07d652-23dd-72ac-840b-0431fc4eb806",
+          "/lemma",
+          "425166740291eec61ff8a0ded1eade7a4f4eddde08af71ccd8351df9ce9de286",
+          0
+        ],
+        [
+          "entry-analyse",
+          "lex",
+          "lex_bc07d652-23dd-72ac-840b-0431fc4eb806",
+          "/pos",
+          "a9c2b1d8ccb18bf2529d43aa042d01be043d50ec7881378ae144ab785dbed496",
+          0
+        ],
+        [
+          "entry-analysis",
+          "lex",
+          "lex_2569ca92-39d1-7500-8597-a40b0e7bf3c1",
+          "/entryKind",
+          "3e290f7576843024f87bd235782977b452c799b8b9fa1b113502a6321eca0179",
+          0
+        ],
+        [
+          "entry-analysis",
+          "lex",
+          "lex_2569ca92-39d1-7500-8597-a40b0e7bf3c1",
+          "/familyIds",
+          "96348bf297206f8ccfd2123144aef890cc73159e16d9647aafe1cfc830b4255e",
+          0
+        ],
+        [
+          "entry-analysis",
+          "lex",
+          "lex_2569ca92-39d1-7500-8597-a40b0e7bf3c1",
+          "/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "entry-analysis",
+          "lex",
+          "lex_2569ca92-39d1-7500-8597-a40b0e7bf3c1",
+          "/lemma",
+          "bfb86dd898568fbcabbf1a551f062fc68391ff274ea0c10f8c050346001556f0",
+          0
+        ],
+        [
+          "entry-analysis",
+          "lex",
+          "lex_2569ca92-39d1-7500-8597-a40b0e7bf3c1",
+          "/pos",
+          "ba4484d5772c1e78d154a7132327bc04578864643ef5f718012117fd26101149",
+          0
+        ],
+        [
+          "entry-analytical",
+          "lex",
+          "lex_579ccd42-0651-7fca-8f8f-6ee2036f4199",
+          "/entryKind",
+          "3e290f7576843024f87bd235782977b452c799b8b9fa1b113502a6321eca0179",
+          0
+        ],
+        [
+          "entry-analytical",
+          "lex",
+          "lex_579ccd42-0651-7fca-8f8f-6ee2036f4199",
+          "/familyIds",
+          "96348bf297206f8ccfd2123144aef890cc73159e16d9647aafe1cfc830b4255e",
+          0
+        ],
+        [
+          "entry-analytical",
+          "lex",
+          "lex_579ccd42-0651-7fca-8f8f-6ee2036f4199",
+          "/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "entry-analytical",
+          "lex",
+          "lex_579ccd42-0651-7fca-8f8f-6ee2036f4199",
+          "/lemma",
+          "b94c77cb158f7d057d2fb3399fdec2356f2bb907f14d1cb28c819f9b821bf993",
+          0
+        ],
+        [
+          "entry-analytical",
+          "lex",
+          "lex_579ccd42-0651-7fca-8f8f-6ee2036f4199",
+          "/pos",
+          "1540adff5518a2bffa0c6fd4e83a7c52d6ed20cb2557cc9fef0f1907ac25f797",
+          0
+        ],
+        [
+          "entry-bank-financial",
+          "lex",
+          "lex_2a2d04f4-2cfb-7f8b-8c57-e9d21b364f90",
+          "/entryKind",
+          "3e290f7576843024f87bd235782977b452c799b8b9fa1b113502a6321eca0179",
+          0
+        ],
+        [
+          "entry-bank-financial",
+          "lex",
+          "lex_2a2d04f4-2cfb-7f8b-8c57-e9d21b364f90",
+          "/homographNumber",
+          "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          1
+        ],
+        [
+          "entry-bank-financial",
+          "lex",
+          "lex_2a2d04f4-2cfb-7f8b-8c57-e9d21b364f90",
+          "/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "entry-bank-financial",
+          "lex",
+          "lex_2a2d04f4-2cfb-7f8b-8c57-e9d21b364f90",
+          "/lemma",
+          "4e1d7abb8a7eb004f99440d0f35dcc1d6f240760bd0773d352b1525bbd565e6d",
+          0
+        ],
+        [
+          "entry-bank-financial",
+          "lex",
+          "lex_2a2d04f4-2cfb-7f8b-8c57-e9d21b364f90",
+          "/pos",
+          "ba4484d5772c1e78d154a7132327bc04578864643ef5f718012117fd26101149",
+          0
+        ],
+        [
+          "entry-bank-river",
+          "lex",
+          "lex_0f3e0486-6c9d-77cc-8173-a870e281e8b4",
+          "/entryKind",
+          "3e290f7576843024f87bd235782977b452c799b8b9fa1b113502a6321eca0179",
+          0
+        ],
+        [
+          "entry-bank-river",
+          "lex",
+          "lex_0f3e0486-6c9d-77cc-8173-a870e281e8b4",
+          "/homographNumber",
+          "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          1
+        ],
+        [
+          "entry-bank-river",
+          "lex",
+          "lex_0f3e0486-6c9d-77cc-8173-a870e281e8b4",
+          "/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "entry-bank-river",
+          "lex",
+          "lex_0f3e0486-6c9d-77cc-8173-a870e281e8b4",
+          "/lemma",
+          "4e1d7abb8a7eb004f99440d0f35dcc1d6f240760bd0773d352b1525bbd565e6d",
+          0
+        ],
+        [
+          "entry-bank-river",
+          "lex",
+          "lex_0f3e0486-6c9d-77cc-8173-a870e281e8b4",
+          "/pos",
+          "ba4484d5772c1e78d154a7132327bc04578864643ef5f718012117fd26101149",
+          0
+        ],
+        [
+          "entry-big",
+          "lex",
+          "lex_1247a954-6fe8-7ae4-80be-2aa8d4d5a492",
+          "/entryKind",
+          "3e290f7576843024f87bd235782977b452c799b8b9fa1b113502a6321eca0179",
+          0
+        ],
+        [
+          "entry-big",
+          "lex",
+          "lex_1247a954-6fe8-7ae4-80be-2aa8d4d5a492",
+          "/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "entry-big",
+          "lex",
+          "lex_1247a954-6fe8-7ae4-80be-2aa8d4d5a492",
+          "/lemma",
+          "b393aa8a3b540027b9963d2b8bf3d7ba90e1d8bc8085df3eeb44e402d88a1276",
+          0
+        ],
+        [
+          "entry-big",
+          "lex",
+          "lex_1247a954-6fe8-7ae4-80be-2aa8d4d5a492",
+          "/pos",
+          "1540adff5518a2bffa0c6fd4e83a7c52d6ed20cb2557cc9fef0f1907ac25f797",
+          0
+        ],
+        [
+          "entry-borrow",
+          "lex",
+          "lex_b3a443ec-60c7-7e79-8a27-dcca7e64e686",
+          "/entryKind",
+          "3e290f7576843024f87bd235782977b452c799b8b9fa1b113502a6321eca0179",
+          0
+        ],
+        [
+          "entry-borrow",
+          "lex",
+          "lex_b3a443ec-60c7-7e79-8a27-dcca7e64e686",
+          "/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "entry-borrow",
+          "lex",
+          "lex_b3a443ec-60c7-7e79-8a27-dcca7e64e686",
+          "/lemma",
+          "f4421178dc8b07154d179021980ddadda7013c10ef9dceec36b78aae8c78a79d",
+          0
+        ],
+        [
+          "entry-borrow",
+          "lex",
+          "lex_b3a443ec-60c7-7e79-8a27-dcca7e64e686",
+          "/pos",
+          "a9c2b1d8ccb18bf2529d43aa042d01be043d50ec7881378ae144ab785dbed496",
+          0
+        ],
+        [
+          "entry-depend",
+          "lex",
+          "lex_efa8ad42-e78b-7dd8-81c3-177dc3636873",
+          "/entryKind",
+          "3e290f7576843024f87bd235782977b452c799b8b9fa1b113502a6321eca0179",
+          0
+        ],
+        [
+          "entry-depend",
+          "lex",
+          "lex_efa8ad42-e78b-7dd8-81c3-177dc3636873",
+          "/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "entry-depend",
+          "lex",
+          "lex_efa8ad42-e78b-7dd8-81c3-177dc3636873",
+          "/lemma",
+          "d2ca9b2dcab844b95ce964b2d9952cb7f680104af1cf6114997101491386e991",
+          0
+        ],
+        [
+          "entry-depend",
+          "lex",
+          "lex_efa8ad42-e78b-7dd8-81c3-177dc3636873",
+          "/pos",
+          "a9c2b1d8ccb18bf2529d43aa042d01be043d50ec7881378ae144ab785dbed496",
+          0
+        ],
+        [
+          "entry-large",
+          "lex",
+          "lex_d77e5cc0-9d61-74f2-8625-9959d38a5c51",
+          "/entryKind",
+          "3e290f7576843024f87bd235782977b452c799b8b9fa1b113502a6321eca0179",
+          0
+        ],
+        [
+          "entry-large",
+          "lex",
+          "lex_d77e5cc0-9d61-74f2-8625-9959d38a5c51",
+          "/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "entry-large",
+          "lex",
+          "lex_d77e5cc0-9d61-74f2-8625-9959d38a5c51",
+          "/lemma",
+          "8dd8c429f56aeaccae1c540f78a366e07f80c0a73bb128291b6bca3ba349abc9",
+          0
+        ],
+        [
+          "entry-large",
+          "lex",
+          "lex_d77e5cc0-9d61-74f2-8625-9959d38a5c51",
+          "/pos",
+          "1540adff5518a2bffa0c6fd4e83a7c52d6ed20cb2557cc9fef0f1907ac25f797",
+          0
+        ],
+        [
+          "entry-lend",
+          "lex",
+          "lex_b7ff0c73-b227-741d-8070-7709187e85aa",
+          "/entryKind",
+          "3e290f7576843024f87bd235782977b452c799b8b9fa1b113502a6321eca0179",
+          0
+        ],
+        [
+          "entry-lend",
+          "lex",
+          "lex_b7ff0c73-b227-741d-8070-7709187e85aa",
+          "/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "entry-lend",
+          "lex",
+          "lex_b7ff0c73-b227-741d-8070-7709187e85aa",
+          "/lemma",
+          "890faa47fb9c15820125cb390b5e6d9aa0b5416e9005cfb67f111e09ada7a95f",
+          0
+        ],
+        [
+          "entry-lend",
+          "lex",
+          "lex_b7ff0c73-b227-741d-8070-7709187e85aa",
+          "/pos",
+          "a9c2b1d8ccb18bf2529d43aa042d01be043d50ec7881378ae144ab785dbed496",
+          0
+        ],
+        [
+          "entry-look-up",
+          "lex",
+          "lex_f04d493f-a732-7885-8d01-ebd6b0fe51b6",
+          "/entryKind",
+          "2aac498c5293a2be14a1fb59eb8d7822448d45edd219a574948771f107311584",
+          0
+        ],
+        [
+          "entry-look-up",
+          "lex",
+          "lex_f04d493f-a732-7885-8d01-ebd6b0fe51b6",
+          "/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "entry-look-up",
+          "lex",
+          "lex_f04d493f-a732-7885-8d01-ebd6b0fe51b6",
+          "/lemma",
+          "45ea6977a0cff50eddb1f6562ad7cdbba5a7e1760598cd6ecc799c6aac131614",
+          0
+        ],
+        [
+          "entry-look-up",
+          "lex",
+          "lex_f04d493f-a732-7885-8d01-ebd6b0fe51b6",
+          "/multiwordKind",
+          "be752b1fdaa2f843668e57aacfbd23cf5b3757110df60ef6a754bda790c412bf",
+          0
+        ],
+        [
+          "entry-look-up",
+          "lex",
+          "lex_f04d493f-a732-7885-8d01-ebd6b0fe51b6",
+          "/pos",
+          "a9c2b1d8ccb18bf2529d43aa042d01be043d50ec7881378ae144ab785dbed496",
+          0
+        ],
+        [
+          "entry-run",
+          "lex",
+          "lex_77501a0f-727e-72cd-811f-ee2e901a0879",
+          "/entryKind",
+          "3e290f7576843024f87bd235782977b452c799b8b9fa1b113502a6321eca0179",
+          0
+        ],
+        [
+          "entry-run",
+          "lex",
+          "lex_77501a0f-727e-72cd-811f-ee2e901a0879",
+          "/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "entry-run",
+          "lex",
+          "lex_77501a0f-727e-72cd-811f-ee2e901a0879",
+          "/lemma",
+          "5e87f618bd8837e87070ae7f83753c6a23ff095f43de6ededcd38ae535031c29",
+          0
+        ],
+        [
+          "entry-run",
+          "lex",
+          "lex_77501a0f-727e-72cd-811f-ee2e901a0879",
+          "/pos",
+          "a9c2b1d8ccb18bf2529d43aa042d01be043d50ec7881378ae144ab785dbed496",
+          0
+        ],
+        [
+          "entry-small",
+          "lex",
+          "lex_ec40b2d4-06d5-77a9-837e-01850a69c5f0",
+          "/entryKind",
+          "3e290f7576843024f87bd235782977b452c799b8b9fa1b113502a6321eca0179",
+          0
+        ],
+        [
+          "entry-small",
+          "lex",
+          "lex_ec40b2d4-06d5-77a9-837e-01850a69c5f0",
+          "/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "entry-small",
+          "lex",
+          "lex_ec40b2d4-06d5-77a9-837e-01850a69c5f0",
+          "/lemma",
+          "300694740fd6f600a0011c69d5ceb0604f79dd7f96b0cbd87ffb1952d614a7ff",
+          0
+        ],
+        [
+          "entry-small",
+          "lex",
+          "lex_ec40b2d4-06d5-77a9-837e-01850a69c5f0",
+          "/pos",
+          "1540adff5518a2bffa0c6fd4e83a7c52d6ed20cb2557cc9fef0f1907ac25f797",
+          0
+        ],
+        [
+          "equiv-advice",
+          "eqv",
+          "eqv_fe94344c-c86b-75bf-826d-ab4cbff81f29",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-advice",
+          "eqv",
+          "eqv_fe94344c-c86b-75bf-826d-ab4cbff81f29",
+          "/context",
+          "194840ea47ee9408fbe39f79faa021ff60d7ae0fe42f49ac369d538bcbca7fa4",
+          0
+        ],
+        [
+          "equiv-advice",
+          "eqv",
+          "eqv_fe94344c-c86b-75bf-826d-ab4cbff81f29",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-advice",
+          "eqv",
+          "eqv_fe94344c-c86b-75bf-826d-ab4cbff81f29",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-advice",
+          "eqv",
+          "eqv_fe94344c-c86b-75bf-826d-ab4cbff81f29",
+          "/glossVi",
+          "17c97c1b57f75c32973de0fc2ddf65abea2dab5d25504236c7c83e1b89337dfc",
+          0
+        ],
+        [
+          "equiv-advice",
+          "eqv",
+          "eqv_fe94344c-c86b-75bf-826d-ab4cbff81f29",
+          "/restrictions/0",
+          "d9acfe99e697026f5f62c5563325fdda9ca6568dea3ec4d076c9d001dca243e0",
+          0
+        ],
+        [
+          "equiv-advice",
+          "eqv",
+          "eqv_fe94344c-c86b-75bf-826d-ab4cbff81f29",
+          "/restrictions/1",
+          "322a7d2454e44bd3134e82a2f85dfc9ce881f8ba511ddb9861f776326a3429d9",
+          0
+        ],
+        [
+          "equiv-advice",
+          "eqv",
+          "eqv_fe94344c-c86b-75bf-826d-ab4cbff81f29",
+          "/sourceSenseId",
+          "0c70faa5ad88e6d0485217a0a39c8b1ac21f3eaed4d98472d28163186e6588b4",
+          0
+        ],
+        [
+          "equiv-analyse",
+          "eqv",
+          "eqv_e73de9fb-f4e4-7ede-8eb2-9bd61dd6927d",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-analyse",
+          "eqv",
+          "eqv_e73de9fb-f4e4-7ede-8eb2-9bd61dd6927d",
+          "/context",
+          "4f63c4318d7d75f2662e5e74269cd479a35fd6cd899bb82c9e921421987a3abe",
+          0
+        ],
+        [
+          "equiv-analyse",
+          "eqv",
+          "eqv_e73de9fb-f4e4-7ede-8eb2-9bd61dd6927d",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-analyse",
+          "eqv",
+          "eqv_e73de9fb-f4e4-7ede-8eb2-9bd61dd6927d",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-analyse",
+          "eqv",
+          "eqv_e73de9fb-f4e4-7ede-8eb2-9bd61dd6927d",
+          "/glossVi",
+          "892d6bf0b52ab17e523cde95a319e198e43958a535e7c08ccc2d1ed2b2553840",
+          0
+        ],
+        [
+          "equiv-analyse",
+          "eqv",
+          "eqv_e73de9fb-f4e4-7ede-8eb2-9bd61dd6927d",
+          "/sourceSenseId",
+          "0364c471ba2466a4b1600cd34bbf92ffdd3ffea45c48b0e3c2e35f7d8e00d063",
+          0
+        ],
+        [
+          "equiv-analysis",
+          "eqv",
+          "eqv_eece1968-e7a7-73a4-89ed-2d58b0e2f451",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-analysis",
+          "eqv",
+          "eqv_eece1968-e7a7-73a4-89ed-2d58b0e2f451",
+          "/context",
+          "2414e5f8e19583f85c00c157cde91d359bb858ee2e3691c0b04243ef803c451a",
+          0
+        ],
+        [
+          "equiv-analysis",
+          "eqv",
+          "eqv_eece1968-e7a7-73a4-89ed-2d58b0e2f451",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-analysis",
+          "eqv",
+          "eqv_eece1968-e7a7-73a4-89ed-2d58b0e2f451",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-analysis",
+          "eqv",
+          "eqv_eece1968-e7a7-73a4-89ed-2d58b0e2f451",
+          "/glossVi",
+          "892d6bf0b52ab17e523cde95a319e198e43958a535e7c08ccc2d1ed2b2553840",
+          0
+        ],
+        [
+          "equiv-analysis",
+          "eqv",
+          "eqv_eece1968-e7a7-73a4-89ed-2d58b0e2f451",
+          "/restrictions/0",
+          "4e64b8aa784658d3b186f663b26e9351c11abef5a8995a7f46465c8420aee7cb",
+          0
+        ],
+        [
+          "equiv-analysis",
+          "eqv",
+          "eqv_eece1968-e7a7-73a4-89ed-2d58b0e2f451",
+          "/restrictions/1",
+          "a4c77254f551aaebf142e69889c2dd5a9ea6b238b017050946dd15964a3815f6",
+          0
+        ],
+        [
+          "equiv-analysis",
+          "eqv",
+          "eqv_eece1968-e7a7-73a4-89ed-2d58b0e2f451",
+          "/sourceSenseId",
+          "b6237b9b2764d43f8eb1b8dc59d9c81591038060fb8ee57f88ce7ff23be4407b",
+          0
+        ],
+        [
+          "equiv-analytical",
+          "eqv",
+          "eqv_bf099735-933b-7022-89e9-6c85e4f9915b",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-analytical",
+          "eqv",
+          "eqv_bf099735-933b-7022-89e9-6c85e4f9915b",
+          "/context",
+          "7e78484035fdafadad835f750784bb51c77a382e8e834e8a337fa10441348bec",
+          0
+        ],
+        [
+          "equiv-analytical",
+          "eqv",
+          "eqv_bf099735-933b-7022-89e9-6c85e4f9915b",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-analytical",
+          "eqv",
+          "eqv_bf099735-933b-7022-89e9-6c85e4f9915b",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-analytical",
+          "eqv",
+          "eqv_bf099735-933b-7022-89e9-6c85e4f9915b",
+          "/glossVi",
+          "3422020323b78c7423d800a3cfa2e666cfd2441753b509921f94f5eb6ba00cb5",
+          0
+        ],
+        [
+          "equiv-analytical",
+          "eqv",
+          "eqv_bf099735-933b-7022-89e9-6c85e4f9915b",
+          "/restrictions/0",
+          "5a5120ea72861fbea90946e45dd92490a95e666fd70c1b6bc7d5863ac177902a",
+          0
+        ],
+        [
+          "equiv-analytical",
+          "eqv",
+          "eqv_bf099735-933b-7022-89e9-6c85e4f9915b",
+          "/restrictions/1",
+          "407f986fba1133d776c6a1141b114531327eafbd04362b9ba6a125fb82505078",
+          0
+        ],
+        [
+          "equiv-analytical",
+          "eqv",
+          "eqv_bf099735-933b-7022-89e9-6c85e4f9915b",
+          "/sourceSenseId",
+          "db45f8dbd3df8ee9e72a28b660edf806c9a3adf81f94740ee83b6e1c739e2b1d",
+          0
+        ],
+        [
+          "equiv-bank-financial",
+          "eqv",
+          "eqv_a3d68d0a-72da-70af-8f92-49502fc86141",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-bank-financial",
+          "eqv",
+          "eqv_a3d68d0a-72da-70af-8f92-49502fc86141",
+          "/context",
+          "e7d46a66b3ba4bc319efe565ca6527f5f66611fa5319264e0a641ae216ca93b2",
+          0
+        ],
+        [
+          "equiv-bank-financial",
+          "eqv",
+          "eqv_a3d68d0a-72da-70af-8f92-49502fc86141",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-bank-financial",
+          "eqv",
+          "eqv_a3d68d0a-72da-70af-8f92-49502fc86141",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-bank-financial",
+          "eqv",
+          "eqv_a3d68d0a-72da-70af-8f92-49502fc86141",
+          "/glossVi",
+          "ca3caae9dc988f06446f65e7c50b6720e135c0ac79ea8c2902783a67696d0c3a",
+          0
+        ],
+        [
+          "equiv-bank-financial",
+          "eqv",
+          "eqv_a3d68d0a-72da-70af-8f92-49502fc86141",
+          "/restrictions/0",
+          "322a7d2454e44bd3134e82a2f85dfc9ce881f8ba511ddb9861f776326a3429d9",
+          0
+        ],
+        [
+          "equiv-bank-financial",
+          "eqv",
+          "eqv_a3d68d0a-72da-70af-8f92-49502fc86141",
+          "/restrictions/1",
+          "47cf457e628e53de4aac92a3cb980dfb47051611696f0e6f579fb7dab6111ff6",
+          0
+        ],
+        [
+          "equiv-bank-financial",
+          "eqv",
+          "eqv_a3d68d0a-72da-70af-8f92-49502fc86141",
+          "/sourceSenseId",
+          "45227e779c0950573f0d915a6b8e6f7add73cfc310b31e4812e80fccebffa7f0",
+          0
+        ],
+        [
+          "equiv-bank-river",
+          "eqv",
+          "eqv_5a894075-cb13-72ea-8dd4-c321050f91f6",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-bank-river",
+          "eqv",
+          "eqv_5a894075-cb13-72ea-8dd4-c321050f91f6",
+          "/context",
+          "abfaa20f8ffca531c3cdd9f54ab8028cc67dfae4e45b45fefe66ba2974b7f134",
+          0
+        ],
+        [
+          "equiv-bank-river",
+          "eqv",
+          "eqv_5a894075-cb13-72ea-8dd4-c321050f91f6",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-bank-river",
+          "eqv",
+          "eqv_5a894075-cb13-72ea-8dd4-c321050f91f6",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-bank-river",
+          "eqv",
+          "eqv_5a894075-cb13-72ea-8dd4-c321050f91f6",
+          "/glossVi",
+          "70177355ab90d6fc9b816cd16de36bd934891c095d15dbf22d5a55ffe8e28b87",
+          0
+        ],
+        [
+          "equiv-bank-river",
+          "eqv",
+          "eqv_5a894075-cb13-72ea-8dd4-c321050f91f6",
+          "/restrictions/0",
+          "322a7d2454e44bd3134e82a2f85dfc9ce881f8ba511ddb9861f776326a3429d9",
+          0
+        ],
+        [
+          "equiv-bank-river",
+          "eqv",
+          "eqv_5a894075-cb13-72ea-8dd4-c321050f91f6",
+          "/restrictions/1",
+          "80c549b10d135d0c531824da4ca68cab31be19a0666e60389daa1d9812e43400",
+          0
+        ],
+        [
+          "equiv-bank-river",
+          "eqv",
+          "eqv_5a894075-cb13-72ea-8dd4-c321050f91f6",
+          "/sourceSenseId",
+          "d1e2e5a907f2a75852935b5f76dcbbdcaaa04fc50de932a506803b40b49918da",
+          0
+        ],
+        [
+          "equiv-big",
+          "eqv",
+          "eqv_95dfd592-8a9c-7a26-86bf-c21d6c656a42",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-big",
+          "eqv",
+          "eqv_95dfd592-8a9c-7a26-86bf-c21d6c656a42",
+          "/context",
+          "6a7362d65e1df1971aeea482b56139e7e3d7af82f6b68aeb61bf781270af61df",
+          0
+        ],
+        [
+          "equiv-big",
+          "eqv",
+          "eqv_95dfd592-8a9c-7a26-86bf-c21d6c656a42",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-big",
+          "eqv",
+          "eqv_95dfd592-8a9c-7a26-86bf-c21d6c656a42",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-big",
+          "eqv",
+          "eqv_95dfd592-8a9c-7a26-86bf-c21d6c656a42",
+          "/glossVi",
+          "ef5bbe168ebbb7a42a902d01a91588dd29092613695f64a4608fd1ad21441314",
+          0
+        ],
+        [
+          "equiv-big",
+          "eqv",
+          "eqv_95dfd592-8a9c-7a26-86bf-c21d6c656a42",
+          "/restrictions/0",
+          "adf8eea5a70a33e7ee1a988701854eb5a7b4589a374310eca09d8a5081c88e20",
+          0
+        ],
+        [
+          "equiv-big",
+          "eqv",
+          "eqv_95dfd592-8a9c-7a26-86bf-c21d6c656a42",
+          "/restrictions/1",
+          "1fbcdd8a590465eacb5e94c583b1e028021b23bcab34d1cb549148b11ff09774",
+          0
+        ],
+        [
+          "equiv-big",
+          "eqv",
+          "eqv_95dfd592-8a9c-7a26-86bf-c21d6c656a42",
+          "/sourceSenseId",
+          "ef473ba69f226836821e50248c29bd3d120b02e37e0e9af9cc52dba61f65a606",
+          0
+        ],
+        [
+          "equiv-borrow",
+          "eqv",
+          "eqv_0b5ce96e-4b90-7701-8a10-e4883eabbc0e",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-borrow",
+          "eqv",
+          "eqv_0b5ce96e-4b90-7701-8a10-e4883eabbc0e",
+          "/context",
+          "4f14db149642639e0ccab5385cb364aaff803936026796bca19a4a337bb0e03c",
+          0
+        ],
+        [
+          "equiv-borrow",
+          "eqv",
+          "eqv_0b5ce96e-4b90-7701-8a10-e4883eabbc0e",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-borrow",
+          "eqv",
+          "eqv_0b5ce96e-4b90-7701-8a10-e4883eabbc0e",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-borrow",
+          "eqv",
+          "eqv_0b5ce96e-4b90-7701-8a10-e4883eabbc0e",
+          "/glossVi",
+          "2e24fddfafc6c22b6f728a4f9adcdeb068d8a6450b7b8a0c2fb3636139a12f9a",
+          0
+        ],
+        [
+          "equiv-borrow",
+          "eqv",
+          "eqv_0b5ce96e-4b90-7701-8a10-e4883eabbc0e",
+          "/restrictions/0",
+          "e66a273d8ccbae17ebe6f8ac467f99a5a841a7b093c73740a1479573653af1e6",
+          0
+        ],
+        [
+          "equiv-borrow",
+          "eqv",
+          "eqv_0b5ce96e-4b90-7701-8a10-e4883eabbc0e",
+          "/restrictions/1",
+          "9ffa15003faf96f0bc5011a93dd3654ea9b843857d621b91aa3fbd1bdf68ffe2",
+          0
+        ],
+        [
+          "equiv-borrow",
+          "eqv",
+          "eqv_0b5ce96e-4b90-7701-8a10-e4883eabbc0e",
+          "/sourceSenseId",
+          "baf47d0188e227ab4982d9ae6cc72479dd6d923a68c98b44bc806245d655604a",
+          0
+        ],
+        [
+          "equiv-borrow-money",
+          "eqv",
+          "eqv_6549c9e1-93cd-72f1-8b4c-21ae31d1b945",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-borrow-money",
+          "eqv",
+          "eqv_6549c9e1-93cd-72f1-8b4c-21ae31d1b945",
+          "/context",
+          "f45917f1ac87c95f284a882f8786a0c4ba77fed2bbe0d6e98717efa41241e014",
+          0
+        ],
+        [
+          "equiv-borrow-money",
+          "eqv",
+          "eqv_6549c9e1-93cd-72f1-8b4c-21ae31d1b945",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-borrow-money",
+          "eqv",
+          "eqv_6549c9e1-93cd-72f1-8b4c-21ae31d1b945",
+          "/equivalenceType",
+          "323c9ade71d50bce8cdd06c9e2163d50f17350cfd30de2ae0b2f43b76dcd5c20",
+          0
+        ],
+        [
+          "equiv-borrow-money",
+          "eqv",
+          "eqv_6549c9e1-93cd-72f1-8b4c-21ae31d1b945",
+          "/glossVi",
+          "a18c1ee0476e98090cc72cf52d1bcc964c004da6d424aaa41a5d05448932a92e",
+          0
+        ],
+        [
+          "equiv-borrow-money",
+          "eqv",
+          "eqv_6549c9e1-93cd-72f1-8b4c-21ae31d1b945",
+          "/register",
+          "9d3b02424c514de974e91bd2d20d4c0babe51d2de11b5f5cd92bd3c5f8cb67cf",
+          0
+        ],
+        [
+          "equiv-borrow-money",
+          "eqv",
+          "eqv_6549c9e1-93cd-72f1-8b4c-21ae31d1b945",
+          "/restrictions/0",
+          "3e36fae1886e981a4b77cb12fb11e029a3135543212b6f310a4f4f26ba7e32f5",
+          0
+        ],
+        [
+          "equiv-borrow-money",
+          "eqv",
+          "eqv_6549c9e1-93cd-72f1-8b4c-21ae31d1b945",
+          "/sourceSenseId",
+          "baf47d0188e227ab4982d9ae6cc72479dd6d923a68c98b44bc806245d655604a",
+          0
+        ],
+        [
+          "equiv-depend",
+          "eqv",
+          "eqv_0b7800f5-85f2-7bff-834d-e0edb02438ef",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-depend",
+          "eqv",
+          "eqv_0b7800f5-85f2-7bff-834d-e0edb02438ef",
+          "/context",
+          "b823d2b8fb737eb3f5ee0b4eac35fee92e54ab0067d7617a9c04380691a48fe8",
+          0
+        ],
+        [
+          "equiv-depend",
+          "eqv",
+          "eqv_0b7800f5-85f2-7bff-834d-e0edb02438ef",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-depend",
+          "eqv",
+          "eqv_0b7800f5-85f2-7bff-834d-e0edb02438ef",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-depend",
+          "eqv",
+          "eqv_0b7800f5-85f2-7bff-834d-e0edb02438ef",
+          "/glossVi",
+          "ce2d01f9956dfb3de9def6c71b619283d795e0aaae794f1472dd20b3f9e63d4a",
+          0
+        ],
+        [
+          "equiv-depend",
+          "eqv",
+          "eqv_0b7800f5-85f2-7bff-834d-e0edb02438ef",
+          "/restrictions/0",
+          "68bd4e40e388228974c6ff7113832626aff819632f50f7f78c5345f6c1b37d29",
+          0
+        ],
+        [
+          "equiv-depend",
+          "eqv",
+          "eqv_0b7800f5-85f2-7bff-834d-e0edb02438ef",
+          "/sourceSenseId",
+          "54baff103f6743932f28d62a9d4c59356bd349f13cecf743a6330ade6cafccff",
+          0
+        ],
+        [
+          "equiv-large",
+          "eqv",
+          "eqv_d4837c2a-f248-764f-89b8-4d47a7b2ca47",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-large",
+          "eqv",
+          "eqv_d4837c2a-f248-764f-89b8-4d47a7b2ca47",
+          "/context",
+          "77c9f94e9fa2625e751065a4bdc6ac1ab9d90f093a5ef75472dc1e01c37c3507",
+          0
+        ],
+        [
+          "equiv-large",
+          "eqv",
+          "eqv_d4837c2a-f248-764f-89b8-4d47a7b2ca47",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-large",
+          "eqv",
+          "eqv_d4837c2a-f248-764f-89b8-4d47a7b2ca47",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-large",
+          "eqv",
+          "eqv_d4837c2a-f248-764f-89b8-4d47a7b2ca47",
+          "/glossVi",
+          "ef5bbe168ebbb7a42a902d01a91588dd29092613695f64a4608fd1ad21441314",
+          0
+        ],
+        [
+          "equiv-large",
+          "eqv",
+          "eqv_d4837c2a-f248-764f-89b8-4d47a7b2ca47",
+          "/restrictions/0",
+          "448309c27f0f589a502e4164bb8b3cc1e5e559431ae24464b3900f1b1c8a45b6",
+          0
+        ],
+        [
+          "equiv-large",
+          "eqv",
+          "eqv_d4837c2a-f248-764f-89b8-4d47a7b2ca47",
+          "/restrictions/1",
+          "8cbf2e5a927d11a5a2411418a07d9b3e06e0b5d3ecc30701128ad91ca2c00418",
+          0
+        ],
+        [
+          "equiv-large",
+          "eqv",
+          "eqv_d4837c2a-f248-764f-89b8-4d47a7b2ca47",
+          "/sourceSenseId",
+          "05904197640bdabe594379cec5864256b131d42bda1ba964324372f8711feec2",
+          0
+        ],
+        [
+          "equiv-lend",
+          "eqv",
+          "eqv_b769c63e-31a2-7360-83a2-43343d706749",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-lend",
+          "eqv",
+          "eqv_b769c63e-31a2-7360-83a2-43343d706749",
+          "/context",
+          "b03eb3c9685d0cacb7f16d4e5bb205b300b31800a555ad6f54d144fad951fb2b",
+          0
+        ],
+        [
+          "equiv-lend",
+          "eqv",
+          "eqv_b769c63e-31a2-7360-83a2-43343d706749",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-lend",
+          "eqv",
+          "eqv_b769c63e-31a2-7360-83a2-43343d706749",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-lend",
+          "eqv",
+          "eqv_b769c63e-31a2-7360-83a2-43343d706749",
+          "/glossVi",
+          "04265af667dae9c55679e41e9db2f5a68a28689767d8063d859335d4d296dda9",
+          0
+        ],
+        [
+          "equiv-lend",
+          "eqv",
+          "eqv_b769c63e-31a2-7360-83a2-43343d706749",
+          "/restrictions/0",
+          "e9acea8bd382d1e4bfb706e1f196ea8b71011662330929fcf3ba2dcc49e37bc3",
+          0
+        ],
+        [
+          "equiv-lend",
+          "eqv",
+          "eqv_b769c63e-31a2-7360-83a2-43343d706749",
+          "/restrictions/1",
+          "43850d29122faa37c8b8f334057200110c29d6e2ff156d59c17879562ab3cc61",
+          0
+        ],
+        [
+          "equiv-lend",
+          "eqv",
+          "eqv_b769c63e-31a2-7360-83a2-43343d706749",
+          "/sourceSenseId",
+          "53f2a47bd9cd989420dba48525e0c9643a9b572c18d7b143d390fe4c850ab6da",
+          0
+        ],
+        [
+          "equiv-lend-money",
+          "eqv",
+          "eqv_b69e9398-5bbe-715a-8355-812fe763c1de",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-lend-money",
+          "eqv",
+          "eqv_b69e9398-5bbe-715a-8355-812fe763c1de",
+          "/context",
+          "b2796a979777b83025afc68d8449134fa901ec5c6e08dc5774f3f00bfeed1892",
+          0
+        ],
+        [
+          "equiv-lend-money",
+          "eqv",
+          "eqv_b69e9398-5bbe-715a-8355-812fe763c1de",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-lend-money",
+          "eqv",
+          "eqv_b69e9398-5bbe-715a-8355-812fe763c1de",
+          "/equivalenceType",
+          "323c9ade71d50bce8cdd06c9e2163d50f17350cfd30de2ae0b2f43b76dcd5c20",
+          0
+        ],
+        [
+          "equiv-lend-money",
+          "eqv",
+          "eqv_b69e9398-5bbe-715a-8355-812fe763c1de",
+          "/glossVi",
+          "b271ab06c565408b3b961a8b13992fea9df72fb7d137bc11ef10c766cd512244",
+          0
+        ],
+        [
+          "equiv-lend-money",
+          "eqv",
+          "eqv_b69e9398-5bbe-715a-8355-812fe763c1de",
+          "/register",
+          "9d3b02424c514de974e91bd2d20d4c0babe51d2de11b5f5cd92bd3c5f8cb67cf",
+          0
+        ],
+        [
+          "equiv-lend-money",
+          "eqv",
+          "eqv_b69e9398-5bbe-715a-8355-812fe763c1de",
+          "/restrictions/0",
+          "826284c590613414754061b982d16c7939e159c20607b1a25dd2818e4a453b29",
+          0
+        ],
+        [
+          "equiv-lend-money",
+          "eqv",
+          "eqv_b69e9398-5bbe-715a-8355-812fe763c1de",
+          "/sourceSenseId",
+          "53f2a47bd9cd989420dba48525e0c9643a9b572c18d7b143d390fe4c850ab6da",
+          0
+        ],
+        [
+          "equiv-look-up",
+          "eqv",
+          "eqv_a163261e-c8a4-79ac-8418-eeb543fef33f",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-look-up",
+          "eqv",
+          "eqv_a163261e-c8a4-79ac-8418-eeb543fef33f",
+          "/context",
+          "19642169c58a5e331cc2a3c80a330d51d13317026f2a5792eaa50b1faee43c29",
+          0
+        ],
+        [
+          "equiv-look-up",
+          "eqv",
+          "eqv_a163261e-c8a4-79ac-8418-eeb543fef33f",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-look-up",
+          "eqv",
+          "eqv_a163261e-c8a4-79ac-8418-eeb543fef33f",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-look-up",
+          "eqv",
+          "eqv_a163261e-c8a4-79ac-8418-eeb543fef33f",
+          "/glossVi",
+          "02f61c97786aae3b0170136ef110f1c6e255abda3143b656224dcf786d3e95f3",
+          0
+        ],
+        [
+          "equiv-look-up",
+          "eqv",
+          "eqv_a163261e-c8a4-79ac-8418-eeb543fef33f",
+          "/restrictions/0",
+          "8ece2ac5b5cc9d48a744d12c4feb692f91059857ab03317491dc8f7f96d1ce2a",
+          0
+        ],
+        [
+          "equiv-look-up",
+          "eqv",
+          "eqv_a163261e-c8a4-79ac-8418-eeb543fef33f",
+          "/sourceSenseId",
+          "94e67c1ddf703f4f1827d23d2cb00075ebbe7f6b2dde108e8ebf9766b1d35251",
+          0
+        ],
+        [
+          "equiv-run-machine-operate",
+          "eqv",
+          "eqv_07e7aba5-2732-7ac2-8c39-4a3fb91af441",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-run-machine-operate",
+          "eqv",
+          "eqv_07e7aba5-2732-7ac2-8c39-4a3fb91af441",
+          "/context",
+          "5d6cdcbb70bcaa43a8ecb7dc8d6e976f209de884a5ac2b29588103d36efcadc3",
+          0
+        ],
+        [
+          "equiv-run-machine-operate",
+          "eqv",
+          "eqv_07e7aba5-2732-7ac2-8c39-4a3fb91af441",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-run-machine-operate",
+          "eqv",
+          "eqv_07e7aba5-2732-7ac2-8c39-4a3fb91af441",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-run-machine-operate",
+          "eqv",
+          "eqv_07e7aba5-2732-7ac2-8c39-4a3fb91af441",
+          "/glossVi",
+          "755c381cf8f41cf4505d493e5ba2a11b62448aeddee8743d49fc271c77a73374",
+          0
+        ],
+        [
+          "equiv-run-machine-operate",
+          "eqv",
+          "eqv_07e7aba5-2732-7ac2-8c39-4a3fb91af441",
+          "/restrictions/0",
+          "bdd71acf96a35de6acbce0ad6440c41b9bbe1313f42e8e016396295fb74c7a46",
+          0
+        ],
+        [
+          "equiv-run-machine-operate",
+          "eqv",
+          "eqv_07e7aba5-2732-7ac2-8c39-4a3fb91af441",
+          "/restrictions/1",
+          "82663a93a64ce1953b3b39e7eb9f54130b3dacf7aa6d9f277f32c97f6259d564",
+          0
+        ],
+        [
+          "equiv-run-machine-operate",
+          "eqv",
+          "eqv_07e7aba5-2732-7ac2-8c39-4a3fb91af441",
+          "/sourceSenseId",
+          "973bd2ec8b02d1137b1b8c28cbcc1b3503c55fb92cd129372bdbc8ccfdbe4416",
+          0
+        ],
+        [
+          "equiv-run-machine-operate-alternative",
+          "eqv",
+          "eqv_60b9edd8-ee80-7202-8180-f1669b1e5ef2",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-run-machine-operate-alternative",
+          "eqv",
+          "eqv_60b9edd8-ee80-7202-8180-f1669b1e5ef2",
+          "/context",
+          "c2bdd20a09640f16fc405988ec5282380ba89cdd5cc3ae9fa86ce7c7faa3ec15",
+          0
+        ],
+        [
+          "equiv-run-machine-operate-alternative",
+          "eqv",
+          "eqv_60b9edd8-ee80-7202-8180-f1669b1e5ef2",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-run-machine-operate-alternative",
+          "eqv",
+          "eqv_60b9edd8-ee80-7202-8180-f1669b1e5ef2",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-run-machine-operate-alternative",
+          "eqv",
+          "eqv_60b9edd8-ee80-7202-8180-f1669b1e5ef2",
+          "/glossVi",
+          "c6c821150c06c2fcac778de35b57f6240e19ceec0f7ae009663ebe10d9441bee",
+          0
+        ],
+        [
+          "equiv-run-machine-operate-alternative",
+          "eqv",
+          "eqv_60b9edd8-ee80-7202-8180-f1669b1e5ef2",
+          "/restrictions/0",
+          "5c0fd3320e478dfb0d6cf7ab418a882c71d8379f6957719ea48f66987bd9ab82",
+          0
+        ],
+        [
+          "equiv-run-machine-operate-alternative",
+          "eqv",
+          "eqv_60b9edd8-ee80-7202-8180-f1669b1e5ef2",
+          "/restrictions/1",
+          "224c0279357453af3cdc2b14ae8440453ca3a333ecbddaa23daf435361addeb4",
+          0
+        ],
+        [
+          "equiv-run-machine-operate-alternative",
+          "eqv",
+          "eqv_60b9edd8-ee80-7202-8180-f1669b1e5ef2",
+          "/sourceSenseId",
+          "973bd2ec8b02d1137b1b8c28cbcc1b3503c55fb92cd129372bdbc8ccfdbe4416",
+          0
+        ],
+        [
+          "equiv-run-management",
+          "eqv",
+          "eqv_1f1e93de-145c-7559-81cd-cbe4cc57f8ab",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-run-management",
+          "eqv",
+          "eqv_1f1e93de-145c-7559-81cd-cbe4cc57f8ab",
+          "/context",
+          "1c65d9636b019d65c122e8ec2c17ea3aa62324cf7adb20160e30c4b9c3477022",
+          0
+        ],
+        [
+          "equiv-run-management",
+          "eqv",
+          "eqv_1f1e93de-145c-7559-81cd-cbe4cc57f8ab",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-run-management",
+          "eqv",
+          "eqv_1f1e93de-145c-7559-81cd-cbe4cc57f8ab",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-run-management",
+          "eqv",
+          "eqv_1f1e93de-145c-7559-81cd-cbe4cc57f8ab",
+          "/glossVi",
+          "cd1c91a5c4d60ed13c5fd2076dc91ba457c787d72deaa12812297fe4a566a3a4",
+          0
+        ],
+        [
+          "equiv-run-management",
+          "eqv",
+          "eqv_1f1e93de-145c-7559-81cd-cbe4cc57f8ab",
+          "/restrictions/0",
+          "0e9839baa5da1b4e71c4fb5bbecad7727cd406eea2b5a49488a4e1b0ce6b5c7f",
+          0
+        ],
+        [
+          "equiv-run-management",
+          "eqv",
+          "eqv_1f1e93de-145c-7559-81cd-cbe4cc57f8ab",
+          "/sourceSenseId",
+          "49f9847ab7fe6b7e54ceff5fadf1fb5d33ad7de3753b14e72754c51f824bcae3",
+          0
+        ],
+        [
+          "equiv-run-movement",
+          "eqv",
+          "eqv_f3acbf6d-d2fa-7821-8e64-c0ed0a6b30d7",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-run-movement",
+          "eqv",
+          "eqv_f3acbf6d-d2fa-7821-8e64-c0ed0a6b30d7",
+          "/context",
+          "743c72b8b1958aaf2a2d7d1028afff18a78530d34a1d19c2cbce8ffe537b958b",
+          0
+        ],
+        [
+          "equiv-run-movement",
+          "eqv",
+          "eqv_f3acbf6d-d2fa-7821-8e64-c0ed0a6b30d7",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-run-movement",
+          "eqv",
+          "eqv_f3acbf6d-d2fa-7821-8e64-c0ed0a6b30d7",
+          "/equivalenceType",
+          "19c129fc3bb9c73afca7210377fffc670dd98e3abe35955c9e194dbd78f29578",
+          0
+        ],
+        [
+          "equiv-run-movement",
+          "eqv",
+          "eqv_f3acbf6d-d2fa-7821-8e64-c0ed0a6b30d7",
+          "/glossVi",
+          "1001e4366040f0dcf5a2a710f3dcc2461e688429afc4632ca23e18e039d7214a",
+          0
+        ],
+        [
+          "equiv-run-movement",
+          "eqv",
+          "eqv_f3acbf6d-d2fa-7821-8e64-c0ed0a6b30d7",
+          "/restrictions/0",
+          "c36997b5dbe9408400e974996ea2d9d637d497efd5ece0ffb1b54231114e1f6b",
+          0
+        ],
+        [
+          "equiv-run-movement",
+          "eqv",
+          "eqv_f3acbf6d-d2fa-7821-8e64-c0ed0a6b30d7",
+          "/restrictions/1",
+          "440e0d9873b560da856fc5be18d6dfccc94c3b461dc5a6f50ec4e510ab3b82ed",
+          0
+        ],
+        [
+          "equiv-run-movement",
+          "eqv",
+          "eqv_f3acbf6d-d2fa-7821-8e64-c0ed0a6b30d7",
+          "/sourceSenseId",
+          "3a5e309c0a9f04f09547980306c005c7722ad22b132967dfb036540318259e8f",
+          0
+        ],
+        [
+          "equiv-small",
+          "eqv",
+          "eqv_98858087-c3d0-7349-8458-883b5b0db5ad",
+          "/alignmentMode",
+          "9a8f80d09de0c97b56be0ec11bc59f7f68d177c67ed650578ad3f5871e8414e9",
+          2
+        ],
+        [
+          "equiv-small",
+          "eqv",
+          "eqv_98858087-c3d0-7349-8458-883b5b0db5ad",
+          "/context",
+          "39510157457081a9fd1bd172089c9ca225094fe5fe3e26ae8057e4abf4579cb7",
+          0
+        ],
+        [
+          "equiv-small",
+          "eqv",
+          "eqv_98858087-c3d0-7349-8458-883b5b0db5ad",
+          "/direction",
+          "056e216f20c94f4e0527b8a1a3679437b915b50a6ebf21f9d4851d5818687af0",
+          0
+        ],
+        [
+          "equiv-small",
+          "eqv",
+          "eqv_98858087-c3d0-7349-8458-883b5b0db5ad",
+          "/equivalenceType",
+          "323c9ade71d50bce8cdd06c9e2163d50f17350cfd30de2ae0b2f43b76dcd5c20",
+          0
+        ],
+        [
+          "equiv-small",
+          "eqv",
+          "eqv_98858087-c3d0-7349-8458-883b5b0db5ad",
+          "/glossVi",
+          "4d09c9e7a0716a61cc529cbbaac75fb4ed21b17cad8569e4596ce61e5d1c9173",
+          0
+        ],
+        [
+          "equiv-small",
+          "eqv",
+          "eqv_98858087-c3d0-7349-8458-883b5b0db5ad",
+          "/register",
+          "9d3b02424c514de974e91bd2d20d4c0babe51d2de11b5f5cd92bd3c5f8cb67cf",
+          0
+        ],
+        [
+          "equiv-small",
+          "eqv",
+          "eqv_98858087-c3d0-7349-8458-883b5b0db5ad",
+          "/restrictions/0",
+          "75b6943947f0c46c07f05f4fcce53862c959c9a1d4d5a93ec391fcd3ad418172",
+          0
+        ],
+        [
+          "equiv-small",
+          "eqv",
+          "eqv_98858087-c3d0-7349-8458-883b5b0db5ad",
+          "/sourceSenseId",
+          "d85c2abcfb0134db18fbea04bc48f50015baf8989273be588b13c67226e0f62e",
+          0
+        ],
+        [
+          "family-analysis",
+          "fam",
+          "fam_2fc4fa25-4df6-7670-892c-45a6f2f727cf",
+          "/familyBasis",
+          "293fc35a92df28c9a4554be172f568c7fd44ed5e40e04adb6e425a27f9cfae8f",
+          0
+        ],
+        [
+          "family-analysis",
+          "fam",
+          "fam_2fc4fa25-4df6-7670-892c-45a6f2f727cf",
+          "/label",
+          "6c313aecfd35b932a06b1d0d0396f397e57282682428f5c8d39213178006b532",
+          0
+        ],
+        [
+          "rel-big-large-near-synonym",
+          "rel",
+          "rel_577990c6-b3ba-7e1f-8d99-9a49460cbd3c",
+          "/qualifiers/context",
+          "434c5bf4c952525d016490c330599b33a6e21ecdb8f5d177010062f9dd22e707",
+          0
+        ],
+        [
+          "rel-big-large-near-synonym",
+          "rel",
+          "rel_577990c6-b3ba-7e1f-8d99-9a49460cbd3c",
+          "/qualifiers/register",
+          "9d3b02424c514de974e91bd2d20d4c0babe51d2de11b5f5cd92bd3c5f8cb67cf",
+          0
+        ],
+        [
+          "rel-big-large-near-synonym",
+          "rel",
+          "rel_577990c6-b3ba-7e1f-8d99-9a49460cbd3c",
+          "/relationType",
+          "d32a5331eb846a5b470c5878c114136914c6ca9caacaf839c5dbb3e53d53831d",
+          0
+        ],
+        [
+          "rel-big-large-near-synonym",
+          "rel",
+          "rel_577990c6-b3ba-7e1f-8d99-9a49460cbd3c",
+          "/sourceId",
+          "ef473ba69f226836821e50248c29bd3d120b02e37e0e9af9cc52dba61f65a606",
+          0
+        ],
+        [
+          "rel-big-large-near-synonym",
+          "rel",
+          "rel_577990c6-b3ba-7e1f-8d99-9a49460cbd3c",
+          "/targetId",
+          "05904197640bdabe594379cec5864256b131d42bda1ba964324372f8711feec2",
+          0
+        ],
+        [
+          "rel-big-small-antonym",
+          "rel",
+          "rel_cdbf7f3a-6f98-7eab-8550-c1b0dc6d6ba5",
+          "/qualifiers/context",
+          "179bfeca425e9e8a4beb5011b9ee57d282a642cb161f731b1c93882def38e20f",
+          0
+        ],
+        [
+          "rel-big-small-antonym",
+          "rel",
+          "rel_cdbf7f3a-6f98-7eab-8550-c1b0dc6d6ba5",
+          "/qualifiers/register",
+          "9d3b02424c514de974e91bd2d20d4c0babe51d2de11b5f5cd92bd3c5f8cb67cf",
+          0
+        ],
+        [
+          "rel-big-small-antonym",
+          "rel",
+          "rel_cdbf7f3a-6f98-7eab-8550-c1b0dc6d6ba5",
+          "/relationType",
+          "faf3313271ee58e8c0e6893996aa1725d739c436c79655987d71dfa124f2783b",
+          0
+        ],
+        [
+          "rel-big-small-antonym",
+          "rel",
+          "rel_cdbf7f3a-6f98-7eab-8550-c1b0dc6d6ba5",
+          "/sourceId",
+          "ef473ba69f226836821e50248c29bd3d120b02e37e0e9af9cc52dba61f65a606",
+          0
+        ],
+        [
+          "rel-big-small-antonym",
+          "rel",
+          "rel_cdbf7f3a-6f98-7eab-8550-c1b0dc6d6ba5",
+          "/targetId",
+          "d85c2abcfb0134db18fbea04bc48f50015baf8989273be588b13c67226e0f62e",
+          0
+        ],
+        [
+          "rel-large-small-antonym",
+          "rel",
+          "rel_2fb493dd-f5f2-7db4-801a-6bf90ae52f97",
+          "/qualifiers/context",
+          "46383f9db58944c967d2354e207e4e140f5eb39c1e45af6c5f2664cdeddb7867",
+          0
+        ],
+        [
+          "rel-large-small-antonym",
+          "rel",
+          "rel_2fb493dd-f5f2-7db4-801a-6bf90ae52f97",
+          "/qualifiers/register",
+          "9d3b02424c514de974e91bd2d20d4c0babe51d2de11b5f5cd92bd3c5f8cb67cf",
+          0
+        ],
+        [
+          "rel-large-small-antonym",
+          "rel",
+          "rel_2fb493dd-f5f2-7db4-801a-6bf90ae52f97",
+          "/relationType",
+          "faf3313271ee58e8c0e6893996aa1725d739c436c79655987d71dfa124f2783b",
+          0
+        ],
+        [
+          "rel-large-small-antonym",
+          "rel",
+          "rel_2fb493dd-f5f2-7db4-801a-6bf90ae52f97",
+          "/sourceId",
+          "d85c2abcfb0134db18fbea04bc48f50015baf8989273be588b13c67226e0f62e",
+          0
+        ],
+        [
+          "rel-large-small-antonym",
+          "rel",
+          "rel_2fb493dd-f5f2-7db4-801a-6bf90ae52f97",
+          "/targetId",
+          "05904197640bdabe594379cec5864256b131d42bda1ba964324372f8711feec2",
+          0
+        ],
+        [
+          "sense-advice-guidance",
+          "sns",
+          "sns_8ca88f0e-2dbd-7cf6-862e-4c2fe15ea6ae",
+          "/definition",
+          "6217b7772850b756f2a33b4f980e67d899ce82a3cc4cc8a5be44c71e2453417d",
+          0
+        ],
+        [
+          "sense-advice-guidance",
+          "sns",
+          "sns_8ca88f0e-2dbd-7cf6-862e-4c2fe15ea6ae",
+          "/entryId",
+          "35d982c710722109f255028da71e42865c20751d8672fc652e51291b16c53c96",
+          0
+        ],
+        [
+          "sense-advice-guidance",
+          "sns",
+          "sns_8ca88f0e-2dbd-7cf6-862e-4c2fe15ea6ae",
+          "/examples/0/english",
+          "aed53acbdf9c6e0d3f51a69805ef428c3ccf5fe1657caa331d8d4faac186b03b",
+          4
+        ],
+        [
+          "sense-advice-guidance",
+          "sns",
+          "sns_8ca88f0e-2dbd-7cf6-862e-4c2fe15ea6ae",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-advice-guidance",
+          "sns",
+          "sns_8ca88f0e-2dbd-7cf6-862e-4c2fe15ea6ae",
+          "/examples/0/vi",
+          "e14fb10030cb999f3dbb8143c1b6c5d5f51dcf95118f536c38f0bf56d7d16ce5",
+          4
+        ],
+        [
+          "sense-advice-guidance",
+          "sns",
+          "sns_8ca88f0e-2dbd-7cf6-862e-4c2fe15ea6ae",
+          "/grammar/countability",
+          "d5efe21797155d8d5826aa1827cd961d9ae25c6c595b11069b3e6e740e7488c5",
+          0
+        ],
+        [
+          "sense-advice-guidance",
+          "sns",
+          "sns_8ca88f0e-2dbd-7cf6-862e-4c2fe15ea6ae",
+          "/usageNote",
+          "48b0cd6955687c843abfdc08e9c20362a1548a16045534aaa96177687d4edce2",
+          0
+        ],
+        [
+          "sense-analyse",
+          "sns",
+          "sns_b57f4e57-5b3b-796a-83ad-d365fa0ab93d",
+          "/definition",
+          "410f0504ca8ad28fb67546d7fabdc601ede8dcdd00f138cdb1a7021b64f51c02",
+          0
+        ],
+        [
+          "sense-analyse",
+          "sns",
+          "sns_b57f4e57-5b3b-796a-83ad-d365fa0ab93d",
+          "/entryId",
+          "3e713a3008f6d59c74d37705990e245297c6b9c71116adaf35357f69a10de632",
+          0
+        ],
+        [
+          "sense-analyse",
+          "sns",
+          "sns_b57f4e57-5b3b-796a-83ad-d365fa0ab93d",
+          "/examples/0/english",
+          "a9b319ae8ffe9131fbde1ad7dacd1eb4da4e3e2d45c2a123f00c9f417106841c",
+          4
+        ],
+        [
+          "sense-analyse",
+          "sns",
+          "sns_b57f4e57-5b3b-796a-83ad-d365fa0ab93d",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-analyse",
+          "sns",
+          "sns_b57f4e57-5b3b-796a-83ad-d365fa0ab93d",
+          "/examples/0/vi",
+          "23d17e1ff71fcfd580ddac6d5c79e85c9a2423e0df55759fb8330d98d64fabd5",
+          4
+        ],
+        [
+          "sense-analyse",
+          "sns",
+          "sns_b57f4e57-5b3b-796a-83ad-d365fa0ab93d",
+          "/grammar/transitivity",
+          "c922756c60a15540ff419cd4efc3453b09c0a53f860c012b7ba11f0d7d702fe1",
+          0
+        ],
+        [
+          "sense-analyse",
+          "sns",
+          "sns_b57f4e57-5b3b-796a-83ad-d365fa0ab93d",
+          "/usageNote",
+          "4eba63d9cb26d0c6089330a24548664c71bbb30d47478c3227b9c121d7ea82f1",
+          0
+        ],
+        [
+          "sense-analysis",
+          "sns",
+          "sns_768e03cf-df87-7e2a-8b5a-09fe0e91a23b",
+          "/definition",
+          "39ef26665f6ad734a6c4df97fee197fce8dc74a9a7236732bd0bdf92502f49a3",
+          0
+        ],
+        [
+          "sense-analysis",
+          "sns",
+          "sns_768e03cf-df87-7e2a-8b5a-09fe0e91a23b",
+          "/entryId",
+          "e0bc618c3e9fc5efafc952ee7b9d6fe1e1cba9e097a20cb654c2669f6d049d97",
+          0
+        ],
+        [
+          "sense-analysis",
+          "sns",
+          "sns_768e03cf-df87-7e2a-8b5a-09fe0e91a23b",
+          "/examples/0/english",
+          "0755d42808e4f99b08c73cf1f5188eacda3f7e21df71d6197aefb12683f44a10",
+          4
+        ],
+        [
+          "sense-analysis",
+          "sns",
+          "sns_768e03cf-df87-7e2a-8b5a-09fe0e91a23b",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-analysis",
+          "sns",
+          "sns_768e03cf-df87-7e2a-8b5a-09fe0e91a23b",
+          "/examples/0/vi",
+          "9354048004ec1508521cd9343c4745661bc9ff60260fd2d74c5781040aa069de",
+          4
+        ],
+        [
+          "sense-analysis",
+          "sns",
+          "sns_768e03cf-df87-7e2a-8b5a-09fe0e91a23b",
+          "/grammar/countability",
+          "6a4adbca11192a326f61110cda055762eb10de529ff037da568d56e23724242d",
+          0
+        ],
+        [
+          "sense-analysis",
+          "sns",
+          "sns_768e03cf-df87-7e2a-8b5a-09fe0e91a23b",
+          "/usageNote",
+          "4d7e30f2b2a5e137b897536a5d4ba2f0c0f2dcf42b06a01025a4824e0a05d960",
+          0
+        ],
+        [
+          "sense-analytical",
+          "sns",
+          "sns_1ce22f78-33dc-7a85-8ec4-b976704c2d90",
+          "/definition",
+          "1808847fc4cf7cf2130e595ce7c4fa989dfc9d18ef69d9a1258fe6c8d1f42ad7",
+          0
+        ],
+        [
+          "sense-analytical",
+          "sns",
+          "sns_1ce22f78-33dc-7a85-8ec4-b976704c2d90",
+          "/entryId",
+          "c58822ecbb99f5930cff55cee8041ad284c3a26d9ac002c77e437ec3e2639868",
+          0
+        ],
+        [
+          "sense-analytical",
+          "sns",
+          "sns_1ce22f78-33dc-7a85-8ec4-b976704c2d90",
+          "/examples/0/english",
+          "3a43546b8c3a4c53216af04c78da876f886bd2c40ba642f2bb7622f451a120ef",
+          4
+        ],
+        [
+          "sense-analytical",
+          "sns",
+          "sns_1ce22f78-33dc-7a85-8ec4-b976704c2d90",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-analytical",
+          "sns",
+          "sns_1ce22f78-33dc-7a85-8ec4-b976704c2d90",
+          "/examples/0/vi",
+          "6f12d9333beab4018723ec93d6ea077b345e1b961b2459a98e9eb8ab55bf478d",
+          4
+        ],
+        [
+          "sense-analytical",
+          "sns",
+          "sns_1ce22f78-33dc-7a85-8ec4-b976704c2d90",
+          "/usageNote",
+          "b58ad484c880a1ee5b08791442d1af7816d442505f7c0dffd8ec82dc82c20b6f",
+          0
+        ],
+        [
+          "sense-bank-financial",
+          "sns",
+          "sns_730370fe-505a-7ba4-8a8a-17526cedaa89",
+          "/definition",
+          "1e78583ac9f04d7bd0a7556d654ff8d5c357affbc2bfbbfb79bce6e1ecfb5aeb",
+          0
+        ],
+        [
+          "sense-bank-financial",
+          "sns",
+          "sns_730370fe-505a-7ba4-8a8a-17526cedaa89",
+          "/entryId",
+          "ad7ec0f0b3bd104b10388e676325af0837a3efb49747285a77cebfc2a4bb0736",
+          0
+        ],
+        [
+          "sense-bank-financial",
+          "sns",
+          "sns_730370fe-505a-7ba4-8a8a-17526cedaa89",
+          "/examples/0/english",
+          "70c5061f7d5db26444cb18d23d5f6aba0a7bcccf95d1292a7c2a8d077e90cc11",
+          4
+        ],
+        [
+          "sense-bank-financial",
+          "sns",
+          "sns_730370fe-505a-7ba4-8a8a-17526cedaa89",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-bank-financial",
+          "sns",
+          "sns_730370fe-505a-7ba4-8a8a-17526cedaa89",
+          "/examples/0/vi",
+          "1c29e8b241ffd6e519c5bc1b369c435f5427f5cba30a8ca6a5778c233019dfe3",
+          4
+        ],
+        [
+          "sense-bank-financial",
+          "sns",
+          "sns_730370fe-505a-7ba4-8a8a-17526cedaa89",
+          "/grammar/countability",
+          "28c528e609b1abf8aa7355e430999328a5aec17f28b682fc960dc6ee52b5cee7",
+          0
+        ],
+        [
+          "sense-bank-financial",
+          "sns",
+          "sns_730370fe-505a-7ba4-8a8a-17526cedaa89",
+          "/usageNote",
+          "16bd4344b8cd1ac01bffb8a7be9bf2a4af5801245ab319dd2b913d15ca709114",
+          0
+        ],
+        [
+          "sense-bank-river",
+          "sns",
+          "sns_d97453f4-5577-77e7-81f7-52e3965fb82e",
+          "/definition",
+          "9335cdded90ed0cca9839179b8cd7c13def4c279047240c6aed3b9662e863b51",
+          0
+        ],
+        [
+          "sense-bank-river",
+          "sns",
+          "sns_d97453f4-5577-77e7-81f7-52e3965fb82e",
+          "/entryId",
+          "2fed46a30aa97508fee2055e8e392d91ffbcb6b947b4b81adc4a888b14023068",
+          0
+        ],
+        [
+          "sense-bank-river",
+          "sns",
+          "sns_d97453f4-5577-77e7-81f7-52e3965fb82e",
+          "/examples/0/english",
+          "0f6946bf2109555d6aaf917e6eb3d9879081d5faeb07005c018c268502bff8d9",
+          4
+        ],
+        [
+          "sense-bank-river",
+          "sns",
+          "sns_d97453f4-5577-77e7-81f7-52e3965fb82e",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-bank-river",
+          "sns",
+          "sns_d97453f4-5577-77e7-81f7-52e3965fb82e",
+          "/examples/0/vi",
+          "6bdad6ea24ae9b815b2554906c5033ccb54792d3292a324bdbbb4e75884efa44",
+          4
+        ],
+        [
+          "sense-bank-river",
+          "sns",
+          "sns_d97453f4-5577-77e7-81f7-52e3965fb82e",
+          "/grammar/countability",
+          "28c528e609b1abf8aa7355e430999328a5aec17f28b682fc960dc6ee52b5cee7",
+          0
+        ],
+        [
+          "sense-bank-river",
+          "sns",
+          "sns_d97453f4-5577-77e7-81f7-52e3965fb82e",
+          "/usageNote",
+          "c60ef4b292a9e228b0f9fb0ec3a1fc1485f3d34014eb38a2f661db7691470c7f",
+          0
+        ],
+        [
+          "sense-big-size",
+          "sns",
+          "sns_74b3c671-6802-7385-84d8-827ffa507145",
+          "/contrastiveNotes/0/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "sense-big-size",
+          "sns",
+          "sns_74b3c671-6802-7385-84d8-827ffa507145",
+          "/contrastiveNotes/0/text",
+          "c3f7050f8b24c567f1e40fa66e9c3494abfe2bb406121336d1ea4dce740ec614",
+          0
+        ],
+        [
+          "sense-big-size",
+          "sns",
+          "sns_74b3c671-6802-7385-84d8-827ffa507145",
+          "/definition",
+          "c5809ac9956f12c44f1f895ba49bf4662355a826a340653af366ae232f828621",
+          0
+        ],
+        [
+          "sense-big-size",
+          "sns",
+          "sns_74b3c671-6802-7385-84d8-827ffa507145",
+          "/entryId",
+          "d10ec0f7985aefb639f9299471b1e8f7f6bb03b5caadecef9d13121e9de08252",
+          0
+        ],
+        [
+          "sense-big-size",
+          "sns",
+          "sns_74b3c671-6802-7385-84d8-827ffa507145",
+          "/examples/0/english",
+          "766df1dcc15829dc666043221e964f3fee5ccdefd05690d7e43a368f6085c659",
+          4
+        ],
+        [
+          "sense-big-size",
+          "sns",
+          "sns_74b3c671-6802-7385-84d8-827ffa507145",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-big-size",
+          "sns",
+          "sns_74b3c671-6802-7385-84d8-827ffa507145",
+          "/examples/0/vi",
+          "e3f00059024b177655ffca831edd3ec01cc19512dedcdf041ceae0e4efbda4e2",
+          4
+        ],
+        [
+          "sense-big-size",
+          "sns",
+          "sns_74b3c671-6802-7385-84d8-827ffa507145",
+          "/usageNote",
+          "cf556b3838712b9dcaf8d485e284f6998deee4649732a20973fc1a13fd58be71",
+          0
+        ],
+        [
+          "sense-borrow-temporary-use",
+          "sns",
+          "sns_903ea345-6dfc-7cde-8b97-efd336374a53",
+          "/definition",
+          "29ec41944f02bace7fed0f15e21fc9eb2b1aca332824e0db46cf7af59745e9df",
+          0
+        ],
+        [
+          "sense-borrow-temporary-use",
+          "sns",
+          "sns_903ea345-6dfc-7cde-8b97-efd336374a53",
+          "/entryId",
+          "052a39a7cc0d2e3b695ea5b6aa3ec93b6e5e3602ba777a95f90bc47b70b300cd",
+          0
+        ],
+        [
+          "sense-borrow-temporary-use",
+          "sns",
+          "sns_903ea345-6dfc-7cde-8b97-efd336374a53",
+          "/examples/0/english",
+          "a253539db3b00037eb484ea4b5567ed7caaaa2a1bfde1ca833468653890c010b",
+          4
+        ],
+        [
+          "sense-borrow-temporary-use",
+          "sns",
+          "sns_903ea345-6dfc-7cde-8b97-efd336374a53",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-borrow-temporary-use",
+          "sns",
+          "sns_903ea345-6dfc-7cde-8b97-efd336374a53",
+          "/examples/0/vi",
+          "de731e414cb2980d078d2ef542bcfc4a2268846b9fa5d43828066c778d435db6",
+          4
+        ],
+        [
+          "sense-borrow-temporary-use",
+          "sns",
+          "sns_903ea345-6dfc-7cde-8b97-efd336374a53",
+          "/usageNote",
+          "03aa707bd45472b3b0a32ac50dcac3eddb2e118c2eda0fd6ff13553b4b8443fb",
+          0
+        ],
+        [
+          "sense-depend-contingent",
+          "sns",
+          "sns_dcf685ed-b916-7f85-8ae1-1f233cf9b408",
+          "/definition",
+          "5ec93a296263af87633a72db92bbc5f5ef7b0f5a661858961bdfeb6bfeb5ec12",
+          0
+        ],
+        [
+          "sense-depend-contingent",
+          "sns",
+          "sns_dcf685ed-b916-7f85-8ae1-1f233cf9b408",
+          "/entryId",
+          "55196b3ddc1550e9cfa30b26fe44b1d76cee6d36237b2010b7eb1d016eece2dd",
+          0
+        ],
+        [
+          "sense-depend-contingent",
+          "sns",
+          "sns_dcf685ed-b916-7f85-8ae1-1f233cf9b408",
+          "/examples/0/english",
+          "85b43439495fd7ed7779bb6937b32b9b9a96e906b7daa33de7cb8227361365d9",
+          4
+        ],
+        [
+          "sense-depend-contingent",
+          "sns",
+          "sns_dcf685ed-b916-7f85-8ae1-1f233cf9b408",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-depend-contingent",
+          "sns",
+          "sns_dcf685ed-b916-7f85-8ae1-1f233cf9b408",
+          "/examples/0/vi",
+          "f8da37cd479e69d273c8fc97296e9f118c829ef75ceabba43e153258cb5803c0",
+          4
+        ],
+        [
+          "sense-depend-contingent",
+          "sns",
+          "sns_dcf685ed-b916-7f85-8ae1-1f233cf9b408",
+          "/usageNote",
+          "ff8a17ad4b3abcc7966594357a743af1ff8a9bdbc3418339de913f637fde1fb8",
+          0
+        ],
+        [
+          "sense-large-size",
+          "sns",
+          "sns_d2ff7f09-1e01-7f7d-85d4-d3e7475b75b9",
+          "/contrastiveNotes/0/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "sense-large-size",
+          "sns",
+          "sns_d2ff7f09-1e01-7f7d-85d4-d3e7475b75b9",
+          "/contrastiveNotes/0/text",
+          "d7eca60c7e9a0bfc016260ba5f8ae04174a3dee0151719ccd6e0b264bca9c21d",
+          0
+        ],
+        [
+          "sense-large-size",
+          "sns",
+          "sns_d2ff7f09-1e01-7f7d-85d4-d3e7475b75b9",
+          "/definition",
+          "8d1517acb5c54e7be677eae5b7e1489cc255df3a46214f35422851b744d00822",
+          0
+        ],
+        [
+          "sense-large-size",
+          "sns",
+          "sns_d2ff7f09-1e01-7f7d-85d4-d3e7475b75b9",
+          "/entryId",
+          "f22cef981eb06435dd595f33d2e91fb7770c4fe860e0ce6f895f307b5a44aad6",
+          0
+        ],
+        [
+          "sense-large-size",
+          "sns",
+          "sns_d2ff7f09-1e01-7f7d-85d4-d3e7475b75b9",
+          "/examples/0/english",
+          "9b701270eaa355d6f96ff93b7fb84f686d34a4ca0713c58e0a6229a711202b39",
+          4
+        ],
+        [
+          "sense-large-size",
+          "sns",
+          "sns_d2ff7f09-1e01-7f7d-85d4-d3e7475b75b9",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-large-size",
+          "sns",
+          "sns_d2ff7f09-1e01-7f7d-85d4-d3e7475b75b9",
+          "/examples/0/vi",
+          "34024412b645ccf0ddcaf37dec0387910b08ceebe980b60ab8960375940b52ca",
+          4
+        ],
+        [
+          "sense-large-size",
+          "sns",
+          "sns_d2ff7f09-1e01-7f7d-85d4-d3e7475b75b9",
+          "/usageNote",
+          "70d056ab1337cf4084a2492e49b8e562d84f66313045a598d7528e766bef545b",
+          0
+        ],
+        [
+          "sense-lend-temporary-use",
+          "sns",
+          "sns_037307aa-1432-73eb-821e-7c5bdd807278",
+          "/definition",
+          "1cc30dce1a4a3edd35d57f02ea35d825f922689ca3d8a72fc91630581189fc1b",
+          0
+        ],
+        [
+          "sense-lend-temporary-use",
+          "sns",
+          "sns_037307aa-1432-73eb-821e-7c5bdd807278",
+          "/entryId",
+          "227a2eb72165a67db9f3113860298725653caf85c7ae9bd92527d17c463e0260",
+          0
+        ],
+        [
+          "sense-lend-temporary-use",
+          "sns",
+          "sns_037307aa-1432-73eb-821e-7c5bdd807278",
+          "/examples/0/english",
+          "47993474e25597a7a04a6097276dcc9437b33f1871ef1831f36936ed35836db9",
+          4
+        ],
+        [
+          "sense-lend-temporary-use",
+          "sns",
+          "sns_037307aa-1432-73eb-821e-7c5bdd807278",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-lend-temporary-use",
+          "sns",
+          "sns_037307aa-1432-73eb-821e-7c5bdd807278",
+          "/examples/0/vi",
+          "e6615920429c66e69dc1ac47e38c61bdcb0665d01e68329c9886e405c6aa3621",
+          4
+        ],
+        [
+          "sense-lend-temporary-use",
+          "sns",
+          "sns_037307aa-1432-73eb-821e-7c5bdd807278",
+          "/usageNote",
+          "bc67f2c785f13769ad91dc5e4c5f4be26441d3a2255a7a02ecc19aa6afe3e1b9",
+          0
+        ],
+        [
+          "sense-look-up-reference",
+          "sns",
+          "sns_605d0f33-173f-753d-8e24-30696c5cb024",
+          "/definition",
+          "f5b5e557bdf184d57fde3d1d3b3b9c7b82584806ad00e5ed906d10b574fb4ef2",
+          0
+        ],
+        [
+          "sense-look-up-reference",
+          "sns",
+          "sns_605d0f33-173f-753d-8e24-30696c5cb024",
+          "/entryId",
+          "f5c15cdf35c3840c98f264c03acb6afb7107d5bac95c546db34f8400c5e6bfd5",
+          0
+        ],
+        [
+          "sense-look-up-reference",
+          "sns",
+          "sns_605d0f33-173f-753d-8e24-30696c5cb024",
+          "/examples/0/english",
+          "c74c71e995730df3b955f06b90b6c9b725071b95ba98b4a4614e9249bb8928de",
+          4
+        ],
+        [
+          "sense-look-up-reference",
+          "sns",
+          "sns_605d0f33-173f-753d-8e24-30696c5cb024",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-look-up-reference",
+          "sns",
+          "sns_605d0f33-173f-753d-8e24-30696c5cb024",
+          "/examples/0/vi",
+          "f180d26da01ba4edfbe5eb300402ed4898c2fb00e4c5799f9e9ac6c8945b96c2",
+          4
+        ],
+        [
+          "sense-look-up-reference",
+          "sns",
+          "sns_605d0f33-173f-753d-8e24-30696c5cb024",
+          "/usageNote",
+          "15918ca7a80a61e42ecf48e70fd63748ad60ed4360dba18b3c5607cf23a0daac",
+          0
+        ],
+        [
+          "sense-run-machine",
+          "sns",
+          "sns_ac427517-5600-710c-851f-a971efeadc0e",
+          "/definition",
+          "76b071732fe1854cfc9b3e7334b7770eaae0dc99ebfdaf4d1163aff40aa20d2c",
+          0
+        ],
+        [
+          "sense-run-machine",
+          "sns",
+          "sns_ac427517-5600-710c-851f-a971efeadc0e",
+          "/entryId",
+          "f3e98fa48dee934eaee4a5ca58407f9a26814065dd6ea9925e9f96e09d6e8bc3",
+          0
+        ],
+        [
+          "sense-run-machine",
+          "sns",
+          "sns_ac427517-5600-710c-851f-a971efeadc0e",
+          "/examples/0/english",
+          "7400805dbfe7eeaee57e118742b7061405537de37e66e8fe0bdfd778255e1240",
+          4
+        ],
+        [
+          "sense-run-machine",
+          "sns",
+          "sns_ac427517-5600-710c-851f-a971efeadc0e",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-run-machine",
+          "sns",
+          "sns_ac427517-5600-710c-851f-a971efeadc0e",
+          "/examples/0/vi",
+          "42164a74bd0be92badebbd40e0a8b3a6ca114dfb28231b9f453377020c522b68",
+          4
+        ],
+        [
+          "sense-run-machine",
+          "sns",
+          "sns_ac427517-5600-710c-851f-a971efeadc0e",
+          "/grammar/transitivity",
+          "bcc724646c0c2173a4ca294346b1c8d04b90cc1442a7414353055459154d91f6",
+          0
+        ],
+        [
+          "sense-run-machine",
+          "sns",
+          "sns_ac427517-5600-710c-851f-a971efeadc0e",
+          "/usageNote",
+          "1f6ac980dd644e5950e4fd96298879437c43788071452e91a58f17eda181223c",
+          0
+        ],
+        [
+          "sense-run-machine",
+          "sns",
+          "sns_ac427517-5600-710c-851f-a971efeadc0e",
+          "/usageRestrictions/0/description",
+          "ff5abc4d2de7c21325b1d3e01a76e3abf27188c230529934bdeb844f6942e401",
+          0
+        ],
+        [
+          "sense-run-machine",
+          "sns",
+          "sns_ac427517-5600-710c-851f-a971efeadc0e",
+          "/usageRestrictions/0/kind",
+          "ea075bf95e03af33f03c4efdd1e0662ec0df0d86711873dc98a23f7ab44df052",
+          0
+        ],
+        [
+          "sense-run-management",
+          "sns",
+          "sns_859ecdfc-9fa1-77fb-8d66-320c0954ea0d",
+          "/definition",
+          "c5536b93d792ba72c7a352b0e86ccd9ed6dda2c33684b805a4a346e061fb311d",
+          0
+        ],
+        [
+          "sense-run-management",
+          "sns",
+          "sns_859ecdfc-9fa1-77fb-8d66-320c0954ea0d",
+          "/entryId",
+          "f3e98fa48dee934eaee4a5ca58407f9a26814065dd6ea9925e9f96e09d6e8bc3",
+          0
+        ],
+        [
+          "sense-run-management",
+          "sns",
+          "sns_859ecdfc-9fa1-77fb-8d66-320c0954ea0d",
+          "/examples/0/english",
+          "148fc3d0f83dd9ba6b46b875b163a7a2fa637781bfee8cee357fa54483696fdd",
+          4
+        ],
+        [
+          "sense-run-management",
+          "sns",
+          "sns_859ecdfc-9fa1-77fb-8d66-320c0954ea0d",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-run-management",
+          "sns",
+          "sns_859ecdfc-9fa1-77fb-8d66-320c0954ea0d",
+          "/examples/0/vi",
+          "ab3ebd9a80dfa8a434f398eb3edd44215456d4325b151a1760bf449c689ba2d0",
+          4
+        ],
+        [
+          "sense-run-management",
+          "sns",
+          "sns_859ecdfc-9fa1-77fb-8d66-320c0954ea0d",
+          "/grammar/transitivity",
+          "c922756c60a15540ff419cd4efc3453b09c0a53f860c012b7ba11f0d7d702fe1",
+          0
+        ],
+        [
+          "sense-run-management",
+          "sns",
+          "sns_859ecdfc-9fa1-77fb-8d66-320c0954ea0d",
+          "/usageNote",
+          "03945bd0f9bbaeaf6a3f7a95ac72a21123ef44eb07db4fcee9caf6083c9eb53d",
+          0
+        ],
+        [
+          "sense-run-movement",
+          "sns",
+          "sns_5150a5a0-4d44-7998-86b1-8b57479ec107",
+          "/definition",
+          "499c886cfc3498beb76b35f37f6f244871d94db51596f41b86f27aefff57a556",
+          0
+        ],
+        [
+          "sense-run-movement",
+          "sns",
+          "sns_5150a5a0-4d44-7998-86b1-8b57479ec107",
+          "/entryId",
+          "f3e98fa48dee934eaee4a5ca58407f9a26814065dd6ea9925e9f96e09d6e8bc3",
+          0
+        ],
+        [
+          "sense-run-movement",
+          "sns",
+          "sns_5150a5a0-4d44-7998-86b1-8b57479ec107",
+          "/examples/0/english",
+          "b24f3c415acefc9faff96f5cd690bffed689c225f38accb3946a9d84a59e2642",
+          4
+        ],
+        [
+          "sense-run-movement",
+          "sns",
+          "sns_5150a5a0-4d44-7998-86b1-8b57479ec107",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-run-movement",
+          "sns",
+          "sns_5150a5a0-4d44-7998-86b1-8b57479ec107",
+          "/examples/0/vi",
+          "e87c3ed26c698c078a10d1b889d356e53a7b8beae0a0aee5791e303dff398df4",
+          4
+        ],
+        [
+          "sense-run-movement",
+          "sns",
+          "sns_5150a5a0-4d44-7998-86b1-8b57479ec107",
+          "/grammar/transitivity",
+          "326a141f5c26042c2b69a0fd72dd564c571bd0ecab79016c90e6ea34c3bd76d3",
+          0
+        ],
+        [
+          "sense-run-movement",
+          "sns",
+          "sns_5150a5a0-4d44-7998-86b1-8b57479ec107",
+          "/usageNote",
+          "af41452936282a8d6fafd7ff46855a91df7c44d2a783010bc886e8ac7081d76b",
+          0
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          "sns_d2278f3e-ce3e-7999-8026-50ec50c264eb",
+          "/constructionIds",
+          "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          0
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          "sns_d2278f3e-ce3e-7999-8026-50ec50c264eb",
+          "/contrastiveNotes/0/language",
+          "50eac10e7966a04e139902940a2a8e129a4597574c709cb8d01939ace56ff9c3",
+          0
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          "sns_d2278f3e-ce3e-7999-8026-50ec50c264eb",
+          "/contrastiveNotes/0/text",
+          "3d7a44b5f3ff9507c0c733016195d2d8d1cb88931fcf96d34d7d46f38408d51e",
+          0
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          "sns_d2278f3e-ce3e-7999-8026-50ec50c264eb",
+          "/definition",
+          "c442e1e8ec33e01a78cb35d4dee2864ecaf119d5ce586b5bbfb619c8824743e0",
+          0
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          "sns_d2278f3e-ce3e-7999-8026-50ec50c264eb",
+          "/domain",
+          "a6f2c6606092db7617735f78d780686c1787d3b260aacdb081ec2b3e7cff88ff",
+          0
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          "sns_d2278f3e-ce3e-7999-8026-50ec50c264eb",
+          "/entryId",
+          "833058412e8eeb03a9b49d17d7ac75adf3b935838bea02187d6cf0031c220af9",
+          0
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          "sns_d2278f3e-ce3e-7999-8026-50ec50c264eb",
+          "/examples/0/english",
+          "088e147effe61d6b3e924500291ee1cd82cb368d011a581eaf374d3718f0d62d",
+          4
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          "sns_d2278f3e-ce3e-7999-8026-50ec50c264eb",
+          "/examples/0/exampleType",
+          "d1263b6093ab6c22ff1012e00fa1c646f042001387ff46852345f377d29b476d",
+          4
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          "sns_d2278f3e-ce3e-7999-8026-50ec50c264eb",
+          "/examples/0/register",
+          "9d3b02424c514de974e91bd2d20d4c0babe51d2de11b5f5cd92bd3c5f8cb67cf",
+          4
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          "sns_d2278f3e-ce3e-7999-8026-50ec50c264eb",
+          "/examples/0/vi",
+          "88f1403224fa01695be5b355446dea75d8a469e9f5fb36a7dab66610308a6829",
+          4
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          "sns_d2278f3e-ce3e-7999-8026-50ec50c264eb",
+          "/register",
+          "9d3b02424c514de974e91bd2d20d4c0babe51d2de11b5f5cd92bd3c5f8cb67cf",
+          0
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          "sns_d2278f3e-ce3e-7999-8026-50ec50c264eb",
+          "/topicIds",
+          "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          0
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          "sns_d2278f3e-ce3e-7999-8026-50ec50c264eb",
+          "/usageNote",
+          "94cf55ce158f32c7c2c9ac21640b3e3e8b9611e7593f8612a4b3cb99a58691eb",
+          0
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          "sns_d2278f3e-ce3e-7999-8026-50ec50c264eb",
+          "/usageRestrictions/0/description",
+          "bb79fc796cf3a40cdda4e732622dbcac0d47db0fb5bb7ad2bf2eacb4fae7f642",
+          0
+        ],
+        [
+          "sense-small-size",
+          "sns",
+          "sns_d2278f3e-ce3e-7999-8026-50ec50c264eb",
+          "/usageRestrictions/0/kind",
+          "d56d4ea256ce41a628c35e6712a0693c52deacd257761f2c2ec72e83cf4c3b75",
+          0
+        ]
+      ]
+    }
+  },
+  "candidateQuality": {
+    "method": "Eight-axis Golden QA contract plus claim-by-claim AI-assisted reference inspection; no authenticated human submissions.",
+    "candidateCount": 62,
+    "confirmedLinguisticBugs": 0,
+    "axes": [
+      "sense_boundary_accuracy",
+      "translation_fidelity",
+      "grammar_accuracy",
+      "idiomaticity",
+      "collocation_validity",
+      "learner_usefulness",
+      "evidence_sufficiency",
+      "license_compliance"
+    ],
+    "candidates": [
+      {
+        "candidateId": "entry-bank-financial",
+        "type": "lex",
+        "sourceItemKey": "phase11:pilot-fanout-002:entry-bank-financial",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-BANK-HOMOGRAPH-001"
+        ]
+      },
+      {
+        "candidateId": "entry-bank-river",
+        "type": "lex",
+        "sourceItemKey": "phase11:pilot-fanout-002:entry-bank-river",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-BANK-HOMOGRAPH-001"
+        ]
+      },
+      {
+        "candidateId": "entry-run",
+        "type": "lex",
+        "sourceItemKey": "phase11:pilot-fanout-002:entry-run",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "entry-analyse",
+        "type": "lex",
+        "sourceItemKey": "phase11:pilot-fanout-002:entry-analyse",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "entry-analysis",
+        "type": "lex",
+        "sourceItemKey": "phase11:pilot-fanout-002:entry-analysis",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "entry-analytical",
+        "type": "lex",
+        "sourceItemKey": "phase11:pilot-fanout-002:entry-analytical",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "entry-big",
+        "type": "lex",
+        "sourceItemKey": "phase11:pilot-fanout-002:entry-big",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "entry-large",
+        "type": "lex",
+        "sourceItemKey": "phase11:pilot-fanout-002:entry-large",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "entry-depend",
+        "type": "lex",
+        "sourceItemKey": "phase11:pilot-fanout-002:entry-depend",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "entry-look-up",
+        "type": "lex",
+        "sourceItemKey": "phase11:pilot-fanout-002:entry-look-up",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "entry-borrow",
+        "type": "lex",
+        "sourceItemKey": "phase11:pilot-fanout-002:entry-borrow",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "entry-lend",
+        "type": "lex",
+        "sourceItemKey": "phase11:pilot-fanout-002:entry-lend",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "entry-advice",
+        "type": "lex",
+        "sourceItemKey": "phase11:pilot-fanout-002:entry-advice",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "family-analysis",
+        "type": "fam",
+        "sourceItemKey": "phase11:pilot-fanout-002:family-analysis",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "sense-bank-financial",
+        "type": "sns",
+        "sourceItemKey": "phase11:pilot-fanout-002:sense-bank-financial",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "sense-bank-river",
+        "type": "sns",
+        "sourceItemKey": "phase11:pilot-fanout-002:sense-bank-river",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "sense-run-movement",
+        "type": "sns",
+        "sourceItemKey": "phase11:pilot-fanout-002:sense-run-movement",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "sense-run-machine",
+        "type": "sns",
+        "sourceItemKey": "phase11:pilot-fanout-002:sense-run-machine",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "sense-run-management",
+        "type": "sns",
+        "sourceItemKey": "phase11:pilot-fanout-002:sense-run-management",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "sense-analyse",
+        "type": "sns",
+        "sourceItemKey": "phase11:pilot-fanout-002:sense-analyse",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "sense-analysis",
+        "type": "sns",
+        "sourceItemKey": "phase11:pilot-fanout-002:sense-analysis",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "sense-analytical",
+        "type": "sns",
+        "sourceItemKey": "phase11:pilot-fanout-002:sense-analytical",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "sense-big-size",
+        "type": "sns",
+        "sourceItemKey": "phase11:pilot-fanout-002:sense-big-size",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "sense-large-size",
+        "type": "sns",
+        "sourceItemKey": "phase11:pilot-fanout-002:sense-large-size",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "sense-depend-contingent",
+        "type": "sns",
+        "sourceItemKey": "phase11:pilot-fanout-002:sense-depend-contingent",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "sense-look-up-reference",
+        "type": "sns",
+        "sourceItemKey": "phase11:pilot-fanout-002:sense-look-up-reference",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "sense-borrow-temporary-use",
+        "type": "sns",
+        "sourceItemKey": "phase11:pilot-fanout-002:sense-borrow-temporary-use",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "sense-lend-temporary-use",
+        "type": "sns",
+        "sourceItemKey": "phase11:pilot-fanout-002:sense-lend-temporary-use",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "sense-advice-guidance",
+        "type": "sns",
+        "sourceItemKey": "phase11:pilot-fanout-002:sense-advice-guidance",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "construction-run-machine",
+        "type": "con",
+        "sourceItemKey": "phase11:pilot-fanout-002:construction-run-machine",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "construction-run-management",
+        "type": "con",
+        "sourceItemKey": "phase11:pilot-fanout-002:construction-run-management",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "construction-analyse-object",
+        "type": "con",
+        "sourceItemKey": "phase11:pilot-fanout-002:construction-analyse-object",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "construction-depend-on",
+        "type": "con",
+        "sourceItemKey": "phase11:pilot-fanout-002:construction-depend-on",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "construction-look-up-separable",
+        "type": "con",
+        "sourceItemKey": "phase11:pilot-fanout-002:construction-look-up-separable",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "construction-borrow-from",
+        "type": "con",
+        "sourceItemKey": "phase11:pilot-fanout-002:construction-borrow-from",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "construction-lend-double-object",
+        "type": "con",
+        "sourceItemKey": "phase11:pilot-fanout-002:construction-lend-double-object",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "construction-lend-to",
+        "type": "con",
+        "sourceItemKey": "phase11:pilot-fanout-002:construction-lend-to",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-bank-financial",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-bank-financial",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-bank-river",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-bank-river",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-run-movement",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-run-movement",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-run-machine-operate",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-run-machine-operate",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-run-machine-operate-alternative",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-run-machine-operate-alternative",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-run-management",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-run-management",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-analyse",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-analyse",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-analysis",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-analysis",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-analytical",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-analytical",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-big",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-big",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-large",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-large",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-depend",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-depend",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-look-up",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-look-up",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-borrow",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-borrow",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-lend",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-lend",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-advice",
+        "type": "eqv",
+        "sourceItemKey": "phase11:pilot-fanout-002:equiv-advice",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "construction-run-machine-transitive",
+        "type": "con",
+        "sourceItemKey": "phase11:pilot-fanout-002:construction-run-machine-transitive",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "entry-small",
+        "type": "lex",
+        "sourceItemKey": "phase11:staged-lexical-candidates:v1:entry-small",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "sense-small-size",
+        "type": "sns",
+        "sourceItemKey": "phase11:staged-lexical-candidates:v1:sense-small-size",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": [
+          "QF-EXAMPLE-AUTHORSHIP-001"
+        ]
+      },
+      {
+        "candidateId": "equiv-small",
+        "type": "eqv",
+        "sourceItemKey": "phase11:staged-lexical-candidates:v1:equiv-small",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "rel-big-large-near-synonym",
+        "type": "rel",
+        "sourceItemKey": "phase11:staged-lexical-candidates:v1:rel-big-large-near-synonym",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "rel-big-small-antonym",
+        "type": "rel",
+        "sourceItemKey": "phase11:staged-lexical-candidates:v1:rel-big-small-antonym",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "rel-large-small-antonym",
+        "type": "rel",
+        "sourceItemKey": "phase11:staged-lexical-candidates:v1:rel-large-small-antonym",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-borrow-money",
+        "type": "eqv",
+        "sourceItemKey": "phase11:staged-lexical-candidates:v1:equiv-borrow-money",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      },
+      {
+        "candidateId": "equiv-lend-money",
+        "type": "eqv",
+        "sourceItemKey": "phase11:staged-lexical-candidates:v1:equiv-lend-money",
+        "qualityDisposition": "AI-assisted lexicographic review found no reproducible correctness defect requiring a text rewrite. This recommendation is not authenticated editorial approval.",
+        "axesReviewed": [
+          "sense_boundary_accuracy",
+          "translation_fidelity",
+          "grammar_accuracy",
+          "idiomaticity",
+          "collocation_validity",
+          "learner_usefulness",
+          "evidence_sufficiency",
+          "license_compliance"
+        ],
+        "pendingGates": [
+          "exact_claim_evidence",
+          "source_traceability_and_rights",
+          "authenticated_specialist_review",
+          "authenticated_LER_review",
+          "authorized_publication_selection"
+        ],
+        "findingIds": []
+      }
+    ],
+    "findings": [
+      {
+        "findingId": "QF-EXAMPLE-AUTHORSHIP-001",
+        "severity": "high_provenance_blocker",
+        "candidateIds": [
+          "sense-bank-financial",
+          "sense-bank-river",
+          "sense-run-movement",
+          "sense-run-machine",
+          "sense-run-management",
+          "sense-analyse",
+          "sense-analysis",
+          "sense-analytical",
+          "sense-big-size",
+          "sense-large-size",
+          "sense-depend-contingent",
+          "sense-look-up-reference",
+          "sense-borrow-temporary-use",
+          "sense-lend-temporary-use",
+          "sense-advice-guidance",
+          "sense-small-size"
+        ],
+        "fieldPath": "/entity/examples/*/exampleType",
+        "evidence": "No creation records, authorship/ownership attestation, or licensed corpus attribution exist for the 16 example pairs.",
+        "minimalCorrection": "Applied: editorial_original -> unverified_candidate for all 16; preserve strings and create no fabricated attestation.",
+        "status": "label_corrected; provenance remains unverified"
+      },
+      {
+        "findingId": "QF-BANK-HOMOGRAPH-001",
+        "severity": "high_editorial_dispute",
+        "candidateIds": [
+          "entry-bank-financial",
+          "entry-bank-river"
+        ],
+        "fieldPath": "/entity/homographNumber",
+        "evidenceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/bank_1",
+          "https://www.oxfordlearnersdictionaries.com/faq/",
+          "https://www.merriam-webster.com/dictionary/bank"
+        ],
+        "minimalCorrection": "No data mutation; retain draft values 1/2 and mark only numbering claims disputed pending owner/LER ruling.",
+        "status": "pending owner/LER"
+      },
+      {
+        "findingId": "QF-CLAIM-EVIDENCE-001",
+        "severity": "publication_blocker",
+        "candidateIds": [
+          "entry-bank-financial",
+          "entry-bank-river",
+          "entry-run",
+          "entry-analyse",
+          "entry-analysis",
+          "entry-analytical",
+          "entry-big",
+          "entry-large",
+          "entry-depend",
+          "entry-look-up",
+          "entry-borrow",
+          "entry-lend",
+          "entry-advice",
+          "family-analysis",
+          "sense-bank-financial",
+          "sense-bank-river",
+          "sense-run-movement",
+          "sense-run-machine",
+          "sense-run-management",
+          "sense-analyse",
+          "sense-analysis",
+          "sense-analytical",
+          "sense-big-size",
+          "sense-large-size",
+          "sense-depend-contingent",
+          "sense-look-up-reference",
+          "sense-borrow-temporary-use",
+          "sense-lend-temporary-use",
+          "sense-advice-guidance",
+          "construction-run-machine",
+          "construction-run-management",
+          "construction-analyse-object",
+          "construction-depend-on",
+          "construction-look-up-separable",
+          "construction-borrow-from",
+          "construction-lend-double-object",
+          "construction-lend-to",
+          "equiv-bank-financial",
+          "equiv-bank-river",
+          "equiv-run-movement",
+          "equiv-run-machine-operate",
+          "equiv-run-machine-operate-alternative",
+          "equiv-run-management",
+          "equiv-analyse",
+          "equiv-analysis",
+          "equiv-analytical",
+          "equiv-big",
+          "equiv-large",
+          "equiv-depend",
+          "equiv-look-up",
+          "equiv-borrow",
+          "equiv-lend",
+          "equiv-advice",
+          "construction-run-machine-transitive",
+          "entry-small",
+          "sense-small-size",
+          "equiv-small",
+          "rel-big-large-near-synonym",
+          "rel-big-small-antonym",
+          "rel-large-small-antonym",
+          "equiv-borrow-money",
+          "equiv-lend-money"
+        ],
+        "fieldPathReference": "each row in claimCoverage.claimInventoryEncoding.rows: column fieldPath",
+        "evidence": "No V2 Evidence records, source-to-claim mapping, or exact subject/path/valueDigest attestations are present for the 430 current claim paths.",
+        "minimalCorrection": "For each selected claim, identify permitted independent evidence and create/bind a V2 Evidence record against the persistent canonical subject, exact current path and exact value digest; retain unresolved claims as draft.",
+        "status": "unresolved"
+      },
+      {
+        "findingId": "QF-RIGHTS-001",
+        "severity": "publication_blocker",
+        "candidateIds": [
+          "entry-bank-financial",
+          "entry-bank-river",
+          "entry-run",
+          "entry-analyse",
+          "entry-analysis",
+          "entry-analytical",
+          "entry-big",
+          "entry-large",
+          "entry-depend",
+          "entry-look-up",
+          "entry-borrow",
+          "entry-lend",
+          "entry-advice",
+          "family-analysis",
+          "sense-bank-financial",
+          "sense-bank-river",
+          "sense-run-movement",
+          "sense-run-machine",
+          "sense-run-management",
+          "sense-analyse",
+          "sense-analysis",
+          "sense-analytical",
+          "sense-big-size",
+          "sense-large-size",
+          "sense-depend-contingent",
+          "sense-look-up-reference",
+          "sense-borrow-temporary-use",
+          "sense-lend-temporary-use",
+          "sense-advice-guidance",
+          "construction-run-machine",
+          "construction-run-management",
+          "construction-analyse-object",
+          "construction-depend-on",
+          "construction-look-up-separable",
+          "construction-borrow-from",
+          "construction-lend-double-object",
+          "construction-lend-to",
+          "equiv-bank-financial",
+          "equiv-bank-river",
+          "equiv-run-movement",
+          "equiv-run-machine-operate",
+          "equiv-run-machine-operate-alternative",
+          "equiv-run-management",
+          "equiv-analyse",
+          "equiv-analysis",
+          "equiv-analytical",
+          "equiv-big",
+          "equiv-large",
+          "equiv-depend",
+          "equiv-look-up",
+          "equiv-borrow",
+          "equiv-lend",
+          "equiv-advice",
+          "construction-run-machine-transitive",
+          "entry-small",
+          "sense-small-size",
+          "equiv-small",
+          "rel-big-large-near-synonym",
+          "rel-big-small-antonym",
+          "rel-large-small-antonym",
+          "equiv-borrow-money",
+          "equiv-lend-money"
+        ],
+        "fieldPathReference": "each claim row; source rights and traceability overlay",
+        "evidence": "No claim maps to a V2 Source record and no authenticated rights decision for dictionary_publication exists. Proprietary and aggregator permissions are absent or restricted; open-license sources have no claim-level provenance or project rights approval.",
+        "minimalCorrection": "Use only exact material with verified version/license and required attribution, or obtain written permission; record claim-level provenance and authenticated rights approval. Do not set redistributable from a label alone.",
+        "status": "unresolved"
+      },
+      {
+        "findingId": "QF-AUTHORITY-001",
+        "severity": "publication_blocker",
+        "candidateIds": [
+          "entry-bank-financial",
+          "entry-bank-river",
+          "entry-run",
+          "entry-analyse",
+          "entry-analysis",
+          "entry-analytical",
+          "entry-big",
+          "entry-large",
+          "entry-depend",
+          "entry-look-up",
+          "entry-borrow",
+          "entry-lend",
+          "entry-advice",
+          "family-analysis",
+          "sense-bank-financial",
+          "sense-bank-river",
+          "sense-run-movement",
+          "sense-run-machine",
+          "sense-run-management",
+          "sense-analyse",
+          "sense-analysis",
+          "sense-analytical",
+          "sense-big-size",
+          "sense-large-size",
+          "sense-depend-contingent",
+          "sense-look-up-reference",
+          "sense-borrow-temporary-use",
+          "sense-lend-temporary-use",
+          "sense-advice-guidance",
+          "construction-run-machine",
+          "construction-run-management",
+          "construction-analyse-object",
+          "construction-depend-on",
+          "construction-look-up-separable",
+          "construction-borrow-from",
+          "construction-lend-double-object",
+          "construction-lend-to",
+          "equiv-bank-financial",
+          "equiv-bank-river",
+          "equiv-run-movement",
+          "equiv-run-machine-operate",
+          "equiv-run-machine-operate-alternative",
+          "equiv-run-management",
+          "equiv-analyse",
+          "equiv-analysis",
+          "equiv-analytical",
+          "equiv-big",
+          "equiv-large",
+          "equiv-depend",
+          "equiv-look-up",
+          "equiv-borrow",
+          "equiv-lend",
+          "equiv-advice",
+          "construction-run-machine-transitive",
+          "entry-small",
+          "sense-small-size",
+          "equiv-small",
+          "rel-big-large-near-synonym",
+          "rel-big-small-antonym",
+          "rel-large-small-antonym",
+          "equiv-borrow-money",
+          "equiv-lend-money"
+        ],
+        "fieldPathReference": "each row in claimCoverage.claimInventoryEncoding.rows: subject, fieldPath and valueDigest",
+        "evidence": "No authenticated owner appointment, LER appointment, specialist claim approval, or independent reviewer submission exists. AI research and commit identity are not reviewer authority.",
+        "minimalCorrection": "Owner appoints reviewers with explicit subject/path scope; authorized reviewers assess exact current claim values; LER records bank ruling; verifier authenticates appointments before promotion.",
+        "status": "unresolved"
+      }
+    ]
+  },
+  "goldenQa": {
+    "benchmarkPath": "tests/fixtures/production/golden-candidates.json",
+    "familyCount": 6,
+    "axisCount": 8,
+    "axes": [
+      "sense_boundary_accuracy",
+      "translation_fidelity",
+      "grammar_accuracy",
+      "idiomaticity",
+      "collocation_validity",
+      "learner_usefulness",
+      "evidence_sufficiency",
+      "license_compliance"
+    ],
+    "qualityAcceptedCount": 0,
+    "pendingCount": 6,
+    "qualityRejectedCount": 0,
+    "publicationApprovedCount": 0,
+    "families": [
+      {
+        "caseId": "bank",
+        "status": "pending",
+        "publicationEligible": false
+      },
+      {
+        "caseId": "run",
+        "status": "pending",
+        "publicationEligible": false
+      },
+      {
+        "caseId": "analyse-family",
+        "status": "pending",
+        "publicationEligible": false
+      },
+      {
+        "caseId": "big-large",
+        "status": "pending",
+        "publicationEligible": false
+      },
+      {
+        "caseId": "depend-on",
+        "status": "pending",
+        "publicationEligible": false
+      },
+      {
+        "caseId": "look-up",
+        "status": "pending",
+        "publicationEligible": false
+      }
+    ]
+  },
+  "bankHomographDispute": {
+    "issueId": "P10-ISSUE-bank-boundary",
+    "linkedReviewItemIds": [
+      "P10-entry-bank-financial-entity-homographNumber",
+      "P10-entry-bank-river-entity-homographNumber"
+    ],
+    "status": "recommendation_only_owner_ler_approval_missing",
+    "proposedRuling": "Retain separate draft entries: financial institution and river-edge are synchronically distinct and have different immediate historical routes. Keep homographNumber 1/2 as provisional display metadata, not stable identity and not universal frequency order. OALD groups senses on one page and documents grouping exceptions to usual frequency order; Merriam-Webster uses numbered noun entries. Immediate origins differ, but deeper Germanic relationships should not be denied.",
+    "tradeoffs": [
+      "Two entries clarify sense and Vietnamese mapping but imply one editorial numbering convention.",
+      "A grouped headword follows OALD display but masks distinct immediate histories; reference conventions differ."
+    ],
+    "translationAndGraphImpact": "No target, relation endpoint, or graph edge needs change; only display-number claims remain disputed.",
+    "preservedDraft": true,
+    "affectedClaims": [
+      {
+        "candidateId": "entry-bank-financial",
+        "fieldPath": "/homographNumber",
+        "valueDigest": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+      },
+      {
+        "candidateId": "entry-bank-river",
+        "fieldPath": "/homographNumber",
+        "valueDigest": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+      }
+    ]
+  },
+  "sourceRightsAudit": {
+    "claimSourceRecordsPresent": 0,
+    "v2SourceRecordsCreated": 0,
+    "evidenceRecordsPresent": 0,
+    "editorialReviewRecordsPresent": 0,
+    "claimToSourceMappings": 0,
+    "trustedRightsApprovals": 0,
+    "sources": [
+      {
+        "sourceId": "SRC-OALD",
+        "owner": "Oxford University Press",
+        "edition": "Online; page version not stated",
+        "officialUrls": [
+          "https://www.oxfordlearnersdictionaries.com/terms-and-conditions",
+          "https://www.oxfordlearnersdictionaries.com/definition/english/bank_1"
+        ],
+        "documentedLicenseOrTerms": "Proprietary terms; no general redistribution grant or systematic copying permission established.",
+        "rightsStatus": "reference_only",
+        "intendedUse": "Lookup/research only; no definitions or examples copied.",
+        "claimTraceability": "Phase 11 references exist; no V003 claim-bound V2 Source/Evidence mapping.",
+        "trustedRightsApproval": false
+      },
+      {
+        "sourceId": "SRC-CAMBRIDGE",
+        "owner": "Cambridge University Press and Assessment; some content from other rights owners",
+        "edition": "Cambridge Dictionary online; version not stated",
+        "officialUrls": [
+          "https://dictionary.cambridge.org/us/about",
+          "https://dev.eim-ciip-cambridge.org/api/terms-and-conditions"
+        ],
+        "documentedLicenseOrTerms": "Site states material is CUP copyright or reproduced with permission; API terms do not establish general redistribution.",
+        "rightsStatus": "reference_only",
+        "intendedUse": "Lookup only unless written license specifically grants reuse.",
+        "claimTraceability": "Borrow/lend and grammar consulted; no exact claim-bound mapping.",
+        "trustedRightsApproval": false
+      },
+      {
+        "sourceId": "SRC-COLLINS",
+        "owner": "HarperCollins Publishers",
+        "edition": "Online; version not stated",
+        "officialUrls": [
+          "https://www.collinsdictionary.com/terms-and-conditions"
+        ],
+        "documentedLicenseOrTerms": "Terms restrict use to personal/non-commercial and prohibit redistribution/reproduction absent permission.",
+        "rightsStatus": "reference_only",
+        "intendedUse": "Lookup only; request permission for reuse.",
+        "claimTraceability": "No exact claim-bound mapping.",
+        "trustedRightsApproval": false
+      },
+      {
+        "sourceId": "SRC-BRITISH-COUNCIL",
+        "owner": "British Council",
+        "edition": "LearnEnglish pages; terms page last updated 2020",
+        "officialUrls": [
+          "https://www.britishcouncil.org/terms"
+        ],
+        "documentedLicenseOrTerms": "Terms require prior written permission for republication/reuse.",
+        "rightsStatus": "reference_only",
+        "intendedUse": "Lookup only; written permission required for reuse.",
+        "claimTraceability": "No exact claim-bound mapping.",
+        "trustedRightsApproval": false
+      },
+      {
+        "sourceId": "SRC-VDICT",
+        "owner": "VDict service; legal owner not independently established",
+        "edition": "Terms updated 2025-12-04; entry edition unstated",
+        "officialUrls": [
+          "https://vdict.com/tos.php"
+        ],
+        "documentedLicenseOrTerms": "Terms prohibit bots/scraping and commercial data extraction/derivatives without written permission.",
+        "rightsStatus": "permission_required",
+        "intendedUse": "No scraping or reuse absent written permission.",
+        "claimTraceability": "No exact page/revision bound to a claim.",
+        "trustedRightsApproval": false
+      },
+      {
+        "sourceId": "SRC-VNDIC",
+        "owner": "VNDIC/aggregator; rights owner unverified",
+        "edition": "Edition unstated",
+        "officialUrls": [
+          "https://7.vndic.net/index.php?dict=en_vi_en41&in=1&word=analysis"
+        ],
+        "documentedLicenseOrTerms": "No official redistributable license/permission found; source provenance remains unclear.",
+        "rightsStatus": "unknown",
+        "intendedUse": "Exclude pending rights-owner and provenance verification.",
+        "claimTraceability": "No exact page/revision bound to a claim.",
+        "trustedRightsApproval": false
+      },
+      {
+        "sourceId": "SRC-VTUDIEN",
+        "owner": "VTudien/aggregator; rights owner unverified",
+        "edition": "Edition unstated",
+        "officialUrls": [
+          "https://vtudien.com/viet-viet/dictionary/nghia-cua-tu-vận%20hành"
+        ],
+        "documentedLicenseOrTerms": "No official redistributable license/permission found; source provenance remains unclear.",
+        "rightsStatus": "unknown",
+        "intendedUse": "Exclude pending rights-owner and provenance verification.",
+        "claimTraceability": "No exact page/revision bound to a claim.",
+        "trustedRightsApproval": false
+      },
+      {
+        "sourceId": "SRC-OEWN",
+        "owner": "Open English Wordnet / Global Wordnet Association project",
+        "edition": "Open English Wordnet 2025, released 2025-12-31",
+        "officialUrls": [
+          "https://github.com/globalwordnet/english-wordnet/releases",
+          "https://github.com/globalwordnet/english-wordnet/blob/main/LICENSE.md",
+          "https://creativecommons.org/licenses/by/4.0/legalcode.en"
+        ],
+        "documentedLicenseOrTerms": "2025 release is CC BY 4.0; attribution/license notice and upstream notices must be preserved. License is documented, project rights approval is not.",
+        "rightsStatus": "redistributable",
+        "intendedUse": "Potentially reuse exact 2025 material with required attribution and terms; none is currently used.",
+        "claimTraceability": "No candidate claim maps to an OEWN synset or pinpoint.",
+        "trustedRightsApproval": false
+      },
+      {
+        "sourceId": "SRC-PRINCETON-WN",
+        "owner": "Princeton University WordNet project",
+        "edition": "WordNet 3.0 license text verified; no PWN data release selected for V003; no 3.1 license inferred.",
+        "officialUrls": [
+          "https://wordnet.princeton.edu/license-and-commercial-use"
+        ],
+        "documentedLicenseOrTerms": "Official page documents a license permitting use/copy/modify/distribute with notice and disclaimer and recommends legal review for commercial intent.",
+        "rightsStatus": "redistributable",
+        "intendedUse": "Only exact version/material with preserved license notice, after project rights review.",
+        "claimTraceability": "No candidate claim maps to a selected version or synset.",
+        "trustedRightsApproval": false
+      },
+      {
+        "sourceId": "SRC-WIKTIONARY-EN",
+        "owner": "Wikimedia contributors",
+        "edition": "English Wiktionary; no revision selected",
+        "officialUrls": [
+          "https://en.wiktionary.org/wiki/Wiktionary:Copyrights",
+          "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en"
+        ],
+        "documentedLicenseOrTerms": "Covered original text is generally CC BY-SA 4.0/GFDL; page/revision can contain separately licensed material. Attribution and ShareAlike compatibility are required.",
+        "rightsStatus": "redistributable",
+        "intendedUse": "Only exact verified revision with attribution, notice, and ShareAlike review.",
+        "claimTraceability": "No revision maps to a candidate claim.",
+        "trustedRightsApproval": false
+      },
+      {
+        "sourceId": "SRC-WIKTIONARY-VI",
+        "owner": "Wikimedia contributors",
+        "edition": "Vietnamese Wiktionary; no revision selected",
+        "officialUrls": [
+          "https://vi.wiktionary.org/wiki/Wiktionary:Quy%E1%BB%81n_t%C3%A1c_gi%E1%BA%A3",
+          "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en"
+        ],
+        "documentedLicenseOrTerms": "Covered original text is generally CC BY-SA/GFDL; revision-specific content and external material require checking. Attribution and ShareAlike compatibility are required.",
+        "rightsStatus": "redistributable",
+        "intendedUse": "Only exact verified revision with attribution, notice, and ShareAlike review.",
+        "claimTraceability": "No revision maps to a candidate claim.",
+        "trustedRightsApproval": false
+      },
+      {
+        "sourceId": "SRC-FIRST-PARTY",
+        "owner": "Unknown; no author/owner attestation in repository",
+        "edition": "V003 candidate examples; 16 English/VI pairs",
+        "officialUrls": [
+          "data/candidates/pilot-fanout-003.json"
+        ],
+        "documentedLicenseOrTerms": "No creation record, ownership attestation, or project reuse grant found.",
+        "rightsStatus": "unknown",
+        "intendedUse": "Not eligible for reuse until ownership and license are documented.",
+        "claimTraceability": "Example strings are unverified candidates; Vietnamese translations are unreviewed.",
+        "trustedRightsApproval": false
+      }
+    ],
+    "interpretation": "License documentation is recorded separately from authenticated project rights approval. A redistributable source license does not make a candidate claim traceable or rights-cleared.",
+    "noFabricatedMetadata": true
+  },
+  "governance": {
+    "authenticatedOwnerAppointments": 0,
+    "authenticatedLERAppointments": 0,
+    "authenticatedIndependentReviewerApprovals": 0,
+    "aiOnlyApprovalAttempted": false,
+    "productionTrustCallbacksInjected": false,
+    "authorityValidator": "fail-closed; external owner attestation, scoped appointment, and verifier required",
+    "promotionPipeline": "checks publication preconditions before atomic state write; blocked requests do not partially publish",
+    "bankDecision": "no owner/LER decision found; recommendation is not an editorial ruling"
+  },
+  "perGateReadiness": {
+    "linguistic": {
+      "candidates": 62,
+      "aiReviewed": 62,
+      "authenticatedAccepted": 0,
+      "status": "pending_human_authority"
+    },
+    "evidence": {
+      "claims": 430,
+      "exactEvidence": 0,
+      "authenticatedEvidence": 0,
+      "status": "blocked"
+    },
+    "rights": {
+      "claims": 430,
+      "sourceMapped": 0,
+      "authenticatedReuseApprovals": 0,
+      "status": "blocked"
+    },
+    "editorialAuthority": {
+      "ownerAppointments": 0,
+      "lerAppointments": 0,
+      "specialistApprovals": 0,
+      "status": "blocked"
+    },
+    "graphData": {
+      "records": 62,
+      "v2SchemaGraphPass": 62,
+      "duplicateCanonicalIdentities": 0,
+      "danglingReferences": 0,
+      "status": "pass_for_draft_dataset"
+    },
+    "authorizedSelection": {
+      "claims": 0,
+      "status": "blocked"
+    },
+    "goldenQa": {
+      "families": 6,
+      "pending": 6,
+      "approved": 0,
+      "status": "pending"
+    }
+  },
+  "disputedClaimIds": [
+    "P10-entry-bank-financial-entity-homographNumber",
+    "P10-entry-bank-river-entity-homographNumber",
+    "P10-ISSUE-bank-boundary"
+  ],
+  "blockingIssueCodes": [
+    "CLAIM_EVIDENCE_INSUFFICIENT",
+    "CLAIM_PATH_UNVERIFIED",
+    "SOURCE_RIGHTS_UNVERIFIED",
+    "REVIEW_SCOPE_MISSING",
+    "LER_AUTHORITY_UNVERIFIED",
+    "SPECIALIST_REVIEW_MISSING",
+    "TRANSLATION_UNREVIEWED",
+    "EXAMPLE_EVIDENCE_MISSING",
+    "EXAMPLE_TRANSLATION_UNREVIEWED",
+    "DISPUTED_PUBLICATION_BLOCKED",
+    "PUBLICATION_NOT_VERIFIED",
+    "BILINGUAL_ENDPOINT_UNVERIFIED"
+  ],
+  "sourceLicenseVerification": {
+    "referenceOnly": 4,
+    "permissionRequired": 1,
+    "unknown": 3,
+    "redistributableLicenseDocumented": 4,
+    "claimLevelRightsCleared": 0,
+    "authenticatedRightsApproval": 0
+  },
+  "provenanceGaps": {
+    "unmappedClaims": 430,
+    "missingEvidenceRecords": 430,
+    "missingAuthenticatedClaimReviews": 430,
+    "exampleOwnershipAttestations": 0,
+    "originalityLabelsCorrected": 16,
+    "exactClaimDigestRecords": 0
+  },
+  "testsAndCi": {
+    "commands": [
+      "npm run schema:check",
+      "npm test",
+      "npm run test:production",
+      "npm run candidates:validate -- --input data/candidates/pilot-fanout-003.json",
+      "node --test tests/production/phase12-completion.test.mjs tests/production/phase11-closure.test.mjs"
+    ],
+    "githubActionsUrl": "https://github.com/phatnguyen03022001/ielts-tradition/actions",
+    "ciStatus": "Queried after final push; see final execution report and Actions URL.",
+    "productionGateDryRun": "recorded in productionGateDryRun; in-memory only",
+    "commandResults": [
+      {
+        "command": "npm run schema:check",
+        "status": "PASS",
+        "exitCode": 0,
+        "result": "16 V1 schema registry entries and V2 schema check passed."
+      },
+      {
+        "command": "npm test",
+        "status": "PASS",
+        "exitCode": 0,
+        "result": "Full schema, graph, pilot, stress and production suites passed; nested production suite 76/76."
+      },
+      {
+        "command": "npm run test:production",
+        "status": "PASS",
+        "exitCode": 0,
+        "result": "76 passed, 0 failed."
+      },
+      {
+        "command": "npm run candidates:validate -- --input data/candidates/pilot-fanout-003.json",
+        "status": "PASS_WITH_PUBLICATION_BLOCKERS",
+        "exitCode": 0,
+        "result": "dry-run; schema/graph issues 0; publicationEligible false; pending identity/evidence."
+      },
+      {
+        "command": "node --test tests/production/phase12-completion.test.mjs tests/production/phase11-closure.test.mjs",
+        "status": "PASS",
+        "exitCode": 0,
+        "result": "6 focused tests passed."
+      },
+      {
+        "command": "claim inventory exact path/digest recomputation",
+        "status": "PASS",
+        "result": "430/430 rows match current materialized dry-run path and exact value digest."
+      },
+      {
+        "command": "actual candidate production gate dry-run",
+        "status": "PASS_FAIL_CLOSED",
+        "result": "Eligible false; 856 blockers; no state write and no partial publication."
+      }
+    ]
+  },
+  "atlasMutations": 0,
+  "productionGateDryRun": {
+    "method": "prepareBatch of actual V003 in memory followed by evaluatePublication with no appointments, evidence/rights attestations, injected callb
