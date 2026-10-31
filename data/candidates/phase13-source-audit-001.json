@@ -1,0 +1,277 @@
+{
+  "batchId": "phase13-source-audit-001",
+  "records": [
+    {
+      "candidateId": "source-oald",
+      "type": "src",
+      "sourceItemKey": "phase13:source-audit:v1:SRC-OALD",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": [],
+        "title": "SRC-OALD — Oxford University Press",
+        "provider": "Oxford University Press",
+        "url": "https://www.oxfordlearnersdictionaries.com/terms-and-conditions",
+        "edition": "Online; page version not stated",
+        "license": "Proprietary terms; no general redistribution grant or systematic copying permission established.",
+        "permittedUse": "Lookup/research only; no definitions or examples copied.",
+        "sourceType": "dictionary",
+        "sourceIdentifier": "SRC-OALD",
+        "materialVersion": "Online; page version not stated",
+        "retrievedAt": "2026-10-31",
+        "attribution": "Rights/attribution metadata is limited to the official terms linked in the Phase 13 assessment.",
+        "rights": {
+          "status": "reference_only"
+        }
+      }
+    },
+    {
+      "candidateId": "source-cambridge",
+      "type": "src",
+      "sourceItemKey": "phase13:source-audit:v1:SRC-CAMBRIDGE",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": [],
+        "title": "SRC-CAMBRIDGE — Cambridge University Press and Assessment; some content from other rights owners",
+        "provider": "Cambridge University Press and Assessment; some content from other rights owners",
+        "url": "https://dictionary.cambridge.org/us/about",
+        "edition": "Cambridge Dictionary online; version not stated",
+        "license": "Site states material is CUP copyright or reproduced with permission; API terms do not establish general redistribution.",
+        "permittedUse": "Lookup only unless written license specifically grants reuse.",
+        "sourceType": "dictionary",
+        "sourceIdentifier": "SRC-CAMBRIDGE",
+        "materialVersion": "Cambridge Dictionary online; version not stated",
+        "retrievedAt": "2026-10-31",
+        "attribution": "Rights/attribution metadata is limited to the official terms linked in the Phase 13 assessment.",
+        "rights": {
+          "status": "reference_only"
+        }
+      }
+    },
+    {
+      "candidateId": "source-collins",
+      "type": "src",
+      "sourceItemKey": "phase13:source-audit:v1:SRC-COLLINS",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": [],
+        "title": "SRC-COLLINS — HarperCollins Publishers",
+        "provider": "HarperCollins Publishers",
+        "url": "https://www.collinsdictionary.com/terms-and-conditions",
+        "edition": "Online; version not stated",
+        "license": "Terms restrict use to personal/non-commercial and prohibit redistribution/reproduction absent permission.",
+        "permittedUse": "Lookup only; request permission for reuse.",
+        "sourceType": "dictionary",
+        "sourceIdentifier": "SRC-COLLINS",
+        "materialVersion": "Online; version not stated",
+        "retrievedAt": "2026-10-31",
+        "attribution": "Rights/attribution metadata is limited to the official terms linked in the Phase 13 assessment.",
+        "rights": {
+          "status": "reference_only"
+        }
+      }
+    },
+    {
+      "candidateId": "source-british-council",
+      "type": "src",
+      "sourceItemKey": "phase13:source-audit:v1:SRC-BRITISH-COUNCIL",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": [],
+        "title": "SRC-BRITISH-COUNCIL — British Council",
+        "provider": "British Council",
+        "url": "https://www.britishcouncil.org/terms",
+        "edition": "LearnEnglish pages; terms page last updated 2020",
+        "license": "Terms require prior written permission for republication/reuse.",
+        "permittedUse": "Lookup only; written permission required for reuse.",
+        "sourceType": "other",
+        "sourceIdentifier": "SRC-BRITISH-COUNCIL",
+        "materialVersion": "LearnEnglish pages; terms page last updated 2020",
+        "retrievedAt": "2026-10-31",
+        "attribution": "Rights/attribution metadata is limited to the official terms linked in the Phase 13 assessment.",
+        "rights": {
+          "status": "reference_only"
+        }
+      }
+    },
+    {
+      "candidateId": "source-vdict",
+      "type": "src",
+      "sourceItemKey": "phase13:source-audit:v1:SRC-VDICT",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": [],
+        "title": "SRC-VDICT — VDict service; legal owner not independently established",
+        "provider": "VDict service; legal owner not independently established",
+        "url": "https://vdict.com/tos.php",
+        "edition": "Terms updated 2025-12-04; entry edition unstated",
+        "license": "Terms prohibit bots/scraping and commercial data extraction/derivatives without written permission.",
+        "permittedUse": "No scraping or reuse absent written permission.",
+        "sourceType": "dictionary",
+        "sourceIdentifier": "SRC-VDICT",
+        "materialVersion": "Terms updated 2025-12-04; entry edition unstated",
+        "retrievedAt": "2026-10-31",
+        "attribution": "Rights/attribution metadata is limited to the official terms linked in the Phase 13 assessment.",
+        "rights": {
+          "status": "permission_required"
+        }
+      }
+    },
+    {
+      "candidateId": "source-vndic",
+      "type": "src",
+      "sourceItemKey": "phase13:source-audit:v1:SRC-VNDIC",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": [],
+        "title": "SRC-VNDIC — VNDIC/aggregator; rights owner unverified",
+        "provider": "VNDIC/aggregator; rights owner unverified",
+        "url": "https://7.vndic.net/index.php?dict=en_vi_en41&in=1&word=analysis",
+        "edition": "Edition unstated",
+        "license": "No official redistributable license/permission found; source provenance remains unclear.",
+        "permittedUse": "Exclude pending rights-owner and provenance verification.",
+        "sourceType": "dictionary",
+        "sourceIdentifier": "SRC-VNDIC",
+        "materialVersion": "Edition unstated",
+        "retrievedAt": "2026-10-30",
+        "attribution": "Rights/attribution metadata is limited to the official terms linked in the Phase 13 assessment.",
+        "rights": {
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "candidateId": "source-vtudien",
+      "type": "src",
+      "sourceItemKey": "phase13:source-audit:v1:SRC-VTUDIEN",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": [],
+        "title": "SRC-VTUDIEN — VTudien/aggregator; rights owner unverified",
+        "provider": "VTudien/aggregator; rights owner unverified",
+        "url": "https://vtudien.com/viet-viet/dictionary/nghia-cua-tu-vận%20hành",
+        "edition": "Edition unstated",
+        "license": "No official redistributable license/permission found; source provenance remains unclear.",
+        "permittedUse": "Exclude pending rights-owner and provenance verification.",
+        "sourceType": "dictionary",
+        "sourceIdentifier": "SRC-VTUDIEN",
+        "materialVersion": "Edition unstated",
+        "retrievedAt": "2026-10-30",
+        "attribution": "Rights/attribution metadata is limited to the official terms linked in the Phase 13 assessment.",
+        "rights": {
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "candidateId": "source-oewn",
+      "type": "src",
+      "sourceItemKey": "phase13:source-audit:v1:SRC-OEWN",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": [],
+        "title": "SRC-OEWN — Open English Wordnet / Global Wordnet Association project",
+        "provider": "Open English Wordnet / Global Wordnet Association project",
+        "url": "https://github.com/globalwordnet/english-wordnet/releases",
+        "edition": "Open English Wordnet 2025, released 2025-12-31",
+        "license": "2025 release is CC BY 4.0; attribution/license notice and upstream notices must be preserved. License is documented, project rights approval is not.",
+        "permittedUse": "Potentially reuse exact 2025 material with required attribution and terms; none is currently used.",
+        "sourceType": "dictionary",
+        "sourceIdentifier": "SRC-OEWN",
+        "materialVersion": "Open English Wordnet 2025, released 2025-12-31",
+        "retrievedAt": "2026-10-31",
+        "attribution": "Attribute the Open English Wordnet 2025 release and preserve CC BY 4.0 and applicable upstream notices.",
+        "rights": {
+          "status": "redistributable",
+          "scopes": [
+            "dictionary_publication"
+          ],
+          "licenseIdentifier": "CC-BY-4.0"
+        }
+      }
+    },
+    {
+      "candidateId": "source-princeton-wn",
+      "type": "src",
+      "sourceItemKey": "phase13:source-audit:v1:SRC-PRINCETON-WN",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": [],
+        "title": "SRC-PRINCETON-WN — Princeton University WordNet project",
+        "provider": "Princeton University WordNet project",
+        "url": "https://wordnet.princeton.edu/license-and-commercial-use",
+        "edition": "WordNet 3.0 license text verified; no PWN data release selected for V003; no 3.1 license inferred.",
+        "license": "Official page documents a license permitting use/copy/modify/distribute with notice and disclaimer and recommends legal review for commercial intent.",
+        "permittedUse": "Only exact version/material with preserved license notice, after project rights review.",
+        "sourceType": "dictionary",
+        "sourceIdentifier": "SRC-PRINCETON-WN",
+        "materialVersion": "WordNet 3.0 license text verified; no PWN data release selected for V003; no 3.1 license inferred.",
+        "retrievedAt": "2026-10-31",
+        "attribution": "Preserve WordNet 3.0 copyright notice and disclaimer; do not imply Princeton endorsement.",
+        "rights": {
+          "status": "redistributable",
+          "scopes": [
+            "dictionary_publication"
+          ],
+          "licenseIdentifier": "Princeton-WordNet-3.0-license"
+        }
+      }
+    },
+    {
+      "candidateId": "source-wiktionary-en",
+      "type": "src",
+      "sourceItemKey": "phase13:source-audit:v1:SRC-WIKTIONARY-EN",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": [],
+        "title": "SRC-WIKTIONARY-EN — Wikimedia contributors",
+        "provider": "Wikimedia contributors",
+        "url": "https://en.wiktionary.org/wiki/Wiktionary:Copyrights",
+        "edition": "English Wiktionary; no revision selected",
+        "license": "Covered original text is generally CC BY-SA 4.0/GFDL; page/revision can contain separately licensed material. Attribution and ShareAlike compatibility are required.",
+        "permittedUse": "Only exact verified revision with attribution, notice, and ShareAlike review.",
+        "sourceType": "dictionary",
+        "sourceIdentifier": "SRC-WIKTIONARY-EN",
+        "materialVersion": "English Wiktionary; no revision selected",
+        "retrievedAt": "2026-10-31",
+        "attribution": "Revision-level attribution and license remain unverified; do not reuse until the exact page revision is inspected.",
+        "rights": {
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "candidateId": "source-wiktionary-vi",
+      "type": "src",
+      "sourceItemKey": "phase13:source-audit:v1:SRC-WIKTIONARY-VI",
+      "entity": {
+        "lifecycleStatus": "active",
+        "editorialStatus": "draft",
+        "evidenceIds": [],
+        "title": "SRC-WIKTIONARY-VI — Wikimedia contributors",
+        "provider": "Wikimedia contributors",
+        "url": "https://vi.wiktionary.org/wiki/Wiktionary:Quy%E1%BB%81n_t%C3%A1c_gi%E1%BA%A3",
+        "edition": "Vietnamese Wiktionary; no revision selected",
+        "license": "Covered original text is generally CC BY-SA/GFDL; revision-specific content and external material require checking. Attribution and ShareAlike compatibility are required.",
+        "permittedUse": "Only exact verified revision with attribution, notice, and ShareAlike review.",
+        "sourceType": "dictionary",
+        "sourceIdentifier": "SRC-WIKTIONARY-VI",
+        "materialVersion": "Vietnamese Wiktionary; no revision selected",
+        "retrievedAt": "2026-10-31",
+        "attribution": "Revision-level attribution and license remain unverified; do not reuse until the exact page revision is inspected.",
+        "rights": {
+          "status": "unknown"
+        }
+      }
+    }
+  ]
+}

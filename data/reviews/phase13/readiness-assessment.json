@@ -4250,8 +4250,6 @@
     ]
   },
   "sourceRightsAudit": {
-    "claimSourceRecordsPresent": 0,
-    "v2SourceRecordsCreated": 0,
     "evidenceRecordsPresent": 0,
     "editorialReviewRecordsPresent": 0,
     "claimToSourceMappings": 0,
@@ -4387,7 +4385,7 @@
           "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en"
         ],
         "documentedLicenseOrTerms": "Covered original text is generally CC BY-SA 4.0/GFDL; page/revision can contain separately licensed material. Attribution and ShareAlike compatibility are required.",
-        "rightsStatus": "redistributable",
+        "rightsStatus": "unknown",
         "intendedUse": "Only exact verified revision with attribution, notice, and ShareAlike review.",
         "claimTraceability": "No revision maps to a candidate claim.",
         "trustedRightsApproval": false
@@ -4401,7 +4399,7 @@
           "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en"
         ],
         "documentedLicenseOrTerms": "Covered original text is generally CC BY-SA/GFDL; revision-specific content and external material require checking. Attribution and ShareAlike compatibility are required.",
-        "rightsStatus": "redistributable",
+        "rightsStatus": "unknown",
         "intendedUse": "Only exact verified revision with attribution, notice, and ShareAlike review.",
         "claimTraceability": "No revision maps to a candidate claim.",
         "trustedRightsApproval": false
@@ -4421,7 +4419,22 @@
       }
     ],
     "interpretation": "License documentation is recorded separately from authenticated project rights approval. A redistributable source license does not make a candidate claim traceable or rights-cleared.",
-    "noFabricatedMetadata": true
+    "noFabricatedMetadata": true,
+    "draftSourceCandidateBatch": {
+      "path": "data/candidates/phase13-source-audit-001.json",
+      "batchId": "phase13-source-audit-001",
+      "candidateCount": 11,
+      "canonicalSourceRecordsPersisted": 0,
+      "claimLinks": 0,
+      "reviewerApprovals": 0,
+      "rawFileSha256": "1ffb00efd37a7019bade84aa469248c659fa35573480fad0630e744dfbfcac82",
+      "candidateBatchDigest": "3cbb2f1d9e80f6f57b9309a526e1805ee86095cee548749033375d7f30f4cf0b",
+      "validationStatus": "PASS_draft_only",
+      "publicationEligible": false
+    },
+    "sourceMetadataCandidates": 11,
+    "canonicalV2SourceRecordsPersisted": 0,
+    "claimLinkedSourceRecordsPresent": 0
   },
   "governance": {
     "authenticatedOwnerAppointments": 0,
@@ -4450,7 +4463,9 @@
       "claims": 430,
       "sourceMapped": 0,
       "authenticatedReuseApprovals": 0,
-      "status": "blocked"
+      "status": "blocked",
+      "sourceCandidates": 11,
+      "canonicalSourceRecordsPersisted": 0
     },
     "editorialAuthority": {
       "ownerAppointments": 0,
@@ -4498,10 +4513,10 @@
   "sourceLicenseVerification": {
     "referenceOnly": 4,
     "permissionRequired": 1,
-    "unknown": 3,
-    "redistributableLicenseDocumented": 4,
+    "unknown": 5,
+    "redistributableLicenseDocumented": 2,
     "claimLevelRightsCleared": 0,
-    "authenticatedRightsApproval": 0
+    "rightsApprovalAuthenticated": 0
   },
   "provenanceGaps": {
     "unmappedClaims": 430,
@@ -4517,7 +4532,8 @@
       "npm test",
       "npm run test:production",
       "npm run candidates:validate -- --input data/candidates/pilot-fanout-003.json",
-      "node --test tests/production/phase12-completion.test.mjs tests/production/phase11-closure.test.mjs"
+      "node --test tests/production/phase12-completion.test.mjs tests/production/phase11-closure.test.mjs",
+      "npm run candidates:validate -- --input data/candidates/phase13-source-audit-001.json"
     ],
     "githubActionsUrl": "https://github.com/phatnguyen03022001/ielts-tradition/actions",
     "ciStatus": "Queried after final push; see final execution report and Actions URL.",
@@ -4533,13 +4549,13 @@
         "command": "npm test",
         "status": "PASS",
         "exitCode": 0,
-        "result": "Full schema, graph, pilot, stress and production suites passed; nested production suite 76/76."
+        "result": "Full schema, graph, pilot, stress and production suites passed; nested production suite 77/77."
       },
       {
         "command": "npm run test:production",
         "status": "PASS",
         "exitCode": 0,
-        "result": "76 passed, 0 failed."
+        "result": "77 passed, 0 failed."
       },
       {
         "command": "npm run candidates:validate -- --input data/candidates/pilot-fanout-003.json",
@@ -4548,10 +4564,10 @@
         "result": "dry-run; schema/graph issues 0; publicationEligible false; pending identity/evidence."
       },
       {
-        "command": "node --test tests/production/phase12-completion.test.mjs tests/production/phase11-closure.test.mjs",
+        "command": "node --test tests/production/phase12-completion.test.mjs tests/production/phase11-closure.test.mjs tests/production/phase13-source-audit.test.mjs",
         "status": "PASS",
         "exitCode": 0,
-        "result": "6 focused tests passed."
+        "result": "7 passed, 0 failed."
       },
       {
         "command": "claim inventory exact path/digest recomputation",
@@ -4562,6 +4578,12 @@
         "command": "actual candidate production gate dry-run",
         "status": "PASS_FAIL_CLOSED",
         "result": "Eligible false; 856 blockers; no state write and no partial publication."
+      },
+      {
+        "command": "npm run candidates:validate -- --input data/candidates/phase13-source-audit-001.json",
+        "status": "PASS_WITHOUT_RIGHTS_APPROVAL",
+        "exitCode": 0,
+        "result": "dry-run; 11 source candidates; schema/graph issues 0; no reviewer/permission attestations and no claim links."
       }
     ]
   },
