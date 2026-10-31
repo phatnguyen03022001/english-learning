@@ -42,6 +42,36 @@ codex --ask-for-approval on-request exec --sandbox workspace-write \
 
 This is an example invocation, **not permission to execute it**. `workspace-write` can write beyond the task's file list; task-path restriction and no self-approval remain policy-level. Do not use `--dangerously-bypass-approvals-and-sandbox`, `--add-dir`, unreviewed `--config` overrides, or write-capable app/MCP connectors to evade limitations. Never change `~/.codex/config.toml` for this workflow. Prefer native local Codex; when native access is unavailable, an explicitly authorized integration writer may use Agent Runtime MCP with the **same** scope and evidence obligations, not as an automatic escalation.
 
+## Runtime isolation smoke test (2026-11-01)
+
+On the installed Codex CLI `0.158.0`, a bounded synthetic test ran in a fresh
+`codex exec` process with `--ignore-user-config`, `--sandbox read-only`,
+`--ask-for-approval never`, `--disable apps`, `--disable plugins`,
+`-c 'mcp_servers={}'`, and one concurrent worker. Environment inheritance was
+replaced with an allowlist containing only `PATH`, `HOME`, `CODEX_HOME`, and
+`TMPDIR`; no Atlas/MongoDB environment variable names were present. The temporary
+fixture was outside the checkout.
+
+The parent and one delegated worker each attempted both a shell write and a native
+`apply_patch` edit. The shell attempts returned `Operation not permitted` under the OS sandbox. The
+native patch tool returned `writing is blocked by read-only sandbox`, rejected by
+the `never` approval policy. Neither session requested or received elevation.
+The fixture and candidate/repository data stayed unchanged. Invocation overrides
+exposed no MCP, app, plugin, Atlas, or database connector. Built-in shell,
+collaboration, patch, web, and image tools remained visible; the write attempts
+confirmed that shell and patch writes were still sandboxed.
+
+**Role limitation:** the CLI delegation API did not activate the project
+`grammar-reviewer` TOML. Its hyphenated name was rejected by the agent-name
+validator; the accepted worker used a task description instead, so role-specific
+TOML restrictions are `NOT_VERIFIED` and must not be treated as enforcement.
+The inherited read-only sandbox and disabled connectors supplied the verified
+write boundary. This test verifies the current Mac CLI invocation only; repeat it
+after CLI, sandbox, configuration, or connector changes. The isolated invocation
+kept Codex authentication available while skipping user config; it did not inspect
+or pass Atlas credentials. It does not prove that arbitrary secret files elsewhere
+on the host are unreadable under a read-only filesystem policy.
+
 ## Handoff: no implicit promotion of authority
 
 **Owner → Architect:** scope and authorization are supplied by owner. Architect remains read-only and supplies a task specification: target/repo, **exact baseline HEAD**, mission, scope/non-goals, allowed and forbidden operations, inputs, acceptance criteria, data integrity/security constraints, and reproducible verification commands. Recommendations do not grant any credentials.
@@ -61,6 +91,6 @@ This is an example invocation, **not permission to execute it**. `workspace-writ
 - Verify clean local tree, exact local/remote `main` SHA and completed CI for that same SHA. A pending CI run is `PARTIAL`, not `PASS`.
 - Enforcement belongs to **OS sandbox, connector/token scopes, CI GITHUB_TOKEN permissions, GitHub branch rules and Atlas credentials**. A policy can only narrow the agent's intended behavior; it cannot revoke an already supplied token.
 
-## Preflight still conditional
+## Historical preflight snapshot
 
-Previous preflight remains **PARTIAL / CONDITIONAL GO for a small supervised draft pilot**, not a production-scale fanout or publication GO. The following P2 findings remain open unless separately fixed with code and regression evidence: supersession traversal `O(n²)`; state path/symlink boundary; unbounded publication diagnostics for API callers; Codex parent/MCP inherited-permission boundary. This task may reduce the last risk by session isolation but **does not** resolve the other three or certify runtime access in an uninspected environment. The Phase 13 [readiness assessment](../data/reviews/phase13/readiness-assessment.json) remains `NOT_READY`; no AI output is independent editorial approval.
+The Phase 13 [readiness assessment](../data/reviews/phase13/readiness-assessment.json) remains a historical `NOT_READY` snapshot; this remediation does not rewrite it or promote any lexical data. The former P2 findings must be judged against the current source, focused regression tests, exact `main` commit, and CI result. A future readiness report must retain the state-path TOCTOU limitation and the custom-role TOML limitation above; neither may be presented as an enforced guarantee. No AI output is independent editorial approval.

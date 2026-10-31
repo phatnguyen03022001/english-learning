@@ -32,13 +32,25 @@ export function validateLifecycleV2(records){
    if(!byId.has(item.edgeId))issues.push(diag("LIFECYCLE_EDGE_HISTORY_MISSING",decision._id,"transitionAudit/incomingEdges","Recorded edge is absent from current snapshot; historical proof is required"));
   }
  }
- // Supersession must not form loops; non-transition retain decisions remain legal.
- for(const start of records.filter(r=>r._id.startsWith("dec_")&&r.supersedesDecisionId)){
-  const seen=new Set([start._id]);let cur=start;
-  while(cur?.supersedesDecisionId){
-   if(seen.has(cur.supersedesDecisionId)){issues.push(diag("DECISION_SUPERSESSION_CYCLE",start._id,"supersedesDecisionId","Decision supersession cycle"));break;}
-   seen.add(cur.supersedesDecisionId);cur=byId.get(cur.supersedesDecisionId);
+ // This is a functional graph (each decision has at most one successor).
+ // Resolve each chain once, iteratively, so long chains stay O(V + E) and do
+ // not depend on the JavaScript call-stack limit. Preserve the prior behavior:
+ // every decision whose traversal reaches a cycle receives one diagnostic.
+ const decisions=records.filter(r=>r._id.startsWith("dec_")&&r.supersedesDecisionId);
+ const visitState=new Map(),reachesCycle=new Map();
+ for(const start of decisions){
+  if(visitState.get(start._id)===2)continue;
+  const path=[];let current=start,cycle=false;
+  while(current?.supersedesDecisionId){
+   const state=visitState.get(current._id);
+   if(state===2){cycle=reachesCycle.get(current._id)===true;break;}
+   if(state===1){cycle=true;break;}
+   visitState.set(current._id,1);path.push(current._id);
+   current=byId.get(current.supersedesDecisionId);
   }
+  for(const id of path){visitState.set(id,2);reachesCycle.set(id,cycle);}
  }
+ for(const start of decisions)if(reachesCycle.get(start._id))
+  issues.push(diag("DECISION_SUPERSESSION_CYCLE",start._id,"supersedesDecisionId","Decision supersession cycle"));
  return issues.sort((a,b)=>cmp(a.entityId,b.entityId)||cmp(a.path,b.path)||cmp(a.code,b.code)||cmp(a.message,b.message));
 }

@@ -88,7 +88,9 @@ function stageMetrics(records,state,validators){
  checkpoint();
  return {schemaValidationMs:round(schema.milliseconds),graphValidationMs:round(graph.milliseconds),
   publicationGateMs:round(publication.milliseconds),fullV2ValidationMs:round(full.milliseconds),
-  publicationIssueCount:publication.value.issues.length};
+  publicationIssueCount:publication.value.issueCount,
+  publicationDiagnosticsRetained:publication.value.issues.length,
+  publicationDiagnosticsOmitted:publication.value.omittedIssueCount};
 }
 
 function prepareAndPersist(batch,state,path){

@@ -1,6 +1,6 @@
 import {test} from "node:test";
 import assert from "node:assert/strict";
-import {mkdtempSync,writeFileSync,readFileSync,existsSync,rmSync,statSync} from "node:fs";
+import {mkdtempSync,writeFileSync,readFileSync,existsSync,rmSync,statSync,symlinkSync,mkdirSync,readdirSync} from "node:fs";
 import {tmpdir} from "node:os";
 import {join} from "node:path";
 import {execFileSync} from "node:child_process";
@@ -20,7 +20,6 @@ test("CLI prepare/replay/check uses persisted state; validate is read-only",()=>
 
 import {spawnSync} from "node:child_process";
 import {spawn} from "node:child_process";
-import {readdirSync,mkdirSync} from "node:fs";
 import {setTimeout as delay} from "node:timers/promises";
 
 const cli=new URL("../../scripts/candidates.mjs",import.meta.url).pathname;
@@ -29,7 +28,7 @@ const sampleBatch=()=>({batchId:"r2-initial",records:[
  {candidateId:"entry",entity:{language:"en",lemma:"synthetic",pos:"NOUN",entryKind:"word",lifecycleStatus:"active",editorialStatus:"draft"}},
  {candidateId:"sense",entity:{entryId:"candidate:entry",definition:"Synthetic meaning",lifecycleStatus:"active",editorialStatus:"draft"}}
 ]});
-const run=(cmd,state,input)=>spawnSync(process.execPath,[cli,cmd,"--state",state,...(input?["--input",input]:[])],{encoding:"utf8"});
+const run=(cmd,state,input,cwd)=>spawnSync(process.execPath,[cli,cmd,...(state?["--state",state]:[]),...(input?["--input",input]:[])],{encoding:"utf8",...(cwd?{cwd}:{})});
 const output=execution=>JSON.parse(execution.stdout);
 const withTmp=fn=>{
  const tmp=mkdtempSync(join(tmpdir(),"lex-r2-"));
@@ -47,6 +46,56 @@ const start= (args,options={})=>{
  const done=new Promise(resolve=>child.on("close",(code,signal)=>resolve({code,signal,stdout,stderr})));
  return {child,done};
 };
+
+test("state path contract accepts default and explicit temp paths and rejects relative escape",()=>withTmp(tmp=>{
+ const workspace=join(tmp,"workspace"),outside=join(tmp,"outside"),input=join(workspace,"batch.json");
+ mkdirSync(workspace);mkdirSync(outside);
+ writeFileSync(input,JSON.stringify(sampleBatch()));
+ const defaultWrite=run("prepare",null,input,workspace);
+ assert.equal(defaultWrite.status,0,defaultWrite.stderr);
+ assert.equal(JSON.parse(defaultWrite.stdout).status,"prepared");
+ const defaultState=join(workspace,".draft","candidates-state.json");
+ assert.equal(existsSync(defaultState),true);
+ assert.equal(existsSync(defaultState+".lock"),false);
+ const explicit=join(tmp,"authorized-temp-state.json");
+ assert.equal(run("prepare",explicit,input,workspace).status,0);
+ assert.equal(existsSync(explicit),true);
+ const escaped=run("prepare","../outside/state.json",input,workspace);
+ assert.equal(escaped.status,1);
+ assert.match(JSON.parse(escaped.stderr).message,/relative.*within/i);
+ assert.deepEqual(readdirSync(outside),[]);
+}));
+
+test("final, ancestor and broken state symlinks are rejected without touching targets",()=>withTmp(tmp=>{
+ const workspace=join(tmp,"workspace"),outside=join(tmp,"outside"),input=join(tmp,"batch.json");
+ mkdirSync(workspace);mkdirSync(outside);
+ writeFileSync(input,JSON.stringify(sampleBatch()));
+ const sentinel=join(outside,"sentinel.json"),sentinelBytes="authorized test fixture";
+ writeFileSync(sentinel,sentinelBytes);
+ const finalLink=join(workspace,"final-state.json");
+ symlinkSync(sentinel,finalLink);
+ const finalResult=run("prepare",finalLink,input,workspace);
+ assert.equal(finalResult.status,1);
+ assert.match(JSON.parse(finalResult.stderr).message,/symbolic link/i);
+ assert.equal(readFileSync(sentinel,"utf8"),sentinelBytes);
+ assert.equal(existsSync(finalLink+".lock"),false);
+
+ const draft=join(workspace,".draft");mkdirSync(draft);
+ const ancestorLink=join(draft,"state-dir");symlinkSync(outside,ancestorLink);
+ const ancestorResult=run("prepare",join(ancestorLink,"state.json"),input,workspace);
+ assert.equal(ancestorResult.status,1);
+ assert.match(JSON.parse(ancestorResult.stderr).message,/symbolic link/i);
+ assert.equal(readFileSync(sentinel,"utf8"),sentinelBytes);
+ assert.deepEqual(readdirSync(outside).sort(),["sentinel.json"]);
+
+ const broken=join(workspace,"broken-state.json"),missingTarget=join(outside,"not-created.json");
+ symlinkSync(missingTarget,broken);
+ const brokenResult=run("prepare",broken,input,workspace);
+ assert.equal(brokenResult.status,1);
+ assert.match(JSON.parse(brokenResult.stderr).message,/symbolic link/i);
+ assert.equal(existsSync(missingTarget),false);
+ assert.deepEqual(readdirSync(outside).sort(),["sentinel.json"]);
+}));
 
 test("R2 missing ledger is STATE_NOT_FOUND, nonzero and does not create a directory or lock",()=>withTmp(tmp=>{
  const state=join(tmp,"uncreated","state.json");
@@ -292,6 +341,30 @@ test("failed atomic replacement preserves the prior snapshot and permits safe re
  assert.equal(restored.history.length,2);
  assert.equal(statSync(state).mode&0o777,0o600);
  if(typeof process.getuid==="function")assert.equal(statSync(state).uid,process.getuid());
+}));
+
+test("interrupted temp-file write leaves the old state intact and removes lock/temp files",()=>withTmp(tmp=>{
+ const state=join(tmp,"state.json"),initial=join(tmp,"initial.json"),next=join(tmp,"next.json"),preload=join(tmp,"interrupt-write.mjs");
+ writeFileSync(initial,JSON.stringify(sampleBatch()));
+ writeFileSync(next,JSON.stringify({batchId:"interrupted-write",records:[{candidateId:"entry",entity:{
+  language:"en",lemma:"interrupted-write",pos:"NOUN",entryKind:"word",lifecycleStatus:"active",editorialStatus:"draft"
+ }}]}));
+ assert.equal(run("prepare",state,initial).status,0);
+ const before=readFileSync(state,"utf8");
+ writeFileSync(preload,[
+  'import fs from "node:fs";',
+  'import {syncBuiltinESMExports} from "node:module";',
+  'const original=fs.writeFileSync;',
+  'fs.writeFileSync=function(target,data,...args){if(typeof target==="number"&&process.env.CANDIDATE_INTERRUPT_ATOMIC_WRITE==="1"){original.call(this,target,String(data).slice(0,32));throw new Error("injected interrupted atomic write");}return original.call(this,target,data,...args);};',
+  'syncBuiltinESMExports();'
+ ].join("\n"));
+ const interrupted=spawnSync(process.execPath,["--import",preload,cli,"prepare","--state",state,"--input",next],{
+  encoding:"utf8",env:{...process.env,CANDIDATE_INTERRUPT_ATOMIC_WRITE:"1"}
+ });
+ assert.equal(interrupted.status,1);
+ assert.match(JSON.parse(interrupted.stderr).message,/interrupted atomic write/);
+ assert.equal(readFileSync(state,"utf8"),before);
+ assert.deepEqual(readdirSync(tmp).sort(),["initial.json","interrupt-write.mjs","next.json","state.json"]);
 }));
 
 test("evidence binding CLI persists a draft-only CAS update and exact replay",()=>withTmp(tmp=>{

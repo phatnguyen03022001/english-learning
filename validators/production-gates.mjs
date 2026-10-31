@@ -59,17 +59,48 @@ export function valueAt(record,path){
 }
 // The authenticated trust callbacks MUST be provided by an independently
 // verified owner-appointment/rights process. JSON metadata is not authority.
-export function evaluatePublication(records, options={}, diagnosticLimit) {
- if(diagnosticLimit!==undefined&&(!Number.isSafeInteger(diagnosticLimit)||diagnosticLimit<0))
-  throw new RangeError("Publication diagnostic limit must be a non-negative safe integer");
+export const DEFAULT_PUBLICATION_DIAGNOSTIC_LIMIT=1000;
+export function evaluatePublication(records, options={}, diagnosticLimit=DEFAULT_PUBLICATION_DIAGNOSTIC_LIMIT,
+ graphDiagnosticLimit=diagnosticLimit) {
+ if(diagnosticLimit!==null&&(!Number.isSafeInteger(diagnosticLimit)||diagnosticLimit<0))
+  throw new RangeError("Publication diagnostic limit must be a non-negative safe integer or null for full diagnostics");
+ if(graphDiagnosticLimit!==null&&(!Number.isSafeInteger(graphDiagnosticLimit)||graphDiagnosticLimit<0))
+  throw new RangeError("Graph diagnostic limit must be a non-negative safe integer or null for full diagnostics");
  const issues=[],byId=new Map(records.map(r=>[r._id,r]));
  let issueCount=0;
+ // A bounded max-heap retains the lexicographically first diagnostics so the
+ // capped result is stable across input permutations without building omitted objects.
+ const compareIssueFields=(id,path,code,message,other)=>
+  cmp(id,other.entityId)||cmp(path,other.path)||cmp(code,other.code)||cmp(message,other.message);
+ const retain=(issue)=>{
+  let index=issues.length;issues.push(issue);
+  while(index>0){
+   const parent=(index-1)>>1;
+   if(sort(issues[parent],issue)>=0)break;
+   issues[index]=issues[parent];index=parent;
+  }
+  issues[index]=issue;
+ };
  const add=(code,id,path,message)=>{
   issueCount++;
-  if(diagnosticLimit===undefined||issues.length<diagnosticLimit)issues.push({code,entityId:id,path,message});
+  if(diagnosticLimit===null){issues.push({code,entityId:id,path,message});return;}
+  if(issues.length<diagnosticLimit){retain({code,entityId:id,path,message});return;}
+  if(diagnosticLimit===0||compareIssueFields(id,path,code,message,issues[0])>=0)return;
+  let index=0;
+  const issue={code,entityId:id,path,message};
+  while(true){
+   const left=index*2+1,right=left+1;
+   if(left>=issues.length)break;
+   let greater=left;
+   if(right<issues.length&&sort(issues[right],issues[left])>0)greater=right;
+   if(sort(issue,issues[greater])>=0)break;
+   issues[index]=issues[greater];index=greater;
+  }
+  issues[index]=issue;
  };
- const graph=validateGraph(records);
+ const graph=validateGraph(records,{issueLimit:graphDiagnosticLimit,skipPublicationDiagnostics:true});
  for(const i of graph.issues)add(i.code,i.entityId,i.path,i.message);
+ issueCount+=(graph.issueCount??graph.issues.length)-graph.issues.length;
 
  const publishable=r=>!["src","evd","rev","dec"].includes(r._id?.split("_")[0]);
  const selectedIds=new Set();
@@ -189,8 +220,7 @@ export function evaluatePublication(records, options={}, diagnosticLimit) {
    add("LIFECYCLE_AUTHORITY_UNVERIFIED",d._id,"reviewerId","Decision appointment not authenticated");
  }
  issues.sort(sort);
- const result=diagnosticLimit===undefined?{eligible:issueCount===0,issues}:
-  {eligible:issueCount===0,issues,issueCount,omittedIssueCount:issueCount-issues.length};
+ const result={eligible:issueCount===0,issues,issueCount,omittedIssueCount:issueCount-issues.length};
  graphByPublicationResult.set(result,graph);
  return result;
 }

@@ -55,12 +55,36 @@ A batch can be re-run exactly without history mutation. Changed batches, source-
 conflicts, stale CAS revisions, unknown references and duplicate IDs are reported,
 never silently corrected.
 
-`candidates:check` returns up to 1,000 publication diagnostics by default, plus
-the total and omitted counts. Pass `--full-publication-diagnostics` to retain every
-publication issue. The V2 validator's `publicationIssueLimit` option applies the
-same diagnostic cap while still evaluating every publication rule and preserving
-the exact `eligible` decision. Candidate preparation retains no unused publication
-issue objects; schema, graph and lifecycle checks remain complete.
+`evaluatePublication` and `validateDatasetV2` retain up to 1,000 publication
+diagnostics by default and return exact `issueCount`, `omittedIssueCount`, and
+`eligible` values. Pass `publicationIssueLimit: null` to `validateDatasetV2`, or
+`null` as `evaluatePublication`'s third argument, to explicitly retain every
+publication issue. Both modes report exact totals and omitted counts. The CLI `candidates:check` uses the same 1,000-issue default;
+`--full-publication-diagnostics` opts into the full list. The limit only bounds
+retained diagnostics: every publication rule still runs, and truncation cannot
+make an ineligible record eligible.
+
+## Candidate state path contract
+
+`--state` defaults to `.draft/candidates-state.json`, resolved from the process
+working directory. A relative path must remain within that working directory after
+normalization; relative paths that escape it are rejected. An absolute path is an
+explicitly selected storage location and remains supported for authorized temporary
+state in tests and CI. Existing path components must be directories and may not be
+symlinks, and an existing final state file must be a regular non-symlink file. On
+macOS only the native `/var`, `/tmp`, and `/etc` aliases are accepted when their
+resolved targets are exactly `/private/var`, `/private/tmp`, and `/private/etc`.
+
+State reads use `O_NOFOLLOW`. The lock and unique same-directory temporary file use
+exclusive creation with mode `0600`; the temporary file is synced and atomically
+renamed over the state file. Parent components are inspected while creating missing
+directories and are rechecked around state operations. A stale lock is not stolen.
+Node's built-in filesystem API does not expose descriptor-relative `openat` and
+`renameat` operations here, so an attacker able to swap a checked parent directory
+between the final check and an operation can still race the path check. This guards
+against static symlink traversal and accidental relative escape; it is not an OS
+sandbox for a directory writable by a hostile concurrent process. Keep the chosen
+parent directory under trusted ownership.
 
 The full scale benchmark is opt-in and writes only inside isolated OS temporary
 directories. Each worker has a five-minute timeout and a 1 GiB V8 heap limit by

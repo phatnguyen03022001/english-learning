@@ -59,9 +59,52 @@ export function validateGraph(dataset, options = {}) {
       message: "Dataset must contain a records array"
     }], publication: { eligible: false, issues: [] } };
   }
+  for (const key of ["issueLimit", "publicationIssueLimit"]) {
+    const limit = options[key];
+    if (limit !== undefined && limit !== null && (!Number.isSafeInteger(limit) || limit < 0))
+      throw new RangeError(key + " must be a non-negative safe integer or null for full diagnostics");
+  }
   const issues = [], publicationIssues = [], byId = new Map(), prefixSet = new Set(registry.identifiers.activeV1Prefixes);
-  const emit = (code, entityId, path, message, publishing = false) =>
-    (publishing ? publicationIssues : issues).push({ code, entityId, path, message });
+  let issueCount = 0, publicationIssueCount = 0;
+  const retain = (list, code, entityId, path, message, limit) => {
+    if (limit === undefined || limit === null) { list.push({ code, entityId, path, message }); return; }
+    const compareCandidate = item =>
+      compare(entityId ?? "", item.entityId ?? "") || compare(path ?? "", item.path ?? "") ||
+      compare(code, item.code) || compare(message, item.message);
+    if (list.length < limit) {
+      const item = { code, entityId, path, message };
+      let index = list.length; list.push(item);
+      while (index > 0) {
+        const parent = (index - 1) >> 1;
+        if (issueSort(list[parent], item) >= 0) break;
+        list[index] = list[parent]; index = parent;
+      }
+      list[index] = item;
+      return;
+    }
+    if (limit === 0 || compareCandidate(list[0]) >= 0) return;
+    const item = { code, entityId, path, message };
+    let index = 0;
+    while (true) {
+      const left = index * 2 + 1, right = left + 1;
+      if (left >= list.length) break;
+      let greater = left;
+      if (right < list.length && issueSort(list[right], list[left]) > 0) greater = right;
+      if (issueSort(item, list[greater]) >= 0) break;
+      list[index] = list[greater]; index = greater;
+    }
+    list[index] = item;
+  };
+  const emit = (code, entityId, path, message, publishing = false) => {
+    if (publishing) {
+      publicationIssueCount++;
+      if (!options.skipPublicationDiagnostics)
+        retain(publicationIssues, code, entityId, path, message, options.publicationIssueLimit);
+    } else {
+      issueCount++;
+      retain(issues, code, entityId, path, message, options.issueLimit);
+    }
+  };
 
   for (const record of [...records].sort((a,b) => compare(a?._id ?? "", b?._id ?? ""))) {
     if (!record || typeof record !== "object" || Array.isArray(record)) {
@@ -308,9 +351,17 @@ export function validateGraph(dataset, options = {}) {
   publicationIssues.sort(issueSort);
   const selected = options.publication === true
     ? [...issues, ...publicationIssues].sort(issueSort) : issues;
+  const publicationResult = {
+    eligible: issueCount === 0 && publicationIssueCount === 0,
+    issues: publicationIssues,
+    ...(options.publicationIssueLimit !== undefined || options.skipPublicationDiagnostics
+      ? { issueCount: publicationIssueCount, omittedIssueCount: publicationIssueCount - publicationIssues.length } : {})
+  };
   return {
-    valid: selected.length === 0,
+    valid: issueCount === 0 && (options.publication !== true || publicationIssueCount === 0),
     issues: selected,
-    publication: { eligible: issues.length === 0 && publicationIssues.length === 0, issues: publicationIssues }
+    ...(options.issueLimit !== undefined
+      ? { issueCount, omittedIssueCount: issueCount - issues.length } : {}),
+    publication: publicationResult
   };
 }

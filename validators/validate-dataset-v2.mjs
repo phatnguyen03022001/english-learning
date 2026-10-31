@@ -20,8 +20,8 @@ export function validateDatasetV2(input,options={}) {
  const records=Array.isArray(input)?input:input?.records;
  if(!Array.isArray(records))return {valid:false,stage:"schema",issues:[issue("SCHEMA_INVALID","","records","Missing records array")],publication:{eligible:false,issues:[]}};
  const publicationIssueLimit=options.publicationIssueLimit;
- if(publicationIssueLimit!==undefined&&(!Number.isSafeInteger(publicationIssueLimit)||publicationIssueLimit<0))
-  return {valid:false,stage:"options",issues:[issue("OPTION_INVALID","","publicationIssueLimit","Must be a non-negative safe integer")],publication:{eligible:false,issues:[]}};
+ if(publicationIssueLimit!==undefined&&publicationIssueLimit!==null&&(!Number.isSafeInteger(publicationIssueLimit)||publicationIssueLimit<0))
+  return {valid:false,stage:"options",issues:[issue("OPTION_INVALID","","publicationIssueLimit","Must be a non-negative safe integer or null for full diagnostics")],publication:{eligible:false,issues:[]}};
  const errors=[];
  for(let i=0;i<records.length;i++){
   const r=records[i],id=typeof r?._id==="string"?r._id:"";
@@ -52,7 +52,7 @@ export function validateDatasetV2(input,options={}) {
   if(r.decisionEffect==="lifecycle_transition"&&!r.transitionAudit)
    extra.push(issue("LIFECYCLE_AUDIT_INCOMPLETE",r._id,"transitionAudit","Transition requires evidence and incoming-edge inventory"));
  }
- const publication=evaluatePublication(records,options,publicationIssueLimit);
+ const publication=evaluatePublication(records,options,publicationIssueLimit,null);
  const graph=graphResultForPublication(publication);
  const all=[...graph.issues,...extra,...validateLifecycleV2(records)].sort(sort);
  const selected=options.publication===true?[...all,...publication.issues].sort(sort):all;
