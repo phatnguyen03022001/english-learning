@@ -1,4 +1,4 @@
-name: Phase 2–7 Lexical Production Quality Gates
+name: English Learning — Dictionary Quality Gates
 
 on:
   workflow_dispatch:
@@ -7,6 +7,7 @@ on:
     paths:
       - ".github/workflows/schema-conformance.yml"
       - "package.json"
+      - "package-lock.json"
       - "scripts/**"
       - "schemas/v1/**"
       - "validators/**"
@@ -46,6 +47,9 @@ jobs:
   schema-and-graph:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    defaults:
+      run:
+        shell: bash
     steps:
       - name: Check out exact commit
         uses: actions/checkout@v4
@@ -53,9 +57,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Install pinned Ajv
-        run: npm install --no-package-lock --ignore-scripts --no-audit --no-fund
-      - name: Run schema, graph, pilot and adversarial stress tests
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Run schema, graph, production, stress and Node.js 22 coverage gates
         run: npm test
       - name: Validate Phase 7 candidate batch
         run: |
@@ -133,14 +137,8 @@ jobs:
           }));
           NODE
 
-      - name: Validate Phase 9 correction regression suite
-        run: node --test tests/production/phase9-remediation.test.mjs
-
-      - name: Validate Phase 8 evidence dossier
-        run: node --test tests/production/phase8-evidence-dossier.test.mjs
-
-      - name: Validate Phase 10 editorial review preparation
-        run: node --test tests/production/phase10-editorial-review.test.mjs
-
-      - name: Validate Phase 11 research closure and semantic coverage
-        run: node --test tests/production/phase11-closure.test.mjs
+      - name: Validate current Phase 13 candidate batches
+        run: |
+          set -euo pipefail
+          npm run candidates:validate -- --input data/candidates/pilot-fanout-003.json
+          npm run candidates:validate -- --input data/candidates/phase13-source-audit-001.json

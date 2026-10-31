@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import {createHash} from "node:crypto";
 import {readFileSync} from "node:fs";
 import {prepareBatch} from "../../pipeline/prepare-batch.mjs";
-import {digest,publicationClaimPaths,valueAt} from "../../validators/production-gates.mjs";
+import {digest,evaluatePublication,publicationClaimPaths,valueAt} from "../../validators/production-gates.mjs";
 
 const batch=JSON.parse(readFileSync(new URL("../../data/candidates/phase13-source-audit-001.json",import.meta.url),"utf8"));
 const assessment=JSON.parse(readFileSync(new URL("../../data/reviews/phase13/readiness-assessment.json",import.meta.url),"utf8"));
@@ -19,6 +19,15 @@ test("Phase 13 source register is a valid draft-only V2 candidate batch with exp
  assert.equal(batch.records.length,11);
  assert.equal(new Set(batch.records.map(record=>record.candidateId)).size,11);
  assert.deepEqual(statusCounts,{reference_only:4,permission_required:1,unknown:4,redistributable:2});
+ assert.equal(assessment.sourceRightsAudit.draftSourceCandidateBatch.candidateCount,batch.records.length);
+ assert.equal(assessment.sourceRightsAudit.sourceMetadataCandidates,batch.records.length);
+ const candidateSourceIds=new Set(batch.records.map(record=>record.entity.sourceIdentifier));
+ const auditedCandidateSources=assessment.sourceRightsAudit.sources.filter(source=>candidateSourceIds.has(source.sourceId));
+ assert.equal(auditedCandidateSources.length,batch.records.length);
+ const auditedStatusCounts=Object.fromEntries(["reference_only","permission_required","unknown","redistributable"].map(status=>[
+  status,auditedCandidateSources.filter(source=>source.rightsStatus===status).length
+ ]));
+ assert.deepEqual(statusCounts,auditedStatusCounts);
  assert.ok(batch.records.every(record=>record.type==="src"&&record.entity.editorialStatus==="draft"&&!record.entity._id));
  assert.ok(batch.records.every(record=>record.entity.evidenceIds.length===0));
  assert.ok(batch.records.every(record=>!record.entity.rights.reviewerId&&!record.entity.rights.permissionReference&&!record.entity.rights.decisionId));
@@ -66,4 +75,50 @@ test("Phase 13 readiness inventory binds every V003 claim path to its exact curr
  assert.equal(assessment.goldenQa.publicationApprovedCount,0);
  assert.equal(assessment.sourceRightsAudit.draftSourceCandidateBatch.candidateBatchDigest,prepareBatch(batch,{}, {dryRun:true}).report.digest);
  assert.equal(assessment.sourceRightsAudit.draftSourceCandidateBatch.rawFileSha256,createHash("sha256").update(readFileSync(new URL("../../data/candidates/phase13-source-audit-001.json",import.meta.url))).digest("hex"));
+});
+
+test("Phase 13 publication readiness matches the actual fail-closed gate",()=>{
+ const v003=JSON.parse(readFileSync(new URL("../../data/candidates/pilot-fanout-003.json",import.meta.url),"utf8"));
+ const prepared=prepareBatch(v003,{});
+ assert.equal(prepared.report.status,"prepared");
+ const gate=evaluatePublication(prepared.state.records);
+ const actualIssueCounts=gate.issues.reduce((counts,issue)=>{
+  counts[issue.code]=(counts[issue.code]??0)+1;
+  return counts;
+ },{});
+ const recorded=assessment.productionGateDryRun;
+ const recordedIssueTotal=Object.values(recorded.issueCounts).reduce((total,count)=>total+count,0);
+
+ assert.equal(assessment.status.dictionaryPublication,"NOT_READY");
+ assert.equal(assessment.dataset.publicationEligible,false);
+ assert.equal(gate.eligible,false);
+ assert.equal(recorded.eligible,false);
+ assert.equal(recordedIssueTotal,recorded.issueCount);
+ assert.equal(gate.issues.length,recorded.issueCount);
+ assert.deepEqual(actualIssueCounts,recorded.issueCounts);
+ assert.equal(prepared.state.records.length,recorded.recordsEvaluated);
+ assert.equal(recorded.persistedStateWritten,false);
+ assert.equal(recorded.partialPublicationWrites,0);
+
+ // blockingIssueCodes is a policy-risk catalog; the gate report records only
+ // codes actually produced for this dataset, so the catalog may be broader.
+ assert.ok(Object.keys(actualIssueCounts).every(code=>assessment.blockingIssueCodes.includes(code)));
+
+ const injectedTrust=evaluatePublication(prepared.state.records,{
+  ownerId:"test-owner",
+  effectiveAt:"2026-10-31T00:00:00Z",
+  appointments:[{
+   appointmentKey:"synthetic-test-appointment",
+   reviewerId:"synthetic-test-reviewer",
+   appointedByOwnerId:"test-owner",
+   role:"lead_editorial",
+   scope:{subjectIds:prepared.state.records.map(record=>record._id),fieldPaths:["*"]},
+   effectiveFrom:"2026-10-31T00:00:00Z",
+   ownerAttestationRef:"synthetic-test-attestation"
+  }],
+  verifyOwnerAttestation:()=>true,
+  verifyEvidence:()=>true,
+  verifyRights:()=>true
+ });
+ assert.equal(injectedTrust.eligible,false,"test callbacks cannot create missing evidence, reviews or rights records");
 });
