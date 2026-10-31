@@ -145,10 +145,14 @@ export function evaluatePublication(records, options={}) {
    if(!matching.length||!reviewed)
     add("CLAIM_PATH_UNVERIFIED",id,path,"Exact learner assertion lacks authorized claim-specific evidence or review");
   }
-  if(record._id.startsWith("eqv_")&&record.alignmentMode==="sense_aligned"){
-   for(const senseId of [record.sourceSenseId,record.targetSenseId]){
-    const sense=byId.get(senseId);
-    if(!sense||sense.editorialStatus!=="verified")add("BILINGUAL_ENDPOINT_UNVERIFIED",id,"targetSenseId","Aligned senses require independent review");
+  if(record._id.startsWith("eqv_")){
+   const source=byId.get(record.sourceSenseId);
+   if(!source||!source._id?.startsWith("sns_")||source.editorialStatus!=="verified")
+    add("BILINGUAL_ENDPOINT_UNVERIFIED",id,"sourceSenseId","Source English sense must exist and be verified");
+   if(record.alignmentMode==="sense_aligned"){
+    const target=byId.get(record.targetSenseId);
+    if(!target||!target._id?.startsWith("sns_")||target.editorialStatus!=="verified")
+     add("BILINGUAL_ENDPOINT_UNVERIFIED",id,"targetSenseId","Aligned target sense must exist and be verified");
    }
    if(record.translationEvidenceStatus!=="independently_reviewed")add("TRANSLATION_UNREVIEWED",id,"translationEvidenceStatus","Bilingual fidelity lacks reviewed evidence");
   }

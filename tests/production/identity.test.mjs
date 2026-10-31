@@ -33,3 +33,21 @@ test("dry-run never mints identities or modifies state",()=>{
   const input={};const result=prepareBatch(batch,input,{dryRun:true});
   assert.equal(result.report.status,"dry-run");assert.deepEqual(result.state,input);
 });
+test("symmetric relation endpoints canonicalize after resolution in dry-run and real prepare",()=>{
+ const make=(reverse)=>({batchId:"symmetric:"+reverse,records:[
+  {candidateId:"a",entity:entry("alpha")},
+  {candidateId:"sa",entity:{entryId:"candidate:a",definition:"Alpha",editorialStatus:"draft",lifecycleStatus:"active"}},
+  {candidateId:"b",entity:entry("beta")},
+  {candidateId:"sb",entity:{entryId:"candidate:b",definition:"Beta",editorialStatus:"draft",lifecycleStatus:"active"}},
+  {candidateId:"edge",entity:{relationType:"NEAR_SYNONYM_OF",sourceId:"candidate:"+(reverse?"sb":"sa"),targetId:"candidate:"+(reverse?"sa":"sb"),qualifiers:{context:"test context"},editorialStatus:"draft",lifecycleStatus:"active"}}
+ ]});
+ for(const reverse of [false,true]){
+  const batch=make(reverse),dry=prepareBatch(batch,{}, {dryRun:true});
+  assert.equal(dry.report.status,"dry-run",JSON.stringify(dry.report.issues));
+  const prepared=prepareBatch(batch,{});
+  assert.equal(prepared.report.status,"prepared",JSON.stringify(prepared.report.issues));
+  const rel=prepared.state.records.find(r=>r._id.startsWith("rel_"));
+  assert.ok(rel.sourceId<rel.targetId);assert.deepEqual(rel.qualifiers,{context:"test context"});
+  assert.equal(prepareBatch(batch,prepared.state).report.status,"replayed");
+ }
+});

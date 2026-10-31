@@ -10,7 +10,7 @@ const lex=verified("lex",3001,{language:"en",lemma:"synthetic",pos:"NOUN",entryK
 const sns=verified("sns",3001,{entryId:lex._id,definition:"Test-only meaning",usageNote:"Do not use as authentic guidance"});
 const con=verified("con",3001,{senseId:sns._id,constructionType:"verb_pattern",pattern:"synthetic pattern",constraints:["test-only constraint"],separable:false});
 const frm=verified("frm",3001,{entryId:lex._id,form:"synthetics",pronunciationVariety:"en-GB"});
-const eqv=verified("eqv",3001,{sourceSenseId:sns._id,direction:"en_to_vi",alignmentMode:"gloss_only",glossVi:"nghĩa thử nghiệm",equivalenceType:"approximate",restrictions:["test-only restriction"]});
+const eqv=verified("eqv",3001,{sourceSenseId:sns._id,direction:"en_to_vi",alignmentMode:"gloss_only",translationEvidenceStatus:"independently_reviewed",glossVi:"nghĩa thử nghiệm",equivalenceType:"approximate",restrictions:["test-only restriction"]});
 const cases=[
  {subject:lex,dependencies:[],extra:"/entryKind"},
  {subject:sns,dependencies:[lex],extra:"/usageNote"},

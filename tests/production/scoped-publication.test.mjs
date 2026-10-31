@@ -16,3 +16,19 @@ test("unknown subject and empty publication scope never yield eligibility",()=>{
  assert.equal(result.eligible,false);
  assert.ok(result.issues.some(i=>i.code==="PUBLICATION_SUBJECT_NOT_FOUND"));
 });
+test("gloss-only and sense-aligned translations both require reviewed status and valid endpoints",()=>{
+ const entry={_id:"lex_01940000-0000-7000-8000-000000000101",schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"verified",language:"en",lemma:"test",pos:"NOUN",entryKind:"word"};
+ const sense={_id:"sns_01940000-0000-7000-8000-000000000102",schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"verified",entryId:entry._id,definition:"test meaning"};
+ const eq=(n,mode,status,extra={})=>({_id:`eqv_01940000-0000-7000-8000-${String(n).padStart(12,"0")}`,schemaVersion:"2.0.0",lifecycleStatus:"active",editorialStatus:"draft",sourceSenseId:sense._id,alignmentMode:mode,translationEvidenceStatus:status,glossVi:"nghĩa thử",direction:"en_to_vi",equivalenceType:"approximate",...extra});
+ for(const mode of ["gloss_only","sense_aligned"]){
+  const r=eq(mode==="gloss_only"?103:104,mode,"unreviewed",mode==="sense_aligned"?{targetSenseId:"sns_01940000-0000-7000-8000-000000000105"}:{});
+  const result=evaluatePublication([entry,sense,r],{subjectIds:[r._id]});
+  assert.ok(result.issues.some(i=>i.code==="TRANSLATION_UNREVIEWED"),JSON.stringify(result.issues));
+  assert.ok(result.issues.some(i=>i.code==="CLAIM_EVIDENCE_INSUFFICIENT"));
+ }
+ const missingSource=eq(106,"gloss_only","independently_reviewed",{sourceSenseId:"sns_01940000-0000-7000-8000-000000000107"});
+ const result=evaluatePublication([entry,missingSource],{subjectIds:[missingSource._id]});
+ assert.ok(result.issues.some(i=>i.code==="BILINGUAL_ENDPOINT_UNVERIFIED"));
+ const unverified={...sense,editorialStatus:"draft"},bad=eq(108,"gloss_only","independently_reviewed");
+ assert.ok(evaluatePublication([entry,unverified,bad],{subjectIds:[bad._id]}).issues.some(i=>i.code==="BILINGUAL_ENDPOINT_UNVERIFIED"));
+});

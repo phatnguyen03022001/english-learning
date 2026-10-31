@@ -110,9 +110,12 @@ export function prepareBatch(batch,state={},options={}) {
   mapping.set(item.candidateId,id);
  }
  let created;
- try {created=batch.records.filter(item=>!reused.has(item.candidateId)).map(item=>({
-  ...resolveRefs(item.entity,mapping),_id:mapping.get(item.candidateId),schemaVersion:"2.0.0"
- }));}catch(e){return invalidReport(state,digest,"UNRESOLVED_REFERENCE",e.message);}
+ try {created=batch.records.filter(item=>!reused.has(item.candidateId)).map(item=>{
+  const entity=resolveRefs(item.entity,mapping);
+  if(entity.relationType&&["SYNONYM_OF","NEAR_SYNONYM_OF","ANTONYM_OF"].includes(entity.relationType)&&
+    entity.sourceId>entity.targetId)[entity.sourceId,entity.targetId]=[entity.targetId,entity.sourceId];
+  return {...entity,_id:mapping.get(item.candidateId),schemaVersion:"2.0.0"};
+ });}catch(e){return invalidReport(state,digest,"UNRESOLVED_REFERENCE",e.message);}
  const dataset=[...next.records,...created];
  const validated=validateDatasetV2(dataset);
  if(!validated.valid)return invalidReport(state,digest,"VALIDATION_FAILED","Candidate graph/schema rejected",validated.issues);
