@@ -1,0 +1,1054 @@
+{
+  "dossierVersion": "pilot-fanout-004-quality-review.v1",
+  "artifactType": "independent_lexicographic_quality_review",
+  "reviewDate": "2026-11-01",
+  "repository": "phatnguyen03022001/english-learning",
+  "branch": "main",
+  "baselineHead": "0cbd2c306a5237a0d23b19ef87a7dd234e57eafe",
+  "batch": {
+    "batchId": "pilot-fanout-004",
+    "path": "data/candidates/pilot-fanout-004.json",
+    "sha256": "1ab6c23dc3f0263996424edc004f85e62a2e7a23ff6aeda861f370224f4c6928",
+    "recordCount": 45,
+    "recordCounts": {
+      "source": 10,
+      "lex": 7,
+      "sns": 7,
+      "eqv": 7,
+      "frm": 3,
+      "evd": 11
+    },
+    "mutated": false
+  },
+  "scope": "Independent source-based quality audit of all lexical claim-bearing fields in Pilot 004: lemma/POS, definition, grammar transitivity, each English example, usage note, Vietnamese gloss, and inflected form. Does not add lexical families or revise candidate records. Each populated field is one claim unit; compound usage notes remain a single field-level claim and their limitations are disclosed.",
+  "execution": {
+    "primaryReviewer": "Codex Native integration session (single reviewer; AI review, not authenticated human editorial review)",
+    "researchWorkers": {
+      "requested": 4,
+      "launched": 0,
+      "reason": "A fresh read-only Codex CLI research invocation was attempted with CLI 0.158.0, --ignore-user-config, --sandbox read-only, apps/plugins disabled and empty MCP configuration; initialization failed before a research parent or workers started: “failed to initialize in-process app-server client: Operation not permitted”. No workers or separate worker identities are claimed."
+    },
+    "sandboxEvidence": {
+      "researchInvocation": "Attempted isolated invocation; no session initialized, so no effective tool inventory or OS denial-of-write probe was observed for a research parent.",
+      "integrationSession": "Managed workspace-write context. No delegation was performed from this writer.",
+      "boundary": "Worker isolation and actual specialist independence were not established for this task."
+    }
+  },
+  "sourceCoverage": {
+    "directlyInspectedPrimaryContent": 1,
+    "secondaryAuthoritativeOrPublisherSources": 4,
+    "searchIndexExcerpts": 5,
+    "unavailableOrBlockedSources": 6,
+    "aiInference": 0,
+    "notes": "Counts overlap: inaccessible direct pages can still have search-index excerpts; five Cambridge page opens returned 403. Directly inspected PDF BBC page 1 only. Cambridge CALD sample, MLA and Cambridge bilingual/grammar full text were not independently reopened in this review. Candidate assertions about prior parent retrieval are not treated as independent access evidence."
+  },
+  "sources": [
+    {
+      "sourceId": "source-mla",
+      "url": "https://style.mla.org/affect-or-effect/",
+      "edition": "Online article; edition not stated; attributed to Zahra Brown",
+      "retrievalDate": "2026-11-01",
+      "access": "Candidate records report extracted text consulted; web-search only in this review; direct open not obtained.",
+      "accessClass": "secondary authoritative source / search result",
+      "use": "General contrast among affect, effect noun and effect verb; contextual only.",
+      "rights": "reference_only; no redistribution permission established."
+    },
+    {
+      "sourceId": "source-bbc",
+      "url": "https://downloads.bbc.co.uk/learningenglish/eiam/unit-1/180727_raise_vs_rise.pdf",
+      "edition": "English In A Minute, 2018, page 1 of 1",
+      "retrievalDate": "2026-11-01",
+      "access": "PDF text directly opened and inspected in this review; direct content includes transitivity, sample contrast and inflection.",
+      "accessClass": "directly inspected primary content",
+      "use": "Rise/raise quantitative sense, direct-object contrast and rose/risen/raised forms.",
+      "rights": "© BBC 2018; reference only; no redistribution permission established."
+    },
+    {
+      "sourceId": "source-oxford",
+      "url": "https://www.oxfordlearnersdictionaries.com/us/definition/english/profitable",
+      "edition": "Oxford Advanced Learner’s Dictionary online; version unstated",
+      "retrievalDate": "2026-11-01",
+      "access": "Search result content inspected; direct open not separately captured.",
+      "accessClass": "search-index excerpt",
+      "use": "Economic as a profitability synonym in the business sense; does not support economical equivalence.",
+      "rights": "reference_only; no redistribution permission established."
+    },
+    {
+      "sourceId": "source-cambridge-sample",
+      "url": "https://assets.cambridge.org/97805215/31054/sample/9780521531054ws.pdf",
+      "edition": "Cambridge Advanced Learner’s Dictionary sample, 2003, PDF page 24 / printed page 20",
+      "retrievalDate": "2026-11-01",
+      "access": "Candidate source metadata reports page inspected by writer; not reopened independently in current review.",
+      "accessClass": "prior direct inspection reported; not independently re-inspected",
+      "use": "Affect influence sense and transitivity; not evidence of exhaustive coverage.",
+      "rights": "© Cambridge University Press 2003; reference-only; no redistribution permission established."
+    },
+    {
+      "sourceId": "source-cambridge-economic-grammar",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/economic-or-economical",
+      "edition": "English Grammar Today; online edition/version unstated",
+      "retrievalDate": "2026-11-01",
+      "access": "Search result excerpt inspected; direct open returned HTTP 403 in this review.",
+      "accessClass": "search-index excerpt; full text unavailable",
+      "use": "Economic/economical contrast; not treated as fully inspected or exhaustive.",
+      "rights": "reference_only; no redistribution permission established."
+    },
+    {
+      "sourceId": "source-cambridge-vi-affect",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/affect",
+      "edition": "Cambridge-hosted English–Vietnamese entry; underlying edition not exposed",
+      "retrievalDate": "2026-11-01",
+      "access": "Search result excerpt inspected; direct open returned HTTP 403.",
+      "accessClass": "search-index excerpt; full text unavailable",
+      "use": "Gloss ảnh hưởng for affect; retrieved excerpt does not prove an independently modeled Vietnamese sense.",
+      "rights": "Underlying rights unclear; reference-only."
+    },
+    {
+      "sourceId": "source-cambridge-vi-effect",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/effect",
+      "edition": "Cambridge-hosted English–Vietnamese entry; underlying edition not exposed",
+      "retrievalDate": "2026-11-01",
+      "access": "Search result did not expose the exact result gloss; direct open returned HTTP 403.",
+      "accessClass": "unavailable / incomplete search excerpt",
+      "use": "No positive bilingual claim assigned.",
+      "rights": "Underlying rights unclear; reference-only."
+    },
+    {
+      "sourceId": "source-cambridge-vi-rise",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/rise",
+      "edition": "PASSWORD English–Vietnamese Dictionary, © K Dictionaries Ltd. 2015 (as identified in result)",
+      "retrievalDate": "2026-11-01",
+      "access": "Search result excerpt inspected; direct open returned HTTP 403.",
+      "accessClass": "search-index excerpt; full text unavailable",
+      "use": "Tăng lên and increase sense; exact source content still not independently fetched.",
+      "rights": "Underlying © K Dictionaries Ltd. 2015; Cambridge hosting is not reuse authorization."
+    },
+    {
+      "sourceId": "source-cambridge-vi-raise",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/raise",
+      "edition": "PASSWORD English–Vietnamese Dictionary, © K Dictionaries Ltd. 2015 (source attribution in candidate metadata)",
+      "retrievalDate": "2026-11-01",
+      "access": "Candidate metadata reports parent search extracts; writer direct open returned HTTP 403; exact entry content not retrieved here.",
+      "accessClass": "search-index excerpt reported / direct access unavailable",
+      "use": "No exact gloss is treated as independently authenticated.",
+      "rights": "Underlying © K Dictionaries Ltd. 2015; reference-only."
+    },
+    {
+      "sourceId": "source-cambridge-vi-economic",
+      "url": "https://dictionary.cambridge.org/dictionary/english-vietnamese/economic",
+      "edition": "PASSWORD English–Vietnamese Dictionary, © K Dictionaries Ltd. 2015 (as identified in result)",
+      "retrievalDate": "2026-11-01",
+      "access": "Search result excerpt inspected; direct open returned HTTP 403.",
+      "accessClass": "search-index excerpt; full text unavailable",
+      "use": "Thuộc về kinh tế and a separate profitability translation appear in the excerpt; supports only the economy-related contextual gloss.",
+      "rights": "Underlying © K Dictionaries Ltd. 2015; reference-only."
+    }
+  ],
+  "claimInventory": {
+    "unitDefinition": "One populated learner-facing linguistic field or individual English example string is one claim. Compound usageNote is inventoried as one field-level claim; subclaims are summarized in the accompanying finding text. Evidence-record descriptions duplicate these claims and are not double-counted.",
+    "total": 48,
+    "assessments": {
+      "SUPPORTED": 32,
+      "PARTIALLY_SUPPORTED": 13,
+      "CONTRADICTED": 0,
+      "UNVERIFIED": 3,
+      "OUT_OF_SCOPE": 0
+    },
+    "severities": {
+      "P1": 0,
+      "P2": 1,
+      "P3": 6
+    },
+    "claims": [
+      {
+        "candidateId": "entry-affect-verb",
+        "entityType": "lex",
+        "fieldPath": "/entity/lemma",
+        "claim": "Lemma: affect",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-cambridge-sample"
+        ],
+        "confidence": 0.98,
+        "limitation": "Spelling verified against source names and ordinary English lexical identity; no homograph adjudication beyond the scoped POS entry."
+      },
+      {
+        "candidateId": "entry-affect-verb",
+        "entityType": "lex",
+        "fieldPath": "/entity/pos",
+        "claim": "Part of speech: VERB",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-cambridge-sample"
+        ],
+        "confidence": 0.98,
+        "limitation": "Selected entry POS is correct; other POS/meanings are intentionally outside this entry or batch scope."
+      },
+      {
+        "candidateId": "sense-affect-influence",
+        "entityType": "sns",
+        "fieldPath": "/entity/definition",
+        "claim": "Influence the condition or course of someone or something.",
+        "assessment": "PARTIALLY_SUPPORTED",
+        "severity": "P3",
+        "sourceIds": [
+          "source-mla",
+          "source-bbc",
+          "source-cambridge-economic-grammar"
+        ],
+        "confidence": 0.75,
+        "limitation": "Cambridge supports influence/cause change; wording is narrow and idiosyncratic, but the draft explicitly limits the sense and flags omitted uses."
+      },
+      {
+        "candidateId": "sense-affect-influence",
+        "entityType": "sns",
+        "fieldPath": "/entity/grammar/transitivity",
+        "claim": "transitive",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-cambridge-sample"
+        ],
+        "confidence": 0.96,
+        "limitation": "Applies to the selected sense only; does not generalize across all senses of the lemma."
+      },
+      {
+        "candidateId": "sense-affect-influence",
+        "entityType": "sns",
+        "fieldPath": "/entity/examples/0/english",
+        "claim": "The revised timetable affected attendance.",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [],
+        "confidence": 0.86,
+        "limitation": "Original editorial candidate, not a corpus attestation. The economic and economical examples are noun-phrase fragments; they illustrate a collocation but provide limited grammatical context."
+      },
+      {
+        "candidateId": "sense-affect-influence",
+        "entityType": "sns",
+        "fieldPath": "/entity/usageNote",
+        "claim": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
+        "assessment": "PARTIALLY_SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-cambridge-sample",
+          "source-mla"
+        ],
+        "confidence": 0.72,
+        "limitation": "Notes omitted psychology noun affect and pretence/assumption verb uses; Cambridge search-result excerpt confirms both, though source page was inaccessible directly. This is a defensible coverage note, not a complete homograph/sense inventory. Usage note is compound; assessment covers its substantive linguistic statements and does not authenticate provenance labels."
+      },
+      {
+        "candidateId": "gloss-affect-influence",
+        "entityType": "eqv",
+        "fieldPath": "/entity/glossVi",
+        "claim": "ảnh hưởng đến",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-cambridge-vi-affect"
+        ],
+        "confidence": 0.82,
+        "limitation": "Ảnh hưởng (đến) is contextually suitable for the transitive influence sense; Cambridge English–Vietnamese search result gives ảnh hưởng, but not an independently modeled Vietnamese sense. alignmentMode=gloss_only is structurally correct; no target Vietnamese sense is asserted."
+      },
+      {
+        "candidateId": "entry-effect-noun",
+        "entityType": "lex",
+        "fieldPath": "/entity/lemma",
+        "claim": "Lemma: effect",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-mla",
+          "source-cambridge-vi-effect"
+        ],
+        "confidence": 0.98,
+        "limitation": "Spelling verified against source names and ordinary English lexical identity; no homograph adjudication beyond the scoped POS entry."
+      },
+      {
+        "candidateId": "entry-effect-noun",
+        "entityType": "lex",
+        "fieldPath": "/entity/pos",
+        "claim": "Part of speech: NOUN",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-mla",
+          "source-cambridge-vi-effect"
+        ],
+        "confidence": 0.98,
+        "limitation": "Selected entry POS is correct; other POS/meanings are intentionally outside this entry or batch scope."
+      },
+      {
+        "candidateId": "sense-effect-result",
+        "entityType": "sns",
+        "fieldPath": "/entity/definition",
+        "claim": "An outcome attributable to an action or circumstance.",
+        "assessment": "PARTIALLY_SUPPORTED",
+        "severity": "P3",
+        "sourceIds": [
+          "source-mla",
+          "source-bbc",
+          "source-cambridge-economic-grammar"
+        ],
+        "confidence": 0.75,
+        "limitation": "The result core is supported; wording narrows it to an outcome attributable to an action/circumstance and omits other noun senses. Draft scope is expressly partial."
+      },
+      {
+        "candidateId": "sense-effect-result",
+        "entityType": "sns",
+        "fieldPath": "/entity/usageNote",
+        "claim": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
+        "assessment": "PARTIALLY_SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-mla",
+          "source-cambridge-vi-effect"
+        ],
+        "confidence": 0.72,
+        "limitation": "The note correctly warns against the noun/verb mnemonic as exhaustive; draft separately models an effect verb, but other effect noun uses remain outside scope. Usage note is compound; assessment covers its substantive linguistic statements and does not authenticate provenance labels."
+      },
+      {
+        "candidateId": "gloss-effect-result",
+        "entityType": "eqv",
+        "fieldPath": "/entity/glossVi",
+        "claim": "kết quả",
+        "assessment": "PARTIALLY_SUPPORTED",
+        "severity": "A result gloss is semantically plausible; exact Vietnamese bilingual entry evidence was unavailable. The alternative tác động has broader/other senses and the record correctly says it needs separate review.",
+        "sourceIds": [
+          "source-cambridge-vi-effect",
+          "source-cambridge-vi-raise"
+        ],
+        "confidence": 0.52,
+        "limitation": "undefined alignmentMode=gloss_only is structurally correct; no target Vietnamese sense is asserted."
+      },
+      {
+        "candidateId": "entry-effect-verb",
+        "entityType": "lex",
+        "fieldPath": "/entity/lemma",
+        "claim": "Lemma: effect",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-mla",
+          "source-cambridge-vi-effect"
+        ],
+        "confidence": 0.98,
+        "limitation": "Spelling verified against source names and ordinary English lexical identity; no homograph adjudication beyond the scoped POS entry."
+      },
+      {
+        "candidateId": "entry-effect-verb",
+        "entityType": "lex",
+        "fieldPath": "/entity/pos",
+        "claim": "Part of speech: VERB",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-mla",
+          "source-cambridge-vi-effect"
+        ],
+        "confidence": 0.98,
+        "limitation": "Selected entry POS is correct; other POS/meanings are intentionally outside this entry or batch scope."
+      },
+      {
+        "candidateId": "sense-effect-bring-about",
+        "entityType": "sns",
+        "fieldPath": "/entity/definition",
+        "claim": "Cause a planned change or outcome to become a reality.",
+        "assessment": "PARTIALLY_SUPPORTED",
+        "severity": "P2",
+        "sourceIds": [
+          "source-mla",
+          "source-bbc",
+          "source-cambridge-economic-grammar"
+        ],
+        "confidence": 0.75,
+        "limitation": "Effect as a formal transitive verb meaning achieve/cause is supported. “Planned” is an unsupported semantic restriction and can wrongly exclude effect a change/reform or effect a cure."
+      },
+      {
+        "candidateId": "sense-effect-bring-about",
+        "entityType": "sns",
+        "fieldPath": "/entity/grammar/transitivity",
+        "claim": "transitive",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-cambridge-vi-effect"
+        ],
+        "confidence": 0.96,
+        "limitation": "Applies to the selected sense only; does not generalize across all senses of the lemma."
+      },
+      {
+        "candidateId": "sense-effect-bring-about",
+        "entityType": "sns",
+        "fieldPath": "/entity/examples/0/english",
+        "claim": "The revised timetable effected a lasting improvement.",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [],
+        "confidence": 0.86,
+        "limitation": "Original editorial candidate, not a corpus attestation. The economic and economical examples are noun-phrase fragments; they illustrate a collocation but provide limited grammatical context."
+      },
+      {
+        "candidateId": "sense-effect-bring-about",
+        "entityType": "sns",
+        "fieldPath": "/entity/usageNote",
+        "claim": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage pending: specialized noun affect and pretence-related verb affect are outside this draft. The affect-verb/effect-noun mnemonic is not exhaustive; homograph boundaries and omitted meanings require independent editorial review.",
+        "assessment": "PARTIALLY_SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-mla",
+          "source-cambridge-vi-effect"
+        ],
+        "confidence": 0.72,
+        "limitation": "The note correctly identifies the formal transitive effect verb; the draft definition’s planned restriction remains unsupported. Usage note is compound; assessment covers its substantive linguistic statements and does not authenticate provenance labels."
+      },
+      {
+        "candidateId": "gloss-effect-bring-about",
+        "entityType": "eqv",
+        "fieldPath": "/entity/glossVi",
+        "claim": "tạo ra",
+        "assessment": "UNVERIFIED",
+        "severity": "Tạo ra can fit some change/improvement contexts, but no directly inspected bilingual evidence supports this exact sense and context.",
+        "sourceIds": [
+          "source-cambridge-vi-effect",
+          "source-cambridge-vi-raise"
+        ],
+        "confidence": 0.52,
+        "limitation": "undefined alignmentMode=gloss_only is structurally correct; no target Vietnamese sense is asserted."
+      },
+      {
+        "candidateId": "entry-rise-verb",
+        "entityType": "lex",
+        "fieldPath": "/entity/lemma",
+        "claim": "Lemma: rise",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-bbc",
+          "source-cambridge-vi-rise"
+        ],
+        "confidence": 0.98,
+        "limitation": "Spelling verified against source names and ordinary English lexical identity; no homograph adjudication beyond the scoped POS entry."
+      },
+      {
+        "candidateId": "entry-rise-verb",
+        "entityType": "lex",
+        "fieldPath": "/entity/pos",
+        "claim": "Part of speech: VERB",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-bbc",
+          "source-cambridge-vi-rise"
+        ],
+        "confidence": 0.98,
+        "limitation": "Selected entry POS is correct; other POS/meanings are intentionally outside this entry or batch scope."
+      },
+      {
+        "candidateId": "sense-rise-increase",
+        "entityType": "sns",
+        "fieldPath": "/entity/definition",
+        "claim": "Become greater in amount or level.",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-mla",
+          "source-bbc",
+          "source-cambridge-economic-grammar"
+        ],
+        "confidence": 0.9,
+        "limitation": "Quantitative increase is supported by BBC and Cambridge result excerpts; the record explicitly limits this sense and does not claim all uses are intransitive."
+      },
+      {
+        "candidateId": "sense-rise-increase",
+        "entityType": "sns",
+        "fieldPath": "/entity/grammar/transitivity",
+        "claim": "intransitive",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-bbc"
+        ],
+        "confidence": 0.96,
+        "limitation": "Applies to the selected sense only; does not generalize across all senses of the lemma."
+      },
+      {
+        "candidateId": "sense-rise-increase",
+        "entityType": "sns",
+        "fieldPath": "/entity/examples/0/english",
+        "claim": "Transport costs rose.",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [],
+        "confidence": 0.86,
+        "limitation": "Original editorial candidate, not a corpus attestation. The economic and economical examples are noun-phrase fragments; they illustrate a collocation but provide limited grammatical context."
+      },
+      {
+        "candidateId": "sense-rise-increase",
+        "entityType": "sns",
+        "fieldPath": "/entity/usageNote",
+        "claim": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Past tense rose; past participle risen. In this quantitative sense rise has no direct object. This syntactic claim does not imply absence of an external cause. Other senses and noun uses are not covered.",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-bbc",
+          "source-cambridge-vi-rise"
+        ],
+        "confidence": 0.72,
+        "limitation": "The note confines the candidate to quantitative rise and disclaims that no external cause exists; the direct-object property is syntactic, not a claim about causal agency. Usage note is compound; assessment covers its substantive linguistic statements and does not authenticate provenance labels."
+      },
+      {
+        "candidateId": "gloss-rise-increase",
+        "entityType": "eqv",
+        "fieldPath": "/entity/glossVi",
+        "claim": "tăng lên",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-cambridge-vi-rise"
+        ],
+        "confidence": 0.82,
+        "limitation": "Tăng lên matches quantitative increase; Cambridge English–Vietnamese search excerpt lists this rendering. alignmentMode=gloss_only is structurally correct; no target Vietnamese sense is asserted."
+      },
+      {
+        "candidateId": "entry-raise-verb",
+        "entityType": "lex",
+        "fieldPath": "/entity/lemma",
+        "claim": "Lemma: raise",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-bbc",
+          "source-cambridge-vi-raise"
+        ],
+        "confidence": 0.98,
+        "limitation": "Spelling verified against source names and ordinary English lexical identity; no homograph adjudication beyond the scoped POS entry."
+      },
+      {
+        "candidateId": "entry-raise-verb",
+        "entityType": "lex",
+        "fieldPath": "/entity/pos",
+        "claim": "Part of speech: VERB",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-bbc",
+          "source-cambridge-vi-raise"
+        ],
+        "confidence": 0.98,
+        "limitation": "Selected entry POS is correct; other POS/meanings are intentionally outside this entry or batch scope."
+      },
+      {
+        "candidateId": "sense-raise-increase",
+        "entityType": "sns",
+        "fieldPath": "/entity/definition",
+        "claim": "Cause an amount or level to become greater.",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-mla",
+          "source-bbc",
+          "source-cambridge-economic-grammar"
+        ],
+        "confidence": 0.9,
+        "limitation": "Cause an amount/level to increase is supported by the directly inspected BBC PDF and Cambridge excerpt."
+      },
+      {
+        "candidateId": "sense-raise-increase",
+        "entityType": "sns",
+        "fieldPath": "/entity/grammar/transitivity",
+        "claim": "transitive",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-bbc"
+        ],
+        "confidence": 0.96,
+        "limitation": "Applies to the selected sense only; does not generalize across all senses of the lemma."
+      },
+      {
+        "candidateId": "sense-raise-increase",
+        "entityType": "sns",
+        "fieldPath": "/entity/examples/0/english",
+        "claim": "The fuel shortage raised transport costs.",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [],
+        "confidence": 0.86,
+        "limitation": "Original editorial candidate, not a corpus attestation. The economic and economical examples are noun-phrase fragments; they illustrate a collocation but provide limited grammatical context."
+      },
+      {
+        "candidateId": "sense-raise-increase",
+        "entityType": "sns",
+        "fieldPath": "/entity/usageNote",
+        "claim": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Past tense and past participle raised. A cause need not be human. Passive raised does not become an intransitive lexical use. Physical lifting and other senses are outside this quantitative draft.",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-bbc",
+          "source-cambridge-vi-raise"
+        ],
+        "confidence": 0.72,
+        "limitation": "A non-human cause is compatible with raise (e.g., a shortage raises costs); passive raised is not evidence of an intransitive lexical sense. Other meanings are explicitly excluded. Usage note is compound; assessment covers its substantive linguistic statements and does not authenticate provenance labels."
+      },
+      {
+        "candidateId": "gloss-raise-increase",
+        "entityType": "eqv",
+        "fieldPath": "/entity/glossVi",
+        "claim": "làm tăng",
+        "assessment": "UNVERIFIED",
+        "severity": "Làm tăng is plausible for causative increase but exact bilingual source content was not retrieved in this review; do not treat the source record as confirmation.",
+        "sourceIds": [
+          "source-cambridge-vi-effect",
+          "source-cambridge-vi-raise"
+        ],
+        "confidence": 0.52,
+        "limitation": "undefined alignmentMode=gloss_only is structurally correct; no target Vietnamese sense is asserted."
+      },
+      {
+        "candidateId": "entry-economic-adj",
+        "entityType": "lex",
+        "fieldPath": "/entity/lemma",
+        "claim": "Lemma: economic",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-cambridge-economic-grammar",
+          "source-cambridge-vi-economic"
+        ],
+        "confidence": 0.98,
+        "limitation": "Spelling verified against source names and ordinary English lexical identity; no homograph adjudication beyond the scoped POS entry."
+      },
+      {
+        "candidateId": "entry-economic-adj",
+        "entityType": "lex",
+        "fieldPath": "/entity/pos",
+        "claim": "Part of speech: ADJ",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-cambridge-economic-grammar",
+          "source-cambridge-vi-economic"
+        ],
+        "confidence": 0.98,
+        "limitation": "Selected entry POS is correct; other POS/meanings are intentionally outside this entry or batch scope."
+      },
+      {
+        "candidateId": "sense-economic-economy",
+        "entityType": "sns",
+        "fieldPath": "/entity/definition",
+        "claim": "Connected with how an economy operates.",
+        "assessment": "PARTIALLY_SUPPORTED",
+        "severity": "P3",
+        "sourceIds": [
+          "source-mla",
+          "source-bbc",
+          "source-cambridge-economic-grammar"
+        ],
+        "confidence": 0.75,
+        "limitation": "Related to an economy is supported, but “how an economy operates” is narrower than ordinary economic uses connected with money, trade or industry. Profitability is a distinct attested use and is noted."
+      },
+      {
+        "candidateId": "sense-economic-economy",
+        "entityType": "sns",
+        "fieldPath": "/entity/examples/0/english",
+        "claim": "Economic pressures.",
+        "assessment": "PARTIALLY_SUPPORTED",
+        "severity": "P3",
+        "sourceIds": [],
+        "confidence": 0.7,
+        "limitation": "Original editorial candidate, not a corpus attestation. The economic and economical examples are noun-phrase fragments; they illustrate a collocation but provide limited grammatical context."
+      },
+      {
+        "candidateId": "sense-economic-economy",
+        "entityType": "sns",
+        "fieldPath": "/entity/usageNote",
+        "claim": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
+        "assessment": "PARTIALLY_SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-cambridge-economic-grammar",
+          "source-oxford",
+          "source-cambridge-vi-economic"
+        ],
+        "confidence": 0.72,
+        "limitation": "Economic has an attested profitability use; whether the selected economy-related sense overlaps with economical in particular contexts is properly left unresolved. Usage note is compound; assessment covers its substantive linguistic statements and does not authenticate provenance labels."
+      },
+      {
+        "candidateId": "gloss-economic-economy",
+        "entityType": "eqv",
+        "fieldPath": "/entity/glossVi",
+        "claim": "thuộc về kinh tế",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-cambridge-vi-economic"
+        ],
+        "confidence": 0.82,
+        "limitation": "Thuộc về kinh tế matches the selected economy-related adjective sense and appears in Cambridge English–Vietnamese excerpt. alignmentMode=gloss_only is structurally correct; no target Vietnamese sense is asserted."
+      },
+      {
+        "candidateId": "entry-economical-adj",
+        "entityType": "lex",
+        "fieldPath": "/entity/lemma",
+        "claim": "Lemma: economical",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-cambridge-economic-grammar"
+        ],
+        "confidence": 0.98,
+        "limitation": "Spelling verified against source names and ordinary English lexical identity; no homograph adjudication beyond the scoped POS entry."
+      },
+      {
+        "candidateId": "entry-economical-adj",
+        "entityType": "lex",
+        "fieldPath": "/entity/pos",
+        "claim": "Part of speech: ADJ",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-cambridge-economic-grammar"
+        ],
+        "confidence": 0.98,
+        "limitation": "Selected entry POS is correct; other POS/meanings are intentionally outside this entry or batch scope."
+      },
+      {
+        "candidateId": "sense-economical-resources",
+        "entityType": "sns",
+        "fieldPath": "/entity/definition",
+        "claim": "Using relatively little of a resource for a purpose.",
+        "assessment": "PARTIALLY_SUPPORTED",
+        "severity": "P3",
+        "sourceIds": [
+          "source-mla",
+          "source-bbc",
+          "source-cambridge-economic-grammar"
+        ],
+        "confidence": 0.75,
+        "limitation": "Using relatively little resource is plausible and fits the selected resource context; direct source retrieval for this exact definition was blocked, and economical also commonly concerns monetary/fuel cost."
+      },
+      {
+        "candidateId": "sense-economical-resources",
+        "entityType": "sns",
+        "fieldPath": "/entity/examples/0/english",
+        "claim": "A printer economical with ink.",
+        "assessment": "PARTIALLY_SUPPORTED",
+        "severity": "P3",
+        "sourceIds": [],
+        "confidence": 0.7,
+        "limitation": "Original editorial candidate, not a corpus attestation. The economic and economical examples are noun-phrase fragments; they illustrate a collocation but provide limited grammatical context."
+      },
+      {
+        "candidateId": "sense-economical-resources",
+        "entityType": "sns",
+        "fieldPath": "/entity/usageNote",
+        "claim": "Original AI-assisted editorial proposal from owner-supplied read-only research handoff (/root/semantics, /root/grammar, /root/alignment, /root/evidence_review); worker output is not editorial approval. This batch has partial sense coverage; definitions, glosses and original examples remain unverified. No existing senses are split, merged or retired. Coverage dispute deferred_pending_evidence: a strict economy-versus-saving distinction is useful only in context. Economic also has a profitability use; the extent of overlap with economical remains unresolved. Neither universal synonymy nor an absolute substitution ban is asserted. No profitability sense or synonym edge is created. Definition and usage proposals rely on the parent handoff; Cambridge grammar full-text retrieval returned 403. Independent confirmation remains pending. Oxford profitable supports only the economic profitability caveat, not the proposed economy-related definition or an economical synonym claim.",
+        "assessment": "PARTIALLY_SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-cambridge-economic-grammar",
+          "source-cambridge-vi-economic"
+        ],
+        "confidence": 0.72,
+        "limitation": "The note appropriately avoids a universal substitution ban; exact contrast and collocational boundaries remain under-evidenced. Usage note is compound; assessment covers its substantive linguistic statements and does not authenticate provenance labels."
+      },
+      {
+        "candidateId": "gloss-economical-resources",
+        "entityType": "eqv",
+        "fieldPath": "/entity/glossVi",
+        "claim": "tiết kiệm",
+        "assessment": "UNVERIFIED",
+        "severity": "Tiết kiệm is plausible in resource-use contexts but broad; no directly inspected independent bilingual source confirms scope or collocations.",
+        "sourceIds": [
+          "source-cambridge-vi-economic"
+        ],
+        "confidence": 0.52,
+        "limitation": "undefined alignmentMode=gloss_only is structurally correct; no target Vietnamese sense is asserted."
+      },
+      {
+        "candidateId": "form-rose",
+        "entityType": "frm",
+        "fieldPath": "/entity/form",
+        "claim": "rose",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-bbc"
+        ],
+        "confidence": 0.99,
+        "limitation": "Irregular/regular paradigm in the directly inspected BBC PDF; forms are recorded as forms, not new lexical senses."
+      },
+      {
+        "candidateId": "form-risen",
+        "entityType": "frm",
+        "fieldPath": "/entity/form",
+        "claim": "risen",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-bbc"
+        ],
+        "confidence": 0.99,
+        "limitation": "Irregular/regular paradigm in the directly inspected BBC PDF; forms are recorded as forms, not new lexical senses."
+      },
+      {
+        "candidateId": "form-raised",
+        "entityType": "frm",
+        "fieldPath": "/entity/form",
+        "claim": "raised",
+        "assessment": "SUPPORTED",
+        "severity": null,
+        "sourceIds": [
+          "source-bbc"
+        ],
+        "confidence": 0.99,
+        "limitation": "Irregular/regular paradigm in the directly inspected BBC PDF; forms are recorded as forms, not new lexical senses."
+      }
+    ]
+  },
+  "findings": [
+    {
+      "findingId": "F-01",
+      "category": "English semantics",
+      "candidateIds": [
+        "sense-affect-influence",
+        "sense-effect-result",
+        "sense-effect-bring-about",
+        "sense-rise-increase",
+        "sense-raise-increase"
+      ],
+      "severity": "P2",
+      "summary": "Coverage is explicitly partial and should stay so: affect has additional verb senses (pretend/assume) and a specialized psychology noun; effect has a formal transitive verb and several noun senses; rise has many motion, standing, awakening, noun and idiomatic uses. No omissions should be silently filled by this audit. The draft notes some omissions, which is good, but learners must not read these selected entries as exhaustive.",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/affect",
+        "https://dictionary.cambridge.org/dictionary/english/effect",
+        "https://dictionary.cambridge.org/dictionary/english/rise"
+      ],
+      "access": "Cambridge search-result excerpts; direct opens returned 403. Coverage concerns are not candidate falsehoods; no omitted sense is proposed as an approved new record.",
+      "correction": "Keep coverage disclaimer prominent in draft handoff; subsequent bounded scope should explicitly include or exclude additional POS/senses with evidence and homograph review.",
+      "editorialDecision": "Human lexicographer to decide future coverage and any POS/homograph boundaries."
+    },
+    {
+      "findingId": "F-02",
+      "category": "English semantics",
+      "candidateIds": [
+        "sense-effect-bring-about"
+      ],
+      "fieldPath": "/entity/definition",
+      "severity": "P2",
+      "summary": "“Planned” adds an unsupported intention/planning requirement to effect. Standard formal use is to achieve/cause something to happen, as in effect a change. The current example is grammatical but does not establish that planning is an entailment.",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/effect",
+        "https://style.mla.org/affect-or-effect/"
+      ],
+      "access": "Cambridge search-index excerpt; MLA content described by candidate metadata and search listing, not independently fetched in this review.",
+      "correction": "Remove “planned” or record a source-supported contextual restriction; do not otherwise alter candidate automatically.",
+      "editorialDecision": "Human editor approves exact definition and example fit."
+    },
+    {
+      "findingId": "F-03",
+      "category": "English semantics",
+      "candidateIds": [
+        "sense-affect-influence",
+        "sense-effect-result",
+        "sense-economic-economy",
+        "sense-economical-resources"
+      ],
+      "severity": "P3",
+      "summary": "Several definitions are narrower or less idiomatic than the supported core: affect “condition or course” excludes common broad change/influence formulations; effect result is narrow but within declared partial scope; economic “how an economy operates” may understate related-to-money/trade/industry uses; economical resource definition is plausible but its source support is weak.",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/affect",
+        "https://dictionary.cambridge.org/dictionary/english/effect",
+        "https://dictionary.cambridge.org/grammar/british-grammar/economic-or-economical",
+        "https://dictionary.cambridge.org/dictionary/english/economic"
+      ],
+      "access": "Cambridge search-index excerpts; grammar direct open returned 403.",
+      "correction": "Consider clearer learner wording only after human editorial review; preserve sense boundaries and contextual distinction."
+    },
+    {
+      "findingId": "F-04",
+      "category": "Grammar and phraseology",
+      "candidateIds": [
+        "sense-affect-influence",
+        "sense-rise-increase",
+        "sense-raise-increase",
+        "sense-effect-bring-about"
+      ],
+      "severity": "P3",
+      "summary": "The scoped transitivity claims and examples are grammatical. Counterexample challenge: raise does not require a human subject (a shortage raised costs); rise may be externally caused while remaining intransitive (costs rose after the shortage). “By itself” should not be used as a causal rule. A passive form (costs were raised) does not make raise lexically intransitive. The batch already avoids the two absolute errors.",
+      "evidence": [
+        "https://downloads.bbc.co.uk/learningenglish/eiam/unit-1/180727_raise_vs_rise.pdf",
+        "https://dictionary.cambridge.org/dictionary/english/rise",
+        "https://dictionary.cambridge.org/dictionary/english/raise"
+      ],
+      "access": "BBC PDF directly inspected; Cambridge search excerpts. No broad claim over every lemma use is endorsed.",
+      "correction": "Retain transitivity scoped to selected meanings; use examples that make the direct object evident. Effect example grammatical but formal verb registration should remain explicit.",
+      "editorialDecision": "Human grammar reviewer should confirm effect valency/register."
+    },
+    {
+      "findingId": "F-05",
+      "category": "Vietnamese alignment",
+      "candidateIds": [
+        "gloss-affect-influence",
+        "gloss-effect-result",
+        "gloss-effect-bring-about",
+        "gloss-rise-increase",
+        "gloss-raise-increase",
+        "gloss-economic-economy",
+        "gloss-economical-resources"
+      ],
+      "severity": "P2",
+      "summary": "All seven are correctly represented as gloss_only; none invents a target Vietnamese sense. Tăng lên/raise and ảnh hưởng/affect fit the selected contexts. Tạo ra, làm tăng, and tiết kiệm are plausible proposals but exact bilingual context/valency evidence was not directly retrievable here. Kết quả is a broad result gloss; tác động is context-sensitive and must not collapse the noun result sense into influence. Thuộc về kinh tế is suitable for economic but cannot cover profitability without another contextual gloss.",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/affect",
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/effect",
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/rise",
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/raise",
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/economic"
+      ],
+      "access": "Search-index excerpts for affect, rise and economic; effect and raise direct fetch 403 and no exact gloss excerpt was verified. Cambridge translations identify PASSWORD © K Dictionaries 2015 for some entries; access is not reuse permission.",
+      "correction": "Keep unverified glosses explicitly provisional; obtain independent bilingual review and source-specific context before reuse. Do not promote to sense_aligned.",
+      "editorialDecision": "Vietnamese lexicographer must review sense, collocation and POS scope."
+    },
+    {
+      "findingId": "F-06",
+      "category": "Examples",
+      "candidateIds": [
+        "sense-affect-influence",
+        "sense-effect-bring-about",
+        "sense-rise-increase",
+        "sense-raise-increase",
+        "sense-economic-economy",
+        "sense-economical-resources"
+      ],
+      "severity": "P3",
+      "summary": "All six examples are original editorial candidates, not attestations. The first four are grammatical and contextually plausible. “Economic pressures.” and “A printer economical with ink.” are fragments: acceptable as collocation snippets, weaker as standalone usage examples. The latter construction is grammatical but somewhat compressed/formal.",
+      "evidence": [
+        "https://dictionary.cambridge.org/dictionary/english/economic",
+        "https://dictionary.cambridge.org/grammar/british-grammar/economic-or-economical"
+      ],
+      "access": "Example assessment is editorial grammar judgment; no source examples copied or corpus evidence claimed.",
+      "correction": "Consider full original sentences showing economic usage and economical resource-saving usage; label as editorially authored."
+    },
+    {
+      "findingId": "F-07",
+      "category": "Evidence and provenance",
+      "candidateIds": [
+        "evidence-affect-influence",
+        "evidence-effect-result",
+        "evidence-effect-bring-about",
+        "evidence-affect-transitivity",
+        "evidence-rise-meaning",
+        "evidence-rise-transitivity",
+        "evidence-raise-meaning",
+        "evidence-raise-transitivity",
+        "evidence-form-rose",
+        "evidence-form-risen",
+        "evidence-form-raised"
+      ],
+      "severity": "Evidence blocker",
+      "summary": "11 Evidence records are not 11 independent proofs. They are draft, unreviewed, independence unestablished, and many point to the same few sources. Claims cover narrow field paths; exact evidence does not establish the entire sense, examples, gloss, completeness, or publication rights. Search snippets and candidate claims that another parent inspected sources do not authenticate current-source provenance.",
+      "evidence": [
+        "https://style.mla.org/affect-or-effect/",
+        "https://downloads.bbc.co.uk/learningenglish/eiam/unit-1/180727_raise_vs_rise.pdf",
+        "https://www.oxfordlearnersdictionaries.com/us/definition/english/profitable",
+        "https://assets.cambridge.org/97805215/31054/sample/9780521531054ws.pdf",
+        "https://dictionary.cambridge.org/grammar/british-grammar/economic-or-economical",
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/affect",
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/effect",
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/rise",
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/raise",
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/economic"
+      ],
+      "access": "BBC directly inspected; MLA/Oxford/Cambridge source access classes are recorded per source; direct page responses of 403 are explicitly unavailable.",
+      "correction": "Before publication, independently verify exact source edition/location and claim support, bind evidence to exact candidate values, and obtain trusted review.",
+      "editorialDecision": "No editorial authority present; evidence remains unreviewed."
+    },
+    {
+      "findingId": "F-08",
+      "category": "Copyright and reuse rights",
+      "candidateIds": [
+        "source-mla",
+        "source-bbc",
+        "source-oxford",
+        "source-cambridge-sample",
+        "source-cambridge-economic-grammar",
+        "source-cambridge-vi-affect",
+        "source-cambridge-vi-effect",
+        "source-cambridge-vi-rise",
+        "source-cambridge-vi-raise",
+        "source-cambridge-vi-economic"
+      ],
+      "severity": "Rights blocker",
+      "summary": "All 10 Source records are marked reference_only; no redistribution permission was established. Cambridge English–Vietnamese records identify underlying PASSWORD/K Dictionaries rights for some entries. Reference access does not authorize copying definitions, examples or bilingual material. This review reproduces only short paraphrase-level claim descriptions, not source dictionary text.",
+      "evidence": [
+        "https://style.mla.org/affect-or-effect/",
+        "https://downloads.bbc.co.uk/learningenglish/eiam/unit-1/180727_raise_vs_rise.pdf",
+        "https://www.oxfordlearnersdictionaries.com/us/definition/english/profitable",
+        "https://assets.cambridge.org/97805215/31054/sample/9780521531054ws.pdf",
+        "https://dictionary.cambridge.org/grammar/british-grammar/economic-or-economical",
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/affect",
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/effect",
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/rise",
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/raise",
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/economic"
+      ],
+      "access": "Source records and publisher attribution reviewed; no license/permission instrument exists in the batch.",
+      "correction": "Keep candidate content original and obtain an explicit compatible rights determination before public redistribution."
+    },
+    {
+      "findingId": "F-09",
+      "category": "Independent reviewer execution",
+      "candidateIds": [],
+      "severity": "Evidence blocker",
+      "summary": "Requested four-lane specialist fanout did not run. Fresh isolated CLI launch failed during app-server initialization, so this is a single-session AI adversarial review and cannot be represented as four independent specialist reviews or as authenticated independent editorial review.",
+      "evidence": [
+        "docs/execution-boundaries.md"
+      ],
+      "access": "CLI 0.158.0 invocation failure was observed; no worker sandbox/tool inventory was established.",
+      "correction": "Repeat review in a separately initialized read-only Codex research parent with verified inherited tool inventory and bounded inline role prompts; retain human specialist review for publication.",
+      "editorialDecision": "Owner/editorial authority must appoint authenticated reviewer(s)."
+    }
+  ],
+  "qualityMetrics": {
+    "englishSemanticsDefects": {
+      "count": 6,
+      "details": "Three semantic findings F-01 to F-03 cover six concrete scoped concerns: partial sense coverage, planned restriction in effect, and precision/narrowness for affect, effect noun, economic and economical."
+    },
+    "grammarPhraseologyDefects": {
+      "count": 1,
+      "details": "No transitivity falsehood found; example quality/register and learner framing require limited refinement."
+    },
+    "vietnameseAlignmentDefects": {
+      "count": 7,
+      "details": "All 7 gloss claims have no authenticated bilingual human approval; claim dispositions are 3 supported by search excerpts, 1 partially supported and 3 unverified. All remain gloss_only."
+    },
+    "evidenceGaps": {
+      "claimInventoryRowsWithInsufficientOrPartialIndependentSupport": 16,
+      "unreviewedEvidenceRecords": 11,
+      "details": "These are distinct units: 16 field-level claims are partial/unverified; all 11 Evidence records remain draft/unreviewed with independence unestablished. They are not summed as independent proofs."
+    },
+    "rightsBlockers": {
+      "sourceRecordCount": 10,
+      "clearedSourceRecordCount": 0
+    },
+    "unresolvedEditorialDisputes": 2,
+    "disputeDetails": [
+      "Sense coverage and future POS/homograph treatment for affect/effect/rise.",
+      "Economic/economical contextual overlap and the appropriate sense boundary."
+    ]
+  },
+  "decisions": {
+    "review": "PARTIAL_REVIEW_COMPLETED",
+    "nextDraftPilot": "HOLD",
+    "nextPilotRationale": "One P2 definition restriction and unresolved independent-worker execution mean a repeat bounded draft should wait for a correction plan and rerun of actual isolated adversarial specialist research. Existing partial coverage and evidence gaps are documented; no systemic graph or schema issue is inferred.",
+    "publication": "NO_GO",
+    "publicationStatus": "NOT_READY",
+    "humanReviewRequired": true,
+    "atlasMutation": "NONE",
+    "candidateMutation": "NONE"
+  }
+}
